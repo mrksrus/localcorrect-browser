@@ -1,0 +1,3 @@
+# Preserve upstream notice snapshots verbatim, including their whitespace.
+licenses/FrequencyWords-README.md whitespace=-blank-at-eol
+packages/core/licenses/FrequencyWords-README.md whitespace=-blank-at-eol

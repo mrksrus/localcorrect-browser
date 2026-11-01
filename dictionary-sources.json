@@ -1,0 +1,18 @@
+{
+  "revision": "525f9b560de45753a5ea01069454e72e9aa541c6",
+  "license": "CC-BY-SA-4.0",
+  "sources": {
+    "en": {
+      "url": "https://raw.githubusercontent.com/hermitdave/FrequencyWords/525f9b560de45753a5ea01069454e72e9aa541c6/content/2018/en/en_50k.txt",
+      "source_sha256": "5351ff405b1126ef555791dd4d9798a48e3e9a501a9fc481a9da957752cfb458",
+      "output_sha256": "d2d35a71b7d59ca91f9bdd49cc5406ac85084174d9069b2e9854e4aea357aa5c",
+      "words": 30000
+    },
+    "de": {
+      "url": "https://raw.githubusercontent.com/hermitdave/FrequencyWords/525f9b560de45753a5ea01069454e72e9aa541c6/content/2018/de/de_50k.txt",
+      "source_sha256": "d9e50546fd7e8b6fe6542a2b33c51d1331092b2a3916ec09f80d97856068705b",
+      "output_sha256": "a19ed81a325936cc2f4d0e68d190eae99cd717c8c894e5070cccca447bdef3c4",
+      "words": 28168
+    }
+  }
+}
