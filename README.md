@@ -80,8 +80,9 @@ that. No claims are made about other extensions or the host editor's privacy.
 Node 22+, npm, Python 3 (for ZIP/reproducible data). `npm ci`, then `npm run check`.
 The DOM tests use `/usr/bin/chromium` when present, otherwise Playwright Chromium:
 `npx playwright install chromium`. Tests use only synthetic local fixtures.
-`npm run build` emits both ZIPs and unpacked folders in build/. CI runs the same
-checks. The extension smoke test loads the shipping unpacked package and verifies
+`npm run build` emits both ZIPs and unpacked folders in build/. A GitHub Actions
+workflow template is provided in `contrib/github-actions/`; it is not enabled by
+this release. The extension smoke test loads the shipping unpacked package and verifies
 its UI/resources/errors. Its synthetic end-to-end injection harness adds a
 **test-only** fixture-origin host grant to substitute for a headless toolbar
 activeTab gesture; that grant is never shipped. A real toolbar permission gesture
