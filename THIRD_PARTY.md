@@ -22,8 +22,29 @@ corpus occurrence counts, not probabilities. The resulting dictionaries remain
 CC BY-SA 4.0. Attribution/license: https://creativecommons.org/licenses/by-sa/4.0/.
 Source URLs, exact hashes and resulting word counts: dictionary-sources.json.
 Reproduce with `python scripts/dictionaries.py` (maintainer network operation).
-No SymSpell.FrequencyDictionary or Hunspell data are used; in particular we do
-not mislabel German GPL Hunspell data as MIT.
+No SymSpell.FrequencyDictionary data are used. Frequency ranking is not a
+spelling-validity inventory; a separate Hunspell layer below vetoes valid words.
+
+## Mandatory offline lexical validation
+
+Bundled `dictionary-en` 4.0.0 (SCOWL / en_US 2020.12.07; MIT/BSD and retained
+component permissions) and `dictionary-de` 3.0.0 (igerman98, Björn Jacke;
+GPL-2.0 OR GPL-3.0, **GPL-3.0 option selected**) retain unmodified aff/dic sources,
+upstream readmes and complete notices in `packages/core/vendor`. German license
+is not relabeled MIT; the full selected GPL-3.0 text is LICENSE. Full English
+component redistribution texts are in licenses/dictionary-en-LICENSE.
+
+`nspell` 2.1.5, Titus Wormer, MIT, https://github.com/wooorm/nspell, and
+`is-buffer` 2.0.5, Feross Aboukhadijeh, MIT,
+https://github.com/feross/is-buffer, provide build-time offline affix expansion/validity.
+Complete MIT notices and original source accompany both packages under vendor
+and licenses. Generated ESM is self-contained; no installed dependency or fetch
+is needed at runtime. nspell suggestions are **not** used: symmetric deletes,
+distance validation and frequency ranking remain LocalCorrect's correction base.
+
+Pinned registry URLs, versions, npm integrity and aff/dic SHA256 hashes are in
+lexicon-sources.json. Reproduce with `npm ci && node scripts/lexicons.mjs`.
+All new assets/source/notices are shipped in both ZIPs and the portable core.
 
 ## Algorithm acknowledgement
 
@@ -39,4 +60,6 @@ esbuild 0.25.12 (MIT), https://github.com/evanw/esbuild.
 Playwright 1.56.1 (Apache-2.0), https://github.com/microsoft/playwright.
 Locked dependency sources/versions are in package-lock.json. Build tool code is
 not included as a runtime dependency. Generated bundles contain LocalCorrect
-source only. No remotely loaded code is used by the extension.
+source and derived validity inventories; validator source is retained under vendor.
+No remotely loaded code
+is used by the extension.

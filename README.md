@@ -22,17 +22,25 @@ This is a release candidate, not a production-quality or perfect proofreader.
 - Quoted lines (`>`), recognized reply-header tails and `--` signature tails
   are left alone. Known quote/signature DOM containers and links/code are skipped.
   Other signature layouts, names and identifiers cannot be reliably recognized:
-  select only the new prose when in doubt. Unknown titlecase names away from
-  sentence starts are protected, which also skips some misspelled German nouns.
+  select only the new prose when in doubt. English unknown titlecase tokens are
+  protected even at selection start. German titlecase correction needs a preceding
+  determiner/possessive and a lexically accepted capitalized candidate; a narrow
+  high-frequency transposition rule also handles initial formal German requests
+  followed by an infinitive and “Sie”. A sentence boundary alone is not evidence.
+  This is a
+  heuristic, not reliable name or part-of-speech recognition.
 - Preserves original whitespace, case pattern, emails, URLs, numbers and common
-  identifiers. Does not rewrite style/grammar, split/join words, or correct known
+  identifiers and dotted filenames. Partial-token selections at either boundary
+  are rejected without edits, including across inline nodes/combining marks.
+  Does not rewrite style/grammar, split/join words, or correct known
   dictionary words used in the wrong context. Corpus data contain noise, names
   and subtitle vocabulary. Conservative/Normal are heuristic ambiguity and
   frequency gates, **not calibrated confidence levels**. False corrections and
   missed typos remain possible in either mode.
 - Maximum 20,000 UTF-16 units and 3,000 word tokens per operation, bounded word
   lengths and candidate budgets. Select a smaller passage on a limit error.
-  First correction builds a local index and may take a moment.
+  First correction loads a build-time affix-expanded lexicon and builds a local index;
+  this synchronous work can cause a noticeable pause and uses additional memory.
 - Custom editors/frameworks can reject synthetic input events. Test on a harmless
   draft first. Undo refuses changed DOM/text; it is not a general editor history.
 - Status counts replacements, not corrected characters. “Left unchanged” counts
@@ -92,8 +100,13 @@ const result = corrector.correct('a seperate example', {
 // {text, edits: [{offset, length, replacement, original}], skipped}
 ```
 
-The adapter supplies dictionary strings. The synchronous core has no DOM/fetch
+The adapter supplies frequency dictionary strings. Broad EN/DE spelling-validity
+lexicons are bundled/imported by default; callers (including Outlook) do not need
+new arguments or fetches. Missing assets fail closed rather than reverting to
+frequency-only correction. Rebuild lexical assets with `npm ci && node scripts/lexicons.mjs`.
+The synchronous core has no DOM/fetch
 or storage dependency. Offsets and lengths refer to UTF-16 positions in the
 **original** text. Edits are sorted, non-overlapping; everything outside their
 spans is preserved exactly. See THIRD_PARTY.md for algorithm and data provenance.
-Program: GPL-3.0-only. Frequency data: CC BY-SA 4.0.
+Program and selected German lexicon license: GPL-3.0. Frequency data: CC BY-SA 4.0.
+English lexicon/component notices: MIT/BSD; nspell/is-buffer: MIT. See THIRD_PARTY.md.

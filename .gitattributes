@@ -1,3 +1,8 @@
 # Preserve upstream notice snapshots verbatim, including their whitespace.
 licenses/FrequencyWords-README.md whitespace=-blank-at-eol
 packages/core/licenses/FrequencyWords-README.md whitespace=-blank-at-eol
+# Unmodified upstream GPL notices/affix source retain their final blank line.
+licenses/dictionary-de-LICENSE whitespace=-blank-at-eof
+packages/core/licenses/dictionary-de-LICENSE whitespace=-blank-at-eof
+packages/core/vendor/dictionary-de/license whitespace=-blank-at-eof
+packages/core/vendor/dictionary-de/index.aff whitespace=-blank-at-eof

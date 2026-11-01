@@ -2,6 +2,18 @@
 
 First release candidate (not final 1.0).
 
+Independent-review fixes (same RC designation):
+- Mandatory broad offline EN/DE Hunspell validity/inflections via bundled nspell,
+  independent of frequency ranking; preserves `versendet` and `protections`.
+- Reject partial-token selections at either end in plain/rich fields, including
+  inline joins and combining marks. Never expand selection to change extra text.
+- German determiner-context titlecase candidates validated lexically; lower
+  frequency floor only for adjacent-transposition noun-context edits.
+- Unknown English titlecase names protected at selection/sentence start;
+  dotted filenames protected; short words need high-frequency transpositions.
+- Full-sentence independent acceptance retained alongside isolated-word metrics;
+  complete upstream lexical source/notices, pinned hashes and offline rebuild.
+
 - Shared synchronous @localcorrect/core API, original SymSpell symmetric-delete
   implementation, edit-distance validation and frequency/ambiguity ranking.
 - Bundled English/German CC BY-SA frequency data with pinned provenance,

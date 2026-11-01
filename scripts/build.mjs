@@ -5,7 +5,7 @@ const root = new URL('../', import.meta.url);
 process.chdir(root.pathname);
 await rm('build',{recursive:true,force:true});
 await mkdir('build',{recursive:true}); await mkdir('dist',{recursive:true});
-for (const name of ['LICENSE','THIRD_PARTY.md','dictionary-sources.json']) await cp(name,`packages/core/${name}`);
+for (const name of ['LICENSE','THIRD_PARTY.md','dictionary-sources.json','lexicon-sources.json']) await cp(name,`packages/core/${name}`);
 await cp('licenses','packages/core/licenses',{recursive:true});
 await build({entryPoints:['extension/target.js'],outfile:'build/target.js',bundle:true,format:'iife',target:['chrome120','firefox121'],legalComments:'inline'});
 const base = {manifest_version:3,name:'LocalCorrect',version:'0.9.0.1',version_name:'1.0.0-rc.1',description:'Offline German and English typo correction for selected text or focused editable fields. Release candidate.',permissions:['activeTab','scripting'],action:{default_popup:'popup.html',default_title:'LocalCorrect'},content_security_policy:{extension_pages:"script-src 'self'; object-src 'none'; connect-src 'self'"}};
@@ -15,10 +15,10 @@ for (const browser of ['firefox','chrome']) {
   await cp('build/target.js',`${dir}/target.js`);
   await cp('packages/core/dictionaries',`${dir}/dictionaries`,{recursive:true});
   await cp('licenses',`${dir}/licenses`,{recursive:true});
-  for(const name of ['LICENSE','THIRD_PARTY.md','README.md','SECURITY.md','RELEASE_NOTES.md','dictionary-sources.json'])await cp(name,`${dir}/${name}`);
+  for(const name of ['LICENSE','THIRD_PARTY.md','README.md','QUALITY.md','SECURITY.md','RELEASE_NOTES.md','dictionary-sources.json','lexicon-sources.json'])await cp(name,`${dir}/${name}`);
   // Ship corresponding original source and build recipe, not just a minified bundle.
   for(const name of ['extension','packages','scripts','tests','licenses'])await cp(name,`${dir}/source/${name}`,{recursive:true});
-  for(const name of ['package.json','package-lock.json','LICENSE','THIRD_PARTY.md','README.md','SECURITY.md','RELEASE_NOTES.md','dictionary-sources.json'])await cp(name,`${dir}/source/${name}`);
+  for(const name of ['package.json','package-lock.json','LICENSE','THIRD_PARTY.md','README.md','QUALITY.md','SECURITY.md','RELEASE_NOTES.md','dictionary-sources.json','lexicon-sources.json'])await cp(name,`${dir}/source/${name}`);
   const manifest=structuredClone(base);
   if(browser==='firefox') {
     delete manifest.version_name;

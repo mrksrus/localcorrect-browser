@@ -29,11 +29,16 @@ if (!globalThis.__localCorrect) {
   function notify(root, type) {
     root.dispatchEvent(new InputEvent('input', {bubbles: true, inputType: type, data: null}));
   }
+  function requireWholeTokens(text, start, end) {
+    const inside = position => (/[\p{L}\p{M}\p{N}_]$/u.test(text.slice(0,position)) && /^[\p{L}\p{M}\p{N}_]/u.test(text.slice(position))) || (/[\uD800-\uDBFF]$/.test(text.slice(0,position)) && /^[\uDC00-\uDFFF]/.test(text.slice(position)));
+    if (inside(start) || inside(end)) fail('Selection cuts through a word. Select complete words; no changes made.');
+  }
   function plainCorrect(root, options) {
     const before = root.value;
     if (before.length > 1000000) fail('Field is too large.');
     const start = root.selectionStart ?? 0, end = root.selectionEnd ?? 0;
     const a = start === end ? 0 : start, b = start === end ? before.length : end;
+    requireWholeTokens(before, a, b);
     const result = corrector.correct(before.slice(a, b), options);
     const protectedSpans = protectedRanges(before);
     const permitted = result.edits.filter(e => !protectedSpans.some(([x,y]) => a + e.offset < y && a + e.offset + e.length > x));
@@ -89,6 +94,10 @@ if (!globalThis.__localCorrect) {
       if (blocks.has(node.tagName)) separator();
     }
     visit(root);
+    if (range && pieces.length) {
+      const first = pieces[0], last = pieces[pieces.length-1];
+      requireWholeTokens(context, first.contextOffset, last.contextOffset + last.b - last.a);
+    }
     return {pieces, text, context};
   }
   function richCorrect(root, options) {

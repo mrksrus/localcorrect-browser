@@ -3,6 +3,28 @@
  * No upstream implementation code is included. See THIRD_PARTY.md.
  * SPDX-License-Identifier: GPL-3.0-only
  */
+
+import enLexicon from './lexicons/en.js';
+import deLexicon from './lexicons/de.js';
+const lexicalSources = {en: enLexicon, de: deLexicon};
+const validators = new Map();
+function lexical(language) {
+  if (!validators.has(language)) {
+    const source = lexicalSources[language];
+    if (typeof source !== 'string' || source.length < 100000) throw new Error('Bundled spelling-validity lexicon unavailable. No correction performed.');
+    const words = new Set(source.split('\n'));
+    if (words.size < 50000) throw new Error('Bundled spelling-validity lexicon incomplete. No correction performed.');
+    validators.set(language, {correct: word => words.has(word)});
+  }
+  return validators.get(language);
+}
+const capitalized = word => word[0].toLocaleUpperCase() + word.slice(1);
+function transposition(a, b) {
+  if (a.length !== b.length) return false;
+  for (let i = 0; i < a.length - 1; i++)
+    if (a[i] !== a[i+1] && a.slice(0,i)+a[i+1]+a[i]+a.slice(i+2) === b) return true;
+  return false;
+}
 const LIMIT = 20000;
 const MAX_WORDS = 3000;
 const PREFIX = 7;
@@ -74,7 +96,7 @@ function buildIndex(dict) {
 
 export function protectedRanges(text) {
   const ranges = [];
-  const expression = /(?:https?:\/\/|www\.)[^\s<>]+|[\p{L}\d._%+-]+@[\p{L}\d.-]+\.[\p{L}]{2,}|[\p{L}\d_.+/-]*\d[\p{L}\d_.+/-]*|\b[\p{L}]+(?:[_/\\][\p{L}\d]+)+\b|`[^`\n]*`/gu;
+  const expression = /(?:https?:\/\/|www\.)[^\s<>]+|[\p{L}\d._%+-]+@[\p{L}\d.-]+\.[\p{L}]{2,}|[\p{L}\p{M}\d_-]+(?:\.[\p{L}\p{M}\d_-]+)+|[\p{L}\d_.+/-]*\d[\p{L}\d_.+/-]*|\b[\p{L}]+(?:[_/\\][\p{L}\d]+)+\b|`[^`\n]*`/gu;
   for (const m of text.matchAll(expression)) ranges.push([m.index, m.index + m[0].length]);
   let offset = 0, tail = false;
   for (const line of text.split('\n')) {
@@ -104,6 +126,9 @@ export function createCorrector({en, de}) {
       if (!['conservative', 'balanced'].includes(mode)) throw new RangeError('Unknown mode');
       if (text.length > LIMIT) throw new RangeError('Text exceeds 20,000 UTF-16 code units. Select a smaller passage.');
       const dict = dictionaries[language];
+      // Mandatory broad validity layer; frequency absence is not a spelling error.
+      const spelling = lexical(language);
+      const valid = word => spelling.correct(word) || (language === 'de' && spelling.correct(capitalized(word)));
       const protectedSpans = protectedRanges(text);
       const edits = [];
       let skipped = 0, count = 0, work = 50000;
@@ -113,18 +138,24 @@ export function createCorrector({en, de}) {
         const original = match[0], start = match.index, end = start + original.length;
         const word = original.toLocaleLowerCase();
         if (protectedSpans.some(([a, b]) => start < b && end > a) ||
-            word.length < (mode === 'conservative' ? 5 : 4) || word.length > 24 ||
+            word.length < 3 || word.length > 24 ||
             /\p{M}/u.test(word) ||
             (original !== original.toLocaleLowerCase() && original !== original.toLocaleUpperCase() &&
              original.slice(1) !== original.slice(1).toLocaleLowerCase()) ||
             (original === original.toLocaleUpperCase() && original.length <= 5)) { skipped++; continue; }
-        if (dict.words.has(word)) continue;
-        // Unknown titlecase names are protected except at a sentence boundary.
+        if (dict.words.has(word) || valid(word)) continue;
+        // Unknown English titlecase tokens remain names even at selection start.
+        // German noun correction requires lexical casing plus determiner context.
         const titlecase = original[0] !== original[0].toLocaleLowerCase() && original !== original.toLocaleUpperCase();
         const sentenceStart = /(?:^|[.!?]\s*|\n\s*)$/u.test(text.slice(0, start));
-        if (titlecase && !sentenceStart) { skipped++; continue; }
-        if (lookups.has(word)) {
-          const replacement = lookups.get(word);
+        const nounContext = language === 'de' && titlecase && /\b(?:der|die|das|den|dem|des|ein|eine|einen|einem|einer|eines|ihre|ihren|ihrer|ihrem|ihr|unsere|unseren|meine|meinen|deine|deinen|seine|seinen)\s+$/iu.test(text.slice(0,start));
+        // A titlecase token at document/selection start alone is not typo evidence.
+        // Permit only a narrow formal-request shape (infinitive + Sie), not names.
+        const initialGerman = language === 'de' && titlecase && sentenceStart && /^\s+\p{Ll}+(?:en|ern|eln)\s+Sie\b/u.test(text.slice(end));
+        if (titlecase && !nounContext && !initialGerman) { skipped++; continue; }
+        const cacheKey = `${word}:${nounContext}:${initialGerman}`;
+        if (lookups.has(cacheKey)) {
+          const replacement = lookups.get(cacheKey);
           if (replacement) edits.push({offset: start, length: original.length, replacement: recase(original, replacement), original});
           else skipped++;
           continue;
@@ -141,24 +172,30 @@ export function createCorrector({en, de}) {
           }
           if (exhausted) break;
         }
-        if (exhausted) { lookups.set(word, null); skipped++; continue; }
+        if (exhausted) { lookups.set(cacheKey, null); skipped++; continue; }
         const ranked = [];
         for (const candidate of candidates) {
           if (--work < 0) { exhausted = true; break; }
           if (Math.abs(candidate.length - word.length) > distance) continue;
           const d = editDistance(word, candidate, distance);
-          if (d <= distance) ranked.push({word: candidate, d, f: dict.words.get(candidate)});
+          if (d > distance) continue;
+          if (!valid(candidate)) continue;
+          if (nounContext && !spelling.correct(capitalized(candidate))) continue;
+          if (initialGerman && !(valid(candidate) && transposition(word,candidate) && dict.words.get(candidate) >= 10000)) continue;
+          if (word.length < (mode === 'conservative' ? 5 : 4) && !(transposition(word,candidate) && dict.words.get(candidate) >= 100000)) continue;
+          ranked.push({word: candidate, d, f: dict.words.get(candidate)});
         }
-        if (exhausted) { lookups.set(word, null); skipped++; continue; }
+        if (exhausted) { lookups.set(cacheKey, null); skipped++; continue; }
         ranked.sort((a, b) => a.d - b.d || b.f - a.f || a.word.localeCompare(b.word));
         const best = ranked[0], second = ranked[1];
         // Frequency and ambiguity gates are heuristics, NOT confidence scores.
-        const minFrequency = mode === 'conservative' ? 1000 : 250;
+        const nounTranspose = nounContext && best && transposition(word,best.word);
+        const minFrequency = nounTranspose ? 100 : mode === 'conservative' ? 1000 : 250;
         const ratio = mode === 'conservative' ? 8 : 3;
         if (!best || best.f < minFrequency ||
             (second && second.d === best.d && best.f < second.f * ratio) ||
-            (best.d === 2 && best.f < 3000)) { lookups.set(word, null); skipped++; continue; }
-        lookups.set(word, best.word);
+            (best.d === 2 && best.f < 3000)) { lookups.set(cacheKey, null); skipped++; continue; }
+        lookups.set(cacheKey, best.word);
         edits.push({offset: start, length: original.length, replacement: recase(original, best.word), original});
       }
       let output = text;

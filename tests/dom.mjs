@@ -8,8 +8,9 @@ const dictionaries=Object.fromEntries(['en','de'].map(l=>[l,readFileSync(`packag
 const browser=await chromium.launch({headless:true,...(existsSync('/usr/bin/chromium')?{executablePath:'/usr/bin/chromium'}:{}),args:['--no-sandbox']});
 const page=await browser.newPage();
 const results=[];
-async function fixture(html){await page.goto('about:blank');await page.setContent(html);await page.addScriptTag({content:script});}
-async function correct(language='en'){return page.evaluate(({d,language})=>globalThis.__localCorrect.run(d,{action:'correct',language,mode:'balanced'}),{d:dictionaries,language});}
+let installed=false;
+async function fixture(html){await page.setContent(html);if(!installed){await page.addScriptTag({content:script});installed=true;}}
+async function correct(language='en',mode='balanced'){return page.evaluate(({d,language,mode})=>globalThis.__localCorrect.run(d,{action:'correct',language,mode}),{d:dictionaries,language,mode});}
 async function undo(){return page.evaluate(()=>globalThis.__localCorrect.run(null,{action:'undo'}));}
 async function check(name,fn){try{await fn();results.push({name,passed:true});console.log('PASS',name);}catch(error){results.push({name,passed:false,error:error.message});throw error;}}
 try {
@@ -57,6 +58,33 @@ await check('rich partial selection retains quote/signature context outside sele
 });
 await check('undo refuses field converted to password or readonly',async()=>{
  for(const change of ['password','readonly']){await fixture('<input id="t" value="recieve">');await page.locator('#t').focus();await correct();await page.locator('#t').evaluate((e,change)=>{if(change==='password')e.type='password';else e.readOnly=true;},change);await assert.rejects(undo(),/stale/);assert.equal(await page.locator('#t').inputValue(),'receive');}
+});
+await check('partial-token selections reject both ends, inline joins and combining marks',async()=>{
+ for(const [value,a,b] of [['friendship',0,5],['friendship',1,6],['friendship',1,10],['recieve\u0301',0,7],['recieve\u0301',7,8]]){
+  await fixture('<textarea id="t"></textarea>');await page.locator('#t').fill(value);
+  await page.evaluate(([a,b])=>document.querySelector('#t').setSelectionRange(a,b),[a,b]);
+  await assert.rejects(correct(),/complete words/);assert.equal(await page.locator('#t').inputValue(),value);
+ }
+ for(const [html,a,b] of [['friendship',0,5],['friendship',1,10],['<b>frien</b><i>dship</i>',0,5],['<b>f</b><i>riendship</i>',1,10],['<b>recieve</b><i>\u0301</i>',0,7]]){
+  await fixture(`<div id="t" contenteditable="true">${html}</div>`);await page.locator('#t').focus();
+  await page.evaluate(([a,b])=>{const t=document.querySelector('#t'),walk=document.createTreeWalker(t,NodeFilter.SHOW_TEXT),nodes=[];while(walk.nextNode())nodes.push(walk.currentNode);function point(p){for(const n of nodes){if(p<=n.length)return[n,p];p-=n.length;}}const r=document.createRange();r.setStart(...point(a));r.setEnd(...point(b));getSelection().removeAllRanges();getSelection().addRange(r);},[a,b]);
+  const before=await page.locator('#t').innerHTML();await assert.rejects(correct(),/complete words/);assert.equal(await page.locator('#t').innerHTML(),before);
+ }
+});
+await check('selection-initial names preserved in plain and rich adapters',async()=>{
+ for(const mode of ['balanced','conservative'])for(const name of ['Alyce','Harriett','Conners','Hasting','Wiesner','Meriel'])for(const rich of [false,true]){
+  const value=`${name} will send a message.`;
+  await fixture(rich?`<div id="t" contenteditable="true">${value}</div>`:`<textarea id="t">${value}</textarea>`);await page.locator('#t').focus();
+  await page.evaluate(({rich,name})=>{const t=document.querySelector('#t');if(rich){const r=document.createRange();r.setStart(t.firstChild,0);r.setEnd(t.firstChild,name.length);getSelection().removeAllRanges();getSelection().addRange(r);}else t.setSelectionRange(0,name.length);},{rich,name});
+  assert.equal((await correct('en',mode)).changed,0);assert.equal(rich?await page.locator('#t').textContent():await page.locator('#t').inputValue(),value);
+ }
+});
+await check('full sentence German nouns, valid inflections, undo and input events',async()=>{
+ for(const rich of [false,true]){
+  const value='Vielen Dank für Ihre Nachrihct. Die Bestätigungen werden morgen versendet.';
+  await fixture(rich?`<div id="t" contenteditable="true">${value}</div>`:`<textarea id="t">${value}</textarea>`);await page.locator('#t').focus();
+  assert.equal((await correct('de')).changed,1);assert.equal(rich?await page.locator('#t').textContent():await page.locator('#t').inputValue(),value.replace('Nachrihct','Nachricht'));await undo();assert.equal(rich?await page.locator('#t').textContent():await page.locator('#t').inputValue(),value);
+ }
 });
 await check('oversized input error leaves original text unchanged',async()=>{
  await fixture('<textarea id="t"></textarea>');const value='recieve '.repeat(3000);await page.locator('#t').fill(value);await assert.rejects(correct(),/20,000/);assert.equal(await page.locator('#t').inputValue(),value);
