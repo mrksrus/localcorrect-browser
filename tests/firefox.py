@@ -124,6 +124,22 @@ try:
     click('#password');shortcut('c');time.sleep(.4)
     assert script('return document.querySelector("#password").value')=='recieve'
     checks.append('Password fields remain untouched')
+    # Change bindings through the shipped options UI, never through a test API.
+    call('POST','/url',{'url':f'moz-extension://{extension_uuid}/options.html'})
+    wait_value('return document.getElementById("correct-text").value','Alt+Shift+C')
+    script('document.getElementById("correct-text").value="Alt+Shift+X";')
+    click('#save');wait_value('return document.getElementById("status").textContent','Shortcuts saved locally.')
+    call('POST','/url',{'url':url});click('#draft');shortcut('x')
+    wait_value('return document.querySelector("#draft").value','the document')
+    shortcut('z');wait_value('return document.querySelector("#draft").value','teh documetn')
+    checks.append('Saved custom Alt+Shift+X binding corrects through the shipped options UI; Undo still works')
+    call('POST','/url',{'url':f'moz-extension://{extension_uuid}/options.html'})
+    wait_value('return document.getElementById("correct-text").value','Alt+Shift+X')
+    click('#reset');wait_value('return document.getElementById("status").textContent','Default shortcuts restored.')
+    wait_value('return document.getElementById("correct-text").value','Alt+Shift+C')
+    call('POST','/url',{'url':url});click('#draft');shortcut('c')
+    wait_value('return document.querySelector("#draft").value','the document')
+    checks.append('Custom shortcut survives options reopening; Reset defaults restores working Alt+Shift+C')
     screenshot=call('GET','/screenshot');(RESULTS/'firefox-offline.png').write_bytes(base64.b64decode(screenshot))
     result={'passed':True,'browser':capabilities['browserVersion'],'geckodriver':capabilities.get('moz:geckodriverVersion'),'archive_sha256':archive_sha256,'checks':checks,
       'keyboard_dispatch':'WebDriver key actions in Firefox chrome context; no direct extension command dispatch or permission grant',

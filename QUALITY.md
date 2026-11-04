@@ -101,7 +101,8 @@ through temporary unsigned installation in a disposable profile with Internet
 blocked by a test proxy. WebDriver browser-UI key actions invoked the registered
 Alt+Shift+C / Alt+Shift+Z commands with the original shipped activeTab permissions.
 The checks cover whole textarea correction, Undo, saved German preferences,
-contenteditable, focused same-origin iframe and password refusal. There was no
+contenteditable, focused same-origin iframe, password refusal, and saving/resetting
+custom shortcuts through the shipped options UI. There was no
 direct extension-command emission or test-only site grant in this Firefox check.
 WebDriver content-context actions did not invoke browser shortcuts; the test
 therefore uses the documented UI automation context. This does not test physical
