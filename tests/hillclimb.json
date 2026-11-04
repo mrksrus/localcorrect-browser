@@ -1,0 +1,741 @@
+{
+  "description": "Synthetic development and holdout corpus frozen before this candidate was tuned. No personal correspondence. Holdout was evaluated after tuning and is now public regression data; it is not an unseen future benchmark.",
+  "cases": [
+    {
+      "id": "dev-de-correction-0",
+      "split": "dev",
+      "language": "de",
+      "kind": "correction",
+      "input": "Kannst du das bite prüfen?",
+      "expected": "Kannst du das bitte prüfen?"
+    },
+    {
+      "id": "dev-de-correction-1",
+      "split": "dev",
+      "language": "de",
+      "kind": "correction",
+      "input": "Ich wolte heute anfangen.",
+      "expected": "Ich wollte heute anfangen."
+    },
+    {
+      "id": "dev-de-correction-2",
+      "split": "dev",
+      "language": "de",
+      "kind": "correction",
+      "input": "Das funktionert wieder.",
+      "expected": "Das funktioniert wieder."
+    },
+    {
+      "id": "dev-de-correction-3",
+      "split": "dev",
+      "language": "de",
+      "kind": "correction",
+      "input": "Wir könenn morgen sprechen.",
+      "expected": "Wir können morgen sprechen."
+    },
+    {
+      "id": "dev-de-correction-4",
+      "split": "dev",
+      "language": "de",
+      "kind": "correction",
+      "input": "Bitte instalieren Sie das Programm.",
+      "expected": "Bitte installieren Sie das Programm."
+    },
+    {
+      "id": "dev-de-correction-5",
+      "split": "dev",
+      "language": "de",
+      "kind": "correction",
+      "input": "Ich habe die Nachrciht gelesen.",
+      "expected": "Ich habe die Nachricht gelesen."
+    },
+    {
+      "id": "dev-de-correction-6",
+      "split": "dev",
+      "language": "de",
+      "kind": "correction",
+      "input": "Viele Grüeß",
+      "expected": "Viele Grüße"
+    },
+    {
+      "id": "dev-de-correction-7",
+      "split": "dev",
+      "language": "de",
+      "kind": "correction",
+      "input": "Das ist wirklcih hilfreich.",
+      "expected": "Das ist wirklich hilfreich."
+    },
+    {
+      "id": "dev-de-correction-8",
+      "split": "dev",
+      "language": "de",
+      "kind": "correction",
+      "input": "Der Termin ist näcshten Mittwoch.",
+      "expected": "Der Termin ist nächsten Mittwoch."
+    },
+    {
+      "id": "dev-de-correction-9",
+      "split": "dev",
+      "language": "de",
+      "kind": "correction",
+      "input": "Ich benötige weitere Informatoinen.",
+      "expected": "Ich benötige weitere Informationen."
+    },
+    {
+      "id": "dev-de-correction-10",
+      "split": "dev",
+      "language": "de",
+      "kind": "correction",
+      "input": "Kanst du später anrufen?",
+      "expected": "Kannst du später anrufen?"
+    },
+    {
+      "id": "dev-de-correction-11",
+      "split": "dev",
+      "language": "de",
+      "kind": "correction",
+      "input": "Ich habe dir eine Eamil geschickt.",
+      "expected": "Ich habe dir eine E-Mail geschickt."
+    },
+    {
+      "id": "dev-en-correction-12",
+      "split": "dev",
+      "language": "en",
+      "kind": "correction",
+      "input": "Please chek the result.",
+      "expected": "Please check the result."
+    },
+    {
+      "id": "dev-en-correction-13",
+      "split": "dev",
+      "language": "en",
+      "kind": "correction",
+      "input": "I will definately attend.",
+      "expected": "I will definitely attend."
+    },
+    {
+      "id": "dev-en-correction-14",
+      "split": "dev",
+      "language": "en",
+      "kind": "correction",
+      "input": "Please send teh attachment.",
+      "expected": "Please send the attachment."
+    },
+    {
+      "id": "dev-en-correction-15",
+      "split": "dev",
+      "language": "en",
+      "kind": "correction",
+      "input": "We recieved the files.",
+      "expected": "We received the files."
+    },
+    {
+      "id": "dev-en-correction-16",
+      "split": "dev",
+      "language": "en",
+      "kind": "correction",
+      "input": "This is a commmon mistake.",
+      "expected": "This is a common mistake."
+    },
+    {
+      "id": "dev-en-correction-17",
+      "split": "dev",
+      "language": "en",
+      "kind": "correction",
+      "input": "I need a diferent version.",
+      "expected": "I need a different version."
+    },
+    {
+      "id": "dev-en-correction-18",
+      "split": "dev",
+      "language": "en",
+      "kind": "correction",
+      "input": "Please correct the sentnece.",
+      "expected": "Please correct the sentence."
+    },
+    {
+      "id": "dev-en-correction-19",
+      "split": "dev",
+      "language": "en",
+      "kind": "correction",
+      "input": "I am writting a message.",
+      "expected": "I am writing a message."
+    },
+    {
+      "id": "dev-en-correction-20",
+      "split": "dev",
+      "language": "en",
+      "kind": "correction",
+      "input": "I forgot the pasword.",
+      "expected": "I forgot the password."
+    },
+    {
+      "id": "dev-en-correction-21",
+      "split": "dev",
+      "language": "en",
+      "kind": "correction",
+      "input": "The applicaton is ready.",
+      "expected": "The application is ready."
+    },
+    {
+      "id": "dev-en-correction-22",
+      "split": "dev",
+      "language": "en",
+      "kind": "correction",
+      "input": "Thsi works well.",
+      "expected": "This works well."
+    },
+    {
+      "id": "dev-en-correction-23",
+      "split": "dev",
+      "language": "en",
+      "kind": "correction",
+      "input": "Please check the adress.",
+      "expected": "Please check the address."
+    },
+    {
+      "id": "dev-en-safe-24",
+      "split": "dev",
+      "language": "en",
+      "kind": "safe",
+      "input": "Use `recieve` and `seperate` unchanged.",
+      "expected": "Use `recieve` and `seperate` unchanged."
+    },
+    {
+      "id": "dev-en-safe-25",
+      "split": "dev",
+      "language": "en",
+      "kind": "safe",
+      "input": "```js\nconst recieve = \"seperate\";\n```",
+      "expected": "```js\nconst recieve = \"seperate\";\n```"
+    },
+    {
+      "id": "dev-en-safe-26",
+      "split": "dev",
+      "language": "en",
+      "kind": "safe",
+      "input": "Call recieve() and return its result.",
+      "expected": "Call recieve() and return its result."
+    },
+    {
+      "id": "dev-en-safe-27",
+      "split": "dev",
+      "language": "en",
+      "kind": "safe",
+      "input": "Ask @recieve about #seperate.",
+      "expected": "Ask @recieve about #seperate."
+    },
+    {
+      "id": "dev-en-safe-28",
+      "split": "dev",
+      "language": "en",
+      "kind": "safe",
+      "input": "Read /tmp/recieve and ~/seperate.",
+      "expected": "Read /tmp/recieve and ~/seperate."
+    },
+    {
+      "id": "dev-en-safe-29",
+      "split": "dev",
+      "language": "en",
+      "kind": "safe",
+      "input": "Use --seperate and --recieve flags.",
+      "expected": "Use --seperate and --recieve flags."
+    },
+    {
+      "id": "dev-en-safe-30",
+      "split": "dev",
+      "language": "en",
+      "kind": "safe",
+      "input": "The recipient is Recieve.",
+      "expected": "The recipient is Recieve."
+    },
+    {
+      "id": "dev-en-safe-31",
+      "split": "dev",
+      "language": "en",
+      "kind": "safe",
+      "input": "The prefix is customer_id and the method is myRecieveFunction.",
+      "expected": "The prefix is customer_id and the method is myRecieveFunction."
+    },
+    {
+      "id": "dev-en-safe-32",
+      "split": "dev",
+      "language": "en",
+      "kind": "safe",
+      "input": "Visit https://example.invalid/recieve or write to recieve@example.invalid.",
+      "expected": "Visit https://example.invalid/recieve or write to recieve@example.invalid."
+    },
+    {
+      "id": "dev-en-safe-33",
+      "split": "dev",
+      "language": "en",
+      "kind": "safe",
+      "input": "The user wrote \"recieve\" intentionally.",
+      "expected": "The user wrote \"recieve\" intentionally."
+    },
+    {
+      "id": "dev-en-safe-34",
+      "split": "dev",
+      "language": "en",
+      "kind": "safe",
+      "input": "That colour is my favourite.",
+      "expected": "That colour is my favourite."
+    },
+    {
+      "id": "dev-en-safe-35",
+      "split": "dev",
+      "language": "en",
+      "kind": "safe",
+      "input": "The address is correct.",
+      "expected": "The address is correct."
+    },
+    {
+      "id": "dev-de-safe-36",
+      "split": "dev",
+      "language": "de",
+      "kind": "safe",
+      "input": "Bitte starte das Deployment nach dem Merge.",
+      "expected": "Bitte starte das Deployment nach dem Merge."
+    },
+    {
+      "id": "dev-de-safe-37",
+      "split": "dev",
+      "language": "de",
+      "kind": "safe",
+      "input": "Ich brauche ein Backup vom Server.",
+      "expected": "Ich brauche ein Backup vom Server."
+    },
+    {
+      "id": "dev-de-safe-38",
+      "split": "dev",
+      "language": "de",
+      "kind": "safe",
+      "input": "Bitte grüße Quendelbach von mir.",
+      "expected": "Bitte grüße Quendelbach von mir."
+    },
+    {
+      "id": "dev-de-safe-39",
+      "split": "dev",
+      "language": "de",
+      "kind": "safe",
+      "input": "Die Datenschutzfolgenabschätzung ist fertig.",
+      "expected": "Die Datenschutzfolgenabschätzung ist fertig."
+    },
+    {
+      "id": "dev-de-safe-40",
+      "split": "dev",
+      "language": "de",
+      "kind": "safe",
+      "input": "Das Maß und die Größe bleiben gleich.",
+      "expected": "Das Maß und die Größe bleiben gleich."
+    },
+    {
+      "id": "dev-de-safe-41",
+      "split": "dev",
+      "language": "de",
+      "kind": "safe",
+      "input": "Der Nutzer heißt @nachrciht.",
+      "expected": "Der Nutzer heißt @nachrciht."
+    },
+    {
+      "id": "dev-de-safe-42",
+      "split": "dev",
+      "language": "de",
+      "kind": "safe",
+      "input": "Nutze `nachrciht` als Schlüssel.",
+      "expected": "Nutze `nachrciht` als Schlüssel."
+    },
+    {
+      "id": "dev-de-safe-43",
+      "split": "dev",
+      "language": "de",
+      "kind": "safe",
+      "input": "Bitte kopiere /tmp/nachrciht.",
+      "expected": "Bitte kopiere /tmp/nachrciht."
+    },
+    {
+      "id": "dev-de-safe-44",
+      "split": "dev",
+      "language": "de",
+      "kind": "safe",
+      "input": "Bitte senden Sie die Nachricht morgen.",
+      "expected": "Bitte senden Sie die Nachricht morgen."
+    },
+    {
+      "id": "dev-de-safe-45",
+      "split": "dev",
+      "language": "de",
+      "kind": "safe",
+      "input": "Ich möchte das nicht ändern.",
+      "expected": "Ich möchte das nicht ändern."
+    },
+    {
+      "id": "holdout-de-correction-46",
+      "split": "holdout",
+      "language": "de",
+      "kind": "correction",
+      "input": "Das ist wahrschienlich richtig.",
+      "expected": "Das ist wahrscheinlich richtig."
+    },
+    {
+      "id": "holdout-de-correction-47",
+      "split": "holdout",
+      "language": "de",
+      "kind": "correction",
+      "input": "Wir besprechen das gemiensam.",
+      "expected": "Wir besprechen das gemeinsam."
+    },
+    {
+      "id": "holdout-de-correction-48",
+      "split": "holdout",
+      "language": "de",
+      "kind": "correction",
+      "input": "Bitte schikce mir die Datei.",
+      "expected": "Bitte schicke mir die Datei."
+    },
+    {
+      "id": "holdout-de-correction-49",
+      "split": "holdout",
+      "language": "de",
+      "kind": "correction",
+      "input": "Die Verbidnung ist stabil.",
+      "expected": "Die Verbindung ist stabil."
+    },
+    {
+      "id": "holdout-de-correction-50",
+      "split": "holdout",
+      "language": "de",
+      "kind": "correction",
+      "input": "Ich habe die Änderugn gespeichert.",
+      "expected": "Ich habe die Änderung gespeichert."
+    },
+    {
+      "id": "holdout-de-correction-51",
+      "split": "holdout",
+      "language": "de",
+      "kind": "correction",
+      "input": "Das ist ein wichitger Hinweis.",
+      "expected": "Das ist ein wichtiger Hinweis."
+    },
+    {
+      "id": "holdout-de-correction-52",
+      "split": "holdout",
+      "language": "de",
+      "kind": "correction",
+      "input": "Wir müssen die Einstellungen überprfuen.",
+      "expected": "Wir müssen die Einstellungen überprüfen."
+    },
+    {
+      "id": "holdout-de-correction-53",
+      "split": "holdout",
+      "language": "de",
+      "kind": "correction",
+      "input": "Der Bericht ist fertgi.",
+      "expected": "Der Bericht ist fertig."
+    },
+    {
+      "id": "holdout-de-correction-54",
+      "split": "holdout",
+      "language": "de",
+      "kind": "correction",
+      "input": "Bitte verscuhe es erneut.",
+      "expected": "Bitte versuche es erneut."
+    },
+    {
+      "id": "holdout-de-correction-55",
+      "split": "holdout",
+      "language": "de",
+      "kind": "correction",
+      "input": "Das dauert ungefährr eine Stunde.",
+      "expected": "Das dauert ungefähr eine Stunde."
+    },
+    {
+      "id": "holdout-de-correction-56",
+      "split": "holdout",
+      "language": "de",
+      "kind": "correction",
+      "input": "Ich bin mit dem Ergenbis zufrieden.",
+      "expected": "Ich bin mit dem Ergebnis zufrieden."
+    },
+    {
+      "id": "holdout-de-correction-57",
+      "split": "holdout",
+      "language": "de",
+      "kind": "correction",
+      "input": "Bitte bestätige den Empfagn.",
+      "expected": "Bitte bestätige den Empfang."
+    },
+    {
+      "id": "holdout-en-correction-58",
+      "split": "holdout",
+      "language": "en",
+      "kind": "correction",
+      "input": "Please update the documment.",
+      "expected": "Please update the document."
+    },
+    {
+      "id": "holdout-en-correction-59",
+      "split": "holdout",
+      "language": "en",
+      "kind": "correction",
+      "input": "The report is availble now.",
+      "expected": "The report is available now."
+    },
+    {
+      "id": "holdout-en-correction-60",
+      "split": "holdout",
+      "language": "en",
+      "kind": "correction",
+      "input": "We need to remvoe this section.",
+      "expected": "We need to remove this section."
+    },
+    {
+      "id": "holdout-en-correction-61",
+      "split": "holdout",
+      "language": "en",
+      "kind": "correction",
+      "input": "I will forward the attachement.",
+      "expected": "I will forward the attachment."
+    },
+    {
+      "id": "holdout-en-correction-62",
+      "split": "holdout",
+      "language": "en",
+      "kind": "correction",
+      "input": "Please answer the questoin.",
+      "expected": "Please answer the question."
+    },
+    {
+      "id": "holdout-en-correction-63",
+      "split": "holdout",
+      "language": "en",
+      "kind": "correction",
+      "input": "This is a usefull tool.",
+      "expected": "This is a useful tool."
+    },
+    {
+      "id": "holdout-en-correction-64",
+      "split": "holdout",
+      "language": "en",
+      "kind": "correction",
+      "input": "We should improove the result.",
+      "expected": "We should improve the result."
+    },
+    {
+      "id": "holdout-en-correction-65",
+      "split": "holdout",
+      "language": "en",
+      "kind": "correction",
+      "input": "Please include the requiered file.",
+      "expected": "Please include the required file."
+    },
+    {
+      "id": "holdout-en-correction-66",
+      "split": "holdout",
+      "language": "en",
+      "kind": "correction",
+      "input": "The probelm is resolved.",
+      "expected": "The problem is resolved."
+    },
+    {
+      "id": "holdout-en-correction-67",
+      "split": "holdout",
+      "language": "en",
+      "kind": "correction",
+      "input": "The transfer was sucessful.",
+      "expected": "The transfer was successful."
+    },
+    {
+      "id": "holdout-en-correction-68",
+      "split": "holdout",
+      "language": "en",
+      "kind": "correction",
+      "input": "This is an independant project.",
+      "expected": "This is an independent project."
+    },
+    {
+      "id": "holdout-en-correction-69",
+      "split": "holdout",
+      "language": "en",
+      "kind": "correction",
+      "input": "The software was updtaed.",
+      "expected": "The software was updated."
+    },
+    {
+      "id": "holdout-en-safe-70",
+      "split": "holdout",
+      "language": "en",
+      "kind": "safe",
+      "input": "```python\nseperate = recieve\nprint(seperate)\n```",
+      "expected": "```python\nseperate = recieve\nprint(seperate)\n```"
+    },
+    {
+      "id": "holdout-en-safe-71",
+      "split": "holdout",
+      "language": "en",
+      "kind": "safe",
+      "input": "The endpoint is ftp://example.invalid/recieve.",
+      "expected": "The endpoint is ftp://example.invalid/recieve."
+    },
+    {
+      "id": "holdout-en-safe-72",
+      "split": "holdout",
+      "language": "en",
+      "kind": "safe",
+      "input": "The identifier is recieve-value.",
+      "expected": "The identifier is recieve-value."
+    },
+    {
+      "id": "holdout-en-safe-73",
+      "split": "holdout",
+      "language": "en",
+      "kind": "safe",
+      "input": "Set receive_count to zero.",
+      "expected": "Set receive_count to zero."
+    },
+    {
+      "id": "holdout-en-safe-74",
+      "split": "holdout",
+      "language": "en",
+      "kind": "safe",
+      "input": "Please preserve this: const recieved = true;",
+      "expected": "Please preserve this: const recieved = true;"
+    },
+    {
+      "id": "holdout-en-safe-75",
+      "split": "holdout",
+      "language": "en",
+      "kind": "safe",
+      "input": "The file is nested.recieve.txt.",
+      "expected": "The file is nested.recieve.txt."
+    },
+    {
+      "id": "holdout-en-safe-76",
+      "split": "holdout",
+      "language": "en",
+      "kind": "safe",
+      "input": "Contact Alice and Zephyr tomorrow.",
+      "expected": "Contact Alice and Zephyr tomorrow."
+    },
+    {
+      "id": "holdout-en-safe-77",
+      "split": "holdout",
+      "language": "en",
+      "kind": "safe",
+      "input": "The organisation requires authorisation.",
+      "expected": "The organisation requires authorisation."
+    },
+    {
+      "id": "holdout-en-safe-78",
+      "split": "holdout",
+      "language": "en",
+      "kind": "safe",
+      "input": "We will not remove the backup.",
+      "expected": "We will not remove the backup."
+    },
+    {
+      "id": "holdout-en-safe-79",
+      "split": "holdout",
+      "language": "en",
+      "kind": "safe",
+      "input": "The selection contains https://example.invalid/teh?word=adress.",
+      "expected": "The selection contains https://example.invalid/teh?word=adress."
+    },
+    {
+      "id": "holdout-en-safe-80",
+      "split": "holdout",
+      "language": "en",
+      "kind": "safe",
+      "input": "I can read this message clearly.",
+      "expected": "I can read this message clearly."
+    },
+    {
+      "id": "holdout-en-safe-81",
+      "split": "holdout",
+      "language": "en",
+      "kind": "safe",
+      "input": "The value is 12.50 and the code is AX-1234.",
+      "expected": "The value is 12.50 and the code is AX-1234."
+    },
+    {
+      "id": "holdout-de-safe-82",
+      "split": "holdout",
+      "language": "de",
+      "kind": "safe",
+      "input": "Die Freundlichkeit und Zuverlässigkeit sind wichtig.",
+      "expected": "Die Freundlichkeit und Zuverlässigkeit sind wichtig."
+    },
+    {
+      "id": "holdout-de-safe-83",
+      "split": "holdout",
+      "language": "de",
+      "kind": "safe",
+      "input": "Wir benötigen eine Auftragsverarbeitungsvereinbarung.",
+      "expected": "Wir benötigen eine Auftragsverarbeitungsvereinbarung."
+    },
+    {
+      "id": "holdout-de-safe-84",
+      "split": "holdout",
+      "language": "de",
+      "kind": "safe",
+      "input": "Bitte ergänze den Unit-Test nach dem Review.",
+      "expected": "Bitte ergänze den Unit-Test nach dem Review."
+    },
+    {
+      "id": "holdout-de-safe-85",
+      "split": "holdout",
+      "language": "de",
+      "kind": "safe",
+      "input": "Herr Wiesenbrück kommt später.",
+      "expected": "Herr Wiesenbrück kommt später."
+    },
+    {
+      "id": "holdout-de-safe-86",
+      "split": "holdout",
+      "language": "de",
+      "kind": "safe",
+      "input": "Das Kennwort lautet `nachrihct`.",
+      "expected": "Das Kennwort lautet `nachrihct`."
+    },
+    {
+      "id": "holdout-de-safe-87",
+      "split": "holdout",
+      "language": "de",
+      "kind": "safe",
+      "input": "Der Name der Datei ist Nachrihct.txt.",
+      "expected": "Der Name der Datei ist Nachrihct.txt."
+    },
+    {
+      "id": "holdout-de-safe-88",
+      "split": "holdout",
+      "language": "de",
+      "kind": "safe",
+      "input": "Am Dienstag schrieb Anna:\nnachrciht",
+      "expected": "Am Dienstag schrieb Anna:\nnachrciht"
+    },
+    {
+      "id": "holdout-de-safe-89",
+      "split": "holdout",
+      "language": "de",
+      "kind": "safe",
+      "input": "> nachrciht\n> besipiel",
+      "expected": "> nachrciht\n> besipiel"
+    },
+    {
+      "id": "holdout-de-safe-90",
+      "split": "holdout",
+      "language": "de",
+      "kind": "safe",
+      "input": "Straße, Grüße, Füße und Größe sind richtig.",
+      "expected": "Straße, Grüße, Füße und Größe sind richtig."
+    },
+    {
+      "id": "holdout-de-safe-91",
+      "split": "holdout",
+      "language": "de",
+      "kind": "safe",
+      "input": "Ich werde die Daten keinesfalls löschen.",
+      "expected": "Ich werde die Daten keinesfalls löschen."
+    }
+  ]
+}

@@ -2,20 +2,28 @@ import {createCorrector, protectedRanges} from '../packages/core/src/index.js';
 
 // Isolated world, no page globals or network correction. Retain one undo only.
 if (!globalThis.__localCorrect) {
-  let corrector, undoState;
+  let corrector, undoState, pending, sequence = 0;
   const allowedTypes = new Set(['text', 'search']);
   const forbidden = 'blockquote,pre,code,script,style,[contenteditable="false"],[data-localcorrect-ignore],.gmail_quote,.gmail_signature,.moz-signature,.moz-cite-prefix,#divRplyFwdMsg,[data-signature]';
   const blocks = new Set(['DIV', 'P', 'LI', 'UL', 'OL', 'SECTION', 'ARTICLE', 'H1', 'H2', 'H3']);
   const fail = message => { throw new Error(message); };
   function editable() {
-    const active = document.activeElement;
+    let active = document.activeElement;
+    for (let depth = 0; active && /^(?:IFRAME|FRAME)$/.test(active.tagName); depth++) {
+      if (depth >= 8) fail('The focused editor is nested too deeply.');
+      let child;
+      try {child = active.contentDocument;} catch { /* Cross-origin frame remains protected. */ }
+      if (!child) fail('This embedded editor is not accessible. Open it directly in its own tab.');
+      active = child.activeElement;
+    }
     if (!active || !active.isConnected) fail('Focus a supported editable field first.');
-    if (active instanceof HTMLInputElement) {
+    const realm = active.ownerDocument.defaultView;
+    if (active instanceof realm.HTMLInputElement) {
       if (!allowedTypes.has(active.type)) fail('Only text and search inputs are supported. Password, email, URL and numeric fields are excluded.');
       if (active.disabled || active.readOnly || active.matches(':disabled') || active.closest('[inert]') || active.closest(forbidden) || active.getAttribute('aria-readonly') === 'true') fail('This field is disabled, protected or read-only.');
       return {root: active, plain: true};
     }
-    if (active instanceof HTMLTextAreaElement) {
+    if (active instanceof realm.HTMLTextAreaElement) {
       if (active.disabled || active.readOnly || active.matches(':disabled') || active.closest('[inert]') || active.closest(forbidden) || active.getAttribute('aria-readonly') === 'true') fail('This field is disabled, protected or read-only.');
       return {root: active, plain: true};
     }
@@ -27,7 +35,7 @@ if (!globalThis.__localCorrect) {
     return {root, plain: false};
   }
   function notify(root, type) {
-    root.dispatchEvent(new InputEvent('input', {bubbles: true, inputType: type, data: null}));
+    root.dispatchEvent(new root.ownerDocument.defaultView.InputEvent('input', {bubbles: true, inputType: type, data: null}));
   }
   function requireWholeTokens(text, start, end) {
     const inside = position => (/[\p{L}\p{M}\p{N}_]$/u.test(text.slice(0,position)) && /^[\p{L}\p{M}\p{N}_]/u.test(text.slice(position))) || (/[\uD800-\uDBFF]$/.test(text.slice(0,position)) && /^[\uDC00-\uDFFF]/.test(text.slice(position)));
@@ -48,7 +56,8 @@ if (!globalThis.__localCorrect) {
     for (const e of [...permitted].reverse()) result.text = result.text.slice(0,e.offset) + e.replacement + result.text.slice(e.offset+e.length);
     if (result.edits.length) {
       const after = before.slice(0, a) + result.text + before.slice(b);
-      const setter = Object.getOwnPropertyDescriptor(root instanceof HTMLTextAreaElement ? HTMLTextAreaElement.prototype : HTMLInputElement.prototype, 'value').set;
+      const realm = root.ownerDocument.defaultView;
+      const setter = Object.getOwnPropertyDescriptor(root instanceof realm.HTMLTextAreaElement ? realm.HTMLTextAreaElement.prototype : realm.HTMLInputElement.prototype, 'value').set;
       setter.call(root, after);
       root.setSelectionRange(a, a + result.text.length);
       undoState = {root, plain: true, before, after, start, end, setter};
@@ -57,7 +66,7 @@ if (!globalThis.__localCorrect) {
     return result;
   }
   function collect(root) {
-    const selection = window.getSelection();
+    const selection = root.ownerDocument.defaultView.getSelection();
     let range;
     if (selection?.rangeCount && !selection.isCollapsed) {
       range = selection.getRangeAt(0);
@@ -149,7 +158,7 @@ if (!globalThis.__localCorrect) {
     if (!state) fail('There is no correction to undo in this tab.');
     const {root} = state;
     if (!root.isConnected || root.disabled || root.readOnly || root.matches(':disabled') || root.closest('[inert]') || root.closest(forbidden) || root.getAttribute('aria-readonly') === 'true' ||
-        (state.plain && root instanceof HTMLInputElement && !allowedTypes.has(root.type)) ||
+        (state.plain && root instanceof root.ownerDocument.defaultView.HTMLInputElement && !allowedTypes.has(root.type)) ||
         (!state.plain && (!root.isContentEditable || root.closest(forbidden)))) { undoState = null; fail('Undo is stale: the editable field is no longer available.'); }
     if (state.plain) {
       if (root.value !== state.after) { undoState = null; fail('Undo is stale: the text changed after correction.'); }
@@ -166,9 +175,28 @@ if (!globalThis.__localCorrect) {
     return {undone: true};
   }
   globalThis.__localCorrect = {
+    capture() {
+      const target = editable(), root = target.root;
+      const selection = root.ownerDocument.defaultView.getSelection();
+      pending = {id: ++sequence, ...target, before: target.plain ? root.value : root.innerHTML,
+        start: target.plain ? root.selectionStart : null, end: target.plain ? root.selectionEnd : null,
+        anchorNode: selection?.anchorNode, anchorOffset: selection?.anchorOffset,
+        focusNode: selection?.focusNode, focusOffset: selection?.focusOffset};
+      return pending.id;
+    },
     run(dictionaries, options) {
       if (options.action === 'undo') return undo();
       const target = editable();
+      if (options.operationId !== undefined) {
+        const captured = pending;
+        pending = null;
+        const root = target.root, selection = root.ownerDocument.defaultView.getSelection();
+        if (!captured || captured.id !== options.operationId || captured.root !== root || captured.plain !== target.plain ||
+            captured.before !== (target.plain ? root.value : root.innerHTML) ||
+            (target.plain && (captured.start !== root.selectionStart || captured.end !== root.selectionEnd)) ||
+            (!target.plain && (captured.anchorNode !== selection?.anchorNode || captured.anchorOffset !== selection?.anchorOffset || captured.focusNode !== selection?.focusNode || captured.focusOffset !== selection?.focusOffset)))
+          fail('The field or selection changed while LocalCorrect was loading. No changes made; try the shortcut again.');
+      }
       if (!corrector) corrector = createCorrector(dictionaries);
       const result = target.plain ? plainCorrect(target.root, options) : richCorrect(target.root, options);
       return {changed: result.edits.length, skipped: result.skipped};

@@ -89,5 +89,26 @@ await check('full sentence German nouns, valid inflections, undo and input event
 await check('oversized input error leaves original text unchanged',async()=>{
  await fixture('<textarea id="t"></textarea>');const value='recieve '.repeat(3000);await page.locator('#t').fill(value);await assert.rejects(correct(),/20,000/);assert.equal(await page.locator('#t').inputValue(),value);
 });
+await check('captured target refuses typing, changed selection, focus switch and replay',async()=>{
+ for(const change of ['typing','selection','focus']) {
+  await fixture('<textarea id="t">recieve seperate</textarea><textarea id="other">recieve</textarea>');await page.locator('#t').focus();
+  const operationId=await page.evaluate(()=>globalThis.__localCorrect.capture());
+  await page.evaluate(change=>{const t=document.querySelector('#t');if(change==='typing')t.value='new user text';else if(change==='selection')t.setSelectionRange(0,7);else document.querySelector('#other').focus();},change);
+  const before=await page.locator('#t').inputValue();
+  await assert.rejects(page.evaluate(({d,id})=>globalThis.__localCorrect.run(d,{action:'correct',language:'en',mode:'balanced',operationId:id}),{d:dictionaries,id:operationId}),/changed while/);
+  assert.equal(await page.locator('#t').inputValue(),before);assert.equal(await page.locator('#other').inputValue(),'recieve');
+ }
+ await fixture('<textarea id="t">recieve</textarea>');await page.locator('#t').focus();
+ const operationId=await page.evaluate(()=>globalThis.__localCorrect.capture());
+ assert.equal((await page.evaluate(({d,id})=>globalThis.__localCorrect.run(d,{action:'correct',language:'en',mode:'balanced',operationId:id}),{d:dictionaries,id:operationId})).changed,1);
+ await assert.rejects(page.evaluate(({d,id})=>globalThis.__localCorrect.run(d,{action:'correct',language:'en',mode:'balanced',operationId:id}),{d:dictionaries,id:operationId}),/changed while/);
+});
+await check('focused same-origin iframe uses its own field realm and preserves undo',async()=>{
+ await fixture('<iframe id="child" srcdoc="<textarea id=t>recieve seperate</textarea>"></iframe>');
+ const frame=page.frameLocator('#child');await frame.locator('#t').focus();
+ const operationId=await page.evaluate(()=>globalThis.__localCorrect.capture());
+ assert.equal((await page.evaluate(({d,id})=>globalThis.__localCorrect.run(d,{action:'correct',language:'en',mode:'balanced',operationId:id}),{d:dictionaries,id:operationId})).changed,2);
+ assert.equal(await frame.locator('#t').inputValue(),'receive separate');await undo();assert.equal(await frame.locator('#t').inputValue(),'recieve seperate');
+});
 } finally {mkdirSync('test-results',{recursive:true});writeFileSync('test-results/dom.json',JSON.stringify(results,null,2)+'\n');await browser.close();}
 console.log(`${results.length} real Chromium DOM scenarios passed.`);

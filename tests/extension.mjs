@@ -3,7 +3,7 @@ import {existsSync,readFileSync,writeFileSync,mkdirSync,cpSync,rmSync} from 'nod
 import assert from 'node:assert/strict';
 const executable=existsSync('/usr/bin/chromium')?'/usr/bin/chromium':chromium.executablePath();
 const shipping=JSON.parse(readFileSync('build/chrome/manifest.json','utf8'));
-assert.deepEqual(shipping.permissions,['activeTab','scripting']);assert.equal(shipping.host_permissions,undefined);assert.equal(shipping.content_scripts,undefined);
+assert.deepEqual(shipping.permissions,['activeTab','scripting','storage']);assert.equal(shipping.host_permissions,undefined);assert.equal(shipping.content_scripts,undefined);
 async function launch(path,profile){
  rmSync(profile,{recursive:true,force:true});
  const context=await chromium.launchPersistentContext(profile,{headless:true,executablePath:executable,args:['--no-sandbox',`--disable-extensions-except=${path}`,`--load-extension=${path}`]});

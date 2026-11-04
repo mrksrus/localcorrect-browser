@@ -1,8 +1,11 @@
-# LocalCorrect — 1.0.0-rc.1
+# LocalCorrect 1.0.0-rc.2
 
-A manual, local-only typo corrector for English and German. Open the toolbar
-popup, choose text language and **Conservative** or **Normal**, and click
-**Correct**. Nonempty selections within a supported field are corrected; with
+A manual, local-only typo corrector for English and German. Press **Alt+Shift+C**
+in a focused editable field to correct it. **Alt+Shift+Z** undoes the last change.
+Open the toolbar popup to select English or German, choose **Conservative** or
+**Normal**, or use the **Correct** button. Use **Edit shortcuts** for editable
+Firefox bindings. Chrome bindings are managed at `chrome://extensions/shortcuts`.
+Nonempty selections within a supported field are corrected; with
 no selection, the focused field is used. **Undo** reverts the last correction
 in that tab only if its snapshot is still current. Review changes before sending.
 This is a release candidate, not a production-quality or perfect proofreader.
@@ -10,25 +13,29 @@ This is a release candidate, not a production-quality or perfect proofreader.
 ## Support and boundaries
 
 - Chromium/Chrome 120+ MV3 and Firefox 140+ MV3 builds. Chrome DOM and unpacked
-  extension paths are tested locally with Chromium. Firefox packaging is checked
-  statically; a real Firefox install/signing review is still needed.
+  extension paths are tested locally with Chromium. Firefox runtime evidence and any remaining limitations are recorded in QUALITY.md.
+  Mozilla signing and compatibility with arbitrary production editors are separate checks.
 - Supports text/search inputs, textareas, and contenteditable with ordinary
   inline markup and paragraphs. Inline elements are retained; text replacements
   spanning inline nodes distribute replacement characters across those nodes.
 - Password/email/URL/number/date/etc. inputs, disabled/read-only fields,
   embedded rich content (images/tables/widgets), browser-internal pages, extension
   stores, inaccessible frames, and shadow-DOM editors are **not supported**.
-  Only the active top-level document is targeted. No fallback replaces rich HTML.
+  The focused same-origin iframe can be targeted. Cross-origin frames remain
+  inaccessible. No fallback replaces rich HTML.
 - Quoted lines (`>`), recognized reply-header tails and `--` signature tails
   are left alone. Known quote/signature DOM containers and links/code are skipped.
   Other signature layouts, names and identifiers cannot be reliably recognized:
   select only the new prose when in doubt. English unknown titlecase tokens are
-  protected even at selection start. German titlecase correction needs a preceding
+  protected even at selection start, except for a narrow sentence-initial `Thsi`
+  rule before common predicates. German titlecase correction needs a preceding
   determiner/possessive and a lexically accepted capitalized candidate; a narrow
   high-frequency transposition rule also handles initial formal German requests
   followed by an infinitive and “Sie”. A sentence boundary alone is not evidence.
-  This is a
-  heuristic, not reliable name or part-of-speech recognition.
+  This is a heuristic, not reliable name or part-of-speech recognition. Narrow rules also
+  recognize sentence-initial `Kanst du` and feminine noun-context `Eamil`.
+  Fenced code, inline backticks, paths, handles, flags and common technical
+  identifiers are protected; arbitrary code or proper names cannot be identified perfectly.
 - Preserves original whitespace, case pattern, emails, URLs, numbers and common
   identifiers and dotted filenames. Partial-token selections at either boundary
   are rejected without edits, including across inline nodes/combining marks.
@@ -50,28 +57,32 @@ This is a release candidate, not a production-quality or perfect proofreader.
 
 ## Install unsigned test packages
 
-`dist/localcorrect-chrome-1.0.0-rc.1.zip`: unzip, open `chrome://extensions`, enable
+`dist/localcorrect-chrome-1.0.0-rc.2.zip`: unzip, open `chrome://extensions`, enable
 Developer mode, **Load unpacked**, select the extracted folder. Enable file URL
 access explicitly if testing local files. A ZIP is not a Chrome Web Store install.
 
-`dist/localcorrect-firefox-1.0.0-rc.1.zip`: unsigned development archive. In standard
+`dist/localcorrect-firefox-1.0.0-rc.2.zip`: unsigned development archive. In standard
 Firefox use `about:debugging` → This Firefox → Load Temporary Add-on → manifest.json
 from the extracted folder. Temporary installs disappear after restart. Normal
 permanent installation requires Mozilla signing/distribution; this project does
 not claim the unsigned ZIP installs permanently in release Firefox.
 
-The numeric manifest version is `0.9.0.1` for this prerelease (Chrome additionally
-shows `version_name: 1.0.0-rc.1`); final 1.0.0 is deliberately not released.
+The numeric manifest version is `0.9.0.2` for this prerelease (Chrome additionally
+shows `version_name: 1.0.0-rc.2`); final 1.0.0 is deliberately not released.
 
 ## Privacy and permissions
 
 No telemetry, analytics, cloud API, LLM, correction network service or logging of
 text. Both dictionaries and executable code ship in each ZIP. `activeTab` and
-`scripting` are requested only to perform an explicit toolbar action; no permanent
-all-sites/content-script registration or background monitoring. Text stays in the
-current browser tab and its extension isolated world. One undo snapshot is held
-in that tab's memory until overwritten/navigation. Interface/language/mode choices
-are saved in extension localStorage; document text is not stored there. The host
+`scripting` let an explicit shortcut or toolbar action access the active tab.
+`storage` keeps language, mode, interface and shortcut preferences. There is no
+permanent all-sites/content-script registration or typing monitor. A background
+handler waits for explicit extension commands and popup messages. Text stays in the
+current browser tab and its extension isolated world. A captured operation and one
+undo snapshot are held in that tab's memory until
+overwritten/navigation. If focus, selection or content changes while resources
+load, the operation refuses to apply stale results. Interface/language/mode choices
+are saved in extension storage.local; document text is not stored there. The host
 website and browser can independently send data; LocalCorrect does not control
 that. No claims are made about other extensions or the host editor's privacy.
 
@@ -86,7 +97,9 @@ this release. The extension smoke test loads the shipping unpacked package and v
 its UI/resources/errors. Its synthetic end-to-end injection harness adds a
 **test-only** fixture-origin host grant to substitute for a headless toolbar
 activeTab gesture; that grant is never shipped. A real toolbar permission gesture
-and Firefox behavior still require manual testing. Maintainer-only dictionary
+still requires manual testing on the target desktop. The optional Firefox test
+uses official Firefox and geckodriver with a disposable profile, synthetic localhost
+fields and Internet blocked by a test proxy. See QUALITY.md for its exact result. Maintainer-only dictionary
 refresh: `python scripts/dictionaries.py`.
 Build/test dependencies are not required at runtime.
 
@@ -111,3 +124,7 @@ or storage dependency. Offsets and lengths refer to UTF-16 positions in the
 spans is preserved exactly. See THIRD_PARTY.md for algorithm and data provenance.
 Program and selected German lexicon license: GPL-3.0. Frequency data: CC BY-SA 4.0.
 English lexicon/component notices: MIT/BSD; nspell/is-buffer: MIT. See THIRD_PARTY.md.
+
+`npm run evaluate` reproduces the current 92-case development/holdout report in
+`test-results/hillclimb.json`. These are synthetic examples, not personal messages.
+The engine uses bundled dictionaries and explicit rules, not neural inference or training.

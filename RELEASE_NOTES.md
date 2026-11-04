@@ -1,3 +1,19 @@
+# 1.0.0-rc.2 candidate
+
+- Add manual Alt+Shift+C correction and Alt+Shift+Z Undo commands, saved settings,
+  editable Firefox shortcuts and background execution independent of popup lifetime.
+- Capture the focused target before dictionary loading; reject changed content,
+  selection, focus and replayed operations. Support focused same-origin frames.
+- Report action failures through the toolbar badge/title and popup.
+- Protect fenced code, backticks, paths, handles, flags, technical names and more
+  identifiers; add narrow context rules for common initial EN/DE typos.
+- Reduce lexical initialization memory using exact sorted-string lookup.
+- Preserve a reproducible synthetic development/holdout comparison. See QUALITY.md.
+
+This remains a spelling corrector with explicit rules. It does not perform
+contextual grammar correction and does not guarantee error-free output.
+Unsigned Firefox archives require temporary loading or Mozilla signing.
+
 # 1.0.0-rc.1
 
 First release candidate (not final 1.0).
@@ -26,7 +42,7 @@ Independent-review fixes (same RC designation):
 
 Known limits: no contextual grammar or real-word correction; corpus noise;
 heuristic proper-name/signature recognition; some German noun typos skipped;
-unsupported complex/embedded rich editors, subframes and shadow DOM; synthetic
+unsupported complex/embedded rich editors, cross-origin frames and shadow DOM; synthetic
 input may not integrate with all frameworks; first dictionary index is synchronous.
 Firefox unsigned ZIP requires temporary loading or subsequent Mozilla signing.
 Actual Firefox behavior and store acceptance are not verified. See README.

@@ -2,7 +2,9 @@
 
 This release candidate changes user-selected or focused draft text only after
 an explicit action. It has no network correction, telemetry, remotely loaded
-code, background listeners or permanent host permission. It does not promise
+code or permanent host permission. Background listeners accept only explicit
+keyboard commands and same-extension popup actions; there is no typing listener.
+Settings use extension storage.local, never document-text storage. It does not promise
 perfect detection of names, signatures or all unsupported editors.
 
 Never rely on automatic correction for passwords, addresses, legal/medical

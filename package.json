@@ -1,6 +1,6 @@
 {
   "name": "localcorrect-browser",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "private": true,
   "type": "module",
   "workspaces": [
@@ -8,10 +8,11 @@
   ],
   "scripts": {
     "build": "node scripts/build.mjs",
-    "test": "node scripts/build.mjs && node --test tests/core.test.mjs tests/review.test.mjs && node tests/dom.mjs && node tests/extension.mjs",
-    "test:core": "node --test tests/core.test.mjs tests/review.test.mjs",
+    "test": "node scripts/build.mjs && node --test tests/core.test.mjs tests/review.test.mjs tests/core-quality.test.mjs tests/shortcut.test.mjs && node tests/dom.mjs && node tests/extension.mjs",
+    "test:core": "node --test tests/core.test.mjs tests/review.test.mjs tests/core-quality.test.mjs",
     "test:dom": "node tests/dom.mjs",
-    "check": "npm test && npm run build && node scripts/verify.mjs"
+    "check": "npm test && npm run build && node scripts/verify.mjs",
+    "evaluate": "node tests/hillclimb.mjs"
   },
   "devDependencies": {
     "dictionary-de": "3.0.0",

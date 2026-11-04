@@ -12,9 +12,36 @@ function lexical(language) {
   if (!validators.has(language)) {
     const source = lexicalSources[language];
     if (typeof source !== 'string' || source.length < 100000) throw new Error('Bundled spelling-validity lexicon unavailable. No correction performed.');
-    const words = new Set(source.split('\n'));
-    if (words.size < 50000) throw new Error('Bundled spelling-validity lexicon incomplete. No correction performed.');
-    validators.set(language, {correct: word => words.has(word)});
+    // The generated inventory is sorted by JS string order. Keep its text and
+    // compact word offsets instead of retaining hundreds of thousands of
+    // individual strings and Set entries, particularly in native JS engines.
+    let count = 1;
+    for (let end = source.indexOf('\n'); end !== -1; end = source.indexOf('\n', end + 1)) count++;
+    if (count < 50000) throw new Error('Bundled spelling-validity lexicon incomplete. No correction performed.');
+    const starts = new Uint32Array(count + 1);
+    let start = 0, previous = '';
+    for (let i = 0; i < count; i++) {
+      const newline = source.indexOf('\n', start), end = newline === -1 ? source.length : newline;
+      const word = source.slice(start, end);
+      // Binary search requires strict order. Duplicate/padded or reordered
+      // assets must fail closed rather than merely satisfying a line count.
+      if (!word || word <= previous) throw new Error('Bundled spelling-validity lexicon is not sorted and unique. No correction performed.');
+      starts[i] = start;
+      previous = word;
+      start = end + 1;
+    }
+    starts[count] = source.length + 1;
+    validators.set(language, {correct(word) {
+      let low = 0, high = count - 1;
+      while (low <= high) {
+        const middle = (low + high) >>> 1;
+        const candidate = source.slice(starts[middle], starts[middle + 1] - 1);
+        if (candidate === word) return true;
+        if (candidate < word) low = middle + 1;
+        else high = middle - 1;
+      }
+      return false;
+    }});
   }
   return validators.get(language);
 }
@@ -96,14 +123,31 @@ function buildIndex(dict) {
 
 export function protectedRanges(text) {
   const ranges = [];
-  const expression = /(?:https?:\/\/|www\.)[^\s<>]+|[\p{L}\d._%+-]+@[\p{L}\d.-]+\.[\p{L}]{2,}|[\p{L}\p{M}\d_-]+(?:\.[\p{L}\p{M}\d_-]+)+|[\p{L}\d_.+/-]*\d[\p{L}\d_.+/-]*|\b[\p{L}]+(?:[_/\\][\p{L}\d]+)+\b|`[^`\n]*`/gu;
+  const expression = /(?:[a-z][a-z\d+.-]*:\/\/|www\.)[^\s<>]+|[\p{L}\d._%+-]+@[\p{L}\d.-]+\.[\p{L}]{2,}|[\p{L}\p{M}\d_-]+(?:\.[\p{L}\p{M}\d_-]+)+|[\p{L}\d_.+/-]*\d[\p{L}\d_.+/-]*|\b[\p{L}]+(?:[_/\\][\p{L}\d]+)+\b/giu;
   for (const m of text.matchAll(expression)) ranges.push([m.index, m.index + m[0].length]);
-  let offset = 0, tail = false;
+  // Literal syntax is stronger evidence than a word-frequency suggestion.
+  // Preserve complete tokens, including shell paths/flags and code identifiers.
+  const syntax = /[@#][\p{L}\p{M}\d_]+|--[\p{L}\p{M}\d_-]+|(?:~\/|\/|[a-z]:\\)[\p{L}\p{M}\d_.\/\\-]+|\b[\p{L}\p{M}_$][\p{L}\p{M}\d_$]*(?=\()|\b[\p{L}\p{M}\d_]+(?:-[\p{L}\p{M}\d_]+)+\b|\b(?:const|let|var)\s+[\p{L}_$][\p{L}\p{M}\d_$]*\s*=[^\n]*/giu;
+  for (const m of text.matchAll(syntax)) ranges.push([m.index, m.index + m[0].length]);
+  for (const m of text.matchAll(/(?<!`)(`+)(?!`)[^\n]*?\1(?!`)/gu))
+    ranges.push([m.index, m.index + m[0].length]);
+  let offset = 0, tail = false, fence = null;
   for (const line of text.split('\n')) {
+    const marker = /^\s*(`{3,}|~{3,})(.*)$/u.exec(line);
+    if (fence) {
+      if (marker && marker[1][0] === fence.character && marker[1].length >= fence.length && !marker[2].trim()) {
+        ranges.push([fence.start, offset + line.length]);
+        fence = null;
+      }
+    } else if (marker) {
+      fence = {start: offset, character: marker[1][0], length: marker[1].length};
+    }
     if (/^\s*(?:--\s*$|On .{1,180}wrote:|Am .{1,180}schrieb|From:|Von:|_{5,})/iu.test(line)) tail = true;
     if (tail || /^\s*>/.test(line)) ranges.push([offset, offset + line.length]);
     offset += line.length + 1;
   }
+  // An unfinished code block remains literal through the end of the selection.
+  if (fence) ranges.push([fence.start, text.length]);
   return ranges;
 }
 function recase(original, replacement) {
@@ -148,6 +192,26 @@ export function createCorrector({en, de}) {
         // German noun correction requires lexical casing plus determiner context.
         const titlecase = original[0] !== original[0].toLocaleLowerCase() && original !== original.toLocaleUpperCase();
         const sentenceStart = /(?:^|[.!?]\s*|\n\s*)$/u.test(text.slice(0, start));
+        // German technical prose often capitalizes English nouns. Do not turn
+        // "dem Merge" into "dem Menge". Lowercase German words still use only
+        // German validity: English "bite" must not block German "bitte".
+        if (language === 'de' && titlecase && lexical('en').correct(word)) { skipped++; continue; }
+        // These explicit contexts permit common typos without opening the
+        // general titlecase/name gate. They do not infer grammatical intent.
+        let contextualReplacement;
+        if (language === 'en' && original === 'Thsi' && sentenceStart &&
+            /^\s+(?:is|was|will|works|looks|seems|means|can)\b/u.test(text.slice(end))) contextualReplacement = 'This';
+        if (language === 'de' && original === 'Kanst' && sentenceStart &&
+            /^\s+du\b/u.test(text.slice(end))) contextualReplacement = 'Kannst';
+        if (language === 'de' && original === 'Eamil' &&
+            /\b(?:eine|die|diese|ihre|meine|deine|seine|unsere)\s+$/iu.test(text.slice(0, start))) contextualReplacement = 'E-Mail';
+        if (contextualReplacement) {
+          edits.push({offset: start, length: original.length, replacement: contextualReplacement, original});
+          continue;
+        }
+        // Outside the explicit email context, the name Emil is not a safe
+        // substitute for this token. Leave it for the writer to resolve.
+        if (language === 'de' && word === 'eamil') { skipped++; continue; }
         const nounContext = language === 'de' && titlecase && /\b(?:der|die|das|den|dem|des|ein|eine|einen|einem|einer|eines|ihre|ihren|ihrer|ihrem|ihr|unsere|unseren|meine|meinen|deine|deinen|seine|seinen)\s+$/iu.test(text.slice(0,start));
         // A titlecase token at document/selection start alone is not typo evidence.
         // Permit only a narrow formal-request shape (infinitive + Sie), not names.
