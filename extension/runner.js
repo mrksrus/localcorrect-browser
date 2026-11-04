@@ -33,6 +33,14 @@ export function createRunner(api, fetchResource = globalThis.fetch) {
       const dict = action === 'correct' ? await loadDictionaries() : null;
       const options = {action, language: settings.language, mode: settings.mode};
       if (operationId !== undefined) options.operationId = operationId;
+      // Browser focus can change while packaged resources are loading without
+      // changing the old document's activeElement or selection.
+      const [[active], focusedWindow] = await Promise.all([
+        api.tabs.query({active: true, currentWindow: true}), api.windows.getLastFocused()
+      ]);
+      if (active?.id !== tab.id || active.windowId !== tab.windowId ||
+          focusedWindow.id !== tab.windowId || !focusedWindow.focused)
+        throw new Error('The active tab or window changed while LocalCorrect was loading. No changes made; try again.');
       const results = await api.scripting.executeScript({target,
         func: (dictionaries, opts) => globalThis.__localCorrect.run(dictionaries, opts), args: [dict, options]});
       const result = results[0]?.result;

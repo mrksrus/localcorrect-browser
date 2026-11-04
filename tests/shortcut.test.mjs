@@ -19,7 +19,8 @@ test('shortcut runner pins the focused target before dictionary loading and uses
   const {createRunner} = await import('../extension/runner.js');
   const calls = [];
   const api = {
-    tabs: {query: async () => [{id: 7, url: 'https://fixture.invalid/'}]},
+    tabs: {query: async () => [{id: 7, windowId: 2, url: 'https://fixture.invalid/'}]},
+    windows: {getLastFocused: async () => ({id: 2, focused: true})},
     runtime: {getURL: path => `moz-extension://fixture/${path}`},
     storage: {local: {get: async () => ({language: 'de', mode: 'balanced'})}},
     scripting: {executeScript: async request => {
@@ -42,7 +43,8 @@ test('shortcut runner rejects duplicate operations and invalid settings before w
   const {createRunner} = await import('../extension/runner.js');
   let finish;
   const gate = new Promise(resolve => {finish = resolve;});
-  const api = {tabs: {query: async () => [{id: 9, url: 'https://fixture.invalid/'}]},
+  const api = {tabs: {query: async () => [{id: 9, windowId: 2, url: 'https://fixture.invalid/'}]},
+    windows: {getLastFocused: async () => ({id: 2, focused: true})},
     runtime: {getURL: x => x}, storage: {local: {get: async () => ({language: 'bad', mode: 'unsafe'})}},
     scripting: {executeScript: async request => request.files ? [] : request.args?.[0] ? [{result:{changed:1,skipped:0}}] : [{result:1}]}};
   const runner = createRunner(api, async () => {await gate; return {ok:true, text:async ()=>'sample 10000'};});
@@ -52,4 +54,31 @@ test('shortcut runner rejects duplicate operations and invalid settings before w
   finish();
   assert.deepEqual(await first, {changed:1,skipped:0});
   await assert.rejects(runner.run('unsupported'), /Unknown action/);
+});
+
+test('switching browser tab or leaving the browser during dictionary loading refuses application', async () => {
+  const {createRunner} = await import('../extension/runner.js');
+  for (const change of ['tab', 'window', 'unfocused']) {
+    let finish, applied = false, active = {id: 7, windowId: 2, url: 'https://fixture.invalid/'};
+    let focused = {id: 2, focused: true};
+    const gate = new Promise(resolve => {finish = resolve;});
+    const api = {
+      tabs: {query: async () => [active]}, windows: {getLastFocused: async () => focused},
+      runtime: {getURL: x => x}, storage: {local: {get: async () => ({})}},
+      scripting: {executeScript: async request => {
+        if (request.files) return [];
+        if (!request.args) return [{result: 1}];
+        applied = true; return [{result: {changed: 1, skipped: 0}}];
+      }}
+    };
+    const runner = createRunner(api, async () => {await gate; return {ok: true, text: async () => 'sample 10000'};});
+    const result = runner.run('correct');
+    await new Promise(resolve => setImmediate(resolve));
+    if (change === 'tab') active = {...active, id: 8};
+    if (change === 'window') focused = {id: 3, focused: true};
+    if (change === 'unfocused') focused = {id: 2, focused: false};
+    finish();
+    await assert.rejects(result, /tab or window changed/i, change);
+    assert.equal(applied, false, change);
+  }
 });
