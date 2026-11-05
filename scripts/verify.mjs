@@ -8,7 +8,7 @@ const results=[];
 for(const browser of ['firefox','chrome']){
  const prefix=`build/${browser}/`;
  const m=JSON.parse(readFileSync(prefix+'manifest.json','utf8'));
- assert.equal(m.manifest_version,3);assert.equal(m.version,'0.9.0.2');assert.deepEqual(m.permissions,['activeTab','scripting','storage']);
+ assert.equal(m.manifest_version,3);assert.equal(m.version,'0.9.0.3');assert.deepEqual(m.permissions,['activeTab','scripting','storage']);
  assert.equal(m.host_permissions,undefined);assert.equal(m.content_scripts,undefined);
  assert.ok(browser==='firefox'?m.background.scripts.includes('background.js'):m.background.service_worker==='background.js');
  assert.ok(readFileSync(prefix+'background.js').length>1000);
@@ -18,12 +18,19 @@ for(const browser of ['firefox','chrome']){
  assert.ok(readFileSync(prefix+'source/packages/core/src/index.js','utf8').includes('createCorrector'));
  for(const [name,source] of Object.entries(lexical.sources))for(const [file,hash] of Object.entries(source.files))assert.equal(createHash('sha256').update(readFileSync(prefix+`source/packages/core/vendor/${name}/${file}`)).digest('hex'),hash);
  for(const language of ['en','de']){
-  const {default:words}=await import(new URL(`../${prefix}source/packages/core/src/lexicons/${language}.js`,import.meta.url));
-  assert.equal(createHash('sha256').update(words).digest('hex'),lexical.sources[`dictionary-${language}`].expanded_sha256);
-  assert.equal(words.split('\n').length,lexical.sources[`dictionary-${language}`].expanded_words);
+  const asset=await import(new URL(`../${prefix}source/packages/core/src/lexicons/${language}.js`,import.meta.url));
+  const words=asset.default;
+  const inventory=lexical.inventories[language];
+  assert.equal(createHash('sha256').update(words).digest('hex'),inventory.expanded_sha256);
+  assert.equal(words.split('\n').length,inventory.expanded_words);
+  if(language==='de'){
+   assert.equal(createHash('sha256').update(asset.originalCasing).digest('hex'),lexical.inventories.deCased.expanded_sha256);
+   assert.equal(asset.originalCasing.split('\n').length,lexical.inventories.deCased.expanded_words);
+   assert.ok(asset.originalCasing.split('\n').every(word=>/^\p{Lu}/u.test(word)));
+  }
  }
- for(const name of ['dictionary-en','dictionary-de','nspell','is-buffer'])assert.ok(readFileSync(prefix+`licenses/${name}-LICENSE`).length>500);
- const path=`dist/localcorrect-${browser}-1.0.0-rc.2.zip`;
+ for(const name of ['dictionary-en','dictionary-en-gb','dictionary-de','dictionary-de-at','nspell','is-buffer'])assert.ok(readFileSync(prefix+`licenses/${name}-LICENSE`).length>500);
+ const path=`dist/localcorrect-${browser}-1.0.0-rc.3.zip`;
  const entries=JSON.parse(execFileSync('python',['-c',`import json,zipfile\nwith zipfile.ZipFile('${path}') as z:\n assert z.testzip() is None\n print(json.dumps(z.namelist()))`],{encoding:'utf8'}));
  for(const name of ['manifest.json','dictionaries/en.txt','dictionaries/de.txt','LICENSE','THIRD_PARTY.md','licenses/CC-BY-SA-4.0.txt','source/scripts/build.mjs','source/scripts/lexicons.mjs','lexicon-sources.json','source/packages/core/src/lexicons/en.js','source/packages/core/src/lexicons/de.js','source/packages/core/src/lexicons/nspell.js'])assert.ok(entries.includes(name));
  const sha256=createHash('sha256').update(readFileSync(path)).digest('hex');results.push({path,sha256,entries:entries.length,bytes:readFileSync(path).length});

@@ -1,3 +1,21 @@
+# 1.0.0-rc.3 candidate
+
+- Add 200 frozen email/paragraph examples and a separate 40-document blind audit,
+  with exact document/edit/control scores and an offline HTML comparison.
+- Expand EN/DE candidates with bounded lexical probes, noun/compound context,
+  regional US/GB and DE/AT spelling data, and explicit source-casing evidence.
+- Preserve recognized signatures, intentional literals and quoted labels; retain
+  original LF/CRLF/CR offsets for reply/code protection.
+- Prevent repeated words from bypassing casing and sentence-context guards via
+  caches. Honorific/greeting frames protect names.
+- Exercise all 200 primary documents in both modes through browser adapter/Undo
+  and the native JavaScript/Jint runtime.
+
+These are unsigned experimental packages. Firefox signing and actual classic
+Outlook2019 device acceptance remain separate. Final original200 scores include
+post-validation improvements; the additional40 audit was not used for tuning.
+See QUALITY.md and the downloadable report for remaining errors and limits.
+
 # 1.0.0-rc.2 candidate
 
 - Add manual Alt+Shift+C correction and Alt+Shift+Z Undo commands, saved settings,

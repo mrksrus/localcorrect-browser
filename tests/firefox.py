@@ -13,7 +13,7 @@ ROOT=Path(__file__).resolve().parents[1]
 RESULTS=ROOT/'test-results'
 RESULTS.mkdir(exist_ok=True)
 archive=RESULTS/'firefox-shipping.zip'
-shutil.copyfile(ROOT/'dist/localcorrect-firefox-1.0.0-rc.2.zip',archive)
+shutil.copyfile(ROOT/'dist/localcorrect-firefox-1.0.0-rc.3.zip',archive)
 with zipfile.ZipFile(archive) as z:assert z.testzip() is None,'Build must finish before running Firefox tests.'
 archive_sha256=hashlib.file_digest(archive.open('rb'),'sha256').hexdigest()
 firefox=os.environ.get('LOCALCORRECT_FIREFOX_BINARY') or shutil.which('firefox')
@@ -140,6 +140,21 @@ try:
     call('POST','/url',{'url':url});click('#draft');shortcut('c')
     wait_value('return document.querySelector("#draft").value','the document')
     checks.append('Custom shortcut survives options reopening; Reset defaults restores working Alt+Shift+C')
+    # Whole email examples use the original frozen gold, not engine-generated output.
+    corpus=json.loads((ROOT/'tests/email-corpus/dev.json').read_text())
+    rows=corpus if isinstance(corpus,list) else corpus['cases']
+    for language in ['en','de']:
+        row=next(r for r in rows if r['id']==f'email200-dev-{language}-email-correction-01')
+        call('POST','/url',{'url':f'moz-extension://{extension_uuid}/popup.html'})
+        until=time.monotonic()+10
+        while script('return document.querySelector("#language").disabled'):
+            assert time.monotonic()<until;time.sleep(.1)
+        script('for(const [id,value] of [["language",arguments[0]],["mode","balanced"]]){const s=document.getElementById(id);s.value=value;s.dispatchEvent(new Event("change",{bubbles:true}));}',language)
+        time.sleep(.2)
+        call('POST','/url',{'url':url});script('document.getElementById("draft").value=arguments[0];',row['input']);click('#draft');shortcut('c')
+        wait_value('return document.getElementById("draft").value',row['expected'].replace('\r\n','\n').replace('\r','\n'))
+        shortcut('z');wait_value('return document.getElementById("draft").value',row['input'].replace('\r\n','\n').replace('\r','\n'))
+        checks.append(f'Complete {language.upper()} email: one shipping shortcut corrects all gold typos across paragraphs, then Undo restores it')
     screenshot=call('GET','/screenshot');(RESULTS/'firefox-offline.png').write_bytes(base64.b64decode(screenshot))
     result={'passed':True,'browser':capabilities['browserVersion'],'geckodriver':capabilities.get('moz:geckodriverVersion'),'archive_sha256':archive_sha256,'checks':checks,
       'keyboard_dispatch':'WebDriver key actions in Firefox chrome context; no direct extension command dispatch or permission grant',

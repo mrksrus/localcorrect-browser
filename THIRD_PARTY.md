@@ -28,19 +28,25 @@ spelling-validity inventory; a separate Hunspell layer below vetoes valid words.
 ## Mandatory offline lexical validation
 
 Bundled `dictionary-en` 4.0.0 (SCOWL / en_US 2020.12.07; MIT/BSD and retained
-component permissions) and `dictionary-de` 3.0.0 (igerman98, Björn Jacke;
+component permissions) `dictionary-en-gb` 3.0.0 for British English, `dictionary-de` 3.0.0 and
+`dictionary-de-at` 3.0.0 for Austrian German (igerman98, Björn Jacke;
 GPL-2.0 OR GPL-3.0, **GPL-3.0 option selected**) retain unmodified aff/dic sources,
 upstream readmes and complete notices in `packages/core/vendor`. German license
 is not relabeled MIT; the full selected GPL-3.0 text is LICENSE. Full English
-component redistribution texts are in licenses/dictionary-en-LICENSE.
+component redistribution texts are in licenses/dictionary-en-LICENSE and
+licenses/dictionary-en-gb-LICENSE. Austrian German notices are retained in
+licenses/dictionary-de-at-LICENSE under the selected GPL-3.0 option.
 
 `nspell` 2.1.5, Titus Wormer, MIT, https://github.com/wooorm/nspell, and
 `is-buffer` 2.0.5, Feross Aboukhadijeh, MIT,
 https://github.com/feross/is-buffer, provide build-time offline affix expansion/validity.
 Complete MIT notices and original source accompany both packages under vendor
 and licenses. Generated ESM is self-contained; no installed dependency or fetch
-is needed at runtime. nspell suggestions are **not** used: symmetric deletes,
-distance validation and frequency ranking remain LocalCorrect's correction base.
+is needed at runtime. nspell suggestions are **not** called. LocalCorrect performs its own symmetric
+deletes, distance validation, frequency ranking and bounded exact lexical edit
+probes. Merged EN US/GB and DE DE/AT membership inventories validate words and
+those candidates. German entries originally capitalized in the expansion are
+retained separately as casing evidence; this is not a complete POS tagger.
 
 Pinned registry URLs, versions, npm integrity and aff/dic SHA256 hashes are in
 lexicon-sources.json. Reproduce with `npm ci && node scripts/lexicons.mjs`.

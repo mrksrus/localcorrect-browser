@@ -1,5 +1,5 @@
 {
-  "description": "Unmodified npm Hunspell sources; German GPL-3.0 option selected. Expanded by nspell only for validity/casing, never suggestions.",
+  "description": "Unmodified npm Hunspell sources; German GPL-3.0 option selected. Expanded using nspell membership and affix data. Inventories validate words and LocalCorrect edit probes; nspell suggestions are never called. EN merges US/GB; DE merges DE/AT.",
   "sources": {
     "nspell": {
       "version": "2.1.5",
@@ -59,6 +59,24 @@
       "expanded_words": 166081,
       "expanded_sha256": "c189ef88c8428dc48bbcca4d4ccb3c3846d3125d5503e1db6e78ee077d2bc30f"
     },
+    "dictionary-en-gb": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/dictionary-en-gb/-/dictionary-en-gb-3.0.0.tgz",
+      "integrity": "sha512-gU/dwC9xGYPh/0CCcmGNXO8OwSgOySAqevcSXxADCsgUD+tr6OJ52u7XaC7No7dNssvdUSfVjkzcqLrRZq3kPA==",
+      "dev": true,
+      "license": "(MIT AND BSD)",
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/sponsors/wooorm"
+      },
+      "files": {
+        "index.aff": "8ae1f19d4840d957728ad90555d5a8dff6cc5c046279c95ff0c00fc0a0136c7b",
+        "index.dic": "869fe17ba4ee4b5401c60a666ee2d6a3dcc237f460b7294435df1cc6a799aa57",
+        "license": "81b644347b40804c25811267efbea024a30b2bb1642fefa9c9c50f7b0bbcb67f"
+      },
+      "expanded_words": 166001,
+      "expanded_sha256": "198ad40805be15eb78528996fc5f83daeb95d9decc8984e3ef8e6083903531c1"
+    },
     "dictionary-de": {
       "version": "3.0.0",
       "resolved": "https://registry.npmjs.org/dictionary-de/-/dictionary-de-3.0.0.tgz",
@@ -76,6 +94,51 @@
       },
       "expanded_words": 566925,
       "expanded_sha256": "e26e36e7bd8da38609fd579b2e0f301e54536a955921bbc472776ed344adf2ba"
+    },
+    "dictionary-de-at": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/dictionary-de-at/-/dictionary-de-at-3.0.0.tgz",
+      "integrity": "sha512-mCxRL8jOHITEuyN0BmvhlmSmHSpt37wFO0i78lS60IeBUiM901ERLUNWeF2ZS/+H4UvqiVLcLVN6zmOGKoPz2w==",
+      "dev": true,
+      "license": "(GPL-2.0 OR GPL-3.0)",
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/sponsors/wooorm"
+      },
+      "files": {
+        "index.aff": "04ebc966a0b1130d8fc62886bb801e77bf7d6a11accf205954c364d3c0c68864",
+        "index.dic": "02cbbeb74af85497b861b5782413b6c8c8ffab5c9423ef2e92265599b9359870",
+        "license": "03abf202c6e207d41f054083cafccbb174a30f6b330ea8dba3aeef0a279cb83e"
+      },
+      "expanded_words": 567896,
+      "expanded_sha256": "eee51796c11883c40417f57ec8ef123fce7e379766da20e716ed179fe13fea76"
+    }
+  },
+  "inventories": {
+    "en": {
+      "inputs": [
+        "dictionary-en",
+        "dictionary-en-gb"
+      ],
+      "expanded_words": 171194,
+      "expanded_sha256": "3abc1bd03c86f064760a295c76847c35cb8fcd2523a6211790060ab2d43f1631"
+    },
+    "de": {
+      "inputs": [
+        "dictionary-de",
+        "dictionary-de-at"
+      ],
+      "expanded_words": 567945,
+      "expanded_sha256": "649475bec9604bfa18e321eadedbc5aed02a24e3333f10f41dfe2aad59388153"
+    },
+    "deCased": {
+      "inputs": [
+        "dictionary-de",
+        "dictionary-de-at"
+      ],
+      "expanded_words": 62868,
+      "expanded_sha256": "97f39baab259967a16c30ab284beb94806734e3ff43b4b899397f6245e0dfb8d",
+      "description": "Accepted entries originally capitalized in the source expansion, before automatic initial-capital acceptance. This is casing evidence, not a complete POS tagger."
     }
   }
 }

@@ -1,4 +1,4 @@
-# LocalCorrect 1.0.0-rc.2
+# LocalCorrect 1.0.0-rc.3
 
 A manual, local-only typo corrector for English and German. Press **Alt+Shift+C**
 in a focused editable field to correct it. **Alt+Shift+Z** undoes the last change.
@@ -23,23 +23,28 @@ This is a release candidate, not a production-quality or perfect proofreader.
   stores, inaccessible frames, and shadow-DOM editors are **not supported**.
   The focused same-origin iframe can be targeted. Cross-origin frames remain
   inaccessible. No fallback replaces rich HTML.
-- Quoted lines (`>`), recognized reply-header tails and `--` signature tails
-  are left alone. Known quote/signature DOM containers and links/code are skipped.
-  Other signature layouts, names and identifiers cannot be reliably recognized:
-  select only the new prose when in doubt. English unknown titlecase tokens are
-  protected even at selection start, except for a narrow sentence-initial `Thsi`
-  rule before common predicates. German titlecase correction needs a preceding
-  determiner/possessive and a lexically accepted capitalized candidate; a narrow
-  high-frequency transposition rule also handles initial formal German requests
-  followed by an infinitive and “Sie”. A sentence boundary alone is not evidence.
-  This is a heuristic, not reliable name or part-of-speech recognition. Narrow rules also
-  recognize sentence-initial `Kanst du` and feminine noun-context `Eamil`.
-  Fenced code, inline backticks, paths, handles, flags and common technical
-  identifiers are protected; arbitrary code or proper names cannot be identified perfectly.
+- Quoted reply lines, recognized reply-header tails and signature tails are
+  protected. Standard email closings protect following signature lines; an
+  explicit P.S. or Nachtrag reopens new prose. Intentional literal quotations
+  and quoted labels have narrow preservation rules. Ordinary quoted prose
+  can still be corrected. Arbitrary signature layouts, names and language
+  switches are not recognized perfectly.
+- Capitalized names use context and honorific/greeting guards. English
+  sentence-initial function words and calendar words have bounded correction
+  rules. German noun contexts support ordinary inflected adjectives and
+  contracted articles. Source casing and conservative compound checks help
+  distinguish noun candidates from automatically capitalized verb forms.
+  This is a heuristic, not reliable semantic or proper-name recognition.
+- Exact lexical edit probes cover valid words absent from the frequency list.
+  Ambiguity gates leave unresolved alternatives unchanged. Regional English
+  and Austrian German inventories protect accepted variants. Code, paths,
+  handles, flags and common technical identifiers remain protected.
 - Preserves original whitespace, case pattern, emails, URLs, numbers and common
   identifiers and dotted filenames. Partial-token selections at either boundary
   are rejected without edits, including across inline nodes/combining marks.
-  Does not rewrite style/grammar, split/join words, or correct known
+  Case patterns are retained, with limited known German noun capitalization
+  after article context. It does not rewrite style/grammar, split/join words,
+  or correct known
   dictionary words used in the wrong context. Corpus data contain noise, names
   and subtitle vocabulary. Conservative/Normal are heuristic ambiguity and
   frequency gates, **not calibrated confidence levels**. False corrections and
@@ -57,18 +62,18 @@ This is a release candidate, not a production-quality or perfect proofreader.
 
 ## Install unsigned test packages
 
-`dist/localcorrect-chrome-1.0.0-rc.2.zip`: unzip, open `chrome://extensions`, enable
+`dist/localcorrect-chrome-1.0.0-rc.3.zip`: unzip, open `chrome://extensions`, enable
 Developer mode, **Load unpacked**, select the extracted folder. Enable file URL
 access explicitly if testing local files. A ZIP is not a Chrome Web Store install.
 
-`dist/localcorrect-firefox-1.0.0-rc.2.zip`: unsigned development archive. In standard
+`dist/localcorrect-firefox-1.0.0-rc.3.zip`: unsigned development archive. In standard
 Firefox use `about:debugging` → This Firefox → Load Temporary Add-on → manifest.json
 from the extracted folder. Temporary installs disappear after restart. Normal
 permanent installation requires Mozilla signing/distribution; this project does
 not claim the unsigned ZIP installs permanently in release Firefox.
 
-The numeric manifest version is `0.9.0.2` for this prerelease (Chrome additionally
-shows `version_name: 1.0.0-rc.2`); final 1.0.0 is deliberately not released.
+The numeric manifest version is `0.9.0.3` for this prerelease (Chrome additionally
+shows `version_name: 1.0.0-rc.3`); final 1.0.0 is deliberately not released.
 
 ## Privacy and permissions
 
@@ -128,3 +133,26 @@ English lexicon/component notices: MIT/BSD; nspell/is-buffer: MIT. See THIRD_PAR
 `npm run evaluate` reproduces the current 92-case development/holdout report in
 `test-results/hillclimb.json`. These are synthetic examples, not personal messages.
 The engine uses bundled dictionaries and explicit rules, not neural inference or training.
+
+## Complete-email experiment
+
+`tests/email-corpus` contains 200 additional frozen synthetic documents, including
+80 complete emails and 60 other texts with multiple paragraphs. A separate
+40-document audit was independently authored without reading the implementation
+or the original cases. It was evaluated after the final source freeze.
+
+The first 120 development cases guided changes. The original 80-case holdout was
+then inspected and used for general safety fixes, so final results on that set
+are post-validation results. It is not presented as an unseen final benchmark.
+All original input/expected bytes and initial results are retained.
+
+`npm run evaluate:emails -- --split all --label candidate` scores the original
+200 documents; `--split audit` scores the separate audit. `--core /path/to/core`
+compares a different core snapshot with the same gold. Reports include exact
+document counts, wanted/missed/wrong edits, controls, timings and source/data
+hashes. `npm run report:emails` builds an offline HTML comparison after baseline
+and candidate reports have been generated. No server is required to open it.
+
+`npm run check` includes all 200 documents in both modes through the Chromium
+textarea adapter and Undo. Firefox's separate shipping test covers real browser
+commands, settings and full-email examples. See QUALITY.md for exact results.

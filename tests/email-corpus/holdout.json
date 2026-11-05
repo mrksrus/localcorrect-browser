@@ -1,0 +1,2178 @@
+{
+  "schemaVersion": 1,
+  "corpus": "email200-v1",
+  "split": "holdout",
+  "provenance": "Author-created synthetic English/German text. Frozen before engine evaluation. No private correspondence.",
+  "cases": [
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "festival weather plan",
+      "input": "Hello performers,\n\nHeavy rain is forecast, so we are preparing the indoor alternatvie.\n\nThe hall has fewer seats, but all booked guests can still attend the afternon show.\n\nPlease check the updated arrival instructions. We will make the final decison tomorrow after the morning forcast.\n\nThanks,\nNora Vale",
+      "expected": "Hello performers,\n\nHeavy rain is forecast, so we are preparing the indoor alternative.\n\nThe hall has fewer seats, but all booked guests can still attend the afternoon show.\n\nPlease check the updated arrival instructions. We will make the final decision tomorrow after the morning forecast.\n\nThanks,\nNora Vale",
+      "edits": [
+        {
+          "offset": 74,
+          "length": 11,
+          "original": "alternatvie",
+          "replacement": "alternative"
+        },
+        {
+          "offset": 157,
+          "length": 8,
+          "original": "afternon",
+          "replacement": "afternoon"
+        },
+        {
+          "offset": 243,
+          "length": 7,
+          "original": "decison",
+          "replacement": "decision"
+        },
+        {
+          "offset": 278,
+          "length": 7,
+          "original": "forcast",
+          "replacement": "forecast"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-email-correction-19"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "repair collection",
+      "input": "Hi Eli,\n\nYour bicycle is ready for collection after we replaced the worn bearigns.\n\nThe rear light also needed a new connector; there was no additonal labour charge.\n\nPlease bring the collection slip. We are open until six, except on Wendesday, when the workshop closes eariler.\n\nBest wishes,\nAda Finch",
+      "expected": "Hi Eli,\n\nYour bicycle is ready for collection after we replaced the worn bearings.\n\nThe rear light also needed a new connector; there was no additional labour charge.\n\nPlease bring the collection slip. We are open until six, except on Wednesday, when the workshop closes earlier.\n\nBest wishes,\nAda Finch",
+      "edits": [
+        {
+          "offset": 73,
+          "length": 8,
+          "original": "bearigns",
+          "replacement": "bearings"
+        },
+        {
+          "offset": 141,
+          "length": 9,
+          "original": "additonal",
+          "replacement": "additional"
+        },
+        {
+          "offset": 234,
+          "length": 9,
+          "original": "Wendesday",
+          "replacement": "Wednesday"
+        },
+        {
+          "offset": 270,
+          "length": 7,
+          "original": "eariler",
+          "replacement": "earlier"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-email-correction-20"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "translation glossary",
+      "input": "Hello translators,\n\nThe revised glossary now includes the terms from the maintenace chapter.\n\nPlease retain the product names exactly as shown, even where their spelling looks unsual.\n\nIf a definition is unclear, add a comment beside the entry. We will resolve open questoins before the next delivrey.\n\nRegards,\nLena Brook",
+      "expected": "Hello translators,\n\nThe revised glossary now includes the terms from the maintenance chapter.\n\nPlease retain the product names exactly as shown, even where their spelling looks unusual.\n\nIf a definition is unclear, add a comment beside the entry. We will resolve open questions before the next delivery.\n\nRegards,\nLena Brook",
+      "edits": [
+        {
+          "offset": 73,
+          "length": 10,
+          "original": "maintenace",
+          "replacement": "maintenance"
+        },
+        {
+          "offset": 176,
+          "length": 6,
+          "original": "unsual",
+          "replacement": "unusual"
+        },
+        {
+          "offset": 266,
+          "length": 9,
+          "original": "questoins",
+          "replacement": "questions"
+        },
+        {
+          "offset": 292,
+          "length": 8,
+          "original": "delivrey",
+          "replacement": "delivery"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-email-correction-21"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "restaurant reservation",
+      "input": "Dear Reservations,\n\nCould you move our table for four from seven to half past eight on Satruday?\n\nOne guest uses a wheelchair, so a table near the entrance would be prefrable.\n\nPlease confirm whether the new time is possible. We can keep the original arrangment if you are already fuly booked.\n\nThank you,\nOwen Ash",
+      "expected": "Dear Reservations,\n\nCould you move our table for four from seven to half past eight on Saturday?\n\nOne guest uses a wheelchair, so a table near the entrance would be preferable.\n\nPlease confirm whether the new time is possible. We can keep the original arrangement if you are already fully booked.\n\nThank you,\nOwen Ash",
+      "edits": [
+        {
+          "offset": 87,
+          "length": 8,
+          "original": "Satruday",
+          "replacement": "Saturday"
+        },
+        {
+          "offset": 165,
+          "length": 9,
+          "original": "prefrable",
+          "replacement": "preferable"
+        },
+        {
+          "offset": 251,
+          "length": 10,
+          "original": "arrangment",
+          "replacement": "arrangement"
+        },
+        {
+          "offset": 281,
+          "length": 4,
+          "original": "fuly",
+          "replacement": "fully"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-email-correction-22"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "backup drill",
+      "input": "Hello operations team,\n\nTomorrow we will restore a copy of the archive in an isoltaed environment.\n\nThe exercise should leave production untouched. Please record the time needed to recover each databsae.\n\nKeep the existing backup until the checks are complete. A successful copy alone does not prove recovrey is posible.\n\nRegards,\nMira Bell",
+      "expected": "Hello operations team,\n\nTomorrow we will restore a copy of the archive in an isolated environment.\n\nThe exercise should leave production untouched. Please record the time needed to recover each database.\n\nKeep the existing backup until the checks are complete. A successful copy alone does not prove recovery is possible.\n\nRegards,\nMira Bell",
+      "edits": [
+        {
+          "offset": 77,
+          "length": 8,
+          "original": "isoltaed",
+          "replacement": "isolated"
+        },
+        {
+          "offset": 194,
+          "length": 8,
+          "original": "databsae",
+          "replacement": "database"
+        },
+        {
+          "offset": 300,
+          "length": 8,
+          "original": "recovrey",
+          "replacement": "recovery"
+        },
+        {
+          "offset": 312,
+          "length": 7,
+          "original": "posible",
+          "replacement": "possible"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-email-correction-23"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "arts grant decision",
+      "input": "Dear applicants,\n\nThe panel needs one more week to finish reviewing the proposlas.\n\nTwo members were absent, and we want every application to receive the same attentoin.\n\nWe will send decisions by Friday. Thank you for your pateince while we complete this assesment.\n\nBest wishes,\nTess Wren",
+      "expected": "Dear applicants,\n\nThe panel needs one more week to finish reviewing the proposals.\n\nTwo members were absent, and we want every application to receive the same attention.\n\nWe will send decisions by Friday. Thank you for your patience while we complete this assessment.\n\nBest wishes,\nTess Wren",
+      "edits": [
+        {
+          "offset": 72,
+          "length": 9,
+          "original": "proposlas",
+          "replacement": "proposals"
+        },
+        {
+          "offset": 159,
+          "length": 9,
+          "original": "attentoin",
+          "replacement": "attention"
+        },
+        {
+          "offset": 224,
+          "length": 8,
+          "original": "pateince",
+          "replacement": "patience"
+        },
+        {
+          "offset": 256,
+          "length": 9,
+          "original": "assesment",
+          "replacement": "assessment"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-email-correction-24"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "replacement key",
+      "input": "Hello building office,\n\nMy entrance key broke in the lock yesterday, although the door still opens with the sprae.\n\nPlease arrange a replacement and tell me whether you need the broken peice.\n\nI can collect it during lunch. If there is a charge, include it on the next statment rather than requesting immedaite payment.\n\nKind regards,\nMilo Reed",
+      "expected": "Hello building office,\n\nMy entrance key broke in the lock yesterday, although the door still opens with the spare.\n\nPlease arrange a replacement and tell me whether you need the broken piece.\n\nI can collect it during lunch. If there is a charge, include it on the next statement rather than requesting immediate payment.\n\nKind regards,\nMilo Reed",
+      "edits": [
+        {
+          "offset": 108,
+          "length": 5,
+          "original": "sprae",
+          "replacement": "spare"
+        },
+        {
+          "offset": 185,
+          "length": 5,
+          "original": "peice",
+          "replacement": "piece"
+        },
+        {
+          "offset": 269,
+          "length": 8,
+          "original": "statment",
+          "replacement": "statement"
+        },
+        {
+          "offset": 301,
+          "length": 9,
+          "original": "immedaite",
+          "replacement": "immediate"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-email-correction-25"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "data correction request",
+      "input": "Dear Records Team,\n\nThe attendance report shows me as absent from the final workhsop.\n\nI signed the paper register because the tablet was not funcitoning that morning.\n\nCould you check the register and update the record? My training certifciate depends on the corect total.\n\nThank you,\nNora Vale",
+      "expected": "Dear Records Team,\n\nThe attendance report shows me as absent from the final workshop.\n\nI signed the paper register because the tablet was not functioning that morning.\n\nCould you check the register and update the record? My training certificate depends on the correct total.\n\nThank you,\nNora Vale",
+      "edits": [
+        {
+          "offset": 76,
+          "length": 8,
+          "original": "workhsop",
+          "replacement": "workshop"
+        },
+        {
+          "offset": 142,
+          "length": 11,
+          "original": "funcitoning",
+          "replacement": "functioning"
+        },
+        {
+          "offset": 233,
+          "length": 11,
+          "original": "certifciate",
+          "replacement": "certificate"
+        },
+        {
+          "offset": 260,
+          "length": 6,
+          "original": "corect",
+          "replacement": "correct"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-email-correction-26"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "family reunion travel",
+      "input": "Hi everyone,\n\nThe last train leaves before dinner ends, so I have checked nearby accomodation.\n\nThere are two rooms above the bakery, both with a shared bathrom.\n\nPlease reply by Sunday if you want a bed. We can divide the cost after the owner confirms availabilty and the depoist.\n\nLove,\nEli Moss",
+      "expected": "Hi everyone,\n\nThe last train leaves before dinner ends, so I have checked nearby accommodation.\n\nThere are two rooms above the bakery, both with a shared bathroom.\n\nPlease reply by Sunday if you want a bed. We can divide the cost after the owner confirms availability and the deposit.\n\nLove,\nEli Moss",
+      "edits": [
+        {
+          "offset": 81,
+          "length": 12,
+          "original": "accomodation",
+          "replacement": "accommodation"
+        },
+        {
+          "offset": 153,
+          "length": 7,
+          "original": "bathrom",
+          "replacement": "bathroom"
+        },
+        {
+          "offset": 253,
+          "length": 11,
+          "original": "availabilty",
+          "replacement": "availability"
+        },
+        {
+          "offset": 273,
+          "length": 7,
+          "original": "depoist",
+          "replacement": "deposit"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-email-correction-27"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "tender clarification",
+      "input": "Dear Procurement Team,\n\nThe specification asks for delivery within ten days of the agreemnt.\n\nDoes that period include weekends, or should we count only buisness days?\n\nPlease publish the clarification for all bidders. A shared answer would prevent different interpretatons of the same requriement.\n\nKind regards,\nAda Finch",
+      "expected": "Dear Procurement Team,\n\nThe specification asks for delivery within ten days of the agreement.\n\nDoes that period include weekends, or should we count only business days?\n\nPlease publish the clarification for all bidders. A shared answer would prevent different interpretations of the same requirement.\n\nKind regards,\nAda Finch",
+      "edits": [
+        {
+          "offset": 83,
+          "length": 8,
+          "original": "agreemnt",
+          "replacement": "agreement"
+        },
+        {
+          "offset": 153,
+          "length": 8,
+          "original": "buisness",
+          "replacement": "business"
+        },
+        {
+          "offset": 259,
+          "length": 14,
+          "original": "interpretatons",
+          "replacement": "interpretations"
+        },
+        {
+          "offset": 286,
+          "length": 11,
+          "original": "requriement",
+          "replacement": "requirement"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-email-correction-28"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "audio transcript",
+      "input": "Hello editor,\n\nThe interview transcript is complete apart from one inaudbile sentence near the end.\n\nI marked the gap with a timestamp instead of guessing what the speaker intenedd.\n\nPlease check that section against the original recording. The surrounding paragrapgh may help, but it cannot replace the evidnce.\n\nBest,\nLena Brook",
+      "expected": "Hello editor,\n\nThe interview transcript is complete apart from one inaudible sentence near the end.\n\nI marked the gap with a timestamp instead of guessing what the speaker intended.\n\nPlease check that section against the original recording. The surrounding paragraph may help, but it cannot replace the evidence.\n\nBest,\nLena Brook",
+      "edits": [
+        {
+          "offset": 67,
+          "length": 9,
+          "original": "inaudbile",
+          "replacement": "inaudible"
+        },
+        {
+          "offset": 172,
+          "length": 8,
+          "original": "intenedd",
+          "replacement": "intended"
+        },
+        {
+          "offset": 257,
+          "length": 10,
+          "original": "paragrapgh",
+          "replacement": "paragraph"
+        },
+        {
+          "offset": 304,
+          "length": 7,
+          "original": "evidnce",
+          "replacement": "evidence"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-email-correction-29"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "sports fixture transport",
+      "input": "Hi parents,\n\nThe away match starts at eleven, so please meet outside the club by qaurter past nine.\n\nWe have seats for all players, but not for extra spectaotrs.\n\nPlease pack a dry shirt and a light lunch. We expect to return around three, depending on trafifc and the final whitsle.\n\nThanks,\nOwen Ash",
+      "expected": "Hi parents,\n\nThe away match starts at eleven, so please meet outside the club by quarter past nine.\n\nWe have seats for all players, but not for extra spectators.\n\nPlease pack a dry shirt and a light lunch. We expect to return around three, depending on traffic and the final whistle.\n\nThanks,\nOwen Ash",
+      "edits": [
+        {
+          "offset": 81,
+          "length": 7,
+          "original": "qaurter",
+          "replacement": "quarter"
+        },
+        {
+          "offset": 150,
+          "length": 10,
+          "original": "spectaotrs",
+          "replacement": "spectators"
+        },
+        {
+          "offset": 253,
+          "length": 7,
+          "original": "trafifc",
+          "replacement": "traffic"
+        },
+        {
+          "offset": 275,
+          "length": 7,
+          "original": "whitsle",
+          "replacement": "whistle"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-email-correction-30"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe personal names",
+      "input": "Dear Mira,\n\nI reserved seats for Tavi Quill and Zeno Voss beside the aisle.\n\nTheir badges use those spellings, and neither person has requested a title.\n\nPlease put the badges in separate envelopes. The seating plan is already with the ushers.\n\nBest wishes,\nNeris Yarrow",
+      "expected": "Dear Mira,\n\nI reserved seats for Tavi Quill and Zeno Voss beside the aisle.\n\nTheir badges use those spellings, and neither person has requested a title.\n\nPlease put the badges in separate envelopes. The seating plan is already with the ushers.\n\nBest wishes,\nNeris Yarrow",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-en-email-safe-07"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe subject punctuation",
+      "input": "Hi all,\n\nRe: the \"Read, write, repeat\" exhibition, the doors open at 18:30.\n\nEntry is free. A pay-what-you-can collection will cover tea and biscuits.\n\nPlease bring cash if you want a postcard; we can't accept cards at the small desk.\n\nCheers,\nMira Bell",
+      "expected": "Hi all,\n\nRe: the \"Read, write, repeat\" exhibition, the doors open at 18:30.\n\nEntry is free. A pay-what-you-can collection will cover tea and biscuits.\n\nPlease bring cash if you want a postcard; we can't accept cards at the small desk.\n\nCheers,\nMira Bell",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-en-email-safe-08"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe technical nouns",
+      "input": "Hello reviewers,\n\nThe parser accepts UTF-8 input and preserves CRLF line endings.\n\nJSON keys remain case-sensitive. The fixture includes emoji and a decomposed accent on purpose.\n\nPlease review the round-trip test before changing the normalisation code.\n\nRegards,\nTess Wren",
+      "expected": "Hello reviewers,\n\nThe parser accepts UTF-8 input and preserves CRLF line endings.\n\nJSON keys remain case-sensitive. The fixture includes emoji and a decomposed accent on purpose.\n\nPlease review the round-trip test before changing the normalisation code.\n\nRegards,\nTess Wren",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-en-email-safe-09"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe deliberately odd signature",
+      "input": "Hello warehouse,\n\nThe collection window is confirmed for Monday morning.\n\nPlease leave the sealed boxes on the shelf marked returns. The courier already has the dimensions.\n\nI will send the signed receipt after collection. No further labels are needed.\n\nBest regards,\nTeh Qvorr\nRecieve Labs | dispatch@example.invalid",
+      "expected": "Hello warehouse,\n\nThe collection window is confirmed for Monday morning.\n\nPlease leave the sealed boxes on the shelf marked returns. The courier already has the dimensions.\n\nI will send the signed receipt after collection. No further labels are needed.\n\nBest regards,\nTeh Qvorr\nRecieve Labs | dispatch@example.invalid",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-en-email-safe-10"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "garden water plan",
+      "input": "The new plants need water near the roots, not across the leaves. The smaller bed dries out noticably faster than the others.\n\nUse the collected rainwater first. If the barrel is empty, fill it slowly to avoid disturbnig the sediment at the botom.",
+      "expected": "The new plants need water near the roots, not across the leaves. The smaller bed dries out noticeably faster than the others.\n\nUse the collected rainwater first. If the barrel is empty, fill it slowly to avoid disturbing the sediment at the bottom.",
+      "edits": [
+        {
+          "offset": 91,
+          "length": 9,
+          "original": "noticably",
+          "replacement": "noticeably"
+        },
+        {
+          "offset": 209,
+          "length": 10,
+          "original": "disturbnig",
+          "replacement": "disturbing"
+        },
+        {
+          "offset": 240,
+          "length": 5,
+          "original": "botom",
+          "replacement": "bottom"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-paragraphs-correction-16"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "purchase evaluation",
+      "input": "The cheaper scanner handles loose sheets well but struggles with folded paper. Its output is legbile once the page lies flat.\n\nWe should test a full day's post before ordering. A quick demonstration will not reveal how often the feeder needs attentoin during normal operatoin.",
+      "expected": "The cheaper scanner handles loose sheets well but struggles with folded paper. Its output is legible once the page lies flat.\n\nWe should test a full day's post before ordering. A quick demonstration will not reveal how often the feeder needs attention during normal operation.",
+      "edits": [
+        {
+          "offset": 93,
+          "length": 7,
+          "original": "legbile",
+          "replacement": "legible"
+        },
+        {
+          "offset": 242,
+          "length": 9,
+          "original": "attentoin",
+          "replacement": "attention"
+        },
+        {
+          "offset": 266,
+          "length": 9,
+          "original": "operatoin",
+          "replacement": "operation"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-paragraphs-correction-17"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "checkout instructions",
+      "input": "Leave used towels in the basket and return the keys to the small box. The code is in your booking confirmaton.\n\nPlease check the drawers before leaving. We can post forgotten items, but the guest pays the postgae and any special packgaing.",
+      "expected": "Leave used towels in the basket and return the keys to the small box. The code is in your booking confirmation.\n\nPlease check the drawers before leaving. We can post forgotten items, but the guest pays the postage and any special packaging.",
+      "edits": [
+        {
+          "offset": 98,
+          "length": 11,
+          "original": "confirmaton",
+          "replacement": "confirmation"
+        },
+        {
+          "offset": 205,
+          "length": 7,
+          "original": "postgae",
+          "replacement": "postage"
+        },
+        {
+          "offset": 229,
+          "length": 9,
+          "original": "packgaing",
+          "replacement": "packaging"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-paragraphs-correction-18"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "audio editing notes",
+      "input": "The opening has a low hum beneath the speech. Reduce it gently, since a stronger filter makes the voice sound artifical.\n\nKeep the pause before the final answer. It explains the speaker's hesitatoin and should not disappear merely to shorten the recordnig.",
+      "expected": "The opening has a low hum beneath the speech. Reduce it gently, since a stronger filter makes the voice sound artificial.\n\nKeep the pause before the final answer. It explains the speaker's hesitation and should not disappear merely to shorten the recording.",
+      "edits": [
+        {
+          "offset": 110,
+          "length": 9,
+          "original": "artifical",
+          "replacement": "artificial"
+        },
+        {
+          "offset": 188,
+          "length": 10,
+          "original": "hesitatoin",
+          "replacement": "hesitation"
+        },
+        {
+          "offset": 246,
+          "length": 9,
+          "original": "recordnig",
+          "replacement": "recording"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-paragraphs-correction-19"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "transport disruption",
+      "input": "The replacement bus stops outside the east entrance, beyond the taxi rank. Staff will direct passengers with mobliity needs.\n\nAllow an extra twenty minutes for the connetcion. Tickets remain valid, and there is no need to buy a seperate fare.",
+      "expected": "The replacement bus stops outside the east entrance, beyond the taxi rank. Staff will direct passengers with mobility needs.\n\nAllow an extra twenty minutes for the connection. Tickets remain valid, and there is no need to buy a separate fare.",
+      "edits": [
+        {
+          "offset": 109,
+          "length": 8,
+          "original": "mobliity",
+          "replacement": "mobility"
+        },
+        {
+          "offset": 164,
+          "length": 10,
+          "original": "connetcion",
+          "replacement": "connection"
+        },
+        {
+          "offset": 228,
+          "length": 8,
+          "original": "seperate",
+          "replacement": "separate"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-paragraphs-correction-20"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "return policy explanation",
+      "input": "We can accept the unopened filters, but the used cartridge requires inspection. Please describe when the leak first became noticable.\n\nPhotographs of the seal would help. Keep the damaged part until we confrim whether the supplier needs it for examinatoin.",
+      "expected": "We can accept the unopened filters, but the used cartridge requires inspection. Please describe when the leak first became noticeable.\n\nPhotographs of the seal would help. Keep the damaged part until we confirm whether the supplier needs it for examination.",
+      "edits": [
+        {
+          "offset": 123,
+          "length": 9,
+          "original": "noticable",
+          "replacement": "noticeable"
+        },
+        {
+          "offset": 202,
+          "length": 7,
+          "original": "confrim",
+          "replacement": "confirm"
+        },
+        {
+          "offset": 244,
+          "length": 11,
+          "original": "examinatoin",
+          "replacement": "examination"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-paragraphs-correction-21"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "accessibility test",
+      "input": "Keyboard navigation reaches every button except the final upload control. The focus indicator is also dificult to see against the grey border.\n\nTest the revised form without a mouse. A visual review alone cannot establish whether the interactoin is acessible.",
+      "expected": "Keyboard navigation reaches every button except the final upload control. The focus indicator is also difficult to see against the grey border.\n\nTest the revised form without a mouse. A visual review alone cannot establish whether the interaction is accessible.",
+      "edits": [
+        {
+          "offset": 102,
+          "length": 8,
+          "original": "dificult",
+          "replacement": "difficult"
+        },
+        {
+          "offset": 234,
+          "length": 11,
+          "original": "interactoin",
+          "replacement": "interaction"
+        },
+        {
+          "offset": 249,
+          "length": 9,
+          "original": "acessible",
+          "replacement": "accessible"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-paragraphs-correction-22"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "oral history consent",
+      "input": "The speaker agreed to publication of the transcript but asked us to remove the address. Their choice applies to future editons as well.\n\nKeep the original recording in the restricted archive. The public copy should contain only the aproved passage and the agreed attributoin.",
+      "expected": "The speaker agreed to publication of the transcript but asked us to remove the address. Their choice applies to future editions as well.\n\nKeep the original recording in the restricted archive. The public copy should contain only the approved passage and the agreed attribution.",
+      "edits": [
+        {
+          "offset": 119,
+          "length": 7,
+          "original": "editons",
+          "replacement": "editions"
+        },
+        {
+          "offset": 232,
+          "length": 7,
+          "original": "aproved",
+          "replacement": "approved"
+        },
+        {
+          "offset": 263,
+          "length": 11,
+          "original": "attributoin",
+          "replacement": "attribution"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-paragraphs-correction-23"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "office move checklist",
+      "input": "Label each monitor before disconnecting it. Otherwise the stands can become mixed up during transprot.\n\nPut small adapters in the same box as their computers. We lost several last time because they were packed with unrealted stationery and office suplies.",
+      "expected": "Label each monitor before disconnecting it. Otherwise the stands can become mixed up during transport.\n\nPut small adapters in the same box as their computers. We lost several last time because they were packed with unrelated stationery and office supplies.",
+      "edits": [
+        {
+          "offset": 92,
+          "length": 9,
+          "original": "transprot",
+          "replacement": "transport"
+        },
+        {
+          "offset": 215,
+          "length": 9,
+          "original": "unrealted",
+          "replacement": "unrelated"
+        },
+        {
+          "offset": 247,
+          "length": 7,
+          "original": "suplies",
+          "replacement": "supplies"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-paragraphs-correction-24"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "harbour notice",
+      "input": "Strong winds may delay the morning crossing. Passengers should remain inside the terminal until boarding is annoucned.\n\nThe café will stay open, and staff can help with onward travel. Keep receipts for any resonable expenses so the operator can consdier them.",
+      "expected": "Strong winds may delay the morning crossing. Passengers should remain inside the terminal until boarding is announced.\n\nThe café will stay open, and staff can help with onward travel. Keep receipts for any reasonable expenses so the operator can consider them.",
+      "edits": [
+        {
+          "offset": 108,
+          "length": 9,
+          "original": "annoucned",
+          "replacement": "announced"
+        },
+        {
+          "offset": 206,
+          "length": 9,
+          "original": "resonable",
+          "replacement": "reasonable"
+        },
+        {
+          "offset": 245,
+          "length": 8,
+          "original": "consdier",
+          "replacement": "consider"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-paragraphs-correction-25"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "scenario": "safe ambiguous valid words",
+      "input": "Please desert the idea of serving dessert outdoors if the wind rises. The principal concern is keeping the cakes dry.\n\nIn principle, we can move inside at short notice. The stationary trolley has enough stationery for new labels.",
+      "expected": "Please desert the idea of serving dessert outdoors if the wind rises. The principal concern is keeping the cakes dry.\n\nIn principle, we can move inside at short notice. The stationary trolley has enough stationery for new labels.",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-en-paragraphs-safe-04"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "scenario": "safe unicode",
+      "input": "The sign says \"Café ouvert\" beside a small ☕ symbol. That wording belongs to the artwork.\n\nOur inventory uses the identifier café_v2 and the folder name Résumé. Preserve both exactly.",
+      "expected": "The sign says \"Café ouvert\" beside a small ☕ symbol. That wording belongs to the artwork.\n\nOur inventory uses the identifier café_v2 and the folder name Résumé. Preserve both exactly.",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-en-paragraphs-safe-05"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "rare long words",
+      "input": "🔎 The archaeolgical survey needs independant review and careful docummentation.",
+      "expected": "🔎 The archaeological survey needs independent review and careful documentation.",
+      "edits": [
+        {
+          "offset": 7,
+          "length": 13,
+          "original": "archaeolgical",
+          "replacement": "archaeological"
+        },
+        {
+          "offset": 34,
+          "length": 11,
+          "original": "independant",
+          "replacement": "independent"
+        },
+        {
+          "offset": 65,
+          "length": 14,
+          "original": "docummentation",
+          "replacement": "documentation"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-short-correction-13"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "double letters",
+      "input": "The commitee will recomend an apropriate venue.",
+      "expected": "The committee will recommend an appropriate venue.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 8,
+          "original": "commitee",
+          "replacement": "committee"
+        },
+        {
+          "offset": 18,
+          "length": 8,
+          "original": "recomend",
+          "replacement": "recommend"
+        },
+        {
+          "offset": 30,
+          "length": 10,
+          "original": "apropriate",
+          "replacement": "appropriate"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-short-correction-14"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "ambiguous distance",
+      "input": "Keep the formla invitation and the personla reply in seperate folders.",
+      "expected": "Keep the formal invitation and the personal reply in separate folders.",
+      "edits": [
+        {
+          "offset": 9,
+          "length": 6,
+          "original": "formla",
+          "replacement": "formal"
+        },
+        {
+          "offset": 35,
+          "length": 8,
+          "original": "personla",
+          "replacement": "personal"
+        },
+        {
+          "offset": 53,
+          "length": 8,
+          "original": "seperate",
+          "replacement": "separate"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-short-correction-15"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "measurement units",
+      "input": "The alumnium panel is 25 mm wide;\r\ncheck its thicknes before instalation.",
+      "expected": "The aluminium panel is 25 mm wide;\r\ncheck its thickness before installation.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 8,
+          "original": "alumnium",
+          "replacement": "aluminium"
+        },
+        {
+          "offset": 45,
+          "length": 8,
+          "original": "thicknes",
+          "replacement": "thickness"
+        },
+        {
+          "offset": 61,
+          "length": 11,
+          "original": "instalation",
+          "replacement": "installation"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-short-correction-16"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "leading trailing space",
+      "input": "  Pleaze remeber the appoitnment.  ",
+      "expected": "  Please remember the appointment.  ",
+      "edits": [
+        {
+          "offset": 2,
+          "length": 6,
+          "original": "Pleaze",
+          "replacement": "Please"
+        },
+        {
+          "offset": 9,
+          "length": 7,
+          "original": "remeber",
+          "replacement": "remember"
+        },
+        {
+          "offset": 21,
+          "length": 11,
+          "original": "appoitnment",
+          "replacement": "appointment"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-short-correction-17"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "semicolon",
+      "input": "The netwrok is back; verfiy the connetcion before restarting.",
+      "expected": "The network is back; verify the connection before restarting.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 7,
+          "original": "netwrok",
+          "replacement": "network"
+        },
+        {
+          "offset": 21,
+          "length": 6,
+          "original": "verfiy",
+          "replacement": "verify"
+        },
+        {
+          "offset": 32,
+          "length": 10,
+          "original": "connetcion",
+          "replacement": "connection"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-short-correction-18"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "sentence initial uncommon",
+      "input": "Occasionaly the temprature sensor sends duplciate readings.",
+      "expected": "Occasionally the temperature sensor sends duplicate readings.",
+      "edits": [
+        {
+          "offset": 0,
+          "length": 11,
+          "original": "Occasionaly",
+          "replacement": "Occasionally"
+        },
+        {
+          "offset": 16,
+          "length": 10,
+          "original": "temprature",
+          "replacement": "temperature"
+        },
+        {
+          "offset": 40,
+          "length": 9,
+          "original": "duplciate",
+          "replacement": "duplicate"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-short-correction-19"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "long single sentence",
+      "input": "Could you clarfiy whether the insurace covers accidnetal damage during transprot?",
+      "expected": "Could you clarify whether the insurance covers accidental damage during transport?",
+      "edits": [
+        {
+          "offset": 10,
+          "length": 7,
+          "original": "clarfiy",
+          "replacement": "clarify"
+        },
+        {
+          "offset": 30,
+          "length": 8,
+          "original": "insurace",
+          "replacement": "insurance"
+        },
+        {
+          "offset": 46,
+          "length": 10,
+          "original": "accidnetal",
+          "replacement": "accidental"
+        },
+        {
+          "offset": 71,
+          "length": 9,
+          "original": "transprot",
+          "replacement": "transport"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-en-short-correction-20"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe literal quote",
+      "input": "> Pleaze dont corect this historical quote.",
+      "expected": "> Pleaze dont corect this historical quote.",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-en-short-safe-07"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe brandlike invented name",
+      "input": "QvorrLab ships the Zyntriq adapter.",
+      "expected": "QvorrLab ships the Zyntriq adapter.",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-en-short-safe-08"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe whitespace",
+      "input": "\tThe box is here.  \n\nPlease leave it closed.\t",
+      "expected": "\tThe box is here.  \n\nPlease leave it closed.\t",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-en-short-safe-09"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe punctuation unicode",
+      "input": "\"Ready?\" she asked. Yes… ready! 🧭",
+      "expected": "\"Ready?\" she asked. Yes… ready! 🧭",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-en-short-safe-10"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Datenwiederherstellung",
+      "input": "Hallo Betriebsteam,\n\nfür den nächsten Test brauchen wir eine vollständige Kopie der Datnebank.\n\nBitte verwendet die Sicherung vom Sonntag und prüft nach der Wiederherstellung die Anzahl der Datensätse.\n\nDas Testsystem darf keine Nachrichten versenden. Diese Einschränknug muss vor dem Start der Anwendnug aktiv sein.\n\nViele Grüße\nNela Bach",
+      "expected": "Hallo Betriebsteam,\n\nfür den nächsten Test brauchen wir eine vollständige Kopie der Datenbank.\n\nBitte verwendet die Sicherung vom Sonntag und prüft nach der Wiederherstellung die Anzahl der Datensätze.\n\nDas Testsystem darf keine Nachrichten versenden. Diese Einschränkung muss vor dem Start der Anwendung aktiv sein.\n\nViele Grüße\nNela Bach",
+      "edits": [
+        {
+          "offset": 84,
+          "length": 9,
+          "original": "Datnebank",
+          "replacement": "Datenbank"
+        },
+        {
+          "offset": 190,
+          "length": 10,
+          "original": "Datensätse",
+          "replacement": "Datensätze"
+        },
+        {
+          "offset": 258,
+          "length": 13,
+          "original": "Einschränknug",
+          "replacement": "Einschränkung"
+        },
+        {
+          "offset": 295,
+          "length": 9,
+          "original": "Anwendnug",
+          "replacement": "Anwendung"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-email-correction-19"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Gartengeräte ausleihen",
+      "input": "Hallo Jona,\n\nwir schneiden am Wochenende die Hecke und würden gern deine Heckenscheer ausleihen.\n\nUnsere ist bei der Reparatur. Das Verlängerungskabel haben wir bereits auf Beschädigugnen geprüft.\n\nIch bringe das Gerät am Sonntag sauber zurück. Bitte sag mir vorher, ob ich bei der Bediennug etwas Besonderes beachtne soll.\n\nLiebe Grüße\nRika Dorn",
+      "expected": "Hallo Jona,\n\nwir schneiden am Wochenende die Hecke und würden gern deine Heckenschere ausleihen.\n\nUnsere ist bei der Reparatur. Das Verlängerungskabel haben wir bereits auf Beschädigungen geprüft.\n\nIch bringe das Gerät am Sonntag sauber zurück. Bitte sag mir vorher, ob ich bei der Bedienung etwas Besonderes beachten soll.\n\nLiebe Grüße\nRika Dorn",
+      "edits": [
+        {
+          "offset": 73,
+          "length": 12,
+          "original": "Heckenscheer",
+          "replacement": "Heckenschere"
+        },
+        {
+          "offset": 173,
+          "length": 14,
+          "original": "Beschädigugnen",
+          "replacement": "Beschädigungen"
+        },
+        {
+          "offset": 282,
+          "length": 9,
+          "original": "Bediennug",
+          "replacement": "Bedienung"
+        },
+        {
+          "offset": 309,
+          "length": 8,
+          "original": "beachtne",
+          "replacement": "beachten"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-email-correction-20"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Ausstellung Transport",
+      "input": "Sehr geehrtes Museumsteam,\n\ndie drei gerahmten Bilder sind für den Transoprt vorbereitet.\n\nJede Kiste trägt eine Nummer, die auch auf der beigefügten Liste steht. Bitte kontrollieren Sie den Zustand bei der Ankuft.\n\nDie Rahmen dürfen nicht direkt auf dem Boden stehen. Geeignete Unterlagen liegen der Sendnug bei und sollen für die Rückreise aufbewarht werden.\n\nMit freundlichen Grüßen\nLevin Aue",
+      "expected": "Sehr geehrtes Museumsteam,\n\ndie drei gerahmten Bilder sind für den Transport vorbereitet.\n\nJede Kiste trägt eine Nummer, die auch auf der beigefügten Liste steht. Bitte kontrollieren Sie den Zustand bei der Ankunft.\n\nDie Rahmen dürfen nicht direkt auf dem Boden stehen. Geeignete Unterlagen liegen der Sendung bei und sollen für die Rückreise aufbewahrt werden.\n\nMit freundlichen Grüßen\nLevin Aue",
+      "edits": [
+        {
+          "offset": 67,
+          "length": 9,
+          "original": "Transoprt",
+          "replacement": "Transport"
+        },
+        {
+          "offset": 207,
+          "length": 6,
+          "original": "Ankuft",
+          "replacement": "Ankunft"
+        },
+        {
+          "offset": 301,
+          "length": 7,
+          "original": "Sendnug",
+          "replacement": "Sendung"
+        },
+        {
+          "offset": 342,
+          "length": 10,
+          "original": "aufbewarht",
+          "replacement": "aufbewahrt"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-email-correction-21"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Kursabsage Krankheit",
+      "input": "Liebe Kursteilnehmer,\n\ndie heutige Stunde fällt wegen einer kurzfristigen Erkranknug leider aus.\n\nWir bieten einen Ersatztermin in der nächsten Woche an. Eure bisherigen Reservierugnen bleiben dafür bestehen.\n\nWer dann keine Zeit hat, bekommt die Gebühr erstattet. Bitte meldet euch dazu direkt bei der Verwaltnug, damit wir die Zahlung zuordenn können.\n\nViele Grüße\nMara Fink",
+      "expected": "Liebe Kursteilnehmer,\n\ndie heutige Stunde fällt wegen einer kurzfristigen Erkrankung leider aus.\n\nWir bieten einen Ersatztermin in der nächsten Woche an. Eure bisherigen Reservierungen bleiben dafür bestehen.\n\nWer dann keine Zeit hat, bekommt die Gebühr erstattet. Bitte meldet euch dazu direkt bei der Verwaltung, damit wir die Zahlung zuordnen können.\n\nViele Grüße\nMara Fink",
+      "edits": [
+        {
+          "offset": 74,
+          "length": 10,
+          "original": "Erkranknug",
+          "replacement": "Erkrankung"
+        },
+        {
+          "offset": 170,
+          "length": 14,
+          "original": "Reservierugnen",
+          "replacement": "Reservierungen"
+        },
+        {
+          "offset": 303,
+          "length": 10,
+          "original": "Verwaltnug",
+          "replacement": "Verwaltung"
+        },
+        {
+          "offset": 337,
+          "length": 8,
+          "original": "zuordenn",
+          "replacement": "zuordnen"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-email-correction-22"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Lieferadresse Baustelle",
+      "input": "Guten Tag Herr Berg,\n\ndie Baustelle ist inzwischen über eine andere Zufarht erreichbar.\n\nBitte nutzen Sie die kleine Straase hinter der Halle. Die ausgeschilderte Hauptzufahrt ist für schwere Fahrzeuge gesperrt.\n\nUnser Mitarbeiter wartet dort mit dem Schlüssel. Geben Sie uns eine ungefähre Ankunftszeit, damit unnötige Wartezieten vermieden werden.\n\nFreundliche Grüße\nNela Bach",
+      "expected": "Guten Tag Herr Berg,\n\ndie Baustelle ist inzwischen über eine andere Zufahrt erreichbar.\n\nBitte nutzen Sie die kleine Straße hinter der Halle. Die ausgeschilderte Hauptzufahrt ist für schwere Fahrzeuge gesperrt.\n\nUnser Mitarbeiter wartet dort mit dem Schlüssel. Geben Sie uns eine ungefähre Ankunftszeit, damit unnötige Wartezeiten vermieden werden.\n\nFreundliche Grüße\nNela Bach",
+      "edits": [
+        {
+          "offset": 68,
+          "length": 7,
+          "original": "Zufarht",
+          "replacement": "Zufahrt"
+        },
+        {
+          "offset": 117,
+          "length": 7,
+          "original": "Straase",
+          "replacement": "Straße"
+        },
+        {
+          "offset": 320,
+          "length": 11,
+          "original": "Wartezieten",
+          "replacement": "Wartezeiten"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-email-correction-23"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Zeitung Leserbrief",
+      "input": "Sehr geehrte Redaktion,\n\nin Ihrem Bericht über den Spielplatz stimmt die genannte Eröffnungsziet nicht.\n\nDie Anlage öffnet erst im Juni, weil die Prüfung der Geräte noch nicht abgeschlosesn ist.\n\nBitte berichtigen Sie diese Angabe in der nächsten Ausgabe. Mehrere Familien standen bereits vor dem verschlosesnen Tor und fragten nach einer Erklärnug.\n\nMit freundlichen Grüßen\nJona Feld",
+      "expected": "Sehr geehrte Redaktion,\n\nin Ihrem Bericht über den Spielplatz stimmt die genannte Eröffnungszeit nicht.\n\nDie Anlage öffnet erst im Juni, weil die Prüfung der Geräte noch nicht abgeschlossen ist.\n\nBitte berichtigen Sie diese Angabe in der nächsten Ausgabe. Mehrere Familien standen bereits vor dem verschlossenen Tor und fragten nach einer Erklärung.\n\nMit freundlichen Grüßen\nJona Feld",
+      "edits": [
+        {
+          "offset": 82,
+          "length": 14,
+          "original": "Eröffnungsziet",
+          "replacement": "Eröffnungszeit"
+        },
+        {
+          "offset": 176,
+          "length": 13,
+          "original": "abgeschlosesn",
+          "replacement": "abgeschlossen"
+        },
+        {
+          "offset": 297,
+          "length": 14,
+          "original": "verschlosesnen",
+          "replacement": "verschlossenen"
+        },
+        {
+          "offset": 339,
+          "length": 9,
+          "original": "Erklärnug",
+          "replacement": "Erklärung"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-email-correction-24"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Veranstaltung barrierefrei",
+      "input": "Liebes Organisationsteam,\n\nich möchte an der Lesung teilnehmen und benötige einen stufenlsoen Zugang.\n\nAuf den Fotos ist nur eine Treppe zu sehen. Gibt es einen anderen Eingang oder einen Aufzgu?\n\nBitte teilen Sie mir auch mit, ob eine geeignete Toilette vorhanden ist. Diese Angaben helfen mir bei der Vorbereitnug meiner Anreies.\n\nHerzliche Grüße\nRika Dorn",
+      "expected": "Liebes Organisationsteam,\n\nich möchte an der Lesung teilnehmen und benötige einen stufenlosen Zugang.\n\nAuf den Fotos ist nur eine Treppe zu sehen. Gibt es einen anderen Eingang oder einen Aufzug?\n\nBitte teilen Sie mir auch mit, ob eine geeignete Toilette vorhanden ist. Diese Angaben helfen mir bei der Vorbereitung meiner Anreise.\n\nHerzliche Grüße\nRika Dorn",
+      "edits": [
+        {
+          "offset": 82,
+          "length": 11,
+          "original": "stufenlsoen",
+          "replacement": "stufenlosen"
+        },
+        {
+          "offset": 188,
+          "length": 6,
+          "original": "Aufzgu",
+          "replacement": "Aufzug"
+        },
+        {
+          "offset": 303,
+          "length": 12,
+          "original": "Vorbereitnug",
+          "replacement": "Vorbereitung"
+        },
+        {
+          "offset": 323,
+          "length": 7,
+          "original": "Anreies",
+          "replacement": "Anreise"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-email-correction-25"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Haushaltsgerät Rückgabe",
+      "input": "Guten Tag,\n\nder Wasserkocher schaltet sich trotz geschlossenem Deckel nicht automatsich aus.\n\nWir haben ihn deshalb vom Strom getrennt und möchten ihn zurückgeben. Die Originalverpacknug ist noch vorhanden.\n\nBitte senden Sie ein Rücksendeetikett und nennen Sie die weiteren Schritte. Ich möchte keine Repartaur, sondern die Erstattnug des Kaufpreises.\n\nFreundliche Grüße\nLevin Aue",
+      "expected": "Guten Tag,\n\nder Wasserkocher schaltet sich trotz geschlossenem Deckel nicht automatisch aus.\n\nWir haben ihn deshalb vom Strom getrennt und möchten ihn zurückgeben. Die Originalverpackung ist noch vorhanden.\n\nBitte senden Sie ein Rücksendeetikett und nennen Sie die weiteren Schritte. Ich möchte keine Reparatur, sondern die Erstattung des Kaufpreises.\n\nFreundliche Grüße\nLevin Aue",
+      "edits": [
+        {
+          "offset": 76,
+          "length": 11,
+          "original": "automatsich",
+          "replacement": "automatisch"
+        },
+        {
+          "offset": 168,
+          "length": 18,
+          "original": "Originalverpacknug",
+          "replacement": "Originalverpackung"
+        },
+        {
+          "offset": 301,
+          "length": 9,
+          "original": "Repartaur",
+          "replacement": "Reparatur"
+        },
+        {
+          "offset": 324,
+          "length": 10,
+          "original": "Erstattnug",
+          "replacement": "Erstattung"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-email-correction-26"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Protokoll Ergänzung",
+      "input": "Hallo Protokollteam,\n\nim Entwurf fehlt unsere Vereinbarung zur Verteilnug der Bereitschaftsdienste.\n\nWir hatten beschlossen, die Wochenenden monatlich zu wechseln. Das sollte als eigener Absatzt unter dem entsprechenden Punkt stehen.\n\nBitte ergänzt auch, wer die erste Liste erstellt. Ohne diese Zuständgikeit bleibt die Umsetznug unklar.\n\nViele Grüße\nMara Fink",
+      "expected": "Hallo Protokollteam,\n\nim Entwurf fehlt unsere Vereinbarung zur Verteilung der Bereitschaftsdienste.\n\nWir hatten beschlossen, die Wochenenden monatlich zu wechseln. Das sollte als eigener Absatz unter dem entsprechenden Punkt stehen.\n\nBitte ergänzt auch, wer die erste Liste erstellt. Ohne diese Zuständigkeit bleibt die Umsetzung unklar.\n\nViele Grüße\nMara Fink",
+      "edits": [
+        {
+          "offset": 63,
+          "length": 10,
+          "original": "Verteilnug",
+          "replacement": "Verteilung"
+        },
+        {
+          "offset": 187,
+          "length": 7,
+          "original": "Absatzt",
+          "replacement": "Absatz"
+        },
+        {
+          "offset": 296,
+          "length": 13,
+          "original": "Zuständgikeit",
+          "replacement": "Zuständigkeit"
+        },
+        {
+          "offset": 321,
+          "length": 9,
+          "original": "Umsetznug",
+          "replacement": "Umsetzung"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-email-correction-27"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Reisegruppe Zimmer",
+      "input": "Sehr geehrtes Hotelteam,\n\nfür unsere Gruppe benötigen wir statt vier Doppelzimmern nun drei Doppelzimmer und zwei Einzelzimemr.\n\nDie Zahl der Gäste bleibt unverändert. Zwei Personen möchten lediglich getrent übernachten.\n\nBitte prüfen Sie die Verfügbarkeit und senden Sie ein angepasstes Angeobt. Die übrigen Leistungen sollen wie bisher vereinbrat bleiben.\n\nMit freundlichen Grüßen\nTimo Berg",
+      "expected": "Sehr geehrtes Hotelteam,\n\nfür unsere Gruppe benötigen wir statt vier Doppelzimmern nun drei Doppelzimmer und zwei Einzelzimmer.\n\nDie Zahl der Gäste bleibt unverändert. Zwei Personen möchten lediglich getrennt übernachten.\n\nBitte prüfen Sie die Verfügbarkeit und senden Sie ein angepasstes Angebot. Die übrigen Leistungen sollen wie bisher vereinbart bleiben.\n\nMit freundlichen Grüßen\nTimo Berg",
+      "edits": [
+        {
+          "offset": 114,
+          "length": 12,
+          "original": "Einzelzimemr",
+          "replacement": "Einzelzimmer"
+        },
+        {
+          "offset": 200,
+          "length": 7,
+          "original": "getrent",
+          "replacement": "getrennt"
+        },
+        {
+          "offset": 288,
+          "length": 7,
+          "original": "Angeobt",
+          "replacement": "Angebot"
+        },
+        {
+          "offset": 338,
+          "length": 10,
+          "original": "vereinbrat",
+          "replacement": "vereinbart"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-email-correction-28"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Materialspende Schule",
+      "input": "Liebe Werkgruppe,\n\neine Tischlerei bietet uns saubere Holzreste für den nächsten Bastelnachmitag an.\n\nDie Stücke müssen vor der Verwendung auf Splitter geprüft werden. Dafür brauchen wir noch Schleifpapire.\n\nBitte meldet euch, wenn ihr bei der Vorbereitung helfen könnt. Wir möchten das Material rechtzeitig sortiern und in kleine Kisten verpackne.\n\nHerzliche Grüße\nNela Bach",
+      "expected": "Liebe Werkgruppe,\n\neine Tischlerei bietet uns saubere Holzreste für den nächsten Bastelnachmittag an.\n\nDie Stücke müssen vor der Verwendung auf Splitter geprüft werden. Dafür brauchen wir noch Schleifpapier.\n\nBitte meldet euch, wenn ihr bei der Vorbereitung helfen könnt. Wir möchten das Material rechtzeitig sortieren und in kleine Kisten verpacken.\n\nHerzliche Grüße\nNela Bach",
+      "edits": [
+        {
+          "offset": 81,
+          "length": 15,
+          "original": "Bastelnachmitag",
+          "replacement": "Bastelnachmittag"
+        },
+        {
+          "offset": 192,
+          "length": 13,
+          "original": "Schleifpapire",
+          "replacement": "Schleifpapier"
+        },
+        {
+          "offset": 308,
+          "length": 8,
+          "original": "sortiern",
+          "replacement": "sortieren"
+        },
+        {
+          "offset": 338,
+          "length": 9,
+          "original": "verpackne",
+          "replacement": "verpacken"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-email-correction-29"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Lärmbeschwerde freundlich",
+      "input": "Hallo Hausverwaltung,\n\nseit einigen Tagen läuft im Keller auch nachts ein lautes Lüftungsgerat.\n\nDas Geräusch ist im Schlafzimmer deutlich zu hören und unterbricht regelmäßig unseren Schalf.\n\nBitte prüfen Sie die Einstellung der Anlage. Eine niedrigere Leistung während der Nachtrhue würde die Situation vermutlich verbessren.\n\nFreundliche Grüße\nJona Feld",
+      "expected": "Hallo Hausverwaltung,\n\nseit einigen Tagen läuft im Keller auch nachts ein lautes Lüftungsgerät.\n\nDas Geräusch ist im Schlafzimmer deutlich zu hören und unterbricht regelmäßig unseren Schlaf.\n\nBitte prüfen Sie die Einstellung der Anlage. Eine niedrigere Leistung während der Nachtruhe würde die Situation vermutlich verbessern.\n\nFreundliche Grüße\nJona Feld",
+      "edits": [
+        {
+          "offset": 81,
+          "length": 13,
+          "original": "Lüftungsgerat",
+          "replacement": "Lüftungsgerät"
+        },
+        {
+          "offset": 183,
+          "length": 6,
+          "original": "Schalf",
+          "replacement": "Schlaf"
+        },
+        {
+          "offset": 274,
+          "length": 9,
+          "original": "Nachtrhue",
+          "replacement": "Nachtruhe"
+        },
+        {
+          "offset": 315,
+          "length": 10,
+          "original": "verbessren",
+          "replacement": "verbessern"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-email-correction-30"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe Programmtext",
+      "input": "Hallo Entwicklung,\n\nder neue Test deckt auch leere Eingaben ab.\n\nDer Ausdruck `if (teh === \"recieve\") return fehller;` ist absichtlich so geschrieben und bleibt unverändert.\n\nBitte prüft nur das Verhalten des Parsers. Eine Umbenennung würde den Vergleich mit älteren Ergebnissen erschweren.\n\nViele Grüße\nMara Fink",
+      "expected": "Hallo Entwicklung,\n\nder neue Test deckt auch leere Eingaben ab.\n\nDer Ausdruck `if (teh === \"recieve\") return fehller;` ist absichtlich so geschrieben und bleibt unverändert.\n\nBitte prüft nur das Verhalten des Parsers. Eine Umbenennung würde den Vergleich mit älteren Ergebnissen erschweren.\n\nViele Grüße\nMara Fink",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-de-email-safe-07"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe Fachbegriffe",
+      "input": "Guten Tag zusammen,\n\nder Workshop behandelt OAuth, JSON und UTF-16 anhand kleiner Beispiele.\n\nEigene Laptops sind hilfreich, aber keine Voraussetzung. Wir stellen einen Browser und lokale Testdateien bereit.\n\nDie Unterlagen enthalten keine Zugangsdaten. Alle Adressen nutzen die reservierte Domain example.invalid.\n\nBeste Grüße\nTimo Berg",
+      "expected": "Guten Tag zusammen,\n\nder Workshop behandelt OAuth, JSON und UTF-16 anhand kleiner Beispiele.\n\nEigene Laptops sind hilfreich, aber keine Voraussetzung. Wir stellen einen Browser und lokale Testdateien bereit.\n\nDie Unterlagen enthalten keine Zugangsdaten. Alle Adressen nutzen die reservierte Domain example.invalid.\n\nBeste Grüße\nTimo Berg",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-de-email-safe-08"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe Produktnamen und Zitate",
+      "input": "Hallo Redaktion,\n\nder Titel der Ausstellung lautet \"Quvexa: Dinge im Wandel\".\n\nBitte verwendet die Schreibweise des Titels auch im Programm. Das erfundene Wort gehört zum Werk.\n\nDer Begleittext ist bereits freigegeben. Nur die Öffnungszeiten müssen noch ergänzt werden.\n\nViele Grüße\nNela Bach",
+      "expected": "Hallo Redaktion,\n\nder Titel der Ausstellung lautet \"Quvexa: Dinge im Wandel\".\n\nBitte verwendet die Schreibweise des Titels auch im Programm. Das erfundene Wort gehört zum Werk.\n\nDer Begleittext ist bereits freigegeben. Nur die Öffnungszeiten müssen noch ergänzt werden.\n\nViele Grüße\nNela Bach",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-de-email-safe-09"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe ungewöhnliche Signatur",
+      "input": "Guten Tag,\n\ndie Abholung der leeren Behälter ist für Mittwoch bestätigt.\n\nBitte stellen Sie alles neben die Rampe. Der Fahrer hat die Zahl der Behälter bereits erhalten.\n\nNach der Abholung sende ich Ihnen den Beleg. Eine weitere Anmeldung ist nicht erforderlich.\n\nFreundliche Grüße\nBitet Qvorr\nFehller Werk | lager@example.invalid",
+      "expected": "Guten Tag,\n\ndie Abholung der leeren Behälter ist für Mittwoch bestätigt.\n\nBitte stellen Sie alles neben die Rampe. Der Fahrer hat die Zahl der Behälter bereits erhalten.\n\nNach der Abholung sende ich Ihnen den Beleg. Eine weitere Anmeldung ist nicht erforderlich.\n\nFreundliche Grüße\nBitet Qvorr\nFehller Werk | lager@example.invalid",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-de-email-safe-10"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Drucker Vergleich",
+      "input": "Das kleinere Gerät druckt Texte sauber, zieht dünnes Papier aber manchmal schief ein. Für normale Briefe ist die Qualität ausreichedn.\n\nVor dem Kauf sollten wir Umschläge und doppelseitige Vorlagen testen. Der kurze Probedruck sagt wenig über den täglichen Arbeitsablafu und mögliche Unterbrechugnen aus.",
+      "expected": "Das kleinere Gerät druckt Texte sauber, zieht dünnes Papier aber manchmal schief ein. Für normale Briefe ist die Qualität ausreichend.\n\nVor dem Kauf sollten wir Umschläge und doppelseitige Vorlagen testen. Der kurze Probedruck sagt wenig über den täglichen Arbeitsablauf und mögliche Unterbrechungen aus.",
+      "edits": [
+        {
+          "offset": 122,
+          "length": 11,
+          "original": "ausreichedn",
+          "replacement": "ausreichend"
+        },
+        {
+          "offset": 257,
+          "length": 13,
+          "original": "Arbeitsablafu",
+          "replacement": "Arbeitsablauf"
+        },
+        {
+          "offset": 284,
+          "length": 15,
+          "original": "Unterbrechugnen",
+          "replacement": "Unterbrechungen"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-paragraphs-correction-16"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Ferienwohnung Abreise",
+      "input": "Legt die benutzten Handtücher in den Korb und schließt alle Fenster. Der Schlüssel bleibt auf dem kleinen Tisch im Flru.\n\nBitte prüft auch die Schubladen auf vergessene Sachen. Wir schicken Fundstücke gern nach, benötigen dafür aber eine vollständige Anschirft und die Übernahme der Versandkostne.",
+      "expected": "Legt die benutzten Handtücher in den Korb und schließt alle Fenster. Der Schlüssel bleibt auf dem kleinen Tisch im Flur.\n\nBitte prüft auch die Schubladen auf vergessene Sachen. Wir schicken Fundstücke gern nach, benötigen dafür aber eine vollständige Anschrift und die Übernahme der Versandkosten.",
+      "edits": [
+        {
+          "offset": 115,
+          "length": 4,
+          "original": "Flru",
+          "replacement": "Flur"
+        },
+        {
+          "offset": 251,
+          "length": 9,
+          "original": "Anschirft",
+          "replacement": "Anschrift"
+        },
+        {
+          "offset": 283,
+          "length": 13,
+          "original": "Versandkostne",
+          "replacement": "Versandkosten"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-paragraphs-correction-17"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Tonaufnahme Schnitt",
+      "input": "Am Anfang der Aufnahme ist ein leises Brummen zu hören. Eine starke Filterung würde jedoch die Stimme verändren.\n\nLasst die Pause vor der letzten Antwort stehen. Sie zeigt das Zögern der Sprecherin und ist für das Verständnsi des Gesprächs bedeutsma.",
+      "expected": "Am Anfang der Aufnahme ist ein leises Brummen zu hören. Eine starke Filterung würde jedoch die Stimme verändern.\n\nLasst die Pause vor der letzten Antwort stehen. Sie zeigt das Zögern der Sprecherin und ist für das Verständnis des Gesprächs bedeutsam.",
+      "edits": [
+        {
+          "offset": 102,
+          "length": 9,
+          "original": "verändren",
+          "replacement": "verändern"
+        },
+        {
+          "offset": 214,
+          "length": 11,
+          "original": "Verständnsi",
+          "replacement": "Verständnis"
+        },
+        {
+          "offset": 240,
+          "length": 9,
+          "original": "bedeutsma",
+          "replacement": "bedeutsam"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-paragraphs-correction-18"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Bus Ersatzverkehr",
+      "input": "Der Ersatzbus hält hinter dem Bahnhof neben dem Taxistand. Mitarbeitende helfen Fahrgästen, die Unterstütznug beim Einsteigen benötigen.\n\nPlant für die Weiterfahrt mindestens zwanzig Minuten zusätzlich ein. Eure Fahrkarten bleiben gültig, eine weitere Buchnug ist trotz der geänderten Verbindnug nicht nötig.",
+      "expected": "Der Ersatzbus hält hinter dem Bahnhof neben dem Taxistand. Mitarbeitende helfen Fahrgästen, die Unterstützung beim Einsteigen benötigen.\n\nPlant für die Weiterfahrt mindestens zwanzig Minuten zusätzlich ein. Eure Fahrkarten bleiben gültig, eine weitere Buchung ist trotz der geänderten Verbindung nicht nötig.",
+      "edits": [
+        {
+          "offset": 96,
+          "length": 13,
+          "original": "Unterstütznug",
+          "replacement": "Unterstützung"
+        },
+        {
+          "offset": 252,
+          "length": 7,
+          "original": "Buchnug",
+          "replacement": "Buchung"
+        },
+        {
+          "offset": 285,
+          "length": 10,
+          "original": "Verbindnug",
+          "replacement": "Verbindung"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-paragraphs-correction-19"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Rücksendung Prüfung",
+      "input": "Unbenutzte Teile können direkt zurückgeschickt werden. Das beschädigte Bauteil muss vorher von unserer Technik begutachttet werden.\n\nBitte beschreibt, wann der Riss erstmals sichtbar war. Gute Fotos der betroffenen Stelle erleichtern die Beurteilnug und vermeiden unnötige Nachfrgaen.",
+      "expected": "Unbenutzte Teile können direkt zurückgeschickt werden. Das beschädigte Bauteil muss vorher von unserer Technik begutachtet werden.\n\nBitte beschreibt, wann der Riss erstmals sichtbar war. Gute Fotos der betroffenen Stelle erleichtern die Beurteilung und vermeiden unnötige Nachfragen.",
+      "edits": [
+        {
+          "offset": 111,
+          "length": 12,
+          "original": "begutachttet",
+          "replacement": "begutachtet"
+        },
+        {
+          "offset": 238,
+          "length": 11,
+          "original": "Beurteilnug",
+          "replacement": "Beurteilung"
+        },
+        {
+          "offset": 273,
+          "length": 10,
+          "original": "Nachfrgaen",
+          "replacement": "Nachfragen"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-paragraphs-correction-20"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Zugänglichkeit Formular",
+      "input": "Die Tastatur erreicht alle Schaltflächen außer der letzten Auswahl. Außerdem ist die Markierung des aktiven Feldes kaum erkennabr.\n\nPrüft die überarbeitete Fassung ohne Maus. Erst dann wissen wir, ob der gesamte Vorgang auch mit dieser Bediennug zuverlässig funktionert.",
+      "expected": "Die Tastatur erreicht alle Schaltflächen außer der letzten Auswahl. Außerdem ist die Markierung des aktiven Feldes kaum erkennbar.\n\nPrüft die überarbeitete Fassung ohne Maus. Erst dann wissen wir, ob der gesamte Vorgang auch mit dieser Bedienung zuverlässig funktioniert.",
+      "edits": [
+        {
+          "offset": 120,
+          "length": 9,
+          "original": "erkennabr",
+          "replacement": "erkennbar"
+        },
+        {
+          "offset": 236,
+          "length": 9,
+          "original": "Bediennug",
+          "replacement": "Bedienung"
+        },
+        {
+          "offset": 258,
+          "length": 11,
+          "original": "funktionert",
+          "replacement": "funktioniert"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-paragraphs-correction-21"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Freigabe Interview",
+      "input": "Die befragte Person erlaubt die Veröffentlichung des Gesprächs ohne ihre Wohnadresse. Diese Einschränknug gilt auch für spätere Ausgaben.\n\nDie Originalaufnahme bleibt im geschützten Archiv. In der öffentlichen Fassung erscheinen nur die genehmigtn Abschnitte und die vereinbarte Namensnennnug.",
+      "expected": "Die befragte Person erlaubt die Veröffentlichung des Gesprächs ohne ihre Wohnadresse. Diese Einschränkung gilt auch für spätere Ausgaben.\n\nDie Originalaufnahme bleibt im geschützten Archiv. In der öffentlichen Fassung erscheinen nur die genehmigten Abschnitte und die vereinbarte Namensnennung.",
+      "edits": [
+        {
+          "offset": 92,
+          "length": 13,
+          "original": "Einschränknug",
+          "replacement": "Einschränkung"
+        },
+        {
+          "offset": 237,
+          "length": 10,
+          "original": "genehmigtn",
+          "replacement": "genehmigten"
+        },
+        {
+          "offset": 279,
+          "length": 13,
+          "original": "Namensnennnug",
+          "replacement": "Namensnennung"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-paragraphs-correction-22"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Büroumzug",
+      "input": "Beschriftet jeden Bildschirm, bevor ihr die Kabel abzieht. Sonst können die passenden Standfüße beim Transport verwechslet werden.\n\nKleine Adapter gehören in denselben Karton wie die jeweiligen Rechner. Das erspart uns später eine lange Suchaktion zwischen Werkzeug und Büromateiral sowie unnötige Verzögerugnen.",
+      "expected": "Beschriftet jeden Bildschirm, bevor ihr die Kabel abzieht. Sonst können die passenden Standfüße beim Transport verwechselt werden.\n\nKleine Adapter gehören in denselben Karton wie die jeweiligen Rechner. Das erspart uns später eine lange Suchaktion zwischen Werkzeug und Büromaterial sowie unnötige Verzögerungen.",
+      "edits": [
+        {
+          "offset": 111,
+          "length": 11,
+          "original": "verwechslet",
+          "replacement": "verwechselt"
+        },
+        {
+          "offset": 270,
+          "length": 12,
+          "original": "Büromateiral",
+          "replacement": "Büromaterial"
+        },
+        {
+          "offset": 298,
+          "length": 13,
+          "original": "Verzögerugnen",
+          "replacement": "Verzögerungen"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-paragraphs-correction-23"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Fähre Wind",
+      "input": "Wegen des starken Windes kann sich die erste Überfahrt verzögern. Bitte bleibt im Warteraum, bis der Einstieg freigegebne wird.\n\nDas Café bleibt geöffnet. Unser Team hilft bei Fragen zur Weiterreise und sammelt die nötigen Informatoinen zu möglichen Anschlussverbindugnen.",
+      "expected": "Wegen des starken Windes kann sich die erste Überfahrt verzögern. Bitte bleibt im Warteraum, bis der Einstieg freigegeben wird.\n\nDas Café bleibt geöffnet. Unser Team hilft bei Fragen zur Weiterreise und sammelt die nötigen Informationen zu möglichen Anschlussverbindungen.",
+      "edits": [
+        {
+          "offset": 110,
+          "length": 11,
+          "original": "freigegebne",
+          "replacement": "freigegeben"
+        },
+        {
+          "offset": 223,
+          "length": 13,
+          "original": "Informatoinen",
+          "replacement": "Informationen"
+        },
+        {
+          "offset": 250,
+          "length": 21,
+          "original": "Anschlussverbindugnen",
+          "replacement": "Anschlussverbindungen"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-paragraphs-correction-24"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Restaurierung Befund",
+      "input": "Unter der oberen Farbschicht sind Reste einer älteren Bemalnug sichtbar geworden. Wir haben die Stelle zunächst nur fotografiert.\n\nVor weiteren Arbeiten braucht es eine gemeinsame Bewertung. Eine vorschnelle Reinigung könnte wichtige Hinwiese auf die ursprüngliche Gestaltugn zerstören.",
+      "expected": "Unter der oberen Farbschicht sind Reste einer älteren Bemalung sichtbar geworden. Wir haben die Stelle zunächst nur fotografiert.\n\nVor weiteren Arbeiten braucht es eine gemeinsame Bewertung. Eine vorschnelle Reinigung könnte wichtige Hinweise auf die ursprüngliche Gestaltung zerstören.",
+      "edits": [
+        {
+          "offset": 54,
+          "length": 8,
+          "original": "Bemalnug",
+          "replacement": "Bemalung"
+        },
+        {
+          "offset": 234,
+          "length": 8,
+          "original": "Hinwiese",
+          "replacement": "Hinweise"
+        },
+        {
+          "offset": 265,
+          "length": 10,
+          "original": "Gestaltugn",
+          "replacement": "Gestaltung"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-paragraphs-correction-25"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "scenario": "safe Mehrdeutigkeit",
+      "input": "Die Bank steht vor der Bank. Der Hahn neben dem alten Tor ist heute besonders laut.\n\nMorgen wollen wir malen, danach mahlen wir das Getreide. Beide Wörter stehen hier mit Absicht.",
+      "expected": "Die Bank steht vor der Bank. Der Hahn neben dem alten Tor ist heute besonders laut.\n\nMorgen wollen wir malen, danach mahlen wir das Getreide. Beide Wörter stehen hier mit Absicht.",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-de-paragraphs-safe-04"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "scenario": "safe mixed technical language",
+      "input": "Der Pull Request enthält nur die Änderung am Frontend. Das Backend bleibt auf demselben Stand.\n\nBitte prüft den Screenshot und den Commit mit der Kennung XQZ-08. Die README nennt den lokalen Testbefehl.",
+      "expected": "Der Pull Request enthält nur die Änderung am Frontend. Das Backend bleibt auf demselben Stand.\n\nBitte prüft den Screenshot und den Commit mit der Kennung XQZ-08. Die README nennt den lokalen Testbefehl.",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-de-paragraphs-safe-05"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "Holdout Emoji Offset",
+      "input": "🧭 Die Wegbeschreibugn nennt den Treffpnukt und die Abfahrtsziet.",
+      "expected": "🧭 Die Wegbeschreibung nennt den Treffpunkt und die Abfahrtszeit.",
+      "edits": [
+        {
+          "offset": 7,
+          "length": 15,
+          "original": "Wegbeschreibugn",
+          "replacement": "Wegbeschreibung"
+        },
+        {
+          "offset": 33,
+          "length": 10,
+          "original": "Treffpnukt",
+          "replacement": "Treffpunkt"
+        },
+        {
+          "offset": 52,
+          "length": 12,
+          "original": "Abfahrtsziet",
+          "replacement": "Abfahrtszeit"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-short-correction-13"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "Holdout CRLF",
+      "input": "Achtung:\r\nDie Wartugn braucht eine Unterbrechugn der Verbindnug.",
+      "expected": "Achtung:\r\nDie Wartung braucht eine Unterbrechung der Verbindung.",
+      "edits": [
+        {
+          "offset": 14,
+          "length": 7,
+          "original": "Wartugn",
+          "replacement": "Wartung"
+        },
+        {
+          "offset": 35,
+          "length": 13,
+          "original": "Unterbrechugn",
+          "replacement": "Unterbrechung"
+        },
+        {
+          "offset": 53,
+          "length": 10,
+          "original": "Verbindnug",
+          "replacement": "Verbindung"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-short-correction-14"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "Doppelbuchstaben",
+      "input": "Der Schlüsel liegt beim Empfagn neben der Kaffemaschine.",
+      "expected": "Der Schlüssel liegt beim Empfang neben der Kaffeemaschine.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 8,
+          "original": "Schlüsel",
+          "replacement": "Schlüssel"
+        },
+        {
+          "offset": 24,
+          "length": 7,
+          "original": "Empfagn",
+          "replacement": "Empfang"
+        },
+        {
+          "offset": 42,
+          "length": 13,
+          "original": "Kaffemaschine",
+          "replacement": "Kaffeemaschine"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-short-correction-15"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "Schwieriges Kompositum",
+      "input": "Die Betriebskostenabrechnnug braucht eine nachvollziehabre Aufschlüsselugn.",
+      "expected": "Die Betriebskostenabrechnung braucht eine nachvollziehbare Aufschlüsselung.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 24,
+          "original": "Betriebskostenabrechnnug",
+          "replacement": "Betriebskostenabrechnung"
+        },
+        {
+          "offset": 42,
+          "length": 16,
+          "original": "nachvollziehabre",
+          "replacement": "nachvollziehbare"
+        },
+        {
+          "offset": 59,
+          "length": 15,
+          "original": "Aufschlüsselugn",
+          "replacement": "Aufschlüsselung"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-short-correction-16"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "Semikolon",
+      "input": "Die Datne sind kopiert; bitte die Sicherugn vor dem Löschen vergleihcen.",
+      "expected": "Die Daten sind kopiert; bitte die Sicherung vor dem Löschen vergleichen.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 5,
+          "original": "Datne",
+          "replacement": "Daten"
+        },
+        {
+          "offset": 34,
+          "length": 9,
+          "original": "Sicherugn",
+          "replacement": "Sicherung"
+        },
+        {
+          "offset": 60,
+          "length": 11,
+          "original": "vergleihcen",
+          "replacement": "vergleichen"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-short-correction-17"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "Maße und Einheiten",
+      "input": "Das Gehäusee ist 40 mm breit; die Öffnugn muss vor der Montgae geprüft werden.",
+      "expected": "Das Gehäuse ist 40 mm breit; die Öffnung muss vor der Montage geprüft werden.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 8,
+          "original": "Gehäusee",
+          "replacement": "Gehäuse"
+        },
+        {
+          "offset": 34,
+          "length": 7,
+          "original": "Öffnugn",
+          "replacement": "Öffnung"
+        },
+        {
+          "offset": 55,
+          "length": 7,
+          "original": "Montgae",
+          "replacement": "Montage"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-short-correction-18"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "Initiale Umlautkorrektur",
+      "input": "Übrigenss fehlen die Quittugnen für die Übernachtugn.",
+      "expected": "Übrigens fehlen die Quittungen für die Übernachtung.",
+      "edits": [
+        {
+          "offset": 0,
+          "length": 9,
+          "original": "Übrigenss",
+          "replacement": "Übrigens"
+        },
+        {
+          "offset": 21,
+          "length": 10,
+          "original": "Quittugnen",
+          "replacement": "Quittungen"
+        },
+        {
+          "offset": 40,
+          "length": 12,
+          "original": "Übernachtugn",
+          "replacement": "Übernachtung"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-short-correction-19"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "Lange Bitte",
+      "input": "Bitte berücksichtgien Sie bei der Entscheidugn auch die voraussichtlcihen Folgekostne.",
+      "expected": "Bitte berücksichtigen Sie bei der Entscheidung auch die voraussichtlichen Folgekosten.",
+      "edits": [
+        {
+          "offset": 6,
+          "length": 15,
+          "original": "berücksichtgien",
+          "replacement": "berücksichtigen"
+        },
+        {
+          "offset": 34,
+          "length": 12,
+          "original": "Entscheidugn",
+          "replacement": "Entscheidung"
+        },
+        {
+          "offset": 56,
+          "length": 17,
+          "original": "voraussichtlcihen",
+          "replacement": "voraussichtlichen"
+        },
+        {
+          "offset": 74,
+          "length": 11,
+          "original": "Folgekostne",
+          "replacement": "Folgekosten"
+        }
+      ],
+      "split": "holdout",
+      "id": "email200-holdout-de-short-correction-20"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe Zitat",
+      "input": "> Bitet dises Zitat unverändret lassn.",
+      "expected": "> Bitet dises Zitat unverändret lassn.",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-de-short-safe-07"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe Kunstname",
+      "input": "QvorrLab liefert den Zyntriq-Adapter an Ilvo Xern.",
+      "expected": "QvorrLab liefert den Zyntriq-Adapter an Ilvo Xern.",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-de-short-safe-08"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe CRLF Leerraum",
+      "input": "\tDer Karton bleibt zu.  \r\n\r\nBitte hier abstellen.\t",
+      "expected": "\tDer Karton bleibt zu.  \r\n\r\nBitte hier abstellen.\t",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-de-short-safe-09"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe Unicode",
+      "input": "\"Fertig?\" fragte sie. Ja… fertig! 🧩",
+      "expected": "\"Fertig?\" fragte sie. Ja… fertig! 🧩",
+      "edits": [],
+      "split": "holdout",
+      "id": "email200-holdout-de-short-safe-10"
+    }
+  ]
+}

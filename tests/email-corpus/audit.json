@@ -1,0 +1,975 @@
+{
+  "description": "Independently authored synthetic English/German blind audit, frozen before correction-engine evaluation. Spelling-only gold; quoted text, names, code, identifiers, signatures and regional spellings are intentional.",
+  "cases": [
+    {
+      "id": "audit-en-01",
+      "split": "audit",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hello Marta,\n\nThe theatre has agreed to lend us its spare chairs for the school concert. I can colect them on Thursday, provided the van is back before noon.\n\nPlease ask the caretaker to leave the side gate open. The chairs are stacked behind the curtian, and we should take the grey covers as well.\n\nCould you confrim how many helpers are coming? Two people can carry the chairs, but a third would make loading much easier.\n\nThanks,\nFelix",
+      "expected": "Hello Marta,\n\nThe theatre has agreed to lend us its spare chairs for the school concert. I can collect them on Thursday, provided the van is back before noon.\n\nPlease ask the caretaker to leave the side gate open. The chairs are stacked behind the curtain, and we should take the grey covers as well.\n\nCould you confirm how many helpers are coming? Two people can carry the chairs, but a third would make loading much easier.\n\nThanks,\nFelix",
+      "edits": [
+        {
+          "offset": 95,
+          "length": 6,
+          "original": "colect",
+          "replacement": "collect"
+        },
+        {
+          "offset": 247,
+          "length": 7,
+          "original": "curtian",
+          "replacement": "curtain"
+        },
+        {
+          "offset": 311,
+          "length": 7,
+          "original": "confrim",
+          "replacement": "confirm"
+        }
+      ]
+    },
+    {
+      "id": "audit-en-02",
+      "split": "audit",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hi Noor,\n\nI found a small scracth on the borrowed camera lens after unpacking. It is on the outer rim, and the glass looks clean.\n\nThe photographs from the harbour still look excelent. I have kept the original files so you can check them without any editing.\n\nI will bring the camera round tomorrow evening. Please send me the repair shop's address if you would preffer a professional inspection.\n\nBest,\nAda",
+      "expected": "Hi Noor,\n\nI found a small scratch on the borrowed camera lens after unpacking. It is on the outer rim, and the glass looks clean.\n\nThe photographs from the harbour still look excellent. I have kept the original files so you can check them without any editing.\n\nI will bring the camera round tomorrow evening. Please send me the repair shop's address if you would prefer a professional inspection.\n\nBest,\nAda",
+      "edits": [
+        {
+          "offset": 26,
+          "length": 7,
+          "original": "scracth",
+          "replacement": "scratch"
+        },
+        {
+          "offset": 175,
+          "length": 8,
+          "original": "excelent",
+          "replacement": "excellent"
+        },
+        {
+          "offset": 362,
+          "length": 7,
+          "original": "preffer",
+          "replacement": "prefer"
+        }
+      ]
+    },
+    {
+      "id": "audit-en-03",
+      "split": "audit",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Dear workshop team,\n\nOur pottery class would like to book another Saturday session. Several people asked whether the next lesson could cover glazzing rather than shaping.\n\nWe have eight confirmed participants and two people waiting for their work scheduels. The group can bring its own aprons and notebooks.\n\nPlease include the firing costs in your estimte. A separate charge surprised a few people last time, and I want to give everyone the full price.\n\nKind regards,\nRuth",
+      "expected": "Dear workshop team,\n\nOur pottery class would like to book another Saturday session. Several people asked whether the next lesson could cover glazing rather than shaping.\n\nWe have eight confirmed participants and two people waiting for their work schedules. The group can bring its own aprons and notebooks.\n\nPlease include the firing costs in your estimate. A separate charge surprised a few people last time, and I want to give everyone the full price.\n\nKind regards,\nRuth",
+      "edits": [
+        {
+          "offset": 141,
+          "length": 8,
+          "original": "glazzing",
+          "replacement": "glazing"
+        },
+        {
+          "offset": 247,
+          "length": 9,
+          "original": "scheduels",
+          "replacement": "schedules"
+        },
+        {
+          "offset": 349,
+          "length": 7,
+          "original": "estimte",
+          "replacement": "estimate"
+        }
+      ]
+    },
+    {
+      "id": "audit-en-04",
+      "split": "audit",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hi Ellis,\n\nThe test device stopped sending readings shortly after midnight. Its power light remained on, so I checked the network cable before restartng it.\n\nThe log contains the literal message \"conection closed\". Please keep that wording in the bug report; the mesage comes directly from the old firmware.\n\nI have attached a short timeline and the device serail number. The next test can wait until we know whether the missing records can be recovered.\n\nRegards,\nJo",
+      "expected": "Hi Ellis,\n\nThe test device stopped sending readings shortly after midnight. Its power light remained on, so I checked the network cable before restarting it.\n\nThe log contains the literal message \"conection closed\". Please keep that wording in the bug report; the message comes directly from the old firmware.\n\nI have attached a short timeline and the device serial number. The next test can wait until we know whether the missing records can be recovered.\n\nRegards,\nJo",
+      "edits": [
+        {
+          "offset": 143,
+          "length": 9,
+          "original": "restartng",
+          "replacement": "restarting"
+        },
+        {
+          "offset": 263,
+          "length": 6,
+          "original": "mesage",
+          "replacement": "message"
+        },
+        {
+          "offset": 357,
+          "length": 6,
+          "original": "serail",
+          "replacement": "serial"
+        }
+      ]
+    },
+    {
+      "id": "audit-en-05",
+      "split": "audit",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hello neighbours,\r\n\r\nOur shared garden is ready for the spring planting day 🌱. The soil near the fence needs another bag of compst before we put anything in.\r\n\r\nI have reserved the tools for Sunday morning. Please label your gloves so we can return them to the right owenr when we clear up.\r\n\r\nThere is room for herbs in the shallow boxes. Send your ideas by Friday and I will add them to the shoping list.\r\n\r\nSee you there,\r\nImogen",
+      "expected": "Hello neighbours,\r\n\r\nOur shared garden is ready for the spring planting day 🌱. The soil near the fence needs another bag of compost before we put anything in.\r\n\r\nI have reserved the tools for Sunday morning. Please label your gloves so we can return them to the right owner when we clear up.\r\n\r\nThere is room for herbs in the shallow boxes. Send your ideas by Friday and I will add them to the shopping list.\r\n\r\nSee you there,\r\nImogen",
+      "edits": [
+        {
+          "offset": 125,
+          "length": 6,
+          "original": "compst",
+          "replacement": "compost"
+        },
+        {
+          "offset": 268,
+          "length": 5,
+          "original": "owenr",
+          "replacement": "owner"
+        },
+        {
+          "offset": 394,
+          "length": 7,
+          "original": "shoping",
+          "replacement": "shopping"
+        }
+      ]
+    },
+    {
+      "id": "audit-en-06",
+      "split": "audit",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Dear Mr Bell,\n\nThank you for showing us the flat yesterday. We liked the quiet bedroom and the space beside the kitchen for a small frezer.\n\nBefore we decide, could you explain how the shared heating bill is divided? The figures on the statment appear to cover only the winter months.\n\nWe would also appreciate a copy of the bicycle storage rules. Our current locks are rather bulkey, so we need to check the available space.\n\nYours sincerely,\nSana Reed",
+      "expected": "Dear Mr Bell,\n\nThank you for showing us the flat yesterday. We liked the quiet bedroom and the space beside the kitchen for a small freezer.\n\nBefore we decide, could you explain how the shared heating bill is divided? The figures on the statement appear to cover only the winter months.\n\nWe would also appreciate a copy of the bicycle storage rules. Our current locks are rather bulky, so we need to check the available space.\n\nYours sincerely,\nSana Reed",
+      "edits": [
+        {
+          "offset": 132,
+          "length": 6,
+          "original": "frezer",
+          "replacement": "freezer"
+        },
+        {
+          "offset": 236,
+          "length": 8,
+          "original": "statment",
+          "replacement": "statement"
+        },
+        {
+          "offset": 377,
+          "length": 6,
+          "original": "bulkey",
+          "replacement": "bulky"
+        }
+      ]
+    },
+    {
+      "id": "audit-en-07",
+      "split": "audit",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hi Morgan,\n\nThe archive boxes arrived this morning, but two of the lids are cracked. I have left those boxes empty and taken photographs of the packging.\n\nThe delivery label lists our old room number. That may explain why the driver went to the wrong entrnace before calling us.\n\nPlease request replacement lids rather than complete boxes. The bases are undamged, and sending everything back would delay the move.\n\nThanks,\nLeo",
+      "expected": "Hi Morgan,\n\nThe archive boxes arrived this morning, but two of the lids are cracked. I have left those boxes empty and taken photographs of the packaging.\n\nThe delivery label lists our old room number. That may explain why the driver went to the wrong entrance before calling us.\n\nPlease request replacement lids rather than complete boxes. The bases are undamaged, and sending everything back would delay the move.\n\nThanks,\nLeo",
+      "edits": [
+        {
+          "offset": 144,
+          "length": 8,
+          "original": "packging",
+          "replacement": "packaging"
+        },
+        {
+          "offset": 251,
+          "length": 8,
+          "original": "entrnace",
+          "replacement": "entrance"
+        },
+        {
+          "offset": 354,
+          "length": 8,
+          "original": "undamged",
+          "replacement": "undamaged"
+        }
+      ]
+    },
+    {
+      "id": "audit-en-08",
+      "split": "audit",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hello Priya,\n\nI tried your bread recipe with half the usual amount of yeast. The dough rose slowly, but the finished loaf had a lovely texure.\n\nMy oven seems to run hotter near the back. I turned the tin halfway through baking and put a small contaner of water on the lower shelf.\n\nCould you send the version with oats when you have a moment? I want to make it for our walking group next weekned.\n\nLove,\nNell",
+      "expected": "Hello Priya,\n\nI tried your bread recipe with half the usual amount of yeast. The dough rose slowly, but the finished loaf had a lovely texture.\n\nMy oven seems to run hotter near the back. I turned the tin halfway through baking and put a small container of water on the lower shelf.\n\nCould you send the version with oats when you have a moment? I want to make it for our walking group next weekend.\n\nLove,\nNell",
+      "edits": [
+        {
+          "offset": 135,
+          "length": 6,
+          "original": "texure",
+          "replacement": "texture"
+        },
+        {
+          "offset": 243,
+          "length": 8,
+          "original": "contaner",
+          "replacement": "container"
+        },
+        {
+          "offset": 388,
+          "length": 7,
+          "original": "weekned",
+          "replacement": "weekend"
+        }
+      ]
+    },
+    {
+      "id": "audit-en-09",
+      "split": "audit",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Dear Elin,\n\nThe colour samples arrived with the aluminium handles. We will use the grey finish in the centre office and keep the spare catalogue at reception.\n\nThe supplier calls this shade \"Misty Morn\". Please retain that name on the order, even though our internal file is named misty_morn_v2.json.\n\nI will organise the return parcel after lunch. If you need the measurements first, write to samples@contacts.example.com and ask for the metric sheet.\n\nKind regards,\nAlix",
+      "expected": "Dear Elin,\n\nThe colour samples arrived with the aluminium handles. We will use the grey finish in the centre office and keep the spare catalogue at reception.\n\nThe supplier calls this shade \"Misty Morn\". Please retain that name on the order, even though our internal file is named misty_morn_v2.json.\n\nI will organise the return parcel after lunch. If you need the measurements first, write to samples@contacts.example.com and ask for the metric sheet.\n\nKind regards,\nAlix",
+      "edits": []
+    },
+    {
+      "id": "audit-en-10",
+      "split": "audit",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hi Bea,\n\nThe invitation says \"Bring your Lieblingsbuch\" because this month's reading group is bilingual. Please leave the German word in the English version.\n\nOur guest is called Alys Wren. Her chosen talk title is \"A quiet knight\", and the unusual spelling is part of a joke about a chess club.\n\nThe footer should still read \"Made by teh crew\". It is the name of their zine, not a request to correct the text. I will send the final artwork tonight.\n\nCheers,\nMika",
+      "expected": "Hi Bea,\n\nThe invitation says \"Bring your Lieblingsbuch\" because this month's reading group is bilingual. Please leave the German word in the English version.\n\nOur guest is called Alys Wren. Her chosen talk title is \"A quiet knight\", and the unusual spelling is part of a joke about a chess club.\n\nThe footer should still read \"Made by teh crew\". It is the name of their zine, not a request to correct the text. I will send the final artwork tonight.\n\nCheers,\nMika",
+      "edits": []
+    },
+    {
+      "id": "audit-en-11",
+      "split": "audit",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "The ferry kiosk will close early during the harbour works. Passengers can buy tickets from the machnie beside the public toilets, but it accepts cards only.\n\nA member of staff will help anyone who needs a paper reciept. Please keep the waiting area clear so that people with luggage can reach the platfrom.",
+      "expected": "The ferry kiosk will close early during the harbour works. Passengers can buy tickets from the machine beside the public toilets, but it accepts cards only.\n\nA member of staff will help anyone who needs a paper receipt. Please keep the waiting area clear so that people with luggage can reach the platform.",
+      "edits": [
+        {
+          "offset": 95,
+          "length": 7,
+          "original": "machnie",
+          "replacement": "machine"
+        },
+        {
+          "offset": 211,
+          "length": 7,
+          "original": "reciept",
+          "replacement": "receipt"
+        },
+        {
+          "offset": 297,
+          "length": 8,
+          "original": "platfrom",
+          "replacement": "platform"
+        }
+      ]
+    },
+    {
+      "id": "audit-en-12",
+      "split": "audit",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "The museum's new audio guide starts with a short account of the old weaving mill. Visitors can skip the introduction and choose a room from the menue.\n\nEach recording has a written transcirpt for visitors who prefer to read. The final room also includes a descrption of the machinery shown in the silent film.",
+      "expected": "The museum's new audio guide starts with a short account of the old weaving mill. Visitors can skip the introduction and choose a room from the menu.\n\nEach recording has a written transcript for visitors who prefer to read. The final room also includes a description of the machinery shown in the silent film.",
+      "edits": [
+        {
+          "offset": 144,
+          "length": 5,
+          "original": "menue",
+          "replacement": "menu"
+        },
+        {
+          "offset": 181,
+          "length": 10,
+          "original": "transcirpt",
+          "replacement": "transcript"
+        },
+        {
+          "offset": 256,
+          "length": 10,
+          "original": "descrption",
+          "replacement": "description"
+        }
+      ]
+    },
+    {
+      "id": "audit-en-13",
+      "split": "audit",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "We moved the overnight backup to a separate disk after the storage warning. The job now checks the available space before it creates a temporary direcotry.\n\nKeep the setting `retry_count=3` in the sample file. The support team needs a reproducble test, and changing that value would make the results harder to comapre.",
+      "expected": "We moved the overnight backup to a separate disk after the storage warning. The job now checks the available space before it creates a temporary directory.\n\nKeep the setting `retry_count=3` in the sample file. The support team needs a reproducible test, and changing that value would make the results harder to compare.",
+      "edits": [
+        {
+          "offset": 145,
+          "length": 9,
+          "original": "direcotry",
+          "replacement": "directory"
+        },
+        {
+          "offset": 235,
+          "length": 11,
+          "original": "reproducble",
+          "replacement": "reproducible"
+        },
+        {
+          "offset": 310,
+          "length": 7,
+          "original": "comapre",
+          "replacement": "compare"
+        }
+      ]
+    },
+    {
+      "id": "audit-en-14",
+      "split": "audit",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "The coastal path is closed beyond the wooden bridge because part of the bank has washed away. Walkers should follow the orange signs through the orchrad.\n\nThe detour adds about twenty minutes and includes one steep slpoe. There is a bench at the top, beside the old stone wall, where the volunters have left drinking water.",
+      "expected": "The coastal path is closed beyond the wooden bridge because part of the bank has washed away. Walkers should follow the orange signs through the orchard.\n\nThe detour adds about twenty minutes and includes one steep slope. There is a bench at the top, beside the old stone wall, where the volunteers have left drinking water.",
+      "edits": [
+        {
+          "offset": 145,
+          "length": 7,
+          "original": "orchrad",
+          "replacement": "orchard"
+        },
+        {
+          "offset": 215,
+          "length": 5,
+          "original": "slpoe",
+          "replacement": "slope"
+        },
+        {
+          "offset": 288,
+          "length": 9,
+          "original": "volunters",
+          "replacement": "volunteers"
+        }
+      ]
+    },
+    {
+      "id": "audit-en-15",
+      "split": "audit",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "The café serves a small breakfast until eleven. Today's specials are rösti with mushrooms and a slice of Apfelstrudel. The chalkboard was written by Maëlle, whose name should keep its accent.\n\nThe till prints \"Cafe Sued\" because its receipt font lacks some characters. That exact label appears on bank statements, so it must also appear in the customer notice.",
+      "expected": "The café serves a small breakfast until eleven. Today's specials are rösti with mushrooms and a slice of Apfelstrudel. The chalkboard was written by Maëlle, whose name should keep its accent.\n\nThe till prints \"Cafe Sued\" because its receipt font lacks some characters. That exact label appears on bank statements, so it must also appear in the customer notice.",
+      "edits": []
+    },
+    {
+      "id": "audit-en-16",
+      "split": "audit",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "The note on the crate reads \"Handle with cair\". It is a quotation from a child's drawing and belongs in the exhibition caption exactly as written.\n\nA separate label says the crate contains a pair of wooden bears. Both bear and bare are words, and the catalogue editor must decide which belongs in any disputed passage. The spelling pass should leave this explanation alone.",
+      "expected": "The note on the crate reads \"Handle with cair\". It is a quotation from a child's drawing and belongs in the exhibition caption exactly as written.\n\nA separate label says the crate contains a pair of wooden bears. Both bear and bare are words, and the catalogue editor must decide which belongs in any disputed passage. The spelling pass should leave this explanation alone.",
+      "edits": []
+    },
+    {
+      "id": "audit-en-17",
+      "split": "audit",
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "input": "Please fastne the lid before moving the jar. The shelveing near the window is uneven, so leave it on the kithcen table.",
+      "expected": "Please fasten the lid before moving the jar. The shelving near the window is uneven, so leave it on the kitchen table.",
+      "edits": [
+        {
+          "offset": 7,
+          "length": 6,
+          "original": "fastne",
+          "replacement": "fasten"
+        },
+        {
+          "offset": 49,
+          "length": 9,
+          "original": "shelveing",
+          "replacement": "shelving"
+        },
+        {
+          "offset": 105,
+          "length": 7,
+          "original": "kithcen",
+          "replacement": "kitchen"
+        }
+      ]
+    },
+    {
+      "id": "audit-en-18",
+      "split": "audit",
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "input": "The batery is fully charged, but the display stays dark. I will borow another cable and check the conector after lunch.",
+      "expected": "The battery is fully charged, but the display stays dark. I will borrow another cable and check the connector after lunch.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 6,
+          "original": "batery",
+          "replacement": "battery"
+        },
+        {
+          "offset": 64,
+          "length": 5,
+          "original": "borow",
+          "replacement": "borrow"
+        },
+        {
+          "offset": 98,
+          "length": 8,
+          "original": "conector",
+          "replacement": "connector"
+        }
+      ]
+    },
+    {
+      "id": "audit-en-19",
+      "split": "audit",
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "input": "Could you forwrd the seating plan? The bridesmads need to know which table has space for the pushcahir.",
+      "expected": "Could you forward the seating plan? The bridesmaids need to know which table has space for the pushchair.",
+      "edits": [
+        {
+          "offset": 10,
+          "length": 6,
+          "original": "forwrd",
+          "replacement": "forward"
+        },
+        {
+          "offset": 39,
+          "length": 10,
+          "original": "bridesmads",
+          "replacement": "bridesmaids"
+        },
+        {
+          "offset": 93,
+          "length": 9,
+          "original": "pushcahir",
+          "replacement": "pushchair"
+        }
+      ]
+    },
+    {
+      "id": "audit-en-20",
+      "split": "audit",
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "input": "Alys will meet Siobhan at the harbour. Keep `colour_mode` and the quote \"wierd but true\" unchanged; the programme uses British spelling.",
+      "expected": "Alys will meet Siobhan at the harbour. Keep `colour_mode` and the quote \"wierd but true\" unchanged; the programme uses British spelling.",
+      "edits": []
+    },
+    {
+      "id": "audit-de-01",
+      "split": "audit",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hallo Jule,\n\nfür den Flohmarkt haben wir inzwischen genug Tische. Im Keller stehen noch zwei Klappstüle, die wir am Samstag mitnehmen können.\n\nBitte bring eine Rolle Klebeband mit. Die Schilder sollen an den Tischkanten hängen, damit niemand über einen Austeller stolpert.\n\nIch kümmere mich um das Wechselgeld und eine kleine Kase. Wenn es regnet, treffen wir uns direkt am Eingang der Turnhalle.\n\nViele Grüße\nBente",
+      "expected": "Hallo Jule,\n\nfür den Flohmarkt haben wir inzwischen genug Tische. Im Keller stehen noch zwei Klappstühle, die wir am Samstag mitnehmen können.\n\nBitte bring eine Rolle Klebeband mit. Die Schilder sollen an den Tischkanten hängen, damit niemand über einen Aufsteller stolpert.\n\nIch kümmere mich um das Wechselgeld und eine kleine Kasse. Wenn es regnet, treffen wir uns direkt am Eingang der Turnhalle.\n\nViele Grüße\nBente",
+      "edits": [
+        {
+          "offset": 93,
+          "length": 10,
+          "original": "Klappstüle",
+          "replacement": "Klappstühle"
+        },
+        {
+          "offset": 253,
+          "length": 9,
+          "original": "Austeller",
+          "replacement": "Aufsteller"
+        },
+        {
+          "offset": 326,
+          "length": 4,
+          "original": "Kase",
+          "replacement": "Kasse"
+        }
+      ]
+    },
+    {
+      "id": "audit-de-02",
+      "split": "audit",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Guten Tag Frau Dorn,\n\nbei unserem letzten Besuch ist vermutlich ein blauer Schal in der Garderobe liegen geblieben. An einem Ende ist eine kleine Sternschnupe aufgestickt.\n\nWir saßen am Fenster neben dem Bücherregal. Der Schal könnte auch hinter die Sitzbak gerutscht sein, als wir unsere Jacken angezogen haben.\n\nKönnten Sie bei Gelegenheit nachsehen? Ich hole ihn gern ab und richte mich dabei nach Ihren Öfnungszeiten.\n\nFreundliche Grüße\nMara Witt",
+      "expected": "Guten Tag Frau Dorn,\n\nbei unserem letzten Besuch ist vermutlich ein blauer Schal in der Garderobe liegen geblieben. An einem Ende ist eine kleine Sternschnuppe aufgestickt.\n\nWir saßen am Fenster neben dem Bücherregal. Der Schal könnte auch hinter die Sitzbank gerutscht sein, als wir unsere Jacken angezogen haben.\n\nKönnten Sie bei Gelegenheit nachsehen? Ich hole ihn gern ab und richte mich dabei nach Ihren Öffnungszeiten.\n\nFreundliche Grüße\nMara Witt",
+      "edits": [
+        {
+          "offset": 146,
+          "length": 12,
+          "original": "Sternschnupe",
+          "replacement": "Sternschnuppe"
+        },
+        {
+          "offset": 250,
+          "length": 7,
+          "original": "Sitzbak",
+          "replacement": "Sitzbank"
+        },
+        {
+          "offset": 407,
+          "length": 13,
+          "original": "Öfnungszeiten",
+          "replacement": "Öffnungszeiten"
+        }
+      ]
+    },
+    {
+      "id": "audit-de-03",
+      "split": "audit",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hallo Deniz,\n\nder neue Drucker steht jetzt im kleinen Besprechungsraum. Für den ersten Test habe ich nur eine einzelne Textseitte verwendet.\n\nDer Einzug zieht das Papier manchmal schief ein. Bitte prüfe die seitliche Führungschiene, bevor du einen längeren Auftrag startest.\n\nDie Anleitung liegt in der oberen Schublade. Den genauen Gerätenamne findest du auf dem Aufkleber hinten am Gehäuse.\n\nDanke und bis morgen\nKeno",
+      "expected": "Hallo Deniz,\n\nder neue Drucker steht jetzt im kleinen Besprechungsraum. Für den ersten Test habe ich nur eine einzelne Textseite verwendet.\n\nDer Einzug zieht das Papier manchmal schief ein. Bitte prüfe die seitliche Führungsschiene, bevor du einen längeren Auftrag startest.\n\nDie Anleitung liegt in der oberen Schublade. Den genauen Gerätenamen findest du auf dem Aufkleber hinten am Gehäuse.\n\nDanke und bis morgen\nKeno",
+      "edits": [
+        {
+          "offset": 119,
+          "length": 10,
+          "original": "Textseitte",
+          "replacement": "Textseite"
+        },
+        {
+          "offset": 217,
+          "length": 14,
+          "original": "Führungschiene",
+          "replacement": "Führungsschiene"
+        },
+        {
+          "offset": 333,
+          "length": 11,
+          "original": "Gerätenamne",
+          "replacement": "Gerätenamen"
+        }
+      ]
+    },
+    {
+      "id": "audit-de-04",
+      "split": "audit",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Liebe Tessa,\n\nfür unseren Ausflug habe ich einen ruhigen Platz am See gefunden. Vom Parkplatz führt ein breiter Schoterweg bis zum Ufer.\n\nDort steht auch ein überdachter Tisch. Wir brauchen also nur eine Decke und etwas Proviat, falls wir nach dem Spaziergang noch bleiben möchten.\n\nIch nehme das Fernglas mit. Vielleicht sehen wir wieder den Vogel mit dem auffälligen Gefider, den wir beim letzten Mal nicht bestimmen konnten.\n\nLiebe Grüße\nOda",
+      "expected": "Liebe Tessa,\n\nfür unseren Ausflug habe ich einen ruhigen Platz am See gefunden. Vom Parkplatz führt ein breiter Schotterweg bis zum Ufer.\n\nDort steht auch ein überdachter Tisch. Wir brauchen also nur eine Decke und etwas Proviant, falls wir nach dem Spaziergang noch bleiben möchten.\n\nIch nehme das Fernglas mit. Vielleicht sehen wir wieder den Vogel mit dem auffälligen Gefieder, den wir beim letzten Mal nicht bestimmen konnten.\n\nLiebe Grüße\nOda",
+      "edits": [
+        {
+          "offset": 112,
+          "length": 10,
+          "original": "Schoterweg",
+          "replacement": "Schotterweg"
+        },
+        {
+          "offset": 220,
+          "length": 7,
+          "original": "Proviat",
+          "replacement": "Proviant"
+        },
+        {
+          "offset": 369,
+          "length": 7,
+          "original": "Gefider",
+          "replacement": "Gefieder"
+        }
+      ]
+    },
+    {
+      "id": "audit-de-05",
+      "split": "audit",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hallo zusammen,\r\n\r\ndie Kisten für unsere Büchertauschaktion sind da 📚. Bitte legt schwere Bildbände nach unten, damit die dünnen Hefte nicht zerknitern.\r\n\r\nAm Eingang stellen wir einen kleinen Wegweser auf. Er soll auch für Leute sichtbar sein, die zum ersten Mal ins Nachbarschaftshaus kommen.\r\n\r\nIch bringe leere Karten für die Empfehlungen mit. Darauf ist genug Platz für einen kurzen Satz und den Buchtittel.\r\n\r\nBis Samstag\r\nMalin",
+      "expected": "Hallo zusammen,\r\n\r\ndie Kisten für unsere Büchertauschaktion sind da 📚. Bitte legt schwere Bildbände nach unten, damit die dünnen Hefte nicht zerknittern.\r\n\r\nAm Eingang stellen wir einen kleinen Wegweiser auf. Er soll auch für Leute sichtbar sein, die zum ersten Mal ins Nachbarschaftshaus kommen.\r\n\r\nIch bringe leere Karten für die Empfehlungen mit. Darauf ist genug Platz für einen kurzen Satz und den Buchtitel.\r\n\r\nBis Samstag\r\nMalin",
+      "edits": [
+        {
+          "offset": 142,
+          "length": 10,
+          "original": "zerknitern",
+          "replacement": "zerknittern"
+        },
+        {
+          "offset": 194,
+          "length": 8,
+          "original": "Wegweser",
+          "replacement": "Wegweiser"
+        },
+        {
+          "offset": 402,
+          "length": 10,
+          "original": "Buchtittel",
+          "replacement": "Buchtitel"
+        }
+      ]
+    },
+    {
+      "id": "audit-de-06",
+      "split": "audit",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Sehr geehrter Herr Falk,\n\nwir möchten die Beleuchtung im Treppenhaus austauschen lassen. Eine Lampe flackert, und bei einer zweiten ist die Abdekung beschädigt.\n\nDer Hausmeister kann Ihnen am Dienstag die Kellertür öffnen. Dort befindet sich der Sicherungsksaten für die gemeinsamen Räume.\n\nBitte nennen Sie uns vorab den voraussichtlichen Zeitbedarf. Wir möchten die Bewohner rechtzeitig über eine mögliche Unterbrechng informieren.\n\nMit freundlichen Grüßen\nNina Sand",
+      "expected": "Sehr geehrter Herr Falk,\n\nwir möchten die Beleuchtung im Treppenhaus austauschen lassen. Eine Lampe flackert, und bei einer zweiten ist die Abdeckung beschädigt.\n\nDer Hausmeister kann Ihnen am Dienstag die Kellertür öffnen. Dort befindet sich der Sicherungskasten für die gemeinsamen Räume.\n\nBitte nennen Sie uns vorab den voraussichtlichen Zeitbedarf. Wir möchten die Bewohner rechtzeitig über eine mögliche Unterbrechung informieren.\n\nMit freundlichen Grüßen\nNina Sand",
+      "edits": [
+        {
+          "offset": 140,
+          "length": 8,
+          "original": "Abdekung",
+          "replacement": "Abdeckung"
+        },
+        {
+          "offset": 246,
+          "length": 16,
+          "original": "Sicherungsksaten",
+          "replacement": "Sicherungskasten"
+        },
+        {
+          "offset": 408,
+          "length": 12,
+          "original": "Unterbrechng",
+          "replacement": "Unterbrechung"
+        }
+      ]
+    },
+    {
+      "id": "audit-de-07",
+      "split": "audit",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hallo Arne,\n\nich habe die Aufnahme vom Chorabend angehört. In der ersten Minute hört man leider ein deutliches Rauschn, danach ist der Ton sauber.\n\nDie Sängerinnen und Sänger stehen auf dem Foto etwas zu weit links. Beim Zuschneiden bleibt aber noch genug Abstnad zum Rand.\n\nBitte lass den Dateinamen `chor_final_neu.wav` unverändert. Ich habe ihn bereits in der Begleitnachrcht an das Kulturhaus erwähnt.\n\nBeste Grüße\nLiv",
+      "expected": "Hallo Arne,\n\nich habe die Aufnahme vom Chorabend angehört. In der ersten Minute hört man leider ein deutliches Rauschen, danach ist der Ton sauber.\n\nDie Sängerinnen und Sänger stehen auf dem Foto etwas zu weit links. Beim Zuschneiden bleibt aber noch genug Abstand zum Rand.\n\nBitte lass den Dateinamen `chor_final_neu.wav` unverändert. Ich habe ihn bereits in der Begleitnachricht an das Kulturhaus erwähnt.\n\nBeste Grüße\nLiv",
+      "edits": [
+        {
+          "offset": 111,
+          "length": 7,
+          "original": "Rauschn",
+          "replacement": "Rauschen"
+        },
+        {
+          "offset": 256,
+          "length": 7,
+          "original": "Abstnad",
+          "replacement": "Abstand"
+        },
+        {
+          "offset": 363,
+          "length": 15,
+          "original": "Begleitnachrcht",
+          "replacement": "Begleitnachricht"
+        }
+      ]
+    },
+    {
+      "id": "audit-de-08",
+      "split": "audit",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Liebe Frau Kern,\n\nvielen Dank für das Rezept der Kürbissuppe. Ich habe sie gestern gekocht und am Ende etwas gerösteten Sesma darübergestreut.\n\nMeine Tochter fand die Suppe überraschend mild. Beim nächsten Versuch möchte sie selbst die Gewüze abmessen und das Gemüse schneiden.\n\nWissen Sie noch, ob sich die fertige Suppe einfrieren lässt? Für unseren kleinen Haushalt ist die angegebene Mengee recht großzügig.\n\nHerzliche Grüße\nEva Bach",
+      "expected": "Liebe Frau Kern,\n\nvielen Dank für das Rezept der Kürbissuppe. Ich habe sie gestern gekocht und am Ende etwas gerösteten Sesam darübergestreut.\n\nMeine Tochter fand die Suppe überraschend mild. Beim nächsten Versuch möchte sie selbst die Gewürze abmessen und das Gemüse schneiden.\n\nWissen Sie noch, ob sich die fertige Suppe einfrieren lässt? Für unseren kleinen Haushalt ist die angegebene Menge recht großzügig.\n\nHerzliche Grüße\nEva Bach",
+      "edits": [
+        {
+          "offset": 120,
+          "length": 5,
+          "original": "Sesma",
+          "replacement": "Sesam"
+        },
+        {
+          "offset": 236,
+          "length": 6,
+          "original": "Gewüze",
+          "replacement": "Gewürze"
+        },
+        {
+          "offset": 388,
+          "length": 6,
+          "original": "Mengee",
+          "replacement": "Menge"
+        }
+      ]
+    },
+    {
+      "id": "audit-de-09",
+      "split": "audit",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Grüezi Frau Aebi,\n\nbesten Dank für Ihre Offerte. Wir möchten die weissen Vorhänge für das Sitzungszimmer bestellen und die Masse der Fenster morgen nochmals prüfen.\n\nDie Lieferung darf beim Veloraum stehen bleiben. Unser Hauswart kennt den Termin und nimmt das Paket entgegen, falls das Büro noch geschlossen ist.\n\nBitte senden Sie die Rechnung an einkauf@contacts.example.com. Die Adresse auf dem alten Formular stimmt weiterhin, nur die Ansprechperson hat gewechselt.\n\nFreundliche Grüsse\nNoëlle Frei",
+      "expected": "Grüezi Frau Aebi,\n\nbesten Dank für Ihre Offerte. Wir möchten die weissen Vorhänge für das Sitzungszimmer bestellen und die Masse der Fenster morgen nochmals prüfen.\n\nDie Lieferung darf beim Veloraum stehen bleiben. Unser Hauswart kennt den Termin und nimmt das Paket entgegen, falls das Büro noch geschlossen ist.\n\nBitte senden Sie die Rechnung an einkauf@contacts.example.com. Die Adresse auf dem alten Formular stimmt weiterhin, nur die Ansprechperson hat gewechselt.\n\nFreundliche Grüsse\nNoëlle Frei",
+      "edits": []
+    },
+    {
+      "id": "audit-de-10",
+      "split": "audit",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hallo Kim,\n\nim Workshop verwenden wir die Begriffe Feedback und Pair Programming. Bitte übersetze sie nicht im Handout, weil die Folien dieselben Bezeichnungen nutzen.\n\nUnsere Gästin heißt Ewa Szpak. Ihr Vortrag trägt den Titel \"Das wierd schon\", und genau diese absichtliche Schreibweise soll im Programm stehen.\n\nDer Beispielcode enthält `let tehValue = 7;`. Auch dieser Name bleibt erhalten, damit die Teilnehmenden ihn in den vorbereiteten Dateien wiederfinden.\n\nViele Grüße\nJann",
+      "expected": "Hallo Kim,\n\nim Workshop verwenden wir die Begriffe Feedback und Pair Programming. Bitte übersetze sie nicht im Handout, weil die Folien dieselben Bezeichnungen nutzen.\n\nUnsere Gästin heißt Ewa Szpak. Ihr Vortrag trägt den Titel \"Das wierd schon\", und genau diese absichtliche Schreibweise soll im Programm stehen.\n\nDer Beispielcode enthält `let tehValue = 7;`. Auch dieser Name bleibt erhalten, damit die Teilnehmenden ihn in den vorbereiteten Dateien wiederfinden.\n\nViele Grüße\nJann",
+      "edits": []
+    },
+    {
+      "id": "audit-de-11",
+      "split": "audit",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Die Stadtteilbibliothek öffnet während der Ferien erst um zehn Uhr. Wer vorher Bücher zurückgeben möchte, kann die Klappe neben dem Haupteingnag benutzen.\n\nSehr große Bildbände passen dort nicht hinein. Bitte geben Sie diese an der Ausleihtheke ab und achten Sie darauf, dass keine losen Lesezeihen zwischen den Seiten liegen. Ist die Klappe blockiert, melden Sie die Verstopfng bitte am Empfang.",
+      "expected": "Die Stadtteilbibliothek öffnet während der Ferien erst um zehn Uhr. Wer vorher Bücher zurückgeben möchte, kann die Klappe neben dem Haupteingang benutzen.\n\nSehr große Bildbände passen dort nicht hinein. Bitte geben Sie diese an der Ausleihtheke ab und achten Sie darauf, dass keine losen Lesezeichen zwischen den Seiten liegen. Ist die Klappe blockiert, melden Sie die Verstopfung bitte am Empfang.",
+      "edits": [
+        {
+          "offset": 132,
+          "length": 12,
+          "original": "Haupteingnag",
+          "replacement": "Haupteingang"
+        },
+        {
+          "offset": 288,
+          "length": 10,
+          "original": "Lesezeihen",
+          "replacement": "Lesezeichen"
+        },
+        {
+          "offset": 368,
+          "length": 10,
+          "original": "Verstopfng",
+          "replacement": "Verstopfung"
+        }
+      ]
+    },
+    {
+      "id": "audit-de-12",
+      "split": "audit",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Für die neue Ausstellung wurden die alten Landkarten vorsichtig aus ihren Rahmen genommen. Einige Blätter zeigen am unteren Rand deutliche Wasserfleken.\n\nDie Restauratorin prüft zunächst die Beschaffenheit des Papiers. Erst danach entscheidet sie, welche Reinigungsmethde geeignet ist und ob die brüchigen Stellen eine zusätzliche Stützeinlge brauchen.",
+      "expected": "Für die neue Ausstellung wurden die alten Landkarten vorsichtig aus ihren Rahmen genommen. Einige Blätter zeigen am unteren Rand deutliche Wasserflecken.\n\nDie Restauratorin prüft zunächst die Beschaffenheit des Papiers. Erst danach entscheidet sie, welche Reinigungsmethode geeignet ist und ob die brüchigen Stellen eine zusätzliche Stützeinlage brauchen.",
+      "edits": [
+        {
+          "offset": 139,
+          "length": 12,
+          "original": "Wasserfleken",
+          "replacement": "Wasserflecken"
+        },
+        {
+          "offset": 255,
+          "length": 16,
+          "original": "Reinigungsmethde",
+          "replacement": "Reinigungsmethode"
+        },
+        {
+          "offset": 331,
+          "length": 11,
+          "original": "Stützeinlge",
+          "replacement": "Stützeinlage"
+        }
+      ]
+    },
+    {
+      "id": "audit-de-13",
+      "split": "audit",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Nach dem Austausch des Routers konnte der kleine Messrechner keine Daten mehr senden. Die lokale Anzeige lief weiter, und der Zeitstempl änderte sich wie erwartet.\n\nDie Prüfung ergab eine falsche Netzwerkadrese in der Konfiguration. Der Eintrag `sensor_host=probe.invalid` bleibt im Beispiel stehen; für den tatsächlichen Betrieb muss die zuständige Person den passenden Rechnernmen eintragen.",
+      "expected": "Nach dem Austausch des Routers konnte der kleine Messrechner keine Daten mehr senden. Die lokale Anzeige lief weiter, und der Zeitstempel änderte sich wie erwartet.\n\nDie Prüfung ergab eine falsche Netzwerkadresse in der Konfiguration. Der Eintrag `sensor_host=probe.invalid` bleibt im Beispiel stehen; für den tatsächlichen Betrieb muss die zuständige Person den passenden Rechnernamen eintragen.",
+      "edits": [
+        {
+          "offset": 126,
+          "length": 10,
+          "original": "Zeitstempl",
+          "replacement": "Zeitstempel"
+        },
+        {
+          "offset": 196,
+          "length": 14,
+          "original": "Netzwerkadrese",
+          "replacement": "Netzwerkadresse"
+        },
+        {
+          "offset": 371,
+          "length": 11,
+          "original": "Rechnernmen",
+          "replacement": "Rechnernamen"
+        }
+      ]
+    },
+    {
+      "id": "audit-de-14",
+      "split": "audit",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Am Uferweg wurde eine junge Kastanie gepflanzt. Ein niedriger Zaun schützt den Stamm, solange die Wurzlen noch nicht fest im Boden sitzen.\n\nIn trockenen Wochen braucht der Baum zusätzliches Wasser. Die Gießgruppe trägt jeden Einsatz in ein kleines Notizbuuch ein, das in der Gerätekistee am Vereinsheim liegt.",
+      "expected": "Am Uferweg wurde eine junge Kastanie gepflanzt. Ein niedriger Zaun schützt den Stamm, solange die Wurzeln noch nicht fest im Boden sitzen.\n\nIn trockenen Wochen braucht der Baum zusätzliches Wasser. Die Gießgruppe trägt jeden Einsatz in ein kleines Notizbuch ein, das in der Gerätekiste am Vereinsheim liegt.",
+      "edits": [
+        {
+          "offset": 98,
+          "length": 7,
+          "original": "Wurzlen",
+          "replacement": "Wurzeln"
+        },
+        {
+          "offset": 248,
+          "length": 10,
+          "original": "Notizbuuch",
+          "replacement": "Notizbuch"
+        },
+        {
+          "offset": 275,
+          "length": 12,
+          "original": "Gerätekistee",
+          "replacement": "Gerätekiste"
+        }
+      ]
+    },
+    {
+      "id": "audit-de-15",
+      "split": "audit",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Beim Heurigen gibt es heute Erdäpfelsalat, Paradeiser und ein Glas Marillensaft. Für später haben wir ein Sackerl mit Semmeln und eine kleine Jause eingepackt.\n\nAuf dem Reservierungsschild steht der Name Zsófi. Die Gruppe kommt nach dem Spaziergang dazu und bleibt voraussichtlich bis zum Abend.",
+      "expected": "Beim Heurigen gibt es heute Erdäpfelsalat, Paradeiser und ein Glas Marillensaft. Für später haben wir ein Sackerl mit Semmeln und eine kleine Jause eingepackt.\n\nAuf dem Reservierungsschild steht der Name Zsófi. Die Gruppe kommt nach dem Spaziergang dazu und bleibt voraussichtlich bis zum Abend.",
+      "edits": []
+    },
+    {
+      "id": "audit-de-16",
+      "split": "audit",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Auf dem alten Schild steht \"Betreten ferboten\". Für die Ausstellung übernehmen wir diesen Wortlaut als Zitat und erklären daneben, wer das Schild gemalt hat.\n\nIm Begleittext geht es um eine Waise, die später Weise genannt wird. Beide Wörter sind hier beabsichtigt. Die Redaktion prüft den Zusammenhang, während die Rechtschreibkorrektur den Text unverändert lassen soll.",
+      "expected": "Auf dem alten Schild steht \"Betreten ferboten\". Für die Ausstellung übernehmen wir diesen Wortlaut als Zitat und erklären daneben, wer das Schild gemalt hat.\n\nIm Begleittext geht es um eine Waise, die später Weise genannt wird. Beide Wörter sind hier beabsichtigt. Die Redaktion prüft den Zusammenhang, während die Rechtschreibkorrektur den Text unverändert lassen soll.",
+      "edits": []
+    },
+    {
+      "id": "audit-de-17",
+      "split": "audit",
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "input": "Bitte stell den Wäschekorpp neben die Tür. Die Handtüchr sind noch feucht und brauchen auf dem Ständr etwas mehr Platz.",
+      "expected": "Bitte stell den Wäschekorb neben die Tür. Die Handtücher sind noch feucht und brauchen auf dem Ständer etwas mehr Platz.",
+      "edits": [
+        {
+          "offset": 16,
+          "length": 11,
+          "original": "Wäschekorpp",
+          "replacement": "Wäschekorb"
+        },
+        {
+          "offset": 47,
+          "length": 9,
+          "original": "Handtüchr",
+          "replacement": "Handtücher"
+        },
+        {
+          "offset": 95,
+          "length": 6,
+          "original": "Ständr",
+          "replacement": "Ständer"
+        }
+      ]
+    },
+    {
+      "id": "audit-de-18",
+      "split": "audit",
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "input": "Der Fahrradschlüsel liegt in der roten Schale. Nimm auch die Luftpumpee mit, denn der hintere Reiffen ist fast leer.",
+      "expected": "Der Fahrradschlüssel liegt in der roten Schale. Nimm auch die Luftpumpe mit, denn der hintere Reifen ist fast leer.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 15,
+          "original": "Fahrradschlüsel",
+          "replacement": "Fahrradschlüssel"
+        },
+        {
+          "offset": 61,
+          "length": 10,
+          "original": "Luftpumpee",
+          "replacement": "Luftpumpe"
+        },
+        {
+          "offset": 94,
+          "length": 7,
+          "original": "Reiffen",
+          "replacement": "Reifen"
+        }
+      ]
+    },
+    {
+      "id": "audit-de-19",
+      "split": "audit",
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "input": "Wir haben die Eintritskarten abgeholt. Der Saalplann hängt am Eingang, und unsere Plätze liegen direkt neben dem Mittellgag.",
+      "expected": "Wir haben die Eintrittskarten abgeholt. Der Saalplan hängt am Eingang, und unsere Plätze liegen direkt neben dem Mittelgang.",
+      "edits": [
+        {
+          "offset": 14,
+          "length": 14,
+          "original": "Eintritskarten",
+          "replacement": "Eintrittskarten"
+        },
+        {
+          "offset": 43,
+          "length": 9,
+          "original": "Saalplann",
+          "replacement": "Saalplan"
+        },
+        {
+          "offset": 113,
+          "length": 10,
+          "original": "Mittellgag",
+          "replacement": "Mittelgang"
+        }
+      ]
+    },
+    {
+      "id": "audit-de-20",
+      "split": "audit",
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "input": "Bitte \"Gruss aus Zürich\" wörtlich übernehmen. Maik lässt `fehlerZaehler` unverändert; fürs Meeting bringt er das Handout und zwei USB-Sticks mit.",
+      "expected": "Bitte \"Gruss aus Zürich\" wörtlich übernehmen. Maik lässt `fehlerZaehler` unverändert; fürs Meeting bringt er das Handout und zwei USB-Sticks mit.",
+      "edits": []
+    }
+  ]
+}

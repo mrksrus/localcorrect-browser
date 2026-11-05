@@ -119,3 +119,58 @@ CRC-checked snapshot and terminates its own browser/driver afterward. Its
 `--allow-system-access` flag applies only to the disposable automation instance,
 as described in [Mozilla's geckodriver flags documentation](https://firefox-source-docs.mozilla.org/testing/geckodriver/Flags.html).
 It does not modify the owner's browser profile or grant the extension extra rights.
+
+## RC3 complete-document evaluation
+
+The original 92 cases remain unchanged. `tests/email-corpus` adds 200 authored
+inputs with 506 gold edits: 100 English and 100 German, 80 complete emails,
+60 other multiple-paragraph documents and 60 short cases. Thirty of the 120
+development cases and twenty of the original 80 holdout cases are unchanged
+controls. Case text and gold spans were frozen before evaluation.
+
+The baseline is browser commit `c42041d2b4bd8e32d2896017b85c93ec14e4c09a`.
+Development guided the first candidate. Its original holdout evaluation found
+seven wrong edits, which prompted general compound/casing, signature and label
+protections. The final 200-case scores therefore include post-validation tuning.
+The original holdout is not claimed as unseen after that work. Some scenarios
+are semantic paraphrases across languages; the splits are authored inputs, not
+independent topics or a population sample.
+
+A different author created 40 additional blind audit inputs without reading the
+implementation, primary fixtures or failure words. Their hash was frozen before
+scoring. The final core was frozen before either baseline or candidate audit
+evaluation; audit results did not guide further model tuning.
+
+The downloadable HTML report and JSON files retain every typed input, intended
+output, actual output and original UTF-16 edit. Wrong replacements count as
+both false edits and missed intended edits. Full-document exactness includes
+all typos and absence of extra edits. Regional alternatives can still be strict
+gold mismatches. This does not measure contextual grammar or universal editor
+compatibility. Corpus SHA256 files and reports identify the exact sources.
+
+Current merged inventories contain 171,194 EN and 567,945 DE forms, with 62,868
+German entries whose capitalization originates in the source expansion. Original
+Hunspell/nspell data, regional licenses and reproducible build metadata ship with
+the packages. Bounded lexical probes and compound heuristics improve recall;
+they do not establish calibrated confidence or perfect proper-name detection.
+
+| Original 200 / Normal | Baseline | RC3 |
+|---|---:|---:|
+| Intended edits made | 308/506 | 478/506 |
+| Wrong edits | 7 | 0 |
+| Completely correct documents | 99/200 | 175/200 |
+| Unchanged controls preserved | 49/50 | 50/50 |
+
+| Independent 40-case audit / Normal | Baseline | RC3 |
+|---|---:|---:|
+| Intended edits made | 37/90 | 70/90 |
+| Wrong edits | 8 | 9 |
+| Completely correct documents | 11/40 | 24/40 |
+| Unchanged controls preserved | 5/10 | 6/10 |
+
+The audit is the most useful warning against reading the tuned 200 score as
+near-perfect general performance. It improves coverage but retains unwanted
+changes and missed corrections. Conservative audit results are 66/90 intended
+edits, 7 wrong edits, 22/40 exact documents and 7/10 controls preserved. These
+experimental packages require review before sending; neither mode is a perfect
+proofreader. Every audit failure remains in the downloadable report.

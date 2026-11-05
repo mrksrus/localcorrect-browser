@@ -36,10 +36,11 @@ test('missing mandatory lexical asset fails closed, never frequency-only fallbac
  }finally{rmSync(dir,{recursive:true,force:true});}
 });
 test('R3/R4 names, short operations, dotted files and noun sentences',()=>{
- const safe={en:['Alyce','Harriett','Conners','Hasting','Wiesner','Meriel'].map(n=>`${n} will send a message.`).concat(['The proposed filename is recieve.txt.','Use teh.md and nested.recieve.txt.','Please check the adress carefully.']),de:['Frau Wiesenbrück und Herr Quendelbach kommen morgen.','Wiesner kommt morgen.','Meriel kommt morgen.']};
+ const safe={en:['Alyce','Harriett','Conners','Hasting','Wiesner','Meriel'].map(n=>`${n} will send a message.`).concat(['The proposed filename is recieve.txt.','Use teh.md and nested.recieve.txt.']),de:['Frau Wiesenbrück und Herr Quendelbach kommen morgen.','Wiesner kommt morgen.','Meriel kommt morgen.']};
  for(const mode of modes){
   for(const [language,rows] of Object.entries(safe))for(const input of rows)assert.equal(correct(input,language,mode).text,input);
   assert.equal(correct('Please send teh document tomorrow.','en',mode).text,'Please send the document tomorrow.');
+  assert.equal(correct('Please check the adress carefully.','en',mode).text,'Please check the address carefully.');
   for(const word of ['yu','hteq','zzq','qwe'])assert.equal(correct(word,'en',mode).text,word);
  }
 });

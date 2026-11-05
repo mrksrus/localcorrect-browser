@@ -5,8 +5,8 @@
  */
 
 import enLexicon from './lexicons/en.js';
-import deLexicon from './lexicons/de.js';
-const lexicalSources = {en: enLexicon, de: deLexicon};
+import * as deAssets from './lexicons/de.js';
+const lexicalSources = {en: enLexicon, de: deAssets.default, deCased: deAssets.originalCasing};
 const validators = new Map();
 function lexical(language) {
   if (!validators.has(language)) {
@@ -51,6 +51,81 @@ function transposition(a, b) {
   for (let i = 0; i < a.length - 1; i++)
     if (a[i] !== a[i+1] && a.slice(0,i)+a[i+1]+a[i]+a.slice(i+2) === b) return true;
   return false;
+}
+function restoredUmlaut(a, b) {
+  if (a.length !== b.length) return false;
+  let changed = 0;
+  for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) {
+    if (({a:'ä',o:'ö',u:'ü'})[a[i]] !== b[i]) return false;
+    changed++;
+  }
+  return changed === 1;
+}
+const germanNounIntroducers = new Set(('der die das den dem des ein eine einen einem einer eines kein keine keinen keinem keiner keines ihre ihren ihrer ihrem ihr unsere unseren unserem unserer meine meinen meinem meiner deine deinen deinem deiner seine seinen seinem seiner diese diesen diesem dieser dieses jede jeden jedem jeder jedes welche welchen welchem welcher welches alle allen aller allem einige einigen mehrere mehreren viele vielen weitere weiteren beim zum zur im am vom vorm unterm ins ans aufs fürs').split(' '));
+function germanNounContext(before) {
+  const words = before.match(/(?:[\p{L}\p{M}-]+\s+){1,4}$/u)?.[0].trim().split(/\s+/u) || [];
+  for (let i = words.length - 1; i >= 0; i--) {
+    if (germanNounIntroducers.has(words[i].toLocaleLowerCase()) &&
+        words.slice(i + 1).every(word => /^\p{Ll}[\p{Ll}\p{M}-]*(?:e|en|er|es|em)$/u.test(word))) return true;
+  }
+  return false;
+}
+const englishInitialWords = new Set('please although however unfortunately fortunately tomorrow today yesterday hello kindly thanks'.split(' '));
+const englishCalendar = new Set('january february march april may june july august september october november december monday tuesday wednesday thursday friday saturday sunday'.split(' '));
+function englishPlural(word, spelling) {
+  if (!word.endsWith('s')) return false;
+  const stem = word.slice(0,-1);
+  return (!/(?:s|x|z|ch|sh)$/u.test(stem) && spelling.correct(stem)) ||
+    (word.endsWith('es') && /(?:s|x|z|ch|sh|o)$/u.test(word.slice(0,-2)) && spelling.correct(word.slice(0,-2))) ||
+    (word.endsWith('ies') && spelling.correct(word.slice(0,-3)+'y'));
+}
+// Exact lexical probes extend recall beyond the frequency-ranked vocabulary.
+// Strong probes represent adjacent swaps, repeated letters and umlaut loss.
+// General one-edit probes are used only when their valid result is unique.
+function oneEditNeighbors(word, valid, compound, budget, prefixes = [], nounValid = () => false, twoEdits = true) {
+  const found = new Map(), checked = new Set();
+  const add = (candidate, strong, allowCompound = true, verifiedCompound = false) => {
+    if (candidate === word || candidate.length < 3) return;
+    if (found.has(candidate)) { if (strong) found.get(candidate).strong = true; return; }
+    const key = `${candidate}:${strong}:${allowCompound}:${verifiedCompound}`;
+    if (checked.has(key) || budget.remaining <= 0) return;
+    checked.add(key); budget.remaining--;
+    if (valid(candidate) || ((strong || verifiedCompound) && allowCompound && compound(candidate))) found.set(candidate, {word: candidate, strong});
+  };
+  for (let i = 0; i < word.length; i++) {
+    if (i + 1 < word.length) add(word.slice(0,i)+word[i+1]+word[i]+word.slice(i+2), true);
+    add(word.slice(0,i)+word[i]+word.slice(i), true);
+    if (word[i] === word[i+1]) add(word.slice(0,i)+word.slice(i+1), true);
+    const umlaut = {a:'ä',o:'ö',u:'ü'}[word[i]];
+    if (umlaut) add(word.slice(0,i)+umlaut+word.slice(i+1), true);
+  }
+  for (let i = 0; i <= word.length && budget.remaining > 0; i++) {
+    if (i < word.length) add(word.slice(0,i)+word.slice(i+1), false);
+    for (const letter of 'abcdefghijklmnopqrstuvwxyzäöüß') {
+      add(word.slice(0,i)+letter+word.slice(i), false);
+      if (i < word.length) add(word.slice(0,i)+letter+word.slice(i+1), false);
+    }
+  }
+  // For a recognized compound prefix, probe the noun ending directly. This
+  // considers weak edits too, without scanning every split of every probe.
+  for (const prefix of prefixes) {
+    if (budget.remaining <= 0) break;
+    const tail = oneEditNeighbors(word.slice(prefix.length), nounValid, () => false, budget, [], nounValid, false);
+    if (tail.complete) for (const candidate of tail.values) add(prefix+candidate.word, candidate.strong, true, true);
+  }
+  // Two strong typing slips are considered only when no one-edit word exists.
+  if (twoEdits && !found.size && word.length >= 7) {
+    for (let i = 0; i < word.length - 1 && budget.remaining > 0; i++) {
+      for (let j = i + 2; j < word.length; j++)
+        add(word.slice(0,i)+word[j]+word.slice(i+1,j)+word[i]+word.slice(j+1), true, false);
+      const swapped = word.slice(0,i)+word[i+1]+word[i]+word.slice(i+2);
+      for (let j = 0; j < swapped.length; j++) {
+        const umlaut = {a:'ä',o:'ö',u:'ü'}[swapped[j]];
+        if (umlaut) add(swapped.slice(0,j)+umlaut+swapped.slice(j+1), true, false);
+      }
+    }
+  }
+  return {values: [...found.values()], complete: budget.remaining > 0};
 }
 const LIMIT = 20000;
 const MAX_WORDS = 3000;
@@ -127,12 +202,24 @@ export function protectedRanges(text) {
   for (const m of text.matchAll(expression)) ranges.push([m.index, m.index + m[0].length]);
   // Literal syntax is stronger evidence than a word-frequency suggestion.
   // Preserve complete tokens, including shell paths/flags and code identifiers.
-  const syntax = /[@#][\p{L}\p{M}\d_]+|--[\p{L}\p{M}\d_-]+|(?:~\/|\/|[a-z]:\\)[\p{L}\p{M}\d_.\/\\-]+|\b[\p{L}\p{M}_$][\p{L}\p{M}\d_$]*(?=\()|\b[\p{L}\p{M}\d_]+(?:-[\p{L}\p{M}\d_]+)+\b|\b(?:const|let|var)\s+[\p{L}_$][\p{L}\p{M}\d_$]*\s*=[^\n]*/giu;
+  const syntax = /[@#][\p{L}\p{M}\d_]+|--[\p{L}\p{M}\d_-]+|(?:~\/|\/|[a-z]:\\)[\p{L}\p{M}\d_.\/\\-]+|\b[\p{L}\p{M}_$][\p{L}\p{M}\d_$]*(?=\()|\b[\p{L}\p{M}\d_]+(?:-[\p{L}\p{M}\d_]+)+\b|\b(?:const|let|var)\s+[\p{L}_$][\p{L}\p{M}\d_$]*\s*=[^\r\n]*/giu;
   for (const m of text.matchAll(syntax)) ranges.push([m.index, m.index + m[0].length]);
-  for (const m of text.matchAll(/(?<!`)(`+)(?!`)[^\n]*?\1(?!`)/gu))
+  for (const m of text.matchAll(/(?<!`)(`+)(?!`)[^\r\n]*?\1(?!`)/gu))
     ranges.push([m.index, m.index + m[0].length]);
-  let offset = 0, tail = false, fence = null;
-  for (const line of text.split('\n')) {
+  // Preserve an explicitly intentional literal; ordinary quoted prose is editable.
+  for (const m of text.matchAll(/"[^"\r\n]{1,200}"|“[^”\r\n]{1,200}”|„[^“\r\n]{1,200}“/gu)) {
+    const before = text.slice(Math.max(0,m.index-100), m.index);
+    const after = text.slice(m.index+m[0].length, m.index+m[0].length+80);
+    if (/\b(?:intentionally|unchanged|verbatim|literal|wörtlich|unverändert|absichtlich|Zeichenfolge|Wortlaut)\b[^.!?\r\n]{0,64}$/iu.test(before) ||
+        /^\s+(?:(?:is|was|remains|stays|bleibt|ist)\s+)?(?:intentionally|unchanged|verbatim|unverändert|absichtlich)\b/iu.test(after) ||
+        /\b(?:sign|label|button|caption|artwork|Schild|Beschriftung|Taste)\s+(?:says|reads|is|lautet|zeigt|heißt)\s*$/iu.test(before)) ranges.push([m.index,m.index+m[0].length]);
+  }
+  let tail = false, closingSignature = false, fence = null;
+  // Retain original UTF-16 offsets for LF, CRLF and Word-style CR paragraphs.
+  for (const match of text.matchAll(/([^\r\n]*)(\r\n|\r|\n|$)/g)) {
+    if (!match[0].length) break;
+    const line = match[1], offset = match.index;
+    if (closingSignature && /^\s*(?:P\.?\s*S[.:]|Nachtrag:|Postskriptum:)/iu.test(line)) { tail = false; closingSignature = false; }
     const marker = /^\s*(`{3,}|~{3,})(.*)$/u.exec(line);
     if (fence) {
       if (marker && marker[1][0] === fence.character && marker[1].length >= fence.length && !marker[2].trim()) {
@@ -142,9 +229,9 @@ export function protectedRanges(text) {
     } else if (marker) {
       fence = {start: offset, character: marker[1][0], length: marker[1].length};
     }
-    if (/^\s*(?:--\s*$|On .{1,180}wrote:|Am .{1,180}schrieb|From:|Von:|_{5,})/iu.test(line)) tail = true;
+    if (/^\s*(?:--\s*$|On .{1,180}wrote:|Am .{1,180}schrieb|From:|Von:|_{5,})/iu.test(line)) { tail = true; closingSignature = false; }
     if (tail || /^\s*>/.test(line)) ranges.push([offset, offset + line.length]);
-    offset += line.length + 1;
+    if (!tail && /^\s*(?:Kind regards|Best regards|Best wishes|Yours sincerely|Sincerely|Mit freundlichen Grüßen|Freundliche Grüße|Viele Grüße|Beste Grüße|Herzliche Grüße|Liebe Grüße)\s*[,!.]?\s*$/iu.test(line)) { tail = true; closingSignature = true; }
   }
   // An unfinished code block remains literal through the end of the selection.
   if (fence) ranges.push([fence.start, text.length]);
@@ -172,11 +259,38 @@ export function createCorrector({en, de}) {
       const dict = dictionaries[language];
       // Mandatory broad validity layer; frequency absence is not a spelling error.
       const spelling = lexical(language);
-      const valid = word => spelling.correct(word) || (language === 'de' && spelling.correct(capitalized(word)));
+      const cased = language === 'de' ? lexical('deCased') : null;
+      const validity = new Map(), compounds = new Map();
+      const valid = word => {
+        if (!validity.has(word)) validity.set(word, spelling.correct(word) ||
+          (language === 'de' ? spelling.correct(capitalized(word)) : englishPlural(word, spelling)));
+        return validity.get(word);
+      };
+      const stems = new Map();
+      const compoundStem = left => {
+        if (!stems.has(left)) {
+          const forms = [left,left+'e',left+'en'];
+          const root = left.slice(0,-1);
+          if (left.endsWith('s') && /(?:ung|heit|keit|schaft|ion|tät|tum|ling|eit|kunft|leben|staat)$/u.test(root)) forms.push(root);
+          stems.set(left, forms.some(stem => spelling.correct(stem) || cased.correct(capitalized(stem))));
+        }
+        return stems.get(left);
+      };
+      const compound = word => {
+        if (language !== 'de' || word.length < 7) return false;
+        if (compounds.has(word)) return compounds.get(word);
+        let accepted = false;
+        for (let i = 3; i <= word.length - 3 && !accepted; i++) {
+          const left = word.slice(0,i), right = word.slice(i);
+          if (!cased.correct(capitalized(right))) continue;
+          accepted = compoundStem(left);
+        }
+        compounds.set(word, accepted); return accepted;
+      };
       const protectedSpans = protectedRanges(text);
       const edits = [];
       let skipped = 0, count = 0, work = 50000;
-      const lookups = new Map();
+      const lookups = new Map(), neighborCache = new Map(), lexicalBudget = {remaining: 25000};
       for (const match of text.matchAll(/\p{L}[\p{L}\p{M}]*/gu)) {
         if (++count > MAX_WORDS) throw new RangeError('Text exceeds 3,000 word tokens.');
         const original = match[0], start = match.index, end = start + original.length;
@@ -187,11 +301,19 @@ export function createCorrector({en, de}) {
             (original !== original.toLocaleLowerCase() && original !== original.toLocaleUpperCase() &&
              original.slice(1) !== original.slice(1).toLocaleLowerCase()) ||
             (original === original.toLocaleUpperCase() && original.length <= 5)) { skipped++; continue; }
-        if (dict.words.has(word) || valid(word)) continue;
         // Unknown English titlecase tokens remain names even at selection start.
         // German noun correction requires lexical casing plus determiner context.
         const titlecase = original[0] !== original[0].toLocaleLowerCase() && original !== original.toLocaleUpperCase();
-        const sentenceStart = /(?:^|[.!?]\s*|\n\s*)$/u.test(text.slice(0, start));
+        const sentenceStart = /(?:^|[.!?]\s*|[\r\n]\s*)$/u.test(text.slice(0, start));
+        const before = text.slice(0,start), nounPhrase = language === 'de' && germanNounContext(before);
+        const followingWord = /^\s+(\p{Lu}[\p{L}\p{M}]*)/u.exec(text.slice(end))?.[1];
+        if (language === 'de' && original === word && nounPhrase && !/(?:en|eln|ern)$/u.test(word) && !followingWord &&
+            !spelling.correct(word) && spelling.correct(capitalized(word))) {
+          edits.push({offset: start, length: original.length, replacement: capitalized(word), original}); continue;
+        }
+        if (dict.words.has(word) || valid(word)) continue;
+        const guessedCompound = titlecase && compound(word);
+        if (titlecase && /\b(?:Herrn?|Frau|Dr\.?|Prof\.?|Mr\.?|Mrs\.?|Ms\.?|Dear|Hello|Hi|Hallo|Liebe|Lieber)(?:[ \t]+\p{Lu}[\p{L}\p{M}-]*){0,2}[ \t]+$/u.test(before)) { skipped++; continue; }
         // German technical prose often capitalizes English nouns. Do not turn
         // "dem Merge" into "dem Menge". Lowercase German words still use only
         // German validity: English "bite" must not block German "bitte".
@@ -212,18 +334,79 @@ export function createCorrector({en, de}) {
         // Outside the explicit email context, the name Emil is not a safe
         // substitute for this token. Leave it for the writer to resolve.
         if (language === 'de' && word === 'eamil') { skipped++; continue; }
-        const nounContext = language === 'de' && titlecase && /\b(?:der|die|das|den|dem|des|ein|eine|einen|einem|einer|eines|ihre|ihren|ihrer|ihrem|ihr|unsere|unseren|meine|meinen|deine|deinen|seine|seinen)\s+$/iu.test(text.slice(0,start));
+        const nounContext = language === 'de' && titlecase && nounPhrase;
         // A titlecase token at document/selection start alone is not typo evidence.
         // Permit only a narrow formal-request shape (infinitive + Sie), not names.
         const initialGerman = language === 'de' && titlecase && sentenceStart && /^\s+\p{Ll}+(?:en|ern|eln)\s+Sie\b/u.test(text.slice(end));
-        if (titlecase && !nounContext && !initialGerman) { skipped++; continue; }
-        const cacheKey = `${word}:${nounContext}:${initialGerman}`;
+        const englishTitle = language === 'en' && titlecase && (sentenceStart || /\b(?:in|on|for|by|during|next|last|this|the)\s+$/iu.test(before));
+        const freeGermanTitle = language === 'de' && titlecase && word.length >= 5;
+        if (titlecase && !nounContext && !initialGerman && !englishTitle && !freeGermanTitle) { skipped++; continue; }
+        if (language === 'de' && !titlecase && word.endsWith('iern')) {
+          const infinitive = word.slice(0,-1)+'en';
+          if (valid(infinitive) && (dict.words.get(infinitive) || 0) >= 150) {
+            edits.push({offset:start,length:original.length,replacement:recase(original,infinitive),original}); continue;
+          }
+        }
+        const adjectiveBefore = language === 'de' && /(?:^|\s)\p{Ll}[\p{Ll}\p{M}-]*(?:e|en|er|es|em)\s+$/u.test(before);
+        const requestBefore = language === 'de' && /\b[Bb]itte\s+$/u.test(before);
+        const cacheKey = `${word}:${titlecase}:${sentenceStart}:${nounContext}:${initialGerman}:${englishTitle}:${adjectiveBefore}:${requestBefore}`;
         if (lookups.has(cacheKey)) {
           const replacement = lookups.get(cacheKey);
           if (replacement) edits.push({offset: start, length: original.length, replacement: recase(original, replacement), original});
           else skipped++;
           continue;
         }
+        let lexicalCandidates = [];
+        if (word.length >= 5) {
+          const neighborKey = `${word}:${titlecase}`;
+          if (!neighborCache.has(neighborKey)) {
+            const prefixes = [];
+            if (language === 'de' && titlecase && word.length >= 7) for (let i = 3; i <= word.length-3; i++)
+              if (compoundStem(word.slice(0,i))) prefixes.push(word.slice(0,i));
+            neighborCache.set(neighborKey,
+            oneEditNeighbors(word, candidate => valid(candidate) ||
+              (language === 'en' && titlecase && spelling.correct(capitalized(candidate))), compound, lexicalBudget,
+              prefixes, candidate => cased.correct(capitalized(candidate))));
+          }
+          const neighbors = neighborCache.get(neighborKey);
+          if (neighbors.complete) lexicalCandidates = neighbors.values.filter(candidate => {
+            if (guessedCompound && (!candidate.strong || !spelling.correct(capitalized(candidate.word)) ||
+                (!transposition(word,candidate.word) && !restoredUmlaut(word,candidate.word)))) return false;
+            if (language === 'en' && titlecase) return (sentenceStart && englishInitialWords.has(candidate.word)) || englishCalendar.has(candidate.word);
+            if (language === 'de' && titlecase) {
+              if (!cased.correct(capitalized(candidate.word)) && !compound(candidate.word) && !initialGerman && !['bitte','morgen'].includes(candidate.word)) return false;
+              if (lexical('en').correct(capitalized(candidate.word)) && !lexical('en').correct(candidate.word) &&
+                  !nounContext && (dict.words.get(candidate.word) || 0) < 5000) return false;
+              if (!nounContext && !initialGerman) return candidate.strong &&
+                (/(?:ung|ungen|heit|heiten|keit|keiten|schaft|schaften|tion|tionen|tät|täten)$/u.test(candidate.word) ||
+                 (dict.words.get(candidate.word) || 0) >= 5000 || adjectiveBefore || requestBefore || ['bitte','morgen'].includes(candidate.word));
+            }
+            return true;
+          });
+          const strong = lexicalCandidates.filter(candidate => candidate.strong);
+          let chosen = strong.length === 1 ? strong[0] : lexicalCandidates.length === 1 ? lexicalCandidates[0] : null;
+          if (strong.length === 1 && lexicalCandidates.length > 1) {
+            // Do not prefer an unattested rare form over a common form that
+            // preserves the inflection ending. Equally plausible regional or
+            // grammatical alternatives remain uncertain rather than forced.
+            const commonEnding = lexicalCandidates.filter(candidate =>
+              candidate.word.endsWith(word[word.length-1]) && (dict.words.get(candidate.word) || 0) >= 1000);
+            if (!(dict.words.get(strong[0].word) || 0) && commonEnding.length === 1) chosen = commonEnding[0];
+            else if (language === 'en' && !(dict.words.get(strong[0].word) || 0)) chosen = null;
+          }
+          if (language === 'en' && lexicalCandidates.length > 1) {
+            const ending = word.slice(-3);
+            const insertion = lexicalCandidates.filter(candidate => candidate.word.length === word.length+1 && candidate.word.endsWith(ending));
+            if (insertion.length === 1 && (!chosen || !chosen.word.endsWith(ending))) chosen = insertion[0];
+          }
+          if (chosen) {
+            lookups.set(cacheKey, chosen.word);
+            edits.push({offset: start, length: original.length, replacement: recase(original, chosen.word), original}); continue;
+          }
+        }
+        if (guessedCompound) { skipped++; continue; }
+        // Unrecognized titlecase names must not fall through to general ranking.
+        if (titlecase && !nounContext && !initialGerman) { skipped++; continue; }
         if (work <= 0) { skipped++; continue; }
         buildIndex(dict);
         const distance = mode === 'balanced' && word.length >= 7 ? 2 : 1;
@@ -244,7 +427,7 @@ export function createCorrector({en, de}) {
           const d = editDistance(word, candidate, distance);
           if (d > distance) continue;
           if (!valid(candidate)) continue;
-          if (nounContext && !spelling.correct(capitalized(candidate))) continue;
+          if (nounContext && !cased.correct(capitalized(candidate)) && !compound(candidate)) continue;
           if (initialGerman && !(valid(candidate) && transposition(word,candidate) && dict.words.get(candidate) >= 10000)) continue;
           if (word.length < (mode === 'conservative' ? 5 : 4) && !(transposition(word,candidate) && dict.words.get(candidate) >= 100000)) continue;
           ranked.push({word: candidate, d, f: dict.words.get(candidate)});
@@ -256,7 +439,7 @@ export function createCorrector({en, de}) {
         const nounTranspose = nounContext && best && transposition(word,best.word);
         const minFrequency = nounTranspose ? 100 : mode === 'conservative' ? 1000 : 250;
         const ratio = mode === 'conservative' ? 8 : 3;
-        if (!best || best.f < minFrequency ||
+        if (!best || (best.d > 1 && lexicalCandidates.length) || best.f < minFrequency ||
             (second && second.d === best.d && best.f < second.f * ratio) ||
             (best.d === 2 && best.f < 3000)) { lookups.set(cacheKey, null); skipped++; continue; }
         lookups.set(cacheKey, best.word);
