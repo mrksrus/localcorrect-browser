@@ -13,7 +13,7 @@ ROOT=Path(__file__).resolve().parents[1]
 RESULTS=ROOT/'test-results'
 RESULTS.mkdir(exist_ok=True)
 archive=RESULTS/'firefox-shipping.zip'
-shutil.copyfile(ROOT/'dist/localcorrect-firefox-1.0.0-rc.4.zip',archive)
+shutil.copyfile(ROOT/'dist/localcorrect-firefox-1.0.0-rc.5.zip',archive)
 with zipfile.ZipFile(archive) as z:assert z.testzip() is None,'Build must finish before running Firefox tests.'
 archive_sha256=hashlib.file_digest(archive.open('rb'),'sha256').hexdigest()
 firefox=os.environ.get('LOCALCORRECT_FIREFOX_BINARY') or shutil.which('firefox')

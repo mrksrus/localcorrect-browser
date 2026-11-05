@@ -1,0 +1,18 @@
+{
+  "description": "Functional policy freeze before first scale holdout or blind engine evaluation. No further policy tuning is permitted while calling these results unseen.",
+  "frozenAt": "2026-11-05T14:14:49.103054+00:00",
+  "coreSha256": {
+    "src/index.js": "20907ded1f2194ad820043b29176e95de7932f36cc4347e8569408b08ebcf0e7",
+    "src/lexicons/de.js": "a3d0b332936e8ffce0d81f9e8592472213250677bc2056d06a571bd0b1605dd1",
+    "src/lexicons/en.js": "fd9f4bc914dc9a45a9ab13f8aa198f6f042a48cf4d3ce3d0f80c159f16a7f331",
+    "src/lexicons/nspell.js": "42406e6669a8cd211ab2c9fa9273ae29f7d9fccc4b4e9581545711f4d5adee09",
+    "src/typos.js": "1d21b2718c3f4a448083825850a540fec22d5e60c77f5951f52b1608ea7677d8",
+    "dictionaries/en.txt": "d2d35a71b7d59ca91f9bdd49cc5406ac85084174d9069b2e9854e4aea357aa5c",
+    "dictionaries/de.txt": "a19ed81a325936cc2f4d0e68d190eae99cd717c8c894e5070cccca447bdef3c4"
+  },
+  "corpusSha256": {
+    "tests/scale-corpus/dev.json": "6f5002544027d008dd5c6e3eab67b0fbcdc96c760c83d05425b76c1e38a39df1",
+    "tests/scale-corpus/holdout.json": "69c15327b31f61fbb2758b59034232a0f50d38223acd653b98bf4ca59868e248",
+    "tests/scale-corpus/blind/cases.json": "317a38b8331358dc01a21776ab68e1452c49bdc3ce19425cd59f87f4cc05fe69"
+  }
+}

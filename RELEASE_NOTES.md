@@ -1,24 +1,11 @@
-# 1.0.0-rc.4
+# 1.0.0-rc.5
 
-Precision-first English/German correction. The new frozen evaluation makes zero
-unwanted edits on 5,000 synthetic documents plus a separate 100-document blind
-set. Main error coverage is 63.75%; blind coverage is 73.33%. Misses are intentional
-when the engine lacks enough evidence. These measurements do not guarantee
-real-world perfection.
+More coverage on the known main corpus, with stronger ambiguity protection. Fixed browser RC4 and native Outlook RC3 releases remain unchanged.
 
-Public downloads include all cases/gold, both models' outputs, an offline
-comparison, source/licensing notes and reproducible CPU measurements. The starting
-point, Wolf Garbe's SymSpell, is credited explicitly. This is an original
-implementation with a compiled static lookup, not neural fine-tuning.
+The known main 5,000 cases gain 383 wanted edits and 210 completely corrected documents, with zero unwanted edits. Main error coverage is 70.16%. The final separately authored 100-document audit has 35 wanted edits, zero unwanted edits, 30 missed edits and 76/100 exact outputs. Fixed RC4 made 38 wanted edits with zero unwanted edits on that final 100-case audit, so the fresh set does not show a coverage gain. This is observed synthetic precision, not universal perfection or 100% error coverage.
 
-CPU profiling led to bounded context checks and offline candidate generation.
-The native engine measured 124–153 ms warm medians for 1,000 words on this 2020-era
-Intel i5, after about 5.5 seconds of initialization. Native Outlook prewarms its
-static data in a background worker; real Office device acceptance remains pending.
+An initial RC5 audit exposed two unwanted edits and was consumed by fixes. Its failed evidence remains published. A second 200-document audit exposed one more unwanted edit and was consumed too. The final 100-case audit from a different author was first evaluated after the last policy freeze. Some old correct edits are now intentionally left unchanged when the wider vocabulary reveals ambiguity.
 
-Quotations, recognized words in either language and uncertain candidates are
-preserved. Partial-word native selections are now refused. Both saved modes share
-the same current safety policy. No permanent host permission or typing monitor
-was added. The Firefox ZIP remains unsigned and temporarily installed.
+The engine adds compact candidate and lexical ambiguity indexes plus attributed CSpell and Homebrew protective vocabulary. Per-call caching avoids repeated searches for repeated typos. No neural training, test-gold lookup or document-derived persistent cache is used. Runtime remains fully offline and manual-shortcut driven.
 
-See QUALITY.md for exact counts, dependence/overlap limits and device boundaries.
+See QUALITY.md, EVALUATION.json and benchmarks/rc5-cpu-performance.md for exact results, startup cost, resource measurements, source hashes and device limitations. Firefox remains unsigned; actual Outlook 2019 acceptance remains unverified.

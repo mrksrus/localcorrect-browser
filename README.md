@@ -9,7 +9,7 @@ required. The goal is useful corrections with as few unwanted edits as possible.
 selected. **Alt+Shift+Z** undoes the last correction. Both shortcuts are editable.
 The toolbar also has a correction button and language selection.
 
-[Download the experimental Firefox/Chrome builds and test results](https://github.com/mrksrus/localcorrect-browser/releases/tag/v1.0.0-rc.4).
+[Download the experimental Firefox/Chrome builds and test results](https://github.com/mrksrus/localcorrect-browser/releases/tag/v1.0.0-rc.5).
 For classic Outlook 2019, use the separate
 [native Windows EXE add-in](https://github.com/mrksrus/localcorrect-outlook).
 It does not use an Exchange/account manifest.
@@ -26,8 +26,10 @@ Missed typos and wrong replacements are separate quality measurements.
 This is a release candidate. The 99% target means precision among edits actually
 made, **not** correction of 99% of all errors. See [QUALITY.md](QUALITY.md) for
 wanted/wrong/missed edit counts, fresh validation, latency and remaining gaps.
-The corpus includes 5,000 synthetic documents and a separate 100-document blind
-set. They are public, reproducible tests, not proof of real-world perfection.
+The public tests include 5,500 known regression documents and a separately authored
+final 100-document RC5 audit first evaluated after the final policy freeze. They are reproducible
+synthetic tests, not proof of real-world perfection. Browser RC4 and native Outlook
+RC3 remain fixed comparison releases; subsequent candidates do not overwrite them.
 
 ## Install and use
 
@@ -52,12 +54,13 @@ This repository is an original JavaScript implementation inspired by that
 algorithm, not a direct GitHub fork of its C# code. Credit belongs to the original
 author for symmetric-delete candidate lookup.
 
-The current build moves that candidate generation and ambiguity checking offline.
-It compiles a spelling lookup from bundled frequency/validity dictionaries,
+The current build compiles candidate indexes from bundled frequency/validity dictionaries,
 [codespell](https://github.com/codespell-project/codespell) misspellings and isolated
-[Litkey](https://linguistics.rub.de/litkeycorpus/) German error pairs. Runtime checks
-only compact static lookup tables and applies original-text edit spans. It
-preserves uncertain cases instead of searching increasingly speculative words.
+[Litkey](https://linguistics.rub.de/litkeycorpus/) German error pairs. A compact shared lexical automaton checks competing English
+and German interpretations at runtime. CSpell vocabulary and Homebrew formula names
+protect names and technical terms. All lookups are bounded; uncertain cases stay
+unchanged. Edits refer to spans in the original text. No document-derived state
+survives a correction call.
 
 The code and correction policy were written and revised with AI assistance, using
 reproducible input/output comparisons, independent review and performance profiles.
@@ -69,15 +72,21 @@ No user documents or private chats are included in the published tests.
 ## Data, credits and reproduction
 
 - [5,000-case data and authoring notes](tests/scale-corpus/AUTHORING-NOTES.md),
-  [source notices](tests/scale-corpus/SOURCES.md), and
-  [independent blind set](tests/scale-corpus/blind/README.md).
+  [source notices](tests/scale-corpus/SOURCES.md), the
+  [earlier blind set](tests/scale-corpus/blind/README.md),
+  [consumed first RC5 audit](tests/scale-corpus/rc5-blind/README.md), and
+  [consumed second RC5 audit](tests/scale-corpus/rc5-blind2/README.md), and
+  [final 100-document audit](tests/scale-corpus/rc5-final-blind/README.md).
 - [Third-party credits and licenses](THIRD_PARTY.md), including SymSpell,
   FrequencyWords/Hermit Dave, the English/German spelling dictionaries,
-  codespell and the Litkey authors.
+  codespell, the Litkey authors, CSpell contributors and Homebrew contributors.
 - `npm ci && npm run check` builds and tests the extension. Build dependencies
   are unnecessary at runtime. Node 22+, Python 3 and local Chromium are used.
 - `node scripts/typos.mjs` rebuilds the static correction prior from vendored,
-  attributed sources. It never reads test cases.
+  attributed sources. `node scripts/candidates.mjs`,
+  `node scripts/protect-vocabulary.mjs`, `node scripts/ambiguity-lexicon.mjs`
+  and `node scripts/inflection-eligibility.mjs`
+  rebuild the additional indexes. None reads test cases.
 - `python3 scripts/source-typos.py --download` reproduces the isolated source
   subset from size/hash-pinned downloads. Raw Litkey stories are not published.
 - `node tests/scale-evaluate.mjs --file tests/scale-corpus/dev.json --label dev`

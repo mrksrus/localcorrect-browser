@@ -1,0 +1,1213 @@
+{
+  "description": "Known source-derived ambiguity challenges consulted during RC5 development, not fresh validation or a natural-language frequency sample. Both intended source word and previously proposed replacement were valid interpretations, so abstention is required. Terms derive from the bundled English Hunspell validity inventory; see THIRD_PARTY.md. No user text.",
+  "cases": [
+    {
+      "language": "en",
+      "original": "balones",
+      "competingValidTarget": "abalones",
+      "input": "Please check the balones today.",
+      "expected": "Please check the balones today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abalons",
+      "competingValidTarget": "abalones",
+      "input": "Please check the abalons today.",
+      "expected": "Please check the abalons today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "absement",
+      "competingValidTarget": "abasement",
+      "input": "Please check the absement today.",
+      "expected": "Please check the absement today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abshed",
+      "competingValidTarget": "abashed",
+      "input": "Please check the abshed today.",
+      "expected": "Please check the abshed today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abshing",
+      "competingValidTarget": "abashing",
+      "input": "Please check the abshing today.",
+      "expected": "Please check the abshing today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abdictions",
+      "competingValidTarget": "abdications",
+      "input": "Please check the abdictions today.",
+      "expected": "Please check the abdictions today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abductes",
+      "competingValidTarget": "abductees",
+      "input": "Please check the abductes today.",
+      "expected": "Please check the abductes today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abductin",
+      "competingValidTarget": "abducting",
+      "input": "Please check the abductin today.",
+      "expected": "Please check the abductin today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abductr",
+      "competingValidTarget": "abductor",
+      "input": "Please check the abductr today.",
+      "expected": "Please check the abductr today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abtter",
+      "competingValidTarget": "abetter",
+      "input": "Please check the abtter today.",
+      "expected": "Please check the abtter today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "aborred",
+      "competingValidTarget": "abhorred",
+      "input": "Please check the aborred today.",
+      "expected": "Please check the aborred today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abidingy",
+      "competingValidTarget": "abidingly",
+      "input": "Please check the abidingy today.",
+      "expected": "Please check the abidingy today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "bjection",
+      "competingValidTarget": "abjection",
+      "input": "Please check the bjection today.",
+      "expected": "Please check the bjection today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abjecty",
+      "competingValidTarget": "abjectly",
+      "input": "Please check the abjecty today.",
+      "expected": "Please check the abjecty today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "bnormally",
+      "competingValidTarget": "abnormally",
+      "input": "Please check the bnormally today.",
+      "expected": "Please check the bnormally today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abnormall",
+      "competingValidTarget": "abnormally",
+      "input": "Please check the abnormall today.",
+      "expected": "Please check the abnormall today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abominabl",
+      "competingValidTarget": "abominably",
+      "input": "Please check the abominabl today.",
+      "expected": "Please check the abominabl today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abominatin",
+      "competingValidTarget": "abominating",
+      "input": "Please check the abominatin today.",
+      "expected": "Please check the abominatin today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "bominations",
+      "competingValidTarget": "abominations",
+      "input": "Please check the bominations today.",
+      "expected": "Please check the bominations today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "aorting",
+      "competingValidTarget": "aborting",
+      "input": "Please check the aorting today.",
+      "expected": "Please check the aorting today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abortin",
+      "competingValidTarget": "aborting",
+      "input": "Please check the abortin today.",
+      "expected": "Please check the abortin today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abruptr",
+      "competingValidTarget": "abrupter",
+      "input": "Please check the abruptr today.",
+      "expected": "Please check the abruptr today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abscessd",
+      "competingValidTarget": "abscessed",
+      "input": "Please check the abscessd today.",
+      "expected": "Please check the abscessd today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abscesse",
+      "competingValidTarget": "abscessed",
+      "input": "Please check the abscesse today.",
+      "expected": "Please check the abscesse today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "absceses",
+      "competingValidTarget": "abscesses",
+      "input": "Please check the absceses today.",
+      "expected": "Please check the absceses today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abscesss",
+      "competingValidTarget": "abscesses",
+      "input": "Please check the abscesss today.",
+      "expected": "Please check the abscesss today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "absencs",
+      "competingValidTarget": "absences",
+      "input": "Please check the absencs today.",
+      "expected": "Please check the absencs today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "absenty",
+      "competingValidTarget": "absently",
+      "input": "Please check the absenty today.",
+      "expected": "Please check the absenty today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abents",
+      "competingValidTarget": "absents",
+      "input": "Please check the abents today.",
+      "expected": "Please check the abents today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "absoluts",
+      "competingValidTarget": "absolutes",
+      "input": "Please check the absoluts today.",
+      "expected": "Please check the absoluts today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "asolved",
+      "competingValidTarget": "absolved",
+      "input": "Please check the asolved today.",
+      "expected": "Please check the asolved today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "absolvd",
+      "competingValidTarget": "absolved",
+      "input": "Please check the absolvd today.",
+      "expected": "Please check the absolvd today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "asolves",
+      "competingValidTarget": "absolves",
+      "input": "Please check the asolves today.",
+      "expected": "Please check the asolves today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "absolvs",
+      "competingValidTarget": "absolves",
+      "input": "Please check the absolvs today.",
+      "expected": "Please check the absolvs today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "asolving",
+      "competingValidTarget": "absolving",
+      "input": "Please check the asolving today.",
+      "expected": "Please check the asolving today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "absorbingy",
+      "competingValidTarget": "absorbingly",
+      "input": "Please check the absorbingy today.",
+      "expected": "Please check the absorbingy today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "astains",
+      "competingValidTarget": "abstains",
+      "input": "Please check the astains today.",
+      "expected": "Please check the astains today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abstracty",
+      "competingValidTarget": "abstractly",
+      "input": "Please check the abstracty today.",
+      "expected": "Please check the abstracty today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "absurdr",
+      "competingValidTarget": "absurder",
+      "input": "Please check the absurdr today.",
+      "expected": "Please check the absurdr today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "absurdit",
+      "competingValidTarget": "absurdist",
+      "input": "Please check the absurdit today.",
+      "expected": "Please check the absurdit today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "absurdits",
+      "competingValidTarget": "absurdists",
+      "input": "Please check the absurdits today.",
+      "expected": "Please check the absurdits today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abundancs",
+      "competingValidTarget": "abundances",
+      "input": "Please check the abundancs today.",
+      "expected": "Please check the abundancs today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abusrs",
+      "competingValidTarget": "abusers",
+      "input": "Please check the abusrs today.",
+      "expected": "Please check the abusrs today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "aysses",
+      "competingValidTarget": "abysses",
+      "input": "Please check the aysses today.",
+      "expected": "Please check the aysses today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abysss",
+      "competingValidTarget": "abysses",
+      "input": "Please check the abysss today.",
+      "expected": "Please check the abysss today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abysse",
+      "competingValidTarget": "abysses",
+      "input": "Please check the abysse today.",
+      "expected": "Please check the abysse today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "academ",
+      "competingValidTarget": "academe",
+      "input": "Please check the academ today.",
+      "expected": "Please check the academ today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "academa",
+      "competingValidTarget": "academia",
+      "input": "Please check the academa today.",
+      "expected": "Please check the academa today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accees",
+      "competingValidTarget": "accedes",
+      "input": "Please check the accees today.",
+      "expected": "Please check the accees today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "acceds",
+      "competingValidTarget": "accedes",
+      "input": "Please check the acceds today.",
+      "expected": "Please check the acceds today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "acceleratrs",
+      "competingValidTarget": "accelerators",
+      "input": "Please check the acceleratrs today.",
+      "expected": "Please check the acceleratrs today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "ccented",
+      "competingValidTarget": "accented",
+      "input": "Please check the ccented today.",
+      "expected": "Please check the ccented today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "acented",
+      "competingValidTarget": "accented",
+      "input": "Please check the acented today.",
+      "expected": "Please check the acented today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "acceted",
+      "competingValidTarget": "accented",
+      "input": "Please check the acceted today.",
+      "expected": "Please check the acceted today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "acceting",
+      "competingValidTarget": "accenting",
+      "input": "Please check the acceting today.",
+      "expected": "Please check the acceting today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "acceptabl",
+      "competingValidTarget": "acceptably",
+      "input": "Please check the acceptabl today.",
+      "expected": "Please check the acceptabl today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "acceptancs",
+      "competingValidTarget": "acceptances",
+      "input": "Please check the acceptancs today.",
+      "expected": "Please check the acceptancs today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accesss",
+      "competingValidTarget": "accesses",
+      "input": "Please check the accesss today.",
+      "expected": "Please check the accesss today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accessibl",
+      "competingValidTarget": "accessibly",
+      "input": "Please check the accessibl today.",
+      "expected": "Please check the accessibl today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accessin",
+      "competingValidTarget": "accession",
+      "input": "Please check the accessin today.",
+      "expected": "Please check the accessin today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accessorie",
+      "competingValidTarget": "accessorise",
+      "input": "Please check the accessorie today.",
+      "expected": "Please check the accessorie today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accessoris",
+      "competingValidTarget": "accessorise",
+      "input": "Please check the accessoris today.",
+      "expected": "Please check the accessoris today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accessoried",
+      "competingValidTarget": "accessorised",
+      "input": "Please check the accessoried today.",
+      "expected": "Please check the accessoried today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accessoriss",
+      "competingValidTarget": "accessorises",
+      "input": "Please check the accessoriss today.",
+      "expected": "Please check the accessoriss today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "cclaim",
+      "competingValidTarget": "acclaim",
+      "input": "Please check the cclaim today.",
+      "expected": "Please check the cclaim today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "cclaiming",
+      "competingValidTarget": "acclaiming",
+      "input": "Please check the cclaiming today.",
+      "expected": "Please check the cclaiming today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "cclaims",
+      "competingValidTarget": "acclaims",
+      "input": "Please check the cclaims today.",
+      "expected": "Please check the cclaims today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "cclimate",
+      "competingValidTarget": "acclimate",
+      "input": "Please check the cclimate today.",
+      "expected": "Please check the cclimate today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accommodatd",
+      "competingValidTarget": "accommodated",
+      "input": "Please check the accommodatd today.",
+      "expected": "Please check the accommodatd today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accommodats",
+      "competingValidTarget": "accommodates",
+      "input": "Please check the accommodats today.",
+      "expected": "Please check the accommodats today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "ccompanies",
+      "competingValidTarget": "accompanies",
+      "input": "Please check the ccompanies today.",
+      "expected": "Please check the ccompanies today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accompanie",
+      "competingValidTarget": "accompanies",
+      "input": "Please check the accompanie today.",
+      "expected": "Please check the accompanie today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accomplises",
+      "competingValidTarget": "accomplishes",
+      "input": "Please check the accomplises today.",
+      "expected": "Please check the accomplises today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accored",
+      "competingValidTarget": "accorded",
+      "input": "Please check the accored today.",
+      "expected": "Please check the accored today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accordd",
+      "competingValidTarget": "accorded",
+      "input": "Please check the accordd today.",
+      "expected": "Please check the accordd today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accorde",
+      "competingValidTarget": "accorded",
+      "input": "Please check the accorde today.",
+      "expected": "Please check the accorde today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "ccosting",
+      "competingValidTarget": "accosting",
+      "input": "Please check the ccosting today.",
+      "expected": "Please check the ccosting today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "ccosts",
+      "competingValidTarget": "accosts",
+      "input": "Please check the ccosts today.",
+      "expected": "Please check the ccosts today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accountany",
+      "competingValidTarget": "accountancy",
+      "input": "Please check the accountany today.",
+      "expected": "Please check the accountany today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accouted",
+      "competingValidTarget": "accoutred",
+      "input": "Please check the accouted today.",
+      "expected": "Please check the accouted today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accouting",
+      "competingValidTarget": "accoutring",
+      "input": "Please check the accouting today.",
+      "expected": "Please check the accouting today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "ccredit",
+      "competingValidTarget": "accredit",
+      "input": "Please check the ccredit today.",
+      "expected": "Please check the ccredit today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "ccredited",
+      "competingValidTarget": "accredited",
+      "input": "Please check the ccredited today.",
+      "expected": "Please check the ccredited today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "ccredits",
+      "competingValidTarget": "accredits",
+      "input": "Please check the ccredits today.",
+      "expected": "Please check the ccredits today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "acrual",
+      "competingValidTarget": "accrual",
+      "input": "Please check the acrual today.",
+      "expected": "Please check the acrual today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accued",
+      "competingValidTarget": "accrued",
+      "input": "Please check the accued today.",
+      "expected": "Please check the accued today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accres",
+      "competingValidTarget": "accrues",
+      "input": "Please check the accres today.",
+      "expected": "Please check the accres today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accuing",
+      "competingValidTarget": "accruing",
+      "input": "Please check the accuing today.",
+      "expected": "Please check the accuing today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accumulats",
+      "competingValidTarget": "accumulates",
+      "input": "Please check the accumulats today.",
+      "expected": "Please check the accumulats today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accumulatr",
+      "competingValidTarget": "accumulator",
+      "input": "Please check the accumulatr today.",
+      "expected": "Please check the accumulatr today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accusr",
+      "competingValidTarget": "accuser",
+      "input": "Please check the accusr today.",
+      "expected": "Please check the accusr today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accusrs",
+      "competingValidTarget": "accusers",
+      "input": "Please check the accusrs today.",
+      "expected": "Please check the accusrs today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "accusingy",
+      "competingValidTarget": "accusingly",
+      "input": "Please check the accusingy today.",
+      "expected": "Please check the accusingy today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "ccustom",
+      "competingValidTarget": "accustom",
+      "input": "Please check the ccustom today.",
+      "expected": "Please check the ccustom today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "ccustoms",
+      "competingValidTarget": "accustoms",
+      "input": "Please check the ccustoms today.",
+      "expected": "Please check the ccustoms today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "chenes",
+      "competingValidTarget": "achenes",
+      "input": "Please check the chenes today.",
+      "expected": "Please check the chenes today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "acenes",
+      "competingValidTarget": "achenes",
+      "input": "Please check the acenes today.",
+      "expected": "Please check the acenes today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "achnes",
+      "competingValidTarget": "achenes",
+      "input": "Please check the achnes today.",
+      "expected": "Please check the achnes today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "achees",
+      "competingValidTarget": "achenes",
+      "input": "Please check the achees today.",
+      "expected": "Please check the achees today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "achievr",
+      "competingValidTarget": "achiever",
+      "input": "Please check the achievr today.",
+      "expected": "Please check the achievr today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "achives",
+      "competingValidTarget": "achieves",
+      "input": "Please check the achives today.",
+      "expected": "Please check the achives today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "achievs",
+      "competingValidTarget": "achieves",
+      "input": "Please check the achievs today.",
+      "expected": "Please check the achievs today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "achingy",
+      "competingValidTarget": "achingly",
+      "input": "Please check the achingy today.",
+      "expected": "Please check the achingy today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "acknowledgs",
+      "competingValidTarget": "acknowledges",
+      "input": "Please check the acknowledgs today.",
+      "expected": "Please check the acknowledgs today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "aquaint",
+      "competingValidTarget": "acquaint",
+      "input": "Please check the aquaint today.",
+      "expected": "Please check the aquaint today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "acquier",
+      "competingValidTarget": "acquirer",
+      "input": "Please check the acquier today.",
+      "expected": "Please check the acquier today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "acquirr",
+      "competingValidTarget": "acquirer",
+      "input": "Please check the acquirr today.",
+      "expected": "Please check the acquirr today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "acquirs",
+      "competingValidTarget": "acquires",
+      "input": "Please check the acquirs today.",
+      "expected": "Please check the acquirs today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "aquits",
+      "competingValidTarget": "acquits",
+      "input": "Please check the aquits today.",
+      "expected": "Please check the aquits today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "aquitting",
+      "competingValidTarget": "acquitting",
+      "input": "Please check the aquitting today.",
+      "expected": "Please check the aquitting today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "acquiting",
+      "competingValidTarget": "acquitting",
+      "input": "Please check the acquiting today.",
+      "expected": "Please check the acquiting today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "creages",
+      "competingValidTarget": "acreages",
+      "input": "Please check the creages today.",
+      "expected": "Please check the creages today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "acostic",
+      "competingValidTarget": "acrostic",
+      "input": "Please check the acostic today.",
+      "expected": "Please check the acostic today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "acostics",
+      "competingValidTarget": "acrostics",
+      "input": "Please check the acostics today.",
+      "expected": "Please check the acostics today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "activatr",
+      "competingValidTarget": "activator",
+      "input": "Please check the activatr today.",
+      "expected": "Please check the activatr today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "activatrs",
+      "competingValidTarget": "activators",
+      "input": "Please check the activatrs today.",
+      "expected": "Please check the activatrs today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "atives",
+      "competingValidTarget": "actives",
+      "input": "Please check the atives today.",
+      "expected": "Please check the atives today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "activs",
+      "competingValidTarget": "actives",
+      "input": "Please check the activs today.",
+      "expected": "Please check the activs today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "activis",
+      "competingValidTarget": "activism",
+      "input": "Please check the activis today.",
+      "expected": "Please check the activis today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "actualiy",
+      "competingValidTarget": "actuality",
+      "input": "Please check the actualiy today.",
+      "expected": "Please check the actualiy today.",
+      "class": "deletion"
+    },
+    {
+      "language": "en",
+      "original": "abdomenb",
+      "competingValidTarget": "abdomens",
+      "input": "Please check the abdomenb today.",
+      "expected": "Please check the abdomenb today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "abdomeng",
+      "competingValidTarget": "abdomens",
+      "input": "Please check the abdomeng today.",
+      "expected": "Please check the abdomeng today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "abdomenh",
+      "competingValidTarget": "abdomens",
+      "input": "Please check the abdomenh today.",
+      "expected": "Please check the abdomenh today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "abdomenj",
+      "competingValidTarget": "abdomens",
+      "input": "Please check the abdomenj today.",
+      "expected": "Please check the abdomenj today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "abdomenm",
+      "competingValidTarget": "abdomens",
+      "input": "Please check the abdomenm today.",
+      "expected": "Please check the abdomenm today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "abdomenn",
+      "competingValidTarget": "abdomens",
+      "input": "Please check the abdomenn today.",
+      "expected": "Please check the abdomenn today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "aslate",
+      "competingValidTarget": "ablate",
+      "input": "Please check the aslate today.",
+      "expected": "Please check the aslate today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "ablaae",
+      "competingValidTarget": "ablate",
+      "input": "Please check the ablaae today.",
+      "expected": "Please check the ablaae today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "ablaje",
+      "competingValidTarget": "ablate",
+      "input": "Please check the ablaje today.",
+      "expected": "Please check the ablaje today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "ablase",
+      "competingValidTarget": "ablate",
+      "input": "Please check the ablase today.",
+      "expected": "Please check the ablase today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "ablaue",
+      "competingValidTarget": "ablate",
+      "input": "Please check the ablaue today.",
+      "expected": "Please check the ablaue today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "ablaxe",
+      "competingValidTarget": "ablate",
+      "input": "Please check the ablaxe today.",
+      "expected": "Please check the ablaxe today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "acrnage",
+      "competingValidTarget": "acreage",
+      "input": "Please check the acrnage today.",
+      "expected": "Please check the acrnage today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "amdends",
+      "competingValidTarget": "addends",
+      "input": "Please check the amdends today.",
+      "expected": "Please check the amdends today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "aborer",
+      "competingValidTarget": "adorer",
+      "input": "Please check the aborer today.",
+      "expected": "Please check the aborer today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "admrer",
+      "competingValidTarget": "adorer",
+      "input": "Please check the admrer today.",
+      "expected": "Please check the admrer today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "adoler",
+      "competingValidTarget": "adorer",
+      "input": "Please check the adoler today.",
+      "expected": "Please check the adoler today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "alchemistf",
+      "competingValidTarget": "alchemists",
+      "input": "Please check the alchemistf today.",
+      "expected": "Please check the alchemistf today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "alchemistg",
+      "competingValidTarget": "alchemists",
+      "input": "Please check the alchemistg today.",
+      "expected": "Please check the alchemistg today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "alchemisth",
+      "competingValidTarget": "alchemists",
+      "input": "Please check the alchemisth today.",
+      "expected": "Please check the alchemisth today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "alchemistr",
+      "competingValidTarget": "alchemists",
+      "input": "Please check the alchemistr today.",
+      "expected": "Please check the alchemistr today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "alchemistt",
+      "competingValidTarget": "alchemists",
+      "input": "Please check the alchemistt today.",
+      "expected": "Please check the alchemistt today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "ilighting",
+      "competingValidTarget": "alighting",
+      "input": "Please check the ilighting today.",
+      "expected": "Please check the ilighting today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "klighting",
+      "competingValidTarget": "alighting",
+      "input": "Please check the klighting today.",
+      "expected": "Please check the klighting today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "asighting",
+      "competingValidTarget": "alighting",
+      "input": "Please check the asighting today.",
+      "expected": "Please check the asighting today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "alamna",
+      "competingValidTarget": "alumna",
+      "input": "Please check the alamna today.",
+      "expected": "Please check the alamna today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "altmna",
+      "competingValidTarget": "alumna",
+      "input": "Please check the altmna today.",
+      "expected": "Please check the altmna today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "alumnj",
+      "competingValidTarget": "alumna",
+      "input": "Please check the alumnj today.",
+      "expected": "Please check the alumnj today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "alumnk",
+      "competingValidTarget": "alumna",
+      "input": "Please check the alumnk today.",
+      "expected": "Please check the alumnk today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "alumnl",
+      "competingValidTarget": "alumna",
+      "input": "Please check the alumnl today.",
+      "expected": "Please check the alumnl today.",
+      "class": "substitution"
+    },
+    {
+      "language": "en",
+      "original": "alumno",
+      "competingValidTarget": "alumna",
+      "input": "Please check the alumno today.",
+      "expected": "Please check the alumno today.",
+      "class": "substitution"
+    }
+  ]
+}

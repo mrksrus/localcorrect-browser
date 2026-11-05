@@ -1,0 +1,20 @@
+{
+  "description": "Shared one-deletion index for bounded exact one-edit lookup. No gold/test inputs.",
+  "inventories": {
+    "en": {
+      "words": 25968,
+      "keys": 178400,
+      "shards": 606,
+      "frequencySha256": "d2d35a71b7d59ca91f9bdd49cc5406ac85084174d9069b2e9854e4aea357aa5c",
+      "validitySha256": "3abc1bd03c86f064760a295c76847c35cb8fcd2523a6211790060ab2d43f1631"
+    },
+    "de": {
+      "words": 20205,
+      "keys": 159355,
+      "shards": 695,
+      "frequencySha256": "a19ed81a325936cc2f4d0e68d190eae99cd717c8c894e5070cccca447bdef3c4",
+      "validitySha256": "649475bec9604bfa18e321eadedbc5aed02a24e3333f10f41dfe2aad59388153"
+    }
+  },
+  "assetSha256": "442d650ac932c6aa0856f4381ac4c0c99c95dfc06144e7151ac14a04b15bd98a"
+}
