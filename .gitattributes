@@ -1,2 +1,6 @@
 # Preserve pinned upstream data and frozen corpus bytes on every platform.
 * -text
+# Upstream licensed sources retain their exact pinned trailing newlines.
+packages/core/vendor/** whitespace=-blank-at-eof
+packages/core/licenses/** whitespace=-blank-at-eof
+licenses/** whitespace=-blank-at-eof
