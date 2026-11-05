@@ -1,0 +1,47 @@
+{
+  "description": "Public typo priors plus unique common one-edit typing repairs. No test corpus is read.",
+  "sources": {
+    "codespell": {
+      "revision": "b53e95197f7c799674c785028a182e2dfd1df881",
+      "url": "https://github.com/codespell-project/codespell",
+      "license": "CC-BY-SA-3.0",
+      "sha256": "154078a5877ef228b8c8b28d5c69991b053947ea8685717599044988e172ddd7"
+    },
+    "litkey": {
+      "url": "https://linguistics.rub.de/litkeycorpus/corpus/Litkey-csv.zip",
+      "license": "CC-BY-SA-4.0",
+      "archiveSha256": "6d8db45fa079c1dc6128e9e8db2d181c0fbcbb9d51693ebbc1ecb7785e2d649c",
+      "extractedPairs": 3832,
+      "changes": "Alphabetic single-word pairs only; lowercased; source length5-24, target3-24; globally unambiguous original; targetFrequency>=1000. No raw texts."
+    }
+  },
+  "inputSha256": {
+    "codespell": "154078a5877ef228b8c8b28d5c69991b053947ea8685717599044988e172ddd7",
+    "litkey": "0d5b83d2b0aff9d102fc23d8e9625d6a304e016330888edff3c7cdb37e007474"
+  },
+  "inventories": {
+    "en": {
+      "targets": 25968,
+      "pairs": 405719,
+      "kinds": {
+        "strong": 286863,
+        "omission": 89144,
+        "codespell": 29712,
+        "litkey": 0
+      },
+      "sha256": "b98e2949e7137a13576f160f7ca075685c9b0bc77692499589dbe78dd0b632d5"
+    },
+    "de": {
+      "targets": 20205,
+      "pairs": 363407,
+      "kinds": {
+        "strong": 270449,
+        "omission": 91255,
+        "codespell": 0,
+        "litkey": 1703
+      },
+      "sha256": "dfa1d95e901b194172c63ae31def9944a411ad73f9ea08a316b3bdef5388307e"
+    }
+  },
+  "assetSha256": "1d21b2718c3f4a448083825850a540fec22d5e60c77f5951f52b1608ea7677d8"
+}

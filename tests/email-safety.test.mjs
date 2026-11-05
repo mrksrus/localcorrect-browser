@@ -23,23 +23,23 @@ test('sentence-initial correction is not replayed for a later titlecase name or 
   assert.equal(corrector.correct(input,{language:'en',mode}).text,'Please send the document. We met the Plesae team.');
  }
 });
-test('lowercase cache entries do not bypass a later titlecase surname gate',()=>{
+test('unverified lowercase names and later titlecase surnames remain unchanged',()=>{
  for(const mode of ['conservative','balanced']){
-  assert.equal(corrector.correct('weimer. Herr Weimer meldet sich.',{language:'de',mode}).text,'weiter. Herr Weimer meldet sich.');
+  assert.equal(corrector.correct('weimer. Herr Weimer meldet sich.',{language:'de',mode}).text,'weimer. Herr Weimer meldet sich.');
  }
 });
-test('explicitly intentional quoted literals are preserved while ordinary quoted prose is corrected',()=>{
+test('quoted literals and ordinary quoted prose are preserved',()=>{
  for(const mode of ['conservative','balanced']){
   const literal='The user wrote "recieve" intentionally.';
   assert.equal(corrector.correct(literal,{language:'en',mode}).text,literal);
   const german='Das Wort „nachrciht“ bleibt unverändert.';
   assert.equal(corrector.correct(german,{language:'de',mode}).text,german);
-  assert.equal(corrector.correct('Please send "teh document" tomorrow.',{language:'en',mode}).text,'Please send "the document" tomorrow.');
+  assert.equal(corrector.correct('Please send "teh document" tomorrow.',{language:'en',mode}).text,'Please send "teh document" tomorrow.');
  }
 });
-test('compound neighbor cache distinguishes lowercase text and capitalized noun contexts',()=>{
+test('unattested compound endings remain unchanged',()=>{
  for(const mode of ['conservative','balanced']){
   const input='Bitte projektplanng. die Projektplanng.';
-  assert.equal(corrector.correct(input,{language:'de',mode}).text,'Bitte projektplanng. die Projektplanung.');
+  assert.equal(corrector.correct(input,{language:'de',mode}).text,'Bitte projektplanng. die Projektplanng.');
  }
 });

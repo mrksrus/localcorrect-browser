@@ -1,176 +1,132 @@
-# Local correction quality evidence
+# Quality and performance, RC4
 
-Synthetic local tests, not general accuracy or a guarantee against false changes.
-The independent full-sentence corpus is retained verbatim in `tests/acceptance.json`.
-It is deliberately separate from the original lowercase isolated-word corpus.
+This is a symbolic local spelling corrector, not a neural model. The priority is
+precision among edits actually made. Missed typos remain missed, not successful
+corrections. The two saved modes currently use the same candidate policy.
 
-| Independent sentence cases | Before Normal | After Normal | Before Conservative | After Conservative |
-|---|---:|---:|---:|---:|
-| English exact typo fixes | 4/6 | 5/6 | 3/6 | 4/6 |
-| German exact typo fixes | 2/6 | 6/6 | 2/6 | 6/6 |
-| Required-safe preserved | 16/16 | 16/16 | 16/16 | 16/16 |
-| Exploratory contextual/split sentence fixes | 0/2 | 0/2 | 0/2 | 0/2 |
+## Frozen evaluation
 
-Normal still abstains on ambiguous `adress`; Conservative additionally leaves
-`recieved`. No split/join or contextual real-word correction was added. Ordinary
-valid words `versendet` and `protections` now remain unchanged in both modes.
-A separate validity regression evenly samples 400 frequency-absent lexical forms
-per language (800 total), in each mode, including affix-expanded vocabulary.
+The policy was frozen before the first evaluation of the new 2,000-document
+holdout or 100-document blind set. Exact functional source and corpus hashes are
+in [evaluation-freeze.json](evaluation-freeze.json). There was no policy tuning
+after seeing those results. Both original gold sets remain unchanged.
 
-Original isolated-word metrics, explicitly **not German sentence coverage**:
-English Normal 18/21, Conservative 16/21; German 12/14 in both modes. The original
-15 unchanged fixtures per language remain unchanged in each mode. The original
-misses are retained rather than removed from the denominator.
+| Set | Documents | Wanted edits | Unwanted edits | Missed edits | Edit precision | Error coverage | Clean documents preserved |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Development | 3,000 | 2,284 | 0 | 1,306 | 100% | 63.62% | 1,200/1,200 |
+| Held-out target families | 2,000 | 1,527 | 0 | 861 | 100% | 63.94% | 800/800 |
+| Independent blind context | 100 | 66 | 0 | 24 | 100% | 73.33% | 70/70 |
 
-## How correction is constrained
+Across the main 5,000 documents, this is **3,811 wanted, zero unwanted and 2,167
+missed edits**. Exact documents are 3,428/5,000, including unchanged controls.
+The blind set has 81/100 exact documents, including all 70 clean controls.
+Do not interpret 100% measured edit precision as 100% error coverage, or as proof
+of 99% precision on arbitrary real writing.
 
-- Symmetric-delete candidate lookup, OSA validation, original edit spans and bounded
-  work remain the correction algorithm. nspell is used at build time to expand
-  licensed Hunspell lexical inputs; its suggestion engine is never used.
-- Bundled expanded validity/casing inventories contain 166,081 EN and 566,925 DE
-  forms (including capitalization variants, not distinct lemmas). They are separate
-  from the 30,000/28,168 frequency-ranked candidates. They are not comprehensive
-  language authorities: nspell implements a subset of Hunspell morphology and no
-  dynamic arbitrary German compound validation is promised.
-- Capitalized German candidates need a determiner/possessive context and a valid
-  capitalized lexical form. A reduced frequency floor applies only to adjacent
-  transpositions in that context. At sentence start, a narrow formal-request shape
-  (infinitive + Sie) is required; position alone does not authorize a change.
-  This is grammatical/casing gating, **not a statistical contextual model** or a
-  perfect noun/name classifier. Titlecase nouns without this context can be missed.
-- English unknown titlecase words are preserved even at sentence/selection start.
-  Short-word exceptions require high-frequency adjacent transpositions, not forced
-  replacements. Dotted filenames are protected.
-- Partial-token selections are rejected at either end without expanding scope,
-  including inline node joins and combining marks. Whole-token selections and
-  complete fields remain supported. Undo refuses subsequent text/DOM changes.
+The previous RC3 Conservative engine on these same sets produced:
 
-## Reproduce
+| Set | Wanted | Unwanted | Missed | Edit precision | Clean documents preserved |
+|---|---:|---:|---:|---:|---:|
+| Development | 3,229 | 518 | 361 | 86.18% | 989/1,200 |
+| Holdout | 2,090 | 351 | 298 | 85.62% | 647/800 |
+| Blind | 81 | 20 | 9 | 80.20% | 56/70 |
 
-`npm run check` writes `test-results/core-quality.json`, `sentence-quality.json`,
-`dom.json`, `extension.json`, and `packages.json`. `npm audit` checks the locked
-build dependencies. `node scripts/lexicons.mjs` regenerates lexical assets from
-exact npm inputs after `npm ci`; `lexicon-sources.json` pins source integrity,
-aff/dic hashes, derived hashes and form counts. ZIP verification checks these.
+This is a deliberate reduction in coverage to avoid unsupported changes. Both
+models' complete per-case outputs, wanted/wrong/missed spans and both modes are
+included in the downloadable report, not just successful examples.
+[EVALUATION.json](EVALUATION.json) contains machine-readable summaries and hashes.
 
-The Chromium integration harness uses only synthetic text and a test-only host
-grant; it is not proof of a real toolbar permission gesture. Mozilla signing and arbitrary production editor compatibility remain unverified.
-The Firefox runtime check is documented below separately.
+## What the tests establish
 
-## RC2 synthetic hill climb
+The 5,000 new documents comprise 2,500 EN/2,500 DE, 3,000 correction cases and
+2,000 controls; 2,000 complete emails, 2,000 other multi-paragraph texts and 1,000
+short texts. There are 5,978 gold edits, 1,592 distinct used error pairs and 339
+target families. A subset of 100 emails contains 974–1,017 words.
 
-The separate corpus in `tests/hillclimb.json` was frozen before tuning. Development
-cases guided explicit protection and context rules. Holdout cases were evaluated
-after tuning; they are now public regression data, not a future unseen benchmark.
-Each split contains 24 typo sentences and 22 unchanged controls. Each sentence has
-one intended typo. All examples are synthetic and contain no personal messages.
+The corpus was authored without engine or earlier-fixture access. It uses
+invented adult contexts, 119 curated codespell and 94 curated Litkey pairs plus
+controlled keyboard mutations. It repeats authored sentence/paragraph templates.
+Targets are separated between dev and holdout; shared templates and limited
+vocabulary mean these are not 5,000 independent real-world messages. See
+[authoring notes](tests/scale-corpus/AUTHORING-NOTES.md) and
+[source licenses](tests/scale-corpus/SOURCES.md). Original chat text, private
+correspondence and raw pupil stories are not published.
 
-| Split / mode | Exact corrections before | Exact corrections now | Controls preserved before | Controls preserved now |
-|---|---:|---:|---:|---:|
-| Development / Conservative | 14/24 | 17/24 | 17/22 | 22/22 |
-| Development / Normal | 18/24 | 21/24 | 14/22 | 21/22 |
-| Holdout / Conservative | 23/24 | 23/24 | 21/22 | 22/22 |
-| Holdout / Normal | 24/24 | 24/24 | 18/22 | 22/22 |
+Some gold pairs were already in the public-data/typing prior before evaluation:
+2,322/3,590 dev edits, 1,572/2,388 holdout edits and 67/90 blind edits. This is prior
+membership before case/context gates, not an independent unseen-pair score. No
+test file is read by the prior compiler. The separate blind set tests fresh
+contexts and preservation traps, not unknown linguistic knowledge. Zero observed
+unwanted edits on these dependent, synthetic samples cannot certify a population
+error rate.
 
-Before means browser commit `c67cc4c8e3107084bff0606c00d08e1c7da58ba1`.
-`npm run evaluate` reproduces current counts and individual outputs. The small
-corpus cannot establish general accuracy. Normal still changes an intentionally
-misspelled word inside ordinary double quotes on the development set. Misses
-include ambiguous `adress` and some German noun forms. No contextual grammar,
-negation repair, split/join or unrestricted semantic correction is claimed.
+A wrong replacement counts as both an unwanted edit and a missed gold edit.
+Offsets are exact UTF-16 spans into original input; output is reconstructed and
+checked. No-op controls have empty gold edits. Alternate plausible replacements
+still count as unwanted when they differ from the authored intended correction.
+The older 92/200/40 fixtures remain public regression data. They were previously
+consulted and are not relabeled as fresh holdouts in this release.
 
-The expanded validity strings now use sorted offsets and exact binary search
-instead of hundreds of thousands of Set entries. In the local Node comparison,
-lexicon initialization fell from about 580 ms to 90 ms and peak process memory
-from about 440 MiB to 353-378 MiB. All 733,006 positive memberships, 15,122 negative
-queries and all 184 corpus/mode outputs matched the previous implementation.
-Lookup cost increased by about 3 microseconds per token. These are local process
-measurements, not phone benchmarks or a memory cap. Native Jint measurements and
-Office acceptance limits are documented in the Outlook companion.
+## Improvement loop
 
-## Browser operations
+1. The known 40-case audit exposed literal quotations, rare/ambiguous candidates
+   and unwanted German noun capitalization.
+2. Quote preservation and bilingual validity removed unsafe edits. Weak and
+   ambiguous guesses were reduced, with missed edits measured separately.
+3. Profiling found repeated full-prefix German context scans and expensive
+   interpreter candidate searching. Context was bounded, capitalization guessing
+   removed, and candidate compilation moved offline.
+4. The compiler builds unique common typing repairs and filtered public typo
+   priors using SymSpell deletion keys and actual edit distance. Independently
+   reviewed ambiguity examples led to filtering public priors too. A documented
+   eight-function-word transposition exception remains heuristic.
+5. Missing-letter repairs recovered useful coverage without increasing measured
+   development unwanted edits. The final policy was then frozen and validated.
 
-Keyboard commands now share the same saved settings and correction path as the
-popup. Target capture happens before asynchronous dictionary loading. Changed
-text, focus, selection or replayed operation IDs are rejected without writes.
-Synthetic Chromium tests exercise both these guards and same-origin iframe
-correction/Undo, plus the shipping popup/background path. The Chromium integration
-manifest adds a test-only localhost host grant; the shipped ZIP has no host grant.
-Official Firefox 159.0.1 and geckodriver 0.37.1 passed the shipping extension
-through temporary unsigned installation in a disposable profile with Internet
-blocked by a test proxy. WebDriver browser-UI key actions invoked the registered
-Alt+Shift+C / Alt+Shift+Z commands with the original shipped activeTab permissions.
-The checks cover whole textarea correction, Undo, saved German preferences,
-contenteditable, focused same-origin iframe, password refusal, and saving/resetting
-custom shortcuts through the shipped options UI. There was no
-direct extension-command emission or test-only site grant in this Firefox check.
-WebDriver content-context actions did not invoke browser shortcuts; the test
-therefore uses the documented UI automation context. This does not test physical
-keyboard layout, desktop shortcut conflicts or every website.
+The loop changed rules and attributed static data. It did not train neural
+weights or add gold fixture pairs to the runtime. Sol independent reviews and
+blind authorship were used. No Astra agent was needed in this iteration.
 
-Run after a completed build, with no concurrent rebuild:
+## CPU measurements
 
-```sh
-LOCALCORRECT_FIREFOX_BINARY=/path/to/firefox GECKODRIVER_BINARY=/path/to/geckodriver python3 tests/firefox.py
-```
+Dedicated frozen-candidate measurements used this laptop's Intel Core i5-1038NG7,
+a 2020-era 4-core/8-thread CPU. Synthetic 150/1,000-word EN/DE emails include clean
+and typo-heavy bodies without signature/quotation shortcuts. Each fresh-process
+case has one first correction and exactly three warm repeats.
 
-The script records the exact ZIP hash in `test-results/firefox.json`, installs a
-CRC-checked snapshot and terminates its own browser/driver afterward. Its
-`--allow-system-access` flag applies only to the disposable automation instance,
-as described in [Mozilla's geckodriver flags documentation](https://firefox-source-docs.mozilla.org/testing/geckodriver/Flags.html).
-It does not modify the owner's browser profile or grant the extension extra rights.
+| Linux .NET 10/Jint measurement | Result |
+|---|---:|
+| Static engine initialization | 5.21–5.58 seconds |
+| First 1,000-word correction after initialization | 222–487 ms |
+| Warm 1,000-word median | 124–153 ms |
+| Maximum measured warm 1,000-word correction | 163 ms |
+| Peak process RSS | 367–369 MiB |
+| Full cold initialization plus first correction | 5.43–5.82 seconds |
 
-## RC3 complete-document evaluation
+A separate base-warm/new-document run measured 145–436 ms for its first 1,000-word
+document. Node warm core inference was about 2–5 ms for 1,000 words. These timings
+exclude editor/COM/DOM application, first extension resource loading and network
+installation. The native add-in preloads static dictionaries off the UI thread;
+this reads no email. An action before warmup finishes waits for initialization.
 
-The original 92 cases remain unchanged. `tests/email-corpus` adds 200 authored
-inputs with 506 gold edits: 100 English and 100 German, 80 complete emails,
-60 other multiple-paragraph documents and 60 short cases. Thirty of the 120
-development cases and twenty of the original 80 holdout cases are unchanged
-controls. Case text and gold spans were frozen before evaluation.
+[Full performance report](benchmarks/cpu-performance.md),
+[raw measurements and hashes](benchmarks/cpu-performance.json), and
+[reusable synthetic fixtures](tests/performance-fixtures.json) are published.
+These results support the approximate one-second warm engine goal on this CPU,
+not a guarantee for every CPU released after 2020, power mode or editor.
+Linux .NET 10 results are not actual Windows Outlook measurements.
 
-The baseline is browser commit `c42041d2b4bd8e32d2896017b85c93ec14e4c09a`.
-Development guided the first candidate. Its original holdout evaluation found
-seven wrong edits, which prompted general compound/casing, signature and label
-protections. The final 200-case scores therefore include post-validation tuning.
-The original holdout is not claimed as unseen after that work. Some scenarios
-are semantic paraphrases across languages; the splits are authored inputs, not
-independent topics or a population sample.
+## Runtime and device checks
 
-A different author created 40 additional blind audit inputs without reading the
-implementation, primary fixtures or failure words. Their hash was frozen before
-scoring. The final core was frozen before either baseline or candidate audit
-evaluation; audit results did not guide further model tuning.
+The final check record accompanies the release downloads. Browser tests cover
+core safety, original spans, ordinary rich-text/textarea behavior, Undo, extension
+resources and shipping Firefox commands with blocked external network access.
+Runtime parity compares full outputs to the Node reference; it does not substitute
+for gold quality scoring. Whole-email Firefox tests can contain intentional
+abstentions and do not claim every gold typo was fixed.
 
-The downloadable HTML report and JSON files retain every typed input, intended
-output, actual output and original UTF-16 edit. Wrong replacements count as
-both false edits and missed intended edits. Full-document exactness includes
-all typos and absence of extra edits. Regional alternatives can still be strict
-gold mismatches. This does not measure contextual grammar or universal editor
-compatibility. Corpus SHA256 files and reports identify the exact sources.
-
-Current merged inventories contain 171,194 EN and 567,945 DE forms, with 62,868
-German entries whose capitalization originates in the source expansion. Original
-Hunspell/nspell data, regional licenses and reproducible build metadata ship with
-the packages. Bounded lexical probes and compound heuristics improve recall;
-they do not establish calibrated confidence or perfect proper-name detection.
-
-| Original 200 / Normal | Baseline | RC3 |
-|---|---:|---:|
-| Intended edits made | 308/506 | 478/506 |
-| Wrong edits | 7 | 0 |
-| Completely correct documents | 99/200 | 175/200 |
-| Unchanged controls preserved | 49/50 | 50/50 |
-
-| Independent 40-case audit / Normal | Baseline | RC3 |
-|---|---:|---:|
-| Intended edits made | 37/90 | 70/90 |
-| Wrong edits | 8 | 9 |
-| Completely correct documents | 11/40 | 24/40 |
-| Unchanged controls preserved | 5/10 | 6/10 |
-
-The audit is the most useful warning against reading the tuned 200 score as
-near-perfect general performance. It improves coverage but retains unwanted
-changes and missed corrections. Conservative audit results are 66/90 intended
-edits, 7 wrong edits, 22/40 exact documents and 7/10 controls preserved. These
-experimental packages require review before sending; neither mode is a perfect
-proofreader. Every audit failure remains in the downloadable report.
+Windows CI separately runs the shared engine under .NET 10 and net48 AppDomain,
+plus installer filesystem tests. Actual Outlook 2019 x86/x64 add-in loading,
+formatting, keyboard behavior, Undo and uninstall remain unverified. Firefox
+archives are unsigned temporary-development packages. Mozilla signing and
+arbitrary production editors are separate acceptance work.

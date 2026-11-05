@@ -4,11 +4,12 @@ import {execFileSync} from 'node:child_process';
 import assert from 'node:assert/strict';
 const provenance=JSON.parse(readFileSync('dictionary-sources.json','utf8'));
 const lexical=JSON.parse(readFileSync('lexicon-sources.json','utf8'));
+const typos=JSON.parse(readFileSync('typo-sources.json','utf8'));
 const results=[];
 for(const browser of ['firefox','chrome']){
  const prefix=`build/${browser}/`;
  const m=JSON.parse(readFileSync(prefix+'manifest.json','utf8'));
- assert.equal(m.manifest_version,3);assert.equal(m.version,'0.9.0.3');assert.deepEqual(m.permissions,['activeTab','scripting','storage']);
+ assert.equal(m.manifest_version,3);assert.equal(m.version,'0.9.0.4');assert.deepEqual(m.permissions,['activeTab','scripting','storage']);
  assert.equal(m.host_permissions,undefined);assert.equal(m.content_scripts,undefined);
  assert.ok(browser==='firefox'?m.background.scripts.includes('background.js'):m.background.service_worker==='background.js');
  assert.ok(readFileSync(prefix+'background.js').length>1000);
@@ -29,8 +30,11 @@ for(const browser of ['firefox','chrome']){
    assert.ok(asset.originalCasing.split('\n').every(word=>/^\p{Lu}/u.test(word)));
   }
  }
+ assert.equal(createHash('sha256').update(readFileSync(prefix+'source/packages/core/src/typos.js')).digest('hex'),typos.assetSha256);
+ for(const [name,file] of [['codespell','codespell.txt'],['litkey','litkey-pairs.tsv']])assert.equal(createHash('sha256').update(readFileSync(prefix+'source/packages/core/vendor/typo-data/'+file)).digest('hex'),typos.inputSha256[name]);
+ for(const name of ['CC-BY-SA-3.0.html','CC-BY-SA-4.0.html'])assert.ok(readFileSync(prefix+'source/packages/core/vendor/typo-data/'+name).length>40000);
  for(const name of ['dictionary-en','dictionary-en-gb','dictionary-de','dictionary-de-at','nspell','is-buffer'])assert.ok(readFileSync(prefix+`licenses/${name}-LICENSE`).length>500);
- const path=`dist/localcorrect-${browser}-1.0.0-rc.3.zip`;
+ const path=`dist/localcorrect-${browser}-1.0.0-rc.4.zip`;
  const entries=JSON.parse(execFileSync('python',['-c',`import json,zipfile\nwith zipfile.ZipFile('${path}') as z:\n assert z.testzip() is None\n print(json.dumps(z.namelist()))`],{encoding:'utf8'}));
  for(const name of ['manifest.json','dictionaries/en.txt','dictionaries/de.txt','LICENSE','THIRD_PARTY.md','licenses/CC-BY-SA-4.0.txt','source/scripts/build.mjs','source/scripts/lexicons.mjs','lexicon-sources.json','source/packages/core/src/lexicons/en.js','source/packages/core/src/lexicons/de.js','source/packages/core/src/lexicons/nspell.js'])assert.ok(entries.includes(name));
  const sha256=createHash('sha256').update(readFileSync(path)).digest('hex');results.push({path,sha256,entries:entries.length,bytes:readFileSync(path).length});

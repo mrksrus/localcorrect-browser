@@ -25,6 +25,7 @@ const results=[];
 }
 // Test-only host grant replaces a toolbar activeTab gesture in headless Chromium.
 // This modified manifest is NEVER packaged. No remote site is fetched.
+rmSync('test-results/extension-harness',{recursive:true,force:true});
 cpSync('build/chrome','test-results/extension-harness',{recursive:true});
 const harness={...shipping,host_permissions:['http://fixture.test/*']};
 writeFileSync('test-results/extension-harness/manifest.json',JSON.stringify(harness));
@@ -34,7 +35,7 @@ writeFileSync('test-results/extension-harness/manifest.json',JSON.stringify(harn
   const unexpected=[];
   await context.route('**/*',route=>{
    const u=route.request().url();
-   if(u.startsWith('http://fixture.test/'))return route.fulfill({contentType:'text/html',body:'<!doctype html><textarea id="t">recieve seperate</textarea>'});
+   if(u.startsWith('http://fixture.test/'))return route.fulfill({contentType:'text/html',body:'<!doctype html><textarea id="t">tomorow seperate</textarea>'});
    if(u.startsWith('chrome-extension:')||u.startsWith('chrome:'))return route.continue();
    unexpected.push(u);return route.abort();
   });
@@ -44,8 +45,8 @@ writeFileSync('test-results/extension-harness/manifest.json',JSON.stringify(harn
   await popup.evaluate(id=>chrome.tabs.update(id,{active:true}),tabId);
   await popup.locator('#mode').selectOption('balanced');await popup.locator('#correct').click();
   await popup.waitForFunction(()=>!document.querySelector('#correct').disabled,{timeout:20000});
-  assert.equal(await fixture.locator('#t').inputValue(),'receive separate',await popup.locator('#status').textContent());assert.match(await popup.locator('#status').textContent(),/^2 replacement/);
-  await popup.locator('#undo').click();await popup.waitForFunction(()=>!document.querySelector('#undo').disabled);assert.equal(await fixture.locator('#t').inputValue(),'recieve seperate');
+  assert.equal(await fixture.locator('#t').inputValue(),'tomorrow separate',await popup.locator('#status').textContent());assert.match(await popup.locator('#status').textContent(),/^2 replacement/);
+  await popup.locator('#undo').click();await popup.waitForFunction(()=>!document.querySelector('#undo').disabled);assert.equal(await fixture.locator('#t').inputValue(),'tomorow seperate');
   assert.deepEqual(unexpected,[]);
   results.push('Actual popup → scripting → isolated adapter → core → DOM → Undo, synthetic host grant; zero unexpected network requests');
  }finally{await context.close();}

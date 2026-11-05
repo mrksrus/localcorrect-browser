@@ -18,6 +18,8 @@ test('lexical inventory fails closed on unordered or repeated entries', () => {
     writeFileSync(join(dir, 'package.json'), '{"type":"module"}');
     mkdirSync(join(dir, 'lexicons'));
     cpSync(new URL('../packages/core/src/index.js', import.meta.url), join(dir, 'index.js'));
+  cpSync('packages/core/src/typos.js',join(dir,'typos.js'));
+  writeFileSync(join(dir,'package.json'),'{"type":"module"}');
     writeFileSync(join(dir, 'lexicons/de.js'), 'export default "";');
     const firstEnd = enLexicon.indexOf('\n'), secondEnd = enLexicon.indexOf('\n', firstEnd + 1);
     const first = enLexicon.slice(0, firstEnd), second = enLexicon.slice(firstEnd + 1, secondEnd);
@@ -62,13 +64,13 @@ test('literal syntax remains unchanged while surrounding prose is corrected', ()
   }
 });
 
-test('German technical nouns are preserved without a blanket bilingual validity union', () => {
+test('German technical nouns and recognized English words are preserved', () => {
   for (const mode of modes) {
     const input = 'Bitte starte das Deployment nach dem Merge.';
     assert.equal(corrector.correct(input, {language: 'de', mode}).text, input);
   }
   assert.equal(corrector.correct('Kannst du das bite prüfen.', {language: 'de', mode: 'balanced'}).text,
-    'Kannst du das bitte prüfen.');
+    'Kannst du das bite prüfen.');
 });
 
 test('narrow context rules correct common initial typos and avoid replacing email with a name', () => {

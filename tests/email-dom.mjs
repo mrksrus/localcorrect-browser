@@ -5,6 +5,13 @@ import assert from 'node:assert/strict';
 import {createCorrector} from '../packages/core/src/index.js';
 const rows=['dev','holdout'].flatMap(split=>{const data=JSON.parse(readFileSync(`tests/email-corpus/${split}.json`,'utf8'));return Array.isArray(data)?data:data.cases;});
 assert.equal(rows.length,200);
+const scale=JSON.parse(readFileSync('tests/scale-corpus/dev.json','utf8')).cases;
+const used=new Set();
+for(const language of ['en','de'])for(const criterion of [r=>r.longEmail,r=>r.kind==='safe',r=>r.kind==='correction'&&!r.longEmail]){
+ const chosen=scale.filter(r=>r.language===language&&!used.has(r.id)&&criterion(r)).slice(0,20);
+ assert.equal(chosen.length,20);for(const row of chosen){rows.push(row);used.add(row.id);}
+}
+assert.equal(rows.length,320);
 const dictionaries=Object.fromEntries(['en','de'].map(l=>[l,readFileSync(`packages/core/dictionaries/${l}.txt`,'utf8')]));
 const reference=createCorrector(dictionaries);
 mkdirSync('test-results',{recursive:true});

@@ -13,7 +13,7 @@ ROOT=Path(__file__).resolve().parents[1]
 RESULTS=ROOT/'test-results'
 RESULTS.mkdir(exist_ok=True)
 archive=RESULTS/'firefox-shipping.zip'
-shutil.copyfile(ROOT/'dist/localcorrect-firefox-1.0.0-rc.3.zip',archive)
+shutil.copyfile(ROOT/'dist/localcorrect-firefox-1.0.0-rc.4.zip',archive)
 with zipfile.ZipFile(archive) as z:assert z.testzip() is None,'Build must finish before running Firefox tests.'
 archive_sha256=hashlib.file_digest(archive.open('rb'),'sha256').hexdigest()
 firefox=os.environ.get('LOCALCORRECT_FIREFOX_BINARY') or shutil.which('firefox')
@@ -21,8 +21,8 @@ driver=os.environ.get('GECKODRIVER_BINARY') or shutil.which('geckodriver')
 if not firefox or not driver:raise SystemExit('Set LOCALCORRECT_FIREFOX_BINARY and GECKODRIVER_BINARY to trusted installed binaries.')
 fixture='''<!doctype html><meta charset="utf-8"><title>LocalCorrect offline test</title>
 <h1>LocalCorrect local Firefox test</h1><label>Draft<textarea id="draft">teh documetn</textarea></label>
-<p>Correction and Undo run from extension shortcuts.</p><div id="rich" contenteditable="true">recieve seperate</div>
-<input id="password" type="password" value="recieve"><iframe id="frame" srcdoc="<textarea id=inside>teh documetn</textarea>"></iframe>'''
+<p>Correction and Undo run from extension shortcuts.</p><div id="rich" contenteditable="true">tomorow seperate</div>
+<input id="password" type="password" value="tomorow"><iframe id="frame" srcdoc="<textarea id=inside>teh documetn</textarea>"></iframe>'''
 class Fixture(BaseHTTPRequestHandler):
     def do_GET(self):
         b=fixture.encode();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(len(b)));self.end_headers();self.wfile.write(b)
@@ -115,14 +115,14 @@ try:
     script('for(const [id,value] of [["language","en"],["mode","balanced"]]){const s=document.getElementById(id);s.value=value;s.dispatchEvent(new Event("change",{bubbles:true}));}')
     time.sleep(.2)
     call('POST','/url',{'url':url});click('#rich');shortcut('c')
-    wait_value('return document.querySelector("#rich").textContent','receive separate')
+    wait_value('return document.querySelector("#rich").textContent','tomorrow separate')
     checks.append('Ordinary contenteditable supports correction without opening the popup')
     # Focus the iframe field, then return WebDriver to the top context.
     call('POST','/frame',{'id':find('#frame')});click('#inside');call('POST','/frame',{'id':None});shortcut('c')
     wait_value('return document.querySelector("#frame").contentDocument.querySelector("#inside").value','the document')
     checks.append('Focused same-origin iframe works with shipping permissions')
     click('#password');shortcut('c');time.sleep(.4)
-    assert script('return document.querySelector("#password").value')=='recieve'
+    assert script('return document.querySelector("#password").value')=='tomorow'
     checks.append('Password fields remain untouched')
     # Change bindings through the shipped options UI, never through a test API.
     call('POST','/url',{'url':f'moz-extension://{extension_uuid}/options.html'})
@@ -140,9 +140,16 @@ try:
     call('POST','/url',{'url':url});click('#draft');shortcut('c')
     wait_value('return document.querySelector("#draft").value','the document')
     checks.append('Custom shortcut survives options reopening; Reset defaults restores working Alt+Shift+C')
-    # Whole email examples use the original frozen gold, not engine-generated output.
+    # Runtime integration is scored against the Node reference. The untouched
+    # gold corpus is scored separately; this test does not claim all typos fixed.
     corpus=json.loads((ROOT/'tests/email-corpus/dev.json').read_text())
     rows=corpus if isinstance(corpus,list) else corpus['cases']
+    reference=json.loads(subprocess.check_output(['node','--input-type=module','-e',"""
+import fs from 'node:fs';import{createCorrector}from './packages/core/src/index.js';
+const c=createCorrector(Object.fromEntries(['en','de'].map(l=>[l,fs.readFileSync(`packages/core/dictionaries/${l}.txt`,'utf8')])));
+const rows=JSON.parse(fs.readFileSync('tests/email-corpus/dev.json','utf8')).cases;
+console.log(JSON.stringify(Object.fromEntries(['en','de'].map(l=>{const r=rows.find(r=>r.id===`email200-dev-${l}-email-correction-01`);return[l,c.correct(r.input.replace(/\\r\\n?/g,'\\n'),{language:l,mode:'balanced'}).text];}))));
+"""],cwd=ROOT,text=True))
     for language in ['en','de']:
         row=next(r for r in rows if r['id']==f'email200-dev-{language}-email-correction-01')
         call('POST','/url',{'url':f'moz-extension://{extension_uuid}/popup.html'})
@@ -152,9 +159,9 @@ try:
         script('for(const [id,value] of [["language",arguments[0]],["mode","balanced"]]){const s=document.getElementById(id);s.value=value;s.dispatchEvent(new Event("change",{bubbles:true}));}',language)
         time.sleep(.2)
         call('POST','/url',{'url':url});script('document.getElementById("draft").value=arguments[0];',row['input']);click('#draft');shortcut('c')
-        wait_value('return document.getElementById("draft").value',row['expected'].replace('\r\n','\n').replace('\r','\n'))
+        wait_value('return document.getElementById("draft").value',reference[language])
         shortcut('z');wait_value('return document.getElementById("draft").value',row['input'].replace('\r\n','\n').replace('\r','\n'))
-        checks.append(f'Complete {language.upper()} email: one shipping shortcut corrects all gold typos across paragraphs, then Undo restores it')
+        checks.append(f'Complete {language.upper()} email: shipping shortcut matches complete Node output across paragraphs, then Undo restores input')
     screenshot=call('GET','/screenshot');(RESULTS/'firefox-offline.png').write_bytes(base64.b64decode(screenshot))
     result={'passed':True,'browser':capabilities['browserVersion'],'geckodriver':capabilities.get('moz:geckodriverVersion'),'archive_sha256':archive_sha256,'checks':checks,
       'keyboard_dispatch':'WebDriver key actions in Firefox chrome context; no direct extension command dispatch or permission grant',

@@ -54,11 +54,44 @@ All new assets/source/notices are shipped in both ZIPs and the portable core.
 
 ## Algorithm acknowledgement
 
-The original LocalCorrect implementation uses Wolf Garbe's SymSpell symmetric
--delete algorithm: https://github.com/wolfgarbe/SymSpell (MIT upstream). No code
-or dictionaries from that repository were copied. It builds deletion indexes,
-intersects deletion candidates, validates with optimal-string-alignment edit
-distance, and ranks by distance/frequency. It is not a fixed replacement list.
+LocalCorrect started as an original JavaScript reimplementation of Wolf Garbe's
+[SymSpell symmetric-delete algorithm](https://github.com/wolfgarbe/SymSpell),
+MIT upstream. It is not a GitHub fork and no upstream implementation or SymSpell
+frequency dictionary was copied. The current compiler uses symmetric-delete keys
+and optimal-string-alignment distance to reject competing common spellings.
+Runtime uses the compiled lookup, with lexical validity and protection gates.
+
+## Recorded typo data
+
+[codespell](https://github.com/codespell-project/codespell), dictionary.txt at
+`b53e95197f7c799674c785028a182e2dfd1df881`, is CC BY-SA 3.0, with English Wikipedia
+attribution retained in the vendored README. No codespell Python code is copied.
+The source dictionary, README and full legalcode are in
+`packages/core/vendor/typo-data`. `scripts/typos.mjs` filters single alphabetic
+suggestions, excludes recognized original words, validates common targets and
+rejects competing common one-edit interpretations. A narrow exception retains
+adjacent swaps into eight common English function words, behind the same lexical,
+name and quote protections. This exception can still be wrong in an unusual context. Typo labels remain
+heuristics, not semantic proof or calibrated confidence. Derived codespell data
+retain CC BY-SA 3.0.
+
+[Litkey Corpus](https://linguistics.rub.de/litkeycorpus/), ISLRN 051-051-923-439-0,
+is CC BY-SA 4.0. Authors: Ronja Laarmann-Quante, Katrin Ortmann, Anna Ehlert,
+Simon Masloch, Doreen Scholz, Eva Belke and Stefanie Dipper. Citation: The Litkey
+Corpus: A richly annotated longitudinal corpus of German texts written by primary
+school children, Behavior Research Methods, 2019. The original domain is children's
+writing, not adult email. We retain only isolated, lowercased alphabetic error pairs
+with unambiguous observed targets and common adult dictionary targets. Runtime
+compilation further checks distance, validity and ambiguity. No raw stories,
+source file identifiers or correspondence are distributed. Complete legalcode,
+modified pairs and provenance are in the same vendor directory. These derived
+pairs retain CC BY-SA 4.0.
+
+`typo-sources.json` records input/output hashes and inventory counts.
+`scripts/source-typos.py --download` reproduces extraction from pinned source
+bytes; `node scripts/typos.mjs` reproduces the compiled prior without reading test
+data. The separately authored synthetic fixtures have their own provenance and
+notices under `tests/scale-corpus/SOURCES.md`.
 
 ## Build/test tooling (not correction runtime)
 

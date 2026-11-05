@@ -1,0 +1,15 @@
+{
+  "codespell": {
+    "revision": "b53e95197f7c799674c785028a182e2dfd1df881",
+    "url": "https://github.com/codespell-project/codespell",
+    "license": "CC-BY-SA-3.0",
+    "sha256": "154078a5877ef228b8c8b28d5c69991b053947ea8685717599044988e172ddd7"
+  },
+  "litkey": {
+    "url": "https://linguistics.rub.de/litkeycorpus/corpus/Litkey-csv.zip",
+    "license": "CC-BY-SA-4.0",
+    "archiveSha256": "6d8db45fa079c1dc6128e9e8db2d181c0fbcbb9d51693ebbc1ecb7785e2d649c",
+    "extractedPairs": 3832,
+    "changes": "Alphabetic single-word pairs only; lowercased; source length5-24, target3-24; globally unambiguous original; targetFrequency>=1000. No raw texts."
+  }
+}
