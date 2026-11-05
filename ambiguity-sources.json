@@ -1,0 +1,52 @@
+{
+  "description": "Complete union of existing positive lexical inventories, lowercased with JavaScript toLowerCase. No NFC rewrite, frequency cutoff, typo priors, evaluation examples or user documents. This conservative inventory proves lexical ambiguity only; it does not authorize corrections.",
+  "format": "LCDAWG1: little-endian child-first minimal acyclic automaton; sorted symbol-ID edges; terminal/start metadata; min/max suffix lengths; Unicode scalar alphabet.",
+  "inputs": [
+    {
+      "file": "packages/core/src/lexicons/en.js",
+      "export": "default",
+      "description": "Affix-expanded English US/GB Hunspell inventory; see lexicon-sources.json.",
+      "sha256": "fd9f4bc914dc9a45a9ab13f8aa198f6f042a48cf4d3ce3d0f80c159f16a7f331",
+      "sourceWords": 171194,
+      "foldedWords": 90511
+    },
+    {
+      "file": "packages/core/src/lexicons/de.js",
+      "export": "default",
+      "description": "Affix-expanded German DE/AT Hunspell inventory; see lexicon-sources.json.",
+      "sha256": "a3d0b332936e8ffce0d81f9e8592472213250677bc2056d06a571bd0b1605dd1",
+      "sourceWords": 567945,
+      "foldedWords": 292752
+    },
+    {
+      "file": "packages/core/src/protect-vocabulary.js",
+      "export": "software",
+      "description": "Positive CSpell/Homebrew software inventory, including compiled regular plurals; see protect-sources.json.",
+      "sha256": "52387aa6bb9fe963443f83d1cff9fb17c3da7a3198e8dc35c3ea6386523a31cf",
+      "sourceWords": 19985,
+      "foldedWords": 19985
+    },
+    {
+      "file": "packages/core/src/protect-vocabulary.js",
+      "export": "people",
+      "description": "Positive CSpell people inventory; see protect-sources.json.",
+      "sha256": "52387aa6bb9fe963443f83d1cff9fb17c3da7a3198e8dc35c3ea6386523a31cf",
+      "sourceWords": 38898,
+      "foldedWords": 38898
+    }
+  ],
+  "upstreamManifests": {
+    "lexicon-sources.json": "83f67b458e1d9afc345c8db8e5c32d08e1e550a2116fcf41b5a9c2d1ee5f9941",
+    "protect-sources.json": "df5e591e4ea096efcac2da5b032ead27ade029d02010f0d0d01b76e0dfb89a51"
+  },
+  "words": 425484,
+  "nodes": 103461,
+  "edges": 225533,
+  "symbols": 53,
+  "maxLength": 32,
+  "decodedBytes": 1974212,
+  "inventorySha256": "6ae1f4f8be1656f983378ae5585e0960fe9a736129684fcc7c9e69cee2a9687d",
+  "binarySha256": "7a8847cc2efa17dd071e04a091219f0798472766d9980d724e091a4d988418dc",
+  "assetBytes": 2632447,
+  "assetSha256": "95692bbef3b1ae8a58f162cf4334aaf8212fe254ffa25273ff1ddd06476b5c7a"
+}

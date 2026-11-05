@@ -1,0 +1,1825 @@
+{
+  "description": "Exact independently authored untouched-term inputs from the original pre-freeze preservation spot-check.",
+  "method": {
+    "terms": 163,
+    "documents": 326,
+    "languages": [
+      "en",
+      "de"
+    ],
+    "englishContext": "We examined the {term} today.",
+    "germanContext": "Wir untersuchen die {term} heute.",
+    "expected": "Preserve every complete input exactly.",
+    "order": "All English terms in listed order, then all German terms in the same order."
+  },
+  "provenance": {
+    "kind": "synthetic, independently authored by the source reviewer",
+    "source": "Exact term slate and deterministic context templates retained in the original reviewer tool-call history. No personal text or private blind-author data.",
+    "domains": [
+      "modern technical vocabulary",
+      "ecology",
+      "geology",
+      "fish and other animals"
+    ],
+    "recovery": "Materialized from the exact original tool call, not a newly invented replacement slate. No engine rerun was performed for this evidence-recovery step.",
+    "originalObservation": "All 326 inputs preserved by core index.js SHA256 c6c6abcdfc96525c16bbf9bd1c4da8991cc338be62b22238bc658f60929299f2. The original count-only observation is fresh-untouched-terms.json.",
+    "status": "Known adversarial development preservation evidence; not blind or a natural-frequency accuracy estimate."
+  },
+  "terms": [
+    "finetune",
+    "finetunes",
+    "finetuning",
+    "tokenizer",
+    "tokenizers",
+    "detokenizer",
+    "detokenize",
+    "multimodal",
+    "autoregressive",
+    "diffusion",
+    "inpaint",
+    "outpaint",
+    "geofencing",
+    "micromobility",
+    "railbus",
+    "tramtrain",
+    "streetwear",
+    "solarpunk",
+    "hopepunk",
+    "cottagecore",
+    "slowcore",
+    "dreamcore",
+    "weirdcore",
+    "normcore",
+    "blockchain",
+    "sidechain",
+    "rollup",
+    "sequencer",
+    "sequencers",
+    "restaking",
+    "sharding",
+    "rollups",
+    "hypervisor",
+    "hypervisors",
+    "virtio",
+    "vhost",
+    "kexec",
+    "qdisc",
+    "netns",
+    "vxlan",
+    "ipvlan",
+    "macvlan",
+    "multiqueue",
+    "conntrack",
+    "landslide",
+    "mudslide",
+    "icefall",
+    "rockfall",
+    "scree",
+    "talus",
+    "arête",
+    "nunatak",
+    "drumlin",
+    "esker",
+    "kettlehole",
+    "cirque",
+    "tarn",
+    "moraine",
+    "boulderfield",
+    "clifftop",
+    "peatland",
+    "wetland",
+    "marshland",
+    "fenland",
+    "heathland",
+    "grassland",
+    "scrubland",
+    "rangeland",
+    "parkland",
+    "alluvium",
+    "colluvium",
+    "loess",
+    "saprolite",
+    "regolith",
+    "hardpan",
+    "caliche",
+    "duricrust",
+    "bioturbation",
+    "permafrost",
+    "thermokarst",
+    "cryoturbation",
+    "refugium",
+    "refugia",
+    "avifauna",
+    "megafauna",
+    "microfauna",
+    "meiofauna",
+    "macrofauna",
+    "benthos",
+    "plankton",
+    "nekton",
+    "pelagic",
+    "demersal",
+    "riparian",
+    "xeric",
+    "mesic",
+    "hydric",
+    "edaphic",
+    "allochthonous",
+    "autochthonous",
+    "hatchery",
+    "fledgling",
+    "nestling",
+    "yearling",
+    "duckling",
+    "gosling",
+    "cygnet",
+    "owlet",
+    "eaglet",
+    "eyas",
+    "foal",
+    "cria",
+    "joey",
+    "kitling",
+    "fingerling",
+    "fryling",
+    "elver",
+    "glassfish",
+    "mudskipper",
+    "killifish",
+    "pipefish",
+    "lungfish",
+    "hagfish",
+    "dogfish",
+    "lionfish",
+    "sawfish",
+    "guitarfish",
+    "paddlefish",
+    "archerfish",
+    "anglerfish",
+    "icefish",
+    "cowfish",
+    "boxfish",
+    "trunkfish",
+    "toadfish",
+    "batfish",
+    "blobfish",
+    "clingfish",
+    "pufferfish",
+    "triggerfish",
+    "surgeonfish",
+    "parrotfish",
+    "wrasse",
+    "goby",
+    "blenny",
+    "cichlid",
+    "molly",
+    "guppy",
+    "platy",
+    "rasbora",
+    "danio",
+    "gourami",
+    "loach",
+    "bichir",
+    "arowana",
+    "arapaima",
+    "axolotl",
+    "olm",
+    "siren",
+    "hellbender",
+    "mudpuppy",
+    "newt",
+    "caecilian"
+  ],
+  "cases": [
+    {
+      "language": "en",
+      "input": "We examined the finetune today.",
+      "expected": "We examined the finetune today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the finetunes today.",
+      "expected": "We examined the finetunes today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the finetuning today.",
+      "expected": "We examined the finetuning today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the tokenizer today.",
+      "expected": "We examined the tokenizer today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the tokenizers today.",
+      "expected": "We examined the tokenizers today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the detokenizer today.",
+      "expected": "We examined the detokenizer today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the detokenize today.",
+      "expected": "We examined the detokenize today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the multimodal today.",
+      "expected": "We examined the multimodal today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the autoregressive today.",
+      "expected": "We examined the autoregressive today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the diffusion today.",
+      "expected": "We examined the diffusion today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the inpaint today.",
+      "expected": "We examined the inpaint today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the outpaint today.",
+      "expected": "We examined the outpaint today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the geofencing today.",
+      "expected": "We examined the geofencing today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the micromobility today.",
+      "expected": "We examined the micromobility today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the railbus today.",
+      "expected": "We examined the railbus today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the tramtrain today.",
+      "expected": "We examined the tramtrain today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the streetwear today.",
+      "expected": "We examined the streetwear today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the solarpunk today.",
+      "expected": "We examined the solarpunk today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the hopepunk today.",
+      "expected": "We examined the hopepunk today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the cottagecore today.",
+      "expected": "We examined the cottagecore today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the slowcore today.",
+      "expected": "We examined the slowcore today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the dreamcore today.",
+      "expected": "We examined the dreamcore today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the weirdcore today.",
+      "expected": "We examined the weirdcore today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the normcore today.",
+      "expected": "We examined the normcore today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the blockchain today.",
+      "expected": "We examined the blockchain today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the sidechain today.",
+      "expected": "We examined the sidechain today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the rollup today.",
+      "expected": "We examined the rollup today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the sequencer today.",
+      "expected": "We examined the sequencer today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the sequencers today.",
+      "expected": "We examined the sequencers today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the restaking today.",
+      "expected": "We examined the restaking today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the sharding today.",
+      "expected": "We examined the sharding today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the rollups today.",
+      "expected": "We examined the rollups today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the hypervisor today.",
+      "expected": "We examined the hypervisor today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the hypervisors today.",
+      "expected": "We examined the hypervisors today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the virtio today.",
+      "expected": "We examined the virtio today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the vhost today.",
+      "expected": "We examined the vhost today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the kexec today.",
+      "expected": "We examined the kexec today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the qdisc today.",
+      "expected": "We examined the qdisc today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the netns today.",
+      "expected": "We examined the netns today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the vxlan today.",
+      "expected": "We examined the vxlan today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the ipvlan today.",
+      "expected": "We examined the ipvlan today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the macvlan today.",
+      "expected": "We examined the macvlan today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the multiqueue today.",
+      "expected": "We examined the multiqueue today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the conntrack today.",
+      "expected": "We examined the conntrack today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the landslide today.",
+      "expected": "We examined the landslide today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the mudslide today.",
+      "expected": "We examined the mudslide today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the icefall today.",
+      "expected": "We examined the icefall today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the rockfall today.",
+      "expected": "We examined the rockfall today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the scree today.",
+      "expected": "We examined the scree today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the talus today.",
+      "expected": "We examined the talus today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the arête today.",
+      "expected": "We examined the arête today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the nunatak today.",
+      "expected": "We examined the nunatak today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the drumlin today.",
+      "expected": "We examined the drumlin today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the esker today.",
+      "expected": "We examined the esker today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the kettlehole today.",
+      "expected": "We examined the kettlehole today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the cirque today.",
+      "expected": "We examined the cirque today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the tarn today.",
+      "expected": "We examined the tarn today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the moraine today.",
+      "expected": "We examined the moraine today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the boulderfield today.",
+      "expected": "We examined the boulderfield today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the clifftop today.",
+      "expected": "We examined the clifftop today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the peatland today.",
+      "expected": "We examined the peatland today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the wetland today.",
+      "expected": "We examined the wetland today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the marshland today.",
+      "expected": "We examined the marshland today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the fenland today.",
+      "expected": "We examined the fenland today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the heathland today.",
+      "expected": "We examined the heathland today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the grassland today.",
+      "expected": "We examined the grassland today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the scrubland today.",
+      "expected": "We examined the scrubland today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the rangeland today.",
+      "expected": "We examined the rangeland today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the parkland today.",
+      "expected": "We examined the parkland today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the alluvium today.",
+      "expected": "We examined the alluvium today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the colluvium today.",
+      "expected": "We examined the colluvium today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the loess today.",
+      "expected": "We examined the loess today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the saprolite today.",
+      "expected": "We examined the saprolite today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the regolith today.",
+      "expected": "We examined the regolith today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the hardpan today.",
+      "expected": "We examined the hardpan today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the caliche today.",
+      "expected": "We examined the caliche today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the duricrust today.",
+      "expected": "We examined the duricrust today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the bioturbation today.",
+      "expected": "We examined the bioturbation today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the permafrost today.",
+      "expected": "We examined the permafrost today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the thermokarst today.",
+      "expected": "We examined the thermokarst today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the cryoturbation today.",
+      "expected": "We examined the cryoturbation today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the refugium today.",
+      "expected": "We examined the refugium today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the refugia today.",
+      "expected": "We examined the refugia today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the avifauna today.",
+      "expected": "We examined the avifauna today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the megafauna today.",
+      "expected": "We examined the megafauna today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the microfauna today.",
+      "expected": "We examined the microfauna today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the meiofauna today.",
+      "expected": "We examined the meiofauna today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the macrofauna today.",
+      "expected": "We examined the macrofauna today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the benthos today.",
+      "expected": "We examined the benthos today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the plankton today.",
+      "expected": "We examined the plankton today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the nekton today.",
+      "expected": "We examined the nekton today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the pelagic today.",
+      "expected": "We examined the pelagic today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the demersal today.",
+      "expected": "We examined the demersal today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the riparian today.",
+      "expected": "We examined the riparian today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the xeric today.",
+      "expected": "We examined the xeric today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the mesic today.",
+      "expected": "We examined the mesic today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the hydric today.",
+      "expected": "We examined the hydric today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the edaphic today.",
+      "expected": "We examined the edaphic today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the allochthonous today.",
+      "expected": "We examined the allochthonous today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the autochthonous today.",
+      "expected": "We examined the autochthonous today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the hatchery today.",
+      "expected": "We examined the hatchery today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the fledgling today.",
+      "expected": "We examined the fledgling today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the nestling today.",
+      "expected": "We examined the nestling today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the yearling today.",
+      "expected": "We examined the yearling today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the duckling today.",
+      "expected": "We examined the duckling today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the gosling today.",
+      "expected": "We examined the gosling today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the cygnet today.",
+      "expected": "We examined the cygnet today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the owlet today.",
+      "expected": "We examined the owlet today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the eaglet today.",
+      "expected": "We examined the eaglet today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the eyas today.",
+      "expected": "We examined the eyas today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the foal today.",
+      "expected": "We examined the foal today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the cria today.",
+      "expected": "We examined the cria today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the joey today.",
+      "expected": "We examined the joey today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the kitling today.",
+      "expected": "We examined the kitling today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the fingerling today.",
+      "expected": "We examined the fingerling today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the fryling today.",
+      "expected": "We examined the fryling today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the elver today.",
+      "expected": "We examined the elver today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the glassfish today.",
+      "expected": "We examined the glassfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the mudskipper today.",
+      "expected": "We examined the mudskipper today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the killifish today.",
+      "expected": "We examined the killifish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the pipefish today.",
+      "expected": "We examined the pipefish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the lungfish today.",
+      "expected": "We examined the lungfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the hagfish today.",
+      "expected": "We examined the hagfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the dogfish today.",
+      "expected": "We examined the dogfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the lionfish today.",
+      "expected": "We examined the lionfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the sawfish today.",
+      "expected": "We examined the sawfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the guitarfish today.",
+      "expected": "We examined the guitarfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the paddlefish today.",
+      "expected": "We examined the paddlefish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the archerfish today.",
+      "expected": "We examined the archerfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the anglerfish today.",
+      "expected": "We examined the anglerfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the icefish today.",
+      "expected": "We examined the icefish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the cowfish today.",
+      "expected": "We examined the cowfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the boxfish today.",
+      "expected": "We examined the boxfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the trunkfish today.",
+      "expected": "We examined the trunkfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the toadfish today.",
+      "expected": "We examined the toadfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the batfish today.",
+      "expected": "We examined the batfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the blobfish today.",
+      "expected": "We examined the blobfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the clingfish today.",
+      "expected": "We examined the clingfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the pufferfish today.",
+      "expected": "We examined the pufferfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the triggerfish today.",
+      "expected": "We examined the triggerfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the surgeonfish today.",
+      "expected": "We examined the surgeonfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the parrotfish today.",
+      "expected": "We examined the parrotfish today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the wrasse today.",
+      "expected": "We examined the wrasse today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the goby today.",
+      "expected": "We examined the goby today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the blenny today.",
+      "expected": "We examined the blenny today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the cichlid today.",
+      "expected": "We examined the cichlid today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the molly today.",
+      "expected": "We examined the molly today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the guppy today.",
+      "expected": "We examined the guppy today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the platy today.",
+      "expected": "We examined the platy today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the rasbora today.",
+      "expected": "We examined the rasbora today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the danio today.",
+      "expected": "We examined the danio today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the gourami today.",
+      "expected": "We examined the gourami today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the loach today.",
+      "expected": "We examined the loach today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the bichir today.",
+      "expected": "We examined the bichir today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the arowana today.",
+      "expected": "We examined the arowana today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the arapaima today.",
+      "expected": "We examined the arapaima today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the axolotl today.",
+      "expected": "We examined the axolotl today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the olm today.",
+      "expected": "We examined the olm today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the siren today.",
+      "expected": "We examined the siren today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the hellbender today.",
+      "expected": "We examined the hellbender today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the mudpuppy today.",
+      "expected": "We examined the mudpuppy today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the newt today.",
+      "expected": "We examined the newt today."
+    },
+    {
+      "language": "en",
+      "input": "We examined the caecilian today.",
+      "expected": "We examined the caecilian today."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die finetune heute.",
+      "expected": "Wir untersuchen die finetune heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die finetunes heute.",
+      "expected": "Wir untersuchen die finetunes heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die finetuning heute.",
+      "expected": "Wir untersuchen die finetuning heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die tokenizer heute.",
+      "expected": "Wir untersuchen die tokenizer heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die tokenizers heute.",
+      "expected": "Wir untersuchen die tokenizers heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die detokenizer heute.",
+      "expected": "Wir untersuchen die detokenizer heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die detokenize heute.",
+      "expected": "Wir untersuchen die detokenize heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die multimodal heute.",
+      "expected": "Wir untersuchen die multimodal heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die autoregressive heute.",
+      "expected": "Wir untersuchen die autoregressive heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die diffusion heute.",
+      "expected": "Wir untersuchen die diffusion heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die inpaint heute.",
+      "expected": "Wir untersuchen die inpaint heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die outpaint heute.",
+      "expected": "Wir untersuchen die outpaint heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die geofencing heute.",
+      "expected": "Wir untersuchen die geofencing heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die micromobility heute.",
+      "expected": "Wir untersuchen die micromobility heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die railbus heute.",
+      "expected": "Wir untersuchen die railbus heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die tramtrain heute.",
+      "expected": "Wir untersuchen die tramtrain heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die streetwear heute.",
+      "expected": "Wir untersuchen die streetwear heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die solarpunk heute.",
+      "expected": "Wir untersuchen die solarpunk heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die hopepunk heute.",
+      "expected": "Wir untersuchen die hopepunk heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die cottagecore heute.",
+      "expected": "Wir untersuchen die cottagecore heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die slowcore heute.",
+      "expected": "Wir untersuchen die slowcore heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die dreamcore heute.",
+      "expected": "Wir untersuchen die dreamcore heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die weirdcore heute.",
+      "expected": "Wir untersuchen die weirdcore heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die normcore heute.",
+      "expected": "Wir untersuchen die normcore heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die blockchain heute.",
+      "expected": "Wir untersuchen die blockchain heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die sidechain heute.",
+      "expected": "Wir untersuchen die sidechain heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die rollup heute.",
+      "expected": "Wir untersuchen die rollup heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die sequencer heute.",
+      "expected": "Wir untersuchen die sequencer heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die sequencers heute.",
+      "expected": "Wir untersuchen die sequencers heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die restaking heute.",
+      "expected": "Wir untersuchen die restaking heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die sharding heute.",
+      "expected": "Wir untersuchen die sharding heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die rollups heute.",
+      "expected": "Wir untersuchen die rollups heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die hypervisor heute.",
+      "expected": "Wir untersuchen die hypervisor heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die hypervisors heute.",
+      "expected": "Wir untersuchen die hypervisors heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die virtio heute.",
+      "expected": "Wir untersuchen die virtio heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die vhost heute.",
+      "expected": "Wir untersuchen die vhost heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die kexec heute.",
+      "expected": "Wir untersuchen die kexec heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die qdisc heute.",
+      "expected": "Wir untersuchen die qdisc heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die netns heute.",
+      "expected": "Wir untersuchen die netns heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die vxlan heute.",
+      "expected": "Wir untersuchen die vxlan heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die ipvlan heute.",
+      "expected": "Wir untersuchen die ipvlan heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die macvlan heute.",
+      "expected": "Wir untersuchen die macvlan heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die multiqueue heute.",
+      "expected": "Wir untersuchen die multiqueue heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die conntrack heute.",
+      "expected": "Wir untersuchen die conntrack heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die landslide heute.",
+      "expected": "Wir untersuchen die landslide heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die mudslide heute.",
+      "expected": "Wir untersuchen die mudslide heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die icefall heute.",
+      "expected": "Wir untersuchen die icefall heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die rockfall heute.",
+      "expected": "Wir untersuchen die rockfall heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die scree heute.",
+      "expected": "Wir untersuchen die scree heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die talus heute.",
+      "expected": "Wir untersuchen die talus heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die arête heute.",
+      "expected": "Wir untersuchen die arête heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die nunatak heute.",
+      "expected": "Wir untersuchen die nunatak heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die drumlin heute.",
+      "expected": "Wir untersuchen die drumlin heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die esker heute.",
+      "expected": "Wir untersuchen die esker heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die kettlehole heute.",
+      "expected": "Wir untersuchen die kettlehole heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die cirque heute.",
+      "expected": "Wir untersuchen die cirque heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die tarn heute.",
+      "expected": "Wir untersuchen die tarn heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die moraine heute.",
+      "expected": "Wir untersuchen die moraine heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die boulderfield heute.",
+      "expected": "Wir untersuchen die boulderfield heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die clifftop heute.",
+      "expected": "Wir untersuchen die clifftop heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die peatland heute.",
+      "expected": "Wir untersuchen die peatland heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die wetland heute.",
+      "expected": "Wir untersuchen die wetland heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die marshland heute.",
+      "expected": "Wir untersuchen die marshland heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die fenland heute.",
+      "expected": "Wir untersuchen die fenland heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die heathland heute.",
+      "expected": "Wir untersuchen die heathland heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die grassland heute.",
+      "expected": "Wir untersuchen die grassland heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die scrubland heute.",
+      "expected": "Wir untersuchen die scrubland heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die rangeland heute.",
+      "expected": "Wir untersuchen die rangeland heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die parkland heute.",
+      "expected": "Wir untersuchen die parkland heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die alluvium heute.",
+      "expected": "Wir untersuchen die alluvium heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die colluvium heute.",
+      "expected": "Wir untersuchen die colluvium heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die loess heute.",
+      "expected": "Wir untersuchen die loess heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die saprolite heute.",
+      "expected": "Wir untersuchen die saprolite heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die regolith heute.",
+      "expected": "Wir untersuchen die regolith heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die hardpan heute.",
+      "expected": "Wir untersuchen die hardpan heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die caliche heute.",
+      "expected": "Wir untersuchen die caliche heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die duricrust heute.",
+      "expected": "Wir untersuchen die duricrust heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die bioturbation heute.",
+      "expected": "Wir untersuchen die bioturbation heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die permafrost heute.",
+      "expected": "Wir untersuchen die permafrost heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die thermokarst heute.",
+      "expected": "Wir untersuchen die thermokarst heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die cryoturbation heute.",
+      "expected": "Wir untersuchen die cryoturbation heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die refugium heute.",
+      "expected": "Wir untersuchen die refugium heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die refugia heute.",
+      "expected": "Wir untersuchen die refugia heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die avifauna heute.",
+      "expected": "Wir untersuchen die avifauna heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die megafauna heute.",
+      "expected": "Wir untersuchen die megafauna heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die microfauna heute.",
+      "expected": "Wir untersuchen die microfauna heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die meiofauna heute.",
+      "expected": "Wir untersuchen die meiofauna heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die macrofauna heute.",
+      "expected": "Wir untersuchen die macrofauna heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die benthos heute.",
+      "expected": "Wir untersuchen die benthos heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die plankton heute.",
+      "expected": "Wir untersuchen die plankton heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die nekton heute.",
+      "expected": "Wir untersuchen die nekton heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die pelagic heute.",
+      "expected": "Wir untersuchen die pelagic heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die demersal heute.",
+      "expected": "Wir untersuchen die demersal heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die riparian heute.",
+      "expected": "Wir untersuchen die riparian heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die xeric heute.",
+      "expected": "Wir untersuchen die xeric heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die mesic heute.",
+      "expected": "Wir untersuchen die mesic heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die hydric heute.",
+      "expected": "Wir untersuchen die hydric heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die edaphic heute.",
+      "expected": "Wir untersuchen die edaphic heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die allochthonous heute.",
+      "expected": "Wir untersuchen die allochthonous heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die autochthonous heute.",
+      "expected": "Wir untersuchen die autochthonous heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die hatchery heute.",
+      "expected": "Wir untersuchen die hatchery heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die fledgling heute.",
+      "expected": "Wir untersuchen die fledgling heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die nestling heute.",
+      "expected": "Wir untersuchen die nestling heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die yearling heute.",
+      "expected": "Wir untersuchen die yearling heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die duckling heute.",
+      "expected": "Wir untersuchen die duckling heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die gosling heute.",
+      "expected": "Wir untersuchen die gosling heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die cygnet heute.",
+      "expected": "Wir untersuchen die cygnet heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die owlet heute.",
+      "expected": "Wir untersuchen die owlet heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die eaglet heute.",
+      "expected": "Wir untersuchen die eaglet heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die eyas heute.",
+      "expected": "Wir untersuchen die eyas heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die foal heute.",
+      "expected": "Wir untersuchen die foal heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die cria heute.",
+      "expected": "Wir untersuchen die cria heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die joey heute.",
+      "expected": "Wir untersuchen die joey heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die kitling heute.",
+      "expected": "Wir untersuchen die kitling heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die fingerling heute.",
+      "expected": "Wir untersuchen die fingerling heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die fryling heute.",
+      "expected": "Wir untersuchen die fryling heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die elver heute.",
+      "expected": "Wir untersuchen die elver heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die glassfish heute.",
+      "expected": "Wir untersuchen die glassfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die mudskipper heute.",
+      "expected": "Wir untersuchen die mudskipper heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die killifish heute.",
+      "expected": "Wir untersuchen die killifish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die pipefish heute.",
+      "expected": "Wir untersuchen die pipefish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die lungfish heute.",
+      "expected": "Wir untersuchen die lungfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die hagfish heute.",
+      "expected": "Wir untersuchen die hagfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die dogfish heute.",
+      "expected": "Wir untersuchen die dogfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die lionfish heute.",
+      "expected": "Wir untersuchen die lionfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die sawfish heute.",
+      "expected": "Wir untersuchen die sawfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die guitarfish heute.",
+      "expected": "Wir untersuchen die guitarfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die paddlefish heute.",
+      "expected": "Wir untersuchen die paddlefish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die archerfish heute.",
+      "expected": "Wir untersuchen die archerfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die anglerfish heute.",
+      "expected": "Wir untersuchen die anglerfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die icefish heute.",
+      "expected": "Wir untersuchen die icefish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die cowfish heute.",
+      "expected": "Wir untersuchen die cowfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die boxfish heute.",
+      "expected": "Wir untersuchen die boxfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die trunkfish heute.",
+      "expected": "Wir untersuchen die trunkfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die toadfish heute.",
+      "expected": "Wir untersuchen die toadfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die batfish heute.",
+      "expected": "Wir untersuchen die batfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die blobfish heute.",
+      "expected": "Wir untersuchen die blobfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die clingfish heute.",
+      "expected": "Wir untersuchen die clingfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die pufferfish heute.",
+      "expected": "Wir untersuchen die pufferfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die triggerfish heute.",
+      "expected": "Wir untersuchen die triggerfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die surgeonfish heute.",
+      "expected": "Wir untersuchen die surgeonfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die parrotfish heute.",
+      "expected": "Wir untersuchen die parrotfish heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die wrasse heute.",
+      "expected": "Wir untersuchen die wrasse heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die goby heute.",
+      "expected": "Wir untersuchen die goby heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die blenny heute.",
+      "expected": "Wir untersuchen die blenny heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die cichlid heute.",
+      "expected": "Wir untersuchen die cichlid heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die molly heute.",
+      "expected": "Wir untersuchen die molly heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die guppy heute.",
+      "expected": "Wir untersuchen die guppy heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die platy heute.",
+      "expected": "Wir untersuchen die platy heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die rasbora heute.",
+      "expected": "Wir untersuchen die rasbora heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die danio heute.",
+      "expected": "Wir untersuchen die danio heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die gourami heute.",
+      "expected": "Wir untersuchen die gourami heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die loach heute.",
+      "expected": "Wir untersuchen die loach heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die bichir heute.",
+      "expected": "Wir untersuchen die bichir heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die arowana heute.",
+      "expected": "Wir untersuchen die arowana heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die arapaima heute.",
+      "expected": "Wir untersuchen die arapaima heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die axolotl heute.",
+      "expected": "Wir untersuchen die axolotl heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die olm heute.",
+      "expected": "Wir untersuchen die olm heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die siren heute.",
+      "expected": "Wir untersuchen die siren heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die hellbender heute.",
+      "expected": "Wir untersuchen die hellbender heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die mudpuppy heute.",
+      "expected": "Wir untersuchen die mudpuppy heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die newt heute.",
+      "expected": "Wir untersuchen die newt heute."
+    },
+    {
+      "language": "de",
+      "input": "Wir untersuchen die caecilian heute.",
+      "expected": "Wir untersuchen die caecilian heute."
+    }
+  ]
+}

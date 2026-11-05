@@ -1,0 +1,1345 @@
+{
+  "description": "Independent synthetic English and German document spelling audit, authored without access to a correction engine, its policy, source, prior audit data, or results. Expected changes are limited to explicitly authored spelling errors; controls preserve their complete original text.",
+  "cases": [
+    {
+      "id": "rc5-final-001",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Dear Marisol,\n\nThank you for offering the library courtyard for the neighbourhood repair afternoon. I walked around it with Ben yesterday, and we think it will work well if we keep the noisy jobs near the back wall. The reading room windows face the other side, so a few hammers should not disturb anyone studying. We would like to use the space from eleven until four, with an hour beforehand to carry in tables. Our volunteers can arrive through the side gate if you prefer to keep the main entrance clear for library visitors.\n\nThe event is meant for small household items that people can carry themselves. We have people who can mend clothes, sharpen garden tools, and look at simple mechanical problems. We are not offering electrical repairs this time. A surprising number of callers have asked about old lamps, so I have changed the poster to make that limit easier to see. We will put a copy by the gate as well. If someone arrives with a lamp anyway, the welcome desk can give them the adress of the repair shop on Mill Road.\n\nI have now spoken to everyone on the volunteer list. Two people can only stay until lunch, but the busiest period last year was early in the afternoon, and we have enough cover then. Marta has offered to make the rota readable on a single sheet. Her first version used such small print that even she needed her glasses. We will give each person a named slot for a break rather than hoping they all remember to eat. There will still be room to swap times on the day if the sewing table gets a queue.\n\nCould you confirm where we may store the folding tables on Friday night? The cupboard beside the toilets looked large enough, although we did not open it because there was a class in the corridor. Nothing will need to stay there after Saturday. We can collect everything on the evening of the event, including the borrowed kettle and the spare chairs. I have put the reciept for the table hire in our shared folder, and the council grant will cover it without using any of the money collected for tea.\n\nOur main practical concern is rain. A light shower would be manageable under the covered walkway, but it cannot hold all the tables at once. We suggest checking the forecast on Thrusday afternoon and deciding then whether to move indoors. The upstairs room would be suitable for sewing and bicycles with their wheels removed, but carrying a whole bicycle up those stairs would be awkward. If we need that room, we will reduce the number of bookings and explain the change to visitors before they travel. Nobody should make a wasted journey with a heavy bag.\n\nFor refreshments, we plan to serve tea, coffee, tap water, and biscuits bought from the bakery next door. We will leave the bakery labels beside the plates so people can check ingredients themselves. There will be no hot food and no cooking equipment. Our oldest coffee pot takes a long time to warm up, which is probably a useful limit on how much coffee we can drink. I can bring mugs from the community centre, provided there is a sink we may use before packing them away. Paper cups would be easier, but they always end up blowing across the courtyard.\n\nThe booking form asks for a name, a rough description of the item, and a contact number. It does not ask people to describe why they cannot afford a replacement. One visitor told us last year that this question had embarrassed her at a different event, and there is no need for it here. We will keep the printed list at the welcome desk rather than pinning it on the wall. Once we have called anyone who leaves an item behind, I will shred the list at the centre. We do not need it for the attendance total.\n\nThere is one point about the publicity that I would like to settle before Tuesday. The draft says that every item will be repaired, which promises more than we can deliver in a single afternoon. Sometimes the useful result is discovering which part needs replacing. I have suggested saying that volunteers will try to help and will discuss any costs before doing work. Please use that version if you send the notice to the local paper. We will also ask visitors before taking photographs, especially if their names or belongings would be easy to recongise.\n\nFinally, I have booked a small van for the return journey and asked two volunteers to stay for the sweep of the courtyard. We will check beneath every table for pins and small screws. The caretaker mentioned that children use the space on Sunday mornings, so this needs more care than an ordinary tidy. If there are any library rules I have missed, please send them over before I print the volunteer notes. I would rather change a page now than explain a surprise at the gate on Saturday. Thank you again for making the space available and for walking through the awkward details with us.\n\nBest wishes,\nLeah",
+      "expected": "Dear Marisol,\n\nThank you for offering the library courtyard for the neighbourhood repair afternoon. I walked around it with Ben yesterday, and we think it will work well if we keep the noisy jobs near the back wall. The reading room windows face the other side, so a few hammers should not disturb anyone studying. We would like to use the space from eleven until four, with an hour beforehand to carry in tables. Our volunteers can arrive through the side gate if you prefer to keep the main entrance clear for library visitors.\n\nThe event is meant for small household items that people can carry themselves. We have people who can mend clothes, sharpen garden tools, and look at simple mechanical problems. We are not offering electrical repairs this time. A surprising number of callers have asked about old lamps, so I have changed the poster to make that limit easier to see. We will put a copy by the gate as well. If someone arrives with a lamp anyway, the welcome desk can give them the address of the repair shop on Mill Road.\n\nI have now spoken to everyone on the volunteer list. Two people can only stay until lunch, but the busiest period last year was early in the afternoon, and we have enough cover then. Marta has offered to make the rota readable on a single sheet. Her first version used such small print that even she needed her glasses. We will give each person a named slot for a break rather than hoping they all remember to eat. There will still be room to swap times on the day if the sewing table gets a queue.\n\nCould you confirm where we may store the folding tables on Friday night? The cupboard beside the toilets looked large enough, although we did not open it because there was a class in the corridor. Nothing will need to stay there after Saturday. We can collect everything on the evening of the event, including the borrowed kettle and the spare chairs. I have put the receipt for the table hire in our shared folder, and the council grant will cover it without using any of the money collected for tea.\n\nOur main practical concern is rain. A light shower would be manageable under the covered walkway, but it cannot hold all the tables at once. We suggest checking the forecast on Thursday afternoon and deciding then whether to move indoors. The upstairs room would be suitable for sewing and bicycles with their wheels removed, but carrying a whole bicycle up those stairs would be awkward. If we need that room, we will reduce the number of bookings and explain the change to visitors before they travel. Nobody should make a wasted journey with a heavy bag.\n\nFor refreshments, we plan to serve tea, coffee, tap water, and biscuits bought from the bakery next door. We will leave the bakery labels beside the plates so people can check ingredients themselves. There will be no hot food and no cooking equipment. Our oldest coffee pot takes a long time to warm up, which is probably a useful limit on how much coffee we can drink. I can bring mugs from the community centre, provided there is a sink we may use before packing them away. Paper cups would be easier, but they always end up blowing across the courtyard.\n\nThe booking form asks for a name, a rough description of the item, and a contact number. It does not ask people to describe why they cannot afford a replacement. One visitor told us last year that this question had embarrassed her at a different event, and there is no need for it here. We will keep the printed list at the welcome desk rather than pinning it on the wall. Once we have called anyone who leaves an item behind, I will shred the list at the centre. We do not need it for the attendance total.\n\nThere is one point about the publicity that I would like to settle before Tuesday. The draft says that every item will be repaired, which promises more than we can deliver in a single afternoon. Sometimes the useful result is discovering which part needs replacing. I have suggested saying that volunteers will try to help and will discuss any costs before doing work. Please use that version if you send the notice to the local paper. We will also ask visitors before taking photographs, especially if their names or belongings would be easy to recognise.\n\nFinally, I have booked a small van for the return journey and asked two volunteers to stay for the sweep of the courtyard. We will check beneath every table for pins and small screws. The caretaker mentioned that children use the space on Sunday mornings, so this needs more care than an ordinary tidy. If there are any library rules I have missed, please send them over before I print the volunteer notes. I would rather change a page now than explain a surprise at the gate on Saturday. Thank you again for making the space available and for walking through the awkward details with us.\n\nBest wishes,\nLeah",
+      "edits": [
+        {
+          "offset": 995,
+          "length": 6,
+          "original": "adress",
+          "replacement": "address"
+        },
+        {
+          "offset": 1903,
+          "length": 7,
+          "original": "reciept",
+          "replacement": "receipt"
+        },
+        {
+          "offset": 2216,
+          "length": 8,
+          "original": "Thrusday",
+          "replacement": "Thursday"
+        },
+        {
+          "offset": 4211,
+          "length": 9,
+          "original": "recongise",
+          "replacement": "recognise"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-002",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hello Mr Patel,\n\nI need to move my bank appoinment from Thursday to Friday, if there is a morning slot available. My employer has changed the training day, and I cannot leave the session early. I will bring the identification documents listed in your letter.\n\nPlease send the new time to this address. I can also take a call during my lunch break, between twelve and one.\n\nKind regards,\nRosa Ellis",
+      "expected": "Hello Mr Patel,\n\nI need to move my bank appointment from Thursday to Friday, if there is a morning slot available. My employer has changed the training day, and I cannot leave the session early. I will bring the identification documents listed in your letter.\n\nPlease send the new time to this address. I can also take a call during my lunch break, between twelve and one.\n\nKind regards,\nRosa Ellis",
+      "edits": [
+        {
+          "offset": 40,
+          "length": 10,
+          "original": "appoinment",
+          "replacement": "appointment"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-003",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Dear Jo,\n\nThe kitchen tap has started dripping again. It stops when I close the valve under the sink, but then I cannot use the washing machine. Could your plumber visit on Wendesday afternoon? I will be at home after two.\n\nThere is no water on the floor, and I have put a bowl beneath the tap. I can send a photograph of the fitting if that helps you order the right part.\n\nThanks,\nDavid",
+      "expected": "Dear Jo,\n\nThe kitchen tap has started dripping again. It stops when I close the valve under the sink, but then I cannot use the washing machine. Could your plumber visit on Wednesday afternoon? I will be at home after two.\n\nThere is no water on the floor, and I have put a bowl beneath the tap. I can send a photograph of the fitting if that helps you order the right part.\n\nThanks,\nDavid",
+      "edits": [
+        {
+          "offset": 173,
+          "length": 9,
+          "original": "Wendesday",
+          "replacement": "Wednesday"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-004",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hi Celia,\n\nWe enjoyed staying at the inn last weekend. I think I left a blue scarf in the wardorbe of room six. It has a small silver pin on one end, which should make it easy to identify.\n\nIf the cleaner has found it, please keep it at reception. My cousin lives nearby and can collect it on Saturday. I will send you her name before she comes.\n\nMany thanks,\nFiona",
+      "expected": "Hi Celia,\n\nWe enjoyed staying at the inn last weekend. I think I left a blue scarf in the wardrobe of room six. It has a small silver pin on one end, which should make it easy to identify.\n\nIf the cleaner has found it, please keep it at reception. My cousin lives nearby and can collect it on Saturday. I will send you her name before she comes.\n\nMany thanks,\nFiona",
+      "edits": [
+        {
+          "offset": 90,
+          "length": 8,
+          "original": "wardorbe",
+          "replacement": "wardrobe"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-005",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Dear choir members,\n\nOur pianist is unavailable next week, so we will use the first half of rehearsal to work on rythm without the piano. Please bring the green folder and a pencil. The second half will be a run through of the pieces for the park concert.\n\nThe hall will open at seven as usual. If you arrive early, please wait by the side door rather than ringing the caretaker's flat.\n\nSee you Tuesday,\nAlan",
+      "expected": "Dear choir members,\n\nOur pianist is unavailable next week, so we will use the first half of rehearsal to work on rhythm without the piano. Please bring the green folder and a pencil. The second half will be a run through of the pieces for the park concert.\n\nThe hall will open at seven as usual. If you arrive early, please wait by the side door rather than ringing the caretaker's flat.\n\nSee you Tuesday,\nAlan",
+      "edits": [
+        {
+          "offset": 113,
+          "length": 5,
+          "original": "rythm",
+          "replacement": "rhythm"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-006",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hello Niamh,\n\nI have counted the donated coats, and we have enough adult sizes for the winter collection. We are still short of children's waterprofs. Could you add that detail to the announcment in Friday's newsletter?\n\nPlease ask people to bring clean items with working zips. We can sew on a missing buton, but we do not have time to wash several bags of clothes before distribution.\n\nBest,\nGraham",
+      "expected": "Hello Niamh,\n\nI have counted the donated coats, and we have enough adult sizes for the winter collection. We are still short of children's waterproofs. Could you add that detail to the announcement in Friday's newsletter?\n\nPlease ask people to bring clean items with working zips. We can sew on a missing button, but we do not have time to wash several bags of clothes before distribution.\n\nBest,\nGraham",
+      "edits": [
+        {
+          "offset": 139,
+          "length": 10,
+          "original": "waterprofs",
+          "replacement": "waterproofs"
+        },
+        {
+          "offset": 184,
+          "length": 11,
+          "original": "announcment",
+          "replacement": "announcement"
+        },
+        {
+          "offset": 303,
+          "length": 5,
+          "original": "buton",
+          "replacement": "button"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-007",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Dear reception team,\n\nWe have a resevation for dinner at half past seven on Sunday under the name Bell. One guest now needs a seat with space for a walking frame. Could you put us near the entrance, away from the narrow steps?\n\nThe party is still six people, and none of the food choices have changed. Please contact me if moving the table means we need to arrive at a different time.\n\nRegards,\nMartin Bell",
+      "expected": "Dear reception team,\n\nWe have a reservation for dinner at half past seven on Sunday under the name Bell. One guest now needs a seat with space for a walking frame. Could you put us near the entrance, away from the narrow steps?\n\nThe party is still six people, and none of the food choices have changed. Please contact me if moving the table means we need to arrive at a different time.\n\nRegards,\nMartin Bell",
+      "edits": [
+        {
+          "offset": 32,
+          "length": 10,
+          "original": "resevation",
+          "replacement": "reservation"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-008",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hi Beatrice,\n\nThe volunteers cleared most of the leaves from the cemetery path this morning. We left the damp pile behind the shed because the bags kept splitting. Could the grounds team bring a wheelbarow when they collect the tools?\n\nOne rake has a loose handle. I tied a red ribbon around it and left it apart from the others, so nobody picks it up without noticing.\n\nThanks for arranging the tea,\nOwen",
+      "expected": "Hi Beatrice,\n\nThe volunteers cleared most of the leaves from the cemetery path this morning. We left the damp pile behind the shed because the bags kept splitting. Could the grounds team bring a wheelbarrow when they collect the tools?\n\nOne rake has a loose handle. I tied a red ribbon around it and left it apart from the others, so nobody picks it up without noticing.\n\nThanks for arranging the tea,\nOwen",
+      "edits": [
+        {
+          "offset": 195,
+          "length": 10,
+          "original": "wheelbarow",
+          "replacement": "wheelbarrow"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-009",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hello Simon,\n\nI can cover the welcome desk for the first hour of the pottery sale. After that I need to leave for a family lunch. Please show me where the spare price labels are when I arrive.\n\nI have attached the list of volunteeers who offered to help with packing. One person has asked for instrutions by email because she cannot attend the meeting on Friday.\n\nBest wishes,\nAmelia",
+      "expected": "Hello Simon,\n\nI can cover the welcome desk for the first hour of the pottery sale. After that I need to leave for a family lunch. Please show me where the spare price labels are when I arrive.\n\nI have attached the list of volunteers who offered to help with packing. One person has asked for instructions by email because she cannot attend the meeting on Friday.\n\nBest wishes,\nAmelia",
+      "edits": [
+        {
+          "offset": 222,
+          "length": 11,
+          "original": "volunteeers",
+          "replacement": "volunteers"
+        },
+        {
+          "offset": 293,
+          "length": 11,
+          "original": "instrutions",
+          "replacement": "instructions"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-010",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Dear Ms Ahmed,\n\nThank you for sending the estimate for the balcony door. Before I accept it, could you confirm whether the replacment handle will match the existing lock? I would prefer to keep the same key if that is possible.\n\nI am free on Monday morning for you to check the measurements. Please ring the lower bell, as the label beside the upper one belongs to my neighbour.\n\nYours sincerely,\nHelen Ward",
+      "expected": "Dear Ms Ahmed,\n\nThank you for sending the estimate for the balcony door. Before I accept it, could you confirm whether the replacement handle will match the existing lock? I would prefer to keep the same key if that is possible.\n\nI am free on Monday morning for you to check the measurements. Please ring the lower bell, as the label beside the upper one belongs to my neighbour.\n\nYours sincerely,\nHelen Ward",
+      "edits": [
+        {
+          "offset": 123,
+          "length": 10,
+          "original": "replacment",
+          "replacement": "replacement"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-011",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Dear Tomas,\n\nI have put together the notes from our visit to the old station café, including the points we could not settle while the lunch queue was growing behind us. The owner is happy for us to hold the oral history afternoon there in March. She would like an outline of the room arrangement before she agrees to a final date, mainly because the café will remain open to ordinary customers. I think we can manage that without making the event feel as though it has taken over the whole building.\n\nThe small room at the back has a door, a long table, and enough sockets for two recorders. It is quieter than the front, although you can still hear the coffee grinder if someone leaves the door open. We tried a short recording while the dishwasher was running, and the voices were clear. I would not promise studio quality, but we are collecting people's memories, not making an album. A notice asking visitors to enter quietly should help. We can also leave a few minutes between appointments so nobody has to interrupt a story to find a chair.\n\nElsie suggested starting with people who worked at the station rather than passengers. That might give us a useful account of an ordinary shift before we turn to journeys and family occasions. I agree, provided we do not imply that there is a correct order in which to remember things. Someone may tell us about a wedding before they mention the ticket office. The interviewer can return to dates later. We should take a pencil and spare paper for names that are difficult to hear, especially when someone describes colleagues by a nickname used sixty years ago.\n\nWe will need to explain what happens to each recording before we switch the recorder on. I have drafted a plain consent sheet that gives people separate choices about keeping the audio, sharing a short extract, and using their name. A person should be able to agree to one of those without agreeing to all of them. We can read the sheet aloud if that is easier. If someone changes their mind during the afternoon, we can stop and remove their recording before it leaves the room. There is no reason to turn a friendly conversation into an obligation.\n\nThe café owner has offered a fixed price for tea and a slice of cake. People who are coming only for an interview will not have to buy anything. I would like that stated on the invitation, because several of our older members count every small expense. We can use the remaining money from the winter talk to pay for the volunteers' drinks. Please keep the receipts in the brown envelope rather than photographing each one separately. Last time we spent longer matching pictures to purchases than we did checking the total, and I would prefer an easier afternoon for the treasurer.\n\nThere are two steps at the street entrance, but the side entrance is level. The path to it passes the bins and does not look like a public way in. We should put a clear sign at the corner and station someone there during the first hour. The owner said we may move the bins behind the gate for the afternoon. That leaves enough width for a wheelchair or a large mobility scooter. We still need to measure the toilet doorway. I do not want to describe the venue as accessible until we know what that actually means for our guests.\n\nFor the display in the front room, I suggest using copies of photographs in cheap frames. The originals can stay with their owners. We have already had an offer of a conductor's cap, a brass luggage label, and a timetable with handwritten changes. Those would look lovely, but somebody would have to watch them all afternoon. A photograph of each object beside its story would be safer and would let the owner talk about it without worrying where it had gone. We can make room for a few objects later if a volunteer is willing to take responsibility for the table.\n\nOur publicity should reach people who do not follow the local history group online. I can leave printed invitations at the pharmacy, the swimming pool, and the newsagent. The parish magazine has already closed its next issue, so that route will have to wait. Would you ask the bridge club whether we can make a brief announcement before their Thursday game? There may be members who remember the station restaurant, even if they never travelled by train. I am particularly interested in hearing from cleaners and kitchen staff, whose work rarely appears in the photographs we have collected so far.\n\nAfter the event, two of us can listen to the recordings and prepare a short description of each one. We should keep uncertain spellings marked as uncertain until the speaker has checked them. The temptation will be to tidy every pause and unfinished sentence, but those pauses are sometimes part of how a person tells a story. A readable transcript is useful; a polished speech they never gave is less useful. If you have time, please read the consent sheet and the invitation by next Wednesday. I will bring both to the meeting, along with the room measurements and a sketch of the side entrance.\n\nAll the best,\nClara",
+      "expected": "Dear Tomas,\n\nI have put together the notes from our visit to the old station café, including the points we could not settle while the lunch queue was growing behind us. The owner is happy for us to hold the oral history afternoon there in March. She would like an outline of the room arrangement before she agrees to a final date, mainly because the café will remain open to ordinary customers. I think we can manage that without making the event feel as though it has taken over the whole building.\n\nThe small room at the back has a door, a long table, and enough sockets for two recorders. It is quieter than the front, although you can still hear the coffee grinder if someone leaves the door open. We tried a short recording while the dishwasher was running, and the voices were clear. I would not promise studio quality, but we are collecting people's memories, not making an album. A notice asking visitors to enter quietly should help. We can also leave a few minutes between appointments so nobody has to interrupt a story to find a chair.\n\nElsie suggested starting with people who worked at the station rather than passengers. That might give us a useful account of an ordinary shift before we turn to journeys and family occasions. I agree, provided we do not imply that there is a correct order in which to remember things. Someone may tell us about a wedding before they mention the ticket office. The interviewer can return to dates later. We should take a pencil and spare paper for names that are difficult to hear, especially when someone describes colleagues by a nickname used sixty years ago.\n\nWe will need to explain what happens to each recording before we switch the recorder on. I have drafted a plain consent sheet that gives people separate choices about keeping the audio, sharing a short extract, and using their name. A person should be able to agree to one of those without agreeing to all of them. We can read the sheet aloud if that is easier. If someone changes their mind during the afternoon, we can stop and remove their recording before it leaves the room. There is no reason to turn a friendly conversation into an obligation.\n\nThe café owner has offered a fixed price for tea and a slice of cake. People who are coming only for an interview will not have to buy anything. I would like that stated on the invitation, because several of our older members count every small expense. We can use the remaining money from the winter talk to pay for the volunteers' drinks. Please keep the receipts in the brown envelope rather than photographing each one separately. Last time we spent longer matching pictures to purchases than we did checking the total, and I would prefer an easier afternoon for the treasurer.\n\nThere are two steps at the street entrance, but the side entrance is level. The path to it passes the bins and does not look like a public way in. We should put a clear sign at the corner and station someone there during the first hour. The owner said we may move the bins behind the gate for the afternoon. That leaves enough width for a wheelchair or a large mobility scooter. We still need to measure the toilet doorway. I do not want to describe the venue as accessible until we know what that actually means for our guests.\n\nFor the display in the front room, I suggest using copies of photographs in cheap frames. The originals can stay with their owners. We have already had an offer of a conductor's cap, a brass luggage label, and a timetable with handwritten changes. Those would look lovely, but somebody would have to watch them all afternoon. A photograph of each object beside its story would be safer and would let the owner talk about it without worrying where it had gone. We can make room for a few objects later if a volunteer is willing to take responsibility for the table.\n\nOur publicity should reach people who do not follow the local history group online. I can leave printed invitations at the pharmacy, the swimming pool, and the newsagent. The parish magazine has already closed its next issue, so that route will have to wait. Would you ask the bridge club whether we can make a brief announcement before their Thursday game? There may be members who remember the station restaurant, even if they never travelled by train. I am particularly interested in hearing from cleaners and kitchen staff, whose work rarely appears in the photographs we have collected so far.\n\nAfter the event, two of us can listen to the recordings and prepare a short description of each one. We should keep uncertain spellings marked as uncertain until the speaker has checked them. The temptation will be to tidy every pause and unfinished sentence, but those pauses are sometimes part of how a person tells a story. A readable transcript is useful; a polished speech they never gave is less useful. If you have time, please read the consent sheet and the invitation by next Wednesday. I will bring both to the meeting, along with the room measurements and a sketch of the side entrance.\n\nAll the best,\nClara",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-012",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Dear Dr Mehta,\n\nI am writing about the bank's community bursary rather than a personal account. Our brass band needs to replace two euphonium cases, and the application form asks for an estimate from a supplier. Would a pro forma invoice satisfy that request?\n\nWe can bring the original document to the branch if you need to see it. The band's treasurer, Siobhan Kerr, will attend with me.\n\nKind regards,\nPeter Lane",
+      "expected": "Dear Dr Mehta,\n\nI am writing about the bank's community bursary rather than a personal account. Our brass band needs to replace two euphonium cases, and the application form asks for an estimate from a supplier. Would a pro forma invoice satisfy that request?\n\nWe can bring the original document to the branch if you need to see it. The band's treasurer, Siobhan Kerr, will attend with me.\n\nKind regards,\nPeter Lane",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-013",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hi Fleur,\n\nThe carpenter has finished the boxing around the pipes. He left a removable panel under the sink, so the stopcock is still reachable. Please keep the little Allen key in the drawer with the flat's manuals.\n\nI will paint the new wood on Sunday. There may be a faint smell in the hallway that afternoon, but the kitchen window can stay open while it dries.\n\nThanks,\nMyles",
+      "expected": "Hi Fleur,\n\nThe carpenter has finished the boxing around the pipes. He left a removable panel under the sink, so the stopcock is still reachable. Please keep the little Allen key in the drawer with the flat's manuals.\n\nI will paint the new wood on Sunday. There may be a faint smell in the hallway that afternoon, but the kitchen window can stay open while it dries.\n\nThanks,\nMyles",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-014",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Dear reservations team,\n\nOur booking is for a twin room, not a double. The confirmation has the right room type, but the arrival note mentions a king bed. Would you check which room you have set aside for us?\n\nWe expect to reach the hotel after the ceilidh, probably around eleven. Please keep the late arrival instructions with our booking.\n\nRegards,\nIsobel Grant",
+      "expected": "Dear reservations team,\n\nOur booking is for a twin room, not a double. The confirmation has the right room type, but the arrival note mentions a king bed. Would you check which room you have set aside for us?\n\nWe expect to reach the hotel after the ceilidh, probably around eleven. Please keep the late arrival instructions with our booking.\n\nRegards,\nIsobel Grant",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-015",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hello Quentin,\n\nCould you bring the bouzouki stand to Sunday's folk session? The one in the hall cupboard fits a guitar but leaves my instrument leaning at a rather alarming angle. I will be there early to put the chairs out.\n\nWe have agreed to begin with the slower tunes while the new players find their feet. There is no printed set list this week.\n\nCheers,\nMaeve",
+      "expected": "Hello Quentin,\n\nCould you bring the bouzouki stand to Sunday's folk session? The one in the hall cupboard fits a guitar but leaves my instrument leaning at a rather alarming angle. I will be there early to put the chairs out.\n\nWe have agreed to begin with the slower tunes while the new players find their feet. There is no printed set list this week.\n\nCheers,\nMaeve",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-016",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Dear garden group,\n\nThe council has given us permission to sow phacelia in the strip beside the fence. We will leave the existing clover in place and clear only the larger weeds. Please bring gloves if you are helping on Saturday.\n\nWe have enough seed already, so nobody needs to buy more. If the ground is waterlogged, we can spend the morning repairing the tool shed instead.\n\nBest wishes,\nJune",
+      "expected": "Dear garden group,\n\nThe council has given us permission to sow phacelia in the strip beside the fence. We will leave the existing clover in place and clear only the larger weeds. Please bring gloves if you are helping on Saturday.\n\nWe have enough seed already, so nobody needs to buy more. If the ground is waterlogged, we can spend the morning repairing the tool shed instead.\n\nBest wishes,\nJune",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-017",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hello Renée,\n\nI found your papier-mâché fox beside the coat rack after the workshop. Its ears survived the journey to my office, and it is now sitting safely on a shelf above the printer. You can collect it any weekday before five.\n\nPlease use the courtyard entrance on Monday. The decorators will be working in the front lobby, and the floor may still be covered.\n\nAll the best,\nNoel",
+      "expected": "Hello Renée,\n\nI found your papier-mâché fox beside the coat rack after the workshop. Its ears survived the journey to my office, and it is now sitting safely on a shelf above the printer. You can collect it any weekday before five.\n\nPlease use the courtyard entrance on Monday. The decorators will be working in the front lobby, and the floor may still be covered.\n\nAll the best,\nNoel",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-018",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Dear Mr Okafor,\n\nThank you for the updated quote. The separate line for repointing makes the cost much clearer. We would like you to use lime mortar where it matches the existing brickwork, subject to your inspection of the wall.\n\nOur neighbour has agreed to access through her garden on Tuesday. Please close the gate behind you because her greyhound is very quick when he sees an opening.\n\nRegards,\nBeth Price",
+      "expected": "Dear Mr Okafor,\n\nThank you for the updated quote. The separate line for repointing makes the cost much clearer. We would like you to use lime mortar where it matches the existing brickwork, subject to your inspection of the wall.\n\nOur neighbour has agreed to access through her garden on Tuesday. Please close the gate behind you because her greyhound is very quick when he sees an opening.\n\nRegards,\nBeth Price",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-019",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hi Anouk,\n\nThe Saturday lunch menu looks fine. Please keep the shakshuka mild and put the chilli oil on the table separately. Several people asked for that arrangement last time, including guests who usually enjoy spicy food.\n\nI have ordered extra flatbread from the bakery. It will arrive before ten, and the driver knows to bring it to the kitchen door.\n\nThanks,\nLouis",
+      "expected": "Hi Anouk,\n\nThe Saturday lunch menu looks fine. Please keep the shakshuka mild and put the chilli oil on the table separately. Several people asked for that arrangement last time, including guests who usually enjoy spicy food.\n\nI have ordered extra flatbread from the bakery. It will arrive before ten, and the driver knows to bring it to the kitchen door.\n\nThanks,\nLouis",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-020",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Dear workshop participants,\n\nTomorrow's session will cover basic microphone technique and a short sound check. You do not need to understand decibels or balanced cables beforehand. Bring a piece you know well enough to sing without watching the page the whole time.\n\nThe recording is for your own practice. We will send each person their file privately after the session.\n\nSee you there,\nHarriet",
+      "expected": "Dear workshop participants,\n\nTomorrow's session will cover basic microphone technique and a short sound check. You do not need to understand decibels or balanced cables beforehand. Bring a piece you know well enough to sing without watching the page the whole time.\n\nThe recording is for your own practice. We will send each person their file privately after the session.\n\nSee you there,\nHarriet",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-021",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "The new noticeboard arrived this morning, but the wall brackets were missing from the box. I called the supplier and they will send a set tomorrow. Please leave the board in its wrapping until the brackets are here.\n\nWe can still put the weekend notices in the front window. I have printed a seperate copy of the bus timetable for anyone who wants to take one home.",
+      "expected": "The new noticeboard arrived this morning, but the wall brackets were missing from the box. I called the supplier and they will send a set tomorrow. Please leave the board in its wrapping until the brackets are here.\n\nWe can still put the weekend notices in the front window. I have printed a separate copy of the bus timetable for anyone who wants to take one home.",
+      "edits": [
+        {
+          "offset": 292,
+          "length": 8,
+          "original": "seperate",
+          "replacement": "separate"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-022",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "A guest reported that the bedside light in room four flickers when the cable moves. I have unplugged it and left a note for the morning staff. The spare lamp is now on the desk.\n\nPlease ask the electricain to inspect the faulty one before it goes back into use. The guest did not ask for a refund, but she appreciated being offered another room.",
+      "expected": "A guest reported that the bedside light in room four flickers when the cable moves. I have unplugged it and left a note for the morning staff. The spare lamp is now on the desk.\n\nPlease ask the electrician to inspect the faulty one before it goes back into use. The guest did not ask for a refund, but she appreciated being offered another room.",
+      "edits": [
+        {
+          "offset": 194,
+          "length": 11,
+          "original": "electricain",
+          "replacement": "electrician"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-023",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "We counted thirty chairs after the concert. That is two fewer than the hall inventroy, although we may have missed the pair beside the piano. Someone had covered them with coats when we started packing.\n\nI will check the hall again before paying for any replacments. Please keep the transport invoice open until we know whether a second collection is needed.",
+      "expected": "We counted thirty chairs after the concert. That is two fewer than the hall inventory, although we may have missed the pair beside the piano. Someone had covered them with coats when we started packing.\n\nI will check the hall again before paying for any replacements. Please keep the transport invoice open until we know whether a second collection is needed.",
+      "edits": [
+        {
+          "offset": 76,
+          "length": 9,
+          "original": "inventroy",
+          "replacement": "inventory"
+        },
+        {
+          "offset": 254,
+          "length": 11,
+          "original": "replacments",
+          "replacement": "replacements"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-024",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "My appointment with the bank is now confirmed for Friday. They asked me to bring proof of address as well as identification, so I have printed a recent water bill. The letter can stay in my folder.\n\nI will remeber to ask about the account fee while I am there. It appears twice on the latest statement, but the descriptions are not quite the same.",
+      "expected": "My appointment with the bank is now confirmed for Friday. They asked me to bring proof of address as well as identification, so I have printed a recent water bill. The letter can stay in my folder.\n\nI will remember to ask about the account fee while I am there. It appears twice on the latest statement, but the descriptions are not quite the same.",
+      "edits": [
+        {
+          "offset": 206,
+          "length": 7,
+          "original": "remeber",
+          "replacement": "remember"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-025",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "The community kitchen can accept the sacks of potatoes, provided they arrive before the lunch team starts cooking. There is no room to store another delivery in the corridor. The back door will be open from eight.\n\nPlease tell the driver to park beside the enterance to the yard. The marked loading bay on the main road belongs to the chemist.",
+      "expected": "The community kitchen can accept the sacks of potatoes, provided they arrive before the lunch team starts cooking. There is no room to store another delivery in the corridor. The back door will be open from eight.\n\nPlease tell the driver to park beside the entrance to the yard. The marked loading bay on the main road belongs to the chemist.",
+      "edits": [
+        {
+          "offset": 257,
+          "length": 9,
+          "original": "enterance",
+          "replacement": "entrance"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-026",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "I spoke to the upstairs tenant about the noise. She did not realise the practice speaker was touching the floorboards and has agreed to move it onto a padded stand. We will see whether that makes a difference this week.\n\nThere is no need to send another complant yet. I would like to give the new arrangement a fair chance before involving the building manager.",
+      "expected": "I spoke to the upstairs tenant about the noise. She did not realise the practice speaker was touching the floorboards and has agreed to move it onto a padded stand. We will see whether that makes a difference this week.\n\nThere is no need to send another complaint yet. I would like to give the new arrangement a fair chance before involving the building manager.",
+      "edits": [
+        {
+          "offset": 254,
+          "length": 8,
+          "original": "complant",
+          "replacement": "complaint"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-027",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "The children's art display will stay up until the end of the month. Please remove the drawings carefully when the next group needs the wall, because the artists have asked to take them home. Their names are written on the backs.\n\nI have put a large envelpoe in the office for any pictures left behind. Do not fold the ones with dried leaves attached.",
+      "expected": "The children's art display will stay up until the end of the month. Please remove the drawings carefully when the next group needs the wall, because the artists have asked to take them home. Their names are written on the backs.\n\nI have put a large envelope in the office for any pictures left behind. Do not fold the ones with dried leaves attached.",
+      "edits": [
+        {
+          "offset": 249,
+          "length": 8,
+          "original": "envelpoe",
+          "replacement": "envelope"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-028",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "The choir's bus will leave the square at nine, after the market stalls have finished unloading. We cannot move the departure point closer to the hall because the road there is too narrow for the bus to turn.\n\nPlease check that every passanger has a seat before we set off. Anyone travelling directly to the venue should tell the organiser by Thursday.",
+      "expected": "The choir's bus will leave the square at nine, after the market stalls have finished unloading. We cannot move the departure point closer to the hall because the road there is too narrow for the bus to turn.\n\nPlease check that every passenger has a seat before we set off. Anyone travelling directly to the venue should tell the organiser by Thursday.",
+      "edits": [
+        {
+          "offset": 233,
+          "length": 9,
+          "original": "passanger",
+          "replacement": "passenger"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-029",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "The residents agreed to repair the bench rather than replace it. Most of the wood is sound, and the damaged slat can be removed without disturbing the frame. We will ask a carpenter to check the legs as well.\n\nI can buy the screws and sandpapaer after work. Please save the old slat so the shop can match its width and thickness.",
+      "expected": "The residents agreed to repair the bench rather than replace it. Most of the wood is sound, and the damaged slat can be removed without disturbing the frame. We will ask a carpenter to check the legs as well.\n\nI can buy the screws and sandpaper after work. Please save the old slat so the shop can match its width and thickness.",
+      "edits": [
+        {
+          "offset": 235,
+          "length": 10,
+          "original": "sandpapaer",
+          "replacement": "sandpaper"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-030",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Our visiting quartet will need a quiet room to tune before the performance. The small office is available, and there is space for four cases beneath the desk. Please move the cleaning trolley into the corridor first.\n\nThe players have asked for water at room temperture. There is no need to buy bottles; a jug and clean glasses will be fine.",
+      "expected": "Our visiting quartet will need a quiet room to tune before the performance. The small office is available, and there is space for four cases beneath the desk. Please move the cleaning trolley into the corridor first.\n\nThe players have asked for water at room temperature. There is no need to buy bottles; a jug and clean glasses will be fine.",
+      "edits": [
+        {
+          "offset": 259,
+          "length": 10,
+          "original": "temperture",
+          "replacement": "temperature"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-031",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "The kitchen team has prepared a small batch of quince paste for the cheese plates. Its colour is darker than last year's batch, but the flavour is good. Please use a clean knife for each portion.\n\nWe will serve the vegan option on a separate board. The oatcakes in the blue tin are suitable, while the biscuits in the red tin contain butter.",
+      "expected": "The kitchen team has prepared a small batch of quince paste for the cheese plates. Its colour is darker than last year's batch, but the flavour is good. Please use a clean knife for each portion.\n\nWe will serve the vegan option on a separate board. The oatcakes in the blue tin are suitable, while the biscuits in the red tin contain butter.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-032",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "The building survey mentions efflorescence on the cellar wall. The surveyor said we should first improve ventilation and watch for new damp patches. Painting over the white deposit would make it harder to see whether the problem returns.\n\nI have dated the photographs and put a ruler in each frame. We can compare them after the next spell of heavy rain.",
+      "expected": "The building survey mentions efflorescence on the cellar wall. The surveyor said we should first improve ventilation and watch for new damp patches. Painting over the white deposit would make it harder to see whether the problem returns.\n\nI have dated the photographs and put a ruler in each frame. We can compare them after the next spell of heavy rain.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-033",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "We found a handwritten note inside the donated score. It appears to be a dedication to someone named Xanthe, dated long before the choir acquired the music. Please leave it in the folder while we ask the donor about it.\n\nThe pencilled fingerings are useful to the accompanist, so there is no reason to erase them when we label the library copy.",
+      "expected": "We found a handwritten note inside the donated score. It appears to be a dedication to someone named Xanthe, dated long before the choir acquired the music. Please leave it in the folder while we ask the donor about it.\n\nThe pencilled fingerings are useful to the accompanist, so there is no reason to erase them when we label the library copy.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-034",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "The café's new chalkboard says soup, sourdough, and something sweet. That is enough detail for the pavement sign. We can explain the daily choices at the counter, where people can see the food before ordering.\n\nKeep the board beside the wall so it does not obstruct the pavement. The council officer measured the gap last week and was satisfied with that position.",
+      "expected": "The café's new chalkboard says soup, sourdough, and something sweet. That is enough detail for the pavement sign. We can explain the daily choices at the counter, where people can see the food before ordering.\n\nKeep the board beside the wall so it does not obstruct the pavement. The council officer measured the gap last week and was satisfied with that position.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-035",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "The volunteer rota now has a slot for the pétanque afternoon. Most of the regular players can help set up, but they would prefer someone else to handle the registration table once the games begin.\n\nWe will keep a spare set of boules at the welcome desk. New players should be able to join without buying equipment or borrowing from a stranger.",
+      "expected": "The volunteer rota now has a slot for the pétanque afternoon. Most of the regular players can help set up, but they would prefer someone else to handle the registration table once the games begin.\n\nWe will keep a spare set of boules at the welcome desk. New players should be able to join without buying equipment or borrowing from a stranger.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-036",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Please keep the README with the recorder's memory card. It explains which files are rehearsal takes and which recording the singers approved for sharing. The file names alone are not clear enough to make that distinction.\n\nThe final audio is mono because one microphone was used. There is no missing channel, and the sound does not need to be converted before it is uploaded.",
+      "expected": "Please keep the README with the recorder's memory card. It explains which files are rehearsal takes and which recording the singers approved for sharing. The file names alone are not clear enough to make that distinction.\n\nThe final audio is mono because one microphone was used. There is no missing channel, and the sound does not need to be converted before it is uploaded.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-037",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "A visitor asked whether the riverside walk would pass the old weir. It will, although the path down to the water is closed. We should make that clear before anyone signs up expecting a closer look.\n\nThe guide has added a short account of the mill's leat to her notes. People can skip that part and wait at the next bench if they need a rest.",
+      "expected": "A visitor asked whether the riverside walk would pass the old weir. It will, although the path down to the water is closed. We should make that clear before anyone signs up expecting a closer look.\n\nThe guide has added a short account of the mill's leat to her notes. People can skip that part and wait at the next bench if they need a rest.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-038",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "The bank adviser asked for the minutes approving our new signatories. I have copied the relevant page and included the attendance list, since the vote would be unclear without it. The rest of the meeting notes can stay in the association's folder.\n\nBoth signatories will attend in person. Neither has an online login for the club's account yet.",
+      "expected": "The bank adviser asked for the minutes approving our new signatories. I have copied the relevant page and included the attendance list, since the vote would be unclear without it. The rest of the meeting notes can stay in the association's folder.\n\nBoth signatories will attend in person. Neither has an online login for the club's account yet.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-039",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Our new neighbour spells her name Aïcha and pronounces it differently from the version I knew at school. I have written it correctly on the door list. Please copy that spelling if you make another set of labels.\n\nShe offered to bring msemen to the shared breakfast. We already have enough plates, but a second large teapot would be useful.",
+      "expected": "Our new neighbour spells her name Aïcha and pronounces it differently from the version I knew at school. I have written it correctly on the door list. Please copy that spelling if you make another set of labels.\n\nShe offered to bring msemen to the shared breakfast. We already have enough plates, but a second large teapot would be useful.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-040",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "The locksmith described the sticking door as a problem with the escutcheon rather than the lock itself. He loosened one screw and the key turned freely again. We will still keep the spare appointment for next month.\n\nThe bill includes only the callout charge. Please file it with the maintenance receipts, using the date of the visit rather than the date of payment.",
+      "expected": "The locksmith described the sticking door as a problem with the escutcheon rather than the lock itself. He loosened one screw and the key turned freely again. We will still keep the spare appointment for next month.\n\nThe bill includes only the callout charge. Please file it with the maintenance receipts, using the date of the visit rather than the date of payment.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-041",
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "input": "Please bring the small suitcsae of sheet music to rehearsal tonight. I left it beside the coat stand after the committee meeting. The blue folder on top belongs to the pianist, so keep the two together.",
+      "expected": "Please bring the small suitcase of sheet music to rehearsal tonight. I left it beside the coat stand after the committee meeting. The blue folder on top belongs to the pianist, so keep the two together.",
+      "edits": [
+        {
+          "offset": 23,
+          "length": 8,
+          "original": "suitcsae",
+          "replacement": "suitcase"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-042",
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "input": "The lift engineer will arrive before lunch. Please make sure the corridor is clear and tell anyone waiting that the stairs are available. He expects the inspectoin to take about forty minutes if no repairs are needed.",
+      "expected": "The lift engineer will arrive before lunch. Please make sure the corridor is clear and tell anyone waiting that the stairs are available. He expects the inspection to take about forty minutes if no repairs are needed.",
+      "edits": [
+        {
+          "offset": 153,
+          "length": 10,
+          "original": "inspectoin",
+          "replacement": "inspection"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-043",
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "input": "We can take the spare bedroom for one night while the ceiling dries. Please put clean towels on the chair and close the window before the guests arrive. The weather forecast says thuderstorms are likely this evening.",
+      "expected": "We can take the spare bedroom for one night while the ceiling dries. Please put clean towels on the chair and close the window before the guests arrive. The weather forecast says thunderstorms are likely this evening.",
+      "edits": [
+        {
+          "offset": 179,
+          "length": 12,
+          "original": "thuderstorms",
+          "replacement": "thunderstorms"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-044",
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "input": "Could you check the adress on the parcel before it leaves the office? The community centre has moved to the old school building. Deliveries sent to the former site often sit there for several days.",
+      "expected": "Could you check the address on the parcel before it leaves the office? The community centre has moved to the old school building. Deliveries sent to the former site often sit there for several days.",
+      "edits": [
+        {
+          "offset": 20,
+          "length": 6,
+          "original": "adress",
+          "replacement": "address"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-045",
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "input": "I have washed the aprons and hung them in the pantry. Please take a clean one before serving lunch, and leave used ones in the basket by the door. There is fresh detergant on the lower shelf.",
+      "expected": "I have washed the aprons and hung them in the pantry. Please take a clean one before serving lunch, and leave used ones in the basket by the door. There is fresh detergent on the lower shelf.",
+      "edits": [
+        {
+          "offset": 162,
+          "length": 9,
+          "original": "detergant",
+          "replacement": "detergent"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-046",
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "input": "The guest asked for rooibos after dinner, with no milk. There is a fresh box beside the peppermint tea, so we can offer it without opening the breakfast cupboard. Please bring the small pot rather than a mug.",
+      "expected": "The guest asked for rooibos after dinner, with no milk. There is a fresh box beside the peppermint tea, so we can offer it without opening the breakfast cupboard. Please bring the small pot rather than a mug.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-047",
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "input": "Mhairi will bring her bodhrán to the music evening. Keep one chair without arms near the front so she has room to play. She does not need a microphone unless the room is much busier than expected.",
+      "expected": "Mhairi will bring her bodhrán to the music evening. Keep one chair without arms near the front so she has room to play. She does not need a microphone unless the room is much busier than expected.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-048",
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "input": "The allotment association's AGM starts at seven. Please bring the key to the pavilion and the folder of paid invoices. We can count the postal votes together before the rest of the committee arrives.",
+      "expected": "The allotment association's AGM starts at seven. Please bring the key to the pavilion and the folder of paid invoices. We can count the postal votes together before the rest of the committee arrives.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-049",
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "input": "The repair quote uses the term soffit for the board beneath the roof edge. That is the loose section above our balcony. I have circled it in the photograph so everyone can see which part the builder means.",
+      "expected": "The repair quote uses the term soffit for the board beneath the roof edge. That is the loose section above our balcony. I have circled it in the photograph so everyone can see which part the builder means.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-050",
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "input": "I can collect the costumes after work, but the harlequin outfit needs its own bag. The little bells catch on everything. Please leave the embroidered waistcoat flat on top of the box rather than squeezing it inside.",
+      "expected": "I can collect the costumes after work, but the harlequin outfit needs its own bag. The little bells catch on everything. Please leave the embroidered waistcoat flat on top of the box rather than squeezing it inside.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-051",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Liebe Frau Stein,\n\nnach unserem Rundgang am Montag habe ich mit den anderen Bewohnern über die geplante Renovierung des Gemeinschaftsruams gesprochen. Grundsätzlich sind alle damit einverstanden, die Arbeiten im April durchzuführen. In dieser Zeit finden dort nur zwei feste Treffen statt, die wir in den kleinen Raum neben der Waschküche verlegen können. Schwieriger wird es mit den privaten Feiern, für die bereits Zusagen bestehen. Ich habe die betreffenden Familien angerufen und suche mit ihnen nach einem Ersatz. Eine Feier lässt sich vermutlich um eine Woche verschieben, bei der anderen müssen wir noch eine Lösung finden.\n\nBevor die Handwerker kommen, sollten wir den Raum gemeinsam ausräumen. Die schweren Schränke können nach Auskunft der Firma an der hinteren Wand stehen bleiben, wenn wir ihren Inhalt herausnehmen. Für die Bücher gibt es im Keller genügend trockene Regale. Ich möchte sie allerdings nicht einfach unsortiert in Kartons werfen. Viele gehören einzelnen Bewohnern, die sie dem Haus nur geliehen haben. Wir werden deshalb jeden Karton beschriften und eine kurze Liste führen. So können wir nach den Arbeiten wieder dieselbe Ordnung herstellen und müssen nicht erst nach verschwundenen Kochbüchern oder Gesellschaftsspielen suchen.\n\nDie Frage nach der neuen Wandfarbe hat mehr Zeit beansprucht als erwartet. Einige wünschen sich ein warmes Gelb, andere möchten bei einem hellen Weiß bleiben. Ich schlage vor, dass die Firma zwei kleine Musterflächen anlegt, die wir bei Tageslicht ansehen können. Die Farben auf dem Bildschirm sagen wenig darüber aus, wie der Raum am Nachmittag wirkt. Eine Abstimmung anhand von Fotos wäre daher keine gute Grundlage. Sobald die Muster trocken sind, hängen wir einen Zettel mit beiden Möglichkeiten auf. Jeder Haushalt kann eine Stimme abgeben, und wir halten das Ergebnis schriftlich fest.\n\nBeim Boden geht es vor allem um die Reinigung und die Geräusche. Der bisherige Belag ist unter den Stühlen stark beschädigt, obwohl wir vor zwei Jahren neue Filzgleiter angebracht haben. Vielleicht lässt sich bei der Auswahl auch prüfen, ob die Stühle selbst die Ursache sind. Mehrere Beine stehen leicht schief. Es wäre schade, einen neuen Boden zu bezahlen und ihn gleich wieder zu zerkratzen. Ich habe deshalb um einen zusätzlichen Termin mit dem Schreiner gebeten. Er kann uns sagen, welche Stühle noch zu retten sind und ob sich die Reparatur bei den übrigen lohnt.\n\nBitte lassen Sie die Firma auch die Steckdose hinter dem Klavier prüfen. Sie sitzt seit einiger Zeit locker in der Wand. Wir haben sie nicht mehr benutzt und den Bereich mit einem Hinweis versehen. Das Klavier muss für die Arbeiten ohnehin in den Flur, daher wäre jetzt ein günstiger Zeitpunkt für die Kontrolle. Für den Transport habe ich noch niemanden beauftragt. Zwei Nachbarn haben zwar Hilfe angeboten, aber das Instrument ist schwerer, als es aussieht. Ich möchte lieber eine Firma fragen, die einen geeigneten Wagen mitbringt und den Transport versichert durchführen kann.\n\nZur Terminabstimung brauche ich von Ihnen noch das genaue Zeitfenster für die lauten Arbeiten. Viele Bewohner arbeiten inzwischen zu Hause, und im dritten Stock wohnt ein Mann, der regelmäßig Nachtschichten übernimmt. Natürlich können wir nicht jeden einzelnen Tagesplan berücksichtigen. Ein verlässlicher Zeitraum würde aber helfen, damit die Betroffenen rechtzeitig einen anderen Arbeitsplatz oder einen ruhigen Schlafplatz organisieren können. Bitte schicken Sie nicht nur das vorraussichtliche Ende, sondern auch den frühesten Beginn. Dann kann ich einen Aushang vorbereiten, der ohne weitere Rückfragen verständlich ist und nicht nach zwei Tagen schon wieder geändert werden muss.\n\nFür die Zeit nach der Renovierung wünschen sich einige Bewohner eine einfachere Regelung zur Raumnutzung. Bisher liegen ein Papierkalender im Schrank und eine Liste bei der Hausbetreuung, und gelegentlich stimmen beide nicht überein. Ich würde gern bei einer einzigen verbindlichen Liste bleiben. Eine reine Lösung über das Internet schließt allerdings Menschen aus, die kein geeignetes Gerät haben oder es nicht dafür benutzen möchten. Vielleicht kann die Hausbetreuung weiterhin Buchungen entgegennehmen und sie an einer festen Stelle eintragen. Wir sollten dabei nur die nötigen Angaben notieren und keine privaten Telefonnummern öffentlich im Haus aushängen.\n\nAuch die Küche im Gemeinschaftsraum sollten wir uns vor dem Einräumen noch einmal ansehen. Die Schublade für Besteck lässt sich nur mit Kraft schließen, und am Wasserhahn fehlt die kleine Abdeckung. Beides ist wahrscheinlich schnell behoben, wenn der passende Handwerker ohnehin im Haus ist. Einen neuen Kühlschrank brauchen wir nach meiner Einschätzung nicht. Das vorhandene Gerät hält die Temperatur, und das leise Brummen stört bei den Treffen niemanden. Wir können es während der Arbeiten ausschalten, gründlich reinigen und mit geöffneter Tür stehen lassen. Die Lebensmittel räumt jeder Eigentümer vorher selbst aus, damit später keine Missverständnisse entstehen.\n\nIch werde die noch offenen Punkte bei unserem kurzen Treffen am Donnerstag vorstellen. Danach schicke ich Ihnen eine gemeinsame Rückmeldung statt mehrerer einzelner Nachrichten aus dem Haus. Die Bewohner möchten vor allem wissen, welche Entscheidungen bereits feststehen und wo sie noch mitreden können. Eine klare Antwort darauf verhindert sicher manche unnötige Diskussion. Sobald der Ablauf bestätigt ist, organisiere ich die Helfer für das Ausräumen und besorge ausreichend stabile Kartons. Bitte geben Sie mir auch Bescheid, ob für den Zugang der Firma ein zusätzlicher Schlüssel benötigt wird. Wir sollten ihn rechtzeitig bereitlgen, damit am ersten Morgen niemand vor verschlossener Tür wartet und die Arbeit schon mit einer Verzögerung beginnt.\n\nMit freundlichen Grüßen\nMiriam Falk",
+      "expected": "Liebe Frau Stein,\n\nnach unserem Rundgang am Montag habe ich mit den anderen Bewohnern über die geplante Renovierung des Gemeinschaftsraums gesprochen. Grundsätzlich sind alle damit einverstanden, die Arbeiten im April durchzuführen. In dieser Zeit finden dort nur zwei feste Treffen statt, die wir in den kleinen Raum neben der Waschküche verlegen können. Schwieriger wird es mit den privaten Feiern, für die bereits Zusagen bestehen. Ich habe die betreffenden Familien angerufen und suche mit ihnen nach einem Ersatz. Eine Feier lässt sich vermutlich um eine Woche verschieben, bei der anderen müssen wir noch eine Lösung finden.\n\nBevor die Handwerker kommen, sollten wir den Raum gemeinsam ausräumen. Die schweren Schränke können nach Auskunft der Firma an der hinteren Wand stehen bleiben, wenn wir ihren Inhalt herausnehmen. Für die Bücher gibt es im Keller genügend trockene Regale. Ich möchte sie allerdings nicht einfach unsortiert in Kartons werfen. Viele gehören einzelnen Bewohnern, die sie dem Haus nur geliehen haben. Wir werden deshalb jeden Karton beschriften und eine kurze Liste führen. So können wir nach den Arbeiten wieder dieselbe Ordnung herstellen und müssen nicht erst nach verschwundenen Kochbüchern oder Gesellschaftsspielen suchen.\n\nDie Frage nach der neuen Wandfarbe hat mehr Zeit beansprucht als erwartet. Einige wünschen sich ein warmes Gelb, andere möchten bei einem hellen Weiß bleiben. Ich schlage vor, dass die Firma zwei kleine Musterflächen anlegt, die wir bei Tageslicht ansehen können. Die Farben auf dem Bildschirm sagen wenig darüber aus, wie der Raum am Nachmittag wirkt. Eine Abstimmung anhand von Fotos wäre daher keine gute Grundlage. Sobald die Muster trocken sind, hängen wir einen Zettel mit beiden Möglichkeiten auf. Jeder Haushalt kann eine Stimme abgeben, und wir halten das Ergebnis schriftlich fest.\n\nBeim Boden geht es vor allem um die Reinigung und die Geräusche. Der bisherige Belag ist unter den Stühlen stark beschädigt, obwohl wir vor zwei Jahren neue Filzgleiter angebracht haben. Vielleicht lässt sich bei der Auswahl auch prüfen, ob die Stühle selbst die Ursache sind. Mehrere Beine stehen leicht schief. Es wäre schade, einen neuen Boden zu bezahlen und ihn gleich wieder zu zerkratzen. Ich habe deshalb um einen zusätzlichen Termin mit dem Schreiner gebeten. Er kann uns sagen, welche Stühle noch zu retten sind und ob sich die Reparatur bei den übrigen lohnt.\n\nBitte lassen Sie die Firma auch die Steckdose hinter dem Klavier prüfen. Sie sitzt seit einiger Zeit locker in der Wand. Wir haben sie nicht mehr benutzt und den Bereich mit einem Hinweis versehen. Das Klavier muss für die Arbeiten ohnehin in den Flur, daher wäre jetzt ein günstiger Zeitpunkt für die Kontrolle. Für den Transport habe ich noch niemanden beauftragt. Zwei Nachbarn haben zwar Hilfe angeboten, aber das Instrument ist schwerer, als es aussieht. Ich möchte lieber eine Firma fragen, die einen geeigneten Wagen mitbringt und den Transport versichert durchführen kann.\n\nZur Terminabstimmung brauche ich von Ihnen noch das genaue Zeitfenster für die lauten Arbeiten. Viele Bewohner arbeiten inzwischen zu Hause, und im dritten Stock wohnt ein Mann, der regelmäßig Nachtschichten übernimmt. Natürlich können wir nicht jeden einzelnen Tagesplan berücksichtigen. Ein verlässlicher Zeitraum würde aber helfen, damit die Betroffenen rechtzeitig einen anderen Arbeitsplatz oder einen ruhigen Schlafplatz organisieren können. Bitte schicken Sie nicht nur das voraussichtliche Ende, sondern auch den frühesten Beginn. Dann kann ich einen Aushang vorbereiten, der ohne weitere Rückfragen verständlich ist und nicht nach zwei Tagen schon wieder geändert werden muss.\n\nFür die Zeit nach der Renovierung wünschen sich einige Bewohner eine einfachere Regelung zur Raumnutzung. Bisher liegen ein Papierkalender im Schrank und eine Liste bei der Hausbetreuung, und gelegentlich stimmen beide nicht überein. Ich würde gern bei einer einzigen verbindlichen Liste bleiben. Eine reine Lösung über das Internet schließt allerdings Menschen aus, die kein geeignetes Gerät haben oder es nicht dafür benutzen möchten. Vielleicht kann die Hausbetreuung weiterhin Buchungen entgegennehmen und sie an einer festen Stelle eintragen. Wir sollten dabei nur die nötigen Angaben notieren und keine privaten Telefonnummern öffentlich im Haus aushängen.\n\nAuch die Küche im Gemeinschaftsraum sollten wir uns vor dem Einräumen noch einmal ansehen. Die Schublade für Besteck lässt sich nur mit Kraft schließen, und am Wasserhahn fehlt die kleine Abdeckung. Beides ist wahrscheinlich schnell behoben, wenn der passende Handwerker ohnehin im Haus ist. Einen neuen Kühlschrank brauchen wir nach meiner Einschätzung nicht. Das vorhandene Gerät hält die Temperatur, und das leise Brummen stört bei den Treffen niemanden. Wir können es während der Arbeiten ausschalten, gründlich reinigen und mit geöffneter Tür stehen lassen. Die Lebensmittel räumt jeder Eigentümer vorher selbst aus, damit später keine Missverständnisse entstehen.\n\nIch werde die noch offenen Punkte bei unserem kurzen Treffen am Donnerstag vorstellen. Danach schicke ich Ihnen eine gemeinsame Rückmeldung statt mehrerer einzelner Nachrichten aus dem Haus. Die Bewohner möchten vor allem wissen, welche Entscheidungen bereits feststehen und wo sie noch mitreden können. Eine klare Antwort darauf verhindert sicher manche unnötige Diskussion. Sobald der Ablauf bestätigt ist, organisiere ich die Helfer für das Ausräumen und besorge ausreichend stabile Kartons. Bitte geben Sie mir auch Bescheid, ob für den Zugang der Firma ein zusätzlicher Schlüssel benötigt wird. Wir sollten ihn rechtzeitig bereitlegen, damit am ersten Morgen niemand vor verschlossener Tür wartet und die Arbeit schon mit einer Verzögerung beginnt.\n\nMit freundlichen Grüßen\nMiriam Falk",
+      "edits": [
+        {
+          "offset": 120,
+          "length": 18,
+          "original": "Gemeinschaftsruams",
+          "replacement": "Gemeinschaftsraums"
+        },
+        {
+          "offset": 3010,
+          "length": 15,
+          "original": "Terminabstimung",
+          "replacement": "Terminabstimmung"
+        },
+        {
+          "offset": 3486,
+          "length": 17,
+          "original": "vorraussichtliche",
+          "replacement": "voraussichtliche"
+        },
+        {
+          "offset": 5656,
+          "length": 10,
+          "original": "bereitlgen",
+          "replacement": "bereitlegen"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-052",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Guten Tag Herr Seidel,\n\nich möchte den Termin zur Kontoeröfnung gern auf nächste Woche verschieben. Meine aktuelle Meldebestätigung kommt erst am Freitag mit der Post. Den Ausweis und die übrigen Unterlagen habe ich bereits zusammengestellt.\n\nAm Dienstag könnte ich ab vierzehn Uhr in die Filiale kommen. Bitte teilen Sie mir mit, ob dann noch ein Gespräch möglich ist.\n\nMit freundlichen Grüßen\nNora Weiss",
+      "expected": "Guten Tag Herr Seidel,\n\nich möchte den Termin zur Kontoeröffnung gern auf nächste Woche verschieben. Meine aktuelle Meldebestätigung kommt erst am Freitag mit der Post. Den Ausweis und die übrigen Unterlagen habe ich bereits zusammengestellt.\n\nAm Dienstag könnte ich ab vierzehn Uhr in die Filiale kommen. Bitte teilen Sie mir mit, ob dann noch ein Gespräch möglich ist.\n\nMit freundlichen Grüßen\nNora Weiss",
+      "edits": [
+        {
+          "offset": 50,
+          "length": 13,
+          "original": "Kontoeröfnung",
+          "replacement": "Kontoeröffnung"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-053",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Liebe Frau Köhler,\n\nseit gestern schließt das Fenster im Schlafzimmer nicht mehr richtig. Der Griff lässt sich bewegen, aber oben bleibt ein schmaler Spalt. Könnte jemand die Dichtugn und den Beschlag ansehen?\n\nIch bin am Donnerstag den ganzen Vormittag zu Hause. Bitte klingeln Sie zweimal, weil die erste Klingel manchmal nicht zu hören ist.\n\nViele Grüße\nJakob Reuter",
+      "expected": "Liebe Frau Köhler,\n\nseit gestern schließt das Fenster im Schlafzimmer nicht mehr richtig. Der Griff lässt sich bewegen, aber oben bleibt ein schmaler Spalt. Könnte jemand die Dichtung und den Beschlag ansehen?\n\nIch bin am Donnerstag den ganzen Vormittag zu Hause. Bitte klingeln Sie zweimal, weil die erste Klingel manchmal nicht zu hören ist.\n\nViele Grüße\nJakob Reuter",
+      "edits": [
+        {
+          "offset": 175,
+          "length": 8,
+          "original": "Dichtugn",
+          "replacement": "Dichtung"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-054",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Guten Tag,\n\nwir haben für Samstag einen Tisch für acht Personen reserviert. Eine Person kommt nun doch nicht mit. Bitte ändern Sie die Personenzhal auf sieben, die Uhrzeit bleibt bei neunzehn Uhr.\n\nWir würden gern im ruhigeren Teil des Restaurants sitzen. Mein Vater versteht Gespräche bei starker Hintergrundmusik nur schwer. Vielen Dank für Ihre Hilfe bei der Planung.\n\nFreundliche Grüße\nClaudia Stern",
+      "expected": "Guten Tag,\n\nwir haben für Samstag einen Tisch für acht Personen reserviert. Eine Person kommt nun doch nicht mit. Bitte ändern Sie die Personenzahl auf sieben, die Uhrzeit bleibt bei neunzehn Uhr.\n\nWir würden gern im ruhigeren Teil des Restaurants sitzen. Mein Vater versteht Gespräche bei starker Hintergrundmusik nur schwer. Vielen Dank für Ihre Hilfe bei der Planung.\n\nFreundliche Grüße\nClaudia Stern",
+      "edits": [
+        {
+          "offset": 135,
+          "length": 12,
+          "original": "Personenzhal",
+          "replacement": "Personenzahl"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-055",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hallo Rafael,\n\nkannst du die Noten für den zweiten Satz noch einmal ausdruken? Bei meinem Exemplar fehlt die untere Zeile auf Seite vier. Ich habe es erst beim Üben bemerkt und finde die ursprüngliche Datei nicht mehr.\n\nIch komme am Freitag etwas früher zur Probe und helfe beim Aufbau. Für die neuen Chormitglieder bringe ich ein paar leere Mappen mit.\n\nBis dann\nLena",
+      "expected": "Hallo Rafael,\n\nkannst du die Noten für den zweiten Satz noch einmal ausdrucken? Bei meinem Exemplar fehlt die untere Zeile auf Seite vier. Ich habe es erst beim Üben bemerkt und finde die ursprüngliche Datei nicht mehr.\n\nIch komme am Freitag etwas früher zur Probe und helfe beim Aufbau. Für die neuen Chormitglieder bringe ich ein paar leere Mappen mit.\n\nBis dann\nLena",
+      "edits": [
+        {
+          "offset": 68,
+          "length": 9,
+          "original": "ausdruken",
+          "replacement": "ausdrucken"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-056",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Liebe Helferinnen und Helfer,\n\ndie Gemeinde stellt uns für die Reinigung des Bachufers Handschuhe und Müllsäcke zur Verfügung. Bitte bringt trotzdem feste Schuhe mit. Nach dem Regen ist der schmale Weg an einigen Stellen sehr rutshcig.\n\nWir treffen uns um neun bei der Holzbrücke. Wer später kommt, meldet sich kurz bei mir, damit wir niemanden am falschen Ufer suchen.\n\nVielen Dank\nEmil",
+      "expected": "Liebe Helferinnen und Helfer,\n\ndie Gemeinde stellt uns für die Reinigung des Bachufers Handschuhe und Müllsäcke zur Verfügung. Bitte bringt trotzdem feste Schuhe mit. Nach dem Regen ist der schmale Weg an einigen Stellen sehr rutschig.\n\nWir treffen uns um neun bei der Holzbrücke. Wer später kommt, meldet sich kurz bei mir, damit wir niemanden am falschen Ufer suchen.\n\nVielen Dank\nEmil",
+      "edits": [
+        {
+          "offset": 226,
+          "length": 8,
+          "original": "rutshcig",
+          "replacement": "rutschig"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-057",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Guten Tag Frau Hansen,\n\nbei unserer Abreise haben wir vermutlich ein Ladegerät im Zimmer liegen lassen. Es ist weiß und hat ein kurzes graues Kabel. Haben Ihre Mitarbeitrinnen bei der Reinigung etwas gefunden?\n\nFalls ja, würde ich es am kommenden Wochenende abholen. Meine Schwester wohnt in der Nähe und könnte es sonst unter der Woche für mich mitnehmen.\n\nMit freundlichen Grüßen\nMarek Blum",
+      "expected": "Guten Tag Frau Hansen,\n\nbei unserer Abreise haben wir vermutlich ein Ladegerät im Zimmer liegen lassen. Es ist weiß und hat ein kurzes graues Kabel. Haben Ihre Mitarbeiterinnen bei der Reinigung etwas gefunden?\n\nFalls ja, würde ich es am kommenden Wochenende abholen. Meine Schwester wohnt in der Nähe und könnte es sonst unter der Woche für mich mitnehmen.\n\nMit freundlichen Grüßen\nMarek Blum",
+      "edits": [
+        {
+          "offset": 160,
+          "length": 15,
+          "original": "Mitarbeitrinnen",
+          "replacement": "Mitarbeiterinnen"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-058",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hallo Johanna,\n\ndie Stühle für den Lesekreis stehen wieder im kleinen Saal. Zwei davon haben lockere Schrauebn. Ich habe sie zur Seite gestellt und einen Zettel auf die Sitzfläche gelegt, damit sie vorerst niemand benutzt.\n\nKannst du den Hausmeister bitten, sich die beiden anzusehen? Der übrige Aufbau ist fertig, und die Bücher liegen bereits auf dem Tisch am Fenster.\n\nDanke und liebe Grüße\nPaul",
+      "expected": "Hallo Johanna,\n\ndie Stühle für den Lesekreis stehen wieder im kleinen Saal. Zwei davon haben lockere Schrauben. Ich habe sie zur Seite gestellt und einen Zettel auf die Sitzfläche gelegt, damit sie vorerst niemand benutzt.\n\nKannst du den Hausmeister bitten, sich die beiden anzusehen? Der übrige Aufbau ist fertig, und die Bücher liegen bereits auf dem Tisch am Fenster.\n\nDanke und liebe Grüße\nPaul",
+      "edits": [
+        {
+          "offset": 101,
+          "length": 9,
+          "original": "Schrauebn",
+          "replacement": "Schrauben"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-059",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Sehr geehrter Herr Neumann,\n\nin Ihrer Rechnnug ist die Reparatur der Klingel zweimla aufgeführt. Der Techniker war nur einmal hier, und es wurde auch nur ein neuer Taster eingebaut. Bitte prüfen Sie die beiden Positionen.\n\nIch überweise den Betarg, sobald mir die korrigierte Fassung vorliegt. Den alten Taster hat Ihr Mitarbeiter wie vereinbart mitgenommen.\n\nMit freundlichen Grüßen\nSabine Kern",
+      "expected": "Sehr geehrter Herr Neumann,\n\nin Ihrer Rechnung ist die Reparatur der Klingel zweimal aufgeführt. Der Techniker war nur einmal hier, und es wurde auch nur ein neuer Taster eingebaut. Bitte prüfen Sie die beiden Positionen.\n\nIch überweise den Betrag, sobald mir die korrigierte Fassung vorliegt. Den alten Taster hat Ihr Mitarbeiter wie vereinbart mitgenommen.\n\nMit freundlichen Grüßen\nSabine Kern",
+      "edits": [
+        {
+          "offset": 38,
+          "length": 8,
+          "original": "Rechnnug",
+          "replacement": "Rechnung"
+        },
+        {
+          "offset": 77,
+          "length": 7,
+          "original": "zweimla",
+          "replacement": "zweimal"
+        },
+        {
+          "offset": 241,
+          "length": 6,
+          "original": "Betarg",
+          "replacement": "Betrag"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-060",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Liebe Yasemin,\n\nfür das Nachbarschaftsfrühstück fehlen uns noch zwei große Thermoskanen. Die kleinen aus der Küche reichen nicht für alle Gäste. Könntest du im Vereinsraum nachsehen, ob dort welche stehen?\n\nDie Brötcehn sind bestellt und werden um acht geliefert. Ich besorge noch Butter und Käse. Für den Aufbau am Vorabend haben sich bereits genug Leute gemeldet.\n\nBis Samstag\nGregor",
+      "expected": "Liebe Yasemin,\n\nfür das Nachbarschaftsfrühstück fehlen uns noch zwei große Thermoskannen. Die kleinen aus der Küche reichen nicht für alle Gäste. Könntest du im Vereinsraum nachsehen, ob dort welche stehen?\n\nDie Brötchen sind bestellt und werden um acht geliefert. Ich besorge noch Butter und Käse. Für den Aufbau am Vorabend haben sich bereits genug Leute gemeldet.\n\nBis Samstag\nGregor",
+      "edits": [
+        {
+          "offset": 75,
+          "length": 12,
+          "original": "Thermoskanen",
+          "replacement": "Thermoskannen"
+        },
+        {
+          "offset": 211,
+          "length": 8,
+          "original": "Brötcehn",
+          "replacement": "Brötchen"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-061",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Lieber Herr Aydin,\n\nvielen Dank für Ihre ausführliche Nachricht zur Unterbringung unseres Chors. Ich habe die Zimmerliste mit den Mitgliedern abgeglichen und kann Ihnen nun die meisten Fragen beantworten. Wir kommen mit achtzehn Personen, davon reisen vier bereits am Freitagvormittag mit dem Zug an. Der Rest wird erst nach der Arbeit losfahren und am frühen Abend eintreffen. Da wir am Samstag in der Kirche gegenüber auftreten, ist Ihr Haus für uns sehr praktisch gelegen. Niemand muss nach der Probe noch mit dem Auto durch einen fremden Ort fahren oder einen Parkplatz für die Nacht suchen.\n\nBei den Zimmern benötigen wir sechs Doppelzimmer und sechs Einzelzimmer. Zwei Sängerinnen möchten ausdrücklich getrennte Betten, weil eine von ihnen sehr unruhig schläft. Es wäre gut, wenn diese Bitte auf der Liste vermerkt bleibt und nicht erst beim Einchecken auffällt. Ein Mitglied kann Treppen nur langsam steigen. Ein Zimmer im Erdgeschoss wäre ideal, ein verlässlicher Aufzug wäre aber ebenfalls ausreichend. Falls beides nicht möglich ist, sagen Sie uns bitte frühzeitig Bescheid. Wir können dann innerhalb der Gruppe besprechen, welche Unterstützung nötig ist, statt vor Ort eine hastige Lösung zu suchen.\n\nFür das gemeinsame Abendessen am Freitag haben wir uns gegen ein festes Menü entschieden. Manche werden hungrig ankommen, andere haben unterwegs schon gegessen. Wir würden deshalb lieber von einer kleinen Karte wählen, sofern das für Ihre Küche machbar ist. Es müssen keine aufwendigen Gerichte sein. Eine Suppe, ein warmes Hauptgericht und eine vegetarische Möglichkeit wären völlig ausreichend. Zwei Personen essen vegan, und eine Person verträgt keine Walnüsse. Ich habe sie gebeten, ihre Fragen zu den Zutaten direkt mit dem Service zu besprechen, damit auf dem Weg über mich keine wichtigen Angaben verloren gehen.\n\nAm Samstag brauchen wir das Frühstück etwas früher als zunächst gedacht. Der Kirchenmusiker kann uns den Raum nur vor Beginn seiner anderen Termine öffnen. Wir sollten deshalb um halb acht fertig sein und spätestens um acht gemeinsam hinübergehen. Wenn Ihr übliches Frühstück erst später beginnt, genügt uns ein einfaches Angebot mit Brot, Obst und Kaffee. Sie müssen dafür kein vollständiges Buffet aufbauen. Einige Mitglieder haben gefragt, ob sie ihre Trinkflaschen auffüllen können. Leitungswasser ist für uns in Ordnung, und wir bringen die Flaschen selbst mit. So entsteht Ihnen kein zusätzlicher Aufwand mit einer großen Zahl einzelner Bestellungen.\n\nDie kleine Stube im ersten Stock würden wir gern am Freitagnachmittag für eine Besprechung nutzen. Wir werden dort nicht singen, sondern nur den Ablauf und die Sitzordnung für das Konzert durchgehen. Eine halbe Stunde sollte reichen. Danach können die zuerst angereisten Mitglieder noch einen Spaziergang machen oder sich ausruhen. Bitte rechnen Sie nicht damit, dass wir die Stube den ganzen Abend belegen. Ihre anderen Gäste sollen sie ebenfalls nutzen können. Wir kennen das aus unserem Vereinsheim und wissen, wie ärgerlich ein Raum sein kann, der offiziell reserviert ist und dann stundenlang leer steht.\n\nFür Instrumente brauchen wir keinen eigenen Lagerraum. Unser Pianist spielt auf dem Flügel der Kirche, und die wenigen Schlaginstrumente passen in einen verschlossenen Koffer. Diesen Koffer möchte ich allerdings nicht über Nacht im Auto lassen. Könnten Sie ihn hinter der Rezeption unterbringen, falls er nicht ohne Weiteres in unser Zimmer passt? Er ist etwa so groß wie ein gewöhnlicher Reisekoffer und enthält nichts Zerbrechliches, das besondere Pflege verlangt. Wir holen ihn am Samstag nach dem Frühstück ab. Die Notenmappen behalten die Sängerinnen und Sänger bei sich, weil einige vor dem Schlafengehen noch ihre Eintragungen durchsehen möchten.\n\nUnsere Kassenwartin kümmert sich um die gemeinsame Rechnung für die Übernachtungen. Zusätzliche Getränke und private Bestellungen zahlt jeder selbst. Bitte weisen Sie beim Einchecken kurz darauf hin, damit es am Sonntag keine lange Suche nach einzelnen Belegen gibt. Wir würden die gemeinsame Rechnung gern vor der Abreise prüfen und anschließend per Überweisung begleichen. Wenn Sie eine Anzahlung benötigen, schicken Sie uns bitte die Angaben dazu. Die endgültige Liste mit den vollständigen Namen folgt, sobald alle ihre Rückmeldung geschickt haben. Die Vornamen reichen für unsere interne Planung, für Ihre Meldescheine vermutlich jedoch nicht.\n\nAm Sonntag möchten einige nach dem Frühstück noch das Heimatmuseum besuchen. Die übrigen fahren direkt nach Hause. Daher wäre es hilfreich, wenn wir das Gepäck der Museumsgruppe bis zum frühen Nachmittag bei Ihnen lassen könnten. Wir erwarten keine weitere Nutzung der Zimmer nach der vereinbarten Zeit. Es geht nur um die Taschen, damit niemand sie durch die Ausstellung tragen muss. Zwei Autos bleiben ebenfalls noch stehen. Bitte sagen Sie uns, ob wir sie dafür auf einen anderen Parkplatz umstellen sollen. Selbstverständlich räumen wir die Plätze vor dem Haus, falls sie für anreisende Gäste gebraucht werden.\n\nIch freue mich auf das Wochenende und auf die Gelegenheit, den Ort etwas kennenzulernen. Bisher war ich nur einmal für ein kurzes Konzert dort und habe außer der Kirche kaum etwas gesehen. Diesmal bleibt hoffentlich Zeit für einen Kaffee auf dem Marktplatz. Falls sich an unseren Angaben noch etwas ändert, melde ich mich gesammelt nach der nächsten Probe. Für dringende Rückfragen bin ich tagsüber telefonisch erreichbar, während der Proben höre ich mein Telefon allerdings selten. Eine Nachricht mit Ihrer Rückrufnummer hilft dann mehr als mehrere Anrufe kurz hintereinander. Vielen Dank für Ihre Geduld bei der Organisation einer Gruppe, in der jeder einen etwas anderen Tagesplan hat.\n\nHerzliche Grüße\nKathrin Voss",
+      "expected": "Lieber Herr Aydin,\n\nvielen Dank für Ihre ausführliche Nachricht zur Unterbringung unseres Chors. Ich habe die Zimmerliste mit den Mitgliedern abgeglichen und kann Ihnen nun die meisten Fragen beantworten. Wir kommen mit achtzehn Personen, davon reisen vier bereits am Freitagvormittag mit dem Zug an. Der Rest wird erst nach der Arbeit losfahren und am frühen Abend eintreffen. Da wir am Samstag in der Kirche gegenüber auftreten, ist Ihr Haus für uns sehr praktisch gelegen. Niemand muss nach der Probe noch mit dem Auto durch einen fremden Ort fahren oder einen Parkplatz für die Nacht suchen.\n\nBei den Zimmern benötigen wir sechs Doppelzimmer und sechs Einzelzimmer. Zwei Sängerinnen möchten ausdrücklich getrennte Betten, weil eine von ihnen sehr unruhig schläft. Es wäre gut, wenn diese Bitte auf der Liste vermerkt bleibt und nicht erst beim Einchecken auffällt. Ein Mitglied kann Treppen nur langsam steigen. Ein Zimmer im Erdgeschoss wäre ideal, ein verlässlicher Aufzug wäre aber ebenfalls ausreichend. Falls beides nicht möglich ist, sagen Sie uns bitte frühzeitig Bescheid. Wir können dann innerhalb der Gruppe besprechen, welche Unterstützung nötig ist, statt vor Ort eine hastige Lösung zu suchen.\n\nFür das gemeinsame Abendessen am Freitag haben wir uns gegen ein festes Menü entschieden. Manche werden hungrig ankommen, andere haben unterwegs schon gegessen. Wir würden deshalb lieber von einer kleinen Karte wählen, sofern das für Ihre Küche machbar ist. Es müssen keine aufwendigen Gerichte sein. Eine Suppe, ein warmes Hauptgericht und eine vegetarische Möglichkeit wären völlig ausreichend. Zwei Personen essen vegan, und eine Person verträgt keine Walnüsse. Ich habe sie gebeten, ihre Fragen zu den Zutaten direkt mit dem Service zu besprechen, damit auf dem Weg über mich keine wichtigen Angaben verloren gehen.\n\nAm Samstag brauchen wir das Frühstück etwas früher als zunächst gedacht. Der Kirchenmusiker kann uns den Raum nur vor Beginn seiner anderen Termine öffnen. Wir sollten deshalb um halb acht fertig sein und spätestens um acht gemeinsam hinübergehen. Wenn Ihr übliches Frühstück erst später beginnt, genügt uns ein einfaches Angebot mit Brot, Obst und Kaffee. Sie müssen dafür kein vollständiges Buffet aufbauen. Einige Mitglieder haben gefragt, ob sie ihre Trinkflaschen auffüllen können. Leitungswasser ist für uns in Ordnung, und wir bringen die Flaschen selbst mit. So entsteht Ihnen kein zusätzlicher Aufwand mit einer großen Zahl einzelner Bestellungen.\n\nDie kleine Stube im ersten Stock würden wir gern am Freitagnachmittag für eine Besprechung nutzen. Wir werden dort nicht singen, sondern nur den Ablauf und die Sitzordnung für das Konzert durchgehen. Eine halbe Stunde sollte reichen. Danach können die zuerst angereisten Mitglieder noch einen Spaziergang machen oder sich ausruhen. Bitte rechnen Sie nicht damit, dass wir die Stube den ganzen Abend belegen. Ihre anderen Gäste sollen sie ebenfalls nutzen können. Wir kennen das aus unserem Vereinsheim und wissen, wie ärgerlich ein Raum sein kann, der offiziell reserviert ist und dann stundenlang leer steht.\n\nFür Instrumente brauchen wir keinen eigenen Lagerraum. Unser Pianist spielt auf dem Flügel der Kirche, und die wenigen Schlaginstrumente passen in einen verschlossenen Koffer. Diesen Koffer möchte ich allerdings nicht über Nacht im Auto lassen. Könnten Sie ihn hinter der Rezeption unterbringen, falls er nicht ohne Weiteres in unser Zimmer passt? Er ist etwa so groß wie ein gewöhnlicher Reisekoffer und enthält nichts Zerbrechliches, das besondere Pflege verlangt. Wir holen ihn am Samstag nach dem Frühstück ab. Die Notenmappen behalten die Sängerinnen und Sänger bei sich, weil einige vor dem Schlafengehen noch ihre Eintragungen durchsehen möchten.\n\nUnsere Kassenwartin kümmert sich um die gemeinsame Rechnung für die Übernachtungen. Zusätzliche Getränke und private Bestellungen zahlt jeder selbst. Bitte weisen Sie beim Einchecken kurz darauf hin, damit es am Sonntag keine lange Suche nach einzelnen Belegen gibt. Wir würden die gemeinsame Rechnung gern vor der Abreise prüfen und anschließend per Überweisung begleichen. Wenn Sie eine Anzahlung benötigen, schicken Sie uns bitte die Angaben dazu. Die endgültige Liste mit den vollständigen Namen folgt, sobald alle ihre Rückmeldung geschickt haben. Die Vornamen reichen für unsere interne Planung, für Ihre Meldescheine vermutlich jedoch nicht.\n\nAm Sonntag möchten einige nach dem Frühstück noch das Heimatmuseum besuchen. Die übrigen fahren direkt nach Hause. Daher wäre es hilfreich, wenn wir das Gepäck der Museumsgruppe bis zum frühen Nachmittag bei Ihnen lassen könnten. Wir erwarten keine weitere Nutzung der Zimmer nach der vereinbarten Zeit. Es geht nur um die Taschen, damit niemand sie durch die Ausstellung tragen muss. Zwei Autos bleiben ebenfalls noch stehen. Bitte sagen Sie uns, ob wir sie dafür auf einen anderen Parkplatz umstellen sollen. Selbstverständlich räumen wir die Plätze vor dem Haus, falls sie für anreisende Gäste gebraucht werden.\n\nIch freue mich auf das Wochenende und auf die Gelegenheit, den Ort etwas kennenzulernen. Bisher war ich nur einmal für ein kurzes Konzert dort und habe außer der Kirche kaum etwas gesehen. Diesmal bleibt hoffentlich Zeit für einen Kaffee auf dem Marktplatz. Falls sich an unseren Angaben noch etwas ändert, melde ich mich gesammelt nach der nächsten Probe. Für dringende Rückfragen bin ich tagsüber telefonisch erreichbar, während der Proben höre ich mein Telefon allerdings selten. Eine Nachricht mit Ihrer Rückrufnummer hilft dann mehr als mehrere Anrufe kurz hintereinander. Vielen Dank für Ihre Geduld bei der Organisation einer Gruppe, in der jeder einen etwas anderen Tagesplan hat.\n\nHerzliche Grüße\nKathrin Voss",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-062",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Guten Tag Frau Özdemir,\n\nich bringe zur Besprechung die Vollmacht im Original mit. Die Kopie hatten Sie bereits erhalten. Mein Bruder kommt ebenfalls, damit wir offene Fragen zur gemeinsamen Kontoführung direkt klären können.\n\nBitte reservieren Sie etwas mehr Zeit, falls wir mehrere Formulare unterschreiben müssen. Wir haben anschließend keinen weiteren Termin und können uns nach Ihrem Ablauf richten.\n\nMit freundlichen Grüßen\nRuth König",
+      "expected": "Guten Tag Frau Özdemir,\n\nich bringe zur Besprechung die Vollmacht im Original mit. Die Kopie hatten Sie bereits erhalten. Mein Bruder kommt ebenfalls, damit wir offene Fragen zur gemeinsamen Kontoführung direkt klären können.\n\nBitte reservieren Sie etwas mehr Zeit, falls wir mehrere Formulare unterschreiben müssen. Wir haben anschließend keinen weiteren Termin und können uns nach Ihrem Ablauf richten.\n\nMit freundlichen Grüßen\nRuth König",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-063",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hallo Wiebke,\n\nim Kühlschrank steht noch ein Glas Ajvar vom Vereinsabend. Es gehört Amir, der es morgen abholt. Bitte wirf es beim Aufräumen nicht weg. Der Name steht auf dem Deckel, allerdings ziemlich klein.\n\nDie übrigen Reste können wir für das Mittagessen verwenden. Ich bringe frisches Brot mit und schaue vorher noch nach, ob genügend saubere Teller da sind.\n\nLiebe Grüße\nUte",
+      "expected": "Hallo Wiebke,\n\nim Kühlschrank steht noch ein Glas Ajvar vom Vereinsabend. Es gehört Amir, der es morgen abholt. Bitte wirf es beim Aufräumen nicht weg. Der Name steht auf dem Deckel, allerdings ziemlich klein.\n\nDie übrigen Reste können wir für das Mittagessen verwenden. Ich bringe frisches Brot mit und schaue vorher noch nach, ob genügend saubere Teller da sind.\n\nLiebe Grüße\nUte",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-064",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Liebe Frau Birk,\n\nder Tischler hat sich das Oberlicht angesehen. Nach seiner Einschätzung ist der Espagnoletteverschluss verbogen, während der Rahmen noch in Ordnung ist. Er sucht nun nach einem passenden Ersatzteil und meldet sich mit einem Angebot.\n\nBis dahin lassen wir das Fenster geschlossen. Im Raum kann über die Terrassentür gelüftet werden, deshalb ist keine provisorische Reparatur nötig.\n\nViele Grüße\nAndreas Lenz",
+      "expected": "Liebe Frau Birk,\n\nder Tischler hat sich das Oberlicht angesehen. Nach seiner Einschätzung ist der Espagnoletteverschluss verbogen, während der Rahmen noch in Ordnung ist. Er sucht nun nach einem passenden Ersatzteil und meldet sich mit einem Angebot.\n\nBis dahin lassen wir das Fenster geschlossen. Im Raum kann über die Terrassentür gelüftet werden, deshalb ist keine provisorische Reparatur nötig.\n\nViele Grüße\nAndreas Lenz",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-065",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Lieber Musikverein,\n\nfür die Probe am Sonntag bringe ich meine Klarinette in B mit. Das Stück für die Trauerfeier liegt bei mir nur in einer älteren Ausgabe vor. Vielleicht können wir die Taktzahlen kurz vergleichen, bevor wir anfangen.\n\nIch komme mit dem Rad und brauche keinen Parkplatz. Den Schlüssel für den Seiteneingang gebe ich nach der Probe bei Vera ab.\n\nBis Sonntag\nKonrad",
+      "expected": "Lieber Musikverein,\n\nfür die Probe am Sonntag bringe ich meine Klarinette in B mit. Das Stück für die Trauerfeier liegt bei mir nur in einer älteren Ausgabe vor. Vielleicht können wir die Taktzahlen kurz vergleichen, bevor wir anfangen.\n\nIch komme mit dem Rad und brauche keinen Parkplatz. Den Schlüssel für den Seiteneingang gebe ich nach der Probe bei Vera ab.\n\nBis Sonntag\nKonrad",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-066",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Guten Abend Frau Lechner,\n\nwir würden beim Frühstück gern die Käsespätzle vom Vorabend weglassen und stattdessen zusätzliches Obst anbieten. Die meisten Gäste haben eine längere Busfahrt vor sich und wünschen sich etwas Leichtes.\n\nFür die beiden Kinder reicht das normale Angebot. Sie brauchen weder ein eigenes Menü noch besondere Getränke. Die aktualisierte Tischordnung bringen wir bei unserer Ankunft mit.\n\nFreundliche Grüße\nDoris Merz",
+      "expected": "Guten Abend Frau Lechner,\n\nwir würden beim Frühstück gern die Käsespätzle vom Vorabend weglassen und stattdessen zusätzliches Obst anbieten. Die meisten Gäste haben eine längere Busfahrt vor sich und wünschen sich etwas Leichtes.\n\nFür die beiden Kinder reicht das normale Angebot. Sie brauchen weder ein eigenes Menü noch besondere Getränke. Die aktualisierte Tischordnung bringen wir bei unserer Ankunft mit.\n\nFreundliche Grüße\nDoris Merz",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-067",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hallo Joost,\n\ndie neuen Schilder für den Gemeinschaftsgarten sind fertig. Beim Ysop habe ich die kleine Erklärung ergänzt, die du vorgeschlagen hast. So verwechseln Besucher ihn hoffentlich nicht mehr mit dem jungen Lavendel daneben.\n\nIch lasse die Schilder noch eine Nacht im Schuppen trocknen. Am Samstag können wir sie gemeinsam aufstellen, wenn der Lack nicht mehr klebt.\n\nViele Grüße\nMaren",
+      "expected": "Hallo Joost,\n\ndie neuen Schilder für den Gemeinschaftsgarten sind fertig. Beim Ysop habe ich die kleine Erklärung ergänzt, die du vorgeschlagen hast. So verwechseln Besucher ihn hoffentlich nicht mehr mit dem jungen Lavendel daneben.\n\nIch lasse die Schilder noch eine Nacht im Schuppen trocknen. Am Samstag können wir sie gemeinsam aufstellen, wenn der Lack nicht mehr klebt.\n\nViele Grüße\nMaren",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-068",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Sehr geehrte Frau Krall,\n\ndie Lesung mit dem Titel „Zwischen Ebbe und Flut“ beginnt um achtzehn Uhr. Wir öffnen den Saal eine halbe Stunde vorher. Wer einen Rollator benutzt, kann ihn neben der Garderobe abstellen oder direkt am Sitzplatz behalten.\n\nEintrittskarten werden nicht verschickt. Ihre Reservierung liegt unter Ihrem Nachnamen an der Abendkasse bereit.\n\nMit freundlichen Grüßen\nPetra Wendt",
+      "expected": "Sehr geehrte Frau Krall,\n\ndie Lesung mit dem Titel „Zwischen Ebbe und Flut“ beginnt um achtzehn Uhr. Wir öffnen den Saal eine halbe Stunde vorher. Wer einen Rollator benutzt, kann ihn neben der Garderobe abstellen oder direkt am Sitzplatz behalten.\n\nEintrittskarten werden nicht verschickt. Ihre Reservierung liegt unter Ihrem Nachnamen an der Abendkasse bereit.\n\nMit freundlichen Grüßen\nPetra Wendt",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-069",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Liebe Élodie,\n\ndein Crêpeteig steht gut abgedeckt im unteren Fach. Wir haben ihn nach dem Kurs sofort kalt gestellt. Die beschriftete Schüssel kannst du morgen zusammen mit der Pfanne abholen.\n\nIch bin ab neun im Nachbarschaftshaus. Falls die Haustür noch geschlossen ist, komm bitte durch den Hof zur Küche. Dort hört man die Klingel an der Vorderseite leider kaum.\n\nHerzliche Grüße\nArne",
+      "expected": "Liebe Élodie,\n\ndein Crêpeteig steht gut abgedeckt im unteren Fach. Wir haben ihn nach dem Kurs sofort kalt gestellt. Die beschriftete Schüssel kannst du morgen zusammen mit der Pfanne abholen.\n\nIch bin ab neun im Nachbarschaftshaus. Falls die Haustür noch geschlossen ist, komm bitte durch den Hof zur Küche. Dort hört man die Klingel an der Vorderseite leider kaum.\n\nHerzliche Grüße\nArne",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-070",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hallo Herr Wimmer,\n\nder Installateur empfiehlt einen neuen Siphon unter dem Waschbecken. Die Dichtung allein wird nach seiner Einschätzung nicht dauerhaft helfen. Bitte schicken Sie uns einen Kostenvoranschlag, bevor Sie das Teil bestellen.\n\nAm Freitag ist unsere Hausbetreuerin vor Ort und kann den Keller öffnen. Dort lässt sich das Wasser für die betreffende Leitung absperren.\n\nMit freundlichen Grüßen\nRenate Scholl",
+      "expected": "Hallo Herr Wimmer,\n\nder Installateur empfiehlt einen neuen Siphon unter dem Waschbecken. Die Dichtung allein wird nach seiner Einschätzung nicht dauerhaft helfen. Bitte schicken Sie uns einen Kostenvoranschlag, bevor Sie das Teil bestellen.\n\nAm Freitag ist unsere Hausbetreuerin vor Ort und kann den Keller öffnen. Dort lässt sich das Wasser für die betreffende Leitung absperren.\n\nMit freundlichen Grüßen\nRenate Scholl",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-071",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Der neue Schrank für die Vereinsunterlagen steht im Büro neben dem Kopierer. Die Schlüssel hängen noch nicht am Brett, weil das beschriftete Schild erst morgen geliefert wird. Bis dahin liegen sie bei der Empfangsliste.\n\nBitte räumt nur die aktuellen Akten ein. Die alten Protokole kommen ins Archiv, sobald wir geprüft haben, welche Jahrgänge dort bereits vorhanden sind.",
+      "expected": "Der neue Schrank für die Vereinsunterlagen steht im Büro neben dem Kopierer. Die Schlüssel hängen noch nicht am Brett, weil das beschriftete Schild erst morgen geliefert wird. Bis dahin liegen sie bei der Empfangsliste.\n\nBitte räumt nur die aktuellen Akten ein. Die alten Protokolle kommen ins Archiv, sobald wir geprüft haben, welche Jahrgänge dort bereits vorhanden sind.",
+      "edits": [
+        {
+          "offset": 272,
+          "length": 9,
+          "original": "Protokole",
+          "replacement": "Protokolle"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-072",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Die Gäste im hinteren Zimmer haben einen frühen Zug und möchten schon um sechs abreisen. Wir stellen ihnen am Abend eine kleine Frühstückstasche bereit. Kaffee bekommen sie am Bahnhof, bevor sie zum Bahnsteig gehen.\n\nBitte legt die Serviettenn nicht direkt zum Obst. Die Birnen sind noch etwas feucht, weil ich sie gerade gewaschen habe.",
+      "expected": "Die Gäste im hinteren Zimmer haben einen frühen Zug und möchten schon um sechs abreisen. Wir stellen ihnen am Abend eine kleine Frühstückstasche bereit. Kaffee bekommen sie am Bahnhof, bevor sie zum Bahnsteig gehen.\n\nBitte legt die Servietten nicht direkt zum Obst. Die Birnen sind noch etwas feucht, weil ich sie gerade gewaschen habe.",
+      "edits": [
+        {
+          "offset": 232,
+          "length": 11,
+          "original": "Serviettenn",
+          "replacement": "Servietten"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-073",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Im Hof liegt seit dem Sturm ein abgebrochener Ast auf dem Fahrradständer. Zum Glück wurde kein Rad beschädigt. Wir haben den Bereich abgesperrt und warten auf den Gärtner, der sich auch den übrigen Baum ansehen wird.\n\nBis dahin können die Bewohner ihre Räder neben dem Müllhaus abstellen. Der Durchgnag zum Hinterhaus muss dabei frei bleiben.",
+      "expected": "Im Hof liegt seit dem Sturm ein abgebrochener Ast auf dem Fahrradständer. Zum Glück wurde kein Rad beschädigt. Wir haben den Bereich abgesperrt und warten auf den Gärtner, der sich auch den übrigen Baum ansehen wird.\n\nBis dahin können die Bewohner ihre Räder neben dem Müllhaus abstellen. Der Durchgang zum Hinterhaus muss dabei frei bleiben.",
+      "edits": [
+        {
+          "offset": 293,
+          "length": 9,
+          "original": "Durchgnag",
+          "replacement": "Durchgang"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-074",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Für das Stadtteilfest können wir die kleine Bühne aus dem Jugendzentrum ausleihen. Der Transport muss allerdings am Freitag stattfinden, weil dort am Wochenende niemand Dienst hat. Ein Nachbar hat bereits einen Anhänger angeboten.\n\nWir brauchen noch zwei Personen, die beim Abalden helfen. Der Aufbau selbst beginnt erst am Samstagmorgen, wenn die Marktstände ihre Plätze eingenommen haben.",
+      "expected": "Für das Stadtteilfest können wir die kleine Bühne aus dem Jugendzentrum ausleihen. Der Transport muss allerdings am Freitag stattfinden, weil dort am Wochenende niemand Dienst hat. Ein Nachbar hat bereits einen Anhänger angeboten.\n\nWir brauchen noch zwei Personen, die beim Abladen helfen. Der Aufbau selbst beginnt erst am Samstagmorgen, wenn die Marktstände ihre Plätze eingenommen haben.",
+      "edits": [
+        {
+          "offset": 274,
+          "length": 7,
+          "original": "Abalden",
+          "replacement": "Abladen"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-075",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Die Bank hat unsere neue Vereinsadresse bestätigt. Auf den nächsten Schreiben soll nur noch das Postfach stehen, damit die Unterlagen bei einem Wechsel im Vorstand nicht an eine private Wohnung gehen.\n\nBitte verwendet die neue Anschrift auch auf den Spendenbelegen. Die vorgedruckten Briefumshcläge können wir mit einem sauberen Etikett überkleben, statt den gesamten Vorrat wegzuwerfen.",
+      "expected": "Die Bank hat unsere neue Vereinsadresse bestätigt. Auf den nächsten Schreiben soll nur noch das Postfach stehen, damit die Unterlagen bei einem Wechsel im Vorstand nicht an eine private Wohnung gehen.\n\nBitte verwendet die neue Anschrift auch auf den Spendenbelegen. Die vorgedruckten Briefumschläge können wir mit einem sauberen Etikett überkleben, statt den gesamten Vorrat wegzuwerfen.",
+      "edits": [
+        {
+          "offset": 284,
+          "length": 14,
+          "original": "Briefumshcläge",
+          "replacement": "Briefumschläge"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-076",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Der Flügel wird am Mittwoch gestimmt. In dieser Zeit können im Saal keine Proben stattfinden, auch wenn nur ein einzelner Spieler üben möchte. Der Klavierstimmer braucht Ruhe, um die tiefen Töne richtig zu hören.\n\nDie Chorprobe beginnt deshalb eine halbe Stunde später. Bitte gebt diese Informatoin auch an Mitglieder weiter, die ihre Nachrichten nicht täglich lesen.",
+      "expected": "Der Flügel wird am Mittwoch gestimmt. In dieser Zeit können im Saal keine Proben stattfinden, auch wenn nur ein einzelner Spieler üben möchte. Der Klavierstimmer braucht Ruhe, um die tiefen Töne richtig zu hören.\n\nDie Chorprobe beginnt deshalb eine halbe Stunde später. Bitte gebt diese Information auch an Mitglieder weiter, die ihre Nachrichten nicht täglich lesen.",
+      "edits": [
+        {
+          "offset": 287,
+          "length": 11,
+          "original": "Informatoin",
+          "replacement": "Information"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-077",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Für das Essen nach der Wanderung sind inzwischen alle Plätze vergeben. Wer sich später anmeldet, kommt auf die Warteliste. Erfahrungsgemäß sagen kurz vorher noch einige Personen ab, aber versprechen können wir keinen freien Platz.\n\nDie Wirtsin hat darum gebeten, die endgültige Zahl bis Donnerstag zu melden. Dann kann sie frische Zutaten einkaufen, ohne zu viel vorzubereiten.",
+      "expected": "Für das Essen nach der Wanderung sind inzwischen alle Plätze vergeben. Wer sich später anmeldet, kommt auf die Warteliste. Erfahrungsgemäß sagen kurz vorher noch einige Personen ab, aber versprechen können wir keinen freien Platz.\n\nDie Wirtin hat darum gebeten, die endgültige Zahl bis Donnerstag zu melden. Dann kann sie frische Zutaten einkaufen, ohne zu viel vorzubereiten.",
+      "edits": [
+        {
+          "offset": 236,
+          "length": 7,
+          "original": "Wirtsin",
+          "replacement": "Wirtin"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-078",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Die Tür zum Dachboden klemmt seit dem Einbau der neuen Dichtung. Man kann sie öffnen, muss aber kräftig ziehen. Ich habe den Schlüssel trotzdem wieder ins Büro gebracht, damit er für die Wartungsfirma erreichbar bleibt.\n\nBitte bittet den Hausmeister um einen kurzen Rückrfü. Er soll entscheiden, ob wir die Tür bis zum Termin lieber ganz geschlossen halten.",
+      "expected": "Die Tür zum Dachboden klemmt seit dem Einbau der neuen Dichtung. Man kann sie öffnen, muss aber kräftig ziehen. Ich habe den Schlüssel trotzdem wieder ins Büro gebracht, damit er für die Wartungsfirma erreichbar bleibt.\n\nBitte bittet den Hausmeister um einen kurzen Rückruf. Er soll entscheiden, ob wir die Tür bis zum Termin lieber ganz geschlossen halten.",
+      "edits": [
+        {
+          "offset": 266,
+          "length": 7,
+          "original": "Rückrfü",
+          "replacement": "Rückruf"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-079",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Die Sammelstelle für alte Brillen wird gut genutzt. Wir haben bereits eine volle Kiste im Büro und müssen sie nur noch für den Versand vorbereiten. Die losen Etuis können getrennt in den großen Karton.\n\nBitte kontrolliert bei jeder Verpakcung, ob die Adresse lesbar ist. Den Liefershcein legt ihr obenauf, damit die Empfänger ihn gleich finden.",
+      "expected": "Die Sammelstelle für alte Brillen wird gut genutzt. Wir haben bereits eine volle Kiste im Büro und müssen sie nur noch für den Versand vorbereiten. Die losen Etuis können getrennt in den großen Karton.\n\nBitte kontrolliert bei jeder Verpackung, ob die Adresse lesbar ist. Den Lieferschein legt ihr obenauf, damit die Empfänger ihn gleich finden.",
+      "edits": [
+        {
+          "offset": 232,
+          "length": 10,
+          "original": "Verpakcung",
+          "replacement": "Verpackung"
+        },
+        {
+          "offset": 275,
+          "length": 12,
+          "original": "Liefershcein",
+          "replacement": "Lieferschein"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-080",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Beim letzten Treffen wurde beschlossen, den Beitrag für passive Mitglieder unverändert zu lassen. Die Kosten für den neuen Proberaum werden vorerst aus der Rücklage bezahlt. Im Herbst wollen wir die Ausgaben noch einmal gemeinsam prüfen.\n\nIm Sitzungsprotoll fehlt dieser Beschluss. Ich habe die Schriftfüherin darauf hingewiesen und ihr meine Notizen aus dem Termin geschickt.",
+      "expected": "Beim letzten Treffen wurde beschlossen, den Beitrag für passive Mitglieder unverändert zu lassen. Die Kosten für den neuen Proberaum werden vorerst aus der Rücklage bezahlt. Im Herbst wollen wir die Ausgaben noch einmal gemeinsam prüfen.\n\nIm Sitzungsprotokoll fehlt dieser Beschluss. Ich habe die Schriftführerin darauf hingewiesen und ihr meine Notizen aus dem Termin geschickt.",
+      "edits": [
+        {
+          "offset": 242,
+          "length": 15,
+          "original": "Sitzungsprotoll",
+          "replacement": "Sitzungsprotokoll"
+        },
+        {
+          "offset": 295,
+          "length": 14,
+          "original": "Schriftfüherin",
+          "replacement": "Schriftführerin"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-081",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Im Eingangsbereich steht jetzt eine Sitzbank mit Armlehnen. Die Ergotherapeutin aus dem Nachbarhaus hat das Modell empfohlen, weil man leichter wieder aufstehen kann. Für den Rollstuhl bleibt daneben genügend Platz.\n\nBitte stellt dort keine Pflanzenkübel ab. Die freie Fläche gehört zur geplanten Einrichtung und ist kein zusätzlicher Lagerplatz für Dinge aus dem Treppenhaus.",
+      "expected": "Im Eingangsbereich steht jetzt eine Sitzbank mit Armlehnen. Die Ergotherapeutin aus dem Nachbarhaus hat das Modell empfohlen, weil man leichter wieder aufstehen kann. Für den Rollstuhl bleibt daneben genügend Platz.\n\nBitte stellt dort keine Pflanzenkübel ab. Die freie Fläche gehört zur geplanten Einrichtung und ist kein zusätzlicher Lagerplatz für Dinge aus dem Treppenhaus.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-082",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Für den Empfang gibt es Käsegebäck, Oliven und kleine Stücke Focaccia. Die Speisen stehen auf getrennten Platten, damit jeder die Zutatenliste leicht zuordnen kann. Eine ehrenamtliche Helferin beantwortet Fragen zum Buffet.\n\nWir haben bewusst weniger Auswahl bestellt als im letzten Jahr. Damals blieb zu viel übrig, obwohl die Zahl der Gäste ziemlich genau stimmte.",
+      "expected": "Für den Empfang gibt es Käsegebäck, Oliven und kleine Stücke Focaccia. Die Speisen stehen auf getrennten Platten, damit jeder die Zutatenliste leicht zuordnen kann. Eine ehrenamtliche Helferin beantwortet Fragen zum Buffet.\n\nWir haben bewusst weniger Auswahl bestellt als im letzten Jahr. Damals blieb zu viel übrig, obwohl die Zahl der Gäste ziemlich genau stimmte.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-083",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Der Dachdecker nennt die schmale Blechkante eine Traufe. Ich habe mir das Wort aufgeschrieben, damit ich die Position auf seinem Angebot wiederfinde. Es geht um die Seite zum Innenhof, nicht um das Vordach über der Haustür.\n\nDie Reparatur kann von einer Leiter aus erfolgen. Ein Gerüst ist nach seiner Einschätzung für diese Arbeit nicht nötig.",
+      "expected": "Der Dachdecker nennt die schmale Blechkante eine Traufe. Ich habe mir das Wort aufgeschrieben, damit ich die Position auf seinem Angebot wiederfinde. Es geht um die Seite zum Innenhof, nicht um das Vordach über der Haustür.\n\nDie Reparatur kann von einer Leiter aus erfolgen. Ein Gerüst ist nach seiner Einschätzung für diese Arbeit nicht nötig.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-084",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Der Kurs für Sütterlin findet im Archivraum statt. Bitte bringt einen weichen Bleistift und Papier mit. An den Originalbriefen werden wir selbstverständlich keine Markierungen vornehmen, sondern auf Kopien üben.\n\nDie Kursleiterin hat auch Beispiele aus privaten Kochbüchern vorbereitet. Das ist ein guter Einstieg, weil sich unbekannte Wörter oft aus den Zutaten und Mengen erschließen lassen.",
+      "expected": "Der Kurs für Sütterlin findet im Archivraum statt. Bitte bringt einen weichen Bleistift und Papier mit. An den Originalbriefen werden wir selbstverständlich keine Markierungen vornehmen, sondern auf Kopien üben.\n\nDie Kursleiterin hat auch Beispiele aus privaten Kochbüchern vorbereitet. Das ist ein guter Einstieg, weil sich unbekannte Wörter oft aus den Zutaten und Mengen erschließen lassen.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-085",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Für die Sitzung brauchen wir das PDF mit den Seitenzahlen aus der gedruckten Fassung. Die neuere Datei hat zwar ein Inhaltsverzeichnis, aber ihre Nummerierung passt nicht zu den Notizen der Mitglieder.\n\nBitte verschickt keine weitere Version vor dem Treffen. Es reicht, wenn wir alle mit derselben Fassung arbeiten und die Änderungen anschließend gesammelt eintragen.",
+      "expected": "Für die Sitzung brauchen wir das PDF mit den Seitenzahlen aus der gedruckten Fassung. Die neuere Datei hat zwar ein Inhaltsverzeichnis, aber ihre Nummerierung passt nicht zu den Notizen der Mitglieder.\n\nBitte verschickt keine weitere Version vor dem Treffen. Es reicht, wenn wir alle mit derselben Fassung arbeiten und die Änderungen anschließend gesammelt eintragen.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-086",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Beim Liederabend spielt Noëlle ein Stück auf dem Cembalo. Der Raum muss deshalb schon am Nachmittag gleichmäßig beheizt werden. Starkes Aufheizen unmittelbar vor dem Konzert wäre für das Instrument ungünstig.\n\nDie Fenster bleiben nach dem Stimmen geschlossen. Wer frische Luft braucht, kann in der Pause durch die Seitentür in den Hof gehen.",
+      "expected": "Beim Liederabend spielt Noëlle ein Stück auf dem Cembalo. Der Raum muss deshalb schon am Nachmittag gleichmäßig beheizt werden. Starkes Aufheizen unmittelbar vor dem Konzert wäre für das Instrument ungünstig.\n\nDie Fenster bleiben nach dem Stimmen geschlossen. Wer frische Luft braucht, kann in der Pause durch die Seitentür in den Hof gehen.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-087",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Die Gemeinde unterstützt unseren Plan für ein Repair-Café im ehemaligen Ladenlokal. Bevor wir Termine veröffentlichen, müssen wir allerdings noch klären, welche Geräte die Helfer prüfen können und welche Werkzeuge vor Ort bleiben dürfen.\n\nDer Mietvertrag erlaubt keine Lagerung im Fluchtweg. Auch eine Kiste mit selten gebrauchten Ersatzteilen muss deshalb innerhalb des Arbeitsraums ihren Platz finden.",
+      "expected": "Die Gemeinde unterstützt unseren Plan für ein Repair-Café im ehemaligen Ladenlokal. Bevor wir Termine veröffentlichen, müssen wir allerdings noch klären, welche Geräte die Helfer prüfen können und welche Werkzeuge vor Ort bleiben dürfen.\n\nDer Mietvertrag erlaubt keine Lagerung im Fluchtweg. Auch eine Kiste mit selten gebrauchten Ersatzteilen muss deshalb innerhalb des Arbeitsraums ihren Platz finden.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-088",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Auf dem Speiseplan steht am Freitag Topinambur mit Kräuterquark. Ein Gast hat gefragt, ob das eine Kartoffelsorte sei. Wir haben ihm erklärt, dass es sich um eine andere Knolle handelt und der Geschmack etwas süßlicher ist.\n\nWer das Gericht nicht mag, kann die angebotene Gemüsesuppe wählen. Die Küche hat davon genügend Portionen eingeplant.",
+      "expected": "Auf dem Speiseplan steht am Freitag Topinambur mit Kräuterquark. Ein Gast hat gefragt, ob das eine Kartoffelsorte sei. Wir haben ihm erklärt, dass es sich um eine andere Knolle handelt und der Geschmack etwas süßlicher ist.\n\nWer das Gericht nicht mag, kann die angebotene Gemüsesuppe wählen. Die Küche hat davon genügend Portionen eingeplant.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-089",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Der Verein hat den Antrag auf Gemeinnützigkeit noch nicht abgeschickt. Es fehlen die Unterschriften unter der geänderten Satzung. Wir sammeln sie beim nächsten Treffen ein und prüfen dann noch einmal, ob alle Anlagen vollständig sind.\n\nDie Unterlagen bleiben bis dahin im verschlossenen Schrank. Für die Diskussion im Vorstand genügt eine Kopie ohne die privaten Adressen der Gründungsmitglieder.",
+      "expected": "Der Verein hat den Antrag auf Gemeinnützigkeit noch nicht abgeschickt. Es fehlen die Unterschriften unter der geänderten Satzung. Wir sammeln sie beim nächsten Treffen ein und prüfen dann noch einmal, ob alle Anlagen vollständig sind.\n\nDie Unterlagen bleiben bis dahin im verschlossenen Schrank. Für die Diskussion im Vorstand genügt eine Kopie ohne die privaten Adressen der Gründungsmitglieder.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-090",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Im Innenhof blüht die Zaubernuss bereits. Das gelbe Band am Stamm stammt noch von der Baumpflege und bedeutet nicht, dass der Strauch entfernt wird. Einige Bewohner hatten sich wegen der Markierung Sorgen gemacht.\n\nDer Gärtner nimmt das Band bei seinem nächsten Besuch ab. Bis dahin hängt eine kurze Erklärung am Brett neben der Haustür.",
+      "expected": "Im Innenhof blüht die Zaubernuss bereits. Das gelbe Band am Stamm stammt noch von der Baumpflege und bedeutet nicht, dass der Strauch entfernt wird. Einige Bewohner hatten sich wegen der Markierung Sorgen gemacht.\n\nDer Gärtner nimmt das Band bei seinem nächsten Besuch ab. Bis dahin hängt eine kurze Erklärung am Brett neben der Haustür.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-091",
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "input": "Bitte legt die Eintritskarten für die Helfer an die Abendkasse. Sie sollen nach ihrer Schicht noch zuhören können. Die Namen stehen auf dem blauen Zettel neben dem Telefon, nicht auf der Liste für die Presse.",
+      "expected": "Bitte legt die Eintrittskarten für die Helfer an die Abendkasse. Sie sollen nach ihrer Schicht noch zuhören können. Die Namen stehen auf dem blauen Zettel neben dem Telefon, nicht auf der Liste für die Presse.",
+      "edits": [
+        {
+          "offset": 15,
+          "length": 14,
+          "original": "Eintritskarten",
+          "replacement": "Eintrittskarten"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-092",
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "input": "Ich habe den Wasserkocehr gründlich entkalkt und zweimal mit klarem Wasser ausgespült. Er kann beim Frühstück wieder benutzt werden. Die angebrochene Flasche mit dem Mittel steht im Putzschrank, damit niemand sie mit einem Getränk verwechselt.",
+      "expected": "Ich habe den Wasserkocher gründlich entkalkt und zweimal mit klarem Wasser ausgespült. Er kann beim Frühstück wieder benutzt werden. Die angebrochene Flasche mit dem Mittel steht im Putzschrank, damit niemand sie mit einem Getränk verwechselt.",
+      "edits": [
+        {
+          "offset": 13,
+          "length": 12,
+          "original": "Wasserkocehr",
+          "replacement": "Wasserkocher"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-093",
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "input": "Der Schlüssel für das Gartenhäsuchen liegt bei der Hausbetreuung. Bitte holt ihn vor dem Mittag ab, wenn ihr später die Stühle herausnehmen wollt. Am Nachmittag ist das Büro geschlossen, und ich bin dann nicht mehr im Haus.",
+      "expected": "Der Schlüssel für das Gartenhäuschen liegt bei der Hausbetreuung. Bitte holt ihn vor dem Mittag ab, wenn ihr später die Stühle herausnehmen wollt. Am Nachmittag ist das Büro geschlossen, und ich bin dann nicht mehr im Haus.",
+      "edits": [
+        {
+          "offset": 22,
+          "length": 14,
+          "original": "Gartenhäsuchen",
+          "replacement": "Gartenhäuschen"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-094",
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "input": "Wir treffen uns für die Besprechnug im Raum neben der Küche. Dort ist es leiser als im großen Saal. Bringt bitte die letzte Kostenübersicht mit, damit wir die offenen Fragen direkt anhand der Zahlen klären können.",
+      "expected": "Wir treffen uns für die Besprechung im Raum neben der Küche. Dort ist es leiser als im großen Saal. Bringt bitte die letzte Kostenübersicht mit, damit wir die offenen Fragen direkt anhand der Zahlen klären können.",
+      "edits": [
+        {
+          "offset": 24,
+          "length": 11,
+          "original": "Besprechnug",
+          "replacement": "Besprechung"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-095",
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "input": "Die neue Glühbiren liegt auf dem Schreibtisch. Bitte baut sie erst ein, wenn die Lampe abgekühlt ist. Ich habe den Stecker bereits gezogen und den alten Leuchtkörper in eine kleine Schachtel gelegt, damit das Glas heil bleibt.",
+      "expected": "Die neue Glühbirne liegt auf dem Schreibtisch. Bitte baut sie erst ein, wenn die Lampe abgekühlt ist. Ich habe den Stecker bereits gezogen und den alten Leuchtkörper in eine kleine Schachtel gelegt, damit das Glas heil bleibt.",
+      "edits": [
+        {
+          "offset": 9,
+          "length": 9,
+          "original": "Glühbiren",
+          "replacement": "Glühbirne"
+        }
+      ]
+    },
+    {
+      "id": "rc5-final-096",
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "input": "Bitte bringt die Cajón zum offenen Singen mit. Wir brauchen diesmal kein vollständiges Schlagzeug, weil der Raum sehr hallig ist. Ein einfacher Rhythmus reicht aus, und die Nachbarn werden uns für die geringere Lautstärke vermutlich dankbar sein.",
+      "expected": "Bitte bringt die Cajón zum offenen Singen mit. Wir brauchen diesmal kein vollständiges Schlagzeug, weil der Raum sehr hallig ist. Ein einfacher Rhythmus reicht aus, und die Nachbarn werden uns für die geringere Lautstärke vermutlich dankbar sein.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-097",
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "input": "Für die Führung durch das Rathaus kommt auch Herr Dvořák mit. Sein Name steht bereits auf der Liste am Empfang. Bitte schreibt ihn genauso auf das Schild, damit er seine Unterlagen ohne Verwechslung abholen kann.",
+      "expected": "Für die Führung durch das Rathaus kommt auch Herr Dvořák mit. Sein Name steht bereits auf der Liste am Empfang. Bitte schreibt ihn genauso auf das Schild, damit er seine Unterlagen ohne Verwechslung abholen kann.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-098",
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "input": "Die Markise bleibt bei starkem Wind eingefahren. Auch wenn auf der Terrasse noch Gäste sitzen, darf sie dann nicht ausgefahren werden. Wir bieten den betroffenen Tischen Plätze im Wintergarten an und helfen beim Tragen der Getränke.",
+      "expected": "Die Markise bleibt bei starkem Wind eingefahren. Auch wenn auf der Terrasse noch Gäste sitzen, darf sie dann nicht ausgefahren werden. Wir bieten den betroffenen Tischen Plätze im Wintergarten an und helfen beim Tragen der Getränke.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-099",
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "input": "Der Verein sammelt diesmal keine Sachspenden, sondern bezahlt die Reparatur der Waschmaschinen im Wohnheim. Bitte erklärt das kurz, wenn Besucher nach alten Kleidern fragen. Gut erhaltene Kleidung nimmt weiterhin die Kleiderkammer in der Nebenstraße an.",
+      "expected": "Der Verein sammelt diesmal keine Sachspenden, sondern bezahlt die Reparatur der Waschmaschinen im Wohnheim. Bitte erklärt das kurz, wenn Besucher nach alten Kleidern fragen. Gut erhaltene Kleidung nimmt weiterhin die Kleiderkammer in der Nebenstraße an.",
+      "edits": []
+    },
+    {
+      "id": "rc5-final-100",
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "input": "Zum Abschluss gibt es ein kleines Potpourri aus bekannten Operettenmelodien. Die Sänger treten ohne Kostüme auf und benötigen nur genügend Licht für die Noten. Bitte lasst die Leselampen deshalb bis nach dem letzten Stück eingeschaltet.",
+      "expected": "Zum Abschluss gibt es ein kleines Potpourri aus bekannten Operettenmelodien. Die Sänger treten ohne Kostüme auf und benötigen nur genügend Licht für die Noten. Bitte lasst die Leselampen deshalb bis nach dem letzten Stück eingeschaltet.",
+      "edits": []
+    }
+  ]
+}

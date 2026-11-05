@@ -4,6 +4,8 @@
  * SPDX-License-Identifier: GPL-3.0-only
  */
 
+import {hasAlternative,prepareAmbiguity,uniqueRepair} from './ambiguity-lookup.js';
+import {candidates, typingRepair, protectedWord, eligibleInflection} from './candidate-lookup.js';
 import {en as enTypos, de as deTypos} from './typos.js';
 import enLexicon from './lexicons/en.js';
 import * as deAssets from './lexicons/de.js';
@@ -32,7 +34,7 @@ function lexical(language) {
       start = end + 1;
     }
     starts[count] = source.length + 1;
-    validators.set(language, {correct(word) {
+    validators.set(language, { correct(word) {
       let low = 0, high = count - 1;
       while (low <= high) {
         const middle = (low + high) >>> 1;
@@ -147,7 +149,8 @@ function recase(original, replacement) {
 
 const initialEnglish = new Set('please although however unfortunately fortunately tomorrow today yesterday hello kindly thanks'.split(' '));
 const calendarEnglish = new Set('january february march april may june july august september october november december monday tuesday wednesday thursday friday saturday sunday'.split(' '));
-const nounIntroducers = new Set('der die das den dem des ein eine einen einem einer eines kein keine keinen keinem keiner keines ihre ihren ihrer ihrem ihr unsere unseren unserem unserer meine meinen meinem meiner deine deinen deinem deiner seine seinen seinem seiner diese diesen diesem dieser dieses jede jeden jedem jeder jedes welche welchen welchem welcher welches alle allen aller allem einige einigen mehrere mehreren viele vielen weitere weiteren beim zum zur im am vom vorm unterm ins ans aufs fürs'.split(' '));
+const germanCalendar=new Set('montag dienstag mittwoch donnerstag freitag samstag sonntag januar februar märz april mai juni juli august september oktober november dezember'.split(' '));
+const nounIntroducers = new Set('der die das den dem des ein eine einen einem einer eines kein keine keinen keinem keiner keines mein dein sein unser euer eure euren eurem eurer eures ihre ihren ihrer ihrem ihr unsere unseren unserem unserer meine meinen meinem meiner deine deinen deinem deiner seine seinen seinem seiner diese diesen diesem dieser dieses jede jeden jedem jeder jedes welche welchen welchem welcher welches alle allen aller allem einige einigen mehrere mehreren viele vielen weitere weiteren beim zum zur im am vom vorm unterm ins ans aufs fürs'.split(' '));
 function nounContext(before) {
  const words=before.match(/(?:[\p{L}\p{M}-]+\s+){1,4}$/u)?.[0].trim().split(/\s+/u)||[];
  for(let i=words.length-1;i>=0;i--)if(nounIntroducers.has(words[i].toLowerCase())&&words.slice(i+1).every(w=>/^\p{Ll}[\p{Ll}\p{M}-]*(?:e|en|er|es|em)$/u.test(w)))return true;
@@ -190,9 +193,9 @@ function englishPlural(word, spelling) {
   (word.endsWith('ies')&&spelling.correct(word.slice(0,-3)+'y'));
 }
 /** Prepare only static validity inventories. Does not read or retain document text. */
-export function prepare() { lexical('en'); lexical('de'); lexical('deCased'); }
-/** Local-only correction. Candidate generation and ambiguity filtering happen at
- * build time. Runtime returns sorted UTF-16 spans into the ORIGINAL text.
+export function prepare() { lexical('en'); lexical('de'); lexical('deCased'); prepareAmbiguity(); }
+/** Local-only correction. Static candidate data are compiled at build time; bounded complete
+ * one-edit ambiguity checks use a shared lexical automaton at runtime. Runtime returns sorted UTF-16 spans into the ORIGINAL text.
  * No document-derived cache, network, training or search index is retained.
  */
 export function createCorrector({en,de}) {
@@ -205,6 +208,8 @@ export function createCorrector({en,de}) {
   const dict=dictionaries[language],spelling=lexical(language),foreign=lexical(language==='de'?'en':'de');
   const protectedSpans=protectedRanges(text),edits=[];
   let count=0,skipped=0;
+  const candidateCache=new Map(),inflectionCache=new Map(),ambiguityCache=new Map(),candidateBudget={remaining:16000},lexicalBudget={remaining:50000};
+  const ambiguous=(word,target)=>{const key=word+'\t'+target;if(!ambiguityCache.has(key)){const radius=language==='en'&&englishPlural(target,spelling)?2:1;const result=hasAlternative(word,target,lexicalBudget,radius);if(result!==null)ambiguityCache.set(key,result);return result;}return ambiguityCache.get(key);};
   for(const match of text.matchAll(/\p{L}[\p{L}\p{M}]*/gu)){
    if(++count>MAX_WORDS)throw new RangeError('Text exceeds 3,000 word tokens.');
    const original=match[0],start=match.index,end=start+original.length,word=original.toLowerCase();
@@ -212,10 +217,26 @@ export function createCorrector({en,de}) {
       protectedSpans.some(([a,b])=>start<b&&end>a)||
       (original!==word&&original!==original.toUpperCase()&&original.slice(1)!==original.slice(1).toLowerCase())||
       (original===original.toUpperCase()&&original.length<=5)){skipped++;continue;}
-   if(dict.words.has(word)||spelling.correct(word)||spelling.correct(capitalized(word))||
+   if((language==='de'&&word.includes('ß')&&(spelling.correct(word.replace(/ß/g,'ss'))||spelling.correct(capitalized(word.replace(/ß/g,'ss')))))||spelling.correct(word)||spelling.correct(capitalized(word))||
       foreign.correct(word)||foreign.correct(capitalized(word))||
-      (language==='en'&&englishPlural(word,spelling)))continue;
+      (language==='en'&&(englishPlural(word,spelling)||(/lings?$/.test(word)&&spelling.correct(word.replace(/lings?$/,'')))))||
+      (language==='de'&&Array.from({length:Math.max(0,word.length-7)},(_,i)=>i+4).some(at=>spelling.correct(capitalized(word.slice(0,at)))&&spelling.correct(capitalized(word.slice(at)))))||
+      (language==='de'&&/in(?:nen)?$/.test(word)&&(()=>{const stem=word.replace(/in(?:nen)?$/,'');return[stem,stem+'e',stem.replace(/[äöü]/g,c=>({ä:'a',ö:'o',ü:'u'})[c])].some(w=>w.length>=3&&lexical('deCased').correct(capitalized(w)));})()))continue;
+   const titleToken=original[0]!==word[0]&&original!==original.toUpperCase();
+   if(protectedWord('software',word)||(titleToken&&protectedWord('people',word))){skipped++;continue;}
+   let attestedEntry;
+   if(dict.words.has(word)){
+    attestedEntry=language==='de'?prior(language,word):null;
+    let changes=0;
+    const restored=attestedEntry?.replacement;
+    const lostUmlaut=restored?.length===word.length&&[...word].every((letter,i)=>{if(letter===restored[i])return true;changes++;return ({a:'ä',o:'ö',u:'ü'})[letter]===restored[i];})&&changes===1;
+    if(!lostUmlaut)continue;
+   }
    const before=text.slice(Math.max(0,start-128),start),after=text.slice(end,end+128);
+   // Unsupported-script/diacritic neighbors can mark an intentional foreign phrase.
+   // Preserve uncertain wording rather than anglicizing it without language evidence.
+   const neighbors=(before.match(/([\p{L}\p{M}]+)\s+$/u)?.[1]||'')+' '+original+' '+(after.match(/^\s+([\p{L}\p{M}]+)/u)?.[1]||'');
+   if(/[^\x00-\x7fäöüß]/iu.test(neighbors)){skipped++;continue;}
    const titlecase=original[0]!==word[0]&&original!==original.toUpperCase();
    const sentenceStart=/(?:^|[.!?]\s*|[\r\n]\s*)$/u.test(before);
    if(titlecase&&/\b(?:Herrn?|Frau|Dr\.?|Prof\.?|Mr\.?|Mrs\.?|Ms\.?|Dear|Hello|Hi|Hallo|Liebe|Lieber)(?:[ \t]+\p{Lu}[\p{L}\p{M}-]*){0,2}[ \t]+$/u.test(before)){skipped++;continue;}
@@ -225,12 +246,24 @@ export function createCorrector({en,de}) {
    if(language==='de'&&original==='Kanst'&&sentenceStart&&/^\s+du\b/u.test(after))replacement='Kannst';
    if(language==='de'&&original==='Eamil'&&/\b(?:eine|die|diese|ihre|meine|deine|seine|unsere)\s+$/iu.test(before))replacement='E-Mail';
    if(!replacement){
-    const entry=prior(language,word);
-    if(!entry||!dict.words.has(entry.replacement)){skipped++;continue;}
+    let entry=attestedEntry||prior(language,word);
+    if(!entry&&word.length>=6){
+     if(!candidateCache.has(word))candidateCache.set(word,candidates(language,word,candidateBudget));
+     const options=candidateCache.get(word)?.filter(option=>typingRepair(word,option));
+     if(options?.length===1&&typingRepair(word,options[0])&&ambiguous(word,options[0])===false)entry={replacement:options[0],kind:'unique'};
+     // Any common candidate would defeat uniqueness of a different derived form.
+     if(!entry&&options?.length===0){let repair;if(inflectionCache.has(word))repair=inflectionCache.get(word);else{repair=uniqueRepair(word,lexicalBudget);if(repair!==null)inflectionCache.set(word,repair);}if(typeof repair==='string'&&typingRepair(word,repair)&&eligibleInflection(language,repair))entry={replacement:repair,kind:'inflection'};}
+    }
+    if(!entry||(!dict.words.has(entry.replacement)&&entry.kind!=='inflection')){skipped++;continue;}
     const candidate=entry.replacement;
+    const englishProper=language==='de'&&foreign.correct(capitalized(candidate))&&!foreign.correct(candidate);
+    if(englishProper||(language==='en'&&!calendarEnglish.has(candidate)&&!spelling.correct(candidate)&&spelling.correct(capitalized(candidate)))){skipped++;continue;}
+    const closedEnglish=language==='en'&&new Set(['the','and','this','that','with','from','they','your']).has(candidate);
+    if(!closedEnglish&&entry.kind!=='unique'&&ambiguous(word,candidate)!==false){skipped++;continue;}
+
     if(titlecase){
      if(language==='en'&&!((sentenceStart&&initialEnglish.has(candidate))||calendarEnglish.has(candidate))){skipped++;continue;}
-     if(language==='de'&&!nounContext(before)&&!(sentenceStart&&['bitte','morgen','hallo','danke'].includes(candidate))&&
+     if(language==='de'&&!(germanCalendar.has(candidate)&&(/\b(?:am|bis|ab|vor|nach|für|auf|jeden|nächsten|kommenden)\s+$/iu.test(before)||/^\s+(?:wäre|passt)\b/u.test(after)))&&!nounContext(before)&&!(sentenceStart&&['bitte','morgen','hallo','danke'].includes(candidate))&&
         !(['strong','omission'].includes(entry.kind)&&(dict.words.get(candidate)||0)>=1000&&lexical('deCased').correct(capitalized(candidate))&&/(?:ung|ungen|heit|heiten|keit|keiten|schaft|schaften|tion|tionen|tät|täten)$/u.test(candidate))){skipped++;continue;}
     }
     replacement=recase(original,candidate);

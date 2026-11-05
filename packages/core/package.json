@@ -1,9 +1,9 @@
 {
   "name": "@localcorrect/core",
-  "version": "1.0.0-rc.4",
+  "version": "1.0.0-rc.5",
   "type": "module",
   "exports": "./src/index.js",
-    "files": ["src", "vendor", "dictionaries", "licenses", "dictionary-sources.json", "lexicon-sources.json", "typo-sources.json", "LICENSE", "THIRD_PARTY.md"],
+    "files": ["src", "vendor", "dictionaries", "licenses", "dictionary-sources.json", "lexicon-sources.json", "typo-sources.json", "candidate-sources.json", "protect-sources.json", "ambiguity-sources.json", "inflection-sources.json", "LICENSE", "THIRD_PARTY.md"],
   "license": "GPL-3.0-only",
   "description": "Offline SymSpell-based German and English typo correction"
 }

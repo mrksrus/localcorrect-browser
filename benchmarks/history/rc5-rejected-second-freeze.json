@@ -1,0 +1,51 @@
+{
+  "description": "Final RC5 functional policy frozen after known 5,300-document regression tuning and independent source review, before any implementer inspection or engine evaluation of the second independently authored 200-document RC5 audit. The first RC5 audit was consumed by fixes and is now known regression data. Retuning after this second audit consumes it and requires a new independent set for fresh claims.",
+  "frozenAt": "2026-11-05T19:00:04.934649+00:00",
+  "coreSha256": {
+    "src/ambiguity-data.js": "95692bbef3b1ae8a58f162cf4334aaf8212fe254ffa25273ff1ddd06476b5c7a",
+    "src/ambiguity-lookup.js": "620c3dbe077074ded3f76587c52d0f10e433a6c6d76f86c6fd6ac00d6839235a",
+    "src/candidate-lookup.js": "3efdbc0b371909e22dbb41b4ba8216eace9c4920198efe5a0a9fe13bd0eac254",
+    "src/candidates.js": "442d650ac932c6aa0856f4381ac4c0c99c95dfc06144e7151ac14a04b15bd98a",
+    "src/index.js": "9e3b6c147ba5452bc0ec9294c58fe049b8fb659966ea0f36bec88bb98c973edd",
+    "src/inflection-data.js": "bfe4fecd6f21afbb41f86b8ad757e1a43912a447bf56a39eaa49d788f97e631a",
+    "src/lexicons/de.js": "a3d0b332936e8ffce0d81f9e8592472213250677bc2056d06a571bd0b1605dd1",
+    "src/lexicons/en.js": "fd9f4bc914dc9a45a9ab13f8aa198f6f042a48cf4d3ce3d0f80c159f16a7f331",
+    "src/lexicons/nspell.js": "42406e6669a8cd211ab2c9fa9273ae29f7d9fccc4b4e9581545711f4d5adee09",
+    "src/protect-vocabulary.js": "52387aa6bb9fe963443f83d1cff9fb17c3da7a3198e8dc35c3ea6386523a31cf",
+    "src/typos.js": "1d21b2718c3f4a448083825850a540fec22d5e60c77f5951f52b1608ea7677d8",
+    "dictionaries/en.txt": "d2d35a71b7d59ca91f9bdd49cc5406ac85084174d9069b2e9854e4aea357aa5c",
+    "dictionaries/de.txt": "a19ed81a325936cc2f4d0e68d190eae99cd717c8c894e5070cccca447bdef3c4"
+  },
+  "corpusSha256": {
+    "tests/scale-corpus/dev.json": "6f5002544027d008dd5c6e3eab67b0fbcdc96c760c83d05425b76c1e38a39df1",
+    "tests/scale-corpus/holdout.json": "69c15327b31f61fbb2758b59034232a0f50d38223acd653b98bf4ca59868e248",
+    "tests/scale-corpus/blind/cases.json": "317a38b8331358dc01a21776ab68e1452c49bdc3ce19425cd59f87f4cc05fe69",
+    "tests/scale-corpus/rc5-blind/cases.json": "ee33337470c8ff6dec8b42b0a64574e5f2f4954f0bd2346706a9827211f5a5a8",
+    "tests/scale-corpus/rc5-blind2/cases.json": "03ad1bc56d5703aa94dc9a0cad253e2e67d9c39f6db3a9b9fef62d09fd160901"
+  },
+  "evaluationRoles": {
+    "knownRegression": [
+      "tests/scale-corpus/dev.json",
+      "tests/scale-corpus/holdout.json",
+      "tests/scale-corpus/blind/cases.json",
+      "tests/scale-corpus/rc5-blind/cases.json"
+    ],
+    "freshAtFirstEvaluation": [
+      "tests/scale-corpus/rc5-blind2/cases.json"
+    ]
+  },
+  "independentAuditAuthorship": {
+    "documents": 200,
+    "languages": {
+      "en": 100,
+      "de": 100
+    },
+    "correctionDocuments": 100,
+    "safeDocuments": 100,
+    "goldEdits": 217,
+    "authorHadNoEngineCompilerOrEvaluationResultsAccess": true,
+    "authorKnewOwnEarlierAudit": true,
+    "authorWasKeptUnawareOfFailuresAndFixes": true,
+    "preEvaluationSha256": "03ad1bc56d5703aa94dc9a0cad253e2e67d9c39f6db3a9b9fef62d09fd160901"
+  }
+}

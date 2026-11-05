@@ -1,0 +1,9 @@
+# Second RC5 independent audit
+
+200 independently authored synthetic documents: 100 English and 100 German, 100 typo-bearing and 100 unchanged controls, with 217 gold edits. There are 80 emails, 80 other multi-paragraph texts and 40 short texts, including ten long emails of 890–939 alphabetic word tokens. Maximum input is 6,668 UTF-16 units. Python and JavaScript validators independently reconstruct all outputs and confirm original-input UTF-16 edit spans, document format, unique IDs/inputs and bounds. No real correspondence or private chat text is included.
+
+The author knew its own first audit, but had no access to the engine, compiler, evaluation results, first-audit failures or subsequent fixes. New contexts and the distinct `rc5b2-` IDs avoid duplicate documents. The completed hash was supplied before implementing-agent inspection or engine evaluation. The complete final policy and all gold hashes were frozen in `evaluation-freeze.json` before the cases were copied or inspected.
+
+This is fresh authored-context validation at its first final-policy evaluation, not necessarily unseen spelling knowledge or an independent random sample of everyday usage. After publication it is known regression data. Retuning on it must not be presented as unseen validation. Synthetic cases and intended edits are published under GPL-3.0-only with the repository.
+
+The frozen candidate made 75 wanted edits, one unwanted edit and missed 142, completing 122/200 documents and preserving 99/100 controls. It was rejected. This set was then consumed by a general proper-name-target fix; its gold was not changed. The original source hashes/results remain in `benchmarks/history/rc5-rejected-second-*`, and exact functional sources accompany the release. A different author produced the final 100-case audit after this set became known.

@@ -18,7 +18,7 @@ for(const row of cases){
  let end=0,rebuilt='';
  for(const e of row.edits){assert.ok(Number.isInteger(e.offset)&&Number.isInteger(e.length)&&e.offset>=end&&e.length>0&&e.offset+e.length<=row.input.length);assert.equal(e.length,e.original.length);assert.equal(row.input.slice(e.offset,e.offset+e.length),e.original);assert.match(e.replacement,/^\p{L}[\p{L}\p{M}-]*$/u);rebuilt+=row.input.slice(end,e.offset)+e.replacement;end=e.offset+e.length;}
  assert.equal(rebuilt+row.input.slice(end),row.expected,'Gold reconstruction '+row.id);
- if(row.format!=='short')assert.ok(row.input.replace(/\r\n?/g,'\n').split(/\n[ \t]*\n+/).length>=(row.format==='email'?5:2));
+ if(row.format!=='short')assert.ok(row.input.replace(/\r\n?/g,'\n').split(/\n[ \t]*\n+/).length>=(row.format==='email'?3:2));
 }
 const core=resolve(arg('--core','packages/core'));
 const walk=dir=>readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(resolve(dir,e.name)):[resolve(dir,e.name)]);

@@ -22,7 +22,7 @@ corpus occurrence counts, not probabilities. The resulting dictionaries remain
 CC BY-SA 4.0. Attribution/license: https://creativecommons.org/licenses/by-sa/4.0/.
 Source URLs, exact hashes and resulting word counts: dictionary-sources.json.
 Reproduce with `python scripts/dictionaries.py` (maintainer network operation).
-No SymSpell.FrequencyDictionary data are used. Frequency ranking is not a
+No SymSpell frequency-dictionary data are used in the shipping engine. An English bigram research trial reused its separately attributed Google Books-derived file, produced no accepted coverage improvement, and is excluded from runtime assets. Frequency ranking is not a
 spelling-validity inventory; a separate Hunspell layer below vetoes valid words.
 
 ## Mandatory offline lexical validation
@@ -59,7 +59,7 @@ LocalCorrect started as an original JavaScript reimplementation of Wolf Garbe's
 MIT upstream. It is not a GitHub fork and no upstream implementation or SymSpell
 frequency dictionary was copied. The current compiler uses symmetric-delete keys
 and optimal-string-alignment distance to reject competing common spellings.
-Runtime uses the compiled lookup, with lexical validity and protection gates.
+Runtime uses compiled candidate data and a compact bounded lexical ambiguity lookup, with validity and protection gates.
 
 ## Recorded typo data
 
@@ -102,3 +102,15 @@ not included as a runtime dependency. Generated bundles contain LocalCorrect
 source and derived validity inventories; validator source is retained under vendor.
 No remotely loaded code
 is used by the extension.
+
+## Protective vocabulary
+
+[CSpell dictionaries](https://github.com/streetsidesoftware/cspell-dicts), Street Side Software and contributors, revision `f01d6cba4fe0161d337fc7339857783c3746e59c`, provide software terms and personal names. The selected software and people source files are MIT licensed. Each original package LICENSE and README is retained under `packages/core/vendor/protect-vocabulary`.
+
+[Homebrew homebrew-core](https://github.com/Homebrew/homebrew-core), Homebrew contributors, revision `24bd80530c4270536ee7cecdf60c82e71b2f6aad`, provides 8,704 formula names extracted from the pinned Git tree. Only formula basenames are used, not formula implementation code. Its BSD-2-Clause notice is retained as `homebrew--LICENSE.txt` and copied to the normal license directory.
+
+`scripts/protect-vocabulary.mjs` filters positive source terms, normalizes NFC and case, and adds conservative regular software plurals. These terms prevent speculative changes. Names protect titlecase input; software terms protect any case. This is preservation vocabulary, not a list of corrections or test answers. `protect-sources.json` and the vendored `sources.json` record every source URL, revision, byte count, transform and SHA-256. `python3 scripts/fetch-protect.py` restores exactly those pinned bytes. Ordinary builds use the vendored files offline.
+
+`scripts/candidates.mjs` compiles the bounded one-edit candidate index from the already attributed frequency and validity inventories. `scripts/ambiguity-lexicon.mjs` compiles a shared finite-state ambiguity inventory from both languages and the protective sources. These transformations do not remove the source licenses. All inputs, generators and notices accompany the packages. No corpus gold is read by these compilers.
+
+`scripts/inflection-eligibility.mjs` reuses the unchanged regional Hunspell affix rules with only source base lines present in the original frequency vocabulary at frequency150 or higher. Accepted expansions must also occur in the full selected-language inventory; existing frequency words are excluded. `inflection-sources.json` pins every dictionary, parser, compiler and manifest input. These positive eligibility forms inherit the original dictionary notices and never authorize a correction without complete runtime uniqueness and the ordinary protection gates.

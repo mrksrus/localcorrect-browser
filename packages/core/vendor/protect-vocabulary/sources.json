@@ -1,0 +1,135 @@
+{
+  "project": "CSpell dictionaries, Street Side Software and contributors",
+  "revision": "f01d6cba4fe0161d337fc7339857783c3746e59c",
+  "license": "MIT, see per-package LICENSE and source notices",
+  "sources": [
+    {
+      "path": "dictionaries/software-terms/LICENSE",
+      "file": "software-terms--LICENSE",
+      "bytes": 1124,
+      "sha256": "6245ecd81789d113a600fa0e4f5f503e6d1b4f425860f6047dc945560dfcf13c",
+      "url": "https://raw.githubusercontent.com/streetsidesoftware/cspell-dicts/f01d6cba4fe0161d337fc7339857783c3746e59c/dictionaries/software-terms/LICENSE"
+    },
+    {
+      "path": "dictionaries/software-terms/README.md",
+      "file": "software-terms--README.md",
+      "bytes": 4742,
+      "sha256": "2f022a9c49f815f6286c4c6373d42035974211e381c307908445a79a2ce22699",
+      "url": "https://raw.githubusercontent.com/streetsidesoftware/cspell-dicts/f01d6cba4fe0161d337fc7339857783c3746e59c/dictionaries/software-terms/README.md"
+    },
+    {
+      "path": "dictionaries/people-names/LICENSE",
+      "file": "people-names--LICENSE",
+      "bytes": 1119,
+      "sha256": "3e5d4e1b47ac761990d7d930cdb0cd156606244621e2f3dbcf8d35b60ad4977a",
+      "url": "https://raw.githubusercontent.com/streetsidesoftware/cspell-dicts/f01d6cba4fe0161d337fc7339857783c3746e59c/dictionaries/people-names/LICENSE"
+    },
+    {
+      "path": "dictionaries/people-names/README.md",
+      "file": "people-names--README.md",
+      "bytes": 5453,
+      "sha256": "b5586fc763b53f934ac000e402b66d50d9fb1dd84300df30188ad1ab8b4d9740",
+      "url": "https://raw.githubusercontent.com/streetsidesoftware/cspell-dicts/f01d6cba4fe0161d337fc7339857783c3746e59c/dictionaries/people-names/README.md"
+    },
+    {
+      "path": "dictionaries/software-terms/src/coding-terms.txt",
+      "file": "software-terms--src--coding-terms.txt",
+      "bytes": 13932,
+      "sha256": "5f9f1a401e83006543d7ea4470591f1bb003d41ed8e43155115f3dc0c3b71598",
+      "url": "https://raw.githubusercontent.com/streetsidesoftware/cspell-dicts/f01d6cba4fe0161d337fc7339857783c3746e59c/dictionaries/software-terms/src/coding-terms.txt"
+    },
+    {
+      "path": "dictionaries/software-terms/src/software-terms.txt",
+      "file": "software-terms--src--software-terms.txt",
+      "bytes": 22603,
+      "sha256": "b48e669314a91f6ef4ad3f8797bc51aa0292dd41300bc2082a49316c8cdfa251",
+      "url": "https://raw.githubusercontent.com/streetsidesoftware/cspell-dicts/f01d6cba4fe0161d337fc7339857783c3746e59c/dictionaries/software-terms/src/software-terms.txt"
+    },
+    {
+      "path": "dictionaries/software-terms/src/software-terms-legacy.txt",
+      "file": "software-terms--src--software-terms-legacy.txt",
+      "bytes": 497,
+      "sha256": "ecae9afb634c0b1466fb01f1ec8025981c3c37c4e0eca9f1b434fc0a759846a0",
+      "url": "https://raw.githubusercontent.com/streetsidesoftware/cspell-dicts/f01d6cba4fe0161d337fc7339857783c3746e59c/dictionaries/software-terms/src/software-terms-legacy.txt"
+    },
+    {
+      "path": "dictionaries/software-terms/src/software-tools.txt",
+      "file": "software-terms--src--software-tools.txt",
+      "bytes": 6241,
+      "sha256": "dc9036b00cf72b0881274207e3a9802c4b840c4560c14d43994b919cfaf47aa3",
+      "url": "https://raw.githubusercontent.com/streetsidesoftware/cspell-dicts/f01d6cba4fe0161d337fc7339857783c3746e59c/dictionaries/software-terms/src/software-tools.txt"
+    },
+    {
+      "path": "dictionaries/software-terms/src/software-services.txt",
+      "file": "software-terms--src--software-services.txt",
+      "bytes": 363,
+      "sha256": "4125c5bd54e9435111dcb3d9c4f00b2998f391ea6421aac057287e5d23c6ff1f",
+      "url": "https://raw.githubusercontent.com/streetsidesoftware/cspell-dicts/f01d6cba4fe0161d337fc7339857783c3746e59c/dictionaries/software-terms/src/software-services.txt"
+    },
+    {
+      "path": "dictionaries/software-terms/src/cybersecurity-terms.txt",
+      "file": "software-terms--src--cybersecurity-terms.txt",
+      "bytes": 329,
+      "sha256": "1c00c6015c5d7970e763756ecc7cfafc1a50eb98f44f544309bdd3c234cb0b45",
+      "url": "https://raw.githubusercontent.com/streetsidesoftware/cspell-dicts/f01d6cba4fe0161d337fc7339857783c3746e59c/dictionaries/software-terms/src/cybersecurity-terms.txt"
+    },
+    {
+      "path": "dictionaries/software-terms/src/network-os.txt",
+      "file": "software-terms--src--network-os.txt",
+      "bytes": 122,
+      "sha256": "75749b9e90aea3ffaaa51535ad4f3d9b96610f68577cc5ef612a388687ceb9c9",
+      "url": "https://raw.githubusercontent.com/streetsidesoftware/cspell-dicts/f01d6cba4fe0161d337fc7339857783c3746e59c/dictionaries/software-terms/src/network-os.txt"
+    },
+    {
+      "path": "dictionaries/software-terms/src/network-protocols.txt",
+      "file": "software-terms--src--network-protocols.txt",
+      "bytes": 356,
+      "sha256": "b2b8f0f0cb21dce4b6c26ed8b044dc99b1ebae5e95e85bfff520265e8874f0eb",
+      "url": "https://raw.githubusercontent.com/streetsidesoftware/cspell-dicts/f01d6cba4fe0161d337fc7339857783c3746e59c/dictionaries/software-terms/src/network-protocols.txt"
+    },
+    {
+      "path": "dictionaries/software-terms/src/coding-compound-terms.txt",
+      "file": "software-terms--src--coding-compound-terms.txt",
+      "bytes": 1411,
+      "sha256": "a3c2d70c9684592ce7fa45ffc838e0abc8be9bbe45d5a039c2c4cc9ef2f8602e",
+      "url": "https://raw.githubusercontent.com/streetsidesoftware/cspell-dicts/f01d6cba4fe0161d337fc7339857783c3746e59c/dictionaries/software-terms/src/coding-compound-terms.txt"
+    },
+    {
+      "path": "dictionaries/people-names/src/names.txt",
+      "file": "people-names--src--names.txt",
+      "bytes": 4715,
+      "sha256": "533f6ac8c2ea4518c3a7ef9ee2d261ca3953d2b58ca13cf5e7fe21b3dd849216",
+      "url": "https://raw.githubusercontent.com/streetsidesoftware/cspell-dicts/f01d6cba4fe0161d337fc7339857783c3746e59c/dictionaries/people-names/src/names.txt"
+    },
+    {
+      "path": "dictionaries/people-names/src/us-census.txt",
+      "file": "people-names--src--us-census.txt",
+      "bytes": 290620,
+      "sha256": "72b25d7006ee9f730b9bb37ae38936bb4bafcbdba641e078e95cc70c0c19274c",
+      "url": "https://raw.githubusercontent.com/streetsidesoftware/cspell-dicts/f01d6cba4fe0161d337fc7339857783c3746e59c/dictionaries/people-names/src/us-census.txt"
+    },
+    {
+      "file": "homebrew--formula-names.txt",
+      "bytes": 77595,
+      "sha256": "ba5a60cc2d669acabeed5e21ff301f0bdbd6a45c3962515867188fad30446465",
+      "url": "https://api.github.com/repos/Homebrew/homebrew-core/git/trees/24bd80530c4270536ee7cecdf60c82e71b2f6aad?recursive=1"
+    },
+    {
+      "file": "homebrew--LICENSE.txt",
+      "bytes": 1334,
+      "sha256": "f80329e58613ad669c0e73cb132d8060b9b2c55e339c73848068e4d1567f4627",
+      "url": "https://raw.githubusercontent.com/Homebrew/homebrew-core/24bd80530c4270536ee7cecdf60c82e71b2f6aad/LICENSE.txt"
+    }
+  ],
+  "additionalProjects": [
+    {
+      "project": "Homebrew homebrew-core formula names",
+      "revision": "24bd80530c4270536ee7cecdf60c82e71b2f6aad",
+      "license": "BSD-2-Clause, see homebrew--LICENSE.txt",
+      "treeUrl": "https://api.github.com/repos/Homebrew/homebrew-core/git/trees/24bd80530c4270536ee7cecdf60c82e71b2f6aad?recursive=1",
+      "treeSha256": "4fab26e0a54168dd21d9aaff153f46e8e37e8219e5dccd49f56deed4f7238c64",
+      "formulaPaths": 8704,
+      "transform": "Sorted unique basenames of Formula/**/*.rb, without .rb. Names protect software terminology; no formula code used."
+    }
+  ]
+}
