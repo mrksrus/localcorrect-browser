@@ -1,0 +1,3507 @@
+{
+  "notes": "Deidentified manually selected isolated word pairs only. No source stories, child identifiers, personal metadata, or source file names. Original per-pair licenses retained.",
+  "pairs": [
+    {
+      "language": "de",
+      "typo": "Aderese",
+      "target": "Adresse",
+      "pairFamily": "target:adresse",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Aderese",
+        "Adresse"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00009"
+    },
+    {
+      "language": "de",
+      "typo": "Adrese",
+      "target": "Adresse",
+      "pairFamily": "target:adresse",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "adrese",
+        "Adresse"
+      ],
+      "sourceCaseAdapted": true,
+      "sourceOccurrences": 5,
+      "pairId": "pair-00011"
+    },
+    {
+      "language": "de",
+      "typo": "Adrresse",
+      "target": "Adresse",
+      "pairFamily": "target:adresse",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Adrresse",
+        "Adresse"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00012"
+    },
+    {
+      "language": "de",
+      "typo": "Antort",
+      "target": "Antwort",
+      "pairFamily": "target:antwort",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Antort",
+        "Antwort"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00029"
+    },
+    {
+      "language": "de",
+      "typo": "Abeit",
+      "target": "Arbeit",
+      "pairFamily": "target:arbeit",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Abeit",
+        "Arbeit"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00041"
+    },
+    {
+      "language": "de",
+      "typo": "abeiten",
+      "target": "arbeiten",
+      "pairFamily": "target:arbeit",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "abeiten",
+        "arbeiten"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00046"
+    },
+    {
+      "language": "de",
+      "typo": "Aufgade",
+      "target": "Aufgabe",
+      "pairFamily": "target:aufgabe",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "aufgade",
+        "Aufgabe"
+      ],
+      "sourceCaseAdapted": true,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00053"
+    },
+    {
+      "language": "de",
+      "typo": "Beischbiel",
+      "target": "Beispiel",
+      "pairFamily": "target:beispiel",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "beischbiel",
+        "Beispiel"
+      ],
+      "sourceCaseAdapted": true,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00076"
+    },
+    {
+      "language": "de",
+      "typo": "Bescheit",
+      "target": "Bescheid",
+      "pairFamily": "target:bescheid",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "bescheit",
+        "Bescheid"
+      ],
+      "sourceCaseAdapted": true,
+      "sourceOccurrences": 3,
+      "pairId": "pair-00095"
+    },
+    {
+      "language": "de",
+      "typo": "bestimt",
+      "target": "bestimmt",
+      "pairFamily": "target:bestimmt",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "bestimt",
+        "bestimmt"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 8,
+      "pairId": "pair-00107"
+    },
+    {
+      "language": "de",
+      "typo": "Besuh",
+      "target": "Besuch",
+      "pairFamily": "target:besuch",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "besuh",
+        "Besuch"
+      ],
+      "sourceCaseAdapted": true,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00118"
+    },
+    {
+      "language": "de",
+      "typo": "Bruke",
+      "target": "Brücke",
+      "pairFamily": "target:brücke",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "bruke",
+        "Brücke"
+      ],
+      "sourceCaseAdapted": true,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00136"
+    },
+    {
+      "language": "de",
+      "typo": "Brüo",
+      "target": "Büro",
+      "pairFamily": "target:büro",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Brüo",
+        "Büro"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 2,
+      "pairId": "pair-00141"
+    },
+    {
+      "language": "de",
+      "typo": "Donerstag",
+      "target": "Donnerstag",
+      "pairFamily": "target:donnerstag",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Donerstag",
+        "Donnerstag"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 2,
+      "pairId": "pair-00158"
+    },
+    {
+      "language": "de",
+      "typo": "Donnstag",
+      "target": "Donnerstag",
+      "pairFamily": "target:donnerstag",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Donnstag",
+        "Donnerstag"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00163"
+    },
+    {
+      "language": "de",
+      "typo": "drausen",
+      "target": "draußen",
+      "pairFamily": "target:draussen",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "drausen",
+        "draußen"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 54,
+      "pairId": "pair-00165"
+    },
+    {
+      "language": "de",
+      "typo": "entlich",
+      "target": "endlich",
+      "pairFamily": "target:endlich",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "entlich",
+        "endlich"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 10,
+      "pairId": "pair-00185"
+    },
+    {
+      "language": "de",
+      "typo": "Endschuldigung",
+      "target": "Entschuldigung",
+      "pairFamily": "target:entschuldigung",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Endschuldigung",
+        "Entschuldigung"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 2,
+      "pairId": "pair-00190"
+    },
+    {
+      "language": "de",
+      "typo": "Enschuldigung",
+      "target": "Entschuldigung",
+      "pairFamily": "target:entschuldigung",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Enschuldigung",
+        "Entschuldigung"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 2,
+      "pairId": "pair-00191"
+    },
+    {
+      "language": "de",
+      "typo": "Ergebniss",
+      "target": "Ergebnis",
+      "pairFamily": "target:ergebnis",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Ergebniss",
+        "Ergebnis"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00201"
+    },
+    {
+      "language": "de",
+      "typo": "Fehnster",
+      "target": "Fenster",
+      "pairFamily": "target:fenster",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "fehnster",
+        "Fenster"
+      ],
+      "sourceCaseAdapted": true,
+      "sourceOccurrences": 4,
+      "pairId": "pair-00229"
+    },
+    {
+      "language": "de",
+      "typo": "Fnster",
+      "target": "Fenster",
+      "pairFamily": "target:fenster",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Fnster",
+        "Fenster"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 4,
+      "pairId": "pair-00234"
+    },
+    {
+      "language": "de",
+      "typo": "fertich",
+      "target": "fertig",
+      "pairFamily": "target:fertig",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "fertich",
+        "fertig"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 3,
+      "pairId": "pair-00241"
+    },
+    {
+      "language": "de",
+      "typo": "vertig",
+      "target": "fertig",
+      "pairFamily": "target:fertig",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "vertig",
+        "fertig"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 15,
+      "pairId": "pair-00244"
+    },
+    {
+      "language": "de",
+      "typo": "freunglich",
+      "target": "freundlich",
+      "pairFamily": "target:freundlich",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "freunglich",
+        "freundlich"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00263"
+    },
+    {
+      "language": "de",
+      "typo": "Früstück",
+      "target": "Frühstück",
+      "pairFamily": "target:frühstück",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Früstück",
+        "Frühstück"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00270"
+    },
+    {
+      "language": "de",
+      "typo": "Geburstag",
+      "target": "Geburtstag",
+      "pairFamily": "target:geburtstag",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "geburstag",
+        "Geburtstag"
+      ],
+      "sourceCaseAdapted": true,
+      "sourceOccurrences": 2,
+      "pairId": "pair-00275"
+    },
+    {
+      "language": "de",
+      "typo": "gemeisam",
+      "target": "gemeinsam",
+      "pairFamily": "target:gemeinsam",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "gemeisam",
+        "gemeinsam"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00297"
+    },
+    {
+      "language": "de",
+      "typo": "geschaft",
+      "target": "geschafft",
+      "pairFamily": "target:geschafft",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "geschaft",
+        "geschafft"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 20,
+      "pairId": "pair-00303"
+    },
+    {
+      "language": "de",
+      "typo": "Gescheng",
+      "target": "Geschenk",
+      "pairFamily": "target:geschenk",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Gescheng",
+        "Geschenk"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 2,
+      "pairId": "pair-00308"
+    },
+    {
+      "language": "de",
+      "typo": "Gescheft",
+      "target": "Geschäft",
+      "pairFamily": "target:geschäft",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "gescheft",
+        "Geschäft"
+      ],
+      "sourceCaseAdapted": true,
+      "sourceOccurrences": 2,
+      "pairId": "pair-00311"
+    },
+    {
+      "language": "de",
+      "typo": "geleichzeitich",
+      "target": "gleichzeitig",
+      "pairFamily": "target:gleichzeitig",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "geleichzeitich",
+        "gleichzeitig"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00332"
+    },
+    {
+      "language": "de",
+      "typo": "glucklich",
+      "target": "glücklich",
+      "pairFamily": "target:glücklich",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "glucklich",
+        "glücklich"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 11,
+      "pairId": "pair-00337"
+    },
+    {
+      "language": "de",
+      "typo": "glüglich",
+      "target": "glücklich",
+      "pairFamily": "target:glücklich",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "glüglich",
+        "glücklich"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 17,
+      "pairId": "pair-00342"
+    },
+    {
+      "language": "de",
+      "typo": "glüklich",
+      "target": "glücklich",
+      "pairFamily": "target:glücklich",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "glüklich",
+        "glücklich"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 52,
+      "pairId": "pair-00343"
+    },
+    {
+      "language": "de",
+      "typo": "Halltestelle",
+      "target": "Haltestelle",
+      "pairFamily": "target:haltestelle",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Halltestelle",
+        "Haltestelle"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00352"
+    },
+    {
+      "language": "de",
+      "typo": "Haltestele",
+      "target": "Haltestelle",
+      "pairFamily": "target:haltestelle",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Haltestele",
+        "Haltestelle"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 2,
+      "pairId": "pair-00355"
+    },
+    {
+      "language": "de",
+      "typo": "interesant",
+      "target": "interessant",
+      "pairFamily": "target:interessant",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "interesant",
+        "interessant"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 2,
+      "pairId": "pair-00375"
+    },
+    {
+      "language": "de",
+      "typo": "Kartong",
+      "target": "Karton",
+      "pairFamily": "target:karton",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Kartong",
+        "Karton"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 52,
+      "pairId": "pair-00397"
+    },
+    {
+      "language": "de",
+      "typo": "Katon",
+      "target": "Karton",
+      "pairFamily": "target:karton",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Katon",
+        "Karton"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 25,
+      "pairId": "pair-00400"
+    },
+    {
+      "language": "de",
+      "typo": "Katong",
+      "target": "Karton",
+      "pairFamily": "target:karton",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Katong",
+        "Karton"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 51,
+      "pairId": "pair-00401"
+    },
+    {
+      "language": "de",
+      "typo": "Kalege",
+      "target": "Kollege",
+      "pairFamily": "target:kollege",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Kalege",
+        "Kollege"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00406"
+    },
+    {
+      "language": "de",
+      "typo": "Küsche",
+      "target": "Küche",
+      "pairFamily": "target:küche",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Küsche",
+        "Küche"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 2,
+      "pairId": "pair-00426"
+    },
+    {
+      "language": "de",
+      "typo": "lamgsam",
+      "target": "langsam",
+      "pairFamily": "target:langsam",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "lamgsam",
+        "langsam"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 2,
+      "pairId": "pair-00428"
+    },
+    {
+      "language": "de",
+      "typo": "langsamm",
+      "target": "langsam",
+      "pairFamily": "target:langsam",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "langsamm",
+        "langsam"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00430"
+    },
+    {
+      "language": "de",
+      "typo": "Leherin",
+      "target": "Lehrerin",
+      "pairFamily": "target:lehrerin",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Leherin",
+        "Lehrerin"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 12,
+      "pairId": "pair-00434"
+    },
+    {
+      "language": "de",
+      "typo": "Lererin",
+      "target": "Lehrerin",
+      "pairFamily": "target:lehrerin",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Lererin",
+        "Lehrerin"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 26,
+      "pairId": "pair-00439"
+    },
+    {
+      "language": "de",
+      "typo": "machmal",
+      "target": "manchmal",
+      "pairFamily": "target:manchmal",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "machmal",
+        "manchmal"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00452"
+    },
+    {
+      "language": "de",
+      "typo": "Nachber",
+      "target": "Nachbar",
+      "pairFamily": "target:nachbar",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Nachber",
+        "Nachbar"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 6,
+      "pairId": "pair-00467"
+    },
+    {
+      "language": "de",
+      "typo": "Nachmitag",
+      "target": "Nachmittag",
+      "pairFamily": "target:nachmittag",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Nachmitag",
+        "Nachmittag"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 4,
+      "pairId": "pair-00471"
+    },
+    {
+      "language": "de",
+      "typo": "Nachmitttag",
+      "target": "Nachmittag",
+      "pairFamily": "target:nachmittag",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Nachmitttag",
+        "Nachmittag"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00472"
+    },
+    {
+      "language": "de",
+      "typo": "Nachicht",
+      "target": "Nachricht",
+      "pairFamily": "target:nachricht",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Nachicht",
+        "Nachricht"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 2,
+      "pairId": "pair-00476"
+    },
+    {
+      "language": "de",
+      "typo": "nardürlich",
+      "target": "natürlich",
+      "pairFamily": "target:natürlich",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "nardürlich",
+        "natürlich"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 2,
+      "pairId": "pair-00481"
+    },
+    {
+      "language": "de",
+      "typo": "Numer",
+      "target": "Nummer",
+      "pairFamily": "target:nummer",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "numer",
+        "Nummer"
+      ],
+      "sourceCaseAdapted": true,
+      "sourceOccurrences": 12,
+      "pairId": "pair-00487"
+    },
+    {
+      "language": "de",
+      "typo": "Ordnog",
+      "target": "Ordnung",
+      "pairFamily": "target:ordnung",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "ordnog",
+        "Ordnung"
+      ],
+      "sourceCaseAdapted": true,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00493"
+    },
+    {
+      "language": "de",
+      "typo": "plotzlich",
+      "target": "plötzlich",
+      "pairFamily": "target:plötzlich",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Plotzlich",
+        "Plötzlich"
+      ],
+      "sourceCaseAdapted": true,
+      "sourceOccurrences": 26,
+      "pairId": "pair-00516"
+    },
+    {
+      "language": "de",
+      "typo": "plözlich",
+      "target": "plötzlich",
+      "pairFamily": "target:plötzlich",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Plözlich",
+        "Plötzlich"
+      ],
+      "sourceCaseAdapted": true,
+      "sourceOccurrences": 45,
+      "pairId": "pair-00521"
+    },
+    {
+      "language": "de",
+      "typo": "Poblem",
+      "target": "Problem",
+      "pairFamily": "target:problem",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Poblem",
+        "Problem"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00522"
+    },
+    {
+      "language": "de",
+      "typo": "Rucksag",
+      "target": "Rucksack",
+      "pairFamily": "target:rucksack",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Rucksag",
+        "Rucksack"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 8,
+      "pairId": "pair-00558"
+    },
+    {
+      "language": "de",
+      "typo": "Rucksak",
+      "target": "Rucksack",
+      "pairFamily": "target:rucksack",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Rucksak",
+        "Rucksack"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 40,
+      "pairId": "pair-00559"
+    },
+    {
+      "language": "de",
+      "typo": "Ruksak",
+      "target": "Rucksack",
+      "pairFamily": "target:rucksack",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Ruksak",
+        "Rucksack"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 12,
+      "pairId": "pair-00561"
+    },
+    {
+      "language": "de",
+      "typo": "schnel",
+      "target": "schnell",
+      "pairFamily": "target:schnell",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "schnel",
+        "schnell"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 60,
+      "pairId": "pair-00568"
+    },
+    {
+      "language": "de",
+      "typo": "schnnel",
+      "target": "schnell",
+      "pairFamily": "target:schnell",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "schnnel",
+        "schnell"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 2,
+      "pairId": "pair-00570"
+    },
+    {
+      "language": "de",
+      "typo": "Schocklade",
+      "target": "Schokolade",
+      "pairFamily": "target:schokolade",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "schocklade",
+        "Schokolade"
+      ],
+      "sourceCaseAdapted": true,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00572"
+    },
+    {
+      "language": "de",
+      "typo": "Schrebtisch",
+      "target": "Schreibtisch",
+      "pairFamily": "target:schreibtisch",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "schrebtisch",
+        "Schreibtisch"
+      ],
+      "sourceCaseAdapted": true,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00577"
+    },
+    {
+      "language": "de",
+      "typo": "Schreiptisch",
+      "target": "Schreibtisch",
+      "pairFamily": "target:schreibtisch",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Schreiptisch",
+        "Schreibtisch"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00579"
+    },
+    {
+      "language": "de",
+      "typo": "Schuhle",
+      "target": "Schule",
+      "pairFamily": "target:schule",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Schuhle",
+        "Schule"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 12,
+      "pairId": "pair-00586"
+    },
+    {
+      "language": "de",
+      "typo": "Schulle",
+      "target": "Schule",
+      "pairFamily": "target:schule",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Schulle",
+        "Schule"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 4,
+      "pairId": "pair-00587"
+    },
+    {
+      "language": "de",
+      "typo": "Schicherheit",
+      "target": "Sicherheit",
+      "pairFamily": "target:sicherheit",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "schicherheit",
+        "Sicherheit"
+      ],
+      "sourceCaseAdapted": true,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00601"
+    },
+    {
+      "language": "de",
+      "typo": "Sontag",
+      "target": "Sonntag",
+      "pairFamily": "target:sonntag",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Sontag",
+        "Sonntag"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 2,
+      "pairId": "pair-00613"
+    },
+    {
+      "language": "de",
+      "typo": "schpäter",
+      "target": "später",
+      "pairFamily": "target:später",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "schpäter",
+        "später"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 2,
+      "pairId": "pair-00619"
+    },
+    {
+      "language": "de",
+      "typo": "Strase",
+      "target": "Straße",
+      "pairFamily": "target:strasse",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Strase",
+        "Straße"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 2,
+      "pairId": "pair-00625"
+    },
+    {
+      "language": "de",
+      "typo": "Schtunde",
+      "target": "Stunde",
+      "pairFamily": "target:stunde",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "schtunde",
+        "Stunde"
+      ],
+      "sourceCaseAdapted": true,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00629"
+    },
+    {
+      "language": "de",
+      "typo": "Tache",
+      "target": "Tasche",
+      "pairFamily": "target:tasche",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Tache",
+        "Tasche"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 10,
+      "pairId": "pair-00634"
+    },
+    {
+      "language": "de",
+      "typo": "Telefohn",
+      "target": "Telefon",
+      "pairFamily": "target:telefon",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Telefohn",
+        "Telefon"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 4,
+      "pairId": "pair-00640"
+    },
+    {
+      "language": "de",
+      "typo": "Telepfon",
+      "target": "Telefon",
+      "pairFamily": "target:telefon",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Telepfon",
+        "Telefon"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 3,
+      "pairId": "pair-00641"
+    },
+    {
+      "language": "de",
+      "typo": "Telofon",
+      "target": "Telefon",
+      "pairFamily": "target:telefon",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Telofon",
+        "Telefon"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 3,
+      "pairId": "pair-00644"
+    },
+    {
+      "language": "de",
+      "typo": "Trefen",
+      "target": "Treffen",
+      "pairFamily": "target:treffen",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "trefen",
+        "treffen"
+      ],
+      "sourceCaseAdapted": true,
+      "sourceOccurrences": 16,
+      "pairId": "pair-00655"
+    },
+    {
+      "language": "de",
+      "typo": "fergessen",
+      "target": "vergessen",
+      "pairFamily": "target:vergessen",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "fergessen",
+        "vergessen"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 21,
+      "pairId": "pair-00691"
+    },
+    {
+      "language": "de",
+      "typo": "vergesen",
+      "target": "vergessen",
+      "pairFamily": "target:vergessen",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "vergesen",
+        "vergessen"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 42,
+      "pairId": "pair-00693"
+    },
+    {
+      "language": "de",
+      "typo": "fersucht",
+      "target": "versucht",
+      "pairFamily": "target:versuch",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "fersucht",
+        "versucht"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 24,
+      "pairId": "pair-00713"
+    },
+    {
+      "language": "de",
+      "typo": "vieleicht",
+      "target": "vielleicht",
+      "pairFamily": "target:vielleicht",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "vieleicht",
+        "vielleicht"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 7,
+      "pairId": "pair-00718"
+    },
+    {
+      "language": "de",
+      "typo": "vileicht",
+      "target": "vielleicht",
+      "pairFamily": "target:vielleicht",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "vileicht",
+        "vielleicht"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 3,
+      "pairId": "pair-00723"
+    },
+    {
+      "language": "de",
+      "typo": "Waser",
+      "target": "Wasser",
+      "pairFamily": "target:wasser",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "waser",
+        "Wasser"
+      ],
+      "sourceCaseAdapted": true,
+      "sourceOccurrences": 18,
+      "pairId": "pair-00737"
+    },
+    {
+      "language": "de",
+      "typo": "wircklich",
+      "target": "wirklich",
+      "pairFamily": "target:wirklich",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "wircklich",
+        "wirklich"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 3,
+      "pairId": "pair-00753"
+    },
+    {
+      "language": "de",
+      "typo": "wirglich",
+      "target": "wirklich",
+      "pairFamily": "target:wirklich",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "wirglich",
+        "wirklich"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 3,
+      "pairId": "pair-00754"
+    },
+    {
+      "language": "de",
+      "typo": "wisen",
+      "target": "wissen",
+      "pairFamily": "target:wissen",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "wisen",
+        "wissen"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 10,
+      "pairId": "pair-00760"
+    },
+    {
+      "language": "de",
+      "typo": "Wohnug",
+      "target": "Wohnung",
+      "pairFamily": "target:wohnung",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Wohnug",
+        "Wohnung"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 1,
+      "pairId": "pair-00770"
+    },
+    {
+      "language": "de",
+      "typo": "Wonung",
+      "target": "Wohnung",
+      "pairFamily": "target:wohnung",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Wonung",
+        "Wohnung"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 5,
+      "pairId": "pair-00773"
+    },
+    {
+      "language": "de",
+      "typo": "Zimer",
+      "target": "Zimmer",
+      "pairFamily": "target:zimmer",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "Zimer",
+        "Zimmer"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 4,
+      "pairId": "pair-00779"
+    },
+    {
+      "language": "de",
+      "typo": "zurük",
+      "target": "zurück",
+      "pairFamily": "target:zurück",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "zurük",
+        "zurück"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 21,
+      "pairId": "pair-00790"
+    },
+    {
+      "language": "de",
+      "typo": "züruck",
+      "target": "zurück",
+      "pairFamily": "target:zurück",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "züruck",
+        "zurück"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 5,
+      "pairId": "pair-00792"
+    },
+    {
+      "language": "de",
+      "typo": "zusamen",
+      "target": "zusammen",
+      "pairFamily": "target:zusammen",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "zusamen",
+        "zusammen"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 24,
+      "pairId": "pair-00793"
+    },
+    {
+      "language": "de",
+      "typo": "zussammen",
+      "target": "zusammen",
+      "pairFamily": "target:zusammen",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "litkey",
+      "license": "CC-BY-SA-4.0",
+      "observedSourcePair": [
+        "zussammen",
+        "zusammen"
+      ],
+      "sourceCaseAdapted": false,
+      "sourceOccurrences": 2,
+      "pairId": "pair-00798"
+    },
+    {
+      "language": "en",
+      "typo": "aplication",
+      "target": "application",
+      "pairFamily": "target:application",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "aplication",
+        "application"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00811"
+    },
+    {
+      "language": "en",
+      "typo": "apointment",
+      "target": "appointment",
+      "pairFamily": "target:appointment",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "apointment",
+        "appointment"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00816"
+    },
+    {
+      "language": "en",
+      "typo": "arrangment",
+      "target": "arrangement",
+      "pairFamily": "target:arrangement",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "arrangment",
+        "arrangement"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00824"
+    },
+    {
+      "language": "en",
+      "typo": "attachement",
+      "target": "attachment",
+      "pairFamily": "target:attachment",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "attachement",
+        "attachment"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00826"
+    },
+    {
+      "language": "en",
+      "typo": "availabe",
+      "target": "available",
+      "pairFamily": "target:available",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "availabe",
+        "available"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00834"
+    },
+    {
+      "language": "en",
+      "typo": "balence",
+      "target": "balance",
+      "pairFamily": "target:balance",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "balence",
+        "balance"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00837"
+    },
+    {
+      "language": "en",
+      "typo": "becuase",
+      "target": "because",
+      "pairFamily": "target:because",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "becuase",
+        "because"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00844"
+    },
+    {
+      "language": "en",
+      "typo": "begining",
+      "target": "beginning",
+      "pairFamily": "target:beginning",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "begining",
+        "beginning"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00847"
+    },
+    {
+      "language": "en",
+      "typo": "beleive",
+      "target": "believe",
+      "pairFamily": "target:believe",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "beleive",
+        "believe"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00851"
+    },
+    {
+      "language": "en",
+      "typo": "buidling",
+      "target": "building",
+      "pairFamily": "target:building",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "buidling",
+        "building"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00868"
+    },
+    {
+      "language": "en",
+      "typo": "buisness",
+      "target": "business",
+      "pairFamily": "target:business",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "buisness",
+        "business"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00873"
+    },
+    {
+      "language": "en",
+      "typo": "carefuly",
+      "target": "carefully",
+      "pairFamily": "target:carefully",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "carefuly",
+        "carefully"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00887"
+    },
+    {
+      "language": "en",
+      "typo": "certianly",
+      "target": "certainly",
+      "pairFamily": "target:certainly",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "certianly",
+        "certainly"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00893"
+    },
+    {
+      "language": "en",
+      "typo": "challange",
+      "target": "challenge",
+      "pairFamily": "target:challenge",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "challange",
+        "challenge"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00899"
+    },
+    {
+      "language": "en",
+      "typo": "chagned",
+      "target": "changed",
+      "pairFamily": "target:changed",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "chagned",
+        "changed"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00902"
+    },
+    {
+      "language": "en",
+      "typo": "childern",
+      "target": "children",
+      "pairFamily": "target:children",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "childern",
+        "children"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00907"
+    },
+    {
+      "language": "en",
+      "typo": "collegue",
+      "target": "colleague",
+      "pairFamily": "target:colleague",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "collegue",
+        "colleague"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00914"
+    },
+    {
+      "language": "en",
+      "typo": "commitee",
+      "target": "committee",
+      "pairFamily": "target:committee",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "commitee",
+        "committee"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00921"
+    },
+    {
+      "language": "en",
+      "typo": "compelete",
+      "target": "complete",
+      "pairFamily": "target:complete",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "compelete",
+        "complete"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00930"
+    },
+    {
+      "language": "en",
+      "typo": "concerened",
+      "target": "concerned",
+      "pairFamily": "target:concerned",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "concerened",
+        "concerned"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00939"
+    },
+    {
+      "language": "en",
+      "typo": "confimed",
+      "target": "confirmed",
+      "pairFamily": "target:confirmed",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "confimed",
+        "confirmed"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00944"
+    },
+    {
+      "language": "en",
+      "typo": "conection",
+      "target": "connection",
+      "pairFamily": "target:connection",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "conection",
+        "connection"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00948"
+    },
+    {
+      "language": "en",
+      "typo": "considder",
+      "target": "consider",
+      "pairFamily": "target:consider",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "considder",
+        "consider"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00955"
+    },
+    {
+      "language": "en",
+      "typo": "converstation",
+      "target": "conversation",
+      "pairFamily": "target:conversation",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "converstation",
+        "conversation"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00966"
+    },
+    {
+      "language": "en",
+      "typo": "corectly",
+      "target": "correctly",
+      "pairFamily": "target:correctly",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "corectly",
+        "correctly"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00967"
+    },
+    {
+      "language": "en",
+      "typo": "decison",
+      "target": "decision",
+      "pairFamily": "target:decision",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "decison",
+        "decision"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00979"
+    },
+    {
+      "language": "en",
+      "typo": "definately",
+      "target": "definitely",
+      "pairFamily": "target:definitely",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "definately",
+        "definitely"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00981"
+    },
+    {
+      "language": "en",
+      "typo": "delievery",
+      "target": "delivery",
+      "pairFamily": "target:delivery",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "delievery",
+        "delivery"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00988"
+    },
+    {
+      "language": "en",
+      "typo": "desciption",
+      "target": "description",
+      "pairFamily": "target:description",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "desciption",
+        "description"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-00995"
+    },
+    {
+      "language": "en",
+      "typo": "diffrent",
+      "target": "different",
+      "pairFamily": "target:different",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "diffrent",
+        "different"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01003"
+    },
+    {
+      "language": "en",
+      "typo": "dificult",
+      "target": "difficult",
+      "pairFamily": "target:difficult",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "dificult",
+        "difficult"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01009"
+    },
+    {
+      "language": "en",
+      "typo": "disapointed",
+      "target": "disappointed",
+      "pairFamily": "target:disappointed",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "disapointed",
+        "disappointed"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01010"
+    },
+    {
+      "language": "en",
+      "typo": "discusion",
+      "target": "discussion",
+      "pairFamily": "target:discussion",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "discusion",
+        "discussion"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01018"
+    },
+    {
+      "language": "en",
+      "typo": "documment",
+      "target": "document",
+      "pairFamily": "target:document",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "documment",
+        "document"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01022"
+    },
+    {
+      "language": "en",
+      "typo": "electricty",
+      "target": "electricity",
+      "pairFamily": "target:electricity",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "electricty",
+        "electricity"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01031"
+    },
+    {
+      "language": "en",
+      "typo": "enviroment",
+      "target": "environment",
+      "pairFamily": "target:environment",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "enviroment",
+        "environment"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01048"
+    },
+    {
+      "language": "en",
+      "typo": "equiptment",
+      "target": "equipment",
+      "pairFamily": "target:equipment",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "equiptment",
+        "equipment"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01055"
+    },
+    {
+      "language": "en",
+      "typo": "especialy",
+      "target": "especially",
+      "pairFamily": "target:especially",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "especialy",
+        "especially"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01058"
+    },
+    {
+      "language": "en",
+      "typo": "excelent",
+      "target": "excellent",
+      "pairFamily": "target:excellent",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "excelent",
+        "excellent"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01067"
+    },
+    {
+      "language": "en",
+      "typo": "experiance",
+      "target": "experience",
+      "pairFamily": "target:experience",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "experiance",
+        "experience"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01072"
+    },
+    {
+      "language": "en",
+      "typo": "explaination",
+      "target": "explanation",
+      "pairFamily": "target:explanation",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "explaination",
+        "explanation"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01077"
+    },
+    {
+      "language": "en",
+      "typo": "familiy",
+      "target": "family",
+      "pairFamily": "target:family",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "familiy",
+        "family"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01081"
+    },
+    {
+      "language": "en",
+      "typo": "Febuary",
+      "target": "February",
+      "pairFamily": "target:february",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "Febuary",
+        "February"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01093"
+    },
+    {
+      "language": "en",
+      "typo": "finshed",
+      "target": "finished",
+      "pairFamily": "target:finished",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "finshed",
+        "finished"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01106"
+    },
+    {
+      "language": "en",
+      "typo": "flexable",
+      "target": "flexible",
+      "pairFamily": "target:flexible",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "flexable",
+        "flexible"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01107"
+    },
+    {
+      "language": "en",
+      "typo": "folowing",
+      "target": "following",
+      "pairFamily": "target:following",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "folowing",
+        "following"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01116"
+    },
+    {
+      "language": "en",
+      "typo": "foward",
+      "target": "forward",
+      "pairFamily": "target:forward",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "foward",
+        "forward"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01121"
+    },
+    {
+      "language": "en",
+      "typo": "genaral",
+      "target": "general",
+      "pairFamily": "target:general",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "genaral",
+        "general"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01130"
+    },
+    {
+      "language": "en",
+      "typo": "goverment",
+      "target": "government",
+      "pairFamily": "target:government",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "goverment",
+        "government"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01136"
+    },
+    {
+      "language": "en",
+      "typo": "garantee",
+      "target": "guarantee",
+      "pairFamily": "target:guarantee",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "garantee",
+        "guarantee"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01140"
+    },
+    {
+      "language": "en",
+      "typo": "helpfull",
+      "target": "helpful",
+      "pairFamily": "target:helpful",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "helpfull",
+        "helpful"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01152"
+    },
+    {
+      "language": "en",
+      "typo": "imediately",
+      "target": "immediately",
+      "pairFamily": "target:immediately",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "imediately",
+        "immediately"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01158"
+    },
+    {
+      "language": "en",
+      "typo": "independant",
+      "target": "independent",
+      "pairFamily": "target:independent",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "independant",
+        "independent"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01172"
+    },
+    {
+      "language": "en",
+      "typo": "infomation",
+      "target": "information",
+      "pairFamily": "target:information",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "infomation",
+        "information"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01176"
+    },
+    {
+      "language": "en",
+      "typo": "insurence",
+      "target": "insurance",
+      "pairFamily": "target:insurance",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "insurence",
+        "insurance"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01183"
+    },
+    {
+      "language": "en",
+      "typo": "intrested",
+      "target": "interested",
+      "pairFamily": "target:interested",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "intrested",
+        "interested"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01190"
+    },
+    {
+      "language": "en",
+      "typo": "journy",
+      "target": "journey",
+      "pairFamily": "target:journey",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "journy",
+        "journey"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01201"
+    },
+    {
+      "language": "en",
+      "typo": "knowlege",
+      "target": "knowledge",
+      "pairFamily": "target:knowledge",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "knowlege",
+        "knowledge"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01211"
+    },
+    {
+      "language": "en",
+      "typo": "langauge",
+      "target": "language",
+      "pairFamily": "target:language",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "langauge",
+        "language"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01214"
+    },
+    {
+      "language": "en",
+      "typo": "maintainance",
+      "target": "maintenance",
+      "pairFamily": "target:maintenance",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "maintainance",
+        "maintenance"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01218"
+    },
+    {
+      "language": "en",
+      "typo": "mananger",
+      "target": "manager",
+      "pairFamily": "target:manager",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "mananger",
+        "manager"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01225"
+    },
+    {
+      "language": "en",
+      "typo": "mesage",
+      "target": "message",
+      "pairFamily": "target:message",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "mesage",
+        "message"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01245"
+    },
+    {
+      "language": "en",
+      "typo": "neccessary",
+      "target": "necessary",
+      "pairFamily": "target:necessary",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "neccessary",
+        "necessary"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01249"
+    },
+    {
+      "language": "en",
+      "typo": "neigbour",
+      "target": "neighbour",
+      "pairFamily": "target:neighbour",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "neigbour",
+        "neighbour"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01255"
+    },
+    {
+      "language": "en",
+      "typo": "nothign",
+      "target": "nothing",
+      "pairFamily": "target:nothing",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "nothign",
+        "nothing"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01260"
+    },
+    {
+      "language": "en",
+      "typo": "occassion",
+      "target": "occasion",
+      "pairFamily": "target:occasion",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "occassion",
+        "occasion"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01272"
+    },
+    {
+      "language": "en",
+      "typo": "offical",
+      "target": "official",
+      "pairFamily": "target:official",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "offical",
+        "official"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01273"
+    },
+    {
+      "language": "en",
+      "typo": "openning",
+      "target": "opening",
+      "pairFamily": "target:opening",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "openning",
+        "opening"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01282"
+    },
+    {
+      "language": "en",
+      "typo": "oportunity",
+      "target": "opportunity",
+      "pairFamily": "target:opportunity",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "oportunity",
+        "opportunity"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01283"
+    },
+    {
+      "language": "en",
+      "typo": "orginal",
+      "target": "original",
+      "pairFamily": "target:original",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "orginal",
+        "original"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01292"
+    },
+    {
+      "language": "en",
+      "typo": "pakage",
+      "target": "package",
+      "pairFamily": "target:package",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "pakage",
+        "package"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01301"
+    },
+    {
+      "language": "en",
+      "typo": "particlar",
+      "target": "particular",
+      "pairFamily": "target:particular",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "particlar",
+        "particular"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01311"
+    },
+    {
+      "language": "en",
+      "typo": "paitent",
+      "target": "patient",
+      "pairFamily": "target:patient",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "paitent",
+        "patient"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01315"
+    },
+    {
+      "language": "en",
+      "typo": "perhpas",
+      "target": "perhaps",
+      "pairFamily": "target:perhaps",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "perhpas",
+        "perhaps"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01327"
+    },
+    {
+      "language": "en",
+      "typo": "permision",
+      "target": "permission",
+      "pairFamily": "target:permission",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "permision",
+        "permission"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01330"
+    },
+    {
+      "language": "en",
+      "typo": "presonal",
+      "target": "personal",
+      "pairFamily": "target:personal",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "presonal",
+        "personal"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01338"
+    },
+    {
+      "language": "en",
+      "typo": "possibe",
+      "target": "possible",
+      "pairFamily": "target:possible",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "possibe",
+        "possible"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01349"
+    },
+    {
+      "language": "en",
+      "typo": "prefered",
+      "target": "preferred",
+      "pairFamily": "target:preferred",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "prefered",
+        "preferred"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01357"
+    },
+    {
+      "language": "en",
+      "typo": "preapre",
+      "target": "prepare",
+      "pairFamily": "target:prepare",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "preapre",
+        "prepare"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01361"
+    },
+    {
+      "language": "en",
+      "typo": "probaly",
+      "target": "probably",
+      "pairFamily": "target:probably",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "probaly",
+        "probably"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01375"
+    },
+    {
+      "language": "en",
+      "typo": "probelm",
+      "target": "problem",
+      "pairFamily": "target:problem",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "probelm",
+        "problem"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01380"
+    },
+    {
+      "language": "en",
+      "typo": "proceedure",
+      "target": "procedure",
+      "pairFamily": "target:procedure",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "proceedure",
+        "procedure"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01387"
+    },
+    {
+      "language": "en",
+      "typo": "proccess",
+      "target": "process",
+      "pairFamily": "target:process",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "proccess",
+        "process"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01389"
+    },
+    {
+      "language": "en",
+      "typo": "porject",
+      "target": "project",
+      "pairFamily": "target:project",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "porject",
+        "project"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01394"
+    },
+    {
+      "language": "en",
+      "typo": "quesiton",
+      "target": "question",
+      "pairFamily": "target:question",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "quesiton",
+        "question"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01408"
+    },
+    {
+      "language": "en",
+      "typo": "reciept",
+      "target": "receipt",
+      "pairFamily": "target:receipt",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "reciept",
+        "receipt"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01414"
+    },
+    {
+      "language": "en",
+      "typo": "recieve",
+      "target": "receive",
+      "pairFamily": "target:receive",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "recieve",
+        "receive"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01419"
+    },
+    {
+      "language": "en",
+      "typo": "reccomend",
+      "target": "recommend",
+      "pairFamily": "target:recommend",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "reccomend",
+        "recommend"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01422"
+    },
+    {
+      "language": "en",
+      "typo": "referance",
+      "target": "reference",
+      "pairFamily": "target:reference",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "referance",
+        "reference"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01429"
+    },
+    {
+      "language": "en",
+      "typo": "reguler",
+      "target": "regular",
+      "pairFamily": "target:regular",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "reguler",
+        "regular"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01435"
+    },
+    {
+      "language": "en",
+      "typo": "relevent",
+      "target": "relevant",
+      "pairFamily": "target:relevant",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "relevent",
+        "relevant"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01440"
+    },
+    {
+      "language": "en",
+      "typo": "remeber",
+      "target": "remember",
+      "pairFamily": "target:remember",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "remeber",
+        "remember"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01442"
+    },
+    {
+      "language": "en",
+      "typo": "replacment",
+      "target": "replacement",
+      "pairFamily": "target:replacement",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "replacment",
+        "replacement"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01448"
+    },
+    {
+      "language": "en",
+      "typo": "requred",
+      "target": "required",
+      "pairFamily": "target:required",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "requred",
+        "required"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01455"
+    },
+    {
+      "language": "en",
+      "typo": "responsable",
+      "target": "responsible",
+      "pairFamily": "target:responsible",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "responsable",
+        "responsible"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01463"
+    },
+    {
+      "language": "en",
+      "typo": "restaraunt",
+      "target": "restaurant",
+      "pairFamily": "target:restaurant",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "restaraunt",
+        "restaurant"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01468"
+    },
+    {
+      "language": "en",
+      "typo": "retured",
+      "target": "returned",
+      "pairFamily": "target:returned",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "retured",
+        "returned"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01473"
+    },
+    {
+      "language": "en",
+      "typo": "schedual",
+      "target": "schedule",
+      "pairFamily": "target:schedule",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "schedual",
+        "schedule"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01477"
+    },
+    {
+      "language": "en",
+      "typo": "seperate",
+      "target": "separate",
+      "pairFamily": "target:separate",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "seperate",
+        "separate"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01485"
+    },
+    {
+      "language": "en",
+      "typo": "serivce",
+      "target": "service",
+      "pairFamily": "target:service",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "serivce",
+        "service"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01488"
+    },
+    {
+      "language": "en",
+      "typo": "somthing",
+      "target": "something",
+      "pairFamily": "target:something",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "somthing",
+        "something"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01495"
+    },
+    {
+      "language": "en",
+      "typo": "specfic",
+      "target": "specific",
+      "pairFamily": "target:specific",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "specfic",
+        "specific"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01496"
+    },
+    {
+      "language": "en",
+      "typo": "sucessful",
+      "target": "successful",
+      "pairFamily": "target:successful",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "sucessful",
+        "successful"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01505"
+    },
+    {
+      "language": "en",
+      "typo": "suport",
+      "target": "support",
+      "pairFamily": "target:support",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "suport",
+        "support"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01512"
+    },
+    {
+      "language": "en",
+      "typo": "suprise",
+      "target": "surprise",
+      "pairFamily": "target:surprise",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "suprise",
+        "surprise"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01515"
+    },
+    {
+      "language": "en",
+      "typo": "temperture",
+      "target": "temperature",
+      "pairFamily": "target:temperature",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "temperture",
+        "temperature"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01523"
+    },
+    {
+      "language": "en",
+      "typo": "thougth",
+      "target": "thought",
+      "pairFamily": "target:thought",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "thougth",
+        "thought"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01532"
+    },
+    {
+      "language": "en",
+      "typo": "toghether",
+      "target": "together",
+      "pairFamily": "target:together",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "toghether",
+        "together"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01538"
+    },
+    {
+      "language": "en",
+      "typo": "tommorow",
+      "target": "tomorrow",
+      "pairFamily": "target:tomorrow",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "tommorow",
+        "tomorrow"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01539"
+    },
+    {
+      "language": "en",
+      "typo": "trainning",
+      "target": "training",
+      "pairFamily": "target:training",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "trainning",
+        "training"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01548"
+    },
+    {
+      "language": "en",
+      "typo": "tranfer",
+      "target": "transfer",
+      "pairFamily": "target:transfer",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "tranfer",
+        "transfer"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01550"
+    },
+    {
+      "language": "en",
+      "typo": "unfortunatly",
+      "target": "unfortunately",
+      "pairFamily": "target:unfortunately",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "unfortunatly",
+        "unfortunately"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01557"
+    },
+    {
+      "language": "en",
+      "typo": "udpate",
+      "target": "update",
+      "pairFamily": "target:update",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "udpate",
+        "update"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01559"
+    },
+    {
+      "language": "en",
+      "typo": "usualy",
+      "target": "usually",
+      "pairFamily": "target:usually",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "usualy",
+        "usually"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01565"
+    },
+    {
+      "language": "en",
+      "typo": "vegtable",
+      "target": "vegetable",
+      "pairFamily": "target:vegetable",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "vegtable",
+        "vegetable"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01573"
+    },
+    {
+      "language": "en",
+      "typo": "Wendesday",
+      "target": "Wednesday",
+      "pairFamily": "target:wednesday",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "wendesday",
+        "Wednesday"
+      ],
+      "sourceCaseAdapted": true,
+      "pairId": "pair-01578"
+    },
+    {
+      "language": "en",
+      "typo": "wheter",
+      "target": "whether",
+      "pairFamily": "target:whether",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "wheter",
+        "whether"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01581"
+    },
+    {
+      "language": "en",
+      "typo": "wihtout",
+      "target": "without",
+      "pairFamily": "target:without",
+      "split": "dev",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "wihtout",
+        "without"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01584"
+    },
+    {
+      "language": "en",
+      "typo": "writen",
+      "target": "written",
+      "pairFamily": "target:written",
+      "split": "holdout",
+      "provenance": "public-source-pair",
+      "source": "codespell",
+      "license": "CC-BY-SA-3.0",
+      "observedSourcePair": [
+        "writen",
+        "written"
+      ],
+      "sourceCaseAdapted": false,
+      "pairId": "pair-01589"
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "datasetVersion": "scale-v1",
+  "frozenBeforeEngineEvaluation": true,
+  "engineOrResultsRead": false,
+  "originalGoldRead": false,
+  "evaluatorSchemaRead": true,
+  "networkAtGeneration": false,
+  "reproducibleRebuild": "byte-identical",
+  "pythonValidation": "pass",
+  "nativeJavaScriptUtf16Validation": "pass",
+  "counts": {
+    "cases": 5000,
+    "splits": {
+      "holdout": 2000,
+      "dev": 3000
+    },
+    "languages": {
+      "de": 2500,
+      "en": 2500
+    },
+    "kinds": {
+      "safe": 2000,
+      "correction": 3000
+    },
+    "formats": {
+      "paragraphs": 2000,
+      "email": 2000,
+      "short": 1000
+    },
+    "longEmails": 100,
+    "longWordRange": [
+      974,
+      1017
+    ],
+    "pairPool": 1593,
+    "distinctPairsUsed": 1592,
+    "publicPairs": 213,
+    "controlledPairs": 1380,
+    "publicBySource": {
+      "litkey": 94,
+      "codespell": 119
+    },
+    "pairsByLanguage": {
+      "de": 810,
+      "en": 783
+    },
+    "intendedEdits": 5978,
+    "editOrigins": {
+      "controlled-mutation": 5173,
+      "public-source-pair": 805
+    },
+    "editCountHistogram": {
+      "1": 1644,
+      "2": 544,
+      "3": 272,
+      "4": 270,
+      "5": 270
+    },
+    "targetFamilies": 339,
+    "familyOverlap": 0,
+    "utf16NonBmpBeforeEditDocuments": 300,
+    "strata": {
+      "holdout|de|safe|paragraphs": 160,
+      "dev|de|correction|paragraphs": 360,
+      "dev|de|safe|email": 240,
+      "dev|en|safe|paragraphs": 240,
+      "holdout|de|correction|email": 240,
+      "dev|de|correction|short": 180,
+      "holdout|de|safe|email": 160,
+      "holdout|en|correction|short": 120,
+      "holdout|en|correction|email": 240,
+      "dev|en|correction|short": 180,
+      "holdout|en|safe|email": 160,
+      "dev|en|correction|email": 360,
+      "holdout|de|correction|paragraphs": 240,
+      "dev|en|correction|paragraphs": 360,
+      "holdout|en|safe|short": 80,
+      "dev|de|safe|paragraphs": 240,
+      "dev|en|safe|email": 240,
+      "holdout|en|safe|paragraphs": 160,
+      "dev|de|safe|short": 120,
+      "holdout|en|correction|paragraphs": 240,
+      "dev|de|correction|email": 360,
+      "holdout|de|safe|short": 80,
+      "holdout|de|correction|short": 120,
+      "dev|en|safe|short": 120
+    }
+  },
+  "artifacts": {
+    "AUTHORING-NOTES.md": {
+      "bytes": 8880,
+      "sha256": "fce3f6804116336c11cc3c779f1145c586ec9f5ffeef0f42a1b3dd9800692148"
+    },
+    "SOURCES.md": {
+      "bytes": 2621,
+      "sha256": "91b367476bd1ae86c36a1bc120313f64475ab1ba3c65794edff0b4f2862f7644"
+    },
+    "counts.json": {
+      "bytes": 1752,
+      "sha256": "1335d4fffb14b476a168e0a2463dfc268422a36ff3dffdd82e81700faddf8e74"
+    },
+    "dev.json": {
+      "bytes": 7944163,
+      "sha256": "6f5002544027d008dd5c6e3eab67b0fbcdc96c760c83d05425b76c1e38a39df1"
+    },
+    "family-split.json": {
+      "bytes": 10960,
+      "sha256": "e68f61fff8fcbd1b500579e5317ef07f6577c3429d130d8188b4f8f3f82cd3f7"
+    },
+    "holdout.json": {
+      "bytes": 5480663,
+      "sha256": "69c15327b31f61fbb2758b59034232a0f50d38223acd653b98bf4ca59868e248"
+    },
+    "pair-pool.json": {
+      "bytes": 549999,
+      "sha256": "99c87c757afc72974ae5abe6244e271d0b5b52eea47685fb06ab8b1549f1622b"
+    },
+    "public-source-pairs.json": {
+      "bytes": 87942,
+      "sha256": "e3d8648b00024a53f762b92a1aba71706c3ee5d4606d1a969e852f30abecee33"
+    },
+    "source-manifest.json": {
+      "bytes": 3310,
+      "sha256": "7027be7862726fc4eb914e4e1c61f85d3ab317f29f2239dd75cddb7c49048702"
+    },
+    "source-selection-rejections.json": {
+      "bytes": 7133,
+      "sha256": "c0e7b9de86e816ff965720b4f2e24add53d2c01ccb0181d6d7133e4ce1da6502"
+    }
+  },
+  "generatorInputs": {
+    "build.py": {
+      "bytes": 21208,
+      "sha256": "4a9eaf44e0d797bd2ad63c12106bdd0d0e00e046e807067738cf2de4e18ac169"
+    },
+    "content.py": {
+      "bytes": 24471,
+      "sha256": "cf0ffa5840a8b20ab319ce97dc2bc5a9937e1852762c2f71c9c4e7899bc1ade8"
+    },
+    "frames.tsv": {
+      "bytes": 21082,
+      "sha256": "3046b018bc5a9fed5e5275ca312551fd18c36297b74c70234752303d3c1de52b"
+    },
+    "public-pairs.txt": {
+      "bytes": 5707,
+      "sha256": "e51e4ad175365d371a2f289998da3b30dbf52d5e64997f55a6ebd2a69160739f"
+    },
+    "validate.mjs": {
+      "bytes": 2713,
+      "sha256": "f2fff0e902e197a8bd82dd3ad3c869822f33e67763ad3f5d9c6320c70b66ece4"
+    },
+    "fetch_sources.py": {
+      "bytes": 1009,
+      "sha256": "0e93abf4611e1726e59f53c6a6eb9e9b50ba80db6c61d240b77a047167b06c68"
+    },
+    "README.md": {
+      "bytes": 8880,
+      "sha256": "fce3f6804116336c11cc3c779f1145c586ec9f5ffeef0f42a1b3dd9800692148"
+    },
+    "sources/download-manifest.json": {
+      "bytes": 2935,
+      "sha256": "ea731f4f0289b581b97be586f69d4d8091364144d17affb74e9d01279868d062"
+    }
+  },
+  "sourceArchivePublication": "excluded; raw Litkey archive remains private scratch"
+}

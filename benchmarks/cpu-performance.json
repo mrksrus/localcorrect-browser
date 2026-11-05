@@ -1,0 +1,911 @@
+{
+  "schemaVersion": 1,
+  "measuredAtUtc": "2026-11-05T14:23:47.303184+00:00",
+  "status": "measured engine benchmark; not Windows Outlook or browser acceptance",
+  "environment": {
+    "os": "Linux x86_64",
+    "cpu": "Intel Core i5-1038NG7 @ 2.00GHz",
+    "physicalCores": 4,
+    "logicalProcessors": 8,
+    "node": "v26.7.0",
+    "dotnet": ".NET 10.0.14",
+    "jint": "4.17.0"
+  },
+  "provenance": {
+    "sourceState": "working tree freeze identified by source and artifact hashes",
+    "baseRepositoryCommits": {
+      "browser": "ea0a6db42b6493a137eaa311ae0413027fae3761",
+      "outlook": "5c2484885f1562c8ecebe163cd7ed5dc034c64a2"
+    },
+    "coreSourceSha256": "20907ded1f2194ad820043b29176e95de7932f36cc4347e8569408b08ebcf0e7",
+    "generatedNativeCoreSha256": "139c45c51c20fa937f698a7439c5d289ab640dfe09649472cb16a8a6f6dc0421",
+    "engineDllSha256": "5eb9d1fa043554056a0bcb7190b0ec4900eeb3546250907cb8c699dd25aa1796",
+    "coreFilesSha256": {
+      "package.json": "be992f17dc4a74e4761d27d28ae8b1880a0c1264a8724845982c0fec8d278c58",
+      "src/index.js": "20907ded1f2194ad820043b29176e95de7932f36cc4347e8569408b08ebcf0e7",
+      "src/typos.js": "1d21b2718c3f4a448083825850a540fec22d5e60c77f5951f52b1608ea7677d8",
+      "src/lexicons/en.js": "fd9f4bc914dc9a45a9ab13f8aa198f6f042a48cf4d3ce3d0f80c159f16a7f331",
+      "src/lexicons/de.js": "a3d0b332936e8ffce0d81f9e8592472213250677bc2056d06a571bd0b1605dd1",
+      "dictionaries/en.txt": "d2d35a71b7d59ca91f9bdd49cc5406ac85084174d9069b2e9854e4aea357aa5c",
+      "dictionaries/de.txt": "a19ed81a325936cc2f4d0e68d190eae99cd717c8c894e5070cccca447bdef3c4"
+    }
+  },
+  "method": {
+    "mode": "conservative",
+    "processPerRuntimePerInput": "fresh OS process",
+    "firstCorrectionRuns": 1,
+    "followingSameDocumentRuns": 3,
+    "scheduling": "serial; no concurrent benchmark workloads",
+    "constructorTiming": "excludes process startup and input-file parsing; includes native bundled core and all three broad lexical inventories",
+    "firstCorrectionTiming": "excludes constructor; includes first needed static typo-shard preparation",
+    "nodeImportTiming": "reported separately from constructor and correction",
+    "newDocumentScenario": "fresh process, constructor, Correct(empty string,en,conservative), one real 1000-word input then three repeats; empty call touches no typo shards",
+    "corpus": "synthetic office-move email prose trimmed to exactly150 or1000 alphabetic core tokens; truncated excerpts can end mid-sentence",
+    "protectedRanges": "zero for every fixture, asserted by core; no signature or quoted body tail",
+    "injectedPerturbations": "adjacent swaps in lowercase words, every fourth eligible word; not an independently adjudicated accuracy corpus",
+    "memory": "peak process resident memory; native managedMiB is GC.GetTotalMemory(false), not post-collection retained size",
+    "statistics": "three repeated samples; median and maximum only, no population p95 claim"
+  },
+  "fixtureFile": "cpu-performance-fixtures.json",
+  "fixtureFileSha256": "9572cd0dee9fb63981fc0d68d0e21d2c1a582822b18096ff205a943215f36bd6",
+  "fixtures": [
+    {
+      "id": "en-ordinary-clean",
+      "language": "en",
+      "words": 150,
+      "kind": "clean",
+      "insertedTypos": 0,
+      "sha256": "3b3938b4c3df043f9039a4775c74766f2c9aa65c1d668e8c11a857dfbd185cb6",
+      "characters": 862
+    },
+    {
+      "id": "en-ordinary-typo-heavy",
+      "language": "en",
+      "words": 150,
+      "kind": "typo-heavy",
+      "insertedTypos": 15,
+      "sha256": "fc8ecda623c92061955cf9c80c31d3abbac9c2258a9a88c82ae3f73f6edc367e",
+      "characters": 862
+    },
+    {
+      "id": "en-1000-clean",
+      "language": "en",
+      "words": 1000,
+      "kind": "clean",
+      "insertedTypos": 0,
+      "sha256": "bf58d14348b56f25dd6ce26f671973e4196f94686089faf431a9c70af9288eba",
+      "characters": 5877
+    },
+    {
+      "id": "en-1000-typo-heavy",
+      "language": "en",
+      "words": 1000,
+      "kind": "typo-heavy",
+      "insertedTypos": 105,
+      "sha256": "2dc9d399980a239b77be4034f5d7c40c312ed5118cdb27b41dc536edd73649bb",
+      "characters": 5877
+    },
+    {
+      "id": "de-ordinary-clean",
+      "language": "de",
+      "words": 150,
+      "kind": "clean",
+      "insertedTypos": 0,
+      "sha256": "ee2c774d9560a713200c20f1c6962dea096ab580a53dc21f80ac2e9d5086f486",
+      "characters": 1042
+    },
+    {
+      "id": "de-ordinary-typo-heavy",
+      "language": "de",
+      "words": 150,
+      "kind": "typo-heavy",
+      "insertedTypos": 13,
+      "sha256": "6cc5e86905b8b383c00e3719e6da5276aecdb3f16b0d41b66ad8d9e36a17d03a",
+      "characters": 1042
+    },
+    {
+      "id": "de-1000-clean",
+      "language": "de",
+      "words": 1000,
+      "kind": "clean",
+      "insertedTypos": 0,
+      "sha256": "b59ec20694202cc2f08107d367b07b96eea794818ba951fb8b9ad68eb8e4f3b0",
+      "characters": 6950
+    },
+    {
+      "id": "de-1000-typo-heavy",
+      "language": "de",
+      "words": 1000,
+      "kind": "typo-heavy",
+      "insertedTypos": 84,
+      "sha256": "472b58bb956ded52d99562e891626552f656778035f5bf652a9727a163979972",
+      "characters": 6950
+    }
+  ],
+  "node": [
+    {
+      "runtime": "v26.7.0",
+      "id": "en-ordinary-clean",
+      "words": 150,
+      "characters": 862,
+      "insertedTypos": 0,
+      "protectedRanges": 0,
+      "importMs": 356.998888,
+      "initializationMs": 74.94653700000003,
+      "first": {
+        "ms": 77.37497699999994,
+        "edits": 0,
+        "skipped": 24
+      },
+      "warm": [
+        {
+          "ms": 0.638046999999915,
+          "edits": 0,
+          "skipped": 24
+        },
+        {
+          "ms": 0.305973999999992,
+          "edits": 0,
+          "skipped": 24
+        },
+        {
+          "ms": 0.3070149999999785,
+          "edits": 0,
+          "skipped": 24
+        }
+      ],
+      "memory": {
+        "rss": 220585984,
+        "heapTotal": 53075968,
+        "heapUsed": 46386440,
+        "external": 62301617,
+        "arrayBuffers": 26627157
+      },
+      "peakRssMiB": 210.3671875,
+      "processWallMs": 589.2516399908345,
+      "warmMedianMs": 0.3070149999999785,
+      "warmMaximumMs": 0.638046999999915
+    },
+    {
+      "runtime": "v26.7.0",
+      "id": "en-ordinary-typo-heavy",
+      "words": 150,
+      "characters": 862,
+      "insertedTypos": 15,
+      "protectedRanges": 0,
+      "importMs": 235.86248099999997,
+      "initializationMs": 77.74854499999998,
+      "first": {
+        "ms": 83.01200599999999,
+        "edits": 10,
+        "skipped": 28
+      },
+      "warm": [
+        {
+          "ms": 1.0272830000000113,
+          "edits": 10,
+          "skipped": 28
+        },
+        {
+          "ms": 0.5952179999999885,
+          "edits": 10,
+          "skipped": 28
+        },
+        {
+          "ms": 0.42391900000001215,
+          "edits": 10,
+          "skipped": 28
+        }
+      ],
+      "memory": {
+        "rss": 221331456,
+        "heapTotal": 53862400,
+        "heapUsed": 47251512,
+        "external": 62361465,
+        "arrayBuffers": 26687005
+      },
+      "peakRssMiB": 211.078125,
+      "processWallMs": 475.1383480033837,
+      "warmMedianMs": 0.5952179999999885,
+      "warmMaximumMs": 1.0272830000000113
+    },
+    {
+      "runtime": "v26.7.0",
+      "id": "en-1000-clean",
+      "words": 1000,
+      "characters": 5877,
+      "insertedTypos": 0,
+      "protectedRanges": 0,
+      "importMs": 236.215423,
+      "initializationMs": 74.40825899999999,
+      "first": {
+        "ms": 76.13359600000001,
+        "edits": 0,
+        "skipped": 156
+      },
+      "warm": [
+        {
+          "ms": 1.8016549999999825,
+          "edits": 0,
+          "skipped": 156
+        },
+        {
+          "ms": 1.623090999999988,
+          "edits": 0,
+          "skipped": 156
+        },
+        {
+          "ms": 1.5982470000000149,
+          "edits": 0,
+          "skipped": 156
+        }
+      ],
+      "memory": {
+        "rss": 221351936,
+        "heapTotal": 53338112,
+        "heapUsed": 43695144,
+        "external": 62301617,
+        "arrayBuffers": 26627157
+      },
+      "peakRssMiB": 211.09765625,
+      "processWallMs": 467.95092899992596,
+      "warmMedianMs": 1.623090999999988,
+      "warmMaximumMs": 1.8016549999999825
+    },
+    {
+      "runtime": "v26.7.0",
+      "id": "en-1000-typo-heavy",
+      "words": 1000,
+      "characters": 5877,
+      "insertedTypos": 105,
+      "protectedRanges": 0,
+      "importMs": 240.09807400000003,
+      "initializationMs": 71.41601700000001,
+      "first": {
+        "ms": 91.290279,
+        "edits": 79,
+        "skipped": 181
+      },
+      "warm": [
+        {
+          "ms": 3.550424000000021,
+          "edits": 79,
+          "skipped": 181
+        },
+        {
+          "ms": 3.7885499999999865,
+          "edits": 79,
+          "skipped": 181
+        },
+        {
+          "ms": 3.0256689999999935,
+          "edits": 79,
+          "skipped": 181
+        }
+      ],
+      "memory": {
+        "rss": 223715328,
+        "heapTotal": 53338112,
+        "heapUsed": 45004952,
+        "external": 62635177,
+        "arrayBuffers": 26960717
+      },
+      "peakRssMiB": 213.3515625,
+      "processWallMs": 487.97520399966743,
+      "warmMedianMs": 3.550424000000021,
+      "warmMaximumMs": 3.7885499999999865
+    },
+    {
+      "runtime": "v26.7.0",
+      "id": "de-ordinary-clean",
+      "words": 150,
+      "characters": 1042,
+      "insertedTypos": 0,
+      "protectedRanges": 0,
+      "importMs": 231.06257700000003,
+      "initializationMs": 72.67836299999999,
+      "first": {
+        "ms": 79.42210799999998,
+        "edits": 0,
+        "skipped": 10
+      },
+      "warm": [
+        {
+          "ms": 0.599377000000004,
+          "edits": 0,
+          "skipped": 10
+        },
+        {
+          "ms": 0.454763000000014,
+          "edits": 0,
+          "skipped": 10
+        },
+        {
+          "ms": 0.3958200000000147,
+          "edits": 0,
+          "skipped": 10
+        }
+      ],
+      "memory": {
+        "rss": 221360128,
+        "heapTotal": 53600256,
+        "heapUsed": 47306592,
+        "external": 62380801,
+        "arrayBuffers": 26706341
+      },
+      "peakRssMiB": 211.10546875,
+      "processWallMs": 461.98450100200716,
+      "warmMedianMs": 0.454763000000014,
+      "warmMaximumMs": 0.599377000000004
+    },
+    {
+      "runtime": "v26.7.0",
+      "id": "de-ordinary-typo-heavy",
+      "words": 150,
+      "characters": 1042,
+      "insertedTypos": 13,
+      "protectedRanges": 0,
+      "importMs": 230.474648,
+      "initializationMs": 76.78477199999998,
+      "first": {
+        "ms": 83.26487199999997,
+        "edits": 8,
+        "skipped": 15
+      },
+      "warm": [
+        {
+          "ms": 0.7674129999999764,
+          "edits": 8,
+          "skipped": 15
+        },
+        {
+          "ms": 0.5728399999999851,
+          "edits": 8,
+          "skipped": 15
+        },
+        {
+          "ms": 0.849570999999969,
+          "edits": 8,
+          "skipped": 15
+        }
+      ],
+      "memory": {
+        "rss": 221708288,
+        "heapTotal": 53338112,
+        "heapUsed": 43624872,
+        "external": 62433677,
+        "arrayBuffers": 26759217
+      },
+      "peakRssMiB": 211.4375,
+      "processWallMs": 465.3685859957477,
+      "warmMedianMs": 0.7674129999999764,
+      "warmMaximumMs": 0.849570999999969
+    },
+    {
+      "runtime": "v26.7.0",
+      "id": "de-1000-clean",
+      "words": 1000,
+      "characters": 6950,
+      "insertedTypos": 0,
+      "protectedRanges": 0,
+      "importMs": 230.084815,
+      "initializationMs": 71.43245099999996,
+      "first": {
+        "ms": 90.55977999999999,
+        "edits": 0,
+        "skipped": 80
+      },
+      "warm": [
+        {
+          "ms": 2.8340749999999844,
+          "edits": 0,
+          "skipped": 80
+        },
+        {
+          "ms": 2.36627900000002,
+          "edits": 0,
+          "skipped": 80
+        },
+        {
+          "ms": 2.513545000000022,
+          "edits": 0,
+          "skipped": 80
+        }
+      ],
+      "memory": {
+        "rss": 222900224,
+        "heapTotal": 53600256,
+        "heapUsed": 46619488,
+        "external": 62619413,
+        "arrayBuffers": 26944953
+      },
+      "peakRssMiB": 212.69921875,
+      "processWallMs": 474.8062719882,
+      "warmMedianMs": 2.513545000000022,
+      "warmMaximumMs": 2.8340749999999844
+    },
+    {
+      "runtime": "v26.7.0",
+      "id": "de-1000-typo-heavy",
+      "words": 1000,
+      "characters": 6950,
+      "insertedTypos": 84,
+      "protectedRanges": 0,
+      "importMs": 233.04410299999998,
+      "initializationMs": 79.50271900000001,
+      "first": {
+        "ms": 102.276501,
+        "edits": 59,
+        "skipped": 105
+      },
+      "warm": [
+        {
+          "ms": 4.990487999999971,
+          "edits": 59,
+          "skipped": 105
+        },
+        {
+          "ms": 4.367730999999992,
+          "edits": 59,
+          "skipped": 105
+        },
+        {
+          "ms": 3.565942000000007,
+          "edits": 59,
+          "skipped": 105
+        }
+      ],
+      "memory": {
+        "rss": 223129600,
+        "heapTotal": 53600256,
+        "heapUsed": 46323240,
+        "external": 62761733,
+        "arrayBuffers": 27087273
+      },
+      "peakRssMiB": 212.79296875,
+      "processWallMs": 506.02187900221907,
+      "warmMedianMs": 4.367730999999992,
+      "warmMaximumMs": 4.990487999999971
+    }
+  ],
+  "nativeJint": [
+    {
+      "runtime": ".NET 10.0.14",
+      "id": "en-ordinary-clean",
+      "initializationMs": 5583.2902,
+      "embeddedCoreSha256": "139c45c51c20fa937f698a7439c5d289ab640dfe09649472cb16a8a6f6dc0421",
+      "error": null,
+      "failureMs": null,
+      "prewarmMs": null,
+      "first": {
+        "ms": 167.3727,
+        "edits": 0,
+        "skipped": 24
+      },
+      "warm": [
+        {
+          "ms": 95.5484,
+          "edits": 0,
+          "skipped": 24
+        },
+        {
+          "ms": 74.4939,
+          "edits": 0,
+          "skipped": 24
+        },
+        {
+          "ms": 74.7469,
+          "edits": 0,
+          "skipped": 24
+        }
+      ],
+      "peakRssMiB": 367.16015625,
+      "managedMiB": 253.1946029663086,
+      "processWallMs": 6199.860324995825,
+      "warmMedianMs": 74.7469,
+      "warmMaximumMs": 95.5484
+    },
+    {
+      "runtime": ".NET 10.0.14",
+      "id": "en-ordinary-typo-heavy",
+      "initializationMs": 5280.5649,
+      "embeddedCoreSha256": "139c45c51c20fa937f698a7439c5d289ab640dfe09649472cb16a8a6f6dc0421",
+      "error": null,
+      "failureMs": null,
+      "prewarmMs": null,
+      "first": {
+        "ms": 233.4929,
+        "edits": 10,
+        "skipped": 28
+      },
+      "warm": [
+        {
+          "ms": 93.6303,
+          "edits": 10,
+          "skipped": 28
+        },
+        {
+          "ms": 80.7896,
+          "edits": 10,
+          "skipped": 28
+        },
+        {
+          "ms": 79.3548,
+          "edits": 10,
+          "skipped": 28
+        }
+      ],
+      "peakRssMiB": 367.0546875,
+      "managedMiB": 251.25220489501953,
+      "processWallMs": 5959.222673001932,
+      "warmMedianMs": 80.7896,
+      "warmMaximumMs": 93.6303
+    },
+    {
+      "runtime": ".NET 10.0.14",
+      "id": "en-1000-clean",
+      "initializationMs": 5206.7182,
+      "embeddedCoreSha256": "139c45c51c20fa937f698a7439c5d289ab640dfe09649472cb16a8a6f6dc0421",
+      "error": null,
+      "failureMs": null,
+      "prewarmMs": null,
+      "first": {
+        "ms": 221.9012,
+        "edits": 0,
+        "skipped": 156
+      },
+      "warm": [
+        {
+          "ms": 125.5624,
+          "edits": 0,
+          "skipped": 156
+        },
+        {
+          "ms": 123.8545,
+          "edits": 0,
+          "skipped": 156
+        },
+        {
+          "ms": 102.5864,
+          "edits": 0,
+          "skipped": 156
+        }
+      ],
+      "peakRssMiB": 367.35546875,
+      "managedMiB": 251.5894546508789,
+      "processWallMs": 5979.417697002646,
+      "warmMedianMs": 123.8545,
+      "warmMaximumMs": 125.5624
+    },
+    {
+      "runtime": ".NET 10.0.14",
+      "id": "en-1000-typo-heavy",
+      "initializationMs": 5243.0489,
+      "embeddedCoreSha256": "139c45c51c20fa937f698a7439c5d289ab640dfe09649472cb16a8a6f6dc0421",
+      "error": null,
+      "failureMs": null,
+      "prewarmMs": null,
+      "first": {
+        "ms": 455.4738,
+        "edits": 79,
+        "skipped": 181
+      },
+      "warm": [
+        {
+          "ms": 147.8539,
+          "edits": 79,
+          "skipped": 181
+        },
+        {
+          "ms": 131.9844,
+          "edits": 79,
+          "skipped": 181
+        },
+        {
+          "ms": 147.9179,
+          "edits": 79,
+          "skipped": 181
+        }
+      ],
+      "peakRssMiB": 368.29296875,
+      "managedMiB": 253.19855499267578,
+      "processWallMs": 6322.977058996912,
+      "warmMedianMs": 147.8539,
+      "warmMaximumMs": 147.9179
+    },
+    {
+      "runtime": ".NET 10.0.14",
+      "id": "de-ordinary-clean",
+      "initializationMs": 5417.4777,
+      "embeddedCoreSha256": "139c45c51c20fa937f698a7439c5d289ab640dfe09649472cb16a8a6f6dc0421",
+      "error": null,
+      "failureMs": null,
+      "prewarmMs": null,
+      "first": {
+        "ms": 225.7889,
+        "edits": 0,
+        "skipped": 10
+      },
+      "warm": [
+        {
+          "ms": 90.5635,
+          "edits": 0,
+          "skipped": 10
+        },
+        {
+          "ms": 75.73,
+          "edits": 0,
+          "skipped": 10
+        },
+        {
+          "ms": 75.7935,
+          "edits": 0,
+          "skipped": 10
+        }
+      ],
+      "peakRssMiB": 367.0703125,
+      "managedMiB": 253.55394744873047,
+      "processWallMs": 6077.148276992375,
+      "warmMedianMs": 75.7935,
+      "warmMaximumMs": 90.5635
+    },
+    {
+      "runtime": ".NET 10.0.14",
+      "id": "de-ordinary-typo-heavy",
+      "initializationMs": 5275.7798,
+      "embeddedCoreSha256": "139c45c51c20fa937f698a7439c5d289ab640dfe09649472cb16a8a6f6dc0421",
+      "error": null,
+      "failureMs": null,
+      "prewarmMs": null,
+      "first": {
+        "ms": 260.7019,
+        "edits": 8,
+        "skipped": 15
+      },
+      "warm": [
+        {
+          "ms": 92.6491,
+          "edits": 8,
+          "skipped": 15
+        },
+        {
+          "ms": 78.9987,
+          "edits": 8,
+          "skipped": 15
+        },
+        {
+          "ms": 75.8496,
+          "edits": 8,
+          "skipped": 15
+        }
+      ],
+      "peakRssMiB": 367.91015625,
+      "managedMiB": 254.22189331054688,
+      "processWallMs": 5978.3134879980935,
+      "warmMedianMs": 78.9987,
+      "warmMaximumMs": 92.6491
+    },
+    {
+      "runtime": ".NET 10.0.14",
+      "id": "de-1000-clean",
+      "initializationMs": 5437.7814,
+      "embeddedCoreSha256": "139c45c51c20fa937f698a7439c5d289ab640dfe09649472cb16a8a6f6dc0421",
+      "error": null,
+      "failureMs": null,
+      "prewarmMs": null,
+      "first": {
+        "ms": 385.4511,
+        "edits": 0,
+        "skipped": 80
+      },
+      "warm": [
+        {
+          "ms": 131.0832,
+          "edits": 0,
+          "skipped": 80
+        },
+        {
+          "ms": 127.9976,
+          "edits": 0,
+          "skipped": 80
+        },
+        {
+          "ms": 132.5214,
+          "edits": 0,
+          "skipped": 80
+        }
+      ],
+      "peakRssMiB": 367.2109375,
+      "managedMiB": 252.23162841796875,
+      "processWallMs": 6415.124107996235,
+      "warmMedianMs": 131.0832,
+      "warmMaximumMs": 132.5214
+    },
+    {
+      "runtime": ".NET 10.0.14",
+      "id": "de-1000-typo-heavy",
+      "initializationMs": 5307.2007,
+      "embeddedCoreSha256": "139c45c51c20fa937f698a7439c5d289ab640dfe09649472cb16a8a6f6dc0421",
+      "error": null,
+      "failureMs": null,
+      "prewarmMs": null,
+      "first": {
+        "ms": 487.3074,
+        "edits": 59,
+        "skipped": 105
+      },
+      "warm": [
+        {
+          "ms": 153.2732,
+          "edits": 59,
+          "skipped": 105
+        },
+        {
+          "ms": 133.6235,
+          "edits": 59,
+          "skipped": 105
+        },
+        {
+          "ms": 162.7455,
+          "edits": 59,
+          "skipped": 105
+        }
+      ],
+      "peakRssMiB": 368.69140625,
+      "managedMiB": 254.0110092163086,
+      "processWallMs": 6439.23262199678,
+      "warmMedianMs": 153.2732,
+      "warmMaximumMs": 162.7455
+    }
+  ],
+  "nativeBaseWarmNewDocument": [
+    {
+      "runtime": ".NET 10.0.14",
+      "id": "en-1000-typo-heavy",
+      "initializationMs": 5267.8906,
+      "embeddedCoreSha256": "139c45c51c20fa937f698a7439c5d289ab640dfe09649472cb16a8a6f6dc0421",
+      "error": null,
+      "failureMs": null,
+      "prewarmMs": 157.0712,
+      "first": {
+        "ms": 360.4883,
+        "edits": 79,
+        "skipped": 181
+      },
+      "warm": [
+        {
+          "ms": 128.8146,
+          "edits": 79,
+          "skipped": 181
+        },
+        {
+          "ms": 136.1522,
+          "edits": 79,
+          "skipped": 181
+        },
+        {
+          "ms": 148.0031,
+          "edits": 79,
+          "skipped": 181
+        }
+      ],
+      "peakRssMiB": 367.26953125,
+      "managedMiB": 254.26336669921875,
+      "warmMedianMs": 136.1522,
+      "warmMaximumMs": 148.0031
+    },
+    {
+      "runtime": ".NET 10.0.14",
+      "id": "de-1000-typo-heavy",
+      "initializationMs": 5382.3104,
+      "embeddedCoreSha256": "139c45c51c20fa937f698a7439c5d289ab640dfe09649472cb16a8a6f6dc0421",
+      "error": null,
+      "failureMs": null,
+      "prewarmMs": 157.7001,
+      "first": {
+        "ms": 436.4837,
+        "edits": 59,
+        "skipped": 105
+      },
+      "warm": [
+        {
+          "ms": 156.6059,
+          "edits": 59,
+          "skipped": 105
+        },
+        {
+          "ms": 152.1568,
+          "edits": 59,
+          "skipped": 105
+        },
+        {
+          "ms": 177.3291,
+          "edits": 59,
+          "skipped": 105
+        }
+      ],
+      "peakRssMiB": 368.359375,
+      "managedMiB": 254.16319274902344,
+      "warmMedianMs": 156.6059,
+      "warmMaximumMs": 177.3291
+    },
+    {
+      "runtime": ".NET 10.0.14",
+      "id": "en-1000-clean",
+      "initializationMs": 5308.1414,
+      "embeddedCoreSha256": "139c45c51c20fa937f698a7439c5d289ab640dfe09649472cb16a8a6f6dc0421",
+      "error": null,
+      "failureMs": null,
+      "prewarmMs": 230.2822,
+      "first": {
+        "ms": 144.6294,
+        "edits": 0,
+        "skipped": 156
+      },
+      "warm": [
+        {
+          "ms": 103.9922,
+          "edits": 0,
+          "skipped": 156
+        },
+        {
+          "ms": 104.046,
+          "edits": 0,
+          "skipped": 156
+        },
+        {
+          "ms": 111.1002,
+          "edits": 0,
+          "skipped": 156
+        }
+      ],
+      "peakRssMiB": 367.40234375,
+      "managedMiB": 251.78424835205078,
+      "warmMedianMs": 104.046,
+      "warmMaximumMs": 111.1002
+    },
+    {
+      "runtime": ".NET 10.0.14",
+      "id": "de-1000-clean",
+      "initializationMs": 5390.0934,
+      "embeddedCoreSha256": "139c45c51c20fa937f698a7439c5d289ab640dfe09649472cb16a8a6f6dc0421",
+      "error": null,
+      "failureMs": null,
+      "prewarmMs": 154.6898,
+      "first": {
+        "ms": 307.3778,
+        "edits": 0,
+        "skipped": 80
+      },
+      "warm": [
+        {
+          "ms": 111.2054,
+          "edits": 0,
+          "skipped": 80
+        },
+        {
+          "ms": 111.5873,
+          "edits": 0,
+          "skipped": 80
+        },
+        {
+          "ms": 124.8742,
+          "edits": 0,
+          "skipped": 80
+        }
+      ],
+      "peakRssMiB": 368.2578125,
+      "managedMiB": 255.201904296875,
+      "warmMedianMs": 111.5873,
+      "warmMaximumMs": 124.8742
+    }
+  ],
+  "limits": [
+    "One laptop; does not establish a bound for all CPUs made since2020.",
+    "Node V8 is an engine proxy, not a Firefox/Chrome UI measurement.",
+    "Native Jint was measured under Linux .NET10; Windows .NETFramework4.8 and actual Outlook2019 remain separate validation.",
+    "First native startup is approximately5.4–5.8s for constructor plus first correction, excluding process startup.",
+    "Three repeats per input cannot establish a population p95.",
+    "Precision and recall require the separate quality evaluations."
+  ]
+}

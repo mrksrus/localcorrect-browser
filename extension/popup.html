@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>LocalCorrect</title><link rel="stylesheet" href="popup.css"></head>
 <body><h1>LocalCorrect <small>RC</small></h1>
-<label><span id="uiLabel">Interface</span><select id="ui"><option value="en">English</option><option value="de">Deutsch</option></select></label>
-<label><span id="languageLabel">Text language</span><select id="language"><option value="en">English</option><option value="de">Deutsch</option></select></label>
-<label><span id="modeLabel">Mode</span><select id="mode"><option value="conservative">Conservative</option><option value="balanced">Normal</option></select></label>
+<label><span id="uiLabel">Interface</span><select id="ui" disabled><option value="en">English</option><option value="de">Deutsch</option></select></label>
+<label><span id="languageLabel">Text language</span><select id="language" disabled><option value="en">English</option><option value="de">Deutsch</option></select></label>
+<label><span id="modeLabel">Mode</span><select id="mode" disabled><option value="conservative">Conservative</option><option value="balanced">Normal</option></select></label>
 <p id="hint">Select text or focus an editable field, then correct. Review changes before sending.</p>
-<div class="buttons"><button id="correct">Correct</button><button id="undo">Undo</button></div>
+<div class="buttons"><button id="correct" disabled>Correct</button><button id="undo" disabled>Undo</button></div>
+<p id="shortcut-hint"></p><button id="shortcut-settings">Edit shortcuts</button>
 <p id="status" role="status" aria-live="polite">Ready. Works offline.</p>
 <script type="module" src="popup.js"></script></body></html>

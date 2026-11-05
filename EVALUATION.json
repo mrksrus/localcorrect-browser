@@ -1,0 +1,678 @@
+{
+  "description": "Frozen precision-first candidate; no post-audit policy changes. Both candidate modes currently share identical policy. Rates are observations on synthetic dependent data, not a real-world guarantee.",
+  "freeze": {
+    "description": "Functional policy freeze before first scale holdout or blind engine evaluation. No further policy tuning is permitted while calling these results unseen.",
+    "frozenAt": "2026-11-05T14:14:49.103054+00:00",
+    "coreSha256": {
+      "src/index.js": "20907ded1f2194ad820043b29176e95de7932f36cc4347e8569408b08ebcf0e7",
+      "src/lexicons/de.js": "a3d0b332936e8ffce0d81f9e8592472213250677bc2056d06a571bd0b1605dd1",
+      "src/lexicons/en.js": "fd9f4bc914dc9a45a9ab13f8aa198f6f042a48cf4d3ce3d0f80c159f16a7f331",
+      "src/lexicons/nspell.js": "42406e6669a8cd211ab2c9fa9273ae29f7d9fccc4b4e9581545711f4d5adee09",
+      "src/typos.js": "1d21b2718c3f4a448083825850a540fec22d5e60c77f5951f52b1608ea7677d8",
+      "dictionaries/en.txt": "d2d35a71b7d59ca91f9bdd49cc5406ac85084174d9069b2e9854e4aea357aa5c",
+      "dictionaries/de.txt": "a19ed81a325936cc2f4d0e68d190eae99cd717c8c894e5070cccca447bdef3c4"
+    },
+    "corpusSha256": {
+      "tests/scale-corpus/dev.json": "6f5002544027d008dd5c6e3eab67b0fbcdc96c760c83d05425b76c1e38a39df1",
+      "tests/scale-corpus/holdout.json": "69c15327b31f61fbb2758b59034232a0f50d38223acd653b98bf4ca59868e248",
+      "tests/scale-corpus/blind/cases.json": "317a38b8331358dc01a21776ab68e1452c49bdc3ce19425cd59f87f4cc05fe69"
+    }
+  },
+  "summary": {
+    "dev": {
+      "rc3": {
+        "corpusSha256": "6f5002544027d008dd5c6e3eab67b0fbcdc96c760c83d05425b76c1e38a39df1",
+        "summary": [
+          {
+            "mode": "conservative",
+            "language": "all",
+            "documents": 3000,
+            "exactDocuments": 2332,
+            "safeDocuments": 1200,
+            "preservedSafeDocuments": 989,
+            "trueEdits": 3229,
+            "falseEdits": 518,
+            "missedEdits": 361,
+            "precision": 0.8617560715238858,
+            "recall": 0.8994428969359332,
+            "p50Ms": 4.766135999991093,
+            "p95Ms": 47.38737599999877,
+            "maxMs": 2041.0180480000017
+          },
+          {
+            "mode": "conservative",
+            "language": "en",
+            "documents": 1500,
+            "exactDocuments": 1394,
+            "safeDocuments": 600,
+            "preservedSafeDocuments": 552,
+            "trueEdits": 1737,
+            "falseEdits": 52,
+            "missedEdits": 58,
+            "precision": 0.970933482392398,
+            "recall": 0.9676880222841225,
+            "p50Ms": 1.4837219999999434,
+            "p95Ms": 5.984840999999506,
+            "maxMs": 570.0615949999999
+          },
+          {
+            "mode": "conservative",
+            "language": "de",
+            "documents": 1500,
+            "exactDocuments": 938,
+            "safeDocuments": 600,
+            "preservedSafeDocuments": 437,
+            "trueEdits": 1492,
+            "falseEdits": 466,
+            "missedEdits": 303,
+            "precision": 0.7620020429009193,
+            "recall": 0.8311977715877438,
+            "p50Ms": 22.737261000002036,
+            "p95Ms": 58.2415650000039,
+            "maxMs": 2041.0180480000017
+          },
+          {
+            "mode": "balanced",
+            "language": "all",
+            "documents": 3000,
+            "exactDocuments": 2370,
+            "safeDocuments": 1200,
+            "preservedSafeDocuments": 951,
+            "trueEdits": 3350,
+            "falseEdits": 570,
+            "missedEdits": 240,
+            "precision": 0.8545918367346939,
+            "recall": 0.9331476323119777,
+            "p50Ms": 4.493347999999969,
+            "p95Ms": 46.83678099999088,
+            "maxMs": 2108.217805000004
+          },
+          {
+            "mode": "balanced",
+            "language": "en",
+            "documents": 1500,
+            "exactDocuments": 1387,
+            "safeDocuments": 600,
+            "preservedSafeDocuments": 528,
+            "trueEdits": 1754,
+            "falseEdits": 80,
+            "missedEdits": 41,
+            "precision": 0.9563794983642312,
+            "recall": 0.977158774373259,
+            "p50Ms": 1.2958119999966584,
+            "p95Ms": 5.619979999999487,
+            "maxMs": 14.34887400000298
+          },
+          {
+            "mode": "balanced",
+            "language": "de",
+            "documents": 1500,
+            "exactDocuments": 983,
+            "safeDocuments": 600,
+            "preservedSafeDocuments": 423,
+            "trueEdits": 1596,
+            "falseEdits": 490,
+            "missedEdits": 199,
+            "precision": 0.7651006711409396,
+            "recall": 0.8891364902506964,
+            "p50Ms": 22.716333000000304,
+            "p95Ms": 57.09971399999631,
+            "maxMs": 2108.217805000004
+          }
+        ]
+      },
+      "candidate": {
+        "corpusSha256": "6f5002544027d008dd5c6e3eab67b0fbcdc96c760c83d05425b76c1e38a39df1",
+        "summary": [
+          {
+            "mode": "conservative",
+            "language": "all",
+            "documents": 3000,
+            "exactDocuments": 2050,
+            "safeDocuments": 1200,
+            "preservedSafeDocuments": 1200,
+            "trueEdits": 2284,
+            "falseEdits": 0,
+            "missedEdits": 1306,
+            "precision": 1,
+            "recall": 0.6362116991643454,
+            "p50Ms": 0.2505149999999503,
+            "p95Ms": 0.6124629999999343,
+            "maxMs": 112.12181800000002
+          },
+          {
+            "mode": "conservative",
+            "language": "en",
+            "documents": 1500,
+            "exactDocuments": 1120,
+            "safeDocuments": 600,
+            "preservedSafeDocuments": 600,
+            "trueEdits": 1311,
+            "falseEdits": 0,
+            "missedEdits": 484,
+            "precision": 1,
+            "recall": 0.7303621169916434,
+            "p50Ms": 0.20683100000007926,
+            "p95Ms": 0.5130390000001626,
+            "maxMs": 4.921451000000047
+          },
+          {
+            "mode": "conservative",
+            "language": "de",
+            "documents": 1500,
+            "exactDocuments": 930,
+            "safeDocuments": 600,
+            "preservedSafeDocuments": 600,
+            "trueEdits": 973,
+            "falseEdits": 0,
+            "missedEdits": 822,
+            "precision": 1,
+            "recall": 0.5420612813370473,
+            "p50Ms": 0.30168200000025536,
+            "p95Ms": 0.6580020000000104,
+            "maxMs": 112.12181800000002
+          },
+          {
+            "mode": "balanced",
+            "language": "all",
+            "documents": 3000,
+            "exactDocuments": 2050,
+            "safeDocuments": 1200,
+            "preservedSafeDocuments": 1200,
+            "trueEdits": 2284,
+            "falseEdits": 0,
+            "missedEdits": 1306,
+            "precision": 1,
+            "recall": 0.6362116991643454,
+            "p50Ms": 0.20319399999993948,
+            "p95Ms": 0.503639000000021,
+            "maxMs": 3.43401700000004
+          },
+          {
+            "mode": "balanced",
+            "language": "en",
+            "documents": 1500,
+            "exactDocuments": 1120,
+            "safeDocuments": 600,
+            "preservedSafeDocuments": 600,
+            "trueEdits": 1311,
+            "falseEdits": 0,
+            "missedEdits": 484,
+            "precision": 1,
+            "recall": 0.7303621169916434,
+            "p50Ms": 0.16724199999998746,
+            "p95Ms": 0.40357700000004115,
+            "maxMs": 2.6340490000000045
+          },
+          {
+            "mode": "balanced",
+            "language": "de",
+            "documents": 1500,
+            "exactDocuments": 930,
+            "safeDocuments": 600,
+            "preservedSafeDocuments": 600,
+            "trueEdits": 973,
+            "falseEdits": 0,
+            "missedEdits": 822,
+            "precision": 1,
+            "recall": 0.5420612813370473,
+            "p50Ms": 0.24658099999987826,
+            "p95Ms": 0.5594019999998636,
+            "maxMs": 3.43401700000004
+          }
+        ]
+      }
+    },
+    "holdout": {
+      "rc3": {
+        "corpusSha256": "69c15327b31f61fbb2758b59034232a0f50d38223acd653b98bf4ca59868e248",
+        "summary": [
+          {
+            "mode": "conservative",
+            "language": "all",
+            "documents": 2000,
+            "exactDocuments": 1516,
+            "safeDocuments": 800,
+            "preservedSafeDocuments": 647,
+            "trueEdits": 2090,
+            "falseEdits": 351,
+            "missedEdits": 298,
+            "precision": 0.8562064727570667,
+            "recall": 0.8752093802345059,
+            "p50Ms": 5.06506200000149,
+            "p95Ms": 46.95356300000276,
+            "maxMs": 1996.2730979999978
+          },
+          {
+            "mode": "conservative",
+            "language": "en",
+            "documents": 1000,
+            "exactDocuments": 933,
+            "safeDocuments": 400,
+            "preservedSafeDocuments": 368,
+            "trueEdits": 1159,
+            "falseEdits": 32,
+            "missedEdits": 35,
+            "precision": 0.9731318219983207,
+            "recall": 0.9706867671691792,
+            "p50Ms": 1.5437969999984489,
+            "p95Ms": 6.655988999998954,
+            "maxMs": 564.3826589999999
+          },
+          {
+            "mode": "conservative",
+            "language": "de",
+            "documents": 1000,
+            "exactDocuments": 583,
+            "safeDocuments": 400,
+            "preservedSafeDocuments": 279,
+            "trueEdits": 931,
+            "falseEdits": 319,
+            "missedEdits": 263,
+            "precision": 0.7448,
+            "recall": 0.7797319932998324,
+            "p50Ms": 22.2408310000028,
+            "p95Ms": 60.03509199999826,
+            "maxMs": 1996.2730979999978
+          },
+          {
+            "mode": "balanced",
+            "language": "all",
+            "documents": 2000,
+            "exactDocuments": 1526,
+            "safeDocuments": 800,
+            "preservedSafeDocuments": 618,
+            "trueEdits": 2144,
+            "falseEdits": 395,
+            "missedEdits": 244,
+            "precision": 0.8444269397400551,
+            "recall": 0.897822445561139,
+            "p50Ms": 4.710695000001579,
+            "p95Ms": 47.055577999999514,
+            "maxMs": 2016.857344
+          },
+          {
+            "mode": "balanced",
+            "language": "en",
+            "documents": 1000,
+            "exactDocuments": 937,
+            "safeDocuments": 400,
+            "preservedSafeDocuments": 352,
+            "trueEdits": 1179,
+            "falseEdits": 51,
+            "missedEdits": 15,
+            "precision": 0.9585365853658536,
+            "recall": 0.9874371859296482,
+            "p50Ms": 1.3400949999922886,
+            "p95Ms": 6.182103999999526,
+            "maxMs": 15.321773000003304
+          },
+          {
+            "mode": "balanced",
+            "language": "de",
+            "documents": 1000,
+            "exactDocuments": 589,
+            "safeDocuments": 400,
+            "preservedSafeDocuments": 266,
+            "trueEdits": 965,
+            "falseEdits": 344,
+            "missedEdits": 229,
+            "precision": 0.7372039724980901,
+            "recall": 0.8082077051926299,
+            "p50Ms": 22.055620000006456,
+            "p95Ms": 59.161048000001756,
+            "maxMs": 2016.857344
+          }
+        ]
+      },
+      "candidate": {
+        "corpusSha256": "69c15327b31f61fbb2758b59034232a0f50d38223acd653b98bf4ca59868e248",
+        "summary": [
+          {
+            "mode": "conservative",
+            "language": "all",
+            "documents": 2000,
+            "exactDocuments": 1378,
+            "safeDocuments": 800,
+            "preservedSafeDocuments": 800,
+            "trueEdits": 1527,
+            "falseEdits": 0,
+            "missedEdits": 861,
+            "precision": 1,
+            "recall": 0.6394472361809045,
+            "p50Ms": 0.2763800000000174,
+            "p95Ms": 0.7911980000001222,
+            "maxMs": 96.107599
+          },
+          {
+            "mode": "conservative",
+            "language": "en",
+            "documents": 1000,
+            "exactDocuments": 738,
+            "safeDocuments": 400,
+            "preservedSafeDocuments": 400,
+            "trueEdits": 865,
+            "falseEdits": 0,
+            "missedEdits": 329,
+            "precision": 1,
+            "recall": 0.7244556113902848,
+            "p50Ms": 0.2258640000000014,
+            "p95Ms": 0.575027000000091,
+            "maxMs": 50.17380800000001
+          },
+          {
+            "mode": "conservative",
+            "language": "de",
+            "documents": 1000,
+            "exactDocuments": 640,
+            "safeDocuments": 400,
+            "preservedSafeDocuments": 400,
+            "trueEdits": 662,
+            "falseEdits": 0,
+            "missedEdits": 532,
+            "precision": 1,
+            "recall": 0.5544388609715243,
+            "p50Ms": 0.3240490000000591,
+            "p95Ms": 0.8579630000001544,
+            "maxMs": 96.107599
+          },
+          {
+            "mode": "balanced",
+            "language": "all",
+            "documents": 2000,
+            "exactDocuments": 1378,
+            "safeDocuments": 800,
+            "preservedSafeDocuments": 800,
+            "trueEdits": 1527,
+            "falseEdits": 0,
+            "missedEdits": 861,
+            "precision": 1,
+            "recall": 0.6394472361809045,
+            "p50Ms": 0.22218399999997018,
+            "p95Ms": 0.5879159999999501,
+            "maxMs": 3.4928939999999784
+          },
+          {
+            "mode": "balanced",
+            "language": "en",
+            "documents": 1000,
+            "exactDocuments": 738,
+            "safeDocuments": 400,
+            "preservedSafeDocuments": 400,
+            "trueEdits": 865,
+            "falseEdits": 0,
+            "missedEdits": 329,
+            "precision": 1,
+            "recall": 0.7244556113902848,
+            "p50Ms": 0.1810169999999971,
+            "p95Ms": 0.4617769999999837,
+            "maxMs": 3.4928939999999784
+          },
+          {
+            "mode": "balanced",
+            "language": "de",
+            "documents": 1000,
+            "exactDocuments": 640,
+            "safeDocuments": 400,
+            "preservedSafeDocuments": 400,
+            "trueEdits": 662,
+            "falseEdits": 0,
+            "missedEdits": 532,
+            "precision": 1,
+            "recall": 0.5544388609715243,
+            "p50Ms": 0.26768300000003364,
+            "p95Ms": 0.6912889999999834,
+            "maxMs": 3.2062399999999798
+          }
+        ]
+      }
+    },
+    "blind": {
+      "rc3": {
+        "corpusSha256": "317a38b8331358dc01a21776ab68e1452c49bdc3ce19425cd59f87f4cc05fe69",
+        "summary": [
+          {
+            "mode": "conservative",
+            "language": "all",
+            "documents": 100,
+            "exactDocuments": 73,
+            "safeDocuments": 70,
+            "preservedSafeDocuments": 56,
+            "trueEdits": 81,
+            "falseEdits": 20,
+            "missedEdits": 9,
+            "precision": 0.801980198019802,
+            "recall": 0.9,
+            "p50Ms": 7.877277999999933,
+            "p95Ms": 47.03819900000002,
+            "maxMs": 739.875361
+          },
+          {
+            "mode": "conservative",
+            "language": "en",
+            "documents": 50,
+            "exactDocuments": 38,
+            "safeDocuments": 35,
+            "preservedSafeDocuments": 28,
+            "trueEdits": 42,
+            "falseEdits": 10,
+            "missedEdits": 3,
+            "precision": 0.8076923076923077,
+            "recall": 0.9333333333333333,
+            "p50Ms": 2.8972979999998643,
+            "p95Ms": 47.03819900000002,
+            "maxMs": 739.875361
+          },
+          {
+            "mode": "conservative",
+            "language": "de",
+            "documents": 50,
+            "exactDocuments": 35,
+            "safeDocuments": 35,
+            "preservedSafeDocuments": 28,
+            "trueEdits": 39,
+            "falseEdits": 10,
+            "missedEdits": 6,
+            "precision": 0.7959183673469388,
+            "recall": 0.8666666666666667,
+            "p50Ms": 22.78298100000029,
+            "p95Ms": 44.19259599999987,
+            "maxMs": 736.5408509999997
+          },
+          {
+            "mode": "balanced",
+            "language": "all",
+            "documents": 100,
+            "exactDocuments": 70,
+            "safeDocuments": 70,
+            "preservedSafeDocuments": 50,
+            "trueEdits": 84,
+            "falseEdits": 29,
+            "missedEdits": 6,
+            "precision": 0.7433628318584071,
+            "recall": 0.9333333333333333,
+            "p50Ms": 6.057381999999961,
+            "p95Ms": 35.637392999999975,
+            "maxMs": 41.141131000000314
+          },
+          {
+            "mode": "balanced",
+            "language": "en",
+            "documents": 50,
+            "exactDocuments": 35,
+            "safeDocuments": 35,
+            "preservedSafeDocuments": 23,
+            "trueEdits": 44,
+            "falseEdits": 18,
+            "missedEdits": 1,
+            "precision": 0.7096774193548387,
+            "recall": 0.9777777777777777,
+            "p50Ms": 2.370363999999995,
+            "p95Ms": 6.307141000000001,
+            "maxMs": 25.726513999999952
+          },
+          {
+            "mode": "balanced",
+            "language": "de",
+            "documents": 50,
+            "exactDocuments": 35,
+            "safeDocuments": 35,
+            "preservedSafeDocuments": 27,
+            "trueEdits": 40,
+            "falseEdits": 11,
+            "missedEdits": 5,
+            "precision": 0.7843137254901961,
+            "recall": 0.8888888888888888,
+            "p50Ms": 20.59152099999983,
+            "p95Ms": 40.112861000000066,
+            "maxMs": 41.141131000000314
+          }
+        ]
+      },
+      "candidate": {
+        "corpusSha256": "317a38b8331358dc01a21776ab68e1452c49bdc3ce19425cd59f87f4cc05fe69",
+        "summary": [
+          {
+            "mode": "conservative",
+            "language": "all",
+            "documents": 100,
+            "exactDocuments": 81,
+            "safeDocuments": 70,
+            "preservedSafeDocuments": 70,
+            "trueEdits": 66,
+            "falseEdits": 0,
+            "missedEdits": 24,
+            "precision": 1,
+            "recall": 0.7333333333333333,
+            "p50Ms": 0.49642199999993863,
+            "p95Ms": 4.424603000000047,
+            "maxMs": 98.64877400000006
+          },
+          {
+            "mode": "conservative",
+            "language": "en",
+            "documents": 50,
+            "exactDocuments": 42,
+            "safeDocuments": 35,
+            "preservedSafeDocuments": 35,
+            "trueEdits": 35,
+            "falseEdits": 0,
+            "missedEdits": 10,
+            "precision": 1,
+            "recall": 0.7777777777777778,
+            "p50Ms": 0.49642199999993863,
+            "p95Ms": 3.216009999999983,
+            "maxMs": 98.64877400000006
+          },
+          {
+            "mode": "conservative",
+            "language": "de",
+            "documents": 50,
+            "exactDocuments": 39,
+            "safeDocuments": 35,
+            "preservedSafeDocuments": 35,
+            "trueEdits": 31,
+            "falseEdits": 0,
+            "missedEdits": 14,
+            "precision": 1,
+            "recall": 0.6888888888888889,
+            "p50Ms": 0.515843000000018,
+            "p95Ms": 4.424603000000047,
+            "maxMs": 7.957070000000044
+          },
+          {
+            "mode": "balanced",
+            "language": "all",
+            "documents": 100,
+            "exactDocuments": 81,
+            "safeDocuments": 70,
+            "preservedSafeDocuments": 70,
+            "trueEdits": 66,
+            "falseEdits": 0,
+            "missedEdits": 24,
+            "precision": 1,
+            "recall": 0.7333333333333333,
+            "p50Ms": 0.1716989999999896,
+            "p95Ms": 0.4704950000000281,
+            "maxMs": 1.6838989999999967
+          },
+          {
+            "mode": "balanced",
+            "language": "en",
+            "documents": 50,
+            "exactDocuments": 42,
+            "safeDocuments": 35,
+            "preservedSafeDocuments": 35,
+            "trueEdits": 35,
+            "falseEdits": 0,
+            "missedEdits": 10,
+            "precision": 1,
+            "recall": 0.7777777777777778,
+            "p50Ms": 0.13841400000001158,
+            "p95Ms": 0.39683500000001004,
+            "maxMs": 1.6838989999999967
+          },
+          {
+            "mode": "balanced",
+            "language": "de",
+            "documents": 50,
+            "exactDocuments": 39,
+            "safeDocuments": 35,
+            "preservedSafeDocuments": 35,
+            "trueEdits": 31,
+            "falseEdits": 0,
+            "missedEdits": 14,
+            "precision": 1,
+            "recall": 0.6888888888888889,
+            "p50Ms": 0.20533499999999094,
+            "p95Ms": 0.4704950000000281,
+            "maxMs": 0.7210949999999912
+          }
+        ]
+      }
+    }
+  },
+  "overlap": {
+    "dev": {
+      "goldEdits": 3590,
+      "precompiledPairMatches": 2322,
+      "origins": {
+        "controlled-mutation": {
+          "gold": 3101,
+          "known": 1965
+        },
+        "public-source-pair": {
+          "gold": 489,
+          "known": 357
+        }
+      },
+      "note": "Prior pair membership before context/validity/case gates. Fresh contexts do not make an existing pair independent."
+    },
+    "holdout": {
+      "goldEdits": 2388,
+      "precompiledPairMatches": 1572,
+      "origins": {
+        "controlled-mutation": {
+          "gold": 2072,
+          "known": 1313
+        },
+        "public-source-pair": {
+          "gold": 316,
+          "known": 259
+        }
+      },
+      "note": "Prior pair membership before context/validity/case gates. Fresh contexts do not make an existing pair independent."
+    },
+    "blind": {
+      "goldEdits": 90,
+      "precompiledPairMatches": 67,
+      "origins": {
+        "blind-authored": {
+          "gold": 90,
+          "known": 67
+        }
+      },
+      "note": "Prior pair membership before context/validity/case gates. Fresh contexts do not make an existing pair independent."
+    }
+  }
+}

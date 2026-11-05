@@ -1,0 +1,287 @@
+{
+  "notes": "Authoring rejects before engine evaluation. Absence from sources or valid-word veto; no engine outputs used.",
+  "pairs": [
+    {
+      "language": "en",
+      "typo": "brithday",
+      "target": "birthday",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "bookng",
+      "target": "booking",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "brougth",
+      "target": "brought",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "calender",
+      "target": "calendar",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "comforable",
+      "target": "comfortable",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "compnay",
+      "target": "company",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "compuer",
+      "target": "computer",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "contcat",
+      "target": "contact",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "costumer",
+      "target": "customer",
+      "reason": "valid-word-or-case-only-veto"
+    },
+    {
+      "language": "en",
+      "typo": "departement",
+      "target": "department",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "emergancy",
+      "target": "emergency",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "employe",
+      "target": "employee",
+      "reason": "valid-word-or-case-only-veto"
+    },
+    {
+      "language": "en",
+      "typo": "enginer",
+      "target": "engineer",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "estiamte",
+      "target": "estimate",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "favouite",
+      "target": "favourite",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "feedbak",
+      "target": "feedback",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "finaly",
+      "target": "finally",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "frequenty",
+      "target": "frequently",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "furnature",
+      "target": "furniture",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "happend",
+      "target": "happened",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "hoilday",
+      "target": "holiday",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "importent",
+      "target": "important",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "inclued",
+      "target": "included",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "invitaion",
+      "target": "invitation",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "invocie",
+      "target": "invoice",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "kithcen",
+      "target": "kitchen",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "materal",
+      "target": "material",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "measuer",
+      "target": "measure",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "medicin",
+      "target": "medicine",
+      "reason": "valid-word-or-case-only-veto"
+    },
+    {
+      "language": "en",
+      "typo": "meetng",
+      "target": "meeting",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "notcie",
+      "target": "notice",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "orgnaise",
+      "target": "organise",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "paragragh",
+      "target": "paragraph",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "parkng",
+      "target": "parking",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "payement",
+      "target": "payment",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "photgraph",
+      "target": "photograph",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "planing",
+      "target": "planning",
+      "reason": "valid-word-or-case-only-veto"
+    },
+    {
+      "language": "en",
+      "typo": "pracitce",
+      "target": "practice",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "presure",
+      "target": "pressure",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "previuos",
+      "target": "previous",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "promisse",
+      "target": "promise",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "purchace",
+      "target": "purchase",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "reservaton",
+      "target": "reservation",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "sugestions",
+      "target": "suggestion",
+      "reason": "not-an-exact-single-candidate-source-pair"
+    },
+    {
+      "language": "en",
+      "typo": "therefor",
+      "target": "therefore",
+      "reason": "valid-word-or-case-only-veto"
+    },
+    {
+      "language": "de",
+      "typo": "Jake",
+      "target": "Jacke",
+      "reason": "valid-word-or-case-only-veto"
+    },
+    {
+      "language": "de",
+      "typo": "wieda",
+      "target": "wieder",
+      "reason": "valid-word-or-case-only-veto"
+    }
+  ]
+}

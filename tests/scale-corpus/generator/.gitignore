@@ -1,0 +1,4 @@
+sources/*
+!sources/download-manifest.json
+frozen/
+__pycache__/

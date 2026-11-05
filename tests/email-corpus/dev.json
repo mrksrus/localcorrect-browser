@@ -1,0 +1,3224 @@
+{
+  "schemaVersion": 1,
+  "corpus": "email200-v1",
+  "split": "dev",
+  "provenance": "Author-created synthetic English/German text. Frozen before engine evaluation. No private correspondence.",
+  "cases": [
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "delivery entrance",
+      "input": "Hello Kira,\n\nPleaze ask the driver to use the side entrance for tomorrow's delivrey.\n\nThe front gate is blocked by repairs, but the recpetion desk will stay open.\n\nWe can accpet the boxes after nine. Call before unloading the glass panels.\n\nBest wishes,\nTess Wren",
+      "expected": "Hello Kira,\n\nPlease ask the driver to use the side entrance for tomorrow's delivery.\n\nThe front gate is blocked by repairs, but the reception desk will stay open.\n\nWe can accept the boxes after nine. Call before unloading the glass panels.\n\nBest wishes,\nTess Wren",
+      "edits": [
+        {
+          "offset": 13,
+          "length": 6,
+          "original": "Pleaze",
+          "replacement": "Please"
+        },
+        {
+          "offset": 75,
+          "length": 8,
+          "original": "delivrey",
+          "replacement": "delivery"
+        },
+        {
+          "offset": 132,
+          "length": 9,
+          "original": "recpetion",
+          "replacement": "reception"
+        },
+        {
+          "offset": 171,
+          "length": 6,
+          "original": "accpet",
+          "replacement": "accept"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-email-correction-01"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "invoice duplicate",
+      "input": "Dear Accounts Team,\n\nI recieved two invoices for the same repair visit last week.\n\nThe second document lists an additonal callout fee, although the engineer came only once.\n\nPlease send a corrected copy and confrim which invoice I should pay before the deadilne.\n\nKind regards,\nMilo Reed",
+      "expected": "Dear Accounts Team,\n\nI received two invoices for the same repair visit last week.\n\nThe second document lists an additional callout fee, although the engineer came only once.\n\nPlease send a corrected copy and confirm which invoice I should pay before the deadline.\n\nKind regards,\nMilo Reed",
+      "edits": [
+        {
+          "offset": 23,
+          "length": 8,
+          "original": "recieved",
+          "replacement": "received"
+        },
+        {
+          "offset": 112,
+          "length": 9,
+          "original": "additonal",
+          "replacement": "additional"
+        },
+        {
+          "offset": 207,
+          "length": 7,
+          "original": "confrim",
+          "replacement": "confirm"
+        },
+        {
+          "offset": 253,
+          "length": 8,
+          "original": "deadilne",
+          "replacement": "deadline"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-email-correction-02"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "community garden",
+      "input": "Hi neighbours,\n\nThe soil has arrived, so our volunter morning can go ahead on Saturday.\n\nBring gloves and a small shovel. The shed has enoguh watering cans for everyone.\n\nPlease remeber to close the gate; rabbits ate the young vegatables last spring.\n\nThanks,\nNora Vale",
+      "expected": "Hi neighbours,\n\nThe soil has arrived, so our volunteer morning can go ahead on Saturday.\n\nBring gloves and a small shovel. The shed has enough watering cans for everyone.\n\nPlease remember to close the gate; rabbits ate the young vegetables last spring.\n\nThanks,\nNora Vale",
+      "edits": [
+        {
+          "offset": 45,
+          "length": 8,
+          "original": "volunter",
+          "replacement": "volunteer"
+        },
+        {
+          "offset": 135,
+          "length": 6,
+          "original": "enoguh",
+          "replacement": "enough"
+        },
+        {
+          "offset": 178,
+          "length": 7,
+          "original": "remeber",
+          "replacement": "remember"
+        },
+        {
+          "offset": 227,
+          "length": 10,
+          "original": "vegatables",
+          "replacement": "vegetables"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-email-correction-03"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "software release delay",
+      "input": "Hello team,\n\nThe release will move to Thursday because the final integartion check found missing records.\n\nWe have a reprodcuible example, and the fix is ready for review.\n\nPlease leave the current version running until we verfiy the migration on a seperate copy.\n\nRegards,\nEli Moss",
+      "expected": "Hello team,\n\nThe release will move to Thursday because the final integration check found missing records.\n\nWe have a reproducible example, and the fix is ready for review.\n\nPlease leave the current version running until we verify the migration on a separate copy.\n\nRegards,\nEli Moss",
+      "edits": [
+        {
+          "offset": 65,
+          "length": 11,
+          "original": "integartion",
+          "replacement": "integration"
+        },
+        {
+          "offset": 117,
+          "length": 12,
+          "original": "reprodcuible",
+          "replacement": "reproducible"
+        },
+        {
+          "offset": 223,
+          "length": 6,
+          "original": "verfiy",
+          "replacement": "verify"
+        },
+        {
+          "offset": 249,
+          "length": 8,
+          "original": "seperate",
+          "replacement": "separate"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-email-correction-04"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "school trip lunch",
+      "input": "Dear families,\n\nOur museum visit starts at ten, and the coach will leave promtply at nine.\n\nEach child needs a packed lunch and a refilable water bottle.\n\nPlease tell us about any alergies by Tuesday. We cannot buy replacment meals at the museum.\n\nBest wishes,\nAda Finch",
+      "expected": "Dear families,\n\nOur museum visit starts at ten, and the coach will leave promptly at nine.\n\nEach child needs a packed lunch and a refillable water bottle.\n\nPlease tell us about any allergies by Tuesday. We cannot buy replacement meals at the museum.\n\nBest wishes,\nAda Finch",
+      "edits": [
+        {
+          "offset": 73,
+          "length": 8,
+          "original": "promtply",
+          "replacement": "promptly"
+        },
+        {
+          "offset": 130,
+          "length": 9,
+          "original": "refilable",
+          "replacement": "refillable"
+        },
+        {
+          "offset": 180,
+          "length": 8,
+          "original": "alergies",
+          "replacement": "allergies"
+        },
+        {
+          "offset": 215,
+          "length": 10,
+          "original": "replacment",
+          "replacement": "replacement"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-email-correction-05"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "tenant heating visit",
+      "input": "Hello Ivo,\n\nThe heating engineer can inspcet the radiator on Friday afternoon.\n\nI have explained the intermitent noise and the water beneath the valve.\n\nCould you confrim that someone will be home? The engineer needs acess to the bedroom as well.\n\nMany thanks,\nLena Brook",
+      "expected": "Hello Ivo,\n\nThe heating engineer can inspect the radiator on Friday afternoon.\n\nI have explained the intermittent noise and the water beneath the valve.\n\nCould you confirm that someone will be home? The engineer needs access to the bedroom as well.\n\nMany thanks,\nLena Brook",
+      "edits": [
+        {
+          "offset": 37,
+          "length": 7,
+          "original": "inspcet",
+          "replacement": "inspect"
+        },
+        {
+          "offset": 101,
+          "length": 11,
+          "original": "intermitent",
+          "replacement": "intermittent"
+        },
+        {
+          "offset": 163,
+          "length": 7,
+          "original": "confrim",
+          "replacement": "confirm"
+        },
+        {
+          "offset": 217,
+          "length": 5,
+          "original": "acess",
+          "replacement": "access"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-email-correction-06"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "conference room change",
+      "input": "Hi speakers,\n\nYour session has moved to the smaller room beside the libary.\n\nThe screen is ready, but please bring an adapter for your lapotp.\n\nWe will resreve the front row for the interpreters. Send any updated slides before midnigth.\n\nThank you,\nOwen Ash",
+      "expected": "Hi speakers,\n\nYour session has moved to the smaller room beside the library.\n\nThe screen is ready, but please bring an adapter for your laptop.\n\nWe will reserve the front row for the interpreters. Send any updated slides before midnight.\n\nThank you,\nOwen Ash",
+      "edits": [
+        {
+          "offset": 68,
+          "length": 6,
+          "original": "libary",
+          "replacement": "library"
+        },
+        {
+          "offset": 135,
+          "length": 6,
+          "original": "lapotp",
+          "replacement": "laptop"
+        },
+        {
+          "offset": 152,
+          "length": 7,
+          "original": "resreve",
+          "replacement": "reserve"
+        },
+        {
+          "offset": 227,
+          "length": 8,
+          "original": "midnigth",
+          "replacement": "midnight"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-email-correction-07"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "damaged ceramics",
+      "input": "Dear Support,\n\nTwo bowls from my order arrived with visble cracks around the rim.\n\nThe outer box was dry, but the packgaing inside had shifted during transport.\n\nI can send photographs through your seucre form. Please explain whether a replacment is available.\n\nKind regards,\nMira Bell",
+      "expected": "Dear Support,\n\nTwo bowls from my order arrived with visible cracks around the rim.\n\nThe outer box was dry, but the packaging inside had shifted during transport.\n\nI can send photographs through your secure form. Please explain whether a replacement is available.\n\nKind regards,\nMira Bell",
+      "edits": [
+        {
+          "offset": 52,
+          "length": 6,
+          "original": "visble",
+          "replacement": "visible"
+        },
+        {
+          "offset": 114,
+          "length": 9,
+          "original": "packgaing",
+          "replacement": "packaging"
+        },
+        {
+          "offset": 198,
+          "length": 6,
+          "original": "seucre",
+          "replacement": "secure"
+        },
+        {
+          "offset": 236,
+          "length": 10,
+          "original": "replacment",
+          "replacement": "replacement"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-email-correction-08"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "research interview scheduling",
+      "input": "Hello Petra,\n\nThank you for agreeing to discuss your experience with the booknig system.\n\nThe interview should take thirty minutes, and recording is entirely optinal.\n\nPlease choose a conveninet time next week. I will send the questions in adavnce.\n\nBest,\nTess Wren",
+      "expected": "Hello Petra,\n\nThank you for agreeing to discuss your experience with the booking system.\n\nThe interview should take thirty minutes, and recording is entirely optional.\n\nPlease choose a convenient time next week. I will send the questions in advance.\n\nBest,\nTess Wren",
+      "edits": [
+        {
+          "offset": 73,
+          "length": 7,
+          "original": "booknig",
+          "replacement": "booking"
+        },
+        {
+          "offset": 158,
+          "length": 7,
+          "original": "optinal",
+          "replacement": "optional"
+        },
+        {
+          "offset": 184,
+          "length": 10,
+          "original": "conveninet",
+          "replacement": "convenient"
+        },
+        {
+          "offset": 240,
+          "length": 7,
+          "original": "adavnce",
+          "replacement": "advance"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-email-correction-09"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "catering adjustment",
+      "input": "Dear Catering Team,\n\nOur final guest count is forty, including six people who requested vegetarain meals.\n\nPlease keep the sauces in seperate containers and label anything containing nuts.\n\nWe no longer need the late coffee service. Could you revise the estimate and acknowlege this change?\n\nRegards,\nMilo Reed",
+      "expected": "Dear Catering Team,\n\nOur final guest count is forty, including six people who requested vegetarian meals.\n\nPlease keep the sauces in separate containers and label anything containing nuts.\n\nWe no longer need the late coffee service. Could you revise the estimate and acknowledge this change?\n\nRegards,\nMilo Reed",
+      "edits": [
+        {
+          "offset": 88,
+          "length": 10,
+          "original": "vegetarain",
+          "replacement": "vegetarian"
+        },
+        {
+          "offset": 133,
+          "length": 8,
+          "original": "seperate",
+          "replacement": "separate"
+        },
+        {
+          "offset": 267,
+          "length": 10,
+          "original": "acknowlege",
+          "replacement": "acknowledge"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-email-correction-10"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "lost luggage followup",
+      "input": "Hello Baggage Team,\n\nMy suitcase is still missing after Monday's connetcing flight.\n\nIt is dark green, with a yellow ribbon tied around the hadnle.\n\nThe hotel can recieve it until Friday morning. Please contact me if the serach takes longer.\n\nThank you,\nNora Vale",
+      "expected": "Hello Baggage Team,\n\nMy suitcase is still missing after Monday's connecting flight.\n\nIt is dark green, with a yellow ribbon tied around the handle.\n\nThe hotel can receive it until Friday morning. Please contact me if the search takes longer.\n\nThank you,\nNora Vale",
+      "edits": [
+        {
+          "offset": 65,
+          "length": 10,
+          "original": "connetcing",
+          "replacement": "connecting"
+        },
+        {
+          "offset": 140,
+          "length": 6,
+          "original": "hadnle",
+          "replacement": "handle"
+        },
+        {
+          "offset": 163,
+          "length": 7,
+          "original": "recieve",
+          "replacement": "receive"
+        },
+        {
+          "offset": 221,
+          "length": 6,
+          "original": "serach",
+          "replacement": "search"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-email-correction-11"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "book club accessibility",
+      "input": "Hi readers,\n\nWe have booked the ground floor room for our next discusison.\n\nIts wider doorway should make acess easier, and there is a quiet corner for breaks.\n\nPlease send any other reqeusts before Wednesday. Large print copies are availble at the desk.\n\nSee you soon,\nEli Moss",
+      "expected": "Hi readers,\n\nWe have booked the ground floor room for our next discussion.\n\nIts wider doorway should make access easier, and there is a quiet corner for breaks.\n\nPlease send any other requests before Wednesday. Large print copies are available at the desk.\n\nSee you soon,\nEli Moss",
+      "edits": [
+        {
+          "offset": 63,
+          "length": 10,
+          "original": "discusison",
+          "replacement": "discussion"
+        },
+        {
+          "offset": 106,
+          "length": 5,
+          "original": "acess",
+          "replacement": "access"
+        },
+        {
+          "offset": 183,
+          "length": 8,
+          "original": "reqeusts",
+          "replacement": "requests"
+        },
+        {
+          "offset": 233,
+          "length": 8,
+          "original": "availble",
+          "replacement": "available"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-email-correction-12"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "warehouse count",
+      "input": "Hello shift leaders,\n\nThe stock count begins after the last disptach on Wednesday.\n\nKeep returned items on the marked shelf so they do not enter the count twcie.\n\nEach team should sign its sheet and report any discrepancies to the supervsior before leaving.\n\nThanks,\nAda Finch",
+      "expected": "Hello shift leaders,\n\nThe stock count begins after the last dispatch on Wednesday.\n\nKeep returned items on the marked shelf so they do not enter the count twice.\n\nEach team should sign its sheet and report any discrepancies to the supervisor before leaving.\n\nThanks,\nAda Finch",
+      "edits": [
+        {
+          "offset": 60,
+          "length": 8,
+          "original": "disptach",
+          "replacement": "dispatch"
+        },
+        {
+          "offset": 155,
+          "length": 5,
+          "original": "twcie",
+          "replacement": "twice"
+        },
+        {
+          "offset": 231,
+          "length": 10,
+          "original": "supervsior",
+          "replacement": "supervisor"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-email-correction-13"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "freelance scope",
+      "input": "Hi Ivo,\n\nThe estimate covers three illustrations and two rounds of revisons.\n\nA fourth drawing would require more time, particularly if the charcter design changes.\n\nPlease confrim the final list before I start. I can then send an accurate scheudle.\n\nBest wishes,\nLena Brook",
+      "expected": "Hi Ivo,\n\nThe estimate covers three illustrations and two rounds of revisions.\n\nA fourth drawing would require more time, particularly if the character design changes.\n\nPlease confirm the final list before I start. I can then send an accurate schedule.\n\nBest wishes,\nLena Brook",
+      "edits": [
+        {
+          "offset": 67,
+          "length": 8,
+          "original": "revisons",
+          "replacement": "revisions"
+        },
+        {
+          "offset": 140,
+          "length": 8,
+          "original": "charcter",
+          "replacement": "character"
+        },
+        {
+          "offset": 173,
+          "length": 7,
+          "original": "confrim",
+          "replacement": "confirm"
+        },
+        {
+          "offset": 240,
+          "length": 8,
+          "original": "scheudle",
+          "replacement": "schedule"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-email-correction-14"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "fundraising receipt",
+      "input": "Dear organisers,\n\nThank you for the receipt for our donatoin to the reading room.\n\nThe amount is correct, but the document gives the prevous year.\n\nCould you send an amended copy for our records? There is no urgnecy, as the accounts close in Decmeber.\n\nKind regards,\nOwen Ash",
+      "expected": "Dear organisers,\n\nThank you for the receipt for our donation to the reading room.\n\nThe amount is correct, but the document gives the previous year.\n\nCould you send an amended copy for our records? There is no urgency, as the accounts close in December.\n\nKind regards,\nOwen Ash",
+      "edits": [
+        {
+          "offset": 52,
+          "length": 8,
+          "original": "donatoin",
+          "replacement": "donation"
+        },
+        {
+          "offset": 133,
+          "length": 7,
+          "original": "prevous",
+          "replacement": "previous"
+        },
+        {
+          "offset": 208,
+          "length": 7,
+          "original": "urgnecy",
+          "replacement": "urgency"
+        },
+        {
+          "offset": 242,
+          "length": 8,
+          "original": "Decmeber",
+          "replacement": "December"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-email-correction-15"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "lab instrument service",
+      "input": "Hello Service Desk,\n\nThe balance no longer returns to zero after the daily calibartion.\n\nWe checked the table and removed nearby equipment, but the reading remains unstaable.\n\nPlease advise when a technician can visit. We have paused measurments to avoid unreliable results.\n\nRegards,\nMira Bell",
+      "expected": "Hello Service Desk,\n\nThe balance no longer returns to zero after the daily calibration.\n\nWe checked the table and removed nearby equipment, but the reading remains unstable.\n\nPlease advise when a technician can visit. We have paused measurements to avoid unreliable results.\n\nRegards,\nMira Bell",
+      "edits": [
+        {
+          "offset": 75,
+          "length": 11,
+          "original": "calibartion",
+          "replacement": "calibration"
+        },
+        {
+          "offset": 164,
+          "length": 9,
+          "original": "unstaable",
+          "replacement": "unstable"
+        },
+        {
+          "offset": 234,
+          "length": 11,
+          "original": "measurments",
+          "replacement": "measurements"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-email-correction-16"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "friend moving arrangements",
+      "input": "Hi Kira,\n\nI can help with the move on Sunday, but my car will not fit the wardorbe.\n\nWe could take the smaller boxes first and borrow a van for the furntiure.\n\nPlease keep the parking space outside free. I will bring blankets to protcet the mirror and picutres.\n\nLove,\nTess Wren",
+      "expected": "Hi Kira,\n\nI can help with the move on Sunday, but my car will not fit the wardrobe.\n\nWe could take the smaller boxes first and borrow a van for the furniture.\n\nPlease keep the parking space outside free. I will bring blankets to protect the mirror and pictures.\n\nLove,\nTess Wren",
+      "edits": [
+        {
+          "offset": 74,
+          "length": 8,
+          "original": "wardorbe",
+          "replacement": "wardrobe"
+        },
+        {
+          "offset": 148,
+          "length": 9,
+          "original": "furntiure",
+          "replacement": "furniture"
+        },
+        {
+          "offset": 229,
+          "length": 7,
+          "original": "protcet",
+          "replacement": "protect"
+        },
+        {
+          "offset": 252,
+          "length": 8,
+          "original": "picutres",
+          "replacement": "pictures"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-email-correction-17"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "customer subscription cancellation",
+      "input": "Dear Membership Team,\n\nPlease cancel my subscrption when the current annual term ends.\n\nI still need access to the archived lessons until then, so an immediate closure would be inconveninet.\n\nCould you confirm the final date and stop the automatic renewla? I would appreciate a written acknowledgemnt.\n\nKind regards,\nMilo Reed",
+      "expected": "Dear Membership Team,\n\nPlease cancel my subscription when the current annual term ends.\n\nI still need access to the archived lessons until then, so an immediate closure would be inconvenient.\n\nCould you confirm the final date and stop the automatic renewal? I would appreciate a written acknowledgement.\n\nKind regards,\nMilo Reed",
+      "edits": [
+        {
+          "offset": 40,
+          "length": 11,
+          "original": "subscrption",
+          "replacement": "subscription"
+        },
+        {
+          "offset": 177,
+          "length": 12,
+          "original": "inconveninet",
+          "replacement": "inconvenient"
+        },
+        {
+          "offset": 248,
+          "length": 7,
+          "original": "renewla",
+          "replacement": "renewal"
+        },
+        {
+          "offset": 286,
+          "length": 14,
+          "original": "acknowledgemnt",
+          "replacement": "acknowledgement"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-email-correction-18"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe mixed spelling conventions",
+      "input": "Hello Kira,\n\nThe colour proof arrived today, and the catalog lists the same shade under a different code.\n\nOur UK editor prefers organise; the US edition uses organize. Both files are intentional.\n\nPlease keep those spellings when combining the notes. Don't standardise the quoted titles.\n\nCheers,\nTess Wren",
+      "expected": "Hello Kira,\n\nThe colour proof arrived today, and the catalog lists the same shade under a different code.\n\nOur UK editor prefers organise; the US edition uses organize. Both files are intentional.\n\nPlease keep those spellings when combining the notes. Don't standardise the quoted titles.\n\nCheers,\nTess Wren",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-en-email-safe-01"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe support identifiers",
+      "input": "Dear Support,\n\nThe device reports ERR_RETRY_PENDING after the second restart.\n\nOur tracking reference is QXZ-417B. The test page is https://status.example.com/retrry?q=teh.\n\nPlease reply to lab-team@example.invalid with that reference. I haven't changed the stored username, xqv_runner.\n\nRegards,\nMilo Reed",
+      "expected": "Dear Support,\n\nThe device reports ERR_RETRY_PENDING after the second restart.\n\nOur tracking reference is QXZ-417B. The test page is https://status.example.com/retrry?q=teh.\n\nPlease reply to lab-team@example.invalid with that reference. I haven't changed the stored username, xqv_runner.\n\nRegards,\nMilo Reed",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-en-email-safe-02"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe real word ambiguity",
+      "input": "Hi Nora,\n\nTheir van is parked there, and they're waiting beside it.\n\nWe need to know whether the weather will hold. The forecast may affect the effect of the paint.\n\nPlease leave the loose rope alone until I can tie it. I don't want to lose the label.\n\nThanks,\nEli Moss",
+      "expected": "Hi Nora,\n\nTheir van is parked there, and they're waiting beside it.\n\nWe need to know whether the weather will hold. The forecast may affect the effect of the paint.\n\nPlease leave the loose rope alone until I can tie it. I don't want to lose the label.\n\nThanks,\nEli Moss",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-en-email-safe-03"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe quoted complaint tail",
+      "input": "Hello team,\n\nThe customer approved the replacement, and the dispatch note is ready.\n\nPlease retain the original wording below when attaching the complaint to the case.\n\nI have already checked the order number against our records.\n\nRegards,\nAda Finch\n\n> I recieved teh wrong colur.\n> Please dont edit this quote.",
+      "expected": "Hello team,\n\nThe customer approved the replacement, and the dispatch note is ready.\n\nPlease retain the original wording below when attaching the complaint to the case.\n\nI have already checked the order number against our records.\n\nRegards,\nAda Finch\n\n> I recieved teh wrong colur.\n> Please dont edit this quote.",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-en-email-safe-04"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe contracted informal reply",
+      "input": "Hey Ivo,\n\nI'm fine with Tuesday. We don't have to make a whole evening of it.\n\nI'll bring the soup if you'll find some bowls. There's bread in the freezer too.\n\nWe'd better eat before the film starts; otherwise we'll miss the opening scene.\n\nSee you,\nLena Brook",
+      "expected": "Hey Ivo,\n\nI'm fine with Tuesday. We don't have to make a whole evening of it.\n\nI'll bring the soup if you'll find some bowls. There's bread in the freezer too.\n\nWe'd better eat before the film starts; otherwise we'll miss the opening scene.\n\nSee you,\nLena Brook",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-en-email-safe-05"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe command and code",
+      "input": "Hello operations,\n\nThe staging job now completes without retries.\n\nKeep the command `printf '%s' 'teh'` exactly as written; it tests literal output.\n\nThe variable `recieved_count` is part of the public interface. Renaming it requires a separate change.\n\nRegards,\nOwen Ash",
+      "expected": "Hello operations,\n\nThe staging job now completes without retries.\n\nKeep the command `printf '%s' 'teh'` exactly as written; it tests literal output.\n\nThe variable `recieved_count` is part of the public interface. Renaming it requires a separate change.\n\nRegards,\nOwen Ash",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-en-email-safe-06"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "shift handover",
+      "input": "The night shift found a loosee cable behind the printer. It is unplugged and marked for replacment.\n\nDo not reconnect it during the morning check. The electrcian will inspect the socket before lunch.",
+      "expected": "The night shift found a loose cable behind the printer. It is unplugged and marked for replacement.\n\nDo not reconnect it during the morning check. The electrician will inspect the socket before lunch.",
+      "edits": [
+        {
+          "offset": 24,
+          "length": 6,
+          "original": "loosee",
+          "replacement": "loose"
+        },
+        {
+          "offset": 88,
+          "length": 10,
+          "original": "replacment",
+          "replacement": "replacement"
+        },
+        {
+          "offset": 151,
+          "length": 10,
+          "original": "electrcian",
+          "replacement": "electrician"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-paragraphs-correction-01"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "walking route",
+      "input": "Althouhg the bridge is open, the path beside the river is still slipery.\n\nTake the steps behind the mill if you are carrying bags. That route is longer but offers a firmer surface and better visibilty.",
+      "expected": "Although the bridge is open, the path beside the river is still slippery.\n\nTake the steps behind the mill if you are carrying bags. That route is longer but offers a firmer surface and better visibility.",
+      "edits": [
+        {
+          "offset": 0,
+          "length": 8,
+          "original": "Althouhg",
+          "replacement": "Although"
+        },
+        {
+          "offset": 64,
+          "length": 7,
+          "original": "slipery",
+          "replacement": "slippery"
+        },
+        {
+          "offset": 191,
+          "length": 9,
+          "original": "visibilty",
+          "replacement": "visibility"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-paragraphs-correction-02"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "meeting notes",
+      "input": "We agreed to postpone the survey until the quesitons have been checked by two volunteers.\n\nThe pilot will include ten households. Record unclear answers seperately so we can identify confusnig wording.",
+      "expected": "We agreed to postpone the survey until the questions have been checked by two volunteers.\n\nThe pilot will include ten households. Record unclear answers separately so we can identify confusing wording.",
+      "edits": [
+        {
+          "offset": 43,
+          "length": 9,
+          "original": "quesitons",
+          "replacement": "questions"
+        },
+        {
+          "offset": 153,
+          "length": 10,
+          "original": "seperately",
+          "replacement": "separately"
+        },
+        {
+          "offset": 183,
+          "length": 9,
+          "original": "confusnig",
+          "replacement": "confusing"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-paragraphs-correction-03"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "recipe adjustment",
+      "input": "Toast the seeds before adding them to the mixutre. Keep the pan moving so the smaller pieces do not burn.\n\nLet everything cool completly before filling the jars. Warm seeds can leave condensatoin under the lid.",
+      "expected": "Toast the seeds before adding them to the mixture. Keep the pan moving so the smaller pieces do not burn.\n\nLet everything cool completely before filling the jars. Warm seeds can leave condensation under the lid.",
+      "edits": [
+        {
+          "offset": 42,
+          "length": 7,
+          "original": "mixutre",
+          "replacement": "mixture"
+        },
+        {
+          "offset": 127,
+          "length": 9,
+          "original": "completly",
+          "replacement": "completely"
+        },
+        {
+          "offset": 183,
+          "length": 12,
+          "original": "condensatoin",
+          "replacement": "condensation"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-paragraphs-correction-04"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "incident summary",
+      "input": "The alert started after the network switch lost power. The server itself remained availble on the local console.\n\nWe restored the switch and checked the queued messages. No duplciate deliveries appeared in the subseuqent review.",
+      "expected": "The alert started after the network switch lost power. The server itself remained available on the local console.\n\nWe restored the switch and checked the queued messages. No duplicate deliveries appeared in the subsequent review.",
+      "edits": [
+        {
+          "offset": 82,
+          "length": 8,
+          "original": "availble",
+          "replacement": "available"
+        },
+        {
+          "offset": 173,
+          "length": 9,
+          "original": "duplciate",
+          "replacement": "duplicate"
+        },
+        {
+          "offset": 210,
+          "length": 10,
+          "original": "subseuqent",
+          "replacement": "subsequent"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-paragraphs-correction-05"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "leave coverage",
+      "input": "During my absence, the support desk will handle urgent enquries. Routine requests can wait until Monday.\n\nThe folder contains current contact details and the escalaion order. Please avoid changing the rota without consultng the people affected.",
+      "expected": "During my absence, the support desk will handle urgent enquiries. Routine requests can wait until Monday.\n\nThe folder contains current contact details and the escalation order. Please avoid changing the rota without consulting the people affected.",
+      "edits": [
+        {
+          "offset": 55,
+          "length": 8,
+          "original": "enquries",
+          "replacement": "enquiries"
+        },
+        {
+          "offset": 158,
+          "length": 9,
+          "original": "escalaion",
+          "replacement": "escalation"
+        },
+        {
+          "offset": 214,
+          "length": 9,
+          "original": "consultng",
+          "replacement": "consulting"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-paragraphs-correction-06"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "budget explanation",
+      "input": "The estimate includes materials but excludes labour. That distinction was missing from the prevous version.\n\nUse the revised total when discussing the project. We should not promise a final price before the site inspectoin and the structrual checks.",
+      "expected": "The estimate includes materials but excludes labour. That distinction was missing from the previous version.\n\nUse the revised total when discussing the project. We should not promise a final price before the site inspection and the structural checks.",
+      "edits": [
+        {
+          "offset": 91,
+          "length": 7,
+          "original": "prevous",
+          "replacement": "previous"
+        },
+        {
+          "offset": 212,
+          "length": 10,
+          "original": "inspectoin",
+          "replacement": "inspection"
+        },
+        {
+          "offset": 231,
+          "length": 10,
+          "original": "structrual",
+          "replacement": "structural"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-paragraphs-correction-07"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "event volunteering",
+      "input": "We need two people at the entrance and one beside the donation box. The roles can rotate after the first intervel.\n\nPlease ask before photographing visitors. Some participants prefer to remain anonymuos, and the consent list is confidentail.",
+      "expected": "We need two people at the entrance and one beside the donation box. The roles can rotate after the first interval.\n\nPlease ask before photographing visitors. Some participants prefer to remain anonymous, and the consent list is confidential.",
+      "edits": [
+        {
+          "offset": 105,
+          "length": 8,
+          "original": "intervel",
+          "replacement": "interval"
+        },
+        {
+          "offset": 193,
+          "length": 9,
+          "original": "anonymuos",
+          "replacement": "anonymous"
+        },
+        {
+          "offset": 228,
+          "length": 12,
+          "original": "confidentail",
+          "replacement": "confidential"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-paragraphs-correction-08"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "bug reproduction",
+      "input": "Open the editor, paste a paragraph, and select its final sentence. The highlgiht disappears when the window loses focus.\n\nThe text remains intact, but the next shortcut acts on the wrong selecion. This happens consistently after switching applciations.",
+      "expected": "Open the editor, paste a paragraph, and select its final sentence. The highlight disappears when the window loses focus.\n\nThe text remains intact, but the next shortcut acts on the wrong selection. This happens consistently after switching applications.",
+      "edits": [
+        {
+          "offset": 71,
+          "length": 9,
+          "original": "highlgiht",
+          "replacement": "highlight"
+        },
+        {
+          "offset": 187,
+          "length": 8,
+          "original": "selecion",
+          "replacement": "selection"
+        },
+        {
+          "offset": 239,
+          "length": 12,
+          "original": "applciations",
+          "replacement": "applications"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-paragraphs-correction-09"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "product care",
+      "input": "Wipe the case with a damp cloth and leave it open to dry. Strong cleaners may damage the protecitve coating.\n\nStore the device away from direct sunlight. Extended heat can shorten battery life and weaken the adhesvie around the dispay.",
+      "expected": "Wipe the case with a damp cloth and leave it open to dry. Strong cleaners may damage the protective coating.\n\nStore the device away from direct sunlight. Extended heat can shorten battery life and weaken the adhesive around the display.",
+      "edits": [
+        {
+          "offset": 89,
+          "length": 10,
+          "original": "protecitve",
+          "replacement": "protective"
+        },
+        {
+          "offset": 208,
+          "length": 8,
+          "original": "adhesvie",
+          "replacement": "adhesive"
+        },
+        {
+          "offset": 228,
+          "length": 6,
+          "original": "dispay",
+          "replacement": "display"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-paragraphs-correction-10"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "museum label",
+      "input": "This cabinet once held samples collected along the coast. Each drawer has a handwriten number matching the original ledger.\n\nSeveral labels have faded, so their identificaiton remains uncertain. The display distinguishes confirmed findings from later interpetations.",
+      "expected": "This cabinet once held samples collected along the coast. Each drawer has a handwritten number matching the original ledger.\n\nSeveral labels have faded, so their identification remains uncertain. The display distinguishes confirmed findings from later interpretations.",
+      "edits": [
+        {
+          "offset": 76,
+          "length": 10,
+          "original": "handwriten",
+          "replacement": "handwritten"
+        },
+        {
+          "offset": 161,
+          "length": 14,
+          "original": "identificaiton",
+          "replacement": "identification"
+        },
+        {
+          "offset": 251,
+          "length": 14,
+          "original": "interpetations",
+          "replacement": "interpretations"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-paragraphs-correction-11"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "sports practice",
+      "input": "Start with a gentle warm-up before practising the turns. Speed matters less than keeping a consitent line.\n\nStop if the surface becomes wet. We can work on balance indoors instead of taking unnecesary risks on the slipery track.",
+      "expected": "Start with a gentle warm-up before practising the turns. Speed matters less than keeping a consistent line.\n\nStop if the surface becomes wet. We can work on balance indoors instead of taking unnecessary risks on the slippery track.",
+      "edits": [
+        {
+          "offset": 91,
+          "length": 9,
+          "original": "consitent",
+          "replacement": "consistent"
+        },
+        {
+          "offset": 190,
+          "length": 10,
+          "original": "unnecesary",
+          "replacement": "unnecessary"
+        },
+        {
+          "offset": 214,
+          "length": 7,
+          "original": "slipery",
+          "replacement": "slippery"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-paragraphs-correction-12"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "pet sitting note",
+      "input": "The cat eats beside the kitchen door and prefers fresh water in the shallow bowl. Keep the bedroom window securley closed.\n\nIf she hides, leave her alone for a while. She usually appears when the flat is quiet and familar sounds return to the corrdior.",
+      "expected": "The cat eats beside the kitchen door and prefers fresh water in the shallow bowl. Keep the bedroom window securely closed.\n\nIf she hides, leave her alone for a while. She usually appears when the flat is quiet and familiar sounds return to the corridor.",
+      "edits": [
+        {
+          "offset": 106,
+          "length": 8,
+          "original": "securley",
+          "replacement": "securely"
+        },
+        {
+          "offset": 214,
+          "length": 7,
+          "original": "familar",
+          "replacement": "familiar"
+        },
+        {
+          "offset": 243,
+          "length": 8,
+          "original": "corrdior",
+          "replacement": "corridor"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-paragraphs-correction-13"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "archive description",
+      "input": "The photographs are arranged by location, although some dates are aproximate. Pencil marks on the reverse belong to the original owner.\n\nDo not remove those marks during scanning. They may supply valuble context for later reseach.",
+      "expected": "The photographs are arranged by location, although some dates are approximate. Pencil marks on the reverse belong to the original owner.\n\nDo not remove those marks during scanning. They may supply valuable context for later research.",
+      "edits": [
+        {
+          "offset": 66,
+          "length": 10,
+          "original": "aproximate",
+          "replacement": "approximate"
+        },
+        {
+          "offset": 196,
+          "length": 7,
+          "original": "valuble",
+          "replacement": "valuable"
+        },
+        {
+          "offset": 222,
+          "length": 7,
+          "original": "reseach",
+          "replacement": "research"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-paragraphs-correction-14"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "recruitment feedback",
+      "input": "The candidate explained the trade-off clearly and asked useful questions about the existing infrastrcuture.\n\nWe still need evidence of practical troubleshooting. A short exercise would help us assess that without relying on impressons from the interveiw.",
+      "expected": "The candidate explained the trade-off clearly and asked useful questions about the existing infrastructure.\n\nWe still need evidence of practical troubleshooting. A short exercise would help us assess that without relying on impressions from the interview.",
+      "edits": [
+        {
+          "offset": 92,
+          "length": 14,
+          "original": "infrastrcuture",
+          "replacement": "infrastructure"
+        },
+        {
+          "offset": 224,
+          "length": 10,
+          "original": "impressons",
+          "replacement": "impressions"
+        },
+        {
+          "offset": 244,
+          "length": 9,
+          "original": "interveiw",
+          "replacement": "interview"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-paragraphs-correction-15"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "scenario": "safe technical snippet",
+      "input": "The test intentionally stores the literal string `recieve teh mesage` under `raw_input`.\n\nDo not edit either token. A changed fixture would conceal the parser failure we are trying to reproduce.",
+      "expected": "The test intentionally stores the literal string `recieve teh mesage` under `raw_input`.\n\nDo not edit either token. A changed fixture would conceal the parser failure we are trying to reproduce.",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-en-paragraphs-safe-01"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "scenario": "safe poetry quotation",
+      "input": "The archive preserves the writer's spelling in direct quotations.\n\n> I shal return when teh rain stops.\n> Yours, Alixx",
+      "expected": "The archive preserves the writer's spelling in direct quotations.\n\n> I shal return when teh rain stops.\n> Yours, Alixx",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-en-paragraphs-safe-02"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "scenario": "safe informal dialect",
+      "input": "Aye, the wee room is free tonight. We'll put the kettle on once you're here.\n\nBring your own mug if you fancy a big cup. Mine are all rather small.",
+      "expected": "Aye, the wee room is free tonight. We'll put the kettle on once you're here.\n\nBring your own mug if you fancy a big cup. Mine are all rather small.",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-en-paragraphs-safe-03"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "initial typo and colon",
+      "input": "Tomorow: confrim the booking before the deadilne.",
+      "expected": "Tomorrow: confirm the booking before the deadline.",
+      "edits": [
+        {
+          "offset": 0,
+          "length": 7,
+          "original": "Tomorow",
+          "replacement": "Tomorrow"
+        },
+        {
+          "offset": 9,
+          "length": 7,
+          "original": "confrim",
+          "replacement": "confirm"
+        },
+        {
+          "offset": 40,
+          "length": 8,
+          "original": "deadilne",
+          "replacement": "deadline"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-short-correction-01"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "emoji offsets",
+      "input": "📦 The delivrey needs a seperate label and a reciept.",
+      "expected": "📦 The delivery needs a separate label and a receipt.",
+      "edits": [
+        {
+          "offset": 7,
+          "length": 8,
+          "original": "delivrey",
+          "replacement": "delivery"
+        },
+        {
+          "offset": 24,
+          "length": 8,
+          "original": "seperate",
+          "replacement": "separate"
+        },
+        {
+          "offset": 45,
+          "length": 7,
+          "original": "reciept",
+          "replacement": "receipt"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-short-correction-02"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "tabs and spaces",
+      "input": "Check\tavailabilty  before\tscheudling the interveiw.",
+      "expected": "Check\tavailability  before\tscheduling the interview.",
+      "edits": [
+        {
+          "offset": 6,
+          "length": 11,
+          "original": "availabilty",
+          "replacement": "availability"
+        },
+        {
+          "offset": 26,
+          "length": 10,
+          "original": "scheudling",
+          "replacement": "scheduling"
+        },
+        {
+          "offset": 41,
+          "length": 9,
+          "original": "interveiw",
+          "replacement": "interview"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-short-correction-03"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "CRLF layout",
+      "input": "Please attatch the report.\r\nThe sumamry needs a refernece.",
+      "expected": "Please attach the report.\r\nThe summary needs a reference.",
+      "edits": [
+        {
+          "offset": 7,
+          "length": 7,
+          "original": "attatch",
+          "replacement": "attach"
+        },
+        {
+          "offset": 32,
+          "length": 7,
+          "original": "sumamry",
+          "replacement": "summary"
+        },
+        {
+          "offset": 48,
+          "length": 9,
+          "original": "refernece",
+          "replacement": "reference"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-short-correction-04"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "apostrophe",
+      "input": "I haven't recieved the neccessary files for tomorrow's presentatoin.",
+      "expected": "I haven't received the necessary files for tomorrow's presentation.",
+      "edits": [
+        {
+          "offset": 10,
+          "length": 8,
+          "original": "recieved",
+          "replacement": "received"
+        },
+        {
+          "offset": 23,
+          "length": 10,
+          "original": "neccessary",
+          "replacement": "necessary"
+        },
+        {
+          "offset": 55,
+          "length": 12,
+          "original": "presentatoin",
+          "replacement": "presentation"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-short-correction-05"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "brackets",
+      "input": "The replacment cable [blue] is availble from the warehosue.",
+      "expected": "The replacement cable [blue] is available from the warehouse.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 10,
+          "original": "replacment",
+          "replacement": "replacement"
+        },
+        {
+          "offset": 31,
+          "length": 8,
+          "original": "availble",
+          "replacement": "available"
+        },
+        {
+          "offset": 49,
+          "length": 9,
+          "original": "warehosue",
+          "replacement": "warehouse"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-short-correction-06"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "url beside mistakes",
+      "input": "Pleaze check https://example.com/recieve before sendnig the messgae.",
+      "expected": "Please check https://example.com/recieve before sending the message.",
+      "edits": [
+        {
+          "offset": 0,
+          "length": 6,
+          "original": "Pleaze",
+          "replacement": "Please"
+        },
+        {
+          "offset": 48,
+          "length": 7,
+          "original": "sendnig",
+          "replacement": "sending"
+        },
+        {
+          "offset": 60,
+          "length": 7,
+          "original": "messgae",
+          "replacement": "message"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-short-correction-07"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "email address beside mistakes",
+      "input": "Send the correcetd documnt to teh@example.invalid after aproval.",
+      "expected": "Send the corrected document to teh@example.invalid after approval.",
+      "edits": [
+        {
+          "offset": 9,
+          "length": 9,
+          "original": "correcetd",
+          "replacement": "corrected"
+        },
+        {
+          "offset": 19,
+          "length": 7,
+          "original": "documnt",
+          "replacement": "document"
+        },
+        {
+          "offset": 56,
+          "length": 7,
+          "original": "aproval",
+          "replacement": "approval"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-short-correction-08"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "quoted literal",
+      "input": "The code `teh_reciept` stays; the visble label needs corretion before publicatoin.",
+      "expected": "The code `teh_reciept` stays; the visible label needs correction before publication.",
+      "edits": [
+        {
+          "offset": 34,
+          "length": 6,
+          "original": "visble",
+          "replacement": "visible"
+        },
+        {
+          "offset": 53,
+          "length": 9,
+          "original": "corretion",
+          "replacement": "correction"
+        },
+        {
+          "offset": 70,
+          "length": 11,
+          "original": "publicatoin",
+          "replacement": "publication"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-short-correction-09"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "past tense transposition",
+      "input": "We discusssed the problme and agreed to try a differnet route.",
+      "expected": "We discussed the problem and agreed to try a different route.",
+      "edits": [
+        {
+          "offset": 3,
+          "length": 10,
+          "original": "discusssed",
+          "replacement": "discussed"
+        },
+        {
+          "offset": 18,
+          "length": 7,
+          "original": "problme",
+          "replacement": "problem"
+        },
+        {
+          "offset": 46,
+          "length": 9,
+          "original": "differnet",
+          "replacement": "different"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-short-correction-10"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "multisentence",
+      "input": "Unfortunatly, the lift is broken. Please use the oposite entrnace.",
+      "expected": "Unfortunately, the lift is broken. Please use the opposite entrance.",
+      "edits": [
+        {
+          "offset": 0,
+          "length": 12,
+          "original": "Unfortunatly",
+          "replacement": "Unfortunately"
+        },
+        {
+          "offset": 49,
+          "length": 7,
+          "original": "oposite",
+          "replacement": "opposite"
+        },
+        {
+          "offset": 57,
+          "length": 8,
+          "original": "entrnace",
+          "replacement": "entrance"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-short-correction-11"
+    },
+    {
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "uppercase noun context",
+      "input": "The Febraury report contains incorect totals for equipmnt.",
+      "expected": "The February report contains incorrect totals for equipment.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 8,
+          "original": "Febraury",
+          "replacement": "February"
+        },
+        {
+          "offset": 29,
+          "length": 8,
+          "original": "incorect",
+          "replacement": "incorrect"
+        },
+        {
+          "offset": 49,
+          "length": 8,
+          "original": "equipmnt",
+          "replacement": "equipment"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-en-short-correction-12"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe real word typo cannot infer",
+      "input": "We will meat at noon, then discuss the form.",
+      "expected": "We will meat at noon, then discuss the form.",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-en-short-safe-01"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe identifiers",
+      "input": "Build QXZ-17 uses getReciept(), teh_count and Xqvrr.",
+      "expected": "Build QXZ-17 uses getReciept(), teh_count and Xqvrr.",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-en-short-safe-02"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe web address",
+      "input": "https://example.com/recieve?mesage=teh#calender",
+      "expected": "https://example.com/recieve?mesage=teh#calender",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-en-short-safe-03"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe email literal",
+      "input": "Contact teh.recieve@example.invalid.",
+      "expected": "Contact teh.recieve@example.invalid.",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-en-short-safe-04"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe contractions",
+      "input": "We'd have waited if you'd told us you weren't ready.",
+      "expected": "We'd have waited if you'd told us you weren't ready.",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-en-short-safe-05"
+    },
+    {
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe variants",
+      "input": "The theatre programme and the theater program are both listed.",
+      "expected": "The theatre programme and the theater program are both listed.",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-en-short-safe-06"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Lieferung ins Lager",
+      "input": "Guten Tag Frau Lenz,\n\nBitet liefern Sie die neuen Regale direkt an den hinteren Eingnag.\n\nIm Hof steht ein Wagen, auf dem die schweren Teile bis zur Montgae liegen können.\n\nUnser Lager ist ab acht besetzt. Eine kurze Nachrciht vor Ihrer Ankunft hilft uns bei der Planung.\n\nFreundliche Grüße\nMara Fink",
+      "expected": "Guten Tag Frau Lenz,\n\nBitte liefern Sie die neuen Regale direkt an den hinteren Eingang.\n\nIm Hof steht ein Wagen, auf dem die schweren Teile bis zur Montage liegen können.\n\nUnser Lager ist ab acht besetzt. Eine kurze Nachricht vor Ihrer Ankunft hilft uns bei der Planung.\n\nFreundliche Grüße\nMara Fink",
+      "edits": [
+        {
+          "offset": 22,
+          "length": 5,
+          "original": "Bitet",
+          "replacement": "Bitte"
+        },
+        {
+          "offset": 80,
+          "length": 7,
+          "original": "Eingnag",
+          "replacement": "Eingang"
+        },
+        {
+          "offset": 149,
+          "length": 7,
+          "original": "Montgae",
+          "replacement": "Montage"
+        },
+        {
+          "offset": 217,
+          "length": 9,
+          "original": "Nachrciht",
+          "replacement": "Nachricht"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-email-correction-01"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Rechnung für Wartung",
+      "input": "Sehr geehrtes Serviceteam,\n\nauf Ihrer Rechnnug fehlt die bereits bezahlte Anfahrt vom ersten Termin.\n\nDie Wartnug selbst wurde zu unserer Zufriedenheit durchgeführt, nur der offene Betrag stimmt nicht.\n\nBitte prüfen Sie die Buchung und senden Sie eine berichtiget Fassung. Wir möchten den Rest noch diese Woche überweisen.\n\nMit freundlichen Grüßen\nTimo Berg",
+      "expected": "Sehr geehrtes Serviceteam,\n\nauf Ihrer Rechnung fehlt die bereits bezahlte Anfahrt vom ersten Termin.\n\nDie Wartung selbst wurde zu unserer Zufriedenheit durchgeführt, nur der offene Betrag stimmt nicht.\n\nBitte prüfen Sie die Buchung und senden Sie eine berichtigte Fassung. Wir möchten den Rest noch diese Woche überweisen.\n\nMit freundlichen Grüßen\nTimo Berg",
+      "edits": [
+        {
+          "offset": 38,
+          "length": 8,
+          "original": "Rechnnug",
+          "replacement": "Rechnung"
+        },
+        {
+          "offset": 106,
+          "length": 7,
+          "original": "Wartnug",
+          "replacement": "Wartung"
+        },
+        {
+          "offset": 252,
+          "length": 11,
+          "original": "berichtiget",
+          "replacement": "berichtigte"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-email-correction-02"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Elternabend verschieben",
+      "input": "Liebe Eltern,\n\nunser Elternabned muss leider um eine Woche verschoben werden.\n\nAm ursprünglichen Termin wird die Beleuchutng im Gebäude repariert, deshalb können wir den Raum nicht nutzen.\n\nDie Uhrzeit bleibt gleich. Bitte geben Sie kurz Beschedi, falls Sie am neuen Datum verhindret sind.\n\nViele Grüße\nNela Bach",
+      "expected": "Liebe Eltern,\n\nunser Elternabend muss leider um eine Woche verschoben werden.\n\nAm ursprünglichen Termin wird die Beleuchtung im Gebäude repariert, deshalb können wir den Raum nicht nutzen.\n\nDie Uhrzeit bleibt gleich. Bitte geben Sie kurz Bescheid, falls Sie am neuen Datum verhindert sind.\n\nViele Grüße\nNela Bach",
+      "edits": [
+        {
+          "offset": 21,
+          "length": 11,
+          "original": "Elternabned",
+          "replacement": "Elternabend"
+        },
+        {
+          "offset": 113,
+          "length": 11,
+          "original": "Beleuchutng",
+          "replacement": "Beleuchtung"
+        },
+        {
+          "offset": 238,
+          "length": 8,
+          "original": "Beschedi",
+          "replacement": "Bescheid"
+        },
+        {
+          "offset": 273,
+          "length": 10,
+          "original": "verhindret",
+          "replacement": "verhindert"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-email-correction-03"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Fehler im Kundenkonto",
+      "input": "Guten Tag,\n\nseit gestern kann ich die gespeicherte Lieferadrse in meinem Konto nicht mehr ändern.\n\nNach dem Speichern erscheint eine leere Seite. Die alte Anschrift bleibt trotz erneuter Anmeldnug bestehen.\n\nBitte prüfen Sie den Vorgang. Vor der nächsten Bestellnug brauche ich eine Bestätigugn, dass die Änderung übernommen wurde.\n\nFreundliche Grüße\nJona Feld",
+      "expected": "Guten Tag,\n\nseit gestern kann ich die gespeicherte Lieferadresse in meinem Konto nicht mehr ändern.\n\nNach dem Speichern erscheint eine leere Seite. Die alte Anschrift bleibt trotz erneuter Anmeldung bestehen.\n\nBitte prüfen Sie den Vorgang. Vor der nächsten Bestellung brauche ich eine Bestätigung, dass die Änderung übernommen wurde.\n\nFreundliche Grüße\nJona Feld",
+      "edits": [
+        {
+          "offset": 51,
+          "length": 11,
+          "original": "Lieferadrse",
+          "replacement": "Lieferadresse"
+        },
+        {
+          "offset": 187,
+          "length": 9,
+          "original": "Anmeldnug",
+          "replacement": "Anmeldung"
+        },
+        {
+          "offset": 255,
+          "length": 10,
+          "original": "Bestellnug",
+          "replacement": "Bestellung"
+        },
+        {
+          "offset": 283,
+          "length": 11,
+          "original": "Bestätigugn",
+          "replacement": "Bestätigung"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-email-correction-04"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Vereinsausflug",
+      "input": "Hallo zusammen,\n\nfür unseren Ausflug habe ich eine Führung durch das alte Kraftwrek reserviert.\n\nDie Wege sind teilweise uneben. Bitte tragt feste Schuhe und nehmt bei Regen eine wasserdcihte Jacke mit.\n\nWir treffen uns am Bahnhof. Wer später kommt, muss die Weiterfahrt selbststädnig organisieren; der Bus wartet höchstesn fünf Minuten.\n\nViele Grüße\nRika Dorn",
+      "expected": "Hallo zusammen,\n\nfür unseren Ausflug habe ich eine Führung durch das alte Kraftwerk reserviert.\n\nDie Wege sind teilweise uneben. Bitte tragt feste Schuhe und nehmt bei Regen eine wasserdichte Jacke mit.\n\nWir treffen uns am Bahnhof. Wer später kommt, muss die Weiterfahrt selbstständig organisieren; der Bus wartet höchstens fünf Minuten.\n\nViele Grüße\nRika Dorn",
+      "edits": [
+        {
+          "offset": 74,
+          "length": 9,
+          "original": "Kraftwrek",
+          "replacement": "Kraftwerk"
+        },
+        {
+          "offset": 179,
+          "length": 12,
+          "original": "wasserdcihte",
+          "replacement": "wasserdichte"
+        },
+        {
+          "offset": 271,
+          "length": 13,
+          "original": "selbststädnig",
+          "replacement": "selbstständig"
+        },
+        {
+          "offset": 314,
+          "length": 9,
+          "original": "höchstesn",
+          "replacement": "höchstens"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-email-correction-05"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Beschädigtes Buch",
+      "input": "Sehr geehrte Damen und Herren,\n\ndas bestellte Buch hat mehrere lose Seiten und einen beschädgiten Rücken.\n\nDer Versandkarton war unversehrt. Vermutlich war der Fehler schon vor dem Versnad vorhanden.\n\nIch würde das Buch gern umtauschen. Bitte schicken Sie mir die nötigen Unterlagne und erklären Sie den Ablafu.\n\nMit freundlichen Grüßen\nLevin Aue",
+      "expected": "Sehr geehrte Damen und Herren,\n\ndas bestellte Buch hat mehrere lose Seiten und einen beschädigten Rücken.\n\nDer Versandkarton war unversehrt. Vermutlich war der Fehler schon vor dem Versand vorhanden.\n\nIch würde das Buch gern umtauschen. Bitte schicken Sie mir die nötigen Unterlagen und erklären Sie den Ablauf.\n\nMit freundlichen Grüßen\nLevin Aue",
+      "edits": [
+        {
+          "offset": 85,
+          "length": 12,
+          "original": "beschädgiten",
+          "replacement": "beschädigten"
+        },
+        {
+          "offset": 181,
+          "length": 7,
+          "original": "Versnad",
+          "replacement": "Versand"
+        },
+        {
+          "offset": 272,
+          "length": 10,
+          "original": "Unterlagne",
+          "replacement": "Unterlagen"
+        },
+        {
+          "offset": 304,
+          "length": 6,
+          "original": "Ablafu",
+          "replacement": "Ablauf"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-email-correction-06"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Werkstatt Abholung",
+      "input": "Hallo Frau Ahr,\n\nIhr Fahrrad ist nach dem Austausch der Bremsbelgae wieder fahrbereit.\n\nWir haben außerdem die lockere Lampe befestigt. Dafür berechenn wir keine zusätzlichen Kosten.\n\nSie können das Rad bis Freitag abholen. Bringen Sie bitte den Abholschien mit, damit wir es eindeutig zuordenn können.\n\nBeste Grüße\nMara Fink",
+      "expected": "Hallo Frau Ahr,\n\nIhr Fahrrad ist nach dem Austausch der Bremsbeläge wieder fahrbereit.\n\nWir haben außerdem die lockere Lampe befestigt. Dafür berechnen wir keine zusätzlichen Kosten.\n\nSie können das Rad bis Freitag abholen. Bringen Sie bitte den Abholschein mit, damit wir es eindeutig zuordnen können.\n\nBeste Grüße\nMara Fink",
+      "edits": [
+        {
+          "offset": 56,
+          "length": 11,
+          "original": "Bremsbelgae",
+          "replacement": "Bremsbeläge"
+        },
+        {
+          "offset": 142,
+          "length": 9,
+          "original": "berechenn",
+          "replacement": "berechnen"
+        },
+        {
+          "offset": 246,
+          "length": 11,
+          "original": "Abholschien",
+          "replacement": "Abholschein"
+        },
+        {
+          "offset": 286,
+          "length": 8,
+          "original": "zuordenn",
+          "replacement": "zuordnen"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-email-correction-07"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Raum für Probe",
+      "input": "Liebes Kulturteam,\n\nwir suchen für Donnerstag einen ruhigen Raum für eine Leseprboe.\n\nEs kommen acht Personen. Ein großer Tisch und genügend Stühle wären ausreichedn, eine Bühne brauchen wir nicht.\n\nBitte teilen Sie uns mit, ob der Raum verfübgar ist und wie hoch die Nutzungsgebuhr wäre.\n\nHerzliche Grüße\nTimo Berg",
+      "expected": "Liebes Kulturteam,\n\nwir suchen für Donnerstag einen ruhigen Raum für eine Leseprobe.\n\nEs kommen acht Personen. Ein großer Tisch und genügend Stühle wären ausreichend, eine Bühne brauchen wir nicht.\n\nBitte teilen Sie uns mit, ob der Raum verfügbar ist und wie hoch die Nutzungsgebühr wäre.\n\nHerzliche Grüße\nTimo Berg",
+      "edits": [
+        {
+          "offset": 74,
+          "length": 9,
+          "original": "Leseprboe",
+          "replacement": "Leseprobe"
+        },
+        {
+          "offset": 154,
+          "length": 11,
+          "original": "ausreichedn",
+          "replacement": "ausreichend"
+        },
+        {
+          "offset": 237,
+          "length": 9,
+          "original": "verfübgar",
+          "replacement": "verfügbar"
+        },
+        {
+          "offset": 268,
+          "length": 14,
+          "original": "Nutzungsgebuhr",
+          "replacement": "Nutzungsgebühr"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-email-correction-08"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Softwaretest Freigabe",
+      "input": "Hallo Testteam,\n\ndie neue Version behebt den Fehler beim Öffnen langer Dokumnete.\n\nBitte prüft auch Dateien mit Bildern. Beim letzten Test blieb die Vorscahu nach dem Wechsel der Seite hängen.\n\nDie Freigabe erfolgt erst nach eurer Ruckmeldung. Ein erfolgreicher Start allein bestätigt noch keine zuverlässlcihe Bearbeitung.\n\nViele Grüße\nNela Bach",
+      "expected": "Hallo Testteam,\n\ndie neue Version behebt den Fehler beim Öffnen langer Dokumente.\n\nBitte prüft auch Dateien mit Bildern. Beim letzten Test blieb die Vorschau nach dem Wechsel der Seite hängen.\n\nDie Freigabe erfolgt erst nach eurer Rückmeldung. Ein erfolgreicher Start allein bestätigt noch keine zuverlässige Bearbeitung.\n\nViele Grüße\nNela Bach",
+      "edits": [
+        {
+          "offset": 71,
+          "length": 9,
+          "original": "Dokumnete",
+          "replacement": "Dokumente"
+        },
+        {
+          "offset": 149,
+          "length": 8,
+          "original": "Vorscahu",
+          "replacement": "Vorschau"
+        },
+        {
+          "offset": 231,
+          "length": 11,
+          "original": "Ruckmeldung",
+          "replacement": "Rückmeldung"
+        },
+        {
+          "offset": 296,
+          "length": 14,
+          "original": "zuverlässlcihe",
+          "replacement": "zuverlässige"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-email-correction-09"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Nachbarschaftsfest",
+      "input": "Liebe Nachbarn,\n\nam Samstag wollen wir die Tische für das Hoffest gemeinsam aufbuane.\n\nWer eine Kabeltrommel besitzt, kann sie gern mitbringen. Für den Abend fehlt noch eine sichere Stromversorgnug.\n\nBitte stellt keine Fahrzeuge vor das Tor. Der Weg muss für den Rettungsdiens jederzeit zugänglcih bleiben.\n\nHerzliche Grüße\nJona Feld",
+      "expected": "Liebe Nachbarn,\n\nam Samstag wollen wir die Tische für das Hoffest gemeinsam aufbauen.\n\nWer eine Kabeltrommel besitzt, kann sie gern mitbringen. Für den Abend fehlt noch eine sichere Stromversorgung.\n\nBitte stellt keine Fahrzeuge vor das Tor. Der Weg muss für den Rettungsdienst jederzeit zugänglich bleiben.\n\nHerzliche Grüße\nJona Feld",
+      "edits": [
+        {
+          "offset": 76,
+          "length": 8,
+          "original": "aufbuane",
+          "replacement": "aufbauen"
+        },
+        {
+          "offset": 182,
+          "length": 15,
+          "original": "Stromversorgnug",
+          "replacement": "Stromversorgung"
+        },
+        {
+          "offset": 263,
+          "length": 13,
+          "original": "Rettungsdiens",
+          "replacement": "Rettungsdienst"
+        },
+        {
+          "offset": 287,
+          "length": 10,
+          "original": "zugänglcih",
+          "replacement": "zugänglich"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-email-correction-10"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Hotel Anreise",
+      "input": "Guten Tag,\n\nunser Zug kommt später an, daher erreichen wir Ihr Haus voraussichtlcih erst gegen elf Uhr.\n\nIst die Rezeptoin dann noch besetzt, oder gibt es eine Möglichkeit zur selbstständigen Schlüsselabholung?\n\nBitte senden Sie die nötigen Hinweise an diese Adresse. Die Buchungsnumemr steht im Betreff der ursprünglichen Bestätigugn.\n\nFreundliche Grüße\nRika Dorn",
+      "expected": "Guten Tag,\n\nunser Zug kommt später an, daher erreichen wir Ihr Haus voraussichtlich erst gegen elf Uhr.\n\nIst die Rezeption dann noch besetzt, oder gibt es eine Möglichkeit zur selbstständigen Schlüsselabholung?\n\nBitte senden Sie die nötigen Hinweise an diese Adresse. Die Buchungsnummer steht im Betreff der ursprünglichen Bestätigung.\n\nFreundliche Grüße\nRika Dorn",
+      "edits": [
+        {
+          "offset": 68,
+          "length": 15,
+          "original": "voraussichtlcih",
+          "replacement": "voraussichtlich"
+        },
+        {
+          "offset": 113,
+          "length": 9,
+          "original": "Rezeptoin",
+          "replacement": "Rezeption"
+        },
+        {
+          "offset": 272,
+          "length": 14,
+          "original": "Buchungsnumemr",
+          "replacement": "Buchungsnummer"
+        },
+        {
+          "offset": 323,
+          "length": 11,
+          "original": "Bestätigugn",
+          "replacement": "Bestätigung"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-email-correction-11"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Angebot Fenster",
+      "input": "Sehr geehrter Herr Tal,\n\nvielen Dank für Ihr Angeobt zum Austausch der beiden Kellerfenster.\n\nUns fehlt noch die Angabe, ob der Ausbau und die Entsorgnug der alten Rahmen im Preis enthalten sind.\n\nBitte ergänzen Sie diese Positionen und nennen Sie einen möglichen Ausführungstermin. Danach können wir den Auftrag erteieln.\n\nMit freundlichen Grüßen\nLevin Aue",
+      "expected": "Sehr geehrter Herr Tal,\n\nvielen Dank für Ihr Angebot zum Austausch der beiden Kellerfenster.\n\nUns fehlt noch die Angabe, ob der Ausbau und die Entsorgung der alten Rahmen im Preis enthalten sind.\n\nBitte ergänzen Sie diese Positionen und nennen Sie einen möglichen Ausführungstermin. Danach können wir den Auftrag erteilen.\n\nMit freundlichen Grüßen\nLevin Aue",
+      "edits": [
+        {
+          "offset": 45,
+          "length": 7,
+          "original": "Angeobt",
+          "replacement": "Angebot"
+        },
+        {
+          "offset": 143,
+          "length": 10,
+          "original": "Entsorgnug",
+          "replacement": "Entsorgung"
+        },
+        {
+          "offset": 313,
+          "length": 8,
+          "original": "erteieln",
+          "replacement": "erteilen"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-email-correction-12"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Bewerbung Gespräch",
+      "input": "Guten Tag Frau Fink,\n\nwir möchten Sie gern zu einem persönlichen Gesprähc einladen.\n\nDabei lernen Sie auch das Team kennen und können Fragen zum Arbeitsaltlag stellen.\n\nBitte nennen Sie uns zwei passende Termine. Für die Vorbereitnug benötigen Sie keine zusätzlichen Unterlagne.\n\nFreundliche Grüße\nTimo Berg",
+      "expected": "Guten Tag Frau Fink,\n\nwir möchten Sie gern zu einem persönlichen Gespräch einladen.\n\nDabei lernen Sie auch das Team kennen und können Fragen zum Arbeitsalltag stellen.\n\nBitte nennen Sie uns zwei passende Termine. Für die Vorbereitung benötigen Sie keine zusätzlichen Unterlagen.\n\nFreundliche Grüße\nTimo Berg",
+      "edits": [
+        {
+          "offset": 65,
+          "length": 8,
+          "original": "Gesprähc",
+          "replacement": "Gespräch"
+        },
+        {
+          "offset": 145,
+          "length": 13,
+          "original": "Arbeitsaltlag",
+          "replacement": "Arbeitsalltag"
+        },
+        {
+          "offset": 221,
+          "length": 12,
+          "original": "Vorbereitnug",
+          "replacement": "Vorbereitung"
+        },
+        {
+          "offset": 267,
+          "length": 10,
+          "original": "Unterlagne",
+          "replacement": "Unterlagen"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-email-correction-13"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Bibliothek Verlängerung",
+      "input": "Liebes Bibliotheksteam,\n\nich möchte die Leihfrist für den Bildband zur Architekrut verlängern.\n\nIm Konto erscheint dazu keine Schaltfläche, obwohl das Buch meines Wissens nicht vorgemekrt ist.\n\nKönnen Sie die Verlängerung bitte prüfen? Falls sie nicht möglich ist, bringe ich das Buch noch vor Fristablafu zurük.\n\nViele Grüße\nNela Bach",
+      "expected": "Liebes Bibliotheksteam,\n\nich möchte die Leihfrist für den Bildband zur Architektur verlängern.\n\nIm Konto erscheint dazu keine Schaltfläche, obwohl das Buch meines Wissens nicht vorgemerkt ist.\n\nKönnen Sie die Verlängerung bitte prüfen? Falls sie nicht möglich ist, bringe ich das Buch noch vor Fristablauf zurück.\n\nViele Grüße\nNela Bach",
+      "edits": [
+        {
+          "offset": 71,
+          "length": 11,
+          "original": "Architekrut",
+          "replacement": "Architektur"
+        },
+        {
+          "offset": 177,
+          "length": 10,
+          "original": "vorgemekrt",
+          "replacement": "vorgemerkt"
+        },
+        {
+          "offset": 294,
+          "length": 11,
+          "original": "Fristablafu",
+          "replacement": "Fristablauf"
+        },
+        {
+          "offset": 306,
+          "length": 5,
+          "original": "zurük",
+          "replacement": "zurück"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-email-correction-14"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Archiv Digitalisierung",
+      "input": "Hallo Archivgruppe,\n\nbeim Scannen der Briefe sind einige handschriftliche Randbemerkugnen abgeschnitten worden.\n\nBitte legt diese Blätter erneut auf und lasst etwas Abstand zum Rand. Die Rückseiet gehört ebenfalls zur Aufnahme.\n\nDie alten Dateien bleiben bis zum Vergleich erhalten. Erst nach der Kontrole verschieben wir sie in den dafür vorgesehneen Ordner.\n\nBeste Grüße\nJona Feld",
+      "expected": "Hallo Archivgruppe,\n\nbeim Scannen der Briefe sind einige handschriftliche Randbemerkungen abgeschnitten worden.\n\nBitte legt diese Blätter erneut auf und lasst etwas Abstand zum Rand. Die Rückseite gehört ebenfalls zur Aufnahme.\n\nDie alten Dateien bleiben bis zum Vergleich erhalten. Erst nach der Kontrolle verschieben wir sie in den dafür vorgesehenen Ordner.\n\nBeste Grüße\nJona Feld",
+      "edits": [
+        {
+          "offset": 74,
+          "length": 15,
+          "original": "Randbemerkugnen",
+          "replacement": "Randbemerkungen"
+        },
+        {
+          "offset": 187,
+          "length": 9,
+          "original": "Rückseiet",
+          "replacement": "Rückseite"
+        },
+        {
+          "offset": 297,
+          "length": 8,
+          "original": "Kontrole",
+          "replacement": "Kontrolle"
+        },
+        {
+          "offset": 339,
+          "length": 12,
+          "original": "vorgesehneen",
+          "replacement": "vorgesehenen"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-email-correction-15"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Reinigung Termin",
+      "input": "Sehr geehrtes Reinigungsteam,\n\nwegen einer Veranstaltung muss die Reinigung am Montag erst nach Feierabned beginnen.\n\nDer große Saal ist bis acht belegt. Die kleineren Räume können Sie wie gewohnet vorher betreten.\n\nBitte bestätigen Sie diese Änderung und sagen Sie Bescheid, falls dafür zusätzlcihe Kosten entstehen. Wir brauchen eine schriftlcihe Rückmeldung.\n\nMit freundlichen Grüßen\nRika Dorn",
+      "expected": "Sehr geehrtes Reinigungsteam,\n\nwegen einer Veranstaltung muss die Reinigung am Montag erst nach Feierabend beginnen.\n\nDer große Saal ist bis acht belegt. Die kleineren Räume können Sie wie gewohnt vorher betreten.\n\nBitte bestätigen Sie diese Änderung und sagen Sie Bescheid, falls dafür zusätzliche Kosten entstehen. Wir brauchen eine schriftliche Rückmeldung.\n\nMit freundlichen Grüßen\nRika Dorn",
+      "edits": [
+        {
+          "offset": 96,
+          "length": 10,
+          "original": "Feierabned",
+          "replacement": "Feierabend"
+        },
+        {
+          "offset": 189,
+          "length": 8,
+          "original": "gewohnet",
+          "replacement": "gewohnt"
+        },
+        {
+          "offset": 288,
+          "length": 11,
+          "original": "zusätzlcihe",
+          "replacement": "zusätzliche"
+        },
+        {
+          "offset": 336,
+          "length": 12,
+          "original": "schriftlcihe",
+          "replacement": "schriftliche"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-email-correction-16"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Privater Umzug",
+      "input": "Hallo Levin,\n\nkannst du am Sonntag beim Tragen der Bücherkistne helfen?\n\nDie Möbel übernimmt eine Firma, aber die schweren Kartons müssen noch in den Kellre. Eine Sackkarre ist vorhanden.\n\nIch hole dich gern ab. Schreib mir bitte, wann du Zeit hast, damit ich die Fahrt einplannen und das Essen vorberieten kann.\n\nLiebe Grüße\nMara Fink",
+      "expected": "Hallo Levin,\n\nkannst du am Sonntag beim Tragen der Bücherkisten helfen?\n\nDie Möbel übernimmt eine Firma, aber die schweren Kartons müssen noch in den Keller. Eine Sackkarre ist vorhanden.\n\nIch hole dich gern ab. Schreib mir bitte, wann du Zeit hast, damit ich die Fahrt einplanen und das Essen vorbereiten kann.\n\nLiebe Grüße\nMara Fink",
+      "edits": [
+        {
+          "offset": 51,
+          "length": 12,
+          "original": "Bücherkistne",
+          "replacement": "Bücherkisten"
+        },
+        {
+          "offset": 150,
+          "length": 6,
+          "original": "Kellre",
+          "replacement": "Keller"
+        },
+        {
+          "offset": 270,
+          "length": 10,
+          "original": "einplannen",
+          "replacement": "einplanen"
+        },
+        {
+          "offset": 295,
+          "length": 11,
+          "original": "vorberieten",
+          "replacement": "vorbereiten"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-email-correction-17"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "scenario": "Seminar Rechnungsempfänger",
+      "input": "Guten Tag,\n\ndie Teilnahme am Seminar ist bestätigt, jedoch wurde die Rechnung an den falschen Empfängre ausgestellt.\n\nDie Kosten trägt unser Verein. Bitte verwenden Sie die Anschrift aus dem Anmeldeformluar.\n\nEine Korrektur vor Monatsende wäre hilfreich. Sonst verzögert sich die Erstattnug wegen unserer internen Abrechnnug.\n\nFreundliche Grüße\nTimo Berg",
+      "expected": "Guten Tag,\n\ndie Teilnahme am Seminar ist bestätigt, jedoch wurde die Rechnung an den falschen Empfänger ausgestellt.\n\nDie Kosten trägt unser Verein. Bitte verwenden Sie die Anschrift aus dem Anmeldeformular.\n\nEine Korrektur vor Monatsende wäre hilfreich. Sonst verzögert sich die Erstattung wegen unserer internen Abrechnung.\n\nFreundliche Grüße\nTimo Berg",
+      "edits": [
+        {
+          "offset": 94,
+          "length": 9,
+          "original": "Empfängre",
+          "replacement": "Empfänger"
+        },
+        {
+          "offset": 191,
+          "length": 15,
+          "original": "Anmeldeformluar",
+          "replacement": "Anmeldeformular"
+        },
+        {
+          "offset": 280,
+          "length": 10,
+          "original": "Erstattnug",
+          "replacement": "Erstattung"
+        },
+        {
+          "offset": 314,
+          "length": 10,
+          "original": "Abrechnnug",
+          "replacement": "Abrechnung"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-email-correction-18"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe Schweizer Schreibweise",
+      "input": "Guten Tag Frau Aue,\n\ndie Strasse zum Lager bleibt bis Freitag gesperrt. Bitte benutzen Sie die Zufahrt am Fluss.\n\nUnsere Schweizer Ausgabe schreibt weiterhin ss. Auch die Grussformel im Briefmuster bleibt so stehen.\n\nWir passen nur den Liefertermin an. Die übrigen Angaben wurden bereits geprüft.\n\nFreundliche Grüsse\nRika Dorn",
+      "expected": "Guten Tag Frau Aue,\n\ndie Strasse zum Lager bleibt bis Freitag gesperrt. Bitte benutzen Sie die Zufahrt am Fluss.\n\nUnsere Schweizer Ausgabe schreibt weiterhin ss. Auch die Grussformel im Briefmuster bleibt so stehen.\n\nWir passen nur den Liefertermin an. Die übrigen Angaben wurden bereits geprüft.\n\nFreundliche Grüsse\nRika Dorn",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-de-email-safe-01"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe technische Kennungen",
+      "input": "Hallo Support,\n\ndie Meldung ERR_ZUGRIFF_XQ erscheint nur beim ersten Start.\n\nDie Datei heisst im Test bewusst `rechnnug_alt.json`. Der Pfad steht unter https://example.com/fehller.\n\nBitte antwortet an pruefung@example.invalid und nennt die Kennung QVZ-901.\n\nViele Grüße\nLevin Aue",
+      "expected": "Hallo Support,\n\ndie Meldung ERR_ZUGRIFF_XQ erscheint nur beim ersten Start.\n\nDie Datei heisst im Test bewusst `rechnnug_alt.json`. Der Pfad steht unter https://example.com/fehller.\n\nBitte antwortet an pruefung@example.invalid und nennt die Kennung QVZ-901.\n\nViele Grüße\nLevin Aue",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-de-email-safe-02"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe Dialekt im Alltag",
+      "input": "Servus Mara,\n\nheut geht sich das Treffen bei mir leider nicht aus. Ich muss länger im Büro bleiben.\n\nMorgen hab ich mehr Zeit. Wenn's dir passt, komm ich nach der Arbeit vorbei.\n\nBring bitte keine Jause mit, ich hab noch genug Brot und Käse daheim.\n\nBaba\nTimo Berg",
+      "expected": "Servus Mara,\n\nheut geht sich das Treffen bei mir leider nicht aus. Ich muss länger im Büro bleiben.\n\nMorgen hab ich mehr Zeit. Wenn's dir passt, komm ich nach der Arbeit vorbei.\n\nBring bitte keine Jause mit, ich hab noch genug Brot und Käse daheim.\n\nBaba\nTimo Berg",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-de-email-safe-03"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe zitierter Verlauf",
+      "input": "Guten Tag,\n\ndie korrigierte Bestellung liegt nun im System vor.\n\nIch habe die Mengen mit unserer aktuellen Liste verglichen. Alle Positionen stimmen überein.\n\nUnten folgt der ursprüngliche Text unverändert für Ihre Unterlagen.\n\nFreundliche Grüße\nNela Bach\n\n> Bitet die alte Bestellnug storniern.\n> Das war mein Fehller.",
+      "expected": "Guten Tag,\n\ndie korrigierte Bestellung liegt nun im System vor.\n\nIch habe die Mengen mit unserer aktuellen Liste verglichen. Alle Positionen stimmen überein.\n\nUnten folgt der ursprüngliche Text unverändert für Ihre Unterlagen.\n\nFreundliche Grüße\nNela Bach\n\n> Bitet die alte Bestellnug storniern.\n> Das war mein Fehller.",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-de-email-safe-04"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe echte Wörter",
+      "input": "Hallo Jona,\n\nseit gestern seid ihr als Helfer eingetragen. Das bedeutet, dass wir alle Plätze besetzt haben.\n\nDie Ware war im Lager, als die Nachricht kam. Bitte prüfe noch einmal, ob die Mengen stimmen.\n\nDer Leiter stellt die Leiter an die Wand. Danach können wir das Schild befestigen.\n\nViele Grüße\nRika Dorn",
+      "expected": "Hallo Jona,\n\nseit gestern seid ihr als Helfer eingetragen. Das bedeutet, dass wir alle Plätze besetzt haben.\n\nDie Ware war im Lager, als die Nachricht kam. Bitte prüfe noch einmal, ob die Mengen stimmen.\n\nDer Leiter stellt die Leiter an die Wand. Danach können wir das Schild befestigen.\n\nViele Grüße\nRika Dorn",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-de-email-safe-05"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "scenario": "safe Namen",
+      "input": "Liebe Nela,\n\nfür Zora Quend und Ilvo Xern sind zwei Plätze in der ersten Reihe reserviert.\n\nBitte übernimm die Namen genauso auf die Karten. Beide Gäste holen ihre Umschläge am Eingang ab.\n\nDie übrigen Karten liegen schon bereit. Ich bringe sie eine Stunde vor Beginn vorbei.\n\nHerzliche Grüße\nVela Qorr",
+      "expected": "Liebe Nela,\n\nfür Zora Quend und Ilvo Xern sind zwei Plätze in der ersten Reihe reserviert.\n\nBitte übernimm die Namen genauso auf die Karten. Beide Gäste holen ihre Umschläge am Eingang ab.\n\nDie übrigen Karten liegen schon bereit. Ich bringe sie eine Stunde vor Beginn vorbei.\n\nHerzliche Grüße\nVela Qorr",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-de-email-safe-06"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Schlüsselübergabe",
+      "input": "Der Ersatzschlüssel liegt in einem versiegelten Umschlag bei der Verwaltnug. Bitte öffnet ihn nur, wenn der normale Schlüssel nicht auffindabr ist.\n\nNach der Verwendung brauchen wir eine kurze Notiz. Sonst lässt sich der Verbleib später nicht mehr nachvollziehn.",
+      "expected": "Der Ersatzschlüssel liegt in einem versiegelten Umschlag bei der Verwaltung. Bitte öffnet ihn nur, wenn der normale Schlüssel nicht auffindbar ist.\n\nNach der Verwendung brauchen wir eine kurze Notiz. Sonst lässt sich der Verbleib später nicht mehr nachvollziehen.",
+      "edits": [
+        {
+          "offset": 65,
+          "length": 10,
+          "original": "Verwaltnug",
+          "replacement": "Verwaltung"
+        },
+        {
+          "offset": 132,
+          "length": 10,
+          "original": "auffindabr",
+          "replacement": "auffindbar"
+        },
+        {
+          "offset": 248,
+          "length": 13,
+          "original": "nachvollziehn",
+          "replacement": "nachvollziehen"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-paragraphs-correction-01"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Wanderweg Hinweis",
+      "input": "Wegen der Bauarbeiten ist der Weg am Bach gesperrt. Die Umleitnug führt über die Wiese und ist deutlich ausgeschilder.\n\nBei starkem Regen wird der Boden weich. Festes Schuhwerk ist deshalb auch für die kurze Strecke empfehlenswret.",
+      "expected": "Wegen der Bauarbeiten ist der Weg am Bach gesperrt. Die Umleitung führt über die Wiese und ist deutlich ausgeschildert.\n\nBei starkem Regen wird der Boden weich. Festes Schuhwerk ist deshalb auch für die kurze Strecke empfehlenswert.",
+      "edits": [
+        {
+          "offset": 56,
+          "length": 9,
+          "original": "Umleitnug",
+          "replacement": "Umleitung"
+        },
+        {
+          "offset": 104,
+          "length": 13,
+          "original": "ausgeschilder",
+          "replacement": "ausgeschildert"
+        },
+        {
+          "offset": 216,
+          "length": 14,
+          "original": "empfehlenswret",
+          "replacement": "empfehlenswert"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-paragraphs-correction-02"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Küchenanleitung",
+      "input": "Die Gläser müssen vor dem Befüllen gründlich gereinigt werden. Stellt sie zum Trocknen auf ein sauberes Geschirrtcuh.\n\nFüllt die heiße Masse vorsichtig ein und kontrolliert die Ränder. Kleine Reste können verhindern, dass der Deckel volständig schließt und der Inhalt haltabr bleibt.",
+      "expected": "Die Gläser müssen vor dem Befüllen gründlich gereinigt werden. Stellt sie zum Trocknen auf ein sauberes Geschirrtuch.\n\nFüllt die heiße Masse vorsichtig ein und kontrolliert die Ränder. Kleine Reste können verhindern, dass der Deckel vollständig schließt und der Inhalt haltbar bleibt.",
+      "edits": [
+        {
+          "offset": 104,
+          "length": 12,
+          "original": "Geschirrtcuh",
+          "replacement": "Geschirrtuch"
+        },
+        {
+          "offset": 233,
+          "length": 10,
+          "original": "volständig",
+          "replacement": "vollständig"
+        },
+        {
+          "offset": 268,
+          "length": 7,
+          "original": "haltabr",
+          "replacement": "haltbar"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-paragraphs-correction-03"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Störungsnotiz",
+      "input": "Der Ausfall begann kurz nach dem Wechsel des Netzteils. Auf dem Gerät selbst waren keine weiteren Fehlermeldnugen zu sehen.\n\nWir haben das alte Netzteil wieder angeschlossen. Seitdem läuft die Verbindnug stabil, aber die genaue Ursache ist noch nicht geklärt und muss unterscuht werden.",
+      "expected": "Der Ausfall begann kurz nach dem Wechsel des Netzteils. Auf dem Gerät selbst waren keine weiteren Fehlermeldungen zu sehen.\n\nWir haben das alte Netzteil wieder angeschlossen. Seitdem läuft die Verbindung stabil, aber die genaue Ursache ist noch nicht geklärt und muss untersucht werden.",
+      "edits": [
+        {
+          "offset": 98,
+          "length": 15,
+          "original": "Fehlermeldnugen",
+          "replacement": "Fehlermeldungen"
+        },
+        {
+          "offset": 193,
+          "length": 10,
+          "original": "Verbindnug",
+          "replacement": "Verbindung"
+        },
+        {
+          "offset": 268,
+          "length": 10,
+          "original": "unterscuht",
+          "replacement": "untersucht"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-paragraphs-correction-04"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Vertretungsplan",
+      "input": "Während meiner Abwesenheit übernimmt das Team im Erdgeschoss dringende Anfrgaen. Alles andere kann bis zu meiner Rückkehr warten.\n\nDie aktuellen Telefonnummern stehen in der Liste. Bitte prüft vor einem Anruf die Zuständgikeit, damit keine unnötigen Verzögerugnen entstehen.",
+      "expected": "Während meiner Abwesenheit übernimmt das Team im Erdgeschoss dringende Anfragen. Alles andere kann bis zu meiner Rückkehr warten.\n\nDie aktuellen Telefonnummern stehen in der Liste. Bitte prüft vor einem Anruf die Zuständigkeit, damit keine unnötigen Verzögerungen entstehen.",
+      "edits": [
+        {
+          "offset": 71,
+          "length": 8,
+          "original": "Anfrgaen",
+          "replacement": "Anfragen"
+        },
+        {
+          "offset": 213,
+          "length": 13,
+          "original": "Zuständgikeit",
+          "replacement": "Zuständigkeit"
+        },
+        {
+          "offset": 250,
+          "length": 13,
+          "original": "Verzögerugnen",
+          "replacement": "Verzögerungen"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-paragraphs-correction-05"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Kostenschätzung",
+      "input": "Die Schätzung enthält bisher nur die Kosten für Material und Transport. Die Montage fehlt, weil ihr Umfagn noch nicht feststeht.\n\nVor einer Zusage brauchen wir einen Termin vor Ort. Erst danach können wir den Arbeitsaufwadn und die nötige Ausrüstnug zuverlässig bestimmen.",
+      "expected": "Die Schätzung enthält bisher nur die Kosten für Material und Transport. Die Montage fehlt, weil ihr Umfang noch nicht feststeht.\n\nVor einer Zusage brauchen wir einen Termin vor Ort. Erst danach können wir den Arbeitsaufwand und die nötige Ausrüstung zuverlässig bestimmen.",
+      "edits": [
+        {
+          "offset": 100,
+          "length": 6,
+          "original": "Umfagn",
+          "replacement": "Umfang"
+        },
+        {
+          "offset": 209,
+          "length": 14,
+          "original": "Arbeitsaufwadn",
+          "replacement": "Arbeitsaufwand"
+        },
+        {
+          "offset": 239,
+          "length": 10,
+          "original": "Ausrüstnug",
+          "replacement": "Ausrüstung"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-paragraphs-correction-06"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Helferliste",
+      "input": "Am Eingang brauchen wir zwei Personen, die die Karten kontrollieren. Eine weitere Person betreut die Garderboe.\n\nDie Aufgaben wechseln in der Pause. Bitte gebt euren Ersatzkräften alle wichtigen Informatoinen weiter, besonders Hinweise zu noch offenen Rückfrgaen.",
+      "expected": "Am Eingang brauchen wir zwei Personen, die die Karten kontrollieren. Eine weitere Person betreut die Garderobe.\n\nDie Aufgaben wechseln in der Pause. Bitte gebt euren Ersatzkräften alle wichtigen Informationen weiter, besonders Hinweise zu noch offenen Rückfragen.",
+      "edits": [
+        {
+          "offset": 101,
+          "length": 9,
+          "original": "Garderboe",
+          "replacement": "Garderobe"
+        },
+        {
+          "offset": 195,
+          "length": 13,
+          "original": "Informatoinen",
+          "replacement": "Informationen"
+        },
+        {
+          "offset": 252,
+          "length": 10,
+          "original": "Rückfrgaen",
+          "replacement": "Rückfragen"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-paragraphs-correction-07"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Fehler nachstellen",
+      "input": "Nach dem Einfügen eines Bildes springt der Cursor an den Anfang des Textes. Die Auswahl bleibt dabei unsichtabr bestehen.\n\nBeim nächsten Tastendruck verschwindet der markierte Satz. Der Fehler lässt sich mit einer kurzen Datei wiederhoeln und sollte vor der Veröffentlcihung behoben werden.",
+      "expected": "Nach dem Einfügen eines Bildes springt der Cursor an den Anfang des Textes. Die Auswahl bleibt dabei unsichtbar bestehen.\n\nBeim nächsten Tastendruck verschwindet der markierte Satz. Der Fehler lässt sich mit einer kurzen Datei wiederholen und sollte vor der Veröffentlichung behoben werden.",
+      "edits": [
+        {
+          "offset": 101,
+          "length": 10,
+          "original": "unsichtabr",
+          "replacement": "unsichtbar"
+        },
+        {
+          "offset": 227,
+          "length": 11,
+          "original": "wiederhoeln",
+          "replacement": "wiederholen"
+        },
+        {
+          "offset": 258,
+          "length": 16,
+          "original": "Veröffentlcihung",
+          "replacement": "Veröffentlichung"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-paragraphs-correction-08"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Pflegehinweis Stoff",
+      "input": "Wascht den Bezug bei niedriger Temperatur und verzichtet auf starke Schleudergänge. Die dünnen Nähte reagieren empfindlcih auf hohe Belastung.\n\nZum Trocknen sollte der Stoff flach liegen. So behält er seine Form und lässt sich später ohne große Schwierigkeietn wieder über das Polster ziehne.",
+      "expected": "Wascht den Bezug bei niedriger Temperatur und verzichtet auf starke Schleudergänge. Die dünnen Nähte reagieren empfindlich auf hohe Belastung.\n\nZum Trocknen sollte der Stoff flach liegen. So behält er seine Form und lässt sich später ohne große Schwierigkeiten wieder über das Polster ziehen.",
+      "edits": [
+        {
+          "offset": 111,
+          "length": 11,
+          "original": "empfindlcih",
+          "replacement": "empfindlich"
+        },
+        {
+          "offset": 245,
+          "length": 15,
+          "original": "Schwierigkeietn",
+          "replacement": "Schwierigkeiten"
+        },
+        {
+          "offset": 285,
+          "length": 6,
+          "original": "ziehne",
+          "replacement": "ziehen"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-paragraphs-correction-09"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Museum Beschriftung",
+      "input": "Die gezeigten Werkzeuge stammen aus einer aufgegebenen Tischlerei. Ihre genaue Reihenfolge im ursprünglichen Schrank ist nicht überliefret.\n\nEinige Griffe tragen eingeritzte Namen. Diese Spuren helfen bei der Zuordnug, ersetzen jedoch keine gesicherte Herkunftsangbae.",
+      "expected": "Die gezeigten Werkzeuge stammen aus einer aufgegebenen Tischlerei. Ihre genaue Reihenfolge im ursprünglichen Schrank ist nicht überliefert.\n\nEinige Griffe tragen eingeritzte Namen. Diese Spuren helfen bei der Zuordnung, ersetzen jedoch keine gesicherte Herkunftsangabe.",
+      "edits": [
+        {
+          "offset": 127,
+          "length": 11,
+          "original": "überliefret",
+          "replacement": "überliefert"
+        },
+        {
+          "offset": 209,
+          "length": 8,
+          "original": "Zuordnug",
+          "replacement": "Zuordnung"
+        },
+        {
+          "offset": 252,
+          "length": 15,
+          "original": "Herkunftsangbae",
+          "replacement": "Herkunftsangabe"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-paragraphs-correction-10"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Training Halle",
+      "input": "Beginnt mit langsamen Bewegungen, bevor ihr das Tempo steigert. Für die erste Übung ist eine gleichmäßige Ausführnug wichtiger als Geschwindigkeit.\n\nWenn der Boden feucht wird, unterbrechen wir das Training. Eine kurze Pause ist besser als ein vermeidabrer Sturz mit längerer Verletzungspause und unnötigen Beschwerdne.",
+      "expected": "Beginnt mit langsamen Bewegungen, bevor ihr das Tempo steigert. Für die erste Übung ist eine gleichmäßige Ausführung wichtiger als Geschwindigkeit.\n\nWenn der Boden feucht wird, unterbrechen wir das Training. Eine kurze Pause ist besser als ein vermeidbarer Sturz mit längerer Verletzungspause und unnötigen Beschwerden.",
+      "edits": [
+        {
+          "offset": 106,
+          "length": 10,
+          "original": "Ausführnug",
+          "replacement": "Ausführung"
+        },
+        {
+          "offset": 244,
+          "length": 12,
+          "original": "vermeidabrer",
+          "replacement": "vermeidbarer"
+        },
+        {
+          "offset": 307,
+          "length": 11,
+          "original": "Beschwerdne",
+          "replacement": "Beschwerden"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-paragraphs-correction-11"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Katzenbetreuung",
+      "input": "Das Futter steht im unteren Schrank neben der Spüle. Bitte gebt nur eine kleine Portion, sonst bleibt zu viel übirg.\n\nDie Katze versteckt sich anfangs oft unter dem Sofa. Wartet etwas ab und vermeidet laute Geräushe, bis sie sich an eure Anwesenhiet gewöhnt hat.",
+      "expected": "Das Futter steht im unteren Schrank neben der Spüle. Bitte gebt nur eine kleine Portion, sonst bleibt zu viel übrig.\n\nDie Katze versteckt sich anfangs oft unter dem Sofa. Wartet etwas ab und vermeidet laute Geräusche, bis sie sich an eure Anwesenheit gewöhnt hat.",
+      "edits": [
+        {
+          "offset": 110,
+          "length": 5,
+          "original": "übirg",
+          "replacement": "übrig"
+        },
+        {
+          "offset": 207,
+          "length": 8,
+          "original": "Geräushe",
+          "replacement": "Geräusche"
+        },
+        {
+          "offset": 238,
+          "length": 11,
+          "original": "Anwesenhiet",
+          "replacement": "Anwesenheit"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-paragraphs-correction-12"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Fotoarchiv",
+      "input": "Die Bilder sind nach Aufnahmeorten sortiert. Bei manchen Fotos ist das Jahr nur ungefähhr bekannt.\n\nEntfernt die handschriftlichen Notizen auf der Rückseite nicht. Sie können für die spätere Einordnug wichtig sein und enthalten manchmal zusätzlcihe Ortsangaben.",
+      "expected": "Die Bilder sind nach Aufnahmeorten sortiert. Bei manchen Fotos ist das Jahr nur ungefähr bekannt.\n\nEntfernt die handschriftlichen Notizen auf der Rückseite nicht. Sie können für die spätere Einordnung wichtig sein und enthalten manchmal zusätzliche Ortsangaben.",
+      "edits": [
+        {
+          "offset": 80,
+          "length": 9,
+          "original": "ungefähhr",
+          "replacement": "ungefähr"
+        },
+        {
+          "offset": 191,
+          "length": 9,
+          "original": "Einordnug",
+          "replacement": "Einordnung"
+        },
+        {
+          "offset": 237,
+          "length": 11,
+          "original": "zusätzlcihe",
+          "replacement": "zusätzliche"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-paragraphs-correction-13"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Bewerbungsbewertung",
+      "input": "Die Bewerberin konnte ihre bisherigen Aufgaben verständlich erklären. Besonders hilfreich war das konkrete Beispiel zur Fehlerscuhe.\n\nFür eine Entscheidung fehlt uns noch ein Eindruck von ihrer schriftlichen Arbeit. Eine kurze Aufgabe soll diese Fähigkiet unter vergleichbaren Bedingugnen zeigen.",
+      "expected": "Die Bewerberin konnte ihre bisherigen Aufgaben verständlich erklären. Besonders hilfreich war das konkrete Beispiel zur Fehlersuche.\n\nFür eine Entscheidung fehlt uns noch ein Eindruck von ihrer schriftlichen Arbeit. Eine kurze Aufgabe soll diese Fähigkeit unter vergleichbaren Bedingungen zeigen.",
+      "edits": [
+        {
+          "offset": 120,
+          "length": 11,
+          "original": "Fehlerscuhe",
+          "replacement": "Fehlersuche"
+        },
+        {
+          "offset": 246,
+          "length": 9,
+          "original": "Fähigkiet",
+          "replacement": "Fähigkeit"
+        },
+        {
+          "offset": 277,
+          "length": 11,
+          "original": "Bedingugnen",
+          "replacement": "Bedingungen"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-paragraphs-correction-14"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "scenario": "Wasser im Garten",
+      "input": "Die jungen Pflanzen brauchen regelmäßig Wasser direkt an den Wurzeln. Nasse Blätter sind bei starker Sonne ungünsitg.\n\nNutzt zuerst das Wasser aus der Tonne. Falls sie leer ist, füllt sie langsam auf, damit die Ablagerugnen am Boden nicht unnötig aufgewirblt werden.",
+      "expected": "Die jungen Pflanzen brauchen regelmäßig Wasser direkt an den Wurzeln. Nasse Blätter sind bei starker Sonne ungünstig.\n\nNutzt zuerst das Wasser aus der Tonne. Falls sie leer ist, füllt sie langsam auf, damit die Ablagerungen am Boden nicht unnötig aufgewirbelt werden.",
+      "edits": [
+        {
+          "offset": 107,
+          "length": 9,
+          "original": "ungünsitg",
+          "replacement": "ungünstig"
+        },
+        {
+          "offset": 211,
+          "length": 12,
+          "original": "Ablagerugnen",
+          "replacement": "Ablagerungen"
+        },
+        {
+          "offset": 247,
+          "length": 11,
+          "original": "aufgewirblt",
+          "replacement": "aufgewirbelt"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-paragraphs-correction-15"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "scenario": "safe wörtlicher Code",
+      "input": "Der Test verwendet die Zeichenfolge `Bitet die Datnebank öffnnen` als unveränderte Eingabe.\n\nDie Ausgabe muss dieselben Zeichen enthalten. Das Beispiel prüft Speicherung und Abruf, keine Rechtschreibung.",
+      "expected": "Der Test verwendet die Zeichenfolge `Bitet die Datnebank öffnnen` als unveränderte Eingabe.\n\nDie Ausgabe muss dieselben Zeichen enthalten. Das Beispiel prüft Speicherung und Abruf, keine Rechtschreibung.",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-de-paragraphs-safe-01"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "scenario": "safe historisches Zitat",
+      "input": "Die Abschrift übernimmt den Text des Schildes ohne Korrekturen.\n\n> Hir bitte keien Fahrräder abstelln.\n> Der Hauswart",
+      "expected": "Die Abschrift übernimmt den Text des Schildes ohne Korrekturen.\n\n> Hir bitte keien Fahrräder abstelln.\n> Der Hauswart",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-de-paragraphs-safe-02"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "scenario": "safe österreichische Wörter",
+      "input": "Zum Frühstück gibt es eine Semmel mit Marillenmarmelade. Für später liegen Paradeiser und Erdäpfel bereit.\n\nWer mag, nimmt sich ein Sackerl mit. Im Kasten neben der Tür stehen weitere Gläser.",
+      "expected": "Zum Frühstück gibt es eine Semmel mit Marillenmarmelade. Für später liegen Paradeiser und Erdäpfel bereit.\n\nWer mag, nimmt sich ein Sackerl mit. Im Kasten neben der Tür stehen weitere Gläser.",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-de-paragraphs-safe-03"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "Satzanfang",
+      "input": "Morgne prüfen wir die Rechnnug und die Bestellnug.",
+      "expected": "Morgen prüfen wir die Rechnung und die Bestellung.",
+      "edits": [
+        {
+          "offset": 0,
+          "length": 6,
+          "original": "Morgne",
+          "replacement": "Morgen"
+        },
+        {
+          "offset": 22,
+          "length": 8,
+          "original": "Rechnnug",
+          "replacement": "Rechnung"
+        },
+        {
+          "offset": 39,
+          "length": 10,
+          "original": "Bestellnug",
+          "replacement": "Bestellung"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-short-correction-01"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "Emoji vor Fehler",
+      "input": "🧾 Bitte den Betrga kontrolliern und die Zahlugn bestätigen.",
+      "expected": "🧾 Bitte den Betrag kontrollieren und die Zahlung bestätigen.",
+      "edits": [
+        {
+          "offset": 13,
+          "length": 6,
+          "original": "Betrga",
+          "replacement": "Betrag"
+        },
+        {
+          "offset": 20,
+          "length": 12,
+          "original": "kontrolliern",
+          "replacement": "kontrollieren"
+        },
+        {
+          "offset": 41,
+          "length": 7,
+          "original": "Zahlugn",
+          "replacement": "Zahlung"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-short-correction-02"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "Tabulatoren",
+      "input": "Bitte\tPrüfugn  und\tFreigbae im Dokumnet vermerken.",
+      "expected": "Bitte\tPrüfung  und\tFreigabe im Dokument vermerken.",
+      "edits": [
+        {
+          "offset": 6,
+          "length": 7,
+          "original": "Prüfugn",
+          "replacement": "Prüfung"
+        },
+        {
+          "offset": 19,
+          "length": 8,
+          "original": "Freigbae",
+          "replacement": "Freigabe"
+        },
+        {
+          "offset": 31,
+          "length": 8,
+          "original": "Dokumnet",
+          "replacement": "Dokument"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-short-correction-03"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "CRLF Zeilen",
+      "input": "Die Lieferugn ist da.\r\nBitte Mnege und Verpacknug prüfen.",
+      "expected": "Die Lieferung ist da.\r\nBitte Menge und Verpackung prüfen.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 9,
+          "original": "Lieferugn",
+          "replacement": "Lieferung"
+        },
+        {
+          "offset": 29,
+          "length": 5,
+          "original": "Mnege",
+          "replacement": "Menge"
+        },
+        {
+          "offset": 39,
+          "length": 10,
+          "original": "Verpacknug",
+          "replacement": "Verpackung"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-short-correction-04"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "Umlaute und scharfes S",
+      "input": "Die Burotür zur Straase bleibt während der Reinigugn geschlossen.",
+      "expected": "Die Bürotür zur Straße bleibt während der Reinigung geschlossen.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 7,
+          "original": "Burotür",
+          "replacement": "Bürotür"
+        },
+        {
+          "offset": 16,
+          "length": 7,
+          "original": "Straase",
+          "replacement": "Straße"
+        },
+        {
+          "offset": 43,
+          "length": 9,
+          "original": "Reinigugn",
+          "replacement": "Reinigung"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-short-correction-05"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "Nomen Großschreibung",
+      "input": "Das protokoll enthält den Termni und die Teilnehmerlsite.",
+      "expected": "Das Protokoll enthält den Termin und die Teilnehmerliste.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 9,
+          "original": "protokoll",
+          "replacement": "Protokoll"
+        },
+        {
+          "offset": 26,
+          "length": 6,
+          "original": "Termni",
+          "replacement": "Termin"
+        },
+        {
+          "offset": 41,
+          "length": 15,
+          "original": "Teilnehmerlsite",
+          "replacement": "Teilnehmerliste"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-short-correction-06"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "URL daneben",
+      "input": "Bitet unter https://example.com/fehller die Nachrciht vor dem Versnad lesen.",
+      "expected": "Bitte unter https://example.com/fehller die Nachricht vor dem Versand lesen.",
+      "edits": [
+        {
+          "offset": 0,
+          "length": 5,
+          "original": "Bitet",
+          "replacement": "Bitte"
+        },
+        {
+          "offset": 44,
+          "length": 9,
+          "original": "Nachrciht",
+          "replacement": "Nachricht"
+        },
+        {
+          "offset": 62,
+          "length": 7,
+          "original": "Versnad",
+          "replacement": "Versand"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-short-correction-07"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "E-Mail daneben",
+      "input": "Die Bestätigugn bitte nach der Prüfugn an bitet@example.invalid schickne.",
+      "expected": "Die Bestätigung bitte nach der Prüfung an bitet@example.invalid schicken.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 11,
+          "original": "Bestätigugn",
+          "replacement": "Bestätigung"
+        },
+        {
+          "offset": 31,
+          "length": 7,
+          "original": "Prüfugn",
+          "replacement": "Prüfung"
+        },
+        {
+          "offset": 64,
+          "length": 8,
+          "original": "schickne",
+          "replacement": "schicken"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-short-correction-08"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "Code daneben",
+      "input": "Der Name `fehller_zahl` bleibt; nur die Beschreibnug braucht eine Korrektru vor der Freigbae.",
+      "expected": "Der Name `fehller_zahl` bleibt; nur die Beschreibung braucht eine Korrektur vor der Freigabe.",
+      "edits": [
+        {
+          "offset": 40,
+          "length": 12,
+          "original": "Beschreibnug",
+          "replacement": "Beschreibung"
+        },
+        {
+          "offset": 66,
+          "length": 9,
+          "original": "Korrektru",
+          "replacement": "Korrektur"
+        },
+        {
+          "offset": 84,
+          "length": 8,
+          "original": "Freigbae",
+          "replacement": "Freigabe"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-short-correction-09"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "Frage",
+      "input": "Könnt ihr die Besprechugn verschiebne und alle Beteiligetn informieren?",
+      "expected": "Könnt ihr die Besprechung verschieben und alle Beteiligten informieren?",
+      "edits": [
+        {
+          "offset": 14,
+          "length": 11,
+          "original": "Besprechugn",
+          "replacement": "Besprechung"
+        },
+        {
+          "offset": 26,
+          "length": 11,
+          "original": "verschiebne",
+          "replacement": "verschieben"
+        },
+        {
+          "offset": 47,
+          "length": 11,
+          "original": "Beteiligetn",
+          "replacement": "Beteiligten"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-short-correction-10"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "Mehrere Sätze",
+      "input": "Das Pakett ist offen. Bitte den Inhlat überprüfne.",
+      "expected": "Das Paket ist offen. Bitte den Inhalt überprüfen.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 6,
+          "original": "Pakett",
+          "replacement": "Paket"
+        },
+        {
+          "offset": 32,
+          "length": 6,
+          "original": "Inhlat",
+          "replacement": "Inhalt"
+        },
+        {
+          "offset": 39,
+          "length": 10,
+          "original": "überprüfne",
+          "replacement": "überprüfen"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-short-correction-11"
+    },
+    {
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "scenario": "Leerraum erhalten",
+      "input": "  Bitet die Fenstre vor dem Verlasen schließen.  ",
+      "expected": "  Bitte die Fenster vor dem Verlassen schließen.  ",
+      "edits": [
+        {
+          "offset": 2,
+          "length": 5,
+          "original": "Bitet",
+          "replacement": "Bitte"
+        },
+        {
+          "offset": 12,
+          "length": 7,
+          "original": "Fenstre",
+          "replacement": "Fenster"
+        },
+        {
+          "offset": 28,
+          "length": 8,
+          "original": "Verlasen",
+          "replacement": "Verlassen"
+        }
+      ],
+      "split": "dev",
+      "id": "email200-dev-de-short-correction-12"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe reale Wörter nicht raten",
+      "input": "Seit ihr morgen da, oder bleibt ihr zu Hause?",
+      "expected": "Seit ihr morgen da, oder bleibt ihr zu Hause?",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-de-short-safe-01"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe Kennungen",
+      "input": "QXZ-41 nutzt getRechnnug(), teh_id und Xqvrr.",
+      "expected": "QXZ-41 nutzt getRechnnug(), teh_id und Xqvrr.",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-de-short-safe-02"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe Internetadresse",
+      "input": "https://example.com/öffnnen?bitet=fehller#rechnnug",
+      "expected": "https://example.com/öffnnen?bitet=fehller#rechnnug",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-de-short-safe-03"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe Mailadresse",
+      "input": "Kontakt: bitet.rechnnug@example.invalid",
+      "expected": "Kontakt: bitet.rechnnug@example.invalid",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-de-short-safe-04"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe Dialekt",
+      "input": "Passt eh, heut geht sich das nimmer aus.",
+      "expected": "Passt eh, heut geht sich das nimmer aus.",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-de-short-safe-05"
+    },
+    {
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "scenario": "safe Varianten",
+      "input": "Der Joghurt steht neben dem Jogurt; beide Etiketten sind korrekt.",
+      "expected": "Der Joghurt steht neben dem Jogurt; beide Etiketten sind korrekt.",
+      "edits": [],
+      "split": "dev",
+      "id": "email200-dev-de-short-safe-06"
+    }
+  ]
+}

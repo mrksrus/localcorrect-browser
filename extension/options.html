@@ -1,0 +1,5 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>LocalCorrect shortcuts</title><link rel="stylesheet" href="popup.css"></head>
+<body><h1>LocalCorrect shortcuts</h1><p>Choose a shortcut while a normal page's text field has focus. No all-sites access or background typing monitor is used.</p>
+<form id="shortcuts"><label>Correct text<input id="correct-text" autocomplete="off" placeholder="Alt+Shift+C"></label><label>Undo correction<input id="undo-correction" autocomplete="off" placeholder="Alt+Shift+Z"></label><div class="buttons"><button id="save" type="submit">Save shortcuts</button><button id="reset" type="button">Reset defaults</button></div></form>
+<p id="hint">Use modifiers and a key, for example Alt+Shift+C. The browser validates combinations and may reserve some shortcuts.</p><p id="status" role="status" aria-live="polite"></p><button id="browser-settings" hidden>Open browser shortcut settings</button><script type="module" src="options.js"></script></body></html>

@@ -1,0 +1,73 @@
+{
+  "downloads": [
+    {
+      "file": "codespell-dictionary.txt",
+      "url": "https://raw.githubusercontent.com/codespell-project/codespell/b53e95197f7c799674c785028a182e2dfd1df881/codespell_lib/data/dictionary.txt",
+      "resolvedUrl": "https://raw.githubusercontent.com/codespell-project/codespell/b53e95197f7c799674c785028a182e2dfd1df881/codespell_lib/data/dictionary.txt",
+      "bytes": 1499567,
+      "sha256": "154078a5877ef228b8c8b28d5c69991b053947ea8685717599044988e172ddd7",
+      "lastModified": null,
+      "etag": "\"5ae1893bb4b94489e0d3e6a18dc6cc7ddd72a69313114df1f5469584090db6aa\""
+    },
+    {
+      "file": "codespell-README.rst",
+      "url": "https://raw.githubusercontent.com/codespell-project/codespell/b53e95197f7c799674c785028a182e2dfd1df881/README.rst",
+      "resolvedUrl": "https://raw.githubusercontent.com/codespell-project/codespell/b53e95197f7c799674c785028a182e2dfd1df881/README.rst",
+      "bytes": 15559,
+      "sha256": "aeb6dbb0177013821bfb6920e0e101a68d6dc1688971189ee1ac97382d249dc2",
+      "lastModified": null,
+      "etag": "\"d63d033e91d235e949b44391d5c2c7fa8418def889ec6c565bc869d3a2e01aea\""
+    },
+    {
+      "file": "Litkey-csv.zip",
+      "url": "https://linguistics.rub.de/litkeycorpus/corpus/Litkey-csv.zip",
+      "resolvedUrl": "https://linguistics.rub.de/litkeycorpus/corpus/Litkey-csv.zip",
+      "bytes": 1294650,
+      "sha256": "6d8db45fa079c1dc6128e9e8db2d181c0fbcbb9d51693ebbc1ecb7785e2d649c",
+      "lastModified": "Tue, 08 Mar 2022 16:53:16 GMT",
+      "etag": "\"r8fqwsrqyi\""
+    },
+    {
+      "file": "litkey-access.html",
+      "url": "https://linguistics.rub.de/litkeycorpus/access.html",
+      "resolvedUrl": "https://linguistics.rub.de/litkeycorpus/access.html",
+      "bytes": 13068,
+      "sha256": "00e2e5e7456648deb261ef3355bdedc9ac3938f2ded686d09b1787c99a4dae09",
+      "lastModified": "Tue, 08 Mar 2022 16:53:16 GMT",
+      "etag": "\"r8fqwsa30\""
+    },
+    {
+      "file": "litkey-description.html",
+      "url": "https://linguistics.rub.de/litkeycorpus/",
+      "resolvedUrl": "https://linguistics.rub.de/litkeycorpus/",
+      "bytes": 11400,
+      "sha256": "cda346a2c52d1a3db1c95d0a169856988e412baede7ddf9c6bc0b128aa6fbdad",
+      "lastModified": "Tue, 08 Mar 2022 16:53:16 GMT",
+      "etag": "\"r8fqws8so\""
+    },
+    {
+      "file": "CC-BY-SA-3.0.html",
+      "url": "https://creativecommons.org/licenses/by-sa/3.0/legalcode.en",
+      "resolvedUrl": "https://creativecommons.org/licenses/by-sa/3.0/legalcode.en",
+      "bytes": 54093,
+      "sha256": "c33d7ebdbcc5c8db073e69a794b2ac44805f5d7d9edcfb8b5181a71869a9b7d5",
+      "lastModified": "Thu, 01 Oct 2026 17:09:56 GMT",
+      "etag": null
+    },
+    {
+      "file": "CC-BY-SA-4.0.html",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.en",
+      "resolvedUrl": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.en",
+      "bytes": 51645,
+      "sha256": "47c0a954c88d793bdefe92fb007ae3c038fb3807f1a27083433d01aa7542c0d8",
+      "lastModified": "Thu, 01 Oct 2026 17:09:56 GMT",
+      "etag": null
+    }
+  ],
+  "codeRevision": "author-script-v1",
+  "seed": 2026110501,
+  "sourcesKeptPrivate": [
+    "Litkey-csv.zip"
+  ],
+  "publicArtefactsExclude": "Raw source archive, original child stories, source file names and child identifiers."
+}

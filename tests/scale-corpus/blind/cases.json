@@ -1,0 +1,1575 @@
+{
+  "description": "Independent blind English/German spelling safety corpus. Newly authored synthetic adult texts; 100 documents, 70 unchanged controls, 30 three-typo correction cases, 90 gold spelling edits. UTF-16 offsets; intentional quoted, code, identifier and signature text must remain exact. No engine, earlier examples or result reports were inspected.",
+  "cases": [
+    {
+      "id": "blind-en-001",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hello Iona,\n\nThe aubergines arrived with the courgettes, but the celeriac is still at the farm. Please leave the latter off Wednesday's menu. Our cook calls the small platter a mezze, and that wording can stay on the chalkboard.\n\nWe have a cheque for the deposit and a separate cash float. Neither belongs in the tips jar. If Niamh asks about the biscuit order, tell her that the ginger ones are for the evening class.\n\nThe label proof says \"Colour: grey\". That is the supplier's wording, and I have already approved it. No further printing is needed today.\n\nCheers,\nOrla Fenwick\norla.fenwick@example.com",
+      "expected": "Hello Iona,\n\nThe aubergines arrived with the courgettes, but the celeriac is still at the farm. Please leave the latter off Wednesday's menu. Our cook calls the small platter a mezze, and that wording can stay on the chalkboard.\n\nWe have a cheque for the deposit and a separate cash float. Neither belongs in the tips jar. If Niamh asks about the biscuit order, tell her that the ginger ones are for the evening class.\n\nThe label proof says \"Colour: grey\". That is the supplier's wording, and I have already approved it. No further printing is needed today.\n\nCheers,\nOrla Fenwick\norla.fenwick@example.com",
+      "edits": []
+    },
+    {
+      "id": "blind-en-002",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Dear Mr Voss,\r\n\r\nI can collect the chaise longue on Saturday, provided the rear entrance is open. The brochure calls the fabric ecru; in the photographs it looks almost white. I am content with either description.\r\n\r\nPlease do not discard the ottoman. It was included in the original lot, although the invoice lists it on a second page. The brass escutcheon is loose but still present.\r\n\r\nMy reference is LOT_Q7B, with an underscore. You may send the collection note to auction-desk@example.com. I do not need another copy of the catalogue.\r\n\r\nKind regards,\r\nElin Cresswell",
+      "expected": "Dear Mr Voss,\r\n\r\nI can collect the chaise longue on Saturday, provided the rear entrance is open. The brochure calls the fabric ecru; in the photographs it looks almost white. I am content with either description.\r\n\r\nPlease do not discard the ottoman. It was included in the original lot, although the invoice lists it on a second page. The brass escutcheon is loose but still present.\r\n\r\nMy reference is LOT_Q7B, with an underscore. You may send the collection note to auction-desk@example.com. I do not need another copy of the catalogue.\r\n\r\nKind regards,\r\nElin Cresswell",
+      "edits": []
+    },
+    {
+      "id": "blind-en-003",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hi Ravi,\n\nThe parser accepts UTF-8, but the old export contains a BOM. That explains the odd first key. Please keep the fixture named `wierd_header.json`; another test refers to that exact filename.\n\nI ran SQLite against a copy of the data. The query returned no rows for `status = 'waived'`, which is the expected result. We should not create a record just to make the counter positive.\n\nThe README uses \"idempotent\" correctly. Its example hostname is relay.invalid, and the token shown there is only a placeholder. We can review the patch after lunch.\n\nThanks,\nMarek Dalen\nPlatform QA",
+      "expected": "Hi Ravi,\n\nThe parser accepts UTF-8, but the old export contains a BOM. That explains the odd first key. Please keep the fixture named `wierd_header.json`; another test refers to that exact filename.\n\nI ran SQLite against a copy of the data. The query returned no rows for `status = 'waived'`, which is the expected result. We should not create a record just to make the counter positive.\n\nThe README uses \"idempotent\" correctly. Its example hostname is relay.invalid, and the token shown there is only a placeholder. We can review the patch after lunch.\n\nThanks,\nMarek Dalen\nPlatform QA",
+      "edits": []
+    },
+    {
+      "id": "blind-en-004",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Good morning Mara,\n\nThe neighbourhood group has chosen the old boathouse for its AGM. There is no lift, so the ground-floor room matters more than the view. The booking is provisional until the caretaker replies.\n\nEuan has offered to bring a cafetière and decaf coffee. Please leave \"bring your own mug\" in the notice. A few people have asked whether the meeting is cancelled, and it is not.\n\nThe draft's title is \"Harbour voices\". The lower-case v is deliberate. If the hall is unavailable, we will postpone the meeting rather than move it upstairs.\n\nBest wishes,\nTamsin Vale",
+      "expected": "Good morning Mara,\n\nThe neighbourhood group has chosen the old boathouse for its AGM. There is no lift, so the ground-floor room matters more than the view. The booking is provisional until the caretaker replies.\n\nEuan has offered to bring a cafetière and decaf coffee. Please leave \"bring your own mug\" in the notice. A few people have asked whether the meeting is cancelled, and it is not.\n\nThe draft's title is \"Harbour voices\". The lower-case v is deliberate. If the hall is unavailable, we will postpone the meeting rather than move it upstairs.\n\nBest wishes,\nTamsin Vale",
+      "edits": []
+    },
+    {
+      "id": "blind-en-005",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hello Sora,\n\nI have put the sourdough starter in the smaller fridge. The rye flour is in a Kilner jar marked R2, next to the gochujang. Neither jar contains anything for the tasting panel.\n\nThe new recipe includes labneh, za'atar and a spoonful of treacle. Those are the names on our ingredient sheet. A guest has asked for no chilli, not extra chilli.\n\nPlease keep the handwritten note that says \"Mum's pud\". It belongs with the family recipe book, even if the wording is too informal for the menu. I will wash the banneton when I return.\n\nSee you tomorrow,\nAnouk Bell",
+      "expected": "Hello Sora,\n\nI have put the sourdough starter in the smaller fridge. The rye flour is in a Kilner jar marked R2, next to the gochujang. Neither jar contains anything for the tasting panel.\n\nThe new recipe includes labneh, za'atar and a spoonful of treacle. Those are the names on our ingredient sheet. A guest has asked for no chilli, not extra chilli.\n\nPlease keep the handwritten note that says \"Mum's pud\". It belongs with the family recipe book, even if the wording is too informal for the menu. I will wash the banneton when I return.\n\nSee you tomorrow,\nAnouk Bell",
+      "edits": []
+    },
+    {
+      "id": "blind-en-006",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Dear Dr Keene,\n\nThe facsimile has reached the reading room. Its colophon is legible, though the flyleaf has a brown stain. We have recorded that mark as foxing rather than damage from a recent spill.\n\nThe index includes the place-name Llandudno and the surname Szczepan. Please retain both. The quoted inscription reads \"a verrie good yeare\", including the old spelling.\n\nOur accession identifier is MS_204_B. A high-resolution scan can go to archive@example.com once the conservator has approved handling. No public upload has been requested.\n\nYours sincerely,\nDara Holt\nCollections assistant",
+      "expected": "Dear Dr Keene,\n\nThe facsimile has reached the reading room. Its colophon is legible, though the flyleaf has a brown stain. We have recorded that mark as foxing rather than damage from a recent spill.\n\nThe index includes the place-name Llandudno and the surname Szczepan. Please retain both. The quoted inscription reads \"a verrie good yeare\", including the old spelling.\n\nOur accession identifier is MS_204_B. A high-resolution scan can go to archive@example.com once the conservator has approved handling. No public upload has been requested.\n\nYours sincerely,\nDara Holt\nCollections assistant",
+      "edits": []
+    },
+    {
+      "id": "blind-en-007",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hi Kim,\n\nThe small OLED panel works with the ESP32 board. I have only tried I²C so far. The silkscreen says \"SDA\", while the sample sketch calls the variable `data_lien`; please leave that identifier alone.\n\nThere is no need to reflow the connector. The joint looked dull because the light was poor, and the continuity check passed. Do not bridge the two test pads.\n\nI will bring the breadboard and a spare USB-C lead to the workshop. The Adafruit example is still in the folder named upstream. We can compare it with our version there.\n\nCheers,\nAri Mercer",
+      "expected": "Hi Kim,\n\nThe small OLED panel works with the ESP32 board. I have only tried I²C so far. The silkscreen says \"SDA\", while the sample sketch calls the variable `data_lien`; please leave that identifier alone.\n\nThere is no need to reflow the connector. The joint looked dull because the light was poor, and the continuity check passed. Do not bridge the two test pads.\n\nI will bring the breadboard and a spare USB-C lead to the workshop. The Adafruit example is still in the folder named upstream. We can compare it with our version there.\n\nCheers,\nAri Mercer",
+      "edits": []
+    },
+    {
+      "id": "blind-en-008",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hello Leila,\r\n\r\nI am happy to cover the matinee on Thursday. The foyer will open at half past one, and the ushers have already seen the seating plan. The dress rehearsal remains closed to visitors.\r\n\r\nThe programme credits the bouzouki player as Cian O'Rourke. That spelling came from the artist. The word \"entr'acte\" also appears in the score and should remain in the programme.\r\n\r\nPlease leave the aisle seat in row D empty. It is reserved for a late arrival with a walking stick, not for an extra camera. My shift ends after the house lights come up.\r\n\r\nAll the best,\r\nMira Calder",
+      "expected": "Hello Leila,\r\n\r\nI am happy to cover the matinee on Thursday. The foyer will open at half past one, and the ushers have already seen the seating plan. The dress rehearsal remains closed to visitors.\r\n\r\nThe programme credits the bouzouki player as Cian O'Rourke. That spelling came from the artist. The word \"entr'acte\" also appears in the score and should remain in the programme.\r\n\r\nPlease leave the aisle seat in row D empty. It is reserved for a late arrival with a walking stick, not for an extra camera. My shift ends after the house lights come up.\r\n\r\nAll the best,\r\nMira Calder",
+      "edits": []
+    },
+    {
+      "id": "blind-en-009",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Dear Ellis,\n\nThe bicycle is ready apart from the bar tape. The rear derailleur shifts cleanly, and the freehub no longer catches. I used the torque values printed on the stem.\n\nYou asked for a tan sidewall, but the tyre in stock has a black one. I have not fitted it. The wheel remains in the stand with a note saying \"do not ride\".\n\nPlease confirm whether you want the dynamo light as well. The model name is SON Edelux II, which is how it appears on the box. Collection on Friday is still possible.\n\nRegards,\nJonah Reed\nWheelhouse repairs",
+      "expected": "Dear Ellis,\n\nThe bicycle is ready apart from the bar tape. The rear derailleur shifts cleanly, and the freehub no longer catches. I used the torque values printed on the stem.\n\nYou asked for a tan sidewall, but the tyre in stock has a black one. I have not fitted it. The wheel remains in the stand with a note saying \"do not ride\".\n\nPlease confirm whether you want the dynamo light as well. The model name is SON Edelux II, which is how it appears on the box. Collection on Friday is still possible.\n\nRegards,\nJonah Reed\nWheelhouse repairs",
+      "edits": []
+    },
+    {
+      "id": "blind-en-010",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hello Freya,\n\nI have finished the notes for Saturday's repair cafe. The room booking covers the morning session and the time we need to clear up, so nobody has to rush out while a visitor is still packing a bag. The caretaker will unlock the side door at eight. Please ask volunteers to use that entrance until the main doors open, as the floor by reception will still be wet. The first table on the left is for registration. It needs a paper list, a few pencils and the box of numbered cards. The list uses invented names in the training copy, and the contact address printed at the top is repair-desk@example.com. We should put that copy away before visitors arrive. The second table is for small sewing jobs. There is a lamp with a magnifying lens, a tin of bobbins and a packet of new needles. The machine has already been checked. Its foot pedal belongs in the padded bag when we move it, even for a short distance. The small trolley can carry the machine and lamp together, provided the lead is tied loosely around the handle. A tight knot would be awkward to undo and might damage the cable. Behind the table, leave enough space for someone to sit with a walking frame beside the chair. We can move the spare stools into the store if the aisle feels cramped. Please keep the low chair with arms near the entrance for anyone who needs to rest while waiting. It is not a place for coats or boxes. The hooks by the window are available for those.\n\nFor the electrical bench, I have asked each volunteer to work only within their own experience. The event is a place to examine ordinary household objects, explain what we can see and sometimes make a simple repair. A visitor may leave with advice rather than a working object. Our registration card says this plainly. We must also record when we decline a job, including a brief reason, so that the next person does not mistake an unfinished check for an approval. The sample card reads \"Not tested\" in large letters. Please keep the word \"Not\" visible when you lay the cards out. The green stickers are for the storage boxes and do not indicate a successful test. The portable appliance tester has its own log, which the trained volunteer will complete. Nobody else needs to enter figures there. We have no arrangement to retain a visitor's computer overnight, and we should not offer to copy a disk as a favour during a busy session. If an object needs a specialist or spare parts that we cannot identify, we can explain that and let the owner decide what to do next. The printed directory contains only public workshop details. The demonstration sheet, on the other hand, uses a reserved hostname, workshop.invalid, and should remain with the teaching materials. Its mock ticket says \"recieved at desk\" because we are showing how an old form looked. That quoted label should remain exactly as it is. The new blank forms use the standard spelling. There is also a sample filename, `reciept_scan.txt`, in the handout. It is an identifier for an exercise, so please do not silently rename it when making copies.\n\nThe cafe team will put tea, decaf coffee and water on the round table. We have oat drink as well as milk, and the biscuits will stay in their original packets so that guests can read the ingredient lists. The treasurer has left a cash float in a sealed envelope. Donations go in the separate tin, and nobody needs to explain or justify the amount they choose to give. We are keeping the donation sign small because the main purpose of the morning is the work at the tables. At lunchtime, the last volunteer at each bench should collect loose screws, check beneath the chairs and wipe the tabletop. Put any unidentified part in a clear bag with the table number on it. Do not put it in the mixed box and hope someone recognises it next month. We have agreed that the registration sheets remain with the organiser, while the anonymous count of completed, declined and unfinished jobs goes into the meeting notes. These are different records. A finished job does not automatically mean a saved object, since the owner may still choose to replace it. For the newsletter, I would prefer a plain account of what happened to a claim about waste that we cannot measure. We can say how many people came, how many objects reached a bench and how many volunteers helped. The photographer will ask before taking a close picture and can use the empty room for general shots. Finally, please leave the linen tea towels hanging over the rack rather than folded in a damp heap. I will take them home after the room check. The caretaker's checklist is on the noticeboard by the exit, and I can stay until the last item has been signed off.\n\nThanks,\nNoor Ashby\nVolunteer coordinator",
+      "expected": "Hello Freya,\n\nI have finished the notes for Saturday's repair cafe. The room booking covers the morning session and the time we need to clear up, so nobody has to rush out while a visitor is still packing a bag. The caretaker will unlock the side door at eight. Please ask volunteers to use that entrance until the main doors open, as the floor by reception will still be wet. The first table on the left is for registration. It needs a paper list, a few pencils and the box of numbered cards. The list uses invented names in the training copy, and the contact address printed at the top is repair-desk@example.com. We should put that copy away before visitors arrive. The second table is for small sewing jobs. There is a lamp with a magnifying lens, a tin of bobbins and a packet of new needles. The machine has already been checked. Its foot pedal belongs in the padded bag when we move it, even for a short distance. The small trolley can carry the machine and lamp together, provided the lead is tied loosely around the handle. A tight knot would be awkward to undo and might damage the cable. Behind the table, leave enough space for someone to sit with a walking frame beside the chair. We can move the spare stools into the store if the aisle feels cramped. Please keep the low chair with arms near the entrance for anyone who needs to rest while waiting. It is not a place for coats or boxes. The hooks by the window are available for those.\n\nFor the electrical bench, I have asked each volunteer to work only within their own experience. The event is a place to examine ordinary household objects, explain what we can see and sometimes make a simple repair. A visitor may leave with advice rather than a working object. Our registration card says this plainly. We must also record when we decline a job, including a brief reason, so that the next person does not mistake an unfinished check for an approval. The sample card reads \"Not tested\" in large letters. Please keep the word \"Not\" visible when you lay the cards out. The green stickers are for the storage boxes and do not indicate a successful test. The portable appliance tester has its own log, which the trained volunteer will complete. Nobody else needs to enter figures there. We have no arrangement to retain a visitor's computer overnight, and we should not offer to copy a disk as a favour during a busy session. If an object needs a specialist or spare parts that we cannot identify, we can explain that and let the owner decide what to do next. The printed directory contains only public workshop details. The demonstration sheet, on the other hand, uses a reserved hostname, workshop.invalid, and should remain with the teaching materials. Its mock ticket says \"recieved at desk\" because we are showing how an old form looked. That quoted label should remain exactly as it is. The new blank forms use the standard spelling. There is also a sample filename, `reciept_scan.txt`, in the handout. It is an identifier for an exercise, so please do not silently rename it when making copies.\n\nThe cafe team will put tea, decaf coffee and water on the round table. We have oat drink as well as milk, and the biscuits will stay in their original packets so that guests can read the ingredient lists. The treasurer has left a cash float in a sealed envelope. Donations go in the separate tin, and nobody needs to explain or justify the amount they choose to give. We are keeping the donation sign small because the main purpose of the morning is the work at the tables. At lunchtime, the last volunteer at each bench should collect loose screws, check beneath the chairs and wipe the tabletop. Put any unidentified part in a clear bag with the table number on it. Do not put it in the mixed box and hope someone recognises it next month. We have agreed that the registration sheets remain with the organiser, while the anonymous count of completed, declined and unfinished jobs goes into the meeting notes. These are different records. A finished job does not automatically mean a saved object, since the owner may still choose to replace it. For the newsletter, I would prefer a plain account of what happened to a claim about waste that we cannot measure. We can say how many people came, how many objects reached a bench and how many volunteers helped. The photographer will ask before taking a close picture and can use the empty room for general shots. Finally, please leave the linen tea towels hanging over the rack rather than folded in a damp heap. I will take them home after the room check. The caretaker's checklist is on the noticeboard by the exit, and I can stay until the last item has been signed off.\n\nThanks,\nNoor Ashby\nVolunteer coordinator",
+      "edits": []
+    },
+    {
+      "id": "blind-en-011",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hello Wren,\n\nThe walk begins at the stile beside the dyke. In this part of the county, \"dyke\" means the ditch, so the map note is intentional. The path then crosses a small copse of alder.\n\nWe found a yew near the abandoned mill and a ewe in the adjoining field. Both words are correct in the survey. Please do not combine the two observations.\n\nIf rain makes the ford unsafe, turn back before the stone cairn. There is no alternative crossing marked on the route. I have added a flask of tea to the kit list.\n\nBest,\nHana Rook",
+      "expected": "Hello Wren,\n\nThe walk begins at the stile beside the dyke. In this part of the county, \"dyke\" means the ditch, so the map note is intentional. The path then crosses a small copse of alder.\n\nWe found a yew near the abandoned mill and a ewe in the adjoining field. Both words are correct in the survey. Please do not combine the two observations.\n\nIf rain makes the ford unsafe, turn back before the stone cairn. There is no alternative crossing marked on the route. I have added a flask of tea to the kit list.\n\nBest,\nHana Rook",
+      "edits": []
+    },
+    {
+      "id": "blind-en-012",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Dear Mx Rowan,\n\nYour linocut is packed between two sheets of archival board. The title on the verso is \"After the haar\". Haar is the word used for the sea fog in the print's accompanying note.\n\nThe frame is unfinished beech, not bleached oak. I mention this because the order summary used the wrong description last week. The current label matches what we discussed.\n\nWe can hold the parcel until Tuesday. Please quote ART-67C if you write to prints@example.com. No signature has been added to the mount.\n\nWith thanks,\nBryn Aster",
+      "expected": "Dear Mx Rowan,\n\nYour linocut is packed between two sheets of archival board. The title on the verso is \"After the haar\". Haar is the word used for the sea fog in the print's accompanying note.\n\nThe frame is unfinished beech, not bleached oak. I mention this because the order summary used the wrong description last week. The current label matches what we discussed.\n\nWe can hold the parcel until Tuesday. Please quote ART-67C if you write to prints@example.com. No signature has been added to the mount.\n\nWith thanks,\nBryn Aster",
+      "edits": []
+    },
+    {
+      "id": "blind-en-013",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hi Tess,\n\nI tested the checkout in Firefox and Chromium. WebAuthn worked with the security key, and the passkey dialog closed when I pressed Escape. The page did not submit an empty form.\n\nThe fixture address is qa+checkout@example.com. Its plus sign is intentional. Our URL path `/recieve-hook` is misspelt for historical reasons, but renaming it would break the integration.\n\nPlease retain the button text \"Not now\". It declines the optional reminder; it does not cancel the order. The test note is ready for your review 🙂.\n\nThanks,\nKian Moss",
+      "expected": "Hi Tess,\n\nI tested the checkout in Firefox and Chromium. WebAuthn worked with the security key, and the passkey dialog closed when I pressed Escape. The page did not submit an empty form.\n\nThe fixture address is qa+checkout@example.com. Its plus sign is intentional. Our URL path `/recieve-hook` is misspelt for historical reasons, but renaming it would break the integration.\n\nPlease retain the button text \"Not now\". It declines the optional reminder; it does not cancel the order. The test note is ready for your review 🙂.\n\nThanks,\nKian Moss",
+      "edits": []
+    },
+    {
+      "id": "blind-en-014",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hello Oona,\n\nThe guest prefers they/them pronouns and has asked us to use the name Kit. The badge proof already reflects both requests. Please do not print the older proof from the attachment list.\n\nWe have arranged a quiet table away from the loudspeaker. The menu includes a vegan dhal and a gluten-free polenta dish. Neither dish contains nuts according to the kitchen's ingredient list.\n\nThe room number is B04, with a zero. The sign outside should read \"Drop-in session\". I can meet the guest at reception at ten.\n\nWarm regards,\nSian Fletcher",
+      "expected": "Hello Oona,\n\nThe guest prefers they/them pronouns and has asked us to use the name Kit. The badge proof already reflects both requests. Please do not print the older proof from the attachment list.\n\nWe have arranged a quiet table away from the loudspeaker. The menu includes a vegan dhal and a gluten-free polenta dish. Neither dish contains nuts according to the kitchen's ingredient list.\n\nThe room number is B04, with a zero. The sign outside should read \"Drop-in session\". I can meet the guest at reception at ten.\n\nWarm regards,\nSian Fletcher",
+      "edits": []
+    },
+    {
+      "id": "blind-en-015",
+      "split": "blind",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hello Ada,\n\nThe parcel arrived this morning, and I checked the contents against the delivrey note. Two glass jars were wrapped separately. Neither lid has a dent, although the outer carton was damp.\n\nPlease send the replacment label when you have a moment. The handwritten address is readable, but the barcode has come off. Our reference is BOX_71, exactly as shown on the receipt.\n\nI appreciate your pateince while I sort out the paperwork. There is no need to dispatch another parcel. A reply to stores@example.com will reach the person covering the afternoon shift.\n\nKind regards,\nRosa Pell",
+      "expected": "Hello Ada,\n\nThe parcel arrived this morning, and I checked the contents against the delivery note. Two glass jars were wrapped separately. Neither lid has a dent, although the outer carton was damp.\n\nPlease send the replacement label when you have a moment. The handwritten address is readable, but the barcode has come off. Our reference is BOX_71, exactly as shown on the receipt.\n\nI appreciate your patience while I sort out the paperwork. There is no need to dispatch another parcel. A reply to stores@example.com will reach the person covering the afternoon shift.\n\nKind regards,\nRosa Pell",
+      "edits": [
+        {
+          "offset": 84,
+          "length": 8,
+          "original": "delivrey",
+          "replacement": "delivery"
+        },
+        {
+          "offset": 216,
+          "length": 10,
+          "original": "replacment",
+          "replacement": "replacement"
+        },
+        {
+          "offset": 401,
+          "length": 8,
+          "original": "pateince",
+          "replacement": "patience"
+        }
+      ]
+    },
+    {
+      "id": "blind-en-016",
+      "split": "blind",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hi Ben,\r\n\r\nThanks for sending the photograhps. I can see the scratch beside the hinge, but the wooden frame looks sound. Please keep the packing until we have agreed on a collection date.\r\n\r\nThe workshop has confirmed its availabilty for next Wednesday. Someone will need to meet the driver at the side entrance. The doorbell there is labelled \"Studio B\", not the tenant's name.\r\n\r\nI have attached the measurments from the original survey. They include the frame, so please do not add another margin. We can discuss the colour after the repair is complete.\r\n\r\nBest,\r\nCleo Hart",
+      "expected": "Hi Ben,\r\n\r\nThanks for sending the photographs. I can see the scratch beside the hinge, but the wooden frame looks sound. Please keep the packing until we have agreed on a collection date.\r\n\r\nThe workshop has confirmed its availability for next Wednesday. Someone will need to meet the driver at the side entrance. The doorbell there is labelled \"Studio B\", not the tenant's name.\r\n\r\nI have attached the measurements from the original survey. They include the frame, so please do not add another margin. We can discuss the colour after the repair is complete.\r\n\r\nBest,\r\nCleo Hart",
+      "edits": [
+        {
+          "offset": 34,
+          "length": 11,
+          "original": "photograhps",
+          "replacement": "photographs"
+        },
+        {
+          "offset": 222,
+          "length": 11,
+          "original": "availabilty",
+          "replacement": "availability"
+        },
+        {
+          "offset": 402,
+          "length": 11,
+          "original": "measurments",
+          "replacement": "measurements"
+        }
+      ]
+    },
+    {
+      "id": "blind-en-017",
+      "split": "blind",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Dear Ms Lane,\n\nI would like to confirm our reservaton for the small meeting room. We expect eight people, including the interpreter. No microphone is required, and we will bring our own laptop.\n\nThe agenda includes a discusion of the shared garden. Please put a jug of water on the table before we arrive. The sign on the door can simply say \"Garden group\".\n\nOur treasurer will arrange payment after the meeting. The invoice should use the organisation name on the booking form. I have copied no other recipents into this message.\n\nYours sincerely,\nOwen Mere",
+      "expected": "Dear Ms Lane,\n\nI would like to confirm our reservation for the small meeting room. We expect eight people, including the interpreter. No microphone is required, and we will bring our own laptop.\n\nThe agenda includes a discussion of the shared garden. Please put a jug of water on the table before we arrive. The sign on the door can simply say \"Garden group\".\n\nOur treasurer will arrange payment after the meeting. The invoice should use the organisation name on the booking form. I have copied no other recipients into this message.\n\nYours sincerely,\nOwen Mere",
+      "edits": [
+        {
+          "offset": 43,
+          "length": 10,
+          "original": "reservaton",
+          "replacement": "reservation"
+        },
+        {
+          "offset": 217,
+          "length": 9,
+          "original": "discusion",
+          "replacement": "discussion"
+        },
+        {
+          "offset": 502,
+          "length": 9,
+          "original": "recipents",
+          "replacement": "recipients"
+        }
+      ]
+    },
+    {
+      "id": "blind-en-018",
+      "split": "blind",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hello Liv,\n\nThe test run finished sucessfully on the spare machine. Its hostname is bench.invalid, and the dataset contains invented records. The script named `respones_check` must keep its current name.\n\nI have written a separate explaination of the timeout behaviour. It includes the exact error text, \"retrun code 7\", because that is what the old device displays. Please keep that quotation intact.\n\nWe still need permisson to use the larger room for the demonstration. Until that arrives, I will leave the equipment packed. There is no reason to change the working configuration today.\n\nThanks,\nDylan Quill",
+      "expected": "Hello Liv,\n\nThe test run finished successfully on the spare machine. Its hostname is bench.invalid, and the dataset contains invented records. The script named `respones_check` must keep its current name.\n\nI have written a separate explanation of the timeout behaviour. It includes the exact error text, \"retrun code 7\", because that is what the old device displays. Please keep that quotation intact.\n\nWe still need permission to use the larger room for the demonstration. Until that arrives, I will leave the equipment packed. There is no reason to change the working configuration today.\n\nThanks,\nDylan Quill",
+      "edits": [
+        {
+          "offset": 34,
+          "length": 11,
+          "original": "sucessfully",
+          "replacement": "successfully"
+        },
+        {
+          "offset": 231,
+          "length": 12,
+          "original": "explaination",
+          "replacement": "explanation"
+        },
+        {
+          "offset": 417,
+          "length": 9,
+          "original": "permisson",
+          "replacement": "permission"
+        }
+      ]
+    },
+    {
+      "id": "blind-en-019",
+      "split": "blind",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hi Jude,\r\n\r\nThe volunteer rota is attached 🙂. I have moved my shift to the afternon and left the morning slot empty. Please do not assign it to Pat without asking first.\r\n\r\nThe cupboard contains enough stationnery for the weekend. We need more envelopes, but the pens and pencils can wait. The box marked \"rouge\" holds red paint for the children's mural.\r\n\r\nPlease acknowlege the change before Friday. I will check the noticeboard after breakfast, then carry the folding chairs downstairs. The cafe next door has agreed to lend us a trolley.\r\n\r\nCheers,\r\nAmal Shore",
+      "expected": "Hi Jude,\r\n\r\nThe volunteer rota is attached 🙂. I have moved my shift to the afternoon and left the morning slot empty. Please do not assign it to Pat without asking first.\r\n\r\nThe cupboard contains enough stationery for the weekend. We need more envelopes, but the pens and pencils can wait. The box marked \"rouge\" holds red paint for the children's mural.\r\n\r\nPlease acknowledge the change before Friday. I will check the noticeboard after breakfast, then carry the folding chairs downstairs. The cafe next door has agreed to lend us a trolley.\r\n\r\nCheers,\r\nAmal Shore",
+      "edits": [
+        {
+          "offset": 76,
+          "length": 8,
+          "original": "afternon",
+          "replacement": "afternoon"
+        },
+        {
+          "offset": 203,
+          "length": 11,
+          "original": "stationnery",
+          "replacement": "stationery"
+        },
+        {
+          "offset": 366,
+          "length": 10,
+          "original": "acknowlege",
+          "replacement": "acknowledge"
+        }
+      ]
+    },
+    {
+      "id": "blind-en-020",
+      "split": "blind",
+      "language": "en",
+      "kind": "correction",
+      "format": "email",
+      "input": "Dear Nessa,\n\nI have recieved the revised proof of the walking guide. The small map is much clearer now. Its label \"Quay steps\" matches the sign at the harbour, including the capital Q.\n\nOne paragaph describes a narrow passage behind the chapel. Please keep the warning that the stones can be slippery. The route does not cross the private courtyard.\n\nThe final sentance should mention the library's opening hours. I will verify those by phone before we print. For now, please leave the date field blank and save the proof under GUIDE_C2.\n\nBest wishes,\nFelix Wold",
+      "expected": "Dear Nessa,\n\nI have received the revised proof of the walking guide. The small map is much clearer now. Its label \"Quay steps\" matches the sign at the harbour, including the capital Q.\n\nOne paragraph describes a narrow passage behind the chapel. Please keep the warning that the stones can be slippery. The route does not cross the private courtyard.\n\nThe final sentence should mention the library's opening hours. I will verify those by phone before we print. For now, please leave the date field blank and save the proof under GUIDE_C2.\n\nBest wishes,\nFelix Wold",
+      "edits": [
+        {
+          "offset": 20,
+          "length": 8,
+          "original": "recieved",
+          "replacement": "received"
+        },
+        {
+          "offset": 190,
+          "length": 8,
+          "original": "paragaph",
+          "replacement": "paragraph"
+        },
+        {
+          "offset": 361,
+          "length": 8,
+          "original": "sentance",
+          "replacement": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "blind-en-021",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "The terracotta pots can stay outside, but the glazed ones belong in the shed. The pot marked \"sage\" contains thyme this year. Nobody has relabelled it yet.\n\nI planted lovage beside the sorrel and left a patch for purslane. The young quince tree has no fruit. That is no surprise after the late frost.",
+      "expected": "The terracotta pots can stay outside, but the glazed ones belong in the shed. The pot marked \"sage\" contains thyme this year. Nobody has relabelled it yet.\n\nI planted lovage beside the sorrel and left a patch for purslane. The young quince tree has no fruit. That is no surprise after the late frost.",
+      "edits": []
+    },
+    {
+      "id": "blind-en-022",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "The log contains a warning from nginx and a later success from rsync. Those messages describe different jobs. A green dashboard does not prove that both jobs succeeded.\n\nKeep `sync_recieved_at` in the schema migration. The misspelling is part of a field name used by an external client. We can add a clearer alias in a later version.",
+      "expected": "The log contains a warning from nginx and a later success from rsync. Those messages describe different jobs. A green dashboard does not prove that both jobs succeeded.\n\nKeep `sync_recieved_at` in the schema migration. The misspelling is part of a field name used by an external client. We can add a clearer alias in a later version.",
+      "edits": []
+    },
+    {
+      "id": "blind-en-023",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "I prefer the grey wool waistcoat to the velvet one. The tailor has used a herringbone lining and small corozo buttons. Nothing on the order calls for leather.\n\nThe label says \"Made for R. P. Dacre\". Dacre is the invented customer name for the display garment. Please keep the initials and spacing when printing the card.",
+      "expected": "I prefer the grey wool waistcoat to the velvet one. The tailor has used a herringbone lining and small corozo buttons. Nothing on the order calls for leather.\n\nThe label says \"Made for R. P. Dacre\". Dacre is the invented customer name for the display garment. Please keep the initials and spacing when printing the card.",
+      "edits": []
+    },
+    {
+      "id": "blind-en-024",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "The recipe asks for a roux, then stock added a ladleful at a time. A whisk helps at first; a wooden spoon is easier once the sauce thickens. Do not add the crème fraîche while it is boiling.\n\nFor the vegetarian version, use mushroom stock. Worcestershire sauce is optional, and its ingredients need checking before use. The kitchen copy has a tick beside the vegetarian bottle.",
+      "expected": "The recipe asks for a roux, then stock added a ladleful at a time. A whisk helps at first; a wooden spoon is easier once the sauce thickens. Do not add the crème fraîche while it is boiling.\n\nFor the vegetarian version, use mushroom stock. Worcestershire sauce is optional, and its ingredients need checking before use. The kitchen copy has a tick beside the vegetarian bottle.",
+      "edits": []
+    },
+    {
+      "id": "blind-en-025",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "The interviewee said, \"I ain't going back there.\" That line is a quotation. The transcript should preserve it, along with the pause before \"there\".\n\nOutside the quoted passage, the editor uses standard English. The interviewee's stage name is Jax Nite. It is printed that way on the consent form.",
+      "expected": "The interviewee said, \"I ain't going back there.\" That line is a quotation. The transcript should preserve it, along with the pause before \"there\".\n\nOutside the quoted passage, the editor uses standard English. The interviewee's stage name is Jax Nite. It is printed that way on the consent form.",
+      "edits": []
+    },
+    {
+      "id": "blind-en-026",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "The band includes a bodhrán, a fiddle and a concertina. The bouzouki appears only in the second set. Our sound engineer calls the spare channel \"wee box\" in the patch sheet.\n\nThere is no encore in the current running order. If the audience asks for one, the singer will decide on the night. Please do not promise an extra song in the listing.",
+      "expected": "The band includes a bodhrán, a fiddle and a concertina. The bouzouki appears only in the second set. Our sound engineer calls the spare channel \"wee box\" in the patch sheet.\n\nThere is no encore in the current running order. If the audience asks for one, the singer will decide on the night. Please do not promise an extra song in the listing.",
+      "edits": []
+    },
+    {
+      "id": "blind-en-027",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "A queue formed outside the chemist before the doors opened. The woman at the front had a reusable carrier and a folded brolly. She was waiting for a parcel, not a prescription.\n\nAcross the road, the cobbler had put a pair of wellies in the window. The sign read \"Repairs while you wait\". A small terrier slept below the counter.",
+      "expected": "A queue formed outside the chemist before the doors opened. The woman at the front had a reusable carrier and a folded brolly. She was waiting for a parcel, not a prescription.\n\nAcross the road, the cobbler had put a pair of wellies in the window. The sign read \"Repairs while you wait\". A small terrier slept below the counter.",
+      "edits": []
+    },
+    {
+      "id": "blind-en-028",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "The harness uses a fake SMTP server at mail.invalid. No email leaves the test machine. A synthetic address such as user+one@example.com is sufficient for this scenario.\r\n\r\nThe test checks `shouldRetry === false`. Reversing the boolean would change the requirement. The identifier `tehResult` is deliberately retained to match a vendor example.",
+      "expected": "The harness uses a fake SMTP server at mail.invalid. No email leaves the test machine. A synthetic address such as user+one@example.com is sufficient for this scenario.\r\n\r\nThe test checks `shouldRetry === false`. Reversing the boolean would change the requirement. The identifier `tehResult` is deliberately retained to match a vendor example.",
+      "edits": []
+    },
+    {
+      "id": "blind-en-029",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "The draught from the sash window is strongest near the left jamb. A new brush seal should help, but the joiner has not yet measured the gap. The right-hand sash moves freely.\n\nOur neighbour suggested a temporary curtain. We can fit one without drilling into the architrave. The tenancy agreement requires written consent for permanent changes.",
+      "expected": "The draught from the sash window is strongest near the left jamb. A new brush seal should help, but the joiner has not yet measured the gap. The right-hand sash moves freely.\n\nOur neighbour suggested a temporary curtain. We can fit one without drilling into the architrave. The tenancy agreement requires written consent for permanent changes.",
+      "edits": []
+    },
+    {
+      "id": "blind-en-030",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "The distinction between a principal and a principle matters in this chapter. Both words appear several times, and each has its ordinary meaning. The principal explains the school's guiding principle.\n\nThe exercise also uses \"discreet\" for a quiet enquiry and \"discrete\" for separate values. Those choices are deliberate. Do not replace valid words simply because another one is more frequent.",
+      "expected": "The distinction between a principal and a principle matters in this chapter. Both words appear several times, and each has its ordinary meaning. The principal explains the school's guiding principle.\n\nThe exercise also uses \"discreet\" for a quiet enquiry and \"discrete\" for separate values. Those choices are deliberate. Do not replace valid words simply because another one is more frequent.",
+      "edits": []
+    },
+    {
+      "id": "blind-en-031",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Our route crosses a shingle beach before climbing towards the headland. There is a stile beside the first gate and a kissing gate beside the second. Dogs must remain on leads near the sheep.\n\nThe printed map uses OS grid references. The square marked H9 is only an example in the training handout. It does not identify a real meeting place.",
+      "expected": "Our route crosses a shingle beach before climbing towards the headland. There is a stile beside the first gate and a kissing gate beside the second. Dogs must remain on leads near the sheep.\n\nThe printed map uses OS grid references. The square marked H9 is only an example in the training handout. It does not identify a real meeting place.",
+      "edits": []
+    },
+    {
+      "id": "blind-en-032",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "The accessibility note asks for plain text rather than a screenshot. It also asks authors to expand unfamiliar initialisms on first use. Common interface terms such as Wi-Fi can remain as printed.\n\nThe product names are LibreOffice, Nextcloud and KeePassXC. Their internal capitals are intentional. The attached mock-up has no account data and uses a reserved example.com address.",
+      "expected": "The accessibility note asks for plain text rather than a screenshot. It also asks authors to expand unfamiliar initialisms on first use. Common interface terms such as Wi-Fi can remain as printed.\n\nThe product names are LibreOffice, Nextcloud and KeePassXC. Their internal capitals are intentional. The attached mock-up has no account data and uses a reserved example.com address.",
+      "edits": []
+    },
+    {
+      "id": "blind-en-033",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "I ordered a flat white and a lamington at the cafe. The chalkboard also listed damper, Anzac biscuits and a feijoa slice. Those names are part of the menu, not typing errors.\n\nThe receipt says \"Takeaway\". I sat outside anyway because the rain had stopped. A magpie watched from the fence while the owner swept the path.",
+      "expected": "I ordered a flat white and a lamington at the cafe. The chalkboard also listed damper, Anzac biscuits and a feijoa slice. Those names are part of the menu, not typing errors.\n\nThe receipt says \"Takeaway\". I sat outside anyway because the rain had stopped. A magpie watched from the fence while the owner swept the path.",
+      "edits": []
+    },
+    {
+      "id": "blind-en-034",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "The translator left \"Feierabend\" in the essay because it names the idea under discussion. A short explanation follows in English. The same paragraph includes the Danish word \"hygge\".\n\nNeither term needs an English substitute in this draft. The author has already defined both. The byline, Noa Kjell, is an invented name used for the workshop.",
+      "expected": "The translator left \"Feierabend\" in the essay because it names the idea under discussion. A short explanation follows in English. The same paragraph includes the Danish word \"hygge\".\n\nNeither term needs an English substitute in this draft. The author has already defined both. The byline, Noa Kjell, is an invented name used for the workshop.",
+      "edits": []
+    },
+    {
+      "id": "blind-en-035",
+      "split": "blind",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "The commitee has accepted the proposal for a covered bicycle stand. Its members asked for a drawing that shows the distnace from the gate. The existing bench will remain in place.\n\nConstruction can begin after the autumn fair. Until then, the contractor will store the materails off site. Nobody should remove the fence before the agreed date.",
+      "expected": "The committee has accepted the proposal for a covered bicycle stand. Its members asked for a drawing that shows the distance from the gate. The existing bench will remain in place.\n\nConstruction can begin after the autumn fair. Until then, the contractor will store the materials off site. Nobody should remove the fence before the agreed date.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 8,
+          "original": "commitee",
+          "replacement": "committee"
+        },
+        {
+          "offset": 115,
+          "length": 8,
+          "original": "distnace",
+          "replacement": "distance"
+        },
+        {
+          "offset": 269,
+          "length": 9,
+          "original": "materails",
+          "replacement": "materials"
+        }
+      ]
+    },
+    {
+      "id": "blind-en-036",
+      "split": "blind",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "The shelf above the desk holds a dictionnary and an old atlas. A handwritten card says \"leave teh atlas here\". The spelling on that card is part of the photograph description.\n\nOur inventory lists the atlas as a seperate item. Please attach its photograph to the correct record and keep the original filename. The condition note should mention the damged corner.",
+      "expected": "The shelf above the desk holds a dictionary and an old atlas. A handwritten card says \"leave teh atlas here\". The spelling on that card is part of the photograph description.\n\nOur inventory lists the atlas as a separate item. Please attach its photograph to the correct record and keep the original filename. The condition note should mention the damaged corner.",
+      "edits": [
+        {
+          "offset": 33,
+          "length": 11,
+          "original": "dictionnary",
+          "replacement": "dictionary"
+        },
+        {
+          "offset": 212,
+          "length": 8,
+          "original": "seperate",
+          "replacement": "separate"
+        },
+        {
+          "offset": 348,
+          "length": 6,
+          "original": "damged",
+          "replacement": "damaged"
+        }
+      ]
+    },
+    {
+      "id": "blind-en-037",
+      "split": "blind",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "🙂 The rehersal starts after the caretaker has unlocked the side door. We have enough chairs for the musicians, but the audeince will need the folding benches from the store.\r\n\r\nA volunteer will collect the programme from the printer. The title \"Night ferry\" has already been approved. Please check the quanity before signing the receipt.",
+      "expected": "🙂 The rehearsal starts after the caretaker has unlocked the side door. We have enough chairs for the musicians, but the audience will need the folding benches from the store.\r\n\r\nA volunteer will collect the programme from the printer. The title \"Night ferry\" has already been approved. Please check the quantity before signing the receipt.",
+      "edits": [
+        {
+          "offset": 7,
+          "length": 8,
+          "original": "rehersal",
+          "replacement": "rehearsal"
+        },
+        {
+          "offset": 120,
+          "length": 8,
+          "original": "audeince",
+          "replacement": "audience"
+        },
+        {
+          "offset": 303,
+          "length": 7,
+          "original": "quanity",
+          "replacement": "quantity"
+        }
+      ]
+    },
+    {
+      "id": "blind-en-038",
+      "split": "blind",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "The software writes a temporay file before replacing the old export. If the process stops early, the original remains availble. A note in the sample says \"dont delete\", which is quoted exactly.\n\nThe operator should check the destinaton before starting the next batch. The dashboard does not show progress for every file. A finished counter alone cannot confirm that the archive is complete.",
+      "expected": "The software writes a temporary file before replacing the old export. If the process stops early, the original remains available. A note in the sample says \"dont delete\", which is quoted exactly.\n\nThe operator should check the destination before starting the next batch. The dashboard does not show progress for every file. A finished counter alone cannot confirm that the archive is complete.",
+      "edits": [
+        {
+          "offset": 22,
+          "length": 8,
+          "original": "temporay",
+          "replacement": "temporary"
+        },
+        {
+          "offset": 118,
+          "length": 8,
+          "original": "availble",
+          "replacement": "available"
+        },
+        {
+          "offset": 225,
+          "length": 10,
+          "original": "destinaton",
+          "replacement": "destination"
+        }
+      ]
+    },
+    {
+      "id": "blind-en-039",
+      "split": "blind",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "The museum has lent us a collecton of small ceramic birds. Each one sits on a numbered base. The curator asked us to keep the paper labels away from direct sunlight.\n\nWe will prepare a descripton for each object. Visitors can read the cards without touching the display. A transperent cover will protect the most fragile pieces.",
+      "expected": "The museum has lent us a collection of small ceramic birds. Each one sits on a numbered base. The curator asked us to keep the paper labels away from direct sunlight.\n\nWe will prepare a description for each object. Visitors can read the cards without touching the display. A transparent cover will protect the most fragile pieces.",
+      "edits": [
+        {
+          "offset": 25,
+          "length": 9,
+          "original": "collecton",
+          "replacement": "collection"
+        },
+        {
+          "offset": 185,
+          "length": 10,
+          "original": "descripton",
+          "replacement": "description"
+        },
+        {
+          "offset": 273,
+          "length": 11,
+          "original": "transperent",
+          "replacement": "transparent"
+        }
+      ]
+    },
+    {
+      "id": "blind-en-040",
+      "split": "blind",
+      "language": "en",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "The gardener recomended a narrow path beside the pond. That would keep visitors away from the young reeds. The route must still leave enough room for a wheelchair.\n\nWe need an acurate estimate before ordering stone. The supplier can deliver on a Thrusday, provided someone is there to open the gate. Our contact address is paths@example.com.",
+      "expected": "The gardener recommended a narrow path beside the pond. That would keep visitors away from the young reeds. The route must still leave enough room for a wheelchair.\n\nWe need an accurate estimate before ordering stone. The supplier can deliver on a Thursday, provided someone is there to open the gate. Our contact address is paths@example.com.",
+      "edits": [
+        {
+          "offset": 13,
+          "length": 10,
+          "original": "recomended",
+          "replacement": "recommended"
+        },
+        {
+          "offset": 176,
+          "length": 7,
+          "original": "acurate",
+          "replacement": "accurate"
+        },
+        {
+          "offset": 246,
+          "length": 8,
+          "original": "Thrusday",
+          "replacement": "Thursday"
+        }
+      ]
+    },
+    {
+      "id": "blind-en-041",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "input": "Please keep \"colour\", \"organise\" and \"travelled\" in the UK edition. The US edition uses its own style sheet.",
+      "expected": "Please keep \"colour\", \"organise\" and \"travelled\" in the UK edition. The US edition uses its own style sheet.",
+      "edits": []
+    },
+    {
+      "id": "blind-en-042",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "input": "No, the cache is not empty. `cache_miss = false` is the result we expected. ✅",
+      "expected": "No, the cache is not empty. `cache_miss = false` is the result we expected. ✅",
+      "edits": []
+    },
+    {
+      "id": "blind-en-043",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "input": "Niamh, Aoife and Siobhán are invented names for these place cards. Send the proof to cards@example.com.",
+      "expected": "Niamh, Aoife and Siobhán are invented names for these place cards. Send the proof to cards@example.com.",
+      "edits": []
+    },
+    {
+      "id": "blind-en-044",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "input": "The yoke is beside the yolk separator. Both labels are right. Do not swap them.",
+      "expected": "The yoke is beside the yolk separator. Both labels are right. Do not swap them.",
+      "edits": []
+    },
+    {
+      "id": "blind-en-045",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "input": "The bookshop stocks zines, chapbooks and a small risograph edition. Its sign says \"a wee read\".",
+      "expected": "The bookshop stocks zines, chapbooks and a small risograph edition. Its sign says \"a wee read\".",
+      "edits": []
+    },
+    {
+      "id": "blind-en-046",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "input": "Use /srv/reciepts as the literal test path. Keep the command `git checkout feat/teh-menu` intact.",
+      "expected": "Use /srv/reciepts as the literal test path. Keep the command `git checkout feat/teh-menu` intact.",
+      "edits": []
+    },
+    {
+      "id": "blind-en-047",
+      "split": "blind",
+      "language": "en",
+      "kind": "safe",
+      "format": "short",
+      "input": "The café serves pierogi, ajvar and kohlrabi slaw. The borscht contains no meat.",
+      "expected": "The café serves pierogi, ajvar and kohlrabi slaw. The borscht contains no meat.",
+      "edits": []
+    },
+    {
+      "id": "blind-en-048",
+      "split": "blind",
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "input": "Please confirm the appointmet and bring the orignal receipt. The entrnace is beside the florist.",
+      "expected": "Please confirm the appointment and bring the original receipt. The entrance is beside the florist.",
+      "edits": [
+        {
+          "offset": 19,
+          "length": 10,
+          "original": "appointmet",
+          "replacement": "appointment"
+        },
+        {
+          "offset": 44,
+          "length": 7,
+          "original": "orignal",
+          "replacement": "original"
+        },
+        {
+          "offset": 65,
+          "length": 8,
+          "original": "entrnace",
+          "replacement": "entrance"
+        }
+      ]
+    },
+    {
+      "id": "blind-en-049",
+      "split": "blind",
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "input": "🙂 The packge contains a useful refrence card and a rechargeable batery.",
+      "expected": "🙂 The package contains a useful reference card and a rechargeable battery.",
+      "edits": [
+        {
+          "offset": 7,
+          "length": 6,
+          "original": "packge",
+          "replacement": "package"
+        },
+        {
+          "offset": 32,
+          "length": 8,
+          "original": "refrence",
+          "replacement": "reference"
+        },
+        {
+          "offset": 65,
+          "length": 6,
+          "original": "batery",
+          "replacement": "battery"
+        }
+      ]
+    },
+    {
+      "id": "blind-en-050",
+      "split": "blind",
+      "language": "en",
+      "kind": "correction",
+      "format": "short",
+      "input": "A collegue will check the equipement before the exhibiton opens. Please leave the crates sealed.",
+      "expected": "A colleague will check the equipment before the exhibition opens. Please leave the crates sealed.",
+      "edits": [
+        {
+          "offset": 2,
+          "length": 8,
+          "original": "collegue",
+          "replacement": "colleague"
+        },
+        {
+          "offset": 26,
+          "length": 10,
+          "original": "equipement",
+          "replacement": "equipment"
+        },
+        {
+          "offset": 48,
+          "length": 9,
+          "original": "exhibiton",
+          "replacement": "exhibition"
+        }
+      ]
+    },
+    {
+      "id": "blind-de-001",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Guten Tag Frau Behr,\n\nfür den Infostand benötigen wir noch zwei Stehtische und eine Kabeltrommel. Das Gaffa liegt bereits in der grauen Kiste. Bitte lassen Sie den Durchgang neben dem Lastenrad frei.\n\nAuf dem Aushang steht \"Grätzeltreff\". Diesen in Wien üblichen Ausdruck möchten wir beibehalten. Der Stand ist auch bei Nieselregen geöffnet, bei einer Unwetterwarnung jedoch nicht.\n\nUnser Kennwort für die Abholung lautet GRZ_24. Es ist nur eine erfundene Referenz für diesen Entwurf. Rückfragen können Sie an treff@example.com schicken.\n\nFreundliche Grüße\nAlva Kern",
+      "expected": "Guten Tag Frau Behr,\n\nfür den Infostand benötigen wir noch zwei Stehtische und eine Kabeltrommel. Das Gaffa liegt bereits in der grauen Kiste. Bitte lassen Sie den Durchgang neben dem Lastenrad frei.\n\nAuf dem Aushang steht \"Grätzeltreff\". Diesen in Wien üblichen Ausdruck möchten wir beibehalten. Der Stand ist auch bei Nieselregen geöffnet, bei einer Unwetterwarnung jedoch nicht.\n\nUnser Kennwort für die Abholung lautet GRZ_24. Es ist nur eine erfundene Referenz für diesen Entwurf. Rückfragen können Sie an treff@example.com schicken.\n\nFreundliche Grüße\nAlva Kern",
+      "edits": []
+    },
+    {
+      "id": "blind-de-002",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hallo Joris,\r\n\r\nich habe die Marillen für den Kuchen gekauft. Im Rezept stehen außerdem Topfen, Staubzucker und ein wenig Grieß. Bitte verwende die flache Form, sonst bleibt der Boden zu feucht.\r\n\r\nDie Ribiseln im kleinen Sieb sind für morgen. Auch das Sackerl mit den Paradeisern gehört nicht zu dieser Bestellung. Die Köchin holt es nach der Mittagspause ab.\r\n\r\nAuf dem handgeschriebenen Schild darf \"Hausgemacht\" stehen. Den Preis trage ich später ein. Wenn der Ofen noch besetzt ist, lass den Teig bitte im Kühlschrank.\r\n\r\nBis später\r\nMila Dorn",
+      "expected": "Hallo Joris,\r\n\r\nich habe die Marillen für den Kuchen gekauft. Im Rezept stehen außerdem Topfen, Staubzucker und ein wenig Grieß. Bitte verwende die flache Form, sonst bleibt der Boden zu feucht.\r\n\r\nDie Ribiseln im kleinen Sieb sind für morgen. Auch das Sackerl mit den Paradeisern gehört nicht zu dieser Bestellung. Die Köchin holt es nach der Mittagspause ab.\r\n\r\nAuf dem handgeschriebenen Schild darf \"Hausgemacht\" stehen. Den Preis trage ich später ein. Wenn der Ofen noch besetzt ist, lass den Teig bitte im Kühlschrank.\r\n\r\nBis später\r\nMila Dorn",
+      "edits": []
+    },
+    {
+      "id": "blind-de-003",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Guten Morgen Lasse,\n\nauf dem Testgerät läuft jetzt openSUSE. Die NVMe wird erkannt, und das Btrfs-Dateisystem lässt sich einhängen. Einen Schreibtest habe ich noch nicht ausgeführt.\n\nBitte ändere den Pfad `/srv/fehlerhafft` nicht. Der Name ist absichtlich Teil des Tests. Die Variable `rueckgabewret` stammt aus einem alten Beispiel und bleibt dort ebenfalls erhalten.\n\nFür den nächsten Lauf genügt der Host testrechner.invalid. Es werden keine echten Zugangsdaten benötigt. Das leere Feld bedeutet ausdrücklich, dass keine Anmeldung erfolgen soll.\n\nViele Grüße\nNika Fenn\nSystemtest",
+      "expected": "Guten Morgen Lasse,\n\nauf dem Testgerät läuft jetzt openSUSE. Die NVMe wird erkannt, und das Btrfs-Dateisystem lässt sich einhängen. Einen Schreibtest habe ich noch nicht ausgeführt.\n\nBitte ändere den Pfad `/srv/fehlerhafft` nicht. Der Name ist absichtlich Teil des Tests. Die Variable `rueckgabewret` stammt aus einem alten Beispiel und bleibt dort ebenfalls erhalten.\n\nFür den nächsten Lauf genügt der Host testrechner.invalid. Es werden keine echten Zugangsdaten benötigt. Das leere Feld bedeutet ausdrücklich, dass keine Anmeldung erfolgen soll.\n\nViele Grüße\nNika Fenn\nSystemtest",
+      "edits": []
+    },
+    {
+      "id": "blind-de-004",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Sehr geehrter Herr Sander,\n\nwir möchten die Vitrine aus dem Lesesaal vorübergehend ins Magazin stellen. Das Passepartout bleibt beim Exponat. Bitte legen Sie auch die säurefreie Zwischenlage wieder unter das Blatt.\n\nDer Titel auf der Karte lautet \"Übern Deich\". Es handelt sich um den Werktitel, nicht um einen Fehler im Begleittext. Der Künstlername Tammo Fink ist für dieses Muster erfunden.\n\nIm Inventar trägt das Blatt die Nummer DR_508. Eine Veröffentlichung der Aufnahme ist bislang nicht vorgesehen. Ich benötige lediglich eine Bestätigung, sobald die Vitrine umgestellt ist.\n\nMit freundlichen Grüßen\nElisa Noor",
+      "expected": "Sehr geehrter Herr Sander,\n\nwir möchten die Vitrine aus dem Lesesaal vorübergehend ins Magazin stellen. Das Passepartout bleibt beim Exponat. Bitte legen Sie auch die säurefreie Zwischenlage wieder unter das Blatt.\n\nDer Titel auf der Karte lautet \"Übern Deich\". Es handelt sich um den Werktitel, nicht um einen Fehler im Begleittext. Der Künstlername Tammo Fink ist für dieses Muster erfunden.\n\nIm Inventar trägt das Blatt die Nummer DR_508. Eine Veröffentlichung der Aufnahme ist bislang nicht vorgesehen. Ich benötige lediglich eine Bestätigung, sobald die Vitrine umgestellt ist.\n\nMit freundlichen Grüßen\nElisa Noor",
+      "edits": []
+    },
+    {
+      "id": "blind-de-005",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hallo Farid,\n\nfür das Abendessen habe ich Bulgur, Sumach und Tahin besorgt. Die Melanzani kommen noch in den Ofen. Bitte stell die Schüssel mit dem Labneh bis dahin wieder kalt.\n\nAuf dem Rezeptzettel steht \"Ottolenghi\" als Hinweis auf das Kochbuch. Der Name muss so bleiben. Die Sauce ohne Knoblauch ist für den kleinen Tisch am Fenster bestimmt.\n\nWir brauchen heute keine zusätzlichen Portionen. Auch die mit \"extra\" beschriftete Dose enthält nur Garnitur. Ich schneide die Kräuter, wenn ich um halb sechs zurück bin.\n\nLiebe Grüße\nSelma Ried",
+      "expected": "Hallo Farid,\n\nfür das Abendessen habe ich Bulgur, Sumach und Tahin besorgt. Die Melanzani kommen noch in den Ofen. Bitte stell die Schüssel mit dem Labneh bis dahin wieder kalt.\n\nAuf dem Rezeptzettel steht \"Ottolenghi\" als Hinweis auf das Kochbuch. Der Name muss so bleiben. Die Sauce ohne Knoblauch ist für den kleinen Tisch am Fenster bestimmt.\n\nWir brauchen heute keine zusätzlichen Portionen. Auch die mit \"extra\" beschriftete Dose enthält nur Garnitur. Ich schneide die Kräuter, wenn ich um halb sechs zurück bin.\n\nLiebe Grüße\nSelma Ried",
+      "edits": []
+    },
+    {
+      "id": "blind-de-006",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Grüezi Frau Vetter,\n\ndie Offerte für den Veloständer liegt vor. Der Preis schliesst die Montage ein, nicht aber das Fundament. Bitte verwenden Sie für das Schweizer Merkblatt weiterhin die Schreibweise ohne Eszett.\n\nUnser Hauswart hat den Vorplatz vermessen. Neben dem Trottoir bleibt genügend Platz für den Kinderwagen. Das neue Schild soll an der Innenseite des Tores hängen.\n\nFür die Sitzung brauche ich noch Ihre Rückmeldung zur Farbe. Anthrazit wäre ab Lager lieferbar. Den Beschluss halten wir danach im Protokoll fest.\n\nFreundliche Grüsse\nLivio Bär",
+      "expected": "Grüezi Frau Vetter,\n\ndie Offerte für den Veloständer liegt vor. Der Preis schliesst die Montage ein, nicht aber das Fundament. Bitte verwenden Sie für das Schweizer Merkblatt weiterhin die Schreibweise ohne Eszett.\n\nUnser Hauswart hat den Vorplatz vermessen. Neben dem Trottoir bleibt genügend Platz für den Kinderwagen. Das neue Schild soll an der Innenseite des Tores hängen.\n\nFür die Sitzung brauche ich noch Ihre Rückmeldung zur Farbe. Anthrazit wäre ab Lager lieferbar. Den Beschluss halten wir danach im Protokoll fest.\n\nFreundliche Grüsse\nLivio Bär",
+      "edits": []
+    },
+    {
+      "id": "blind-de-007",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hallo Svea,\n\ndie Broschüre nennt den Ausflug \"Auf den Spuren des Schanigartens\". Der Begriff ist Absicht. Im Text geht es um die Wiener Nutzung öffentlicher Flächen für Tische und Stühle.\n\nBitte lass auch das Wort \"Beisl\" im Zitat stehen. Die Erzählerin hat es genau so verwendet. Im übrigen Text schreiben wir Gaststätte, damit die Beschreibung überall verständlich bleibt.\n\nDie kleine Karte braucht keine zusätzliche Legende. Die Punkte zeigen nur die Haltestellen, keine privaten Adressen. Als Kontakt genügt redaktion@example.com.\n\nDanke und viele Grüße\nOskar Vale",
+      "expected": "Hallo Svea,\n\ndie Broschüre nennt den Ausflug \"Auf den Spuren des Schanigartens\". Der Begriff ist Absicht. Im Text geht es um die Wiener Nutzung öffentlicher Flächen für Tische und Stühle.\n\nBitte lass auch das Wort \"Beisl\" im Zitat stehen. Die Erzählerin hat es genau so verwendet. Im übrigen Text schreiben wir Gaststätte, damit die Beschreibung überall verständlich bleibt.\n\nDie kleine Karte braucht keine zusätzliche Legende. Die Punkte zeigen nur die Haltestellen, keine privaten Adressen. Als Kontakt genügt redaktion@example.com.\n\nDanke und viele Grüße\nOskar Vale",
+      "edits": []
+    },
+    {
+      "id": "blind-de-008",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Guten Tag Frau Holm,\r\n\r\nwir haben die Leihgabe unversehrt erhalten. Das Faksimile liegt jetzt im lichtgeschützten Schrank. Den Einband werden wir vor der Ausstellung noch fotografieren.\r\n\r\nDie alte Beschriftung lautet \"Thür zum Hofe\". Diese historische Schreibweise gehört zum Objekt. Im modernen Katalogtext verwenden wir dagegen das Wort Tür.\r\n\r\nBitte schicken Sie uns noch die gewünschte Namenszeile für den Leihvermerk. Der vorläufige Eintrag lautet \"Sammlung Runa Holm\". Dieses Muster enthält keine echten Angaben zu einer Sammlung.\r\n\r\nMit besten Grüßen\r\nJette Wolff",
+      "expected": "Guten Tag Frau Holm,\r\n\r\nwir haben die Leihgabe unversehrt erhalten. Das Faksimile liegt jetzt im lichtgeschützten Schrank. Den Einband werden wir vor der Ausstellung noch fotografieren.\r\n\r\nDie alte Beschriftung lautet \"Thür zum Hofe\". Diese historische Schreibweise gehört zum Objekt. Im modernen Katalogtext verwenden wir dagegen das Wort Tür.\r\n\r\nBitte schicken Sie uns noch die gewünschte Namenszeile für den Leihvermerk. Der vorläufige Eintrag lautet \"Sammlung Runa Holm\". Dieses Muster enthält keine echten Angaben zu einer Sammlung.\r\n\r\nMit besten Grüßen\r\nJette Wolff",
+      "edits": []
+    },
+    {
+      "id": "blind-de-009",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hallo Dario,\n\ndie Maultaschen für den Kurs kommen erst am Nachmittag. Spätzle und Feldsalat sind schon da. Im Lager steht außerdem eine Kiste mit dem Etikett \"Vesper\" für die Helfer.\n\nBitte plane die Küchle nicht als veganes Gebäck ein. Der Teig enthält Ei und Milch. Eine separate Schale mit Obst ist für Gäste gedacht, die darauf verzichten.\n\nAuf dem Kassenbon ist der Name Häge zu lesen. Er gehört zum erfundenen Lieferanten in unserer Übung. Die Bezeichnung muss deshalb nicht an eine häufigere Schreibweise angepasst werden.\n\nBis morgen\nRomy Seidel",
+      "expected": "Hallo Dario,\n\ndie Maultaschen für den Kurs kommen erst am Nachmittag. Spätzle und Feldsalat sind schon da. Im Lager steht außerdem eine Kiste mit dem Etikett \"Vesper\" für die Helfer.\n\nBitte plane die Küchle nicht als veganes Gebäck ein. Der Teig enthält Ei und Milch. Eine separate Schale mit Obst ist für Gäste gedacht, die darauf verzichten.\n\nAuf dem Kassenbon ist der Name Häge zu lesen. Er gehört zum erfundenen Lieferanten in unserer Übung. Die Bezeichnung muss deshalb nicht an eine häufigere Schreibweise angepasst werden.\n\nBis morgen\nRomy Seidel",
+      "edits": []
+    },
+    {
+      "id": "blind-de-010",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hallo Enno,\n\nich habe den Proxmox-Host über die Konsole geprüft. ZFS meldet für den Testpool keine Fehler. Der Scrub ist abgeschlossen, aber das ist noch kein Nachweis für eine erfolgreiche Wiederherstellung.\n\nIm Formular steht `restore_ok: false`. Bitte lass den Wert so, bis wir die Datei tatsächlich geöffnet haben. Der Kommentar \"nich anfassen\" ist ein wörtlicher Bestandteil des Testdatensatzes.\n\nDie neue Notiz kann unter PRF_09 gespeichert werden. Als Absender verwenden wir backup@example.com. Ein Versand an echte Adressen gehört nicht zu diesem Versuch.\n\nViele Grüße\nAyla Tann",
+      "expected": "Hallo Enno,\n\nich habe den Proxmox-Host über die Konsole geprüft. ZFS meldet für den Testpool keine Fehler. Der Scrub ist abgeschlossen, aber das ist noch kein Nachweis für eine erfolgreiche Wiederherstellung.\n\nIm Formular steht `restore_ok: false`. Bitte lass den Wert so, bis wir die Datei tatsächlich geöffnet haben. Der Kommentar \"nich anfassen\" ist ein wörtlicher Bestandteil des Testdatensatzes.\n\nDie neue Notiz kann unter PRF_09 gespeichert werden. Als Absender verwenden wir backup@example.com. Ein Versand an echte Adressen gehört nicht zu diesem Versuch.\n\nViele Grüße\nAyla Tann",
+      "edits": []
+    },
+    {
+      "id": "blind-de-011",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Liebe Nele,\n\nfür die Lesung stehen jetzt zwölf Sessel im Halbkreis. Der Hocker neben dem Pult ist für die Dolmetscherin gedacht. Bitte stell dort keinen Wasserkasten ab.\n\nAuf dem Programmzettel bleibt die Zeile \"spoken word / freie Szene\" stehen. Die Künstlerin hat die Kleinschreibung freigegeben. Auch der Name Lio van Noor ist bereits richtig gesetzt.\n\nWir müssen die Tür während der Veranstaltung nicht abschließen. Der Hausdienst kommt erst nach dem letzten Gast. Ich übernehme den ersten Rundgang durchs Foyer.\n\nHerzliche Grüße\nJana Vell",
+      "expected": "Liebe Nele,\n\nfür die Lesung stehen jetzt zwölf Sessel im Halbkreis. Der Hocker neben dem Pult ist für die Dolmetscherin gedacht. Bitte stell dort keinen Wasserkasten ab.\n\nAuf dem Programmzettel bleibt die Zeile \"spoken word / freie Szene\" stehen. Die Künstlerin hat die Kleinschreibung freigegeben. Auch der Name Lio van Noor ist bereits richtig gesetzt.\n\nWir müssen die Tür während der Veranstaltung nicht abschließen. Der Hausdienst kommt erst nach dem letzten Gast. Ich übernehme den ersten Rundgang durchs Foyer.\n\nHerzliche Grüße\nJana Vell",
+      "edits": []
+    },
+    {
+      "id": "blind-de-012",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Guten Morgen Tjark,\n\nan der Küste war gestern Schietwetter angesagt, im Binnenland blieb es trocken. Für unseren Text würde ich einfach \"Regen\" schreiben. Das Dialektwort im Interview bleibt aber stehen.\n\nDie Route führt am Siel vorbei und dann über den Deich. Bitte unterscheide zwischen dem Priel und dem kleinen Entwässerungsgraben. Beide sind auf der Karte eingezeichnet.\n\nDer Treffpunkt heißt in dieser erfundenen Wegbeschreibung \"Kleine Wiek\". Die Teilnehmenden sollen nicht zum Anleger weiterfahren. Ich nehme eine Thermoskanne mit.\n\nMoin und bis bald\nFenna Moor",
+      "expected": "Guten Morgen Tjark,\n\nan der Küste war gestern Schietwetter angesagt, im Binnenland blieb es trocken. Für unseren Text würde ich einfach \"Regen\" schreiben. Das Dialektwort im Interview bleibt aber stehen.\n\nDie Route führt am Siel vorbei und dann über den Deich. Bitte unterscheide zwischen dem Priel und dem kleinen Entwässerungsgraben. Beide sind auf der Karte eingezeichnet.\n\nDer Treffpunkt heißt in dieser erfundenen Wegbeschreibung \"Kleine Wiek\". Die Teilnehmenden sollen nicht zum Anleger weiterfahren. Ich nehme eine Thermoskanne mit.\n\nMoin und bis bald\nFenna Moor",
+      "edits": []
+    },
+    {
+      "id": "blind-de-013",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Hallo Edda,\n\ndie Testseite funktioniert mit LibreOffice, KeePassXC und WebAuthn als Produktbeispielen im Text. Es werden keine Programme gestartet. Die Schreibweisen sind von den jeweiligen Namen übernommen.\n\nDer Button \"Nicht jetzt\" darf nicht zu \"Jetzt\" verkürzt werden. Er lehnt nur die Erinnerung ab. Auch das Präfix `un_` in `un_geprueft` ist für den Test wesentlich.\n\nIch habe die URL https://portal.invalid/demo in den Entwurf aufgenommen. Sie führt zu keinem echten Kundenportal. Das Symbol neben der Adresse kann bleiben 🔒.\n\nDanke\nMiko Hain",
+      "expected": "Hallo Edda,\n\ndie Testseite funktioniert mit LibreOffice, KeePassXC und WebAuthn als Produktbeispielen im Text. Es werden keine Programme gestartet. Die Schreibweisen sind von den jeweiligen Namen übernommen.\n\nDer Button \"Nicht jetzt\" darf nicht zu \"Jetzt\" verkürzt werden. Er lehnt nur die Erinnerung ab. Auch das Präfix `un_` in `un_geprueft` ist für den Test wesentlich.\n\nIch habe die URL https://portal.invalid/demo in den Entwurf aufgenommen. Sie führt zu keinem echten Kundenportal. Das Symbol neben der Adresse kann bleiben 🔒.\n\nDanke\nMiko Hain",
+      "edits": []
+    },
+    {
+      "id": "blind-de-014",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "email",
+      "input": "Sehr geehrte Frau Rabe,\n\nbei der heutigen Sichtung habe ich die Lade mit den Ersatzschlüsseln gefunden. Das österreichische Wort \"Lade\" soll im Schulungsmaterial stehen bleiben. Die deutsche Variante nennen wir erst im Glossar.\n\nIm selben Abschnitt kommt der Begriff \"Sessel\" vor. Gemeint ist dort ein normaler Stuhl ohne Polster, wie auf dem Bild zu sehen. Bitte ersetzen Sie den Begriff nicht durch ein anderes Möbelstück.\n\nFür den Druck genügt die kleine Auflage. Die Unterschrift bleibt exakt \"Mag. iur. A. Rabe\". Wir verwenden diese erfundene Namenszeile auch auf dem Musterbrief.\n\nMit freundlichen Grüßen\nPia Lenz",
+      "expected": "Sehr geehrte Frau Rabe,\n\nbei der heutigen Sichtung habe ich die Lade mit den Ersatzschlüsseln gefunden. Das österreichische Wort \"Lade\" soll im Schulungsmaterial stehen bleiben. Die deutsche Variante nennen wir erst im Glossar.\n\nIm selben Abschnitt kommt der Begriff \"Sessel\" vor. Gemeint ist dort ein normaler Stuhl ohne Polster, wie auf dem Bild zu sehen. Bitte ersetzen Sie den Begriff nicht durch ein anderes Möbelstück.\n\nFür den Druck genügt die kleine Auflage. Die Unterschrift bleibt exakt \"Mag. iur. A. Rabe\". Wir verwenden diese erfundene Namenszeile auch auf dem Musterbrief.\n\nMit freundlichen Grüßen\nPia Lenz",
+      "edits": []
+    },
+    {
+      "id": "blind-de-015",
+      "split": "blind",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hallo Thea,\n\nvielen Dank für deine Nachicht. Ich habe den Schlüssel beim Hausdienst abgegeben und das Fenster im Gruppenraum geschlossen. Die Kiste mit den Büchern bleibt bis morgen im Regal.\n\nBitte schick mir noch die Unteralgen für den nächsten Termin. Das Blatt mit dem Aufdruck \"Entwuf\" ist nur eine zitierte Beschriftung aus unserem Beispiel und soll genau so bleiben.\n\nDie Rechung kann direkt an kasse@example.com gehen. Wir bezahlen erst, wenn die Lieferung vollständig ist. Eine zweite Bestellung ist derzeit nicht vorgesehen.\n\nViele Grüße\nLena Wendt",
+      "expected": "Hallo Thea,\n\nvielen Dank für deine Nachricht. Ich habe den Schlüssel beim Hausdienst abgegeben und das Fenster im Gruppenraum geschlossen. Die Kiste mit den Büchern bleibt bis morgen im Regal.\n\nBitte schick mir noch die Unterlagen für den nächsten Termin. Das Blatt mit dem Aufdruck \"Entwuf\" ist nur eine zitierte Beschriftung aus unserem Beispiel und soll genau so bleiben.\n\nDie Rechnung kann direkt an kasse@example.com gehen. Wir bezahlen erst, wenn die Lieferung vollständig ist. Eine zweite Bestellung ist derzeit nicht vorgesehen.\n\nViele Grüße\nLena Wendt",
+      "edits": [
+        {
+          "offset": 35,
+          "length": 8,
+          "original": "Nachicht",
+          "replacement": "Nachricht"
+        },
+        {
+          "offset": 219,
+          "length": 10,
+          "original": "Unteralgen",
+          "replacement": "Unterlagen"
+        },
+        {
+          "offset": 379,
+          "length": 7,
+          "original": "Rechung",
+          "replacement": "Rechnung"
+        }
+      ]
+    },
+    {
+      "id": "blind-de-016",
+      "split": "blind",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Guten Tag Herr Kern,\r\n\r\nwir bestätigen den vereinbarten Besichtigungstermin für Donerstag. Der Zugang erfolgt über den Hof. An der vorderen Tür ist die Klingel derzeit außer Betrieb.\r\n\r\nBitte bringen Sie die Beschreibug des alten Schranks mit. Uns interessiert vor allem die Höhe ohne den Aufsatz. Eine Demontage vor Ort ist nicht erforderlich.\r\n\r\nFalls sich Ihre Ankunft verzögert, genügt eine kurze Rückmeldng. Unser Team ist bis sechzehn Uhr im Haus. Die Referenz auf dem Kalenderblatt lautet MOB_42.\r\n\r\nMit freundlichen Grüßen\r\nJona Fels",
+      "expected": "Guten Tag Herr Kern,\r\n\r\nwir bestätigen den vereinbarten Besichtigungstermin für Donnerstag. Der Zugang erfolgt über den Hof. An der vorderen Tür ist die Klingel derzeit außer Betrieb.\r\n\r\nBitte bringen Sie die Beschreibung des alten Schranks mit. Uns interessiert vor allem die Höhe ohne den Aufsatz. Eine Demontage vor Ort ist nicht erforderlich.\r\n\r\nFalls sich Ihre Ankunft verzögert, genügt eine kurze Rückmeldung. Unser Team ist bis sechzehn Uhr im Haus. Die Referenz auf dem Kalenderblatt lautet MOB_42.\r\n\r\nMit freundlichen Grüßen\r\nJona Fels",
+      "edits": [
+        {
+          "offset": 80,
+          "length": 9,
+          "original": "Donerstag",
+          "replacement": "Donnerstag"
+        },
+        {
+          "offset": 208,
+          "length": 11,
+          "original": "Beschreibug",
+          "replacement": "Beschreibung"
+        },
+        {
+          "offset": 401,
+          "length": 10,
+          "original": "Rückmeldng",
+          "replacement": "Rückmeldung"
+        }
+      ]
+    },
+    {
+      "id": "blind-de-017",
+      "split": "blind",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hallo Cem,\n\n🙂 die kleine Ausstelung ist fast fertig. Die Beschriftung neben der Tür fehlt noch, aber die Bilder hängen bereits. Bitte lass den freien Platz über der Bank unverändert.\n\nWir brauchen eine Entscheidug zur Beleuchtung. Das warme Licht passt zu den Drucken, während die Fotos unter neutralem Licht besser aussehen. Die beiden Stromkreise lassen sich getrennt schalten.\n\nDie Eröfnung beginnt um achtzehn Uhr. Auf der Einladung steht ausdrücklich \"keine Anmeldung nötig\". Diese Aussage soll auch auf der Internetseite erhalten bleiben.\n\nBis bald\nMerle Rott",
+      "expected": "Hallo Cem,\n\n🙂 die kleine Ausstellung ist fast fertig. Die Beschriftung neben der Tür fehlt noch, aber die Bilder hängen bereits. Bitte lass den freien Platz über der Bank unverändert.\n\nWir brauchen eine Entscheidung zur Beleuchtung. Das warme Licht passt zu den Drucken, während die Fotos unter neutralem Licht besser aussehen. Die beiden Stromkreise lassen sich getrennt schalten.\n\nDie Eröffnung beginnt um achtzehn Uhr. Auf der Einladung steht ausdrücklich \"keine Anmeldung nötig\". Diese Aussage soll auch auf der Internetseite erhalten bleiben.\n\nBis bald\nMerle Rott",
+      "edits": [
+        {
+          "offset": 26,
+          "length": 10,
+          "original": "Ausstelung",
+          "replacement": "Ausstellung"
+        },
+        {
+          "offset": 203,
+          "length": 11,
+          "original": "Entscheidug",
+          "replacement": "Entscheidung"
+        },
+        {
+          "offset": 386,
+          "length": 8,
+          "original": "Eröfnung",
+          "replacement": "Eröffnung"
+        }
+      ]
+    },
+    {
+      "id": "blind-de-018",
+      "split": "blind",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Sehr geehrte Frau Tamm,\n\nwir haben den Auftrag für die Reperatur erhalten. Die beschädigte Leuchte bleibt vorerst in unserem Lager. Ein neues Kabel allein wird den Fehler vermutlich nicht beheben.\n\nDer Techniker prüft zunächst die Verbindug im Sockel. Den Aufkleber mit der Aufschrift \"defeckt\" lassen wir als Teil der dokumentierten Beschriftung unverändert. Die Leuchte darf bis zur Prüfung nicht verwendet werden.\n\nNach der Untersuhung senden wir Ihnen einen Kostenvoranschlag. Bitte nennen Sie bei Rückfragen die Nummer LMP_73. Unsere Musteradresse lautet werkstatt@example.com.\n\nMit freundlichen Grüßen\nNora Bend",
+      "expected": "Sehr geehrte Frau Tamm,\n\nwir haben den Auftrag für die Reparatur erhalten. Die beschädigte Leuchte bleibt vorerst in unserem Lager. Ein neues Kabel allein wird den Fehler vermutlich nicht beheben.\n\nDer Techniker prüft zunächst die Verbindung im Sockel. Den Aufkleber mit der Aufschrift \"defeckt\" lassen wir als Teil der dokumentierten Beschriftung unverändert. Die Leuchte darf bis zur Prüfung nicht verwendet werden.\n\nNach der Untersuchung senden wir Ihnen einen Kostenvoranschlag. Bitte nennen Sie bei Rückfragen die Nummer LMP_73. Unsere Musteradresse lautet werkstatt@example.com.\n\nMit freundlichen Grüßen\nNora Bend",
+      "edits": [
+        {
+          "offset": 55,
+          "length": 9,
+          "original": "Reperatur",
+          "replacement": "Reparatur"
+        },
+        {
+          "offset": 231,
+          "length": 9,
+          "original": "Verbindug",
+          "replacement": "Verbindung"
+        },
+        {
+          "offset": 427,
+          "length": 11,
+          "original": "Untersuhung",
+          "replacement": "Untersuchung"
+        }
+      ]
+    },
+    {
+      "id": "blind-de-019",
+      "split": "blind",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Hallo Sina,\r\n\r\ndie Besprechung findet im Raum neben der Biblothek statt. Dort können wir die Pläne ausbreiten, ohne den laufenden Betrieb zu stören. Den großen Tisch habe ich reserviert.\r\n\r\nFür die Vorbreitung brauchen wir noch den aktuellen Lageplan. Bitte markiere darauf die vorhandenen Steckdosen. Der Hinweis \"nicht bohren\" neben dem Fenster bleibt gültig.\r\n\r\nIch kümmere mich um die Verpflegug. Wasser und Tee reichen für diesen Termin aus. Die mit \"Muster\" beschriftete Liste enthält nur erfundene Namen.\r\n\r\nViele Grüße\r\nHanno Lind",
+      "expected": "Hallo Sina,\r\n\r\ndie Besprechung findet im Raum neben der Bibliothek statt. Dort können wir die Pläne ausbreiten, ohne den laufenden Betrieb zu stören. Den großen Tisch habe ich reserviert.\r\n\r\nFür die Vorbereitung brauchen wir noch den aktuellen Lageplan. Bitte markiere darauf die vorhandenen Steckdosen. Der Hinweis \"nicht bohren\" neben dem Fenster bleibt gültig.\r\n\r\nIch kümmere mich um die Verpflegung. Wasser und Tee reichen für diesen Termin aus. Die mit \"Muster\" beschriftete Liste enthält nur erfundene Namen.\r\n\r\nViele Grüße\r\nHanno Lind",
+      "edits": [
+        {
+          "offset": 56,
+          "length": 9,
+          "original": "Biblothek",
+          "replacement": "Bibliothek"
+        },
+        {
+          "offset": 198,
+          "length": 11,
+          "original": "Vorbreitung",
+          "replacement": "Vorbereitung"
+        },
+        {
+          "offset": 389,
+          "length": 10,
+          "original": "Verpflegug",
+          "replacement": "Verpflegung"
+        }
+      ]
+    },
+    {
+      "id": "blind-de-020",
+      "split": "blind",
+      "language": "de",
+      "kind": "correction",
+      "format": "email",
+      "input": "Guten Morgen Ines,\n\nfür die Schulung habe ich eine Übersich der häufigsten Fragen zusammengestellt. Die Beispiele stammen aus einem erfundenen Projekt. Im Ordner TEST_QA liegen keine echten Kundendaten.\n\nBitte prüfe die Reihenfloge der Übungen. Die einfache Suche soll vor dem Export kommen. Der Dateiname `uebung_falscch.txt` bleibt als absichtliches Beispiel erhalten.\n\nZum Abschluss zeige ich die Zusamenfassung auf einer Folie. Wer früher gehen muss, kann sie später als Text lesen. Es gibt keine Pflicht zur Teilnahme am letzten Teil.\n\nDanke und bis morgen\nRamin West",
+      "expected": "Guten Morgen Ines,\n\nfür die Schulung habe ich eine Übersicht der häufigsten Fragen zusammengestellt. Die Beispiele stammen aus einem erfundenen Projekt. Im Ordner TEST_QA liegen keine echten Kundendaten.\n\nBitte prüfe die Reihenfolge der Übungen. Die einfache Suche soll vor dem Export kommen. Der Dateiname `uebung_falscch.txt` bleibt als absichtliches Beispiel erhalten.\n\nZum Abschluss zeige ich die Zusammenfassung auf einer Folie. Wer früher gehen muss, kann sie später als Text lesen. Es gibt keine Pflicht zur Teilnahme am letzten Teil.\n\nDanke und bis morgen\nRamin West",
+      "edits": [
+        {
+          "offset": 51,
+          "length": 8,
+          "original": "Übersich",
+          "replacement": "Übersicht"
+        },
+        {
+          "offset": 220,
+          "length": 11,
+          "original": "Reihenfloge",
+          "replacement": "Reihenfolge"
+        },
+        {
+          "offset": 400,
+          "length": 14,
+          "original": "Zusamenfassung",
+          "replacement": "Zusammenfassung"
+        }
+      ]
+    },
+    {
+      "id": "blind-de-021",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Das Fisolenragout bleibt auf kleiner Flamme stehen. Der Erdäpfelsalat kommt dagegen wieder in die Kühlung. Die Begriffe entsprechen dem österreichischen Rezeptblatt.\n\nNeben dem Herd liegen ein Schöpfer und ein kleiner Schneebesen. Das Reindl mit der dunklen Glasur gehört nicht auf die Induktionsplatte. Bitte verwende dafür den schweren Topf.",
+      "expected": "Das Fisolenragout bleibt auf kleiner Flamme stehen. Der Erdäpfelsalat kommt dagegen wieder in die Kühlung. Die Begriffe entsprechen dem österreichischen Rezeptblatt.\n\nNeben dem Herd liegen ein Schöpfer und ein kleiner Schneebesen. Das Reindl mit der dunklen Glasur gehört nicht auf die Induktionsplatte. Bitte verwende dafür den schweren Topf.",
+      "edits": []
+    },
+    {
+      "id": "blind-de-022",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Für die Stichprobe wurden drei Datensätze in PostgreSQL angelegt. Das Feld `geburtsort_fehlt` ist bei allen auf true gesetzt. Es handelt sich um erfundene Personen ohne hinterlegte Anschrift.\n\nDie Spalte `anschrieft` behält ihren historischen Namen. Im erläuternden Text verwenden wir die richtige Schreibweise Anschrift. Das Beispiel zeigt gerade diesen Unterschied.",
+      "expected": "Für die Stichprobe wurden drei Datensätze in PostgreSQL angelegt. Das Feld `geburtsort_fehlt` ist bei allen auf true gesetzt. Es handelt sich um erfundene Personen ohne hinterlegte Anschrift.\n\nDie Spalte `anschrieft` behält ihren historischen Namen. Im erläuternden Text verwenden wir die richtige Schreibweise Anschrift. Das Beispiel zeigt gerade diesen Unterschied.",
+      "edits": []
+    },
+    {
+      "id": "blind-de-023",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Der Küfer hat die Fassdauben einzeln geprüft. Der Spund sitzt fest, und der obere Reifen ist nicht locker. Das leere Fass steht auf zwei Böcken im Nebenraum.\n\nAuf dem Zettel steht \"Mostfass\". Diese Bezeichnung ist korrekt, auch wenn das Fass zuletzt Wasser enthielt. Der Zettel beschreibt seine ursprüngliche Verwendung.",
+      "expected": "Der Küfer hat die Fassdauben einzeln geprüft. Der Spund sitzt fest, und der obere Reifen ist nicht locker. Das leere Fass steht auf zwei Böcken im Nebenraum.\n\nAuf dem Zettel steht \"Mostfass\". Diese Bezeichnung ist korrekt, auch wenn das Fass zuletzt Wasser enthielt. Der Zettel beschreibt seine ursprüngliche Verwendung.",
+      "edits": []
+    },
+    {
+      "id": "blind-de-024",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Die Broschüre verwendet die Wörter Portemonnaie und Necessaire. Beide passen zum beschriebenen Reisegepäck. Das ältere Wort Etui steht in der Bildunterschrift.\n\nDer Ladenname \"Chez Loulou\" ist Teil des erfundenen Beispiels. Er wird nicht übersetzt. Auch das französische Zitat auf der Papiertüte soll erhalten bleiben.",
+      "expected": "Die Broschüre verwendet die Wörter Portemonnaie und Necessaire. Beide passen zum beschriebenen Reisegepäck. Das ältere Wort Etui steht in der Bildunterschrift.\n\nDer Ladenname \"Chez Loulou\" ist Teil des erfundenen Beispiels. Er wird nicht übersetzt. Auch das französische Zitat auf der Papiertüte soll erhalten bleiben.",
+      "edits": []
+    },
+    {
+      "id": "blind-de-025",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Im Protokoll steht, dass der Antrag nicht angenommen wurde. Das Wort \"nicht\" ist entscheidend. Die spätere Notiz erwähnt nur, dass eine erneute Beratung möglich ist.\n\nDer Text unterscheidet außerdem zwischen widerrufen und wiederholen. Beide Verben kommen vor. Ein pauschaler Austausch würde die Beschlusslage falsch wiedergeben.",
+      "expected": "Im Protokoll steht, dass der Antrag nicht angenommen wurde. Das Wort \"nicht\" ist entscheidend. Die spätere Notiz erwähnt nur, dass eine erneute Beratung möglich ist.\n\nDer Text unterscheidet außerdem zwischen widerrufen und wiederholen. Beide Verben kommen vor. Ein pauschaler Austausch würde die Beschlusslage falsch wiedergeben.",
+      "edits": []
+    },
+    {
+      "id": "blind-de-026",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Der Setzer hat das Eszett in der Überschrift bewusst verwendet. Im Schweizer Begleitblatt steht an derselben Stelle ein Doppel-s. Die beiden Druckfassungen folgen unterschiedlichen Konventionen.\n\nDer Eigenname Strasser bleibt in beiden Fassungen unverändert. Namen werden nicht nach den Regeln für gewöhnliche Wörter umgeschrieben. Das gilt ebenso für die Signatur \"Luisa Weiss\".",
+      "expected": "Der Setzer hat das Eszett in der Überschrift bewusst verwendet. Im Schweizer Begleitblatt steht an derselben Stelle ein Doppel-s. Die beiden Druckfassungen folgen unterschiedlichen Konventionen.\n\nDer Eigenname Strasser bleibt in beiden Fassungen unverändert. Namen werden nicht nach den Regeln für gewöhnliche Wörter umgeschrieben. Das gilt ebenso für die Signatur \"Luisa Weiss\".",
+      "edits": []
+    },
+    {
+      "id": "blind-de-027",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Der Pfannenwender hängt neben der Schaumkelle. Ein Seiher steht im Spülbecken, und das kleine Sieb liegt auf dem Brett. Für den Workshop benötigen wir beide Geräte.\n\nDie Leiterin verwendet manchmal das Wort Seihschüssel. Es soll im regionalen Glossar erhalten bleiben. Daneben steht eine Erklärung in allgemein verständlichem Deutsch.",
+      "expected": "Der Pfannenwender hängt neben der Schaumkelle. Ein Seiher steht im Spülbecken, und das kleine Sieb liegt auf dem Brett. Für den Workshop benötigen wir beide Geräte.\n\nDie Leiterin verwendet manchmal das Wort Seihschüssel. Es soll im regionalen Glossar erhalten bleiben. Daneben steht eine Erklärung in allgemein verständlichem Deutsch.",
+      "edits": []
+    },
+    {
+      "id": "blind-de-028",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Die Anleitung nennt die Befehle `chmod`, `rsync` und `journalctl`. Sie werden als wörtlicher Code gesetzt. Auch der Parameter `--dry-run` darf nicht umformuliert werden.\r\n\r\nDer Testpfad lautet `/tmp/uebertragugn`. Seine ungewöhnliche Schreibweise ist Absicht. Im Fließtext heißt der Vorgang hingegen Übertragung.",
+      "expected": "Die Anleitung nennt die Befehle `chmod`, `rsync` und `journalctl`. Sie werden als wörtlicher Code gesetzt. Auch der Parameter `--dry-run` darf nicht umformuliert werden.\r\n\r\nDer Testpfad lautet `/tmp/uebertragugn`. Seine ungewöhnliche Schreibweise ist Absicht. Im Fließtext heißt der Vorgang hingegen Übertragung.",
+      "edits": []
+    },
+    {
+      "id": "blind-de-029",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Der Chor singt zunächst a cappella. Erst beim letzten Stück setzt das Harmonium ein. Auf dem Notenblatt steht außerdem die Angabe mezzopiano.\n\nDie Solistin heißt im Programm Jule van Aken. Dieser erfundene Name bleibt unverändert. Das Wort \"Tutti\" über der zweiten Zeile gilt für den gesamten Chor.",
+      "expected": "Der Chor singt zunächst a cappella. Erst beim letzten Stück setzt das Harmonium ein. Auf dem Notenblatt steht außerdem die Angabe mezzopiano.\n\nDie Solistin heißt im Programm Jule van Aken. Dieser erfundene Name bleibt unverändert. Das Wort \"Tutti\" über der zweiten Zeile gilt für den gesamten Chor.",
+      "edits": []
+    },
+    {
+      "id": "blind-de-030",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Auf dem Tisch liegen ein Zollstock, eine Schmiege und ein Senklot. Die Gehrung wird erst angezeichnet, wenn beide Leisten trocken angepasst sind. Der Falz an der Rückseite bleibt frei.\n\nDie Werkzeugliste enthält auch eine Japansäge. Das ist die gebräuchliche Bezeichnung für diese Bauart. Die kleine Raspel wird für diesen Arbeitsschritt nicht benötigt.",
+      "expected": "Auf dem Tisch liegen ein Zollstock, eine Schmiege und ein Senklot. Die Gehrung wird erst angezeichnet, wenn beide Leisten trocken angepasst sind. Der Falz an der Rückseite bleibt frei.\n\nDie Werkzeugliste enthält auch eine Japansäge. Das ist die gebräuchliche Bezeichnung für diese Bauart. Die kleine Raspel wird für diesen Arbeitsschritt nicht benötigt.",
+      "edits": []
+    },
+    {
+      "id": "blind-de-031",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Zum Zvieri gibt es Rüebli, Käse und Brot. Der Abwart hat den Schlüssel zum Materialraum bereitgelegt. Diese Wörter sind in der Schweizer Fassung des Übungshefts beabsichtigt.\n\nDie Gruppe trifft sich beim Perron, nicht auf dem Parkplatz. Auf der fiktiven Karte ist der Weg als blaue Linie dargestellt. Es gibt keine echte Reisebuchung.",
+      "expected": "Zum Zvieri gibt es Rüebli, Käse und Brot. Der Abwart hat den Schlüssel zum Materialraum bereitgelegt. Diese Wörter sind in der Schweizer Fassung des Übungshefts beabsichtigt.\n\nDie Gruppe trifft sich beim Perron, nicht auf dem Parkplatz. Auf der fiktiven Karte ist der Weg als blaue Linie dargestellt. Es gibt keine echte Reisebuchung.",
+      "edits": []
+    },
+    {
+      "id": "blind-de-032",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Die Paginierung beginnt hinter dem Vorsatz. Auf dem Schmutztitel steht nur der kurze Buchtitel, während die Verlagsangabe auf der folgenden Seite erscheint. Der Kolumnentitel ist bereits korrekt.\n\nDas Wort Hurenkind wird hier als Begriff aus dem Satz verwendet. Es bezeichnet eine einzelne Zeile am Anfang einer Seite. Der Absatz erläutert diesen Fachgebrauch ausdrücklich.",
+      "expected": "Die Paginierung beginnt hinter dem Vorsatz. Auf dem Schmutztitel steht nur der kurze Buchtitel, während die Verlagsangabe auf der folgenden Seite erscheint. Der Kolumnentitel ist bereits korrekt.\n\nDas Wort Hurenkind wird hier als Begriff aus dem Satz verwendet. Es bezeichnet eine einzelne Zeile am Anfang einer Seite. Der Absatz erläutert diesen Fachgebrauch ausdrücklich.",
+      "edits": []
+    },
+    {
+      "id": "blind-de-033",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Die Ausstellung behandelt Kintsugi und Wabi-Sabi. Die japanischen Begriffe stehen neben kurzen deutschen Erklärungen. Eine wörtliche Übersetzung allein würde die Beschriftung nicht verständlicher machen.\n\nDas Foto zeigt eine Raku-Schale auf einer einfachen Holzplatte. Der Riss gehört zur dokumentierten Reparatur. Er soll weder im Bild noch in der Beschreibung verschwinden.",
+      "expected": "Die Ausstellung behandelt Kintsugi und Wabi-Sabi. Die japanischen Begriffe stehen neben kurzen deutschen Erklärungen. Eine wörtliche Übersetzung allein würde die Beschriftung nicht verständlicher machen.\n\nDas Foto zeigt eine Raku-Schale auf einer einfachen Holzplatte. Der Riss gehört zur dokumentierten Reparatur. Er soll weder im Bild noch in der Beschreibung verschwinden.",
+      "edits": []
+    },
+    {
+      "id": "blind-de-034",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "paragraphs",
+      "input": "Im Formular stehen die Anreden \"Herr\", \"Frau\" und \"keine Angabe\". Die letzte Möglichkeit darf nicht automatisch durch eine der anderen ersetzt werden. Das Testprofil verwendet den Namen Alex Noor.\n\nDie Beispieladresse lautet alex.noor@example.com. Sie enthält keine private Kontaktangabe. Das Häkchen bei \"keine Werbung\" bleibt gesetzt ✅.",
+      "expected": "Im Formular stehen die Anreden \"Herr\", \"Frau\" und \"keine Angabe\". Die letzte Möglichkeit darf nicht automatisch durch eine der anderen ersetzt werden. Das Testprofil verwendet den Namen Alex Noor.\n\nDie Beispieladresse lautet alex.noor@example.com. Sie enthält keine private Kontaktangabe. Das Häkchen bei \"keine Werbung\" bleibt gesetzt ✅.",
+      "edits": []
+    },
+    {
+      "id": "blind-de-035",
+      "split": "blind",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Der Liferant hat den Versand für nächste Woche angekündigt. Die Kisten bleiben bis dahin im trockenen Lager. Ein Etikett trägt die Aufschrift \"vrosicht\", die als wörtliche Beschriftung erhalten bleibt.\n\nFür den Transprot benötigen wir einen Wagen mit Hebebühne. Die Zufahrt ist breit genug, aber der Fahrer muss langsam über die Schwelle fahren. Bitte prüfe die Abmesungen vor der Buchung.",
+      "expected": "Der Lieferant hat den Versand für nächste Woche angekündigt. Die Kisten bleiben bis dahin im trockenen Lager. Ein Etikett trägt die Aufschrift \"vrosicht\", die als wörtliche Beschriftung erhalten bleibt.\n\nFür den Transport benötigen wir einen Wagen mit Hebebühne. Die Zufahrt ist breit genug, aber der Fahrer muss langsam über die Schwelle fahren. Bitte prüfe die Abmessungen vor der Buchung.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 8,
+          "original": "Liferant",
+          "replacement": "Lieferant"
+        },
+        {
+          "offset": 211,
+          "length": 9,
+          "original": "Transprot",
+          "replacement": "Transport"
+        },
+        {
+          "offset": 362,
+          "length": 10,
+          "original": "Abmesungen",
+          "replacement": "Abmessungen"
+        }
+      ]
+    },
+    {
+      "id": "blind-de-036",
+      "split": "blind",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "🙂 Die Veranstaltug beginnt mit einem kurzen Rundgang. Danach können die Gäste im Hof bleiben oder in den Leseraum wechseln. Dort stehen Wasser und Tee bereit.\r\n\r\nFür die Gaderobe ist eine freiwillige Helferin zuständig. Sie gibt keine Wertsachen aus, die nicht zuvor abgegeben wurden. Die Verantwrotung für die Jacken endet mit dem Schließen des Hauses.",
+      "expected": "🙂 Die Veranstaltung beginnt mit einem kurzen Rundgang. Danach können die Gäste im Hof bleiben oder in den Leseraum wechseln. Dort stehen Wasser und Tee bereit.\r\n\r\nFür die Garderobe ist eine freiwillige Helferin zuständig. Sie gibt keine Wertsachen aus, die nicht zuvor abgegeben wurden. Die Verantwortung für die Jacken endet mit dem Schließen des Hauses.",
+      "edits": [
+        {
+          "offset": 7,
+          "length": 12,
+          "original": "Veranstaltug",
+          "replacement": "Veranstaltung"
+        },
+        {
+          "offset": 171,
+          "length": 8,
+          "original": "Gaderobe",
+          "replacement": "Garderobe"
+        },
+        {
+          "offset": 290,
+          "length": 13,
+          "original": "Verantwrotung",
+          "replacement": "Verantwortung"
+        }
+      ]
+    },
+    {
+      "id": "blind-de-037",
+      "split": "blind",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Die Zeichnug zeigt den neuen Standort des Schaukastens. Er soll neben dem Eingang stehen, ohne den Fluchtweg einzuengen. Die Bank kann an ihrem bisherigen Platz bleiben.\n\nEine Genehmigug liegt noch nicht vor. Deshalb darf die Montage nicht beginnen. Der Hausdienst prüft zunächst, ob die Befestigug in der alten Mauer möglich ist.",
+      "expected": "Die Zeichnung zeigt den neuen Standort des Schaukastens. Er soll neben dem Eingang stehen, ohne den Fluchtweg einzuengen. Die Bank kann an ihrem bisherigen Platz bleiben.\n\nEine Genehmigung liegt noch nicht vor. Deshalb darf die Montage nicht beginnen. Der Hausdienst prüft zunächst, ob die Befestigung in der alten Mauer möglich ist.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 8,
+          "original": "Zeichnug",
+          "replacement": "Zeichnung"
+        },
+        {
+          "offset": 176,
+          "length": 10,
+          "original": "Genehmigug",
+          "replacement": "Genehmigung"
+        },
+        {
+          "offset": 288,
+          "length": 10,
+          "original": "Befestigug",
+          "replacement": "Befestigung"
+        }
+      ]
+    },
+    {
+      "id": "blind-de-038",
+      "split": "blind",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Der Bericht enthält eine ausführliche Erklräung des Versuchs. Die Messwerte stammen von einem fiktiven Gerät. Das Zeichen \"µ\" bezeichnet im Beispiel das verwendete Präfix.\n\nDie Auswertug berücksichtigt auch den fehlgeschlagenen Durchlauf. Er darf nicht aus der Tabelle entfernt werden. Erst mit diesem Eintrag wird die Darstelung vollständig.",
+      "expected": "Der Bericht enthält eine ausführliche Erklärung des Versuchs. Die Messwerte stammen von einem fiktiven Gerät. Das Zeichen \"µ\" bezeichnet im Beispiel das verwendete Präfix.\n\nDie Auswertung berücksichtigt auch den fehlgeschlagenen Durchlauf. Er darf nicht aus der Tabelle entfernt werden. Erst mit diesem Eintrag wird die Darstellung vollständig.",
+      "edits": [
+        {
+          "offset": 38,
+          "length": 9,
+          "original": "Erklräung",
+          "replacement": "Erklärung"
+        },
+        {
+          "offset": 177,
+          "length": 9,
+          "original": "Auswertug",
+          "replacement": "Auswertung"
+        },
+        {
+          "offset": 319,
+          "length": 10,
+          "original": "Darstelung",
+          "replacement": "Darstellung"
+        }
+      ]
+    },
+    {
+      "id": "blind-de-039",
+      "split": "blind",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Die Reinigug erfolgt nach dem letzten Kurs. Zuerst werden die Tische abgewischt, danach kommen die Stühle auf die Ablage. Die Bodenmatten bleiben im Flur.\n\nIm Abstelraum stehen ausreichend Eimer und Bürsten. Bitte lass das Mittel in seiner ursprünglichen Verpakung. Die Aufschrift auf der Flasche darf nicht überklebt werden.",
+      "expected": "Die Reinigung erfolgt nach dem letzten Kurs. Zuerst werden die Tische abgewischt, danach kommen die Stühle auf die Ablage. Die Bodenmatten bleiben im Flur.\n\nIm Abstellraum stehen ausreichend Eimer und Bürsten. Bitte lass das Mittel in seiner ursprünglichen Verpackung. Die Aufschrift auf der Flasche darf nicht überklebt werden.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 8,
+          "original": "Reinigug",
+          "replacement": "Reinigung"
+        },
+        {
+          "offset": 159,
+          "length": 10,
+          "original": "Abstelraum",
+          "replacement": "Abstellraum"
+        },
+        {
+          "offset": 255,
+          "length": 9,
+          "original": "Verpakung",
+          "replacement": "Verpackung"
+        }
+      ]
+    },
+    {
+      "id": "blind-de-040",
+      "split": "blind",
+      "language": "de",
+      "kind": "correction",
+      "format": "paragraphs",
+      "input": "Die Bibliothekarin hat die neue Samlung im Nebenraum aufgestellt. Jedes Buch trägt eine kleine Nummer am Rücken. Eine zusätzliche Farbmarkierung ist nicht vorgesehen.\n\nDer Katalog beschreibt die Herkunf der einzelnen Stücke. Für manche fehlt noch die Bestätigug des Kaufdatums. Bis diese vorliegt, bleibt das entsprechende Feld leer.",
+      "expected": "Die Bibliothekarin hat die neue Sammlung im Nebenraum aufgestellt. Jedes Buch trägt eine kleine Nummer am Rücken. Eine zusätzliche Farbmarkierung ist nicht vorgesehen.\n\nDer Katalog beschreibt die Herkunft der einzelnen Stücke. Für manche fehlt noch die Bestätigung des Kaufdatums. Bis diese vorliegt, bleibt das entsprechende Feld leer.",
+      "edits": [
+        {
+          "offset": 32,
+          "length": 7,
+          "original": "Samlung",
+          "replacement": "Sammlung"
+        },
+        {
+          "offset": 195,
+          "length": 7,
+          "original": "Herkunf",
+          "replacement": "Herkunft"
+        },
+        {
+          "offset": 251,
+          "length": 10,
+          "original": "Bestätigug",
+          "replacement": "Bestätigung"
+        }
+      ]
+    },
+    {
+      "id": "blind-de-041",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "input": "Bitte den Kren neben die Semmelknödel stellen. Die Frittaten kommen erst kurz vor dem Servieren in die Suppe.",
+      "expected": "Bitte den Kren neben die Semmelknödel stellen. Die Frittaten kommen erst kurz vor dem Servieren in die Suppe.",
+      "edits": []
+    },
+    {
+      "id": "blind-de-042",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "input": "Der Wert `nicht_freigegeben = true` bleibt gesetzt. Die Freigabe wurde ausdrücklich abgelehnt.",
+      "expected": "Der Wert `nicht_freigegeben = true` bleibt gesetzt. Die Freigabe wurde ausdrücklich abgelehnt.",
+      "edits": []
+    },
+    {
+      "id": "blind-de-043",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "input": "Die erfundene Signatur lautet \"Dr. rer. nat. Kim Voss, i. V.\". Bitte weder Namen noch Kürzel ändern.",
+      "expected": "Die erfundene Signatur lautet \"Dr. rer. nat. Kim Voss, i. V.\". Bitte weder Namen noch Kürzel ändern.",
+      "edits": []
+    },
+    {
+      "id": "blind-de-044",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "input": "Das Zitat \"Ick freu mir\" gehört zum Dialektbeispiel. Im erläuternden Satz steht korrekt \"Ich freue mich\".",
+      "expected": "Das Zitat \"Ick freu mir\" gehört zum Dialektbeispiel. Im erläuternden Satz steht korrekt \"Ich freue mich\".",
+      "edits": []
+    },
+    {
+      "id": "blind-de-045",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "input": "Die Quiche enthält Mangold und Feta. Für das Porridge gibt es Haferdrink, für den Chai keine zusätzliche Süße.",
+      "expected": "Die Quiche enthält Mangold und Feta. Für das Porridge gibt es Haferdrink, für den Chai keine zusätzliche Süße.",
+      "edits": []
+    },
+    {
+      "id": "blind-de-046",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "input": "Für Schweizer Leser gilt \"Strasse\". Der Name Weiß bleibt als Eigenname erhalten. Kontakt: muster@example.com",
+      "expected": "Für Schweizer Leser gilt \"Strasse\". Der Name Weiß bleibt als Eigenname erhalten. Kontakt: muster@example.com",
+      "edits": []
+    },
+    {
+      "id": "blind-de-047",
+      "split": "blind",
+      "language": "de",
+      "kind": "safe",
+      "format": "short",
+      "input": "Das Kinderlied nennt einen Uhu, der Ausstellungstext einen Ara. Beides sind gültige Vogelnamen. 🦉",
+      "expected": "Das Kinderlied nennt einen Uhu, der Ausstellungstext einen Ara. Beides sind gültige Vogelnamen. 🦉",
+      "edits": []
+    },
+    {
+      "id": "blind-de-048",
+      "split": "blind",
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "input": "Bitte die Bestelung prüfen und die Lieferadrese mit dem Formluar vergleichen. Die Hausnummer bleibt unverändert.",
+      "expected": "Bitte die Bestellung prüfen und die Lieferadresse mit dem Formular vergleichen. Die Hausnummer bleibt unverändert.",
+      "edits": [
+        {
+          "offset": 10,
+          "length": 9,
+          "original": "Bestelung",
+          "replacement": "Bestellung"
+        },
+        {
+          "offset": 35,
+          "length": 12,
+          "original": "Lieferadrese",
+          "replacement": "Lieferadresse"
+        },
+        {
+          "offset": 56,
+          "length": 8,
+          "original": "Formluar",
+          "replacement": "Formular"
+        }
+      ]
+    },
+    {
+      "id": "blind-de-049",
+      "split": "blind",
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "input": "✅ Die Anmeldng ist angekommen. Eine schriftliche Bestätigunng folgt nach der Prüfng.",
+      "expected": "✅ Die Anmeldung ist angekommen. Eine schriftliche Bestätigung folgt nach der Prüfung.",
+      "edits": [
+        {
+          "offset": 6,
+          "length": 8,
+          "original": "Anmeldng",
+          "replacement": "Anmeldung"
+        },
+        {
+          "offset": 49,
+          "length": 12,
+          "original": "Bestätigunng",
+          "replacement": "Bestätigung"
+        },
+        {
+          "offset": 77,
+          "length": 6,
+          "original": "Prüfng",
+          "replacement": "Prüfung"
+        }
+      ]
+    },
+    {
+      "id": "blind-de-050",
+      "split": "blind",
+      "language": "de",
+      "kind": "correction",
+      "format": "short",
+      "input": "Die Mitarbeiterinn bringt das Werkzueg zur Werkstat. Bitte den Schlüssel auf dem Tisch lassen.",
+      "expected": "Die Mitarbeiterin bringt das Werkzeug zur Werkstatt. Bitte den Schlüssel auf dem Tisch lassen.",
+      "edits": [
+        {
+          "offset": 4,
+          "length": 14,
+          "original": "Mitarbeiterinn",
+          "replacement": "Mitarbeiterin"
+        },
+        {
+          "offset": 30,
+          "length": 8,
+          "original": "Werkzueg",
+          "replacement": "Werkzeug"
+        },
+        {
+          "offset": 43,
+          "length": 8,
+          "original": "Werkstat",
+          "replacement": "Werkstatt"
+        }
+      ]
+    }
+  ]
+}
