@@ -1,0 +1,114 @@
+{
+  "scope": "Sequential research CLIs, three fresh process stages each repeat. No resident warm full-pipeline result, browser/Office integration, or concurrent combined RSS claim. Separate stages release memory before the next starts. Inputs are synthetic stress fixtures, expected output is not quality-scored.",
+  "hardware": "Intel i5-1038NG7 4C/8T, Linux, CPU only; ONNX intra threads2 inter threads1",
+  "results": [
+    {
+      "language": "en",
+      "words": 1000,
+      "repeat": 0,
+      "coldStageSeconds": {
+        "nodeProposalAndBaseline": 1.4047141589981038,
+        "pythonTokenizerContextAndOnnx": 0.7080738299991935,
+        "pythonHeadAndApplication": 0.2428685479972046
+      },
+      "coldTotalSeconds": 2.355656536994502,
+      "stagePeakRssMiB": [
+        342.1015625,
+        228.3046875,
+        38.49609375
+      ],
+      "contextProposals": 21,
+      "contextInferenceMs": 97.40887602674775
+    },
+    {
+      "language": "en",
+      "words": 1000,
+      "repeat": 1,
+      "coldStageSeconds": {
+        "nodeProposalAndBaseline": 1.2177179319842253,
+        "pythonTokenizerContextAndOnnx": 0.7109013900044374,
+        "pythonHeadAndApplication": 0.21228283501113765
+      },
+      "coldTotalSeconds": 2.1409021569998004,
+      "stagePeakRssMiB": [
+        344.015625,
+        232.61328125,
+        38.56640625
+      ],
+      "contextProposals": 21,
+      "contextInferenceMs": 96.82792599778622
+    },
+    {
+      "language": "en",
+      "words": 1000,
+      "repeat": 2,
+      "coldStageSeconds": {
+        "nodeProposalAndBaseline": 1.2356164639932103,
+        "pythonTokenizerContextAndOnnx": 0.7078902620123699,
+        "pythonHeadAndApplication": 0.21002973499707878
+      },
+      "coldTotalSeconds": 2.153536461002659,
+      "stagePeakRssMiB": [
+        343.84375,
+        227.1875,
+        38.7265625
+      ],
+      "contextProposals": 21,
+      "contextInferenceMs": 98.19803599384613
+    },
+    {
+      "language": "de",
+      "words": 1000,
+      "repeat": 0,
+      "coldStageSeconds": {
+        "nodeProposalAndBaseline": 1.2016804669983685,
+        "pythonTokenizerContextAndOnnx": 0.7486539889941923,
+        "pythonHeadAndApplication": 0.21641809900756925
+      },
+      "coldTotalSeconds": 2.16675255500013,
+      "stagePeakRssMiB": [
+        350.2421875,
+        231.19140625,
+        38.6015625
+      ],
+      "contextProposals": 24,
+      "contextInferenceMs": 108.84947804152034
+    },
+    {
+      "language": "de",
+      "words": 1000,
+      "repeat": 1,
+      "coldStageSeconds": {
+        "nodeProposalAndBaseline": 1.1706972809915897,
+        "pythonTokenizerContextAndOnnx": 0.7553238179825712,
+        "pythonHeadAndApplication": 0.20632964299875312
+      },
+      "coldTotalSeconds": 2.132350741972914,
+      "stagePeakRssMiB": [
+        343.5546875,
+        230.0234375,
+        38.55078125
+      ],
+      "contextProposals": 24,
+      "contextInferenceMs": 109.3455399677623
+    },
+    {
+      "language": "de",
+      "words": 1000,
+      "repeat": 2,
+      "coldStageSeconds": {
+        "nodeProposalAndBaseline": 1.1971140380192082,
+        "pythonTokenizerContextAndOnnx": 0.7388597350218333,
+        "pythonHeadAndApplication": 0.21562535100383684
+      },
+      "coldTotalSeconds": 2.1515991240448784,
+      "stagePeakRssMiB": [
+        343.9765625,
+        231.1875,
+        38.57421875
+      ],
+      "contextProposals": 24,
+      "contextInferenceMs": 108.39507298078388
+    }
+  ]
+}
