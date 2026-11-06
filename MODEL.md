@@ -1,6 +1,6 @@
-# RC6 contextual edit model
+# RC7 vocabulary selection and unchanged RC6 contextual model
 
-RC6 adds a trained contextual edit tagger after LocalCorrect's existing static
+RC6 added a trained contextual edit tagger after LocalCorrect's existing static
 spelling stage. The intended behavior is conservative single-word correction in
 English and German. It is not a sentence generator, a general grammar corrector
 or a promise to understand a writer's meaning. Leaving an uncertain error unchanged
@@ -10,6 +10,14 @@ The frozen candidate adds limited partial corrections. The independent synthetic
 audit preserves zero unwanted edits but has no coverage gain over RC5. See
 [QUALITY.md](QUALITY.md) for separate known, fresh and real-learner results and
 measured CPU/RAM. This is an experimental candidate with substantial misses.
+
+## RC7 text-language vocabulary
+
+The product lets users select English or German independently of interface language. Mixed-language vocabulary remains enabled for older saved settings. Turning it off uses the selected language's complete lexical validity and ambiguity inventories, plus the same shared names/software protections. It is not translation or an error-free language detector.
+
+The spelling prior uses 995 additional selected-language rows over the unchanged 769,126 mixed-language rows. The compiler verifies every inherited row is identical; runtime caches distinguish scopes. Complete selected-language ambiguity automata are compiled solely from public positive inventories. Provenance is in `typo-language-sources.json` and `ambiguity-language-sources.json`.
+
+The ONNX weights, tokenizer/action metadata and 13-action neural acceptance policy below remain byte-identical to RC6. Language selection changes the spelling policy, not training or model size. RC7 retests both scopes on consumed known regressions; RC6's original blind results below are historical evidence, not a new unseen RC7 audit.
 
 ## Architecture and inference
 

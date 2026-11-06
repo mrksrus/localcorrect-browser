@@ -73,6 +73,22 @@ async function main(){
  ];
  const inventories=[];
  for(const source of sources){const module=await import(pathToFileURL(process.cwd()+'/'+source.file));const text=module[source.export];if(typeof text!=='string'||!text.length)throw new Error('Missing positive ambiguity source: '+source.file);const words=text.split('\n');source.sha256=sha(readFileSync(source.file));source.sourceWords=words.length;source.foldedWords=new Set(words.map(word=>word.toLowerCase())).size;for(const word of words)inventories.push(word);}
+ if(process.argv.includes('--single-language')){
+  const languageAssets={},languageStats={};
+  for(const language of ['en','de']){
+   const chosen=[];
+   for(const source of sources){
+    if(source.file.includes('/lexicons/')&&!source.file.endsWith('/'+language+'.js'))continue;
+    const module=await import(pathToFileURL(process.cwd()+'/'+source.file));
+    for(const word of module[source.export].split('\n'))chosen.push(word);
+   }
+   const result=compileWords(chosen);languageAssets[language]=result.asset;languageStats[language]=result.stats;
+  }
+  const output='// Generated selected-language positive DAWGs. Software and people remain protected in both. See ambiguity-language-sources.json.\n'+Object.entries(languageAssets).map(([language,asset])=>'export const '+language+' = '+JSON.stringify(asset)+';').join('\n')+'\n';
+  writeFileSync('packages/core/src/ambiguity-language-data.js',output);
+  writeFileSync('ambiguity-language-sources.json',JSON.stringify({description:'Selected-language lexical ambiguity inventories. Each language includes its complete folded Hunspell inventory plus the shared software and people inventories. No documents or evaluation labels are inputs.',inputs:sources,inventories:languageStats,assetSha256:sha(output),assetBytes:Buffer.byteLength(output)},null,2)+'\n');
+  console.log(JSON.stringify({inventories:languageStats,assetBytes:Buffer.byteLength(output),peakRssKiB:process.resourceUsage().maxRSS}));return;
+ }
  const {asset,stats}=compileWords(inventories);
  const output='// Generated complete casefolded EN/DE positive DAWG. See ambiguity-sources.json.\nexport default '+JSON.stringify(asset)+';\n';
  writeFileSync('packages/core/src/ambiguity-data.js',output);

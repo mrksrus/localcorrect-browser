@@ -28,7 +28,7 @@ test('missing mandatory lexical asset fails closed, never frequency-only fallbac
  const dir=mkdtempSync(join(process.env.TMPDIR||tmpdir(),'localcorrect-missing-'));
  try{
   cpSync('packages/core/src/index.js',join(dir,'index.mjs'));
-  for (const name of ['typos.js', 'candidate-lookup.js', 'candidates.js', 'protect-vocabulary.js', 'ambiguity-lookup.js', 'ambiguity-data.js', 'inflection-data.js','context-encoder-data.js','context-policy.js','context-model.js','context-score.js','context-encode.js'])
+  for (const name of ['typos.js','typos-language-data.js', 'candidate-lookup.js', 'candidates.js', 'protect-vocabulary.js', 'ambiguity-lookup.js', 'ambiguity-data.js','ambiguity-language-data.js', 'inflection-data.js','context-encoder-data.js','context-policy.js','context-model.js','context-score.js','context-encode.js'])
    cpSync(new URL(`../packages/core/src/${name}`, import.meta.url), join(dir, name));
   writeFileSync(join(dir,'package.json'),'{"type":"module"}');
   assert.throws(()=>execFileSync(process.execPath,['--input-type=module','-e',`import ${JSON.stringify(join(dir,'index.mjs'))}`],{stdio:'pipe'}),error=>/ERR_MODULE_NOT_FOUND/.test(error.stderr.toString())&&error.stderr.toString().includes('lexicons/en.js'));

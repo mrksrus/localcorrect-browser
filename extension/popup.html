@@ -3,6 +3,8 @@
 <body><h1>LocalCorrect <small>RC</small></h1>
 <label><span id="uiLabel">Interface</span><select id="ui" disabled><option value="en">English</option><option value="de">Deutsch</option></select></label>
 <label><span id="languageLabel">Text language</span><select id="language" disabled><option value="en">English</option><option value="de">Deutsch</option></select></label>
+<label class="vocabulary"><input id="mixedLanguage" type="checkbox" checked disabled aria-describedby="mixedLanguageHint"><span id="mixedLanguageLabel">Mixed-language vocabulary</span></label>
+<p id="mixedLanguageHint">On: preserve English and German words. Off: use only the selected text language.</p>
 <label><span id="modeLabel">Mode</span><select id="mode" disabled><option value="conservative">Conservative</option><option value="balanced">Normal</option></select></label>
 <p id="hint">Select text or focus an editable field, then correct. Review changes before sending.</p>
 <div class="buttons"><button id="correct" disabled>Correct</button><button id="undo" disabled>Undo</button></div>

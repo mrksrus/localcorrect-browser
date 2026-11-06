@@ -7,9 +7,9 @@ required. The goal is useful corrections with as few unwanted edits as possible.
 
 **Alt+Shift+C** corrects the selection, or the focused field when nothing is
 selected. **Alt+Shift+Z** undoes the last correction. Both shortcuts are editable.
-The toolbar also has a correction button and language selection.
+The toolbar also has a correction button, a text-language selector and a mixed-language vocabulary setting.
 
-[Download experimental RC6 and its evidence](https://github.com/mrksrus/localcorrect-browser/releases/tag/v1.0.0-rc.6).
+[Download experimental RC7 and its evidence](https://github.com/mrksrus/localcorrect-browser/releases/tag/v1.0.0-rc.7).
 For classic Outlook 2019, use the separate
 [native Windows EXE add-in](https://github.com/mrksrus/localcorrect-outlook).
 It does not use an Exchange/account manifest.
@@ -32,10 +32,9 @@ Missed corrections and wrong replacements are separate quality measurements.
 This is a release candidate. The 99% target means precision among edits actually
 made, **not** correction of 99% of all errors. See [QUALITY.md](QUALITY.md) for
 wanted/wrong/missed edit counts, fresh validation, latency and remaining gaps.
-RC6 uses 5,600 previously authored synthetic documents as known regression data.
+RC7 retests all 6,200 inherited synthetic documents as known regression/calibration data. Its neural weights and calibrated actions are unchanged from RC6.
 They are reproducible tests, not fresh evidence or proof of real-world perfection.
-The new 200-document audit was sealed until the RC6 model and correction policy
-were frozen. It shows zero unwanted edits and no coverage gain over RC5. Browser RC4 and native Outlook
+The earlier 200-document audit was sealed until the RC6 model and correction policy were frozen; it is now known regression data. It shows zero unwanted edits and no coverage gain over RC5. Browser RC4 and native Outlook
 RC3 remain fixed comparison releases; subsequent candidates do not overwrite them.
 
 ## Install and use
@@ -48,8 +47,7 @@ Firefox still requires Mozilla signing.
 For Chrome, unzip its package and choose **Load unpacked** at
 `chrome://extensions` with Developer mode enabled.
 
-Select English or German in the toolbar, focus an ordinary text field and press
-the shortcut. Maximum input is 20,000 UTF-16 units and 3,000 words. Ordinary
+Select English or German in the toolbar. Keep **Mixed-language vocabulary** enabled for text containing both languages, or disable it to use only the selected language’s spelling vocabulary. The interface language is independent. Existing saved settings retain mixed-language protection. Focus an ordinary text field and press the shortcut. Maximum input is 20,000 UTF-16 units and 3,000 words. Ordinary
 contenteditable paragraphs and same-origin frames are supported, with guarded
 Undo. Password fields, protected pages, inaccessible frames, shadow DOM and
 complex embedded editors are excluded. See [USAGE.md](USAGE.md).
@@ -63,8 +61,7 @@ author for symmetric-delete candidate lookup.
 
 The static stage compiles candidate indexes from bundled frequency/validity dictionaries,
 [codespell](https://github.com/codespell-project/codespell) misspellings and isolated
-[Litkey](https://linguistics.rub.de/litkeycorpus/) German error pairs. A compact shared lexical automaton checks competing English
-and German interpretations at runtime. CSpell vocabulary and Homebrew formula names
+[Litkey](https://linguistics.rub.de/litkeycorpus/) German error pairs. Compact lexical automata check competing spellings at runtime. Mixed vocabulary uses both English and German; selected-language-only vocabulary uses the chosen language. Names and software terms remain protected in both settings. CSpell vocabulary and Homebrew formula names
 protect names and technical terms. All lookups are bounded; uncertain cases stay
 unchanged. The trained contextual stage scores permitted replacements directly,
 including candidates for valid words, using the original text. Edits refer to

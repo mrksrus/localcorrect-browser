@@ -16,6 +16,8 @@
 
 - LC-09, 2026-11-06. The user now allows conventional training and fine-tuning to improve sentence context and structure. This supersedes the earlier no-training experiment constraint. Offline inference, preference for abstention over unwanted edits, immutable fixed releases and the approximate 1 GB runtime ceiling still apply. Trained experiments must earn adoption through separate validation and measured CPU/RAM.
 
+- LC-10, 2026-11-06. The user requests explicit text-language selection in the correction engine and product UI. English/German choice must reach the correction operation; interface language remains independent. Preserve local processing and the preference for abstention over unwanted edits.
+
 ## Observed implementation
 
 The fixed browser RC5 and native RC4 engines use compiled spelling priors, bilingual validity and literal/name protection. Browser RC6 and native RC5 retain that static stage and add a 47.25 MB pretrained BERT Mini encoder fine-tuned for sparse contextual edits. The calibrated policy enables 13 actions after model/metadata identity and original-text protection checks. Training and calibration roles are separate from the first frozen evaluations. The observed gain is limited partial correction; broad grammar coverage and population precision are not established. Both saved modes share the same policy. No runtime compiler reads test gold.

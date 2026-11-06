@@ -1,11 +1,9 @@
-# 1.0.0-rc.6
+# 1.0.0-rc.7
 
-Experimental local contextual correction, with a 47.25 MB trained hmBERT Mini edit tagger after the existing precision-first spelling engine. The model runs on CPU; no cloud, account, typing monitor or runtime download is needed.
+English/German text selection now has an explicit mixed-language vocabulary setting. Leave it enabled for text containing both languages, or disable it to use only the selected language's spelling vocabulary. Interface language stays independent. The saved choice reaches browser shortcuts and the companion native Outlook RC6 helper; older settings preserve mixed behavior.
 
-The policy enables 13 supported actions. It adds nine wanted corrections on 400 known English grammar calibration examples. On 3,200 separate learner pairs, two independent reviews support 21 additional partial corrections. Whole-document exactness there remains unchanged. The new independent 200-document synthetic audit has nine wanted edits, zero unwanted edits and 107 misses, identical to RC5. This is limited progress, not general grammar coverage or a claim of 99% complete corrections.
+The neural model and calibrated thresholds are unchanged. Selected-language spelling adds 117 wanted edits across the 6,200 known synthetic cases, with zero observed unwanted edits and all 2,620 clean controls preserved. The former RC6 independent200case audit still has no coverage gain. These consumed tests are not a claim of broad real-world grammar accuracy. See QUALITY.md.
 
-The 5,600 known synthetic documents retain 4,453 wanted edits, zero unwanted edits and 2,119 misses. Quotations, names, variables and selected-text context have stronger preservation checks. Model/metadata/policy identities are bound together. Actual packaged Firefox and Chrome tests exercise a neural-only correction, Undo and stale-field guards.
+The additional spelling prior has only 995 rows over the unchanged base table, avoiding duplication. Warm 1,000-word Node CPU/WASM fixtures remain below one second on the development i5-1038NG7, with peak process RSS around 574–602 MiB. Native helper/Outlook overhead is separate.
 
-On the development i5-1038NG7, whole Node CPU/WASM warm 1,000-word fixtures take about 65–321 ms, depending on language/content, at about 579 MiB peak process RSS. Browser and native host measurements are separate. See QUALITY.md and MODEL.md for data roles, exact hashes, limits and reproduction.
-
-The Firefox ZIP is unsigned and loads temporarily through about:debugging. Standard permanent installation still requires Mozilla signing. Chrome uses Load unpacked. Existing published candidates are not replaced. The companion native Outlook RC5 is a separate experimental Windows EXE, with physical Outlook acceptance still unverified.
+Actual Chrome and Firefox checks exercise saved false/default settings, independent UI/text language, both vocabulary behaviors, shortcuts and Undo. The Firefox ZIP remains an unsigned temporary add-on. Actual classic Outlook acceptance remains unverified; its companion EXE is an experimental prerelease. Previous releases are not replaced.

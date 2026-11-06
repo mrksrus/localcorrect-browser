@@ -1,0 +1,278 @@
+{
+  "mixedLanguage": false,
+  "scope": "Whole Node reference, ONNX CPU/WASM single thread plus shared static spelling. Process RSS includes Node, not browser or Outlook. Cold session construction excludes first static-lexicon initialization, which is included in first correction.",
+  "hardware": {
+    "cpu": "Intel(R) Core(TM) i5-1038NG7 CPU @ 2.00GHz",
+    "logicalCPUs": 8,
+    "ramGiB": 31.144447326660156,
+    "platform": "linux"
+  },
+  "runtime": "v26.7.0",
+  "model": {
+    "modelSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59",
+    "modelBytes": 47246299,
+    "metadataSha256": "bf1edb08d9d1ec4bc687b20d90326d30f4b7e3d857df26779adf503ff6ed820b"
+  },
+  "policySha256": "808e18d8eea3afb329597b0eefc2966a4308936e93ce97eb0cde0c1db8db5d63",
+  "fixturesSha256": "9572cd0dee9fb63981fc0d68d0e21d2c1a582822b18096ff205a943215f36bd6",
+  "sessionCreationMs": 764.2220260000001,
+  "peakRssMiB": 601.703125,
+  "rows": [
+    {
+      "id": "en-ordinary-clean",
+      "words": 150,
+      "language": "en",
+      "kind": "clean",
+      "samples": [
+        {
+          "wallMs": 262.7830960000001,
+          "cpuMs": 451.515,
+          "edits": 0,
+          "rssMiB": 536.421875
+        },
+        {
+          "wallMs": 44.46977000000015,
+          "cpuMs": 49.838,
+          "edits": 0,
+          "rssMiB": 536.546875
+        },
+        {
+          "wallMs": 41.12464299999988,
+          "cpuMs": 45.364,
+          "edits": 0,
+          "rssMiB": 536.546875
+        },
+        {
+          "wallMs": 46.177370999999994,
+          "cpuMs": 85.465,
+          "edits": 0,
+          "rssMiB": 536.546875
+        }
+      ]
+    },
+    {
+      "id": "en-ordinary-typo-heavy",
+      "words": 150,
+      "language": "en",
+      "kind": "typo-heavy",
+      "samples": [
+        {
+          "wallMs": 105.47989099999995,
+          "cpuMs": 241.191,
+          "edits": 9,
+          "rssMiB": 575.51171875
+        },
+        {
+          "wallMs": 53.05512899999985,
+          "cpuMs": 118.32,
+          "edits": 9,
+          "rssMiB": 575.51171875
+        },
+        {
+          "wallMs": 53.315967999999884,
+          "cpuMs": 133.122,
+          "edits": 9,
+          "rssMiB": 577.65625
+        },
+        {
+          "wallMs": 51.09260999999992,
+          "cpuMs": 104.518,
+          "edits": 9,
+          "rssMiB": 583.90625
+        }
+      ]
+    },
+    {
+      "id": "en-1000-clean",
+      "words": 1000,
+      "language": "en",
+      "kind": "clean",
+      "samples": [
+        {
+          "wallMs": 337.852758,
+          "cpuMs": 741.408,
+          "edits": 0,
+          "rssMiB": 595.953125
+        },
+        {
+          "wallMs": 318.3086940000003,
+          "cpuMs": 540.446,
+          "edits": 0,
+          "rssMiB": 599.64453125
+        },
+        {
+          "wallMs": 303.855188,
+          "cpuMs": 344.414,
+          "edits": 0,
+          "rssMiB": 599.64453125
+        },
+        {
+          "wallMs": 303.17931999999973,
+          "cpuMs": 324.305,
+          "edits": 0,
+          "rssMiB": 599.64453125
+        }
+      ]
+    },
+    {
+      "id": "en-1000-typo-heavy",
+      "words": 1000,
+      "language": "en",
+      "kind": "typo-heavy",
+      "samples": [
+        {
+          "wallMs": 350.0824239999997,
+          "cpuMs": 378.037,
+          "edits": 53,
+          "rssMiB": 599.64453125
+        },
+        {
+          "wallMs": 333.4050830000001,
+          "cpuMs": 340.772,
+          "edits": 53,
+          "rssMiB": 599.89453125
+        },
+        {
+          "wallMs": 337.11045599999943,
+          "cpuMs": 354.352,
+          "edits": 53,
+          "rssMiB": 599.89453125
+        },
+        {
+          "wallMs": 333.80747599999995,
+          "cpuMs": 337.814,
+          "edits": 53,
+          "rssMiB": 599.89453125
+        }
+      ]
+    },
+    {
+      "id": "de-ordinary-clean",
+      "words": 150,
+      "language": "de",
+      "kind": "clean",
+      "samples": [
+        {
+          "wallMs": 30.721561000000293,
+          "cpuMs": 30.871,
+          "edits": 0,
+          "rssMiB": 600.01953125
+        },
+        {
+          "wallMs": 24.833394999999655,
+          "cpuMs": 27.203,
+          "edits": 0,
+          "rssMiB": 600.01953125
+        },
+        {
+          "wallMs": 25.249079000000165,
+          "cpuMs": 30.725,
+          "edits": 0,
+          "rssMiB": 600.01953125
+        },
+        {
+          "wallMs": 23.579233000000386,
+          "cpuMs": 23.488,
+          "edits": 0,
+          "rssMiB": 600.01953125
+        }
+      ]
+    },
+    {
+      "id": "de-ordinary-typo-heavy",
+      "words": 150,
+      "language": "de",
+      "kind": "typo-heavy",
+      "samples": [
+        {
+          "wallMs": 68.54891700000007,
+          "cpuMs": 110.393,
+          "edits": 6,
+          "rssMiB": 600.01953125
+        },
+        {
+          "wallMs": 5.225008999999773,
+          "cpuMs": 8.448,
+          "edits": 6,
+          "rssMiB": 600.01953125
+        },
+        {
+          "wallMs": 5.579998999999589,
+          "cpuMs": 12.05,
+          "edits": 6,
+          "rssMiB": 600.01953125
+        },
+        {
+          "wallMs": 4.2845369999995455,
+          "cpuMs": 9.295,
+          "edits": 6,
+          "rssMiB": 600.01953125
+        }
+      ]
+    },
+    {
+      "id": "de-1000-clean",
+      "words": 1000,
+      "language": "de",
+      "kind": "clean",
+      "samples": [
+        {
+          "wallMs": 88.03813700000046,
+          "cpuMs": 97.449,
+          "edits": 0,
+          "rssMiB": 600.01953125
+        },
+        {
+          "wallMs": 81.47160600000007,
+          "cpuMs": 88.521,
+          "edits": 0,
+          "rssMiB": 600.14453125
+        },
+        {
+          "wallMs": 83.87161600000036,
+          "cpuMs": 84.321,
+          "edits": 0,
+          "rssMiB": 600.26953125
+        },
+        {
+          "wallMs": 81.62670200000048,
+          "cpuMs": 83.203,
+          "edits": 0,
+          "rssMiB": 600.26953125
+        }
+      ]
+    },
+    {
+      "id": "de-1000-typo-heavy",
+      "words": 1000,
+      "language": "de",
+      "kind": "typo-heavy",
+      "samples": [
+        {
+          "wallMs": 75.74006800000006,
+          "cpuMs": 81.906,
+          "edits": 50,
+          "rssMiB": 600.26953125
+        },
+        {
+          "wallMs": 70.63896300000033,
+          "cpuMs": 88.028,
+          "edits": 50,
+          "rssMiB": 600.26953125
+        },
+        {
+          "wallMs": 68.20956699999988,
+          "cpuMs": 78.009,
+          "edits": 50,
+          "rssMiB": 600.39453125
+        },
+        {
+          "wallMs": 79.29970500000036,
+          "cpuMs": 118.477,
+          "edits": 50,
+          "rssMiB": 553.90625
+        }
+      ]
+    }
+  ]
+}
