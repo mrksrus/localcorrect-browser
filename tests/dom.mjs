@@ -60,7 +60,7 @@ await check('undo refuses field converted to password or readonly',async()=>{
  for(const change of ['password','readonly']){await fixture('<input id="t" value="tomorow">');await page.locator('#t').focus();await correct();await page.locator('#t').evaluate((e,change)=>{if(change==='password')e.type='password';else e.readOnly=true;},change);await assert.rejects(undo(),/stale/);assert.equal(await page.locator('#t').inputValue(),'tomorrow');}
 });
 await check('partial-token selections reject both ends, inline joins and combining marks',async()=>{
- for(const [value,a,b] of [['friendship',0,5],['friendship',1,6],['friendship',1,10],['tomorow\u0301',0,7],['tomorow\u0301',7,8]]){
+ for(const [value,a,b] of [['friendship',0,5],['friendship',1,6],['friendship',1,10],['tomorow\u0301',0,7],['tomorow\u0301',7,8],['tomorow\u200dname',0,7],['tomorow\u203fname',0,7]]){
   await fixture('<textarea id="t"></textarea>');await page.locator('#t').fill(value);
   await page.evaluate(([a,b])=>document.querySelector('#t').setSelectionRange(a,b),[a,b]);
   await assert.rejects(correct(),/complete words/);assert.equal(await page.locator('#t').inputValue(),value);
@@ -77,6 +77,14 @@ await check('selection-initial names preserved in plain and rich adapters',async
   await fixture(rich?`<div id="t" contenteditable="true">${value}</div>`:`<textarea id="t">${value}</textarea>`);await page.locator('#t').focus();
   await page.evaluate(({rich,name})=>{const t=document.querySelector('#t');if(rich){const r=document.createRange();r.setStart(t.firstChild,0);r.setEnd(t.firstChild,name.length);getSelection().removeAllRanges();getSelection().addRange(r);}else t.setSelectionRange(0,name.length);},{rich,name});
   assert.equal((await correct('en',mode)).changed,0);assert.equal(rich?await page.locator('#t').textContent():await page.locator('#t').inputValue(),value);
+ }
+});
+await check('selected greeting names preserve document context',async()=>{
+ for(const greeting of ['Hallo','hallo','HALLO'])for(const rich of [false,true]){
+  const value=greeting+' Rehcnung';
+  await fixture(rich?`<div id="t" contenteditable="true">${greeting} <b>Rehcnung</b></div>`:`<textarea id="t">${value}</textarea>`);await page.locator('#t').focus();
+  await page.evaluate(({rich,greeting})=>{const t=document.querySelector('#t');if(rich){const r=document.createRange();r.selectNodeContents(t.querySelector('b'));getSelection().removeAllRanges();getSelection().addRange(r);}else t.setSelectionRange(greeting.length+1,t.value.length);},{rich,greeting});
+  assert.equal((await correct('de')).changed,0);assert.equal(rich?await page.locator('#t').textContent():await page.locator('#t').inputValue(),value);
  }
 });
 await check('full sentence German nouns, valid inflections, undo and input events',async()=>{

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "format": "localcorrect-context-encoder-v1",
+  "model": {
+    "file": "packages/core/models/context-encoder.onnx",
+    "bytes": 47246299,
+    "sha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59",
+    "fineTunedAdditionsLicense": "CC-BY-SA-4.0",
+    "baseLicense": "MIT"
+  },
+  "metadataSha256": "bf1edb08d9d1ec4bc687b20d90326d30f4b7e3d857df26779adf503ff6ed820b",
+  "policySha256": "808e18d8eea3afb329597b0eefc2966a4308936e93ce97eb0cde0c1db8db5d63",
+  "baseManifest": "context-pretrained-sources.json",
+  "trainingDataManifests": [
+    "context-data-sources.json",
+    "context-wikipedia-sources.json"
+  ],
+  "trainingDataSha256": {
+    "0:train-v2.jsonl": "d2e0710c44caddb91671366b4b913b8ed06d692d3b1b997e708ca5c8734bcbb8"
+  },
+  "trainingReport": "tests/context-results/training-v2.json",
+  "calibrationReport": "tests/context-results/calibration-v2.json",
+  "runtime": {
+    "npm": "onnxruntime-web",
+    "version": "1.31.1",
+    "repositoryRevision": "41d4d61f14b9c1dd0b2ccda1e9b85dd415fd0496",
+    "wasmSha256": "4b884c203b0fa48d057be3332c65513ff85aa3c5bddd6946acc0fab7ecda001d",
+    "license": "MIT"
+  },
+  "licenseNotices": [
+    {
+      "file": "licenses/onnxruntime-LICENSE",
+      "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c"
+    },
+    {
+      "file": "licenses/onnxruntime-ThirdPartyNotices.txt",
+      "sha256": "143764b952fdb1a7c69ce653bfba74a7744d6a8a573bfb73e235fba356c83de3"
+    },
+    {
+      "file": "licenses/bert-mini-LICENSE",
+      "sha256": "82be7300e19615c757cae21db59d24a0a3ecb9fe2b8764bfbe7f72fe9674a0ae"
+    },
+    {
+      "file": "licenses/ErAConD-LICENSE",
+      "sha256": "eb38ee0e7a949f78c4fd1e29aa96c71f45fb6caebb6519c691a466cac62bbc88"
+    },
+    {
+      "file": "licenses/CC-BY-3.0.txt",
+      "sha256": "5138a74ac20f2965d97b2a9c35219ca74e24f4a93618b33f0e36e4b3c7873197"
+    },
+    {
+      "file": "licenses/CC-BY-SA-4.0.txt",
+      "sha256": "a0bd498de6b7991f563789715e3cf9f9a77860b6bb5b2c2b072fb3bb36361008"
+    }
+  ],
+  "rawTextRedistributed": false,
+  "weightsBitIdenticalRetrainingClaim": false
+}

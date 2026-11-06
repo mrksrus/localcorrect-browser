@@ -14,8 +14,8 @@ const results=[];
 for(const browser of ['firefox','chrome']){
  const prefix=`build/${browser}/`;
  const m=JSON.parse(readFileSync(prefix+'manifest.json','utf8'));
- assert.equal(m.manifest_version,3);assert.equal(m.version,'0.9.0.5');assert.deepEqual(m.permissions,['activeTab','scripting','storage']);
- assert.equal(m.version_name,browser==='chrome'?'1.0.0-rc.5':undefined);
+ assert.equal(m.manifest_version,3);assert.equal(m.version,'0.9.0.6');assert.deepEqual(m.permissions,['activeTab','scripting','storage']);
+ assert.equal(m.version_name,browser==='chrome'?'1.0.0-rc.6':undefined);
  assert.equal(m.host_permissions,undefined);assert.equal(m.content_scripts,undefined);
  assert.ok(browser==='firefox'?m.background.scripts.includes('background.js'):m.background.service_worker==='background.js');
  assert.ok(readFileSync(prefix+'background.js').length>1000);
@@ -82,7 +82,7 @@ for(const browser of ['firefox','chrome']){
  for(const [name,file] of [['codespell','codespell.txt'],['litkey','litkey-pairs.tsv']])assert.equal(createHash('sha256').update(readFileSync(prefix+'source/packages/core/vendor/typo-data/'+file)).digest('hex'),typos.inputSha256[name]);
  for(const name of ['CC-BY-SA-3.0.html','CC-BY-SA-4.0.html'])assert.ok(readFileSync(prefix+'source/packages/core/vendor/typo-data/'+name).length>40000);
  for(const name of ['dictionary-en','dictionary-en-gb','dictionary-de','dictionary-de-at','nspell','is-buffer'])assert.ok(readFileSync(prefix+`licenses/${name}-LICENSE`).length>500);
- const path=`dist/localcorrect-${browser}-1.0.0-rc.5.zip`;
+ const path=`dist/localcorrect-${browser}-1.0.0-rc.6.zip`;
  const entries=JSON.parse(execFileSync('python',['-c',`import json,pathlib,zipfile\np=pathlib.Path('${prefix}')\nwith zipfile.ZipFile('${path}') as z:\n assert z.testzip() is None\n files={f.relative_to(p).as_posix():f for f in p.rglob('*') if f.is_file()}\n assert set(z.namelist())==set(files), 'Archive inventory differs from verified build'\n for name,f in files.items():\n  assert z.read(name)==f.read_bytes(), name+' differs from verified build'\n print(json.dumps(z.namelist()))`],{encoding:'utf8'}));
  for(const name of ['manifest.json','dictionaries/en.txt','dictionaries/de.txt','LICENSE','THIRD_PARTY.md','licenses/CC-BY-SA-4.0.txt','source/scripts/build.mjs','source/scripts/lexicons.mjs','lexicon-sources.json','source/packages/core/src/lexicons/en.js','source/packages/core/src/lexicons/de.js','source/packages/core/src/lexicons/nspell.js'])assert.ok(entries.includes(name));
  for(const name of ['candidate-sources.json','protect-sources.json','source/scripts/candidates.mjs','source/scripts/protect-vocabulary.mjs','source/packages/core/src/candidates.js','source/packages/core/src/candidate-lookup.js','source/packages/core/src/protect-vocabulary.js','source/tests/coverage.test.mjs','licenses/cspell-software-terms-LICENSE','licenses/cspell-people-names-LICENSE','licenses/homebrew-core-LICENSE','ambiguity-sources.json','source/scripts/ambiguity-lexicon.mjs','source/packages/core/src/ambiguity-data.js','source/packages/core/src/ambiguity-lookup.js','source/tests/ambiguity.test.mjs','inflection-sources.json','source/scripts/inflection-eligibility.mjs','source/packages/core/src/inflection-data.js','source/tests/inflection.test.mjs'])assert.ok(entries.includes(name),name);

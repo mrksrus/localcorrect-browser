@@ -1,6 +1,8 @@
 import {createRunner} from './runner.js';
+import {createContextRuntime} from './context-runtime.js';
 const api = globalThis.browser || globalThis.chrome;
-const runner = createRunner(api);
+const contextRuntime = createContextRuntime(api);
+const runner = createRunner(api, globalThis.fetch, contextRuntime.predict);
 async function perform(action) {
   try {
     const result = await runner.run(action);

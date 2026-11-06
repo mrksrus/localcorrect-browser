@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "purpose": "Reproducible preparation of public human-written parallel correction data for an offline English/German contextual edit experiment.",
+  "publication_status": "Raw and derived learner text stays outside the repository pending a separate privacy and redistribution review. A public repository license is evidence of terms, not a guarantee that every learner detail is safe to republish.",
+  "sources": [
+    {
+      "id": "eracond",
+      "language": "en",
+      "repository": "https://github.com/yuanxun-yx/eracond",
+      "revision": "8401d3601f58170b55f0b1ca3773329c56b116f9",
+      "archive": "eracond-8401d3601f58170b55f0b1ca3773329c56b116f9.tar.gz",
+      "url": "https://codeload.github.com/yuanxun-yx/eracond/tar.gz/8401d3601f58170b55f0b1ca3773329c56b116f9",
+      "sha256": "0d7b1c386a1e6ce051662b6ddd5aa7c0ad2c3653eb8ac550bea5f20e9036410e",
+      "bytes": 167682,
+      "license": "MIT",
+      "license_evidence": "LICENSE in pinned repository, copyright 2022 YUAN Xun, includes repository data without a separate data exclusion.",
+      "citation": "Xun Yuan, Derek Pham, Sam Davidson, Zhou Yu. 2022. ErAConD: Error Annotated Conversational Dialog Dataset for Grammatical Error Correction. NAACL, pages 76-84.",
+      "paper": "https://aclanthology.org/2022.naacl-main.5/",
+      "selection": "All data/*/orig/*.txt aligned by line with data/*/corr/*.txt. corr2 is an alternative annotation and is excluded. Each orig file is a conversation. Preserve original strings; each pair is an utterance and may contain more than one sentence.",
+      "annotation_limits": "Corrected text includes capitalization, punctuation, vocabulary and fluency edits, which do not all match a conservative typo-only policy. Published paper reports 1735 user turns; pinned source contains 1732 aligned lines in 186 conversations.",
+      "privacy_evidence": "The paper's Ethical Considerations states that annotators anonymized personally identifiable information and removed potentially offensive content. This does not substitute for redistribution review."
+    },
+    {
+      "id": "boyd-wnut2018",
+      "repository": "https://github.com/adrianeboyd/boyd-wnut2018",
+      "revision": "e7d3f9c8e5b7348c93cf9817efc35ae3af7783bc",
+      "archive": "boyd-wnut2018-e7d3f9c8e5b7348c93cf9817efc35ae3af7783bc.tar.gz",
+      "url": "https://codeload.github.com/adrianeboyd/boyd-wnut2018/tar.gz/e7d3f9c8e5b7348c93cf9817efc35ae3af7783bc",
+      "sha256": "c315cbd06f15fcd79eb9200bea40afdd293e36f905700277e0aa6d16884f0b21",
+      "bytes": 23627,
+      "license": "CC-BY-SA-4.0",
+      "license_evidence": "Root LICENSE is CC BY-SA 4.0; README Data Licenses supplies component data licenses. scripts/LICENSE is GPL-3.0; repository scripts are not executed or incorporated.",
+      "citation": "Adriane Boyd. 2018. Using Wikipedia Edits in Low Resource Grammatical Error Correction. WNUT 2018.",
+      "paper": "https://aclanthology.org/W18-6111/"
+    },
+    {
+      "id": "falko-merlin-data",
+      "language": "de",
+      "archive": "boyd-data.tar.gz",
+      "url": "https://github.com/adrianeboyd/boyd-wnut2018/releases/download/wnut2018/data.tar.gz",
+      "sha256": "55210ac71a939d61bea61713bc256c84b4574be7ecce4e64ac3da105968a61bc",
+      "bytes": 85667586,
+      "license": "Component licenses below; archive data/LICENSE is CC-BY-SA-4.0",
+      "selection": "Only data/source/falko-id-ctok-zh1.txt.* and merlin-id-ctok-zh1.txt.*. Original provided train/dev/test partitions are pooled then split by source document hash. No Wikipedia text or experimental scripts are used. Original tokenized ctok and ZH1/TH1 strings are preserved exactly.",
+      "components": [
+        {"id": "falko", "license": "CC-BY-3.0", "license_url": "https://creativecommons.org/licenses/by/3.0/", "original": "https://www.linguistik.hu-berlin.de/de/institut/professuren/korpuslinguistik/forschung/falko/zugang", "attribution": "Falko corpus creators, Humboldt-Universitaet zu Berlin; conversion and sentence/text-ID alignment by Adriane Boyd.", "evidence": "Pinned Boyd README Data Licenses. Original corpus web page returned an anti-bot challenge on verification; its terms were not independently re-read."},
+        {"id": "merlin", "license": "CC-BY-SA-4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "original": "https://hdl.handle.net/20.500.12124/6", "attribution": "MERLIN corpus project and creators; conversion and sentence/text-ID alignment by Adriane Boyd.", "evidence": "Pinned Boyd README Data Licenses and archive license. Original repository returned an access-denied anti-bot page on verification."},
+        {"id": "wikipedia", "license": "CC-BY-SA-3.0", "used": false, "evidence": "Pinned Boyd README. Wikipedia data is present in the downloaded archive but never extracted by the preparation script or used."}
+      ],
+      "privacy_limits": "Public learner texts include names, addresses and email-like strings, some from fictional prompts. Raw or derived text must not be committed without a separate review."
+    }
+  ],
+  "license_notices": [
+    {"id": "CC-BY-3.0", "archive": "CC-BY-3.0.txt", "url": "https://raw.githubusercontent.com/creativecommons/legalcode/4d2de083a6dcc5095ed1a30885bc48f868b9bb55/by_3.0.txt", "bytes": 19466, "sha256": "5138a74ac20f2965d97b2a9c35219ca74e24f4a93618b33f0e36e4b3c7873197"},
+    {"id": "CC-BY-SA-4.0", "archive": "CC-BY-SA-4.0.txt", "url": "https://raw.githubusercontent.com/creativecommons/legalcode/4d2de083a6dcc5095ed1a30885bc48f868b9bb55/by-sa_4.0.txt", "bytes": 20005, "sha256": "a0bd498de6b7991f563789715e3cf9f9a77860b6bb5b2c2b072fb3bb36361008"},
+    {"id": "CC-BY-SA-3.0", "archive": "CC-BY-SA-3.0.txt", "url": "https://raw.githubusercontent.com/creativecommons/legalcode/4d2de083a6dcc5095ed1a30885bc48f868b9bb55/by-sa_3.0.txt", "bytes": 22238, "sha256": "f199af7e90e29e197a4be87b9a6d585a29ff5eae2b977503e590c4bd8fe6e8b3"}
+  ],
+  "split": {
+    "algorithm": "int(SHA256('localcorrect-context-v1\\0' + document_id)[:8],16) modulo 100; 0..79 train, 80..89 calibration, 90..99 test",
+    "document_units": "ErAConD conversation file; Falko/MERLIN original text ID",
+    "normalization": "Unicode NFKC, casefold, retain only Unicode alphanumeric characters. Used only for conservative duplicate detection, never to alter model text.",
+    "cross_split_policy": "Remove every pair whose normalized input or normalized expected appears in any other split. Input and expected share a key namespace, so input-to-expected leakage is also removed. Log all collision IDs and original splits, without copying learner text into audit messages.",
+    "within_split_policy": "Collapse repeated normalized input/expected pairs deterministically. Remove normalized inputs with conflicting normalized expected values. Keep removed-ID audit. No holdout result is used in selection."
+  }
+}

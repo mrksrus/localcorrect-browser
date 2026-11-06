@@ -1,11 +1,11 @@
-# 1.0.0-rc.5
+# 1.0.0-rc.6
 
-More coverage on the known main corpus, with stronger ambiguity protection. Fixed browser RC4 and native Outlook RC3 releases remain unchanged.
+Experimental local contextual correction, with a 47.25 MB trained hmBERT Mini edit tagger after the existing precision-first spelling engine. The model runs on CPU; no cloud, account, typing monitor or runtime download is needed.
 
-The known main 5,000 cases gain 383 wanted edits and 210 completely corrected documents, with zero unwanted edits. Main error coverage is 70.16%. The final separately authored 100-document audit has 35 wanted edits, zero unwanted edits, 30 missed edits and 76/100 exact outputs. Fixed RC4 made 38 wanted edits with zero unwanted edits on that final 100-case audit, so the fresh set does not show a coverage gain. This is observed synthetic precision, not universal perfection or 100% error coverage.
+The policy enables 13 supported actions. It adds nine wanted corrections on 400 known English grammar calibration examples. On 3,200 separate learner pairs, two independent reviews support 21 additional partial corrections. Whole-document exactness there remains unchanged. The new independent 200-document synthetic audit has nine wanted edits, zero unwanted edits and 107 misses, identical to RC5. This is limited progress, not general grammar coverage or a claim of 99% complete corrections.
 
-An initial RC5 audit exposed two unwanted edits and was consumed by fixes. Its failed evidence remains published. A second 200-document audit exposed one more unwanted edit and was consumed too. The final 100-case audit from a different author was first evaluated after the last policy freeze. Some old correct edits are now intentionally left unchanged when the wider vocabulary reveals ambiguity.
+The 5,600 known synthetic documents retain 4,453 wanted edits, zero unwanted edits and 2,119 misses. Quotations, names, variables and selected-text context have stronger preservation checks. Model/metadata/policy identities are bound together. Actual packaged Firefox and Chrome tests exercise a neural-only correction, Undo and stale-field guards.
 
-The engine adds compact candidate and lexical ambiguity indexes plus attributed CSpell and Homebrew protective vocabulary. Per-call caching avoids repeated searches for repeated typos. No neural training, test-gold lookup or document-derived persistent cache is used. Runtime remains fully offline and manual-shortcut driven.
+On the development i5-1038NG7, whole Node CPU/WASM warm 1,000-word fixtures take about 65–321 ms, depending on language/content, at about 579 MiB peak process RSS. Browser and native host measurements are separate. See QUALITY.md and MODEL.md for data roles, exact hashes, limits and reproduction.
 
-See QUALITY.md, EVALUATION.json and benchmarks/rc5-cpu-performance.md for exact results, startup cost, resource measurements, source hashes and device limitations. Firefox remains unsigned; actual Outlook 2019 acceptance remains unverified.
+The Firefox ZIP is unsigned and loads temporarily through about:debugging. Standard permanent installation still requires Mozilla signing. Chrome uses Load unpacked. Existing published candidates are not replaced. The companion native Outlook RC5 is a separate experimental Windows EXE, with physical Outlook acceptance still unverified.

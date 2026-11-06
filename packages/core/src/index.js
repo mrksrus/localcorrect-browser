@@ -9,6 +9,22 @@ import {candidates, typingRepair, protectedWord, eligibleInflection} from './can
 import {en as enTypos, de as deTypos} from './typos.js';
 import enLexicon from './lexicons/en.js';
 import * as deAssets from './lexicons/de.js';
+import contextMetadata from './context-encoder-data.js';
+import contextPolicy from './context-policy.js';
+import{encodeContext as encodeContextInputs}from'./context-encode.js';
+import{acceptedContextScores}from'./context-model.js';
+export function contextIdentity(){return{modelSha256:contextMetadata.modelSha256,modelBytes:contextMetadata.modelBytes,metadataSha256:contextMetadata.metadataSha256};}
+export function encodeContext(text,language,{policyOnly=false}={}){
+ const encoded=encodeContextInputs(contextMetadata,text,language);
+ if(policyOnly){
+  const valid=contextPolicy.schemaVersion===1&&contextPolicy.onnxSha256===contextMetadata.modelSha256&&contextPolicy.modelSha256===contextMetadata.metadataSha256;
+  const actions=valid?contextPolicy.actions:{};
+  // Chunks are independent encoder inputs. Skip those that cannot yield any
+  // enabled edit, retaining all original candidate competitors in used chunks.
+  encoded.chunks=encoded.chunks.filter(chunk=>chunk.words.some(word=>word.candidateRowIds.some(id=>id!==0&&actions[String(id)])));
+ }
+ return encoded;
+}
 const lexicalSources = {en: enLexicon, de: deAssets.default, deCased: deAssets.originalCasing};
 const validators = new Map();
 function lexical(language) {
@@ -96,6 +112,19 @@ export function protectedRanges(text) {
   // Preserve complete tokens, including shell paths/flags and code identifiers.
   const syntax = /[@#][\p{L}\p{M}\d_]+|--[\p{L}\p{M}\d_-]+|(?:~\/|\/|[a-z]:\\)[\p{L}\p{M}\d_.\/\\-]+|\b[\p{L}\p{M}_$][\p{L}\p{M}\d_$]*(?=\()|\b[\p{L}\p{M}\d_]+(?:-[\p{L}\p{M}\d_]+)+\b|\b(?:const|let|var)\s+[\p{L}_$][\p{L}\p{M}\d_$]*\s*=[^\r\n]*/giu;
   for (const m of text.matchAll(syntax)) ranges.push([m.index, m.index + m[0].length]);
+  // Variable interpolation stays literal even when its name is a valid word.
+  const variables=/\$(?:\{[^{}\r\n]+\}|[\p{L}_][\p{L}\p{M}\p{N}_]*(?::[\p{L}_][\p{L}\p{M}\p{N}_]*)?)|%[\p{L}_][\p{L}\p{M}\p{N}_]*%|![\p{L}_][\p{L}\p{M}\p{N}_]*!/gu;
+  for(const m of text.matchAll(variables))ranges.push([m.index,m.index+m[0].length]);
+  // Keep full-document context when a wrapper corrects only a selected span.
+  // These ranges also protect a name or joined identifier outside the selection.
+  for(const m of text.matchAll(/[\p{L}\p{M}\p{N}\p{Pc}\p{Cf}]+/gu))
+    if(/[\p{Pc}\p{Cf}]/u.test(m[0]))ranges.push([m.index,m.index+m[0].length]);
+  const greetings=new Set(['herr','herrn','frau','dr','prof','mr','mrs','ms','dear','hello','hi','hallo','liebe','lieber']);
+  for(const m of text.matchAll(/\b([\p{L}]+\.?)[ \t]+/gu)){
+    if(!greetings.has(m[1].replace(/\.$/u,'').toLowerCase()))continue;
+    const names=/^\p{Lu}[\p{L}\p{M}-]*(?:[ \t]+\p{Lu}[\p{L}\p{M}-]*){0,2}/u.exec(text.slice(m.index+m[0].length));
+    if(names)ranges.push([m.index,m.index+m[0].length+names[0].length]);
+  }
   for (const m of text.matchAll(/(?<!`)(`+)(?!`)[^\r\n]*?\1(?!`)/gu))
     ranges.push([m.index, m.index + m[0].length]);
   // Quoted wording can be a name, historical spelling or exact instruction.
@@ -200,7 +229,7 @@ export function prepare() { lexical('en'); lexical('de'); lexical('deCased'); pr
  */
 export function createCorrector({en,de}) {
  const dictionaries={en:dictionary(en),de:dictionary(de)};
- return {correct(text,{language='en',mode='conservative'}={}){
+ return {correct(text,{language='en',mode='conservative',contextScores=null,contextual=true}={}){
   if(typeof text!=='string')throw new TypeError('text must be a string');
   if(!['en','de'].includes(language))throw new RangeError('language must be en or de');
   if(!['conservative','balanced'].includes(mode))throw new RangeError('Unknown mode');
@@ -270,6 +299,7 @@ export function createCorrector({en,de}) {
    }
    edits.push({offset:start,length:original.length,replacement,original});
   }
+  if(contextual&&contextScores){edits.push(...acceptedContextScores(contextMetadata,contextPolicy,text,language,contextScores,protectedSpans,edits));edits.sort((a,b)=>a.offset-b.offset);}
   let output=text;for(let i=edits.length-1;i>=0;i--){const e=edits[i];output=output.slice(0,e.offset)+e.replacement+output.slice(e.offset+e.length);}
   return {text:output,edits,skipped};
  }};

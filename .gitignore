@@ -4,3 +4,6 @@ dist/
 test-results/
 
 work/
+
+__pycache__/
+*.pyc

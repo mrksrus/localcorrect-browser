@@ -1,0 +1,39 @@
+{
+  "repo": "dbmdz/bert-mini-historic-multilingual-cased",
+  "revision": "4a0964c747fd6c06a20e8c0ca32bc27a23a6ad34",
+  "files": {
+    "config.json": {
+      "sha256": "788cc55ab1a0a997ae098e9073bab0bdae66bb0f6394ba890be534fa2bdfdb69",
+      "bytes": 584,
+      "url": "https://huggingface.co/dbmdz/bert-mini-historic-multilingual-cased/resolve/4a0964c747fd6c06a20e8c0ca32bc27a23a6ad34/config.json"
+    },
+    "model.safetensors": {
+      "sha256": "e291f5d44db7f17d3b75755feb02febbf4f3f2b137e9ac49ebb1fb00497dbda2",
+      "bytes": 46604018,
+      "url": "https://huggingface.co/dbmdz/bert-mini-historic-multilingual-cased/resolve/4a0964c747fd6c06a20e8c0ca32bc27a23a6ad34/model.safetensors"
+    },
+    "tokenizer_config.json": {
+      "sha256": "25f2b98fcd4c39add7f30fa8e129c9d7d1fc2d27a37d615ae6452a47dca10378",
+      "bytes": 83,
+      "url": "https://huggingface.co/dbmdz/bert-mini-historic-multilingual-cased/resolve/4a0964c747fd6c06a20e8c0ca32bc27a23a6ad34/tokenizer_config.json"
+    },
+    "vocab.txt": {
+      "sha256": "ea25de68447a427f0629e180a85bfbd0a614e2255fd80e3dea9b54f9c53b80c6",
+      "bytes": 212157,
+      "url": "https://huggingface.co/dbmdz/bert-mini-historic-multilingual-cased/resolve/4a0964c747fd6c06a20e8c0ca32bc27a23a6ad34/vocab.txt"
+    },
+    "README.md": {
+      "sha256": "22a3dd851c597a975f8570a8407d9774aeb442b466a489b707e6b0e61c1ca0ea",
+      "bytes": 12772,
+      "url": "https://huggingface.co/dbmdz/bert-mini-historic-multilingual-cased/resolve/4a0964c747fd6c06a20e8c0ca32bc27a23a6ad34/README.md"
+    }
+  },
+  "license": "MIT",
+  "licenseSource": {
+    "repo": "https://github.com/dbmdz/berts",
+    "revision": "74a0428e803724ac7f05057edc9088b4b4e71973",
+    "path": "LICENSE"
+  },
+  "licenseFile": "licenses/bert-mini-LICENSE",
+  "licenseSha256": "82be7300e19615c757cae21db59d24a0a3ecb9fe2b8764bfbe7f72fe9674a0ae"
+}

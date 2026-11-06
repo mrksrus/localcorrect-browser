@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "raw_counts": {
+    "eracond": {
+      "pairs": 1732,
+      "documents": 186,
+      "unchanged": 269,
+      "splits": {
+        "train": 1370,
+        "calibration": 126,
+        "test": 236
+      }
+    },
+    "falko": {
+      "pairs": 12585,
+      "documents": 444,
+      "unchanged": 2387,
+      "splits": {
+        "train": 9718,
+        "calibration": 1136,
+        "test": 1731
+      }
+    },
+    "merlin": {
+      "pairs": 11499,
+      "documents": 1033,
+      "unchanged": 2945,
+      "splits": {
+        "train": 9015,
+        "calibration": 1098,
+        "test": 1386
+      }
+    }
+  },
+  "retained_counts": {
+    "eracond": {
+      "pairs": 1455,
+      "documents": 169,
+      "unchanged": 221,
+      "splits": {
+        "train": 1163,
+        "calibration": 92,
+        "test": 200
+      }
+    },
+    "falko": {
+      "pairs": 12507,
+      "documents": 444,
+      "unchanged": 2331,
+      "splits": {
+        "train": 9658,
+        "calibration": 1126,
+        "test": 1723
+      }
+    },
+    "merlin": {
+      "pairs": 10441,
+      "documents": 1032,
+      "unchanged": 2269,
+      "splits": {
+        "train": 8203,
+        "calibration": 972,
+        "test": 1266
+      }
+    }
+  },
+  "raw_pairs": 25816,
+  "retained_pairs": 24403,
+  "removed_pairs": 1413,
+  "audit_events": {
+    "empty_normalized_text": 18,
+    "conflicting_expected": 22,
+    "cross_split_text_collision": 254,
+    "duplicate_pair": 303
+  },
+  "split_contract": {
+    "algorithm": "int(SHA256('localcorrect-context-v1\\0' + document_id)[:8],16) modulo 100; 0..79 train, 80..89 calibration, 90..99 test",
+    "document_units": "ErAConD conversation file; Falko/MERLIN original text ID",
+    "normalization": "Unicode NFKC, casefold, retain only Unicode alphanumeric characters. Used only for conservative duplicate detection, never to alter model text.",
+    "cross_split_policy": "Remove every pair whose normalized input or normalized expected appears in any other split. Input and expected share a key namespace, so input-to-expected leakage is also removed. Log all collision IDs and original splits, without copying learner text into audit messages.",
+    "within_split_policy": "Collapse repeated normalized input/expected pairs deterministically. Remove normalized inputs with conflicting normalized expected values. Keep removed-ID audit. No holdout result is used in selection."
+  },
+  "checks": {
+    "unique_ids": true,
+    "document_disjoint": true,
+    "normalized_input_and_expected_disjoint": true
+  },
+  "source_script_sha256": "cbbcf73556f07cc0712c5e7c1f8d66c7fe9157aa3afbf88c5c1fd954fc783efc",
+  "outputs": {
+    "all.jsonl": {
+      "bytes": 8638538,
+      "sha256": "0449ceb0027d9aac6505bf1888100f6ae265c56503eafb167ba87b4e4ab6862d"
+    },
+    "calibration.jsonl": {
+      "bytes": 794594,
+      "sha256": "4239428565c60d77fc6125145b8b36587bb95294913c3a6486a602aa554ba7e1"
+    },
+    "collisions.jsonl": {
+      "bytes": 134939,
+      "sha256": "78b433631674915c9b2cee1d7c578cd7d3d8fa16f5c47d96bb51521a2a100235"
+    },
+    "provenance.jsonl": {
+      "bytes": 17096824,
+      "sha256": "5fac20c593d6edebd039ec44c03d753e4fbc1c05c8e43fac867b89335404a417"
+    },
+    "test.jsonl": {
+      "bytes": 1096647,
+      "sha256": "a72f9ecc662da2b3fc1f42ac9c7c4be4bc89d729721752d84a5beeb4d4f1aa6d"
+    },
+    "train.jsonl": {
+      "bytes": 6747297,
+      "sha256": "bb1d70636cbd5bba1a8416be774469bfec5ecbb4166ab7ae04ef8dc6b0cb8fab"
+    }
+  }
+}

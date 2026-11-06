@@ -38,7 +38,7 @@ if (!globalThis.__localCorrect) {
     root.dispatchEvent(new root.ownerDocument.defaultView.InputEvent('input', {bubbles: true, inputType: type, data: null}));
   }
   function requireWholeTokens(text, start, end) {
-    const inside = position => (/[\p{L}\p{M}\p{N}_]$/u.test(text.slice(0,position)) && /^[\p{L}\p{M}\p{N}_]/u.test(text.slice(position))) || (/[\uD800-\uDBFF]$/.test(text.slice(0,position)) && /^[\uDC00-\uDFFF]/.test(text.slice(position)));
+    const inside = position => (/[\p{L}\p{M}\p{N}\p{Pc}\p{Cf}]$/u.test(text.slice(0,position)) && /^[\p{L}\p{M}\p{N}\p{Pc}\p{Cf}]/u.test(text.slice(position))) || (/[\uD800-\uDBFF]$/.test(text.slice(0,position)) && /^[\uDC00-\uDFFF]/.test(text.slice(position)));
     if (inside(start) || inside(end)) fail('Selection cuts through a word. Select complete words; no changes made.');
   }
   function plainCorrect(root, options) {
@@ -64,6 +64,16 @@ if (!globalThis.__localCorrect) {
       notify(root, 'insertReplacementText');
     }
     return result;
+  }
+  function validateCapture(options,target,consume=false){
+    const captured=pending;
+    if(consume)pending=null;
+    const root=target.root,selection=root.ownerDocument.defaultView.getSelection();
+    if(!captured||captured.id!==options.operationId||captured.root!==root||captured.plain!==target.plain||
+       captured.before!==(target.plain?root.value:root.innerHTML)||
+       (target.plain&&(captured.start!==root.selectionStart||captured.end!==root.selectionEnd))||
+       (!target.plain&&(captured.anchorNode!==selection?.anchorNode||captured.anchorOffset!==selection?.anchorOffset||captured.focusNode!==selection?.focusNode||captured.focusOffset!==selection?.focusOffset)))
+      fail('The field or selection changed while LocalCorrect was loading. No changes made; try the shortcut again.');
   }
   function collect(root) {
     const selection = root.ownerDocument.defaultView.getSelection();
@@ -184,18 +194,26 @@ if (!globalThis.__localCorrect) {
         focusNode: selection?.focusNode, focusOffset: selection?.focusOffset};
       return pending.id;
     },
+    prepare(options){
+      const target=editable();
+      validateCapture(options,target);
+      let text;
+      if(target.plain){
+        const root=target.root,before=root.value;
+        if(before.length>1000000)fail('Field is too large.');
+        const start=root.selectionStart??0,end=root.selectionEnd??0;
+        const a=start===end?0:start,b=start===end?before.length:end;
+        requireWholeTokens(before,a,b);text=before.slice(a,b);
+      }else text=collect(target.root).text;
+      if(text.length>20000)fail('Text exceeds 20,000 UTF-16 code units. Select a smaller passage.');
+      return{operationId:options.operationId,text};
+    },
+    cancel(operationId){if(pending?.id===operationId)pending=null;},
     run(dictionaries, options) {
       if (options.action === 'undo') return undo();
       const target = editable();
       if (options.operationId !== undefined) {
-        const captured = pending;
-        pending = null;
-        const root = target.root, selection = root.ownerDocument.defaultView.getSelection();
-        if (!captured || captured.id !== options.operationId || captured.root !== root || captured.plain !== target.plain ||
-            captured.before !== (target.plain ? root.value : root.innerHTML) ||
-            (target.plain && (captured.start !== root.selectionStart || captured.end !== root.selectionEnd)) ||
-            (!target.plain && (captured.anchorNode !== selection?.anchorNode || captured.anchorOffset !== selection?.anchorOffset || captured.focusNode !== selection?.focusNode || captured.focusOffset !== selection?.focusOffset)))
-          fail('The field or selection changed while LocalCorrect was loading. No changes made; try the shortcut again.');
+        validateCapture(options,target,true);
       }
       if (!corrector) corrector = createCorrector(dictionaries);
       const result = target.plain ? plainCorrect(target.root, options) : richCorrect(target.root, options);

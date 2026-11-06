@@ -18,7 +18,7 @@ test('lexical inventory fails closed on unordered or repeated entries', () => {
     writeFileSync(join(dir, 'package.json'), '{"type":"module"}');
     mkdirSync(join(dir, 'lexicons'));
     cpSync(new URL('../packages/core/src/index.js', import.meta.url), join(dir, 'index.js'));
-    for (const name of ['typos.js', 'candidate-lookup.js', 'candidates.js', 'protect-vocabulary.js', 'ambiguity-lookup.js', 'ambiguity-data.js', 'inflection-data.js'])
+    for (const name of ['typos.js', 'candidate-lookup.js', 'candidates.js', 'protect-vocabulary.js', 'ambiguity-lookup.js', 'ambiguity-data.js', 'inflection-data.js','context-encoder-data.js','context-policy.js','context-model.js','context-score.js','context-encode.js'])
       cpSync(new URL(`../packages/core/src/${name}`, import.meta.url), join(dir, name));
     writeFileSync(join(dir, 'lexicons/de.js'), 'export default "";');
     const firstEnd = enLexicon.indexOf('\n'), secondEnd = enLexicon.indexOf('\n', firstEnd + 1);

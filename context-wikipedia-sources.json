@@ -1,0 +1,172 @@
+{
+  "schema_version": 2,
+  "source": "lang-uk/WikiEdits-MultiGEC",
+  "revision": "e97c87e8caa49c12999cdf498252406a2115eae2",
+  "repository": "https://huggingface.co/datasets/lang-uk/WikiEdits-MultiGEC",
+  "source_tree": "https://huggingface.co/api/datasets/lang-uk/WikiEdits-MultiGEC/tree/e97c87e8caa49c12999cdf498252406a2115eae2?recursive=true&expand=true",
+  "downloads": [
+    {
+      "file": "wikiedits_multi_gec.parquet",
+      "bytes": 18462282,
+      "sha256": "eddfa760c48d4c248709a6e7e842eb87d1fee426956c50baf4c56912be10029b",
+      "url": "https://huggingface.co/datasets/lang-uk/WikiEdits-MultiGEC/resolve/e97c87e8caa49c12999cdf498252406a2115eae2/wikiedits_multi_gec.parquet"
+    },
+    {
+      "file": "wikiedits_multi_gec_metadata.parquet",
+      "bytes": 58780548,
+      "sha256": "632ef0fc3663c69e70b4969212f8c615cbb6454fecef31f773c67e9ebeda46ee",
+      "url": "https://huggingface.co/datasets/lang-uk/WikiEdits-MultiGEC/resolve/e97c87e8caa49c12999cdf498252406a2115eae2/wikiedits_multi_gec_metadata.parquet"
+    },
+    {
+      "file": "README.md",
+      "bytes": 4494,
+      "sha256": "d85ae81d661e644f86ab3df73318a58c400dae558ce0f31cf69e59679b119eae",
+      "url": "https://huggingface.co/datasets/lang-uk/WikiEdits-MultiGEC/resolve/e97c87e8caa49c12999cdf498252406a2115eae2/README.md"
+    }
+  ],
+  "licenses": [
+    {
+      "component": "publisher dataset card",
+      "license": "MIT",
+      "evidence": "Pinned README front matter declares license: mit. No standalone license file or copyright notice is supplied in the pinned dataset tree. Preserve this claim and dataset attribution without treating it as removal of underlying Wikipedia terms."
+    },
+    {
+      "component": "underlying English Wikipedia article text",
+      "license": "CC-BY-SA-4.0",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "evidence": "Wikimedia Terms of Use section 7 requires CC BY-SA 4.0 for contributed text and allows article URL attribution; per-article imports, quotations or other notices can have additional terms.",
+      "terms": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use/en#7._Licensing_of_Content",
+      "attribution": "English Wikipedia contributors, attributed by original article, revision-diff and history URLs in the private provenance file. No article text is published by this preparation script."
+    }
+  ],
+  "citation": "Roman Kovalchuk, Mariana Romanyshyn, Petro Ivaniuk. 2025. Introducing OmniGEC: A Silver Multilingual Dataset for Grammatical Error Correction. UNLP 2025, pages 162-178. https://aclanthology.org/2025.unlp-1.17/",
+  "quality_limits": "English rows are human Wikipedia revisions, not individually verified grammar corrections. They contain factual updates, names and style rewrites. Conservative mechanical filters reduce these risks but cannot certify semantic equivalence or model safety.",
+  "publication": "Only the preparation source and attribution/hash manifest are intended for publication. Raw/derived learner and Wikipedia text remains in private work directories pending separate review. No private user text or project quality fixture is read.",
+  "requirements": {
+    "python_package": "pyarrow==26.0.1",
+    "installation": "Official PyPI binary wheel only. No AUR, model execution or external text submission."
+  },
+  "local_inputs": [
+    {
+      "file": "packages/core/src/lexicons/en.js",
+      "sha256": "fd9f4bc914dc9a45a9ab13f8aa198f6f042a48cf4d3ce3d0f80c159f16a7f331",
+      "purpose": "Public spelling inventory, used only to reject real-word semantic substitutions; original and lowercased entries protect names."
+    },
+    {
+      "file": "packages/core/dictionaries/en.txt",
+      "sha256": "d2d35a71b7d59ca91f9bdd49cc5406ac85084174d9069b2e9854e4aea357aa5c",
+      "purpose": "Public frequency inventory, targets require frequency >=1000. Every attested source word is protected from lexical substitution except explicit agreement families."
+    }
+  ],
+  "immutable_base": {
+    "train": {
+      "file": "train.jsonl",
+      "rows": 19024,
+      "sha256": "bb1d70636cbd5bba1a8416be774469bfec5ecbb4166ab7ae04ef8dc6b0cb8fab"
+    },
+    "calibration": {
+      "file": "calibration.jsonl",
+      "rows": 2190,
+      "sha256": "4239428565c60d77fc6125145b8b36587bb95294913c3a6486a602aa554ba7e1"
+    },
+    "test": {
+      "file": "test.jsonl",
+      "rows": 3189,
+      "sha256": "a72f9ecc662da2b3fc1f42ac9c7c4be4bc89d729721752d84a5beeb4d4f1aa6d"
+    }
+  },
+  "selection": {
+    "language": "english",
+    "join": "Main and metadata parquet rows have unique global index values; join one-to-one on index and verify matching language.",
+    "units": "Original whole paragraphs. Never rewrite targets or extract a selected edit from a rejected paragraph.",
+    "article_identity": "en.wikipedia.org curid query parameter, so revisions and renamed titles of one article stay together.",
+    "split": "int(SHA256('localcorrect-context-v1\\0' + document_id)[:8],16) modulo 100; 0..79 train, 80..89 calibration, 90..99 test.",
+    "text_normalization": "Unicode NFKC then casefold then retain only Unicode alphanumeric characters; duplicate detection only, never model text normalization.",
+    "agreement_families": [
+      [
+        "am",
+        "is",
+        "are"
+      ],
+      [
+        "was",
+        "were"
+      ],
+      [
+        "has",
+        "have"
+      ],
+      [
+        "do",
+        "does"
+      ]
+    ],
+    "rules": [
+      "Original and corrected strings are nonempty, at most 20000 UTF16 units, and have exactly identical numeric-string sequences.",
+      "Every token diff hunk is one ASCII Latin word replaced with one ASCII Latin word; Levenshtein distance <=2 or one explicit same-tense agreement family. No punctuation, insertion, deletion or multiword rewrite.",
+      "Applying all replacements to the exact original spans must reproduce the corrected string byte-for-byte; no concealed whitespace edits.",
+      "Edited words must both be lowercase. Reject changed capitalization, proper-name-like tokens and diacritic/foreign-script changes.",
+      "Reject edits touching words present in a source or target Wikipedia link, quoted text, number-word vocabulary, or negation vocabulary.",
+      "Target must have public English frequency >=1000. A known original word can change only within one explicit agreement family. Unknown original words shorter than 3 characters are rejected.",
+      "Reject a Wikipedia pair if either normalized string appears in any immutable original split. Never remove or reassign an original row.",
+      "Reject all Wikipedia rows involved in cross-split normalized input/expected collisions, including input-to-expected overlap. Reject conflicting normalized targets for one normalized input, then collapse repeated normalized pairs within their assigned split."
+    ],
+    "limits": "No threshold/quality-gold tuning, automatic filter widening, large WikEd fallback acquisition or claim of verified grammar quality. Report low yield for a new scope decision."
+  },
+  "inverse_noise": {
+    "enabled": true,
+    "families": [
+      [
+        "a",
+        "an"
+      ],
+      [
+        "is",
+        "are"
+      ],
+      [
+        "was",
+        "were"
+      ],
+      [
+        "has",
+        "have"
+      ],
+      [
+        "does",
+        "do"
+      ],
+      [
+        "from",
+        "form"
+      ],
+      [
+        "their",
+        "there"
+      ],
+      [
+        "then",
+        "than"
+      ],
+      [
+        "where",
+        "were"
+      ],
+      [
+        "to",
+        "too"
+      ]
+    ],
+    "max_total": 30000,
+    "max_per_reference": 6,
+    "max_per_direction": 4000,
+    "split": "TRAIN ONLY. An article must hash to train using the unchanged original article split function. No synthetic calibration/test rows.",
+    "reference": "Exact whole publisher correction field, weakly clean and explicitly not verified error-free. No reference sentences are extracted or rewritten. Real-pair strict filters remain unchanged.",
+    "screen": "Reject quotes including apostrophes, backticks, URLs/email-like strings, markup/code delimiters, brackets/parentheses, digits, number words, negation, multiline/edge whitespace, incomplete or short fragments. Full-stop-delimited sentences must begin with uppercase ASCII and contain 8..160 alphabetic tokens; references are at most 20000 UTF16 units. No exclamation/question/semicolon/colon/ellipsis/dash punctuation.",
+    "mutation": "One lowercase whole-token replacement in one fixed two-word family. Applying its inverse to exact input spans must restore the reference byte-for-byte, and token alignment must contain exactly one one-word REPLACE hunk.",
+    "selection": "Sort candidates by SHA256 of localcorrect-inverse-v1 plus NUL plus candidate ID, then candidate ID. Candidate ID records article/index, exact reference character offset and corruption-to-target direction. Apply fixed caps globally; no random sampling or quality-gold tuning.",
+    "deduplication": "Exclude input or target normalized overlap with every immutable base split. Exclude corrected-reference or corrupted-input overlap with any opposite-split English Wiki input or correction, including rows rejected by the strict real-pair filter. Reject ambiguous normalized input labels before selection, preserve real pairs, collapse repeated normalized pairs, and keep article IDs split-disjoint.",
+    "quality_limits": "Synthetic inverse supervision uses weakly clean publisher corrections. References can retain source errors and mutations can occasionally be valid. No certified clean-text or human-gold claim, and no synthetic evaluation additions.",
+    "publication": "Private work output only. Per-row private provenance includes original article/history/diff URLs, source index, reference/input SHA256 and exact mutation span. Only source code and this manifest may be public."
+  }
+}

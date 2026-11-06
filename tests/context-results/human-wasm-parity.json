@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "scope": "Exact saved CPU decisions versus shipping single-thread CPU/WASM correction. Numerical/pipeline parity, not independent semantic annotation.",
+  "scoreFile": "v2-first-human-test-scores.json",
+  "scoreSha256": "e88259bed440683c87b3b30fda7a9e27666ed7a71a29df07a2e200868cb4fc56",
+  "model": {
+    "modelSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59",
+    "modelBytes": 47246299,
+    "metadataSha256": "bf1edb08d9d1ec4bc687b20d90326d30f4b7e3d857df26779adf503ff6ed820b"
+  },
+  "policySha256": "808e18d8eea3afb329597b0eefc2966a4308936e93ce97eb0cde0c1db8db5d63",
+  "documents": 3200,
+  "neuralEdits": 21
+}

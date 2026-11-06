@@ -1,0 +1,1105 @@
+{
+  "format": "localcorrect-context-encoder-v1",
+  "seed": 81173,
+  "steps": 3200,
+  "editSteps": 3000,
+  "keepSteps": 200,
+  "batchSize": 8,
+  "threads": 2,
+  "encoderLearningRate": 3e-05,
+  "headLearningRate": 0.001,
+  "languageBalancedBatches": true,
+  "sampledChunksByLanguage": {
+    "de": 12800,
+    "en": 12800
+  },
+  "warmupSteps": 100,
+  "linearLearningRateDecay": true,
+  "trainDataSha256": {
+    "0:train-v2.jsonl": "d2e0710c44caddb91671366b4b913b8ed06d692d3b1b997e708ca5c8734bcbb8"
+  },
+  "actionModelSha256": "56747b317d6c259dfacd2ca6ad7d32579a762f424f9340a1cc39b783a7aa9309",
+  "pretrainedSafetensorsSha256": "e291f5d44db7f17d3b75755feb02febbf4f3f2b137e9ac49ebb1fb00497dbda2",
+  "pretrainedFilesSha256": {
+    "config.json": "788cc55ab1a0a997ae098e9073bab0bdae66bb0f6394ba890be534fa2bdfdb69",
+    "model.safetensors": "e291f5d44db7f17d3b75755feb02febbf4f3f2b137e9ac49ebb1fb00497dbda2",
+    "vocab.txt": "ea25de68447a427f0629e180a85bfbd0a614e2255fd80e3dea9b54f9c53b80c6",
+    "manifest.json": "c5d4987ec1b7c384dad55d3035373f588ce0da596c19aca96c6ee995bb934560"
+  },
+  "pretrainedRepository": "dbmdz/bert-mini-historic-multilingual-cased",
+  "pretrainedRevision": "4a0964c747fd6c06a20e8c0ca32bc27a23a6ad34",
+  "trainingScriptsSha256": {
+    "train-context-encoder.py": "a5c1661c47273b4b507e5910245cf8bfb301553904292a6a23928639fa60e714",
+    "train-context.py": "1ddaf7d70775e062cd03c4a1113825c91802dd0f097f33b040d2218ad57079c3"
+  },
+  "torchVersion": "2.15.0+cpu",
+  "vocabSha256": "ea25de68447a427f0629e180a85bfbd0a614e2255fd80e3dea9b54f9c53b80c6",
+  "trainRows": 21328,
+  "trainDocumentCount": 1674,
+  "examples": {
+    "originalKeep": 125836,
+    "enKeepOnlyChunks": 10799,
+    "enPositiveWords": 2594,
+    "enKeepWords": 66353,
+    "correctedIdentityKeep": 170950,
+    "positive": 10014,
+    "maskedUnsupportedOrUnmined": 35802,
+    "enPositiveChunks": 2546,
+    "dePositiveChunks": 5866,
+    "dePositiveWords": 7420,
+    "deKeepWords": 230433,
+    "deKeepOnlyChunks": 29960
+  },
+  "chunks": 49171,
+  "positiveChunks": 8412,
+  "keepOnlyChunks": 40759,
+  "actionCountIncludingKeep": 1201,
+  "actionsByLanguage": {
+    "de": 1128,
+    "en": 72
+  },
+  "trainingSeconds": 597.5032433279848,
+  "peakTrainingRssKiB": 986644,
+  "lossHistory": [
+    {
+      "step": 1,
+      "phase": "edit",
+      "crossEntropy": 0.8073340058326721,
+      "elapsedSeconds": 0.29075380897847936,
+      "peakRssKiB": 842724,
+      "learningRateMultiplier": 0.01
+    },
+    {
+      "step": 25,
+      "phase": "edit",
+      "crossEntropy": 0.8761026263237,
+      "elapsedSeconds": 6.704883101978339,
+      "peakRssKiB": 910984,
+      "learningRateMultiplier": 0.25
+    },
+    {
+      "step": 50,
+      "phase": "edit",
+      "crossEntropy": 0.5382057428359985,
+      "elapsedSeconds": 11.755641644995194,
+      "peakRssKiB": 935180,
+      "learningRateMultiplier": 0.5
+    },
+    {
+      "step": 75,
+      "phase": "edit",
+      "crossEntropy": 0.4889066517353058,
+      "elapsedSeconds": 16.642068746994482,
+      "peakRssKiB": 943760,
+      "learningRateMultiplier": 0.75
+    },
+    {
+      "step": 100,
+      "phase": "edit",
+      "crossEntropy": 0.6111831068992615,
+      "elapsedSeconds": 21.645451992983,
+      "peakRssKiB": 946808,
+      "learningRateMultiplier": 1.0
+    },
+    {
+      "step": 125,
+      "phase": "edit",
+      "crossEntropy": 0.42835187911987305,
+      "elapsedSeconds": 27.130378157977248,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.9930300096805421
+    },
+    {
+      "step": 150,
+      "phase": "edit",
+      "crossEntropy": 0.412767231464386,
+      "elapsedSeconds": 31.970129341003485,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.9857696030977735
+    },
+    {
+      "step": 175,
+      "phase": "edit",
+      "crossEntropy": 0.17885428667068481,
+      "elapsedSeconds": 36.7478187319939,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.9785091965150048
+    },
+    {
+      "step": 200,
+      "phase": "edit",
+      "crossEntropy": 0.4978121519088745,
+      "elapsedSeconds": 41.322054793999996,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.9712487899322362
+    },
+    {
+      "step": 225,
+      "phase": "edit",
+      "crossEntropy": 0.37084540724754333,
+      "elapsedSeconds": 45.99455303300056,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.9639883833494676
+    },
+    {
+      "step": 250,
+      "phase": "edit",
+      "crossEntropy": 0.25445643067359924,
+      "elapsedSeconds": 50.895182009000564,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.956727976766699
+    },
+    {
+      "step": 275,
+      "phase": "edit",
+      "crossEntropy": 0.28178900480270386,
+      "elapsedSeconds": 55.49997299097595,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.9494675701839304
+    },
+    {
+      "step": 300,
+      "phase": "edit",
+      "crossEntropy": 0.3344675302505493,
+      "elapsedSeconds": 60.18908376098261,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.9422071636011616
+    },
+    {
+      "step": 325,
+      "phase": "edit",
+      "crossEntropy": 0.2875289022922516,
+      "elapsedSeconds": 64.5413572230027,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.934946757018393
+    },
+    {
+      "step": 350,
+      "phase": "edit",
+      "crossEntropy": 0.3775024116039276,
+      "elapsedSeconds": 69.15148024700466,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.9276863504356244
+    },
+    {
+      "step": 375,
+      "phase": "edit",
+      "crossEntropy": 0.3518992066383362,
+      "elapsedSeconds": 73.88064535197918,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.9204259438528558
+    },
+    {
+      "step": 400,
+      "phase": "edit",
+      "crossEntropy": 0.43786123394966125,
+      "elapsedSeconds": 78.43565145900357,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.9131655372700871
+    },
+    {
+      "step": 425,
+      "phase": "edit",
+      "crossEntropy": 0.36755916476249695,
+      "elapsedSeconds": 82.71627226399141,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.9059051306873185
+    },
+    {
+      "step": 450,
+      "phase": "edit",
+      "crossEntropy": 0.2334292232990265,
+      "elapsedSeconds": 87.194429028983,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.8986447241045499
+    },
+    {
+      "step": 475,
+      "phase": "edit",
+      "crossEntropy": 0.34896743297576904,
+      "elapsedSeconds": 91.99445965199266,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.8913843175217813
+    },
+    {
+      "step": 500,
+      "phase": "edit",
+      "crossEntropy": 0.2504745423793793,
+      "elapsedSeconds": 96.52552432299126,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.8841239109390125
+    },
+    {
+      "step": 525,
+      "phase": "edit",
+      "crossEntropy": 0.4379246234893799,
+      "elapsedSeconds": 100.91181222198065,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.8768635043562439
+    },
+    {
+      "step": 550,
+      "phase": "edit",
+      "crossEntropy": 0.39275118708610535,
+      "elapsedSeconds": 105.6016344849777,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.8696030977734753
+    },
+    {
+      "step": 575,
+      "phase": "edit",
+      "crossEntropy": 0.47786691784858704,
+      "elapsedSeconds": 110.24313394998899,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.8623426911907066
+    },
+    {
+      "step": 600,
+      "phase": "edit",
+      "crossEntropy": 0.33435994386672974,
+      "elapsedSeconds": 114.87116152298404,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.855082284607938
+    },
+    {
+      "step": 625,
+      "phase": "edit",
+      "crossEntropy": 0.23311536014080048,
+      "elapsedSeconds": 119.13502792897634,
+      "peakRssKiB": 952228,
+      "learningRateMultiplier": 0.8478218780251694
+    },
+    {
+      "step": 650,
+      "phase": "edit",
+      "crossEntropy": 0.3048778176307678,
+      "elapsedSeconds": 123.70311655299156,
+      "peakRssKiB": 956772,
+      "learningRateMultiplier": 0.8405614714424008
+    },
+    {
+      "step": 675,
+      "phase": "edit",
+      "crossEntropy": 0.23632287979125977,
+      "elapsedSeconds": 128.17536919997656,
+      "peakRssKiB": 956772,
+      "learningRateMultiplier": 0.8333010648596322
+    },
+    {
+      "step": 700,
+      "phase": "edit",
+      "crossEntropy": 0.322834312915802,
+      "elapsedSeconds": 132.57226761698257,
+      "peakRssKiB": 956772,
+      "learningRateMultiplier": 0.8260406582768635
+    },
+    {
+      "step": 725,
+      "phase": "edit",
+      "crossEntropy": 0.3937355577945709,
+      "elapsedSeconds": 137.16105716998572,
+      "peakRssKiB": 956772,
+      "learningRateMultiplier": 0.8187802516940949
+    },
+    {
+      "step": 750,
+      "phase": "edit",
+      "crossEntropy": 0.19619633257389069,
+      "elapsedSeconds": 141.79946321298485,
+      "peakRssKiB": 956772,
+      "learningRateMultiplier": 0.8115198451113262
+    },
+    {
+      "step": 775,
+      "phase": "edit",
+      "crossEntropy": 0.35196322202682495,
+      "elapsedSeconds": 145.97718241400435,
+      "peakRssKiB": 956772,
+      "learningRateMultiplier": 0.8042594385285575
+    },
+    {
+      "step": 800,
+      "phase": "edit",
+      "crossEntropy": 0.2848203778266907,
+      "elapsedSeconds": 150.55280646699248,
+      "peakRssKiB": 956772,
+      "learningRateMultiplier": 0.7969990319457889
+    },
+    {
+      "step": 825,
+      "phase": "edit",
+      "crossEntropy": 0.7760125398635864,
+      "elapsedSeconds": 155.13119318700046,
+      "peakRssKiB": 956772,
+      "learningRateMultiplier": 0.7897386253630203
+    },
+    {
+      "step": 850,
+      "phase": "edit",
+      "crossEntropy": 0.14490456879138947,
+      "elapsedSeconds": 159.87309075298253,
+      "peakRssKiB": 956772,
+      "learningRateMultiplier": 0.7824782187802517
+    },
+    {
+      "step": 875,
+      "phase": "edit",
+      "crossEntropy": 0.20657643675804138,
+      "elapsedSeconds": 164.28277169898502,
+      "peakRssKiB": 956772,
+      "learningRateMultiplier": 0.7752178121974831
+    },
+    {
+      "step": 900,
+      "phase": "edit",
+      "crossEntropy": 0.08945272862911224,
+      "elapsedSeconds": 168.98554557698662,
+      "peakRssKiB": 956772,
+      "learningRateMultiplier": 0.7679574056147145
+    },
+    {
+      "step": 925,
+      "phase": "edit",
+      "crossEntropy": 0.14216452836990356,
+      "elapsedSeconds": 173.79579159300192,
+      "peakRssKiB": 956772,
+      "learningRateMultiplier": 0.7606969990319458
+    },
+    {
+      "step": 950,
+      "phase": "edit",
+      "crossEntropy": 0.33232665061950684,
+      "elapsedSeconds": 178.28433118297835,
+      "peakRssKiB": 956772,
+      "learningRateMultiplier": 0.7534365924491772
+    },
+    {
+      "step": 975,
+      "phase": "edit",
+      "crossEntropy": 0.1440483182668686,
+      "elapsedSeconds": 183.02364100699197,
+      "peakRssKiB": 956772,
+      "learningRateMultiplier": 0.7461761858664084
+    },
+    {
+      "step": 1000,
+      "phase": "edit",
+      "crossEntropy": 0.16430190205574036,
+      "elapsedSeconds": 187.75741147299414,
+      "peakRssKiB": 956772,
+      "learningRateMultiplier": 0.7389157792836398
+    },
+    {
+      "step": 1025,
+      "phase": "edit",
+      "crossEntropy": 0.7679341435432434,
+      "elapsedSeconds": 192.17371929599904,
+      "peakRssKiB": 956772,
+      "learningRateMultiplier": 0.7316553727008712
+    },
+    {
+      "step": 1050,
+      "phase": "edit",
+      "crossEntropy": 0.15822412073612213,
+      "elapsedSeconds": 196.79879317700397,
+      "peakRssKiB": 966248,
+      "learningRateMultiplier": 0.7243949661181026
+    },
+    {
+      "step": 1075,
+      "phase": "edit",
+      "crossEntropy": 0.0870734453201294,
+      "elapsedSeconds": 201.26917562799645,
+      "peakRssKiB": 966248,
+      "learningRateMultiplier": 0.717134559535334
+    },
+    {
+      "step": 1100,
+      "phase": "edit",
+      "crossEntropy": 0.2612445056438446,
+      "elapsedSeconds": 205.70198732899735,
+      "peakRssKiB": 966248,
+      "learningRateMultiplier": 0.7098741529525654
+    },
+    {
+      "step": 1125,
+      "phase": "edit",
+      "crossEntropy": 0.3331373929977417,
+      "elapsedSeconds": 210.5805275029852,
+      "peakRssKiB": 966248,
+      "learningRateMultiplier": 0.7026137463697967
+    },
+    {
+      "step": 1150,
+      "phase": "edit",
+      "crossEntropy": 0.24203890562057495,
+      "elapsedSeconds": 215.117853386997,
+      "peakRssKiB": 966248,
+      "learningRateMultiplier": 0.6953533397870281
+    },
+    {
+      "step": 1175,
+      "phase": "edit",
+      "crossEntropy": 0.10541915148496628,
+      "elapsedSeconds": 220.0253119090048,
+      "peakRssKiB": 966248,
+      "learningRateMultiplier": 0.6880929332042593
+    },
+    {
+      "step": 1200,
+      "phase": "edit",
+      "crossEntropy": 0.2495412677526474,
+      "elapsedSeconds": 224.43498348697904,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.6808325266214907
+    },
+    {
+      "step": 1225,
+      "phase": "edit",
+      "crossEntropy": 0.09497575461864471,
+      "elapsedSeconds": 228.93158465900342,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.6735721200387221
+    },
+    {
+      "step": 1250,
+      "phase": "edit",
+      "crossEntropy": 0.0707317590713501,
+      "elapsedSeconds": 233.652280039998,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.6663117134559535
+    },
+    {
+      "step": 1275,
+      "phase": "edit",
+      "crossEntropy": 0.37330925464630127,
+      "elapsedSeconds": 238.1532685009879,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.6590513068731849
+    },
+    {
+      "step": 1300,
+      "phase": "edit",
+      "crossEntropy": 0.16334618628025055,
+      "elapsedSeconds": 243.33989974099677,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.6517909002904162
+    },
+    {
+      "step": 1325,
+      "phase": "edit",
+      "crossEntropy": 0.140437513589859,
+      "elapsedSeconds": 247.9439083269972,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.6445304937076476
+    },
+    {
+      "step": 1350,
+      "phase": "edit",
+      "crossEntropy": 0.2980645000934601,
+      "elapsedSeconds": 252.45579346999875,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.6372700871248789
+    },
+    {
+      "step": 1375,
+      "phase": "edit",
+      "crossEntropy": 0.21253779530525208,
+      "elapsedSeconds": 257.21115679998184,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.6300096805421103
+    },
+    {
+      "step": 1400,
+      "phase": "edit",
+      "crossEntropy": 0.06139136478304863,
+      "elapsedSeconds": 261.6567878299975,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.6227492739593417
+    },
+    {
+      "step": 1425,
+      "phase": "edit",
+      "crossEntropy": 0.33196988701820374,
+      "elapsedSeconds": 266.56546233498375,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.615488867376573
+    },
+    {
+      "step": 1450,
+      "phase": "edit",
+      "crossEntropy": 0.2638421058654785,
+      "elapsedSeconds": 271.08653727397905,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.6082284607938044
+    },
+    {
+      "step": 1475,
+      "phase": "edit",
+      "crossEntropy": 0.24408985674381256,
+      "elapsedSeconds": 276.34700091698323,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.6009680542110358
+    },
+    {
+      "step": 1500,
+      "phase": "edit",
+      "crossEntropy": 0.1578281670808792,
+      "elapsedSeconds": 280.976378552994,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.5937076476282672
+    },
+    {
+      "step": 1525,
+      "phase": "edit",
+      "crossEntropy": 0.09135760366916656,
+      "elapsedSeconds": 285.5479991119937,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.5864472410454985
+    },
+    {
+      "step": 1550,
+      "phase": "edit",
+      "crossEntropy": 0.19535452127456665,
+      "elapsedSeconds": 290.63919151597656,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.5791868344627299
+    },
+    {
+      "step": 1575,
+      "phase": "edit",
+      "crossEntropy": 0.05756957083940506,
+      "elapsedSeconds": 295.4488867049804,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.5719264278799612
+    },
+    {
+      "step": 1600,
+      "phase": "edit",
+      "crossEntropy": 0.022282684221863747,
+      "elapsedSeconds": 300.0237845829979,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.5646660212971926
+    },
+    {
+      "step": 1625,
+      "phase": "edit",
+      "crossEntropy": 0.11612912267446518,
+      "elapsedSeconds": 304.45413155900314,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.557405614714424
+    },
+    {
+      "step": 1650,
+      "phase": "edit",
+      "crossEntropy": 0.20137761533260345,
+      "elapsedSeconds": 308.9535281829885,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.5501452081316553
+    },
+    {
+      "step": 1675,
+      "phase": "edit",
+      "crossEntropy": 0.342496782541275,
+      "elapsedSeconds": 313.4617448109784,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.5428848015488867
+    },
+    {
+      "step": 1700,
+      "phase": "edit",
+      "crossEntropy": 0.08809331804513931,
+      "elapsedSeconds": 317.87922147798236,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.5356243949661181
+    },
+    {
+      "step": 1725,
+      "phase": "edit",
+      "crossEntropy": 0.33182021975517273,
+      "elapsedSeconds": 322.2430975610041,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.5283639883833494
+    },
+    {
+      "step": 1750,
+      "phase": "edit",
+      "crossEntropy": 0.11000807583332062,
+      "elapsedSeconds": 327.05772619799245,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.5211035818005808
+    },
+    {
+      "step": 1775,
+      "phase": "edit",
+      "crossEntropy": 0.14116689562797546,
+      "elapsedSeconds": 331.63396651798394,
+      "peakRssKiB": 969164,
+      "learningRateMultiplier": 0.5138431752178121
+    },
+    {
+      "step": 1800,
+      "phase": "edit",
+      "crossEntropy": 0.3177669942378998,
+      "elapsedSeconds": 336.7271734259848,
+      "peakRssKiB": 986564,
+      "learningRateMultiplier": 0.5065827686350435
+    },
+    {
+      "step": 1825,
+      "phase": "edit",
+      "crossEntropy": 0.08842774480581284,
+      "elapsedSeconds": 341.30504134399234,
+      "peakRssKiB": 986564,
+      "learningRateMultiplier": 0.49932236205227487
+    },
+    {
+      "step": 1850,
+      "phase": "edit",
+      "crossEntropy": 0.11856643855571747,
+      "elapsedSeconds": 346.12110435499926,
+      "peakRssKiB": 986564,
+      "learningRateMultiplier": 0.49206195546950626
+    },
+    {
+      "step": 1875,
+      "phase": "edit",
+      "crossEntropy": 0.05378617346286774,
+      "elapsedSeconds": 350.9538186400023,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.48480154888673765
+    },
+    {
+      "step": 1900,
+      "phase": "edit",
+      "crossEntropy": 0.33776533603668213,
+      "elapsedSeconds": 355.8146185609803,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.47754114230396894
+    },
+    {
+      "step": 1925,
+      "phase": "edit",
+      "crossEntropy": 0.18514598906040192,
+      "elapsedSeconds": 360.4617457729764,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.4702807357212003
+    },
+    {
+      "step": 1950,
+      "phase": "edit",
+      "crossEntropy": 0.13068202137947083,
+      "elapsedSeconds": 365.5933208289789,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.4630203291384317
+    },
+    {
+      "step": 1975,
+      "phase": "edit",
+      "crossEntropy": 0.07335849851369858,
+      "elapsedSeconds": 371.0772573419963,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.4557599225556631
+    },
+    {
+      "step": 2000,
+      "phase": "edit",
+      "crossEntropy": 0.3208572566509247,
+      "elapsedSeconds": 376.18817643797956,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.4484995159728944
+    },
+    {
+      "step": 2025,
+      "phase": "edit",
+      "crossEntropy": 0.07061047852039337,
+      "elapsedSeconds": 381.2103042079834,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.4412391093901258
+    },
+    {
+      "step": 2050,
+      "phase": "edit",
+      "crossEntropy": 0.2119583934545517,
+      "elapsedSeconds": 385.8892207699828,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.4339787028073572
+    },
+    {
+      "step": 2075,
+      "phase": "edit",
+      "crossEntropy": 0.037441935390233994,
+      "elapsedSeconds": 390.480472086987,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.42671829622458857
+    },
+    {
+      "step": 2100,
+      "phase": "edit",
+      "crossEntropy": 0.14847055077552795,
+      "elapsedSeconds": 395.07142139799544,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.41945788964181985
+    },
+    {
+      "step": 2125,
+      "phase": "edit",
+      "crossEntropy": 0.06967445462942123,
+      "elapsedSeconds": 399.87793230998795,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.41219748305905124
+    },
+    {
+      "step": 2150,
+      "phase": "edit",
+      "crossEntropy": 0.38747191429138184,
+      "elapsedSeconds": 404.2985087639827,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.40493707647628263
+    },
+    {
+      "step": 2175,
+      "phase": "edit",
+      "crossEntropy": 0.17904268205165863,
+      "elapsedSeconds": 408.8821012910048,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.397676669893514
+    },
+    {
+      "step": 2200,
+      "phase": "edit",
+      "crossEntropy": 0.10448780655860901,
+      "elapsedSeconds": 413.71829500599415,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.3904162633107453
+    },
+    {
+      "step": 2225,
+      "phase": "edit",
+      "crossEntropy": 0.1182737797498703,
+      "elapsedSeconds": 418.31837418998475,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.3831558567279767
+    },
+    {
+      "step": 2250,
+      "phase": "edit",
+      "crossEntropy": 0.15644927322864532,
+      "elapsedSeconds": 422.9729612059891,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.3758954501452081
+    },
+    {
+      "step": 2275,
+      "phase": "edit",
+      "crossEntropy": 0.11357098817825317,
+      "elapsedSeconds": 427.2036102239799,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.3686350435624395
+    },
+    {
+      "step": 2300,
+      "phase": "edit",
+      "crossEntropy": 0.09090110659599304,
+      "elapsedSeconds": 431.9875028329843,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.36137463697967087
+    },
+    {
+      "step": 2325,
+      "phase": "edit",
+      "crossEntropy": 0.08369438350200653,
+      "elapsedSeconds": 436.49393579599564,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.35411423039690215
+    },
+    {
+      "step": 2350,
+      "phase": "edit",
+      "crossEntropy": 0.09518162906169891,
+      "elapsedSeconds": 440.97976267698687,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.34685382381413354
+    },
+    {
+      "step": 2375,
+      "phase": "edit",
+      "crossEntropy": 0.1031494215130806,
+      "elapsedSeconds": 445.7120424140012,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.33959341723136494
+    },
+    {
+      "step": 2400,
+      "phase": "edit",
+      "crossEntropy": 0.5929226875305176,
+      "elapsedSeconds": 450.3881917389808,
+      "peakRssKiB": 986568,
+      "learningRateMultiplier": 0.3323330106485963
+    },
+    {
+      "step": 2425,
+      "phase": "edit",
+      "crossEntropy": 0.377389132976532,
+      "elapsedSeconds": 455.214061947976,
+      "peakRssKiB": 986588,
+      "learningRateMultiplier": 0.3250726040658277
+    },
+    {
+      "step": 2450,
+      "phase": "edit",
+      "crossEntropy": 0.2391110509634018,
+      "elapsedSeconds": 459.6374498149962,
+      "peakRssKiB": 986588,
+      "learningRateMultiplier": 0.3178121974830591
+    },
+    {
+      "step": 2475,
+      "phase": "edit",
+      "crossEntropy": 0.23279689252376556,
+      "elapsedSeconds": 464.1836074949824,
+      "peakRssKiB": 986588,
+      "learningRateMultiplier": 0.3105517909002904
+    },
+    {
+      "step": 2500,
+      "phase": "edit",
+      "crossEntropy": 0.36498337984085083,
+      "elapsedSeconds": 468.64558355198824,
+      "peakRssKiB": 986588,
+      "learningRateMultiplier": 0.3032913843175218
+    },
+    {
+      "step": 2525,
+      "phase": "edit",
+      "crossEntropy": 0.23864680528640747,
+      "elapsedSeconds": 473.22870331298327,
+      "peakRssKiB": 986588,
+      "learningRateMultiplier": 0.2960309777347532
+    },
+    {
+      "step": 2550,
+      "phase": "edit",
+      "crossEntropy": 0.1633710265159607,
+      "elapsedSeconds": 477.8611421409878,
+      "peakRssKiB": 986588,
+      "learningRateMultiplier": 0.28877057115198457
+    },
+    {
+      "step": 2575,
+      "phase": "edit",
+      "crossEntropy": 0.2616426944732666,
+      "elapsedSeconds": 482.63396977700177,
+      "peakRssKiB": 986588,
+      "learningRateMultiplier": 0.28151016456921596
+    },
+    {
+      "step": 2600,
+      "phase": "edit",
+      "crossEntropy": 0.21781694889068604,
+      "elapsedSeconds": 486.9641455039964,
+      "peakRssKiB": 986588,
+      "learningRateMultiplier": 0.27424975798644724
+    },
+    {
+      "step": 2625,
+      "phase": "edit",
+      "crossEntropy": 0.022358786314725876,
+      "elapsedSeconds": 491.1701599859807,
+      "peakRssKiB": 986588,
+      "learningRateMultiplier": 0.26698935140367863
+    },
+    {
+      "step": 2650,
+      "phase": "edit",
+      "crossEntropy": 0.39088356494903564,
+      "elapsedSeconds": 495.7902880019974,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.25972894482091
+    },
+    {
+      "step": 2675,
+      "phase": "edit",
+      "crossEntropy": 0.11029352247714996,
+      "elapsedSeconds": 500.6005971879931,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.2524685382381414
+    },
+    {
+      "step": 2700,
+      "phase": "edit",
+      "crossEntropy": 0.058101292699575424,
+      "elapsedSeconds": 505.2167491329892,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.2452081316553727
+    },
+    {
+      "step": 2725,
+      "phase": "edit",
+      "crossEntropy": 0.29588502645492554,
+      "elapsedSeconds": 509.79780936599127,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.2379477250726041
+    },
+    {
+      "step": 2750,
+      "phase": "edit",
+      "crossEntropy": 0.06968424469232559,
+      "elapsedSeconds": 514.1616704369953,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.23068731848983548
+    },
+    {
+      "step": 2775,
+      "phase": "edit",
+      "crossEntropy": 0.1375904083251953,
+      "elapsedSeconds": 518.6284237259824,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.22342691190706687
+    },
+    {
+      "step": 2800,
+      "phase": "edit",
+      "crossEntropy": 0.12055240571498871,
+      "elapsedSeconds": 523.5726090919925,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.21616650532429815
+    },
+    {
+      "step": 2825,
+      "phase": "edit",
+      "crossEntropy": 0.22917307913303375,
+      "elapsedSeconds": 529.3129421939957,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.20890609874152954
+    },
+    {
+      "step": 2850,
+      "phase": "edit",
+      "crossEntropy": 0.24433065950870514,
+      "elapsedSeconds": 534.047280261002,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.20164569215876094
+    },
+    {
+      "step": 2875,
+      "phase": "edit",
+      "crossEntropy": 0.0640610083937645,
+      "elapsedSeconds": 538.4544934099831,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.19438528557599233
+    },
+    {
+      "step": 2900,
+      "phase": "edit",
+      "crossEntropy": 0.146114319562912,
+      "elapsedSeconds": 542.8186990410031,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.1871248789932236
+    },
+    {
+      "step": 2925,
+      "phase": "edit",
+      "crossEntropy": 0.18707311153411865,
+      "elapsedSeconds": 547.2505454179773,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.179864472410455
+    },
+    {
+      "step": 2950,
+      "phase": "edit",
+      "crossEntropy": 0.21126216650009155,
+      "elapsedSeconds": 551.9050382249989,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.1726040658276864
+    },
+    {
+      "step": 2975,
+      "phase": "edit",
+      "crossEntropy": 0.17748798429965973,
+      "elapsedSeconds": 556.8391426089802,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.16534365924491778
+    },
+    {
+      "step": 3000,
+      "phase": "edit",
+      "crossEntropy": 0.09087827056646347,
+      "elapsedSeconds": 561.4575641539996,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.15808325266214907
+    },
+    {
+      "step": 3025,
+      "phase": "keep",
+      "crossEntropy": 0.041944168508052826,
+      "elapsedSeconds": 566.2264215229952,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.15082284607938046
+    },
+    {
+      "step": 3050,
+      "phase": "keep",
+      "crossEntropy": 0.08281029760837555,
+      "elapsedSeconds": 570.7854608579946,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.14356243949661185
+    },
+    {
+      "step": 3075,
+      "phase": "keep",
+      "crossEntropy": 0.023949405178427696,
+      "elapsedSeconds": 574.9712814509985,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.13630203291384324
+    },
+    {
+      "step": 3100,
+      "phase": "keep",
+      "crossEntropy": 0.005978181958198547,
+      "elapsedSeconds": 579.2122609939834,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.12904162633107452
+    },
+    {
+      "step": 3125,
+      "phase": "keep",
+      "crossEntropy": 0.014769159257411957,
+      "elapsedSeconds": 583.5393273619993,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.12178121974830591
+    },
+    {
+      "step": 3150,
+      "phase": "keep",
+      "crossEntropy": 0.072698213160038,
+      "elapsedSeconds": 588.2714796229848,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.1145208131655373
+    },
+    {
+      "step": 3175,
+      "phase": "keep",
+      "crossEntropy": 0.1101723462343216,
+      "elapsedSeconds": 592.8152378209925,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.1072604065827687
+    },
+    {
+      "step": 3200,
+      "phase": "keep",
+      "crossEntropy": 0.08121109753847122,
+      "elapsedSeconds": 597.351117468992,
+      "peakRssKiB": 986644,
+      "learningRateMultiplier": 0.1
+    }
+  ],
+  "calibrationOrTestUsed": false,
+  "thresholdCalibrated": false,
+  "smokeOnly": false,
+  "modelSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59",
+  "modelBytes": 47246299,
+  "checkpointSha256": "cc26b4564302e32bd397c17079c32c5981878480878acc63a684d6d059a454a2",
+  "paritySha256": "3b74425d2302d44f2a0a6b93bba677eb697c2f706131afe2eb1f187e1707980e",
+  "totalSeconds": 609.1772833669966
+}

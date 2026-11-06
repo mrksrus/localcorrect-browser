@@ -1,0 +1,7 @@
+LocalCorrect contextual edit tagger.
+LocalCorrect fine-tuned weight additions: CC BY-SA 4.0, LocalCorrect contributors, 2026.
+Base dbmdz/bert-mini-historic-multilingual-cased: MIT, copyright 2020 Open Source at the Bayerische Staatsbibliothek.
+Base license retained at ../licenses/bert-mini-LICENSE.
+Training sources: ErAConD (MIT), Falko (CC BY 3.0), MERLIN (CC BY-SA 4.0), English Wikipedia contributors via WikiEdits-MultiGEC (underlying CC BY-SA 4.0, publisher card MIT).
+Training corpora keep their original terms. No raw learner text is redistributed.
+See source/MODEL.md and THIRD_PARTY.md in the extension, or source/browser/MODEL.md in the native package for authors, modifications, recipes, provenance and limitations.
