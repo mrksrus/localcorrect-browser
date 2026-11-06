@@ -1,6 +1,7 @@
 // Static dictionary state only. Document text and search states remain local to
 // each call. This module also runs in Jint, without Buffer, atob or Node globals.
 import bundled from './ambiguity-data.js';
+import {en as englishAsset,de as germanAsset} from './ambiguity-language-data.js';
 
 const MAGIC=0x3141434c,MAX_BYTES=32*1024*1024;
 function invalid(){throw new Error('Invalid bundled ambiguity automaton. No correction performed.');}
@@ -129,3 +130,9 @@ const lookup=createAmbiguityLookup(bundled);
 export const hasAlternative=lookup.hasAlternative;
 export const uniqueRepair=lookup.uniqueRepair;
 export const prepareAmbiguity=lookup.prepare;
+
+const languageLookups={en:createAmbiguityLookup(englishAsset),de:createAmbiguityLookup(germanAsset)};
+export function ambiguityFor(language,mixedLanguage=true){
+ if(!['en','de'].includes(language)||typeof mixedLanguage!=='boolean')throw new RangeError('Choose a supported language and vocabulary setting.');
+ return mixedLanguage?lookup:languageLookups[language];
+}

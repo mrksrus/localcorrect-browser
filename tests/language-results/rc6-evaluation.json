@@ -1,0 +1,610 @@
+{
+  "version": "1.0.0-rc.6",
+  "description": "Trained context candidate. Synthetic 200-case fresh audit shows no gain over RC5; semantic review supports limited additional real-learner repairs. No universal precision claim.",
+  "freeze": {
+    "description": "RC6 trained encoder v2 and calibrated13-action policy frozen after human calibration, corrected identity controls, 400 known synthetic development cases and 5600 known regressions. Before implementer inspection or evaluation of 3200 human test pairs and sealed200 synthetic audit. Retuning after either evaluation consumes that set; preserve first results and obtain a new independent audit for fresh claims.",
+    "frozenAt": "2026-11-06T10:12:41.678028+00:00",
+    "coreSha256": {
+      "dictionaries/de.txt": "a19ed81a325936cc2f4d0e68d190eae99cd717c8c894e5070cccca447bdef3c4",
+      "dictionaries/en.txt": "d2d35a71b7d59ca91f9bdd49cc5406ac85084174d9069b2e9854e4aea357aa5c",
+      "models/context-encoder-metadata.json": "bf1edb08d9d1ec4bc687b20d90326d30f4b7e3d857df26779adf503ff6ed820b",
+      "models/context-encoder.onnx": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59",
+      "src/ambiguity-data.js": "95692bbef3b1ae8a58f162cf4334aaf8212fe254ffa25273ff1ddd06476b5c7a",
+      "src/ambiguity-lookup.js": "620c3dbe077074ded3f76587c52d0f10e433a6c6d76f86c6fd6ac00d6839235a",
+      "src/candidate-lookup.js": "3efdbc0b371909e22dbb41b4ba8216eace9c4920198efe5a0a9fe13bd0eac254",
+      "src/candidates.js": "442d650ac932c6aa0856f4381ac4c0c99c95dfc06144e7151ac14a04b15bd98a",
+      "src/context-encode.js": "0df8aab5edf98fb0e4c2bedf5816946d7dfeb0e75110cba0e5a1affab4cd008e",
+      "src/context-encoder-data.js": "444f875110445c051982815ebcfb06e4183975d0f967afa56c13c9f22bf0a3b6",
+      "src/context-model.js": "bfaa3cfe2baa6b9edf6fdb494237e8e3a1e2e3ad7d1d7d29d7be026e8dfa5d8b",
+      "src/context-policy.js": "808e18d8eea3afb329597b0eefc2966a4308936e93ce97eb0cde0c1db8db5d63",
+      "src/context-score.js": "3cd60736e5ae25a33ad38ab706c745d0bc3a84adf4984b903c3eef4ca5443539",
+      "src/index.js": "4b5f14db1b9b4f442405a594539dacc8f163d6801e435c97372544e92ad797e6",
+      "src/inflection-data.js": "bfe4fecd6f21afbb41f86b8ad757e1a43912a447bf56a39eaa49d788f97e631a",
+      "src/lexicons/de.js": "a3d0b332936e8ffce0d81f9e8592472213250677bc2056d06a571bd0b1605dd1",
+      "src/lexicons/en.js": "fd9f4bc914dc9a45a9ab13f8aa198f6f042a48cf4d3ce3d0f80c159f16a7f331",
+      "src/lexicons/nspell.js": "42406e6669a8cd211ab2c9fa9273ae29f7d9fccc4b4e9581545711f4d5adee09",
+      "src/protect-vocabulary.js": "52387aa6bb9fe963443f83d1cff9fb17c3da7a3198e8dc35c3ea6386523a31cf",
+      "src/typos.js": "1d21b2718c3f4a448083825850a540fec22d5e60c77f5951f52b1608ea7677d8"
+    },
+    "corpusSha256": {
+      "tests/scale-corpus/dev.json": "6f5002544027d008dd5c6e3eab67b0fbcdc96c760c83d05425b76c1e38a39df1",
+      "tests/scale-corpus/holdout.json": "69c15327b31f61fbb2758b59034232a0f50d38223acd653b98bf4ca59868e248",
+      "tests/scale-corpus/blind/cases.json": "317a38b8331358dc01a21776ab68e1452c49bdc3ce19425cd59f87f4cc05fe69",
+      "tests/scale-corpus/rc5-blind/cases.json": "ee33337470c8ff6dec8b42b0a64574e5f2f4954f0bd2346706a9827211f5a5a8",
+      "tests/scale-corpus/rc5-blind2/cases.json": "03ad1bc56d5703aa94dc9a0cad253e2e67d9c39f6db3a9b9fef62d09fd160901",
+      "tests/scale-corpus/rc5-final-blind/cases.json": "46805599210fcfc58d420876f9317167a3def0665d305c02fb3ccb45409d8fb3",
+      "tests/context-calibration/cases.json": "125842f6756d675bb0390c640072741a6d8c12e89298b4690aa327d366f0c4cc",
+      "tests/scale-corpus/rc6-fresh/cases.json": "e7b3a32a81d018621e516b607472a738466e0bf69bdb74303932ebb85eb44cb6"
+    },
+    "evaluationRoles": {
+      "knownRegression": [
+        "tests/scale-corpus/dev.json",
+        "tests/scale-corpus/holdout.json",
+        "tests/scale-corpus/blind/cases.json",
+        "tests/scale-corpus/rc5-blind/cases.json",
+        "tests/scale-corpus/rc5-blind2/cases.json",
+        "tests/scale-corpus/rc5-final-blind/cases.json"
+      ],
+      "knownDevelopmentCalibration": [
+        "tests/context-calibration/cases.json"
+      ],
+      "freshAtFirstEvaluation": [
+        "tests/scale-corpus/rc6-fresh/cases.json"
+      ],
+      "realHeldout": {
+        "file": "test-v2.jsonl",
+        "rows": 3200,
+        "sha256": "5ef047077f545dbf5fea1c401767e2133f47f6f6b17f1b0880a4b684fa90692a",
+        "redistributed": false
+      }
+    },
+    "runtimeSha256": {
+      "extension/context-runtime.js": "56920bc92b9237d28ab6714639e94e927910a4d0bf58d9cfbc68ea21a5df6945",
+      "extension/runner.js": "3c2fda6eb5db5224e6624eec2b257e27eb0fe6e17feaaacd4846527cddc3387d",
+      "extension/target.js": "cb0a77940092a35337773cd7cc5a57bed545246585ff20f0b05ee8aed7f02eae",
+      "extension/background.js": "1ac8fa19bce2e7bee317e71c4c640a5a28c8d462fe07c6c2c7400bb7229d48a0",
+      "scripts/context-reference.mjs": "0e43caa7a8410469f87f3ec283bb5cd5b6cd702751b8dcb436755f2c4f3c42d7",
+      "scripts/context-native-reference.mjs": "1be0ba601209602bc41d5ec90eb1a083617677ed09e5311378afa7df3756feda",
+      "scripts/context-native-inference.py": "15790e79cef7be80e57acaa592fb1733bc219e2d362cc7b3ea0a012238fbfed3"
+    },
+    "wasmSha256": "4b884c203b0fa48d057be3332c65513ff85aa3c5bddd6946acc0fab7ecda001d",
+    "policyCalibrationReportSha256": "95c84ace85adf4bc45e21ab6cad1fb1dc7de7b6d23b07a26d6e0000eb2fd4022"
+  },
+  "synthetic": [
+    {
+      "policySha256": "16b52096804d86574512af27d10627d1f01aa5b3d3bfad78ba333f9e0b814c27",
+      "modelSha256": "bf1edb08d9d1ec4bc687b20d90326d30f4b7e3d857df26779adf503ff6ed820b",
+      "onnxSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59",
+      "scoresSha256": "90c450035adcc6c02000c826ba88f2e3b32486996df6afee42b7a5e1dd2e9b1b",
+      "inputSha256": "003ea15cdcc88548df0b45196bd81613425326141ea1fa8f1e5622a2a78a05c6",
+      "backend": {
+        "backend": "onnxruntime-python-cpu",
+        "ortVersion": "1.31.1",
+        "threads": 2,
+        "modelSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59"
+      },
+      "summary": [
+        {
+          "mode": "baseline",
+          "language": "all",
+          "documents": 5600,
+          "exactDocuments": 4035,
+          "wantedEdits": 4453,
+          "unwantedEdits": 0,
+          "missedSupportedEdits": 2119,
+          "cleanDocuments": 2320,
+          "preservedCleanDocuments": 2320
+        },
+        {
+          "mode": "baseline",
+          "language": "de",
+          "documents": 2800,
+          "exactDocuments": 1825,
+          "wantedEdits": 1869,
+          "unwantedEdits": 0,
+          "missedSupportedEdits": 1416,
+          "cleanDocuments": 1160,
+          "preservedCleanDocuments": 1160
+        },
+        {
+          "mode": "baseline",
+          "language": "en",
+          "documents": 2800,
+          "exactDocuments": 2210,
+          "wantedEdits": 2584,
+          "unwantedEdits": 0,
+          "missedSupportedEdits": 703,
+          "cleanDocuments": 1160,
+          "preservedCleanDocuments": 1160
+        },
+        {
+          "mode": "candidate",
+          "language": "all",
+          "documents": 5600,
+          "exactDocuments": 4035,
+          "wantedEdits": 4453,
+          "unwantedEdits": 0,
+          "missedSupportedEdits": 2119,
+          "cleanDocuments": 2320,
+          "preservedCleanDocuments": 2320
+        },
+        {
+          "mode": "candidate",
+          "language": "de",
+          "documents": 2800,
+          "exactDocuments": 1825,
+          "wantedEdits": 1869,
+          "unwantedEdits": 0,
+          "missedSupportedEdits": 1416,
+          "cleanDocuments": 1160,
+          "preservedCleanDocuments": 1160
+        },
+        {
+          "mode": "candidate",
+          "language": "en",
+          "documents": 2800,
+          "exactDocuments": 2210,
+          "wantedEdits": 2584,
+          "unwantedEdits": 0,
+          "missedSupportedEdits": 703,
+          "cleanDocuments": 1160,
+          "preservedCleanDocuments": 1160
+        },
+        {
+          "mode": "neural-additions",
+          "language": "all",
+          "documents": 5600,
+          "exactDocuments": 2320,
+          "wantedEdits": 0,
+          "unwantedEdits": 0,
+          "missedSupportedEdits": 6572,
+          "cleanDocuments": 2320,
+          "preservedCleanDocuments": 2320
+        },
+        {
+          "mode": "neural-additions",
+          "language": "de",
+          "documents": 2800,
+          "exactDocuments": 1160,
+          "wantedEdits": 0,
+          "unwantedEdits": 0,
+          "missedSupportedEdits": 3285,
+          "cleanDocuments": 1160,
+          "preservedCleanDocuments": 1160
+        },
+        {
+          "mode": "neural-additions",
+          "language": "en",
+          "documents": 2800,
+          "exactDocuments": 1160,
+          "wantedEdits": 0,
+          "unwantedEdits": 0,
+          "missedSupportedEdits": 3287,
+          "cleanDocuments": 1160,
+          "preservedCleanDocuments": 1160
+        }
+      ],
+      "limits": "Real-corpus wanted/missed edit counts include single-token replacement gold only. Whole-document exactness uses the entire unchanged reference. A different valid correction can count as unwanted against a single reference."
+    },
+    {
+      "policySha256": "16b52096804d86574512af27d10627d1f01aa5b3d3bfad78ba333f9e0b814c27",
+      "modelSha256": "bf1edb08d9d1ec4bc687b20d90326d30f4b7e3d857df26779adf503ff6ed820b",
+      "onnxSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59",
+      "scoresSha256": "828d5c89dfc501d46257639e8c560500f41d3035e10944f044393d05220120e1",
+      "inputSha256": "125842f6756d675bb0390c640072741a6d8c12e89298b4690aa327d366f0c4cc",
+      "backend": {
+        "backend": "onnxruntime-python-cpu",
+        "ortVersion": "1.31.1",
+        "threads": 2,
+        "modelSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59"
+      },
+      "summary": [
+        {
+          "mode": "baseline",
+          "language": "all",
+          "documents": 400,
+          "exactDocuments": 200,
+          "wantedEdits": 0,
+          "unwantedEdits": 0,
+          "missedSupportedEdits": 200,
+          "cleanDocuments": 200,
+          "preservedCleanDocuments": 200
+        },
+        {
+          "mode": "baseline",
+          "language": "en",
+          "documents": 400,
+          "exactDocuments": 200,
+          "wantedEdits": 0,
+          "unwantedEdits": 0,
+          "missedSupportedEdits": 200,
+          "cleanDocuments": 200,
+          "preservedCleanDocuments": 200
+        },
+        {
+          "mode": "candidate",
+          "language": "all",
+          "documents": 400,
+          "exactDocuments": 209,
+          "wantedEdits": 9,
+          "unwantedEdits": 0,
+          "missedSupportedEdits": 191,
+          "cleanDocuments": 200,
+          "preservedCleanDocuments": 200
+        },
+        {
+          "mode": "candidate",
+          "language": "en",
+          "documents": 400,
+          "exactDocuments": 209,
+          "wantedEdits": 9,
+          "unwantedEdits": 0,
+          "missedSupportedEdits": 191,
+          "cleanDocuments": 200,
+          "preservedCleanDocuments": 200
+        },
+        {
+          "mode": "neural-additions",
+          "language": "all",
+          "documents": 400,
+          "exactDocuments": 209,
+          "wantedEdits": 9,
+          "unwantedEdits": 0,
+          "missedSupportedEdits": 191,
+          "cleanDocuments": 200,
+          "preservedCleanDocuments": 200
+        },
+        {
+          "mode": "neural-additions",
+          "language": "en",
+          "documents": 400,
+          "exactDocuments": 209,
+          "wantedEdits": 9,
+          "unwantedEdits": 0,
+          "missedSupportedEdits": 191,
+          "cleanDocuments": 200,
+          "preservedCleanDocuments": 200
+        }
+      ],
+      "limits": "Real-corpus wanted/missed edit counts include single-token replacement gold only. Whole-document exactness uses the entire unchanged reference. A different valid correction can count as unwanted against a single reference."
+    }
+  ],
+  "freshAtFirstEvaluation": [
+    {
+      "mode": "conservative",
+      "language": "all",
+      "documents": 200,
+      "exactDocuments": 104,
+      "safeDocuments": 100,
+      "preservedSafeDocuments": 100,
+      "trueEdits": 9,
+      "falseEdits": 0,
+      "missedEdits": 107,
+      "precision": 1,
+      "recall": 0.07758620689655173,
+      "p50Ms": 8.967315000000099,
+      "p95Ms": 58.53367000000071,
+      "maxMs": 210.400717
+    },
+    {
+      "mode": "conservative",
+      "language": "en",
+      "documents": 100,
+      "exactDocuments": 51,
+      "safeDocuments": 50,
+      "preservedSafeDocuments": 50,
+      "trueEdits": 5,
+      "falseEdits": 0,
+      "missedEdits": 55,
+      "precision": 1,
+      "recall": 0.08333333333333333,
+      "p50Ms": 12.356356999999662,
+      "p95Ms": 62.97834899999998,
+      "maxMs": 89.65685899999994
+    },
+    {
+      "mode": "conservative",
+      "language": "de",
+      "documents": 100,
+      "exactDocuments": 53,
+      "safeDocuments": 50,
+      "preservedSafeDocuments": 50,
+      "trueEdits": 4,
+      "falseEdits": 0,
+      "missedEdits": 52,
+      "precision": 1,
+      "recall": 0.07142857142857142,
+      "p50Ms": 6.654130999999779,
+      "p95Ms": 45.642461999999796,
+      "maxMs": 210.400717
+    },
+    {
+      "mode": "balanced",
+      "language": "all",
+      "documents": 200,
+      "exactDocuments": 104,
+      "safeDocuments": 100,
+      "preservedSafeDocuments": 100,
+      "trueEdits": 9,
+      "falseEdits": 0,
+      "missedEdits": 107,
+      "precision": 1,
+      "recall": 0.07758620689655173,
+      "p50Ms": 8.468776000000389,
+      "p95Ms": 57.35013300000037,
+      "maxMs": 90.20449699999995
+    },
+    {
+      "mode": "balanced",
+      "language": "en",
+      "documents": 100,
+      "exactDocuments": 51,
+      "safeDocuments": 50,
+      "preservedSafeDocuments": 50,
+      "trueEdits": 5,
+      "falseEdits": 0,
+      "missedEdits": 55,
+      "precision": 1,
+      "recall": 0.08333333333333333,
+      "p50Ms": 12.087219999999888,
+      "p95Ms": 62.7708090000001,
+      "maxMs": 90.20449699999995
+    },
+    {
+      "mode": "balanced",
+      "language": "de",
+      "documents": 100,
+      "exactDocuments": 53,
+      "safeDocuments": 50,
+      "preservedSafeDocuments": 50,
+      "trueEdits": 4,
+      "falseEdits": 0,
+      "missedEdits": 52,
+      "precision": 1,
+      "recall": 0.07142857142857142,
+      "p50Ms": 4.352666999999201,
+      "p95Ms": 34.74222800000052,
+      "maxMs": 81.91722099999993
+    }
+  ],
+  "freshBaseline": [
+    {
+      "mode": "conservative",
+      "language": "all",
+      "documents": 200,
+      "exactDocuments": 104,
+      "safeDocuments": 100,
+      "preservedSafeDocuments": 100,
+      "trueEdits": 9,
+      "falseEdits": 0,
+      "missedEdits": 107,
+      "precision": 1,
+      "recall": 0.07758620689655173,
+      "p50Ms": 0.22011199999997189,
+      "p95Ms": 2.930676999999946,
+      "maxMs": 121.90646100000015
+    },
+    {
+      "mode": "conservative",
+      "language": "en",
+      "documents": 100,
+      "exactDocuments": 51,
+      "safeDocuments": 50,
+      "preservedSafeDocuments": 50,
+      "trueEdits": 5,
+      "falseEdits": 0,
+      "missedEdits": 55,
+      "precision": 1,
+      "recall": 0.08333333333333333,
+      "p50Ms": 0.17096300000014253,
+      "p95Ms": 1.2493250000001126,
+      "maxMs": 5.942061000000081
+    },
+    {
+      "mode": "conservative",
+      "language": "de",
+      "documents": 100,
+      "exactDocuments": 53,
+      "safeDocuments": 50,
+      "preservedSafeDocuments": 50,
+      "trueEdits": 4,
+      "falseEdits": 0,
+      "missedEdits": 52,
+      "precision": 1,
+      "recall": 0.07142857142857142,
+      "p50Ms": 0.25088899999991554,
+      "p95Ms": 7.374386999999956,
+      "maxMs": 121.90646100000015
+    },
+    {
+      "mode": "balanced",
+      "language": "all",
+      "documents": 200,
+      "exactDocuments": 104,
+      "safeDocuments": 100,
+      "preservedSafeDocuments": 100,
+      "trueEdits": 9,
+      "falseEdits": 0,
+      "missedEdits": 107,
+      "precision": 1,
+      "recall": 0.07758620689655173,
+      "p50Ms": 0.15956000000005588,
+      "p95Ms": 1.2548639999999978,
+      "maxMs": 1.8861790000000838
+    },
+    {
+      "mode": "balanced",
+      "language": "en",
+      "documents": 100,
+      "exactDocuments": 51,
+      "safeDocuments": 50,
+      "preservedSafeDocuments": 50,
+      "trueEdits": 5,
+      "falseEdits": 0,
+      "missedEdits": 55,
+      "precision": 1,
+      "recall": 0.08333333333333333,
+      "p50Ms": 0.13140200000009372,
+      "p95Ms": 0.6561829999999418,
+      "maxMs": 0.8304110000000264
+    },
+    {
+      "mode": "balanced",
+      "language": "de",
+      "documents": 100,
+      "exactDocuments": 53,
+      "safeDocuments": 50,
+      "preservedSafeDocuments": 50,
+      "trueEdits": 4,
+      "falseEdits": 0,
+      "missedEdits": 52,
+      "precision": 1,
+      "recall": 0.07142857142857142,
+      "p50Ms": 0.1854760000001079,
+      "p95Ms": 1.3165879999999106,
+      "maxMs": 1.8861790000000838
+    }
+  ],
+  "humanFirstTest": {
+    "policySha256": "16b52096804d86574512af27d10627d1f01aa5b3d3bfad78ba333f9e0b814c27",
+    "modelSha256": "bf1edb08d9d1ec4bc687b20d90326d30f4b7e3d857df26779adf503ff6ed820b",
+    "onnxSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59",
+    "scoresSha256": "e88259bed440683c87b3b30fda7a9e27666ed7a71a29df07a2e200868cb4fc56",
+    "inputSha256": "5ef047077f545dbf5fea1c401767e2133f47f6f6b17f1b0880a4b684fa90692a",
+    "backend": {
+      "backend": "onnxruntime-python-cpu",
+      "ortVersion": "1.31.1",
+      "threads": 2,
+      "modelSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59"
+    },
+    "summary": [
+      {
+        "mode": "baseline",
+        "language": "all",
+        "documents": 3200,
+        "exactDocuments": 617,
+        "wantedEdits": 87,
+        "missedSupportedEdits": 2855,
+        "cleanDocuments": 606,
+        "preservedCleanDocuments": 605,
+        "strictReferenceMismatchedEdits": 92
+      },
+      {
+        "mode": "baseline",
+        "language": "de",
+        "documents": 2989,
+        "exactDocuments": 573,
+        "wantedEdits": 83,
+        "missedSupportedEdits": 2665,
+        "cleanDocuments": 563,
+        "preservedCleanDocuments": 562,
+        "strictReferenceMismatchedEdits": 89
+      },
+      {
+        "mode": "baseline",
+        "language": "en",
+        "documents": 211,
+        "exactDocuments": 44,
+        "wantedEdits": 4,
+        "missedSupportedEdits": 190,
+        "cleanDocuments": 43,
+        "preservedCleanDocuments": 43,
+        "strictReferenceMismatchedEdits": 3
+      },
+      {
+        "mode": "candidate",
+        "language": "all",
+        "documents": 3200,
+        "exactDocuments": 617,
+        "wantedEdits": 96,
+        "missedSupportedEdits": 2846,
+        "cleanDocuments": 606,
+        "preservedCleanDocuments": 605,
+        "strictReferenceMismatchedEdits": 104
+      },
+      {
+        "mode": "candidate",
+        "language": "de",
+        "documents": 2989,
+        "exactDocuments": 573,
+        "wantedEdits": 85,
+        "missedSupportedEdits": 2663,
+        "cleanDocuments": 563,
+        "preservedCleanDocuments": 562,
+        "strictReferenceMismatchedEdits": 98
+      },
+      {
+        "mode": "candidate",
+        "language": "en",
+        "documents": 211,
+        "exactDocuments": 44,
+        "wantedEdits": 11,
+        "missedSupportedEdits": 183,
+        "cleanDocuments": 43,
+        "preservedCleanDocuments": 43,
+        "strictReferenceMismatchedEdits": 6
+      },
+      {
+        "mode": "neural-additions",
+        "language": "all",
+        "documents": 3200,
+        "exactDocuments": 606,
+        "wantedEdits": 9,
+        "missedSupportedEdits": 2933,
+        "cleanDocuments": 606,
+        "preservedCleanDocuments": 606,
+        "strictReferenceMismatchedEdits": 12
+      },
+      {
+        "mode": "neural-additions",
+        "language": "de",
+        "documents": 2989,
+        "exactDocuments": 563,
+        "wantedEdits": 2,
+        "missedSupportedEdits": 2746,
+        "cleanDocuments": 563,
+        "preservedCleanDocuments": 563,
+        "strictReferenceMismatchedEdits": 9
+      },
+      {
+        "mode": "neural-additions",
+        "language": "en",
+        "documents": 211,
+        "exactDocuments": 43,
+        "wantedEdits": 7,
+        "missedSupportedEdits": 187,
+        "cleanDocuments": 43,
+        "preservedCleanDocuments": 43,
+        "strictReferenceMismatchedEdits": 3
+      }
+    ],
+    "limits": "Single-token reference alignment understates supported partial repairs when neighboring punctuation, multiple words or order also change. Original first-pass counts retained under strictReferenceMismatchedEdits. Semantic audit is separate; real learner text is not redistributed."
+  },
+  "semanticAudit": {
+    "schemaVersion": 1,
+    "scope": "Two separately assigned semantic audits of the 21 newly accepted edits in the first frozen 3200-pair real learner test. Raw text and per-learner IDs are not redistributed.",
+    "neuralAdditions": 21,
+    "supportedPartialRepairs": 21,
+    "contradictionsIdentified": 0,
+    "uncertainNeuralEdits": 0,
+    "strictTokenMatches": 9,
+    "strictAlignmentMismatches": 12,
+    "exactWholeDocumentsBaseline": 617,
+    "exactWholeDocumentsCandidate": 617,
+    "documents": 3200,
+    "reviewerAgreement": true,
+    "staticIdentityControls": {
+      "clearLingeringTypos": 6,
+      "uncertainRegisterNormalization": 1
+    },
+    "staticUnchangedHumanReference": {
+      "clearLingeringTypos": 1
+    },
+    "limits": "Supplemental semantic judgments against one annotation reference. No gold rewrites. Does not prove complete correction or population precision. One prior static normalization remains ambiguous by register.",
+    "privateAuditReceiptsSha256": [
+      "42e1c359655c30c98a2d383bb345d16a645f2edc2a0359651208ba863ac835b4",
+      "ac96ba31c916f3870982f8f4e2eda83676f05f54022e1e50ae2608297ef62c5f"
+    ]
+  },
+  "benchmark": "benchmarks/rc6-node-cpu.json"
+}

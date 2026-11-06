@@ -1,6 +1,21 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
+import {defaults, normalizeSettings, readSettings} from '../extension/settings.js';
+
+test('vocabulary settings preserve booleans and safely default older or invalid values', async () => {
+  assert.equal(defaults.mixedLanguage, true);
+  assert.equal(normalizeSettings({mixedLanguage: false}).mixedLanguage, false);
+  assert.equal(normalizeSettings({mixedLanguage: true}).mixedLanguage, true);
+  for (const mixedLanguage of [undefined, null, 'false', 'true', 0, 1, [], {}]) {
+    assert.equal(normalizeSettings({mixedLanguage}).mixedLanguage, true);
+  }
+  assert.equal(normalizeSettings(null).mixedLanguage, true);
+  assert.deepEqual(await readSettings({storage: {local: {get: async keys => {
+    assert.deepEqual(keys, ['ui', 'language', 'mode', 'mixedLanguage']);
+    return {ui: 'de', language: 'en', mode: 'balanced', mixedLanguage: false};
+  }}}}), {ui: 'de', language: 'en', mode: 'balanced', mixedLanguage: false});
+});
 
 test('shipping Firefox and Chrome expose explicit correction/undo shortcuts', async () => {
   for (const browser of ['firefox', 'chrome']) {
@@ -22,7 +37,7 @@ test('shortcut runner pins the focused target before dictionary loading and uses
     tabs: {query: async () => [{id: 7, windowId: 2, url: 'https://fixture.invalid/'}]},
     windows: {getLastFocused: async () => ({id: 2, focused: true})},
     runtime: {getURL: path => `moz-extension://fixture/${path}`},
-    storage: {local: {get: async () => ({language: 'de', mode: 'balanced'})}},
+    storage: {local: {get: async () => ({language: 'de', mode: 'balanced', mixedLanguage: false})}},
     scripting: {executeScript: async request => {
       calls.push(request);
       if (request.files) return [{result: undefined}];
@@ -36,7 +51,7 @@ test('shortcut runner pins the focused target before dictionary loading and uses
   });
   assert.deepEqual(await runner.run('correct'), {changed: 2, skipped: 0});
   assert.deepEqual(calls[0].target, {tabId: 7});
-  assert.deepEqual(calls[2].args[1], {action: 'correct', language: 'de', mode: 'balanced', operationId: 31});
+  assert.deepEqual(calls[2].args[1], {action: 'correct', language: 'de', mode: 'balanced', mixedLanguage: false, operationId: 31});
 });
 
 test('shortcut runner rejects duplicate operations and invalid settings before writing text', async () => {
@@ -46,7 +61,12 @@ test('shortcut runner rejects duplicate operations and invalid settings before w
   const api = {tabs: {query: async () => [{id: 9, windowId: 2, url: 'https://fixture.invalid/'}]},
     windows: {getLastFocused: async () => ({id: 2, focused: true})},
     runtime: {getURL: x => x}, storage: {local: {get: async () => ({language: 'bad', mode: 'unsafe'})}},
-    scripting: {executeScript: async request => request.files ? [] : request.args?.[0] ? [{result:{changed:1,skipped:0}}] : [{result:1}]}};
+    scripting: {executeScript: async request => {
+      if (request.files) return [];
+      if (!request.args?.[0]) return [{result:1}];
+      assert.deepEqual(request.args[1], {action:'correct',language:'en',mode:'conservative',mixedLanguage:true,operationId:1});
+      return [{result:{changed:1,skipped:0}}];
+    }}};
   const runner = createRunner(api, async () => {await gate; return {ok:true, text:async ()=>'sample 10000'};});
   const first = runner.run('correct');
   await new Promise(resolve => setImmediate(resolve));
@@ -54,6 +74,34 @@ test('shortcut runner rejects duplicate operations and invalid settings before w
   finish();
   assert.deepEqual(await first, {changed:1,skipped:0});
   await assert.rejects(runner.run('unsupported'), /Unknown action/);
+});
+
+test('saved vocabulary choice reaches contextual preparation and application without changing text language', async () => {
+  const {createRunner} = await import('../extension/runner.js');
+  const options = [], predictions = [];
+  const api = {
+    tabs: {query: async () => [{id: 7, windowId: 2, url: 'https://fixture.invalid/'}]},
+    windows: {getLastFocused: async () => ({id: 2, focused: true})},
+    runtime: {getURL: path => path},
+    storage: {local: {get: async () => ({ui: 'de', language: 'en', mixedLanguage: false})}},
+    scripting: {executeScript: async request => {
+      if (request.files) return [];
+      if (!request.args) return [{result: 41}];
+      if (typeof request.args[0] === 'number') return [];
+      const selected = request.args.find(value => value?.action === 'correct');
+      options.push(structuredClone(selected));
+      return request.args.length === 1 ? [{result: {operationId: 41, text: 'a draft'}}] : [{result: {changed: 0, skipped: 1}}];
+    }}
+  };
+  const runner = createRunner(api, async () => ({ok: true, text: async () => 'draft 10000'}), async (text, language) => {
+    predictions.push({text, language});return [];
+  });
+  assert.deepEqual(await runner.run('correct'), {changed: 0, skipped: 1});
+  assert.deepEqual(predictions, [{text: 'a draft', language: 'en'}]);
+  assert.deepEqual(options, [
+    {action: 'correct', language: 'en', mode: 'conservative', mixedLanguage: false, operationId: 41},
+    {action: 'correct', language: 'en', mode: 'conservative', mixedLanguage: false, operationId: 41, contextScores: []}
+  ]);
 });
 
 test('switching browser tab or leaving the browser during dictionary loading refuses application', async () => {

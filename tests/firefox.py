@@ -13,7 +13,8 @@ ROOT=Path(__file__).resolve().parents[1]
 RESULTS=ROOT/'test-results'
 RESULTS.mkdir(exist_ok=True)
 archive=RESULTS/'firefox-shipping.zip'
-shutil.copyfile(ROOT/'dist/localcorrect-firefox-1.0.0-rc.6.zip',archive)
+version=json.loads((ROOT/'package.json').read_text())['version']
+shutil.copyfile(ROOT/f'dist/localcorrect-firefox-{version}.zip',archive)
 with zipfile.ZipFile(archive) as z:assert z.testzip() is None,'Build must finish before running Firefox tests.'
 archive_sha256=hashlib.file_digest(archive.open('rb'),'sha256').hexdigest()
 firefox=os.environ.get('LOCALCORRECT_FIREFOX_BINARY') or shutil.which('firefox')
@@ -51,6 +52,13 @@ def call(method,path,payload=None):return request(method,'/session/'+session+pat
 def script(code,*args):return call('POST','/execute/sync',{'script':code,'args':list(args)})
 def find(selector):return call('POST','/element',{'using':'css selector','value':selector})
 def click(selector):return call('POST','/element/'+find(selector)['element-6066-11e4-a52e-4f735466cecf']+'/click',{})
+def wait_settings(expected,timeout=10):
+    until=time.monotonic()+timeout
+    while time.monotonic()<until:
+        actual=call('POST','/execute/async',{'script':'const done=arguments[arguments.length-1];browser.storage.local.get(arguments[0]).then(done);','args':[list(expected)]})
+        if actual==expected:return
+        time.sleep(.1)
+    raise AssertionError({'expected_settings':expected,'actual':actual})
 def wait_value(code,expected,timeout=25):
     until=time.monotonic()+timeout;actual=None
     while time.monotonic()<until:
@@ -103,17 +111,42 @@ try:
     until=time.monotonic()+10
     while script('return document.querySelector("#language").disabled'):
         assert time.monotonic()<until;time.sleep(.1)
+    assert script('return document.getElementById("mixedLanguage").checked') is True
+    script('const m=document.getElementById("mixedLanguage");m.checked=false;m.dispatchEvent(new Event("change",{bubbles:true}));const u=document.getElementById("ui");u.value="de";u.dispatchEvent(new Event("change",{bubbles:true}));')
+    wait_settings({'mixedLanguage':False,'ui':'de','language':'en'})
+    assert script('return document.getElementById("mixedLanguageLabel").textContent')=='Mehrsprachiger Wortschatz'
+    call('POST','/refresh',{})
+    until=time.monotonic()+10
+    while script('return document.querySelector("#language").disabled'):
+        assert time.monotonic()<until;time.sleep(.1)
+    assert script('return document.getElementById("mixedLanguage").checked') is False
+    assert script('return document.getElementById("language").value')=='en'
+    assert script('return document.getElementById("ui").value')=='de'
+    checks.append('Shipping Firefox popup defaults to mixed vocabulary, preserves saved false across reload and keeps interface/text languages independent')
+    call('POST','/url',{'url':url});script('document.getElementById("draft").value="Please unterstand the instructions.";');click('#draft');shortcut('c')
+    wait_value('return document.getElementById("draft").value','Please understand the instructions.')
+    shortcut('z');wait_value('return document.getElementById("draft").value','Please unterstand the instructions.')
+    checks.append('Saved mixedLanguage=false reaches the real Firefox keyboard shortcut and changes selected-only English vocabulary behavior; Undo restores input')
+    call('POST','/url',{'url':f'moz-extension://{extension_uuid}/popup.html'})
+    until=time.monotonic()+10
+    while script('return document.querySelector("#language").disabled'):
+        assert time.monotonic()<until;time.sleep(.1)
     script('const s=document.querySelector("#language");s.value="de";s.dispatchEvent(new Event("change",{bubbles:true}));')
-    time.sleep(.2)
+    wait_settings({'language':'de','mixedLanguage':False})
     call('POST','/url',{'url':url});script('document.querySelector("#draft").value="Vielen Dank für Ihre Nachrihct.";');click('#draft');shortcut('c')
     wait_value('return document.querySelector("#draft").value','Vielen Dank für Ihre Nachricht.')
-    checks.append('German popup preference persists into keyboard correction')
+    checks.append('German popup preference with mixed vocabulary disabled persists into keyboard correction')
+    script('const d=document.getElementById("draft");d.value="halloo zusammen";d.setSelectionRange(0,0);');click('#draft');shortcut('c')
+    wait_value('return document.getElementById("draft").value','hallo zusammen')
+    shortcut('z');wait_value('return document.getElementById("draft").value','halloo zusammen')
+    checks.append('Saved mixedLanguage=false also changes selected-only German vocabulary through the real shortcut')
     call('POST','/url',{'url':f'moz-extension://{extension_uuid}/popup.html'})
     until=time.monotonic()+10
     while script('return document.querySelector("#language").disabled'):
         assert time.monotonic()<until;time.sleep(.1)
     script('for(const [id,value] of [["language","en"],["mode","balanced"]]){const s=document.getElementById(id);s.value=value;s.dispatchEvent(new Event("change",{bubbles:true}));}')
-    time.sleep(.2)
+    script('const m=document.getElementById("mixedLanguage");m.checked=true;m.dispatchEvent(new Event("change",{bubbles:true}));')
+    wait_settings({'language':'en','mode':'balanced','mixedLanguage':True})
     call('POST','/url',{'url':url});click('#rich');shortcut('c')
     wait_value('return document.querySelector("#rich").textContent','tomorrow separate')
     checks.append('Ordinary contenteditable supports correction without opening the popup')

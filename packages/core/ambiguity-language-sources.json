@@ -1,0 +1,61 @@
+{
+  "description": "Selected-language lexical ambiguity inventories. Each language includes its complete folded Hunspell inventory plus the shared software and people inventories. No documents or evaluation labels are inputs.",
+  "inputs": [
+    {
+      "file": "packages/core/src/lexicons/en.js",
+      "export": "default",
+      "description": "Affix-expanded English US/GB Hunspell inventory; see lexicon-sources.json.",
+      "sha256": "fd9f4bc914dc9a45a9ab13f8aa198f6f042a48cf4d3ce3d0f80c159f16a7f331",
+      "sourceWords": 171194,
+      "foldedWords": 90511
+    },
+    {
+      "file": "packages/core/src/lexicons/de.js",
+      "export": "default",
+      "description": "Affix-expanded German DE/AT Hunspell inventory; see lexicon-sources.json.",
+      "sha256": "a3d0b332936e8ffce0d81f9e8592472213250677bc2056d06a571bd0b1605dd1",
+      "sourceWords": 567945,
+      "foldedWords": 292752
+    },
+    {
+      "file": "packages/core/src/protect-vocabulary.js",
+      "export": "software",
+      "description": "Positive CSpell/Homebrew software inventory, including compiled regular plurals; see protect-sources.json.",
+      "sha256": "52387aa6bb9fe963443f83d1cff9fb17c3da7a3198e8dc35c3ea6386523a31cf",
+      "sourceWords": 19985,
+      "foldedWords": 19985
+    },
+    {
+      "file": "packages/core/src/protect-vocabulary.js",
+      "export": "people",
+      "description": "Positive CSpell people inventory; see protect-sources.json.",
+      "sha256": "52387aa6bb9fe963443f83d1cff9fb17c3da7a3198e8dc35c3ea6386523a31cf",
+      "sourceWords": 38898,
+      "foldedWords": 38898
+    }
+  ],
+  "inventories": {
+    "en": {
+      "words": 139862,
+      "nodes": 55231,
+      "edges": 130346,
+      "symbols": 51,
+      "maxLength": 32,
+      "decodedBytes": 1113704,
+      "inventorySha256": "8ad10303660ab9684f009a092a08b1fbac5211f0bfdf2b9866f83930c277df44",
+      "binarySha256": "5d277c12972573670537195453b2386aa0d676908f4eba7e314297ddfbce325e"
+    },
+    "de": {
+      "words": 348054,
+      "nodes": 80079,
+      "edges": 166673,
+      "symbols": 53,
+      "maxLength": 32,
+      "decodedBytes": 1480760,
+      "inventorySha256": "bb91eabfd8597d763af333edcb7a92291725b1694dacc51d3fb2dffff810b96b",
+      "binarySha256": "561ddfc9fd5553f6f5a0630f28de77770a88883c002d580a9df622603c69435f"
+    }
+  },
+  "assetSha256": "6e45a90c3fa985db897d5b457744cdfb60409b703e34f82bf9000a8c654f4ff4",
+  "assetBytes": 3459587
+}

@@ -1,16 +1,17 @@
 {
-  "version": "1.0.0-rc.6",
-  "description": "Trained context candidate. Synthetic 200-case fresh audit shows no gain over RC5; semantic review supports limited additional real-learner repairs. No universal precision claim.",
+  "version": "1.0.0-rc.7",
+  "description": "Explicit selected-language spelling vocabulary; unchanged RC6 neural weights and thresholds. Known synthetic gains are not a general sentence-correction claim.",
   "freeze": {
-    "description": "RC6 trained encoder v2 and calibrated13-action policy frozen after human calibration, corrected identity controls, 400 known synthetic development cases and 5600 known regressions. Before implementer inspection or evaluation of 3200 human test pairs and sealed200 synthetic audit. Retuning after either evaluation consumes that set; preserve first results and obtain a new independent audit for fresh claims.",
-    "frozenAt": "2026-11-06T10:12:41.678028+00:00",
+    "description": "RC7 explicit text-language vocabulary scope candidate. All eight inherited synthetic sets are now known regression/calibration data. The 47MB ONNX model, its metadata and calibrated13-action neural policy remain unchanged from RC6. No fresh generalization claim is made.",
+    "frozenAt": "2026-11-06T14:51:49.509405+00:00",
     "coreSha256": {
       "dictionaries/de.txt": "a19ed81a325936cc2f4d0e68d190eae99cd717c8c894e5070cccca447bdef3c4",
       "dictionaries/en.txt": "d2d35a71b7d59ca91f9bdd49cc5406ac85084174d9069b2e9854e4aea357aa5c",
       "models/context-encoder-metadata.json": "bf1edb08d9d1ec4bc687b20d90326d30f4b7e3d857df26779adf503ff6ed820b",
       "models/context-encoder.onnx": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59",
       "src/ambiguity-data.js": "95692bbef3b1ae8a58f162cf4334aaf8212fe254ffa25273ff1ddd06476b5c7a",
-      "src/ambiguity-lookup.js": "620c3dbe077074ded3f76587c52d0f10e433a6c6d76f86c6fd6ac00d6839235a",
+      "src/ambiguity-language-data.js": "6e45a90c3fa985db897d5b457744cdfb60409b703e34f82bf9000a8c654f4ff4",
+      "src/ambiguity-lookup.js": "e05b9170060d605a4c8e2a38aca73070bf71d6ad5a4bd0f8c5d1c774049c00c4",
       "src/candidate-lookup.js": "3efdbc0b371909e22dbb41b4ba8216eace9c4920198efe5a0a9fe13bd0eac254",
       "src/candidates.js": "442d650ac932c6aa0856f4381ac4c0c99c95dfc06144e7151ac14a04b15bd98a",
       "src/context-encode.js": "0df8aab5edf98fb0e4c2bedf5816946d7dfeb0e75110cba0e5a1affab4cd008e",
@@ -18,12 +19,13 @@
       "src/context-model.js": "bfaa3cfe2baa6b9edf6fdb494237e8e3a1e2e3ad7d1d7d29d7be026e8dfa5d8b",
       "src/context-policy.js": "808e18d8eea3afb329597b0eefc2966a4308936e93ce97eb0cde0c1db8db5d63",
       "src/context-score.js": "3cd60736e5ae25a33ad38ab706c745d0bc3a84adf4984b903c3eef4ca5443539",
-      "src/index.js": "4b5f14db1b9b4f442405a594539dacc8f163d6801e435c97372544e92ad797e6",
+      "src/index.js": "ecd6c93c0611ed9f2712797bb1f25013f17b9527fe9bb55d9481a898bf1921d8",
       "src/inflection-data.js": "bfe4fecd6f21afbb41f86b8ad757e1a43912a447bf56a39eaa49d788f97e631a",
       "src/lexicons/de.js": "a3d0b332936e8ffce0d81f9e8592472213250677bc2056d06a571bd0b1605dd1",
       "src/lexicons/en.js": "fd9f4bc914dc9a45a9ab13f8aa198f6f042a48cf4d3ce3d0f80c159f16a7f331",
       "src/lexicons/nspell.js": "42406e6669a8cd211ab2c9fa9273ae29f7d9fccc4b4e9581545711f4d5adee09",
       "src/protect-vocabulary.js": "52387aa6bb9fe963443f83d1cff9fb17c3da7a3198e8dc35c3ea6386523a31cf",
+      "src/typos-language-data.js": "370eadd8457136586c8e5d42337feff1eca838563cd845c35d48cecb70a3eebc",
       "src/typos.js": "1d21b2718c3f4a448083825850a540fec22d5e60c77f5951f52b1608ea7677d8"
     },
     "corpusSha256": {
@@ -37,574 +39,1909 @@
       "tests/scale-corpus/rc6-fresh/cases.json": "e7b3a32a81d018621e516b607472a738466e0bf69bdb74303932ebb85eb44cb6"
     },
     "evaluationRoles": {
-      "knownRegression": [
-        "tests/scale-corpus/dev.json",
-        "tests/scale-corpus/holdout.json",
-        "tests/scale-corpus/blind/cases.json",
-        "tests/scale-corpus/rc5-blind/cases.json",
-        "tests/scale-corpus/rc5-blind2/cases.json",
-        "tests/scale-corpus/rc5-final-blind/cases.json"
-      ],
-      "knownDevelopmentCalibration": [
-        "tests/context-calibration/cases.json"
-      ],
-      "freshAtFirstEvaluation": [
-        "tests/scale-corpus/rc6-fresh/cases.json"
-      ],
-      "realHeldout": {
-        "file": "test-v2.jsonl",
-        "rows": 3200,
-        "sha256": "5ef047077f545dbf5fea1c401767e2133f47f6f6b17f1b0880a4b684fa90692a",
-        "redistributed": false
-      }
+      "tests/scale-corpus/dev.json": "Known consumed regression/calibration data; immutable gold",
+      "tests/scale-corpus/holdout.json": "Known consumed regression/calibration data; immutable gold",
+      "tests/scale-corpus/blind/cases.json": "Known consumed regression/calibration data; immutable gold",
+      "tests/scale-corpus/rc5-blind/cases.json": "Known consumed regression/calibration data; immutable gold",
+      "tests/scale-corpus/rc5-blind2/cases.json": "Known consumed regression/calibration data; immutable gold",
+      "tests/scale-corpus/rc5-final-blind/cases.json": "Known consumed regression/calibration data; immutable gold",
+      "tests/context-calibration/cases.json": "Known consumed regression/calibration data; immutable gold",
+      "tests/scale-corpus/rc6-fresh/cases.json": "Known consumed regression/calibration data; immutable gold"
     },
     "runtimeSha256": {
-      "extension/context-runtime.js": "56920bc92b9237d28ab6714639e94e927910a4d0bf58d9cfbc68ea21a5df6945",
-      "extension/runner.js": "3c2fda6eb5db5224e6624eec2b257e27eb0fe6e17feaaacd4846527cddc3387d",
-      "extension/target.js": "cb0a77940092a35337773cd7cc5a57bed545246585ff20f0b05ee8aed7f02eae",
       "extension/background.js": "1ac8fa19bce2e7bee317e71c4c640a5a28c8d462fe07c6c2c7400bb7229d48a0",
-      "scripts/context-reference.mjs": "0e43caa7a8410469f87f3ec283bb5cd5b6cd702751b8dcb436755f2c4f3c42d7",
-      "scripts/context-native-reference.mjs": "1be0ba601209602bc41d5ec90eb1a083617677ed09e5311378afa7df3756feda",
-      "scripts/context-native-inference.py": "15790e79cef7be80e57acaa592fb1733bc219e2d362cc7b3ea0a012238fbfed3"
+      "extension/context-runtime.js": "56920bc92b9237d28ab6714639e94e927910a4d0bf58d9cfbc68ea21a5df6945",
+      "extension/options.html": "f79a905b4dc7c7f653115d5a38d26d4cce72bfc25b4845c87b6d72ebf247a74d",
+      "extension/options.js": "caff6bb60fe05667450e24e15d985e445347a76772b455a912fa78c0adcb8a62",
+      "extension/popup.css": "ed1543966d66f5f1b051dd7ac3341aa92b452e7c40999a9843bc085ca7073a2d",
+      "extension/popup.html": "e93a80155f70cf6bec254ce72c058f628097c4c546c90fadf24276b07a424dfd",
+      "extension/popup.js": "c5093b832240801ad789eebbc4ab82e39ef680be148de1ce111f91c4cda1693a",
+      "extension/runner.js": "6bc1253cd3e0c9b91aa91f125a791675dd0afe0b3012e63e17e0bd5087b8cd40",
+      "extension/settings.js": "23747cc473790f338a9b85e7d0b4b3ae7b9cbe6916a8521bd4e2161acf50ab46",
+      "extension/target.js": "cb0a77940092a35337773cd7cc5a57bed545246585ff20f0b05ee8aed7f02eae",
+      "scripts/context-reference.mjs": "0e43caa7a8410469f87f3ec283bb5cd5b6cd702751b8dcb436755f2c4f3c42d7"
     },
     "wasmSha256": "4b884c203b0fa48d057be3332c65513ff85aa3c5bddd6946acc0fab7ecda001d",
-    "policyCalibrationReportSha256": "95c84ace85adf4bc45e21ab6cad1fb1dc7de7b6d23b07a26d6e0000eb2fd4022"
+    "policyCalibrationReportSha256": "95c84ace85adf4bc45e21ab6cad1fb1dc7de7b6d23b07a26d6e0000eb2fd4022",
+    "previousRelease": {
+      "tag": "v1.0.0-rc.6",
+      "commit": "90d99e42934dc70571e717760a63b775b713935e",
+      "freeze": "tests/language-results/rc6-evaluation-freeze.json"
+    }
   },
-  "synthetic": [
-    {
-      "policySha256": "16b52096804d86574512af27d10627d1f01aa5b3d3bfad78ba333f9e0b814c27",
-      "modelSha256": "bf1edb08d9d1ec4bc687b20d90326d30f4b7e3d857df26779adf503ff6ed820b",
-      "onnxSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59",
-      "scoresSha256": "90c450035adcc6c02000c826ba88f2e3b32486996df6afee42b7a5e1dd2e9b1b",
-      "inputSha256": "003ea15cdcc88548df0b45196bd81613425326141ea1fa8f1e5622a2a78a05c6",
-      "backend": {
-        "backend": "onnxruntime-python-cpu",
-        "ortVersion": "1.31.1",
-        "threads": 2,
-        "modelSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59"
-      },
-      "summary": [
+  "languageScopes": {
+    "mixed": {
+      "dev": [
         {
-          "mode": "baseline",
+          "mode": "conservative",
           "language": "all",
-          "documents": 5600,
-          "exactDocuments": 4035,
-          "wantedEdits": 4453,
-          "unwantedEdits": 0,
-          "missedSupportedEdits": 2119,
-          "cleanDocuments": 2320,
-          "preservedCleanDocuments": 2320
+          "documents": 3000,
+          "exactDocuments": 2183,
+          "safeDocuments": 1200,
+          "preservedSafeDocuments": 1200,
+          "trueEdits": 2469,
+          "falseEdits": 0,
+          "missedEdits": 1121,
+          "precision": 1,
+          "recall": 0.6877437325905292
         },
         {
-          "mode": "baseline",
-          "language": "de",
-          "documents": 2800,
-          "exactDocuments": 1825,
-          "wantedEdits": 1869,
-          "unwantedEdits": 0,
-          "missedSupportedEdits": 1416,
-          "cleanDocuments": 1160,
-          "preservedCleanDocuments": 1160
-        },
-        {
-          "mode": "baseline",
+          "mode": "conservative",
           "language": "en",
-          "documents": 2800,
-          "exactDocuments": 2210,
-          "wantedEdits": 2584,
-          "unwantedEdits": 0,
-          "missedSupportedEdits": 703,
-          "cleanDocuments": 1160,
-          "preservedCleanDocuments": 1160
+          "documents": 1500,
+          "exactDocuments": 1236,
+          "safeDocuments": 600,
+          "preservedSafeDocuments": 600,
+          "trueEdits": 1481,
+          "falseEdits": 0,
+          "missedEdits": 314,
+          "precision": 1,
+          "recall": 0.8250696378830084
         },
         {
-          "mode": "candidate",
+          "mode": "conservative",
+          "language": "de",
+          "documents": 1500,
+          "exactDocuments": 947,
+          "safeDocuments": 600,
+          "preservedSafeDocuments": 600,
+          "trueEdits": 988,
+          "falseEdits": 0,
+          "missedEdits": 807,
+          "precision": 1,
+          "recall": 0.5504178272980501
+        },
+        {
+          "mode": "balanced",
           "language": "all",
-          "documents": 5600,
-          "exactDocuments": 4035,
-          "wantedEdits": 4453,
-          "unwantedEdits": 0,
-          "missedSupportedEdits": 2119,
-          "cleanDocuments": 2320,
-          "preservedCleanDocuments": 2320
+          "documents": 3000,
+          "exactDocuments": 2183,
+          "safeDocuments": 1200,
+          "preservedSafeDocuments": 1200,
+          "trueEdits": 2469,
+          "falseEdits": 0,
+          "missedEdits": 1121,
+          "precision": 1,
+          "recall": 0.6877437325905292
         },
         {
-          "mode": "candidate",
-          "language": "de",
-          "documents": 2800,
-          "exactDocuments": 1825,
-          "wantedEdits": 1869,
-          "unwantedEdits": 0,
-          "missedSupportedEdits": 1416,
-          "cleanDocuments": 1160,
-          "preservedCleanDocuments": 1160
-        },
-        {
-          "mode": "candidate",
+          "mode": "balanced",
           "language": "en",
-          "documents": 2800,
-          "exactDocuments": 2210,
-          "wantedEdits": 2584,
-          "unwantedEdits": 0,
-          "missedSupportedEdits": 703,
-          "cleanDocuments": 1160,
-          "preservedCleanDocuments": 1160
+          "documents": 1500,
+          "exactDocuments": 1236,
+          "safeDocuments": 600,
+          "preservedSafeDocuments": 600,
+          "trueEdits": 1481,
+          "falseEdits": 0,
+          "missedEdits": 314,
+          "precision": 1,
+          "recall": 0.8250696378830084
         },
         {
-          "mode": "neural-additions",
-          "language": "all",
-          "documents": 5600,
-          "exactDocuments": 2320,
-          "wantedEdits": 0,
-          "unwantedEdits": 0,
-          "missedSupportedEdits": 6572,
-          "cleanDocuments": 2320,
-          "preservedCleanDocuments": 2320
-        },
-        {
-          "mode": "neural-additions",
+          "mode": "balanced",
           "language": "de",
-          "documents": 2800,
-          "exactDocuments": 1160,
-          "wantedEdits": 0,
-          "unwantedEdits": 0,
-          "missedSupportedEdits": 3285,
-          "cleanDocuments": 1160,
-          "preservedCleanDocuments": 1160
-        },
-        {
-          "mode": "neural-additions",
-          "language": "en",
-          "documents": 2800,
-          "exactDocuments": 1160,
-          "wantedEdits": 0,
-          "unwantedEdits": 0,
-          "missedSupportedEdits": 3287,
-          "cleanDocuments": 1160,
-          "preservedCleanDocuments": 1160
+          "documents": 1500,
+          "exactDocuments": 947,
+          "safeDocuments": 600,
+          "preservedSafeDocuments": 600,
+          "trueEdits": 988,
+          "falseEdits": 0,
+          "missedEdits": 807,
+          "precision": 1,
+          "recall": 0.5504178272980501
         }
       ],
-      "limits": "Real-corpus wanted/missed edit counts include single-token replacement gold only. Whole-document exactness uses the entire unchanged reference. A different valid correction can count as unwanted against a single reference."
-    },
-    {
-      "policySha256": "16b52096804d86574512af27d10627d1f01aa5b3d3bfad78ba333f9e0b814c27",
-      "modelSha256": "bf1edb08d9d1ec4bc687b20d90326d30f4b7e3d857df26779adf503ff6ed820b",
-      "onnxSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59",
-      "scoresSha256": "828d5c89dfc501d46257639e8c560500f41d3035e10944f044393d05220120e1",
-      "inputSha256": "125842f6756d675bb0390c640072741a6d8c12e89298b4690aa327d366f0c4cc",
-      "backend": {
-        "backend": "onnxruntime-python-cpu",
-        "ortVersion": "1.31.1",
-        "threads": 2,
-        "modelSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59"
-      },
-      "summary": [
+      "holdout": [
         {
-          "mode": "baseline",
+          "mode": "conservative",
           "language": "all",
-          "documents": 400,
-          "exactDocuments": 200,
-          "wantedEdits": 0,
-          "unwantedEdits": 0,
-          "missedSupportedEdits": 200,
-          "cleanDocuments": 200,
-          "preservedCleanDocuments": 200
+          "documents": 2000,
+          "exactDocuments": 1455,
+          "safeDocuments": 800,
+          "preservedSafeDocuments": 800,
+          "trueEdits": 1725,
+          "falseEdits": 0,
+          "missedEdits": 663,
+          "precision": 1,
+          "recall": 0.7223618090452262
         },
         {
-          "mode": "baseline",
+          "mode": "conservative",
           "language": "en",
-          "documents": 400,
-          "exactDocuments": 200,
-          "wantedEdits": 0,
-          "unwantedEdits": 0,
-          "missedSupportedEdits": 200,
-          "cleanDocuments": 200,
-          "preservedCleanDocuments": 200
+          "documents": 1000,
+          "exactDocuments": 761,
+          "safeDocuments": 400,
+          "preservedSafeDocuments": 400,
+          "trueEdits": 937,
+          "falseEdits": 0,
+          "missedEdits": 257,
+          "precision": 1,
+          "recall": 0.7847571189279732
         },
         {
-          "mode": "candidate",
+          "mode": "conservative",
+          "language": "de",
+          "documents": 1000,
+          "exactDocuments": 694,
+          "safeDocuments": 400,
+          "preservedSafeDocuments": 400,
+          "trueEdits": 788,
+          "falseEdits": 0,
+          "missedEdits": 406,
+          "precision": 1,
+          "recall": 0.6599664991624791
+        },
+        {
+          "mode": "balanced",
           "language": "all",
-          "documents": 400,
-          "exactDocuments": 209,
-          "wantedEdits": 9,
-          "unwantedEdits": 0,
-          "missedSupportedEdits": 191,
-          "cleanDocuments": 200,
-          "preservedCleanDocuments": 200
+          "documents": 2000,
+          "exactDocuments": 1455,
+          "safeDocuments": 800,
+          "preservedSafeDocuments": 800,
+          "trueEdits": 1725,
+          "falseEdits": 0,
+          "missedEdits": 663,
+          "precision": 1,
+          "recall": 0.7223618090452262
         },
         {
-          "mode": "candidate",
+          "mode": "balanced",
           "language": "en",
-          "documents": 400,
-          "exactDocuments": 209,
-          "wantedEdits": 9,
-          "unwantedEdits": 0,
-          "missedSupportedEdits": 191,
-          "cleanDocuments": 200,
-          "preservedCleanDocuments": 200
+          "documents": 1000,
+          "exactDocuments": 761,
+          "safeDocuments": 400,
+          "preservedSafeDocuments": 400,
+          "trueEdits": 937,
+          "falseEdits": 0,
+          "missedEdits": 257,
+          "precision": 1,
+          "recall": 0.7847571189279732
         },
         {
-          "mode": "neural-additions",
-          "language": "all",
-          "documents": 400,
-          "exactDocuments": 209,
-          "wantedEdits": 9,
-          "unwantedEdits": 0,
-          "missedSupportedEdits": 191,
-          "cleanDocuments": 200,
-          "preservedCleanDocuments": 200
-        },
-        {
-          "mode": "neural-additions",
-          "language": "en",
-          "documents": 400,
-          "exactDocuments": 209,
-          "wantedEdits": 9,
-          "unwantedEdits": 0,
-          "missedSupportedEdits": 191,
-          "cleanDocuments": 200,
-          "preservedCleanDocuments": 200
+          "mode": "balanced",
+          "language": "de",
+          "documents": 1000,
+          "exactDocuments": 694,
+          "safeDocuments": 400,
+          "preservedSafeDocuments": 400,
+          "trueEdits": 788,
+          "falseEdits": 0,
+          "missedEdits": 406,
+          "precision": 1,
+          "recall": 0.6599664991624791
         }
       ],
-      "limits": "Real-corpus wanted/missed edit counts include single-token replacement gold only. Whole-document exactness uses the entire unchanged reference. A different valid correction can count as unwanted against a single reference."
-    }
-  ],
-  "freshAtFirstEvaluation": [
-    {
-      "mode": "conservative",
-      "language": "all",
-      "documents": 200,
-      "exactDocuments": 104,
-      "safeDocuments": 100,
-      "preservedSafeDocuments": 100,
-      "trueEdits": 9,
-      "falseEdits": 0,
-      "missedEdits": 107,
-      "precision": 1,
-      "recall": 0.07758620689655173,
-      "p50Ms": 8.967315000000099,
-      "p95Ms": 58.53367000000071,
-      "maxMs": 210.400717
-    },
-    {
-      "mode": "conservative",
-      "language": "en",
-      "documents": 100,
-      "exactDocuments": 51,
-      "safeDocuments": 50,
-      "preservedSafeDocuments": 50,
-      "trueEdits": 5,
-      "falseEdits": 0,
-      "missedEdits": 55,
-      "precision": 1,
-      "recall": 0.08333333333333333,
-      "p50Ms": 12.356356999999662,
-      "p95Ms": 62.97834899999998,
-      "maxMs": 89.65685899999994
-    },
-    {
-      "mode": "conservative",
-      "language": "de",
-      "documents": 100,
-      "exactDocuments": 53,
-      "safeDocuments": 50,
-      "preservedSafeDocuments": 50,
-      "trueEdits": 4,
-      "falseEdits": 0,
-      "missedEdits": 52,
-      "precision": 1,
-      "recall": 0.07142857142857142,
-      "p50Ms": 6.654130999999779,
-      "p95Ms": 45.642461999999796,
-      "maxMs": 210.400717
-    },
-    {
-      "mode": "balanced",
-      "language": "all",
-      "documents": 200,
-      "exactDocuments": 104,
-      "safeDocuments": 100,
-      "preservedSafeDocuments": 100,
-      "trueEdits": 9,
-      "falseEdits": 0,
-      "missedEdits": 107,
-      "precision": 1,
-      "recall": 0.07758620689655173,
-      "p50Ms": 8.468776000000389,
-      "p95Ms": 57.35013300000037,
-      "maxMs": 90.20449699999995
-    },
-    {
-      "mode": "balanced",
-      "language": "en",
-      "documents": 100,
-      "exactDocuments": 51,
-      "safeDocuments": 50,
-      "preservedSafeDocuments": 50,
-      "trueEdits": 5,
-      "falseEdits": 0,
-      "missedEdits": 55,
-      "precision": 1,
-      "recall": 0.08333333333333333,
-      "p50Ms": 12.087219999999888,
-      "p95Ms": 62.7708090000001,
-      "maxMs": 90.20449699999995
-    },
-    {
-      "mode": "balanced",
-      "language": "de",
-      "documents": 100,
-      "exactDocuments": 53,
-      "safeDocuments": 50,
-      "preservedSafeDocuments": 50,
-      "trueEdits": 4,
-      "falseEdits": 0,
-      "missedEdits": 52,
-      "precision": 1,
-      "recall": 0.07142857142857142,
-      "p50Ms": 4.352666999999201,
-      "p95Ms": 34.74222800000052,
-      "maxMs": 81.91722099999993
-    }
-  ],
-  "freshBaseline": [
-    {
-      "mode": "conservative",
-      "language": "all",
-      "documents": 200,
-      "exactDocuments": 104,
-      "safeDocuments": 100,
-      "preservedSafeDocuments": 100,
-      "trueEdits": 9,
-      "falseEdits": 0,
-      "missedEdits": 107,
-      "precision": 1,
-      "recall": 0.07758620689655173,
-      "p50Ms": 0.22011199999997189,
-      "p95Ms": 2.930676999999946,
-      "maxMs": 121.90646100000015
-    },
-    {
-      "mode": "conservative",
-      "language": "en",
-      "documents": 100,
-      "exactDocuments": 51,
-      "safeDocuments": 50,
-      "preservedSafeDocuments": 50,
-      "trueEdits": 5,
-      "falseEdits": 0,
-      "missedEdits": 55,
-      "precision": 1,
-      "recall": 0.08333333333333333,
-      "p50Ms": 0.17096300000014253,
-      "p95Ms": 1.2493250000001126,
-      "maxMs": 5.942061000000081
-    },
-    {
-      "mode": "conservative",
-      "language": "de",
-      "documents": 100,
-      "exactDocuments": 53,
-      "safeDocuments": 50,
-      "preservedSafeDocuments": 50,
-      "trueEdits": 4,
-      "falseEdits": 0,
-      "missedEdits": 52,
-      "precision": 1,
-      "recall": 0.07142857142857142,
-      "p50Ms": 0.25088899999991554,
-      "p95Ms": 7.374386999999956,
-      "maxMs": 121.90646100000015
-    },
-    {
-      "mode": "balanced",
-      "language": "all",
-      "documents": 200,
-      "exactDocuments": 104,
-      "safeDocuments": 100,
-      "preservedSafeDocuments": 100,
-      "trueEdits": 9,
-      "falseEdits": 0,
-      "missedEdits": 107,
-      "precision": 1,
-      "recall": 0.07758620689655173,
-      "p50Ms": 0.15956000000005588,
-      "p95Ms": 1.2548639999999978,
-      "maxMs": 1.8861790000000838
-    },
-    {
-      "mode": "balanced",
-      "language": "en",
-      "documents": 100,
-      "exactDocuments": 51,
-      "safeDocuments": 50,
-      "preservedSafeDocuments": 50,
-      "trueEdits": 5,
-      "falseEdits": 0,
-      "missedEdits": 55,
-      "precision": 1,
-      "recall": 0.08333333333333333,
-      "p50Ms": 0.13140200000009372,
-      "p95Ms": 0.6561829999999418,
-      "maxMs": 0.8304110000000264
-    },
-    {
-      "mode": "balanced",
-      "language": "de",
-      "documents": 100,
-      "exactDocuments": 53,
-      "safeDocuments": 50,
-      "preservedSafeDocuments": 50,
-      "trueEdits": 4,
-      "falseEdits": 0,
-      "missedEdits": 52,
-      "precision": 1,
-      "recall": 0.07142857142857142,
-      "p50Ms": 0.1854760000001079,
-      "p95Ms": 1.3165879999999106,
-      "maxMs": 1.8861790000000838
-    }
-  ],
-  "humanFirstTest": {
-    "policySha256": "16b52096804d86574512af27d10627d1f01aa5b3d3bfad78ba333f9e0b814c27",
-    "modelSha256": "bf1edb08d9d1ec4bc687b20d90326d30f4b7e3d857df26779adf503ff6ed820b",
-    "onnxSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59",
-    "scoresSha256": "e88259bed440683c87b3b30fda7a9e27666ed7a71a29df07a2e200868cb4fc56",
-    "inputSha256": "5ef047077f545dbf5fea1c401767e2133f47f6f6b17f1b0880a4b684fa90692a",
-    "backend": {
-      "backend": "onnxruntime-python-cpu",
-      "ortVersion": "1.31.1",
-      "threads": 2,
-      "modelSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59"
-    },
-    "summary": [
-      {
-        "mode": "baseline",
-        "language": "all",
-        "documents": 3200,
-        "exactDocuments": 617,
-        "wantedEdits": 87,
-        "missedSupportedEdits": 2855,
-        "cleanDocuments": 606,
-        "preservedCleanDocuments": 605,
-        "strictReferenceMismatchedEdits": 92
-      },
-      {
-        "mode": "baseline",
-        "language": "de",
-        "documents": 2989,
-        "exactDocuments": 573,
-        "wantedEdits": 83,
-        "missedSupportedEdits": 2665,
-        "cleanDocuments": 563,
-        "preservedCleanDocuments": 562,
-        "strictReferenceMismatchedEdits": 89
-      },
-      {
-        "mode": "baseline",
-        "language": "en",
-        "documents": 211,
-        "exactDocuments": 44,
-        "wantedEdits": 4,
-        "missedSupportedEdits": 190,
-        "cleanDocuments": 43,
-        "preservedCleanDocuments": 43,
-        "strictReferenceMismatchedEdits": 3
-      },
-      {
-        "mode": "candidate",
-        "language": "all",
-        "documents": 3200,
-        "exactDocuments": 617,
-        "wantedEdits": 96,
-        "missedSupportedEdits": 2846,
-        "cleanDocuments": 606,
-        "preservedCleanDocuments": 605,
-        "strictReferenceMismatchedEdits": 104
-      },
-      {
-        "mode": "candidate",
-        "language": "de",
-        "documents": 2989,
-        "exactDocuments": 573,
-        "wantedEdits": 85,
-        "missedSupportedEdits": 2663,
-        "cleanDocuments": 563,
-        "preservedCleanDocuments": 562,
-        "strictReferenceMismatchedEdits": 98
-      },
-      {
-        "mode": "candidate",
-        "language": "en",
-        "documents": 211,
-        "exactDocuments": 44,
-        "wantedEdits": 11,
-        "missedSupportedEdits": 183,
-        "cleanDocuments": 43,
-        "preservedCleanDocuments": 43,
-        "strictReferenceMismatchedEdits": 6
-      },
-      {
-        "mode": "neural-additions",
-        "language": "all",
-        "documents": 3200,
-        "exactDocuments": 606,
-        "wantedEdits": 9,
-        "missedSupportedEdits": 2933,
-        "cleanDocuments": 606,
-        "preservedCleanDocuments": 606,
-        "strictReferenceMismatchedEdits": 12
-      },
-      {
-        "mode": "neural-additions",
-        "language": "de",
-        "documents": 2989,
-        "exactDocuments": 563,
-        "wantedEdits": 2,
-        "missedSupportedEdits": 2746,
-        "cleanDocuments": 563,
-        "preservedCleanDocuments": 563,
-        "strictReferenceMismatchedEdits": 9
-      },
-      {
-        "mode": "neural-additions",
-        "language": "en",
-        "documents": 211,
-        "exactDocuments": 43,
-        "wantedEdits": 7,
-        "missedSupportedEdits": 187,
-        "cleanDocuments": 43,
-        "preservedCleanDocuments": 43,
-        "strictReferenceMismatchedEdits": 3
+      "blind": [
+        {
+          "mode": "conservative",
+          "language": "all",
+          "documents": 100,
+          "exactDocuments": 78,
+          "safeDocuments": 70,
+          "preservedSafeDocuments": 70,
+          "trueEdits": 57,
+          "falseEdits": 0,
+          "missedEdits": 33,
+          "precision": 1,
+          "recall": 0.6333333333333333
+        },
+        {
+          "mode": "conservative",
+          "language": "en",
+          "documents": 50,
+          "exactDocuments": 39,
+          "safeDocuments": 35,
+          "preservedSafeDocuments": 35,
+          "trueEdits": 27,
+          "falseEdits": 0,
+          "missedEdits": 18,
+          "precision": 1,
+          "recall": 0.6
+        },
+        {
+          "mode": "conservative",
+          "language": "de",
+          "documents": 50,
+          "exactDocuments": 39,
+          "safeDocuments": 35,
+          "preservedSafeDocuments": 35,
+          "trueEdits": 30,
+          "falseEdits": 0,
+          "missedEdits": 15,
+          "precision": 1,
+          "recall": 0.6666666666666666
+        },
+        {
+          "mode": "balanced",
+          "language": "all",
+          "documents": 100,
+          "exactDocuments": 78,
+          "safeDocuments": 70,
+          "preservedSafeDocuments": 70,
+          "trueEdits": 57,
+          "falseEdits": 0,
+          "missedEdits": 33,
+          "precision": 1,
+          "recall": 0.6333333333333333
+        },
+        {
+          "mode": "balanced",
+          "language": "en",
+          "documents": 50,
+          "exactDocuments": 39,
+          "safeDocuments": 35,
+          "preservedSafeDocuments": 35,
+          "trueEdits": 27,
+          "falseEdits": 0,
+          "missedEdits": 18,
+          "precision": 1,
+          "recall": 0.6
+        },
+        {
+          "mode": "balanced",
+          "language": "de",
+          "documents": 50,
+          "exactDocuments": 39,
+          "safeDocuments": 35,
+          "preservedSafeDocuments": 35,
+          "trueEdits": 30,
+          "falseEdits": 0,
+          "missedEdits": 15,
+          "precision": 1,
+          "recall": 0.6666666666666666
+        }
+      ],
+      "rc5blind": [
+        {
+          "mode": "conservative",
+          "language": "all",
+          "documents": 200,
+          "exactDocuments": 120,
+          "safeDocuments": 100,
+          "preservedSafeDocuments": 100,
+          "trueEdits": 92,
+          "falseEdits": 0,
+          "missedEdits": 130,
+          "precision": 1,
+          "recall": 0.4144144144144144
+        },
+        {
+          "mode": "conservative",
+          "language": "en",
+          "documents": 100,
+          "exactDocuments": 64,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 57,
+          "falseEdits": 0,
+          "missedEdits": 55,
+          "precision": 1,
+          "recall": 0.5089285714285714
+        },
+        {
+          "mode": "conservative",
+          "language": "de",
+          "documents": 100,
+          "exactDocuments": 56,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 35,
+          "falseEdits": 0,
+          "missedEdits": 75,
+          "precision": 1,
+          "recall": 0.3181818181818182
+        },
+        {
+          "mode": "balanced",
+          "language": "all",
+          "documents": 200,
+          "exactDocuments": 120,
+          "safeDocuments": 100,
+          "preservedSafeDocuments": 100,
+          "trueEdits": 92,
+          "falseEdits": 0,
+          "missedEdits": 130,
+          "precision": 1,
+          "recall": 0.4144144144144144
+        },
+        {
+          "mode": "balanced",
+          "language": "en",
+          "documents": 100,
+          "exactDocuments": 64,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 57,
+          "falseEdits": 0,
+          "missedEdits": 55,
+          "precision": 1,
+          "recall": 0.5089285714285714
+        },
+        {
+          "mode": "balanced",
+          "language": "de",
+          "documents": 100,
+          "exactDocuments": 56,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 35,
+          "falseEdits": 0,
+          "missedEdits": 75,
+          "precision": 1,
+          "recall": 0.3181818181818182
+        }
+      ],
+      "rc5blind2": [
+        {
+          "mode": "conservative",
+          "language": "all",
+          "documents": 200,
+          "exactDocuments": 123,
+          "safeDocuments": 100,
+          "preservedSafeDocuments": 100,
+          "trueEdits": 75,
+          "falseEdits": 0,
+          "missedEdits": 142,
+          "precision": 1,
+          "recall": 0.3456221198156682
+        },
+        {
+          "mode": "conservative",
+          "language": "en",
+          "documents": 100,
+          "exactDocuments": 69,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 61,
+          "falseEdits": 0,
+          "missedEdits": 48,
+          "precision": 1,
+          "recall": 0.5596330275229358
+        },
+        {
+          "mode": "conservative",
+          "language": "de",
+          "documents": 100,
+          "exactDocuments": 54,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 14,
+          "falseEdits": 0,
+          "missedEdits": 94,
+          "precision": 1,
+          "recall": 0.12962962962962962
+        },
+        {
+          "mode": "balanced",
+          "language": "all",
+          "documents": 200,
+          "exactDocuments": 123,
+          "safeDocuments": 100,
+          "preservedSafeDocuments": 100,
+          "trueEdits": 75,
+          "falseEdits": 0,
+          "missedEdits": 142,
+          "precision": 1,
+          "recall": 0.3456221198156682
+        },
+        {
+          "mode": "balanced",
+          "language": "en",
+          "documents": 100,
+          "exactDocuments": 69,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 61,
+          "falseEdits": 0,
+          "missedEdits": 48,
+          "precision": 1,
+          "recall": 0.5596330275229358
+        },
+        {
+          "mode": "balanced",
+          "language": "de",
+          "documents": 100,
+          "exactDocuments": 54,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 14,
+          "falseEdits": 0,
+          "missedEdits": 94,
+          "precision": 1,
+          "recall": 0.12962962962962962
+        }
+      ],
+      "rc5final": [
+        {
+          "mode": "conservative",
+          "language": "all",
+          "documents": 100,
+          "exactDocuments": 76,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 35,
+          "falseEdits": 0,
+          "missedEdits": 30,
+          "precision": 1,
+          "recall": 0.5384615384615384
+        },
+        {
+          "mode": "conservative",
+          "language": "en",
+          "documents": 50,
+          "exactDocuments": 41,
+          "safeDocuments": 25,
+          "preservedSafeDocuments": 25,
+          "trueEdits": 21,
+          "falseEdits": 0,
+          "missedEdits": 11,
+          "precision": 1,
+          "recall": 0.65625
+        },
+        {
+          "mode": "conservative",
+          "language": "de",
+          "documents": 50,
+          "exactDocuments": 35,
+          "safeDocuments": 25,
+          "preservedSafeDocuments": 25,
+          "trueEdits": 14,
+          "falseEdits": 0,
+          "missedEdits": 19,
+          "precision": 1,
+          "recall": 0.42424242424242425
+        },
+        {
+          "mode": "balanced",
+          "language": "all",
+          "documents": 100,
+          "exactDocuments": 76,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 35,
+          "falseEdits": 0,
+          "missedEdits": 30,
+          "precision": 1,
+          "recall": 0.5384615384615384
+        },
+        {
+          "mode": "balanced",
+          "language": "en",
+          "documents": 50,
+          "exactDocuments": 41,
+          "safeDocuments": 25,
+          "preservedSafeDocuments": 25,
+          "trueEdits": 21,
+          "falseEdits": 0,
+          "missedEdits": 11,
+          "precision": 1,
+          "recall": 0.65625
+        },
+        {
+          "mode": "balanced",
+          "language": "de",
+          "documents": 50,
+          "exactDocuments": 35,
+          "safeDocuments": 25,
+          "preservedSafeDocuments": 25,
+          "trueEdits": 14,
+          "falseEdits": 0,
+          "missedEdits": 19,
+          "precision": 1,
+          "recall": 0.42424242424242425
+        }
+      ],
+      "contextdev": [
+        {
+          "mode": "conservative",
+          "language": "all",
+          "documents": 400,
+          "exactDocuments": 209,
+          "safeDocuments": 200,
+          "preservedSafeDocuments": 200,
+          "trueEdits": 9,
+          "falseEdits": 0,
+          "missedEdits": 191,
+          "precision": 1,
+          "recall": 0.045
+        },
+        {
+          "mode": "conservative",
+          "language": "en",
+          "documents": 400,
+          "exactDocuments": 209,
+          "safeDocuments": 200,
+          "preservedSafeDocuments": 200,
+          "trueEdits": 9,
+          "falseEdits": 0,
+          "missedEdits": 191,
+          "precision": 1,
+          "recall": 0.045
+        },
+        {
+          "mode": "conservative",
+          "language": "de",
+          "documents": 0,
+          "exactDocuments": 0,
+          "safeDocuments": 0,
+          "preservedSafeDocuments": 0,
+          "trueEdits": 0,
+          "falseEdits": 0,
+          "missedEdits": 0,
+          "precision": null,
+          "recall": null
+        },
+        {
+          "mode": "balanced",
+          "language": "all",
+          "documents": 400,
+          "exactDocuments": 209,
+          "safeDocuments": 200,
+          "preservedSafeDocuments": 200,
+          "trueEdits": 9,
+          "falseEdits": 0,
+          "missedEdits": 191,
+          "precision": 1,
+          "recall": 0.045
+        },
+        {
+          "mode": "balanced",
+          "language": "en",
+          "documents": 400,
+          "exactDocuments": 209,
+          "safeDocuments": 200,
+          "preservedSafeDocuments": 200,
+          "trueEdits": 9,
+          "falseEdits": 0,
+          "missedEdits": 191,
+          "precision": 1,
+          "recall": 0.045
+        },
+        {
+          "mode": "balanced",
+          "language": "de",
+          "documents": 0,
+          "exactDocuments": 0,
+          "safeDocuments": 0,
+          "preservedSafeDocuments": 0,
+          "trueEdits": 0,
+          "falseEdits": 0,
+          "missedEdits": 0,
+          "precision": null,
+          "recall": null
+        }
+      ],
+      "rc6fresh": [
+        {
+          "mode": "conservative",
+          "language": "all",
+          "documents": 200,
+          "exactDocuments": 104,
+          "safeDocuments": 100,
+          "preservedSafeDocuments": 100,
+          "trueEdits": 9,
+          "falseEdits": 0,
+          "missedEdits": 107,
+          "precision": 1,
+          "recall": 0.07758620689655173
+        },
+        {
+          "mode": "conservative",
+          "language": "en",
+          "documents": 100,
+          "exactDocuments": 51,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 5,
+          "falseEdits": 0,
+          "missedEdits": 55,
+          "precision": 1,
+          "recall": 0.08333333333333333
+        },
+        {
+          "mode": "conservative",
+          "language": "de",
+          "documents": 100,
+          "exactDocuments": 53,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 4,
+          "falseEdits": 0,
+          "missedEdits": 52,
+          "precision": 1,
+          "recall": 0.07142857142857142
+        },
+        {
+          "mode": "balanced",
+          "language": "all",
+          "documents": 200,
+          "exactDocuments": 104,
+          "safeDocuments": 100,
+          "preservedSafeDocuments": 100,
+          "trueEdits": 9,
+          "falseEdits": 0,
+          "missedEdits": 107,
+          "precision": 1,
+          "recall": 0.07758620689655173
+        },
+        {
+          "mode": "balanced",
+          "language": "en",
+          "documents": 100,
+          "exactDocuments": 51,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 5,
+          "falseEdits": 0,
+          "missedEdits": 55,
+          "precision": 1,
+          "recall": 0.08333333333333333
+        },
+        {
+          "mode": "balanced",
+          "language": "de",
+          "documents": 100,
+          "exactDocuments": 53,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 4,
+          "falseEdits": 0,
+          "missedEdits": 52,
+          "precision": 1,
+          "recall": 0.07142857142857142
+        }
+      ],
+      "total": {
+        "documents": 6200,
+        "exactDocuments": 4348,
+        "safeDocuments": 2620,
+        "preservedSafeDocuments": 2620,
+        "trueEdits": 4471,
+        "falseEdits": 0,
+        "missedEdits": 2417
       }
-    ],
-    "limits": "Single-token reference alignment understates supported partial repairs when neighboring punctuation, multiple words or order also change. Original first-pass counts retained under strictReferenceMismatchedEdits. Semantic audit is separate; real learner text is not redistributed."
-  },
-  "semanticAudit": {
-    "schemaVersion": 1,
-    "scope": "Two separately assigned semantic audits of the 21 newly accepted edits in the first frozen 3200-pair real learner test. Raw text and per-learner IDs are not redistributed.",
-    "neuralAdditions": 21,
-    "supportedPartialRepairs": 21,
-    "contradictionsIdentified": 0,
-    "uncertainNeuralEdits": 0,
-    "strictTokenMatches": 9,
-    "strictAlignmentMismatches": 12,
-    "exactWholeDocumentsBaseline": 617,
-    "exactWholeDocumentsCandidate": 617,
-    "documents": 3200,
-    "reviewerAgreement": true,
-    "staticIdentityControls": {
-      "clearLingeringTypos": 6,
-      "uncertainRegisterNormalization": 1
     },
-    "staticUnchangedHumanReference": {
-      "clearLingeringTypos": 1
-    },
-    "limits": "Supplemental semantic judgments against one annotation reference. No gold rewrites. Does not prove complete correction or population precision. One prior static normalization remains ambiguous by register.",
-    "privateAuditReceiptsSha256": [
-      "42e1c359655c30c98a2d383bb345d16a645f2edc2a0359651208ba863ac835b4",
-      "ac96ba31c916f3870982f8f4e2eda83676f05f54022e1e50ae2608297ef62c5f"
-    ]
+    "single": {
+      "dev": [
+        {
+          "mode": "conservative",
+          "language": "all",
+          "documents": 3000,
+          "exactDocuments": 2218,
+          "safeDocuments": 1200,
+          "preservedSafeDocuments": 1200,
+          "trueEdits": 2533,
+          "falseEdits": 0,
+          "missedEdits": 1057,
+          "precision": 1,
+          "recall": 0.7055710306406685
+        },
+        {
+          "mode": "conservative",
+          "language": "en",
+          "documents": 1500,
+          "exactDocuments": 1257,
+          "safeDocuments": 600,
+          "preservedSafeDocuments": 600,
+          "trueEdits": 1511,
+          "falseEdits": 0,
+          "missedEdits": 284,
+          "precision": 1,
+          "recall": 0.8417827298050139
+        },
+        {
+          "mode": "conservative",
+          "language": "de",
+          "documents": 1500,
+          "exactDocuments": 961,
+          "safeDocuments": 600,
+          "preservedSafeDocuments": 600,
+          "trueEdits": 1022,
+          "falseEdits": 0,
+          "missedEdits": 773,
+          "precision": 1,
+          "recall": 0.5693593314763231
+        },
+        {
+          "mode": "balanced",
+          "language": "all",
+          "documents": 3000,
+          "exactDocuments": 2218,
+          "safeDocuments": 1200,
+          "preservedSafeDocuments": 1200,
+          "trueEdits": 2533,
+          "falseEdits": 0,
+          "missedEdits": 1057,
+          "precision": 1,
+          "recall": 0.7055710306406685
+        },
+        {
+          "mode": "balanced",
+          "language": "en",
+          "documents": 1500,
+          "exactDocuments": 1257,
+          "safeDocuments": 600,
+          "preservedSafeDocuments": 600,
+          "trueEdits": 1511,
+          "falseEdits": 0,
+          "missedEdits": 284,
+          "precision": 1,
+          "recall": 0.8417827298050139
+        },
+        {
+          "mode": "balanced",
+          "language": "de",
+          "documents": 1500,
+          "exactDocuments": 961,
+          "safeDocuments": 600,
+          "preservedSafeDocuments": 600,
+          "trueEdits": 1022,
+          "falseEdits": 0,
+          "missedEdits": 773,
+          "precision": 1,
+          "recall": 0.5693593314763231
+        }
+      ],
+      "holdout": [
+        {
+          "mode": "conservative",
+          "language": "all",
+          "documents": 2000,
+          "exactDocuments": 1493,
+          "safeDocuments": 800,
+          "preservedSafeDocuments": 800,
+          "trueEdits": 1769,
+          "falseEdits": 0,
+          "missedEdits": 619,
+          "precision": 1,
+          "recall": 0.740787269681742
+        },
+        {
+          "mode": "conservative",
+          "language": "en",
+          "documents": 1000,
+          "exactDocuments": 790,
+          "safeDocuments": 400,
+          "preservedSafeDocuments": 400,
+          "trueEdits": 968,
+          "falseEdits": 0,
+          "missedEdits": 226,
+          "precision": 1,
+          "recall": 0.8107202680067002
+        },
+        {
+          "mode": "conservative",
+          "language": "de",
+          "documents": 1000,
+          "exactDocuments": 703,
+          "safeDocuments": 400,
+          "preservedSafeDocuments": 400,
+          "trueEdits": 801,
+          "falseEdits": 0,
+          "missedEdits": 393,
+          "precision": 1,
+          "recall": 0.6708542713567839
+        },
+        {
+          "mode": "balanced",
+          "language": "all",
+          "documents": 2000,
+          "exactDocuments": 1493,
+          "safeDocuments": 800,
+          "preservedSafeDocuments": 800,
+          "trueEdits": 1769,
+          "falseEdits": 0,
+          "missedEdits": 619,
+          "precision": 1,
+          "recall": 0.740787269681742
+        },
+        {
+          "mode": "balanced",
+          "language": "en",
+          "documents": 1000,
+          "exactDocuments": 790,
+          "safeDocuments": 400,
+          "preservedSafeDocuments": 400,
+          "trueEdits": 968,
+          "falseEdits": 0,
+          "missedEdits": 226,
+          "precision": 1,
+          "recall": 0.8107202680067002
+        },
+        {
+          "mode": "balanced",
+          "language": "de",
+          "documents": 1000,
+          "exactDocuments": 703,
+          "safeDocuments": 400,
+          "preservedSafeDocuments": 400,
+          "trueEdits": 801,
+          "falseEdits": 0,
+          "missedEdits": 393,
+          "precision": 1,
+          "recall": 0.6708542713567839
+        }
+      ],
+      "blind": [
+        {
+          "mode": "conservative",
+          "language": "all",
+          "documents": 100,
+          "exactDocuments": 78,
+          "safeDocuments": 70,
+          "preservedSafeDocuments": 70,
+          "trueEdits": 59,
+          "falseEdits": 0,
+          "missedEdits": 31,
+          "precision": 1,
+          "recall": 0.6555555555555556
+        },
+        {
+          "mode": "conservative",
+          "language": "en",
+          "documents": 50,
+          "exactDocuments": 39,
+          "safeDocuments": 35,
+          "preservedSafeDocuments": 35,
+          "trueEdits": 29,
+          "falseEdits": 0,
+          "missedEdits": 16,
+          "precision": 1,
+          "recall": 0.6444444444444445
+        },
+        {
+          "mode": "conservative",
+          "language": "de",
+          "documents": 50,
+          "exactDocuments": 39,
+          "safeDocuments": 35,
+          "preservedSafeDocuments": 35,
+          "trueEdits": 30,
+          "falseEdits": 0,
+          "missedEdits": 15,
+          "precision": 1,
+          "recall": 0.6666666666666666
+        },
+        {
+          "mode": "balanced",
+          "language": "all",
+          "documents": 100,
+          "exactDocuments": 78,
+          "safeDocuments": 70,
+          "preservedSafeDocuments": 70,
+          "trueEdits": 59,
+          "falseEdits": 0,
+          "missedEdits": 31,
+          "precision": 1,
+          "recall": 0.6555555555555556
+        },
+        {
+          "mode": "balanced",
+          "language": "en",
+          "documents": 50,
+          "exactDocuments": 39,
+          "safeDocuments": 35,
+          "preservedSafeDocuments": 35,
+          "trueEdits": 29,
+          "falseEdits": 0,
+          "missedEdits": 16,
+          "precision": 1,
+          "recall": 0.6444444444444445
+        },
+        {
+          "mode": "balanced",
+          "language": "de",
+          "documents": 50,
+          "exactDocuments": 39,
+          "safeDocuments": 35,
+          "preservedSafeDocuments": 35,
+          "trueEdits": 30,
+          "falseEdits": 0,
+          "missedEdits": 15,
+          "precision": 1,
+          "recall": 0.6666666666666666
+        }
+      ],
+      "rc5blind": [
+        {
+          "mode": "conservative",
+          "language": "all",
+          "documents": 200,
+          "exactDocuments": 123,
+          "safeDocuments": 100,
+          "preservedSafeDocuments": 100,
+          "trueEdits": 95,
+          "falseEdits": 0,
+          "missedEdits": 127,
+          "precision": 1,
+          "recall": 0.42792792792792794
+        },
+        {
+          "mode": "conservative",
+          "language": "en",
+          "documents": 100,
+          "exactDocuments": 67,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 60,
+          "falseEdits": 0,
+          "missedEdits": 52,
+          "precision": 1,
+          "recall": 0.5357142857142857
+        },
+        {
+          "mode": "conservative",
+          "language": "de",
+          "documents": 100,
+          "exactDocuments": 56,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 35,
+          "falseEdits": 0,
+          "missedEdits": 75,
+          "precision": 1,
+          "recall": 0.3181818181818182
+        },
+        {
+          "mode": "balanced",
+          "language": "all",
+          "documents": 200,
+          "exactDocuments": 123,
+          "safeDocuments": 100,
+          "preservedSafeDocuments": 100,
+          "trueEdits": 95,
+          "falseEdits": 0,
+          "missedEdits": 127,
+          "precision": 1,
+          "recall": 0.42792792792792794
+        },
+        {
+          "mode": "balanced",
+          "language": "en",
+          "documents": 100,
+          "exactDocuments": 67,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 60,
+          "falseEdits": 0,
+          "missedEdits": 52,
+          "precision": 1,
+          "recall": 0.5357142857142857
+        },
+        {
+          "mode": "balanced",
+          "language": "de",
+          "documents": 100,
+          "exactDocuments": 56,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 35,
+          "falseEdits": 0,
+          "missedEdits": 75,
+          "precision": 1,
+          "recall": 0.3181818181818182
+        }
+      ],
+      "rc5blind2": [
+        {
+          "mode": "conservative",
+          "language": "all",
+          "documents": 200,
+          "exactDocuments": 125,
+          "safeDocuments": 100,
+          "preservedSafeDocuments": 100,
+          "trueEdits": 79,
+          "falseEdits": 0,
+          "missedEdits": 138,
+          "precision": 1,
+          "recall": 0.3640552995391705
+        },
+        {
+          "mode": "conservative",
+          "language": "en",
+          "documents": 100,
+          "exactDocuments": 71,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 65,
+          "falseEdits": 0,
+          "missedEdits": 44,
+          "precision": 1,
+          "recall": 0.5963302752293578
+        },
+        {
+          "mode": "conservative",
+          "language": "de",
+          "documents": 100,
+          "exactDocuments": 54,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 14,
+          "falseEdits": 0,
+          "missedEdits": 94,
+          "precision": 1,
+          "recall": 0.12962962962962962
+        },
+        {
+          "mode": "balanced",
+          "language": "all",
+          "documents": 200,
+          "exactDocuments": 125,
+          "safeDocuments": 100,
+          "preservedSafeDocuments": 100,
+          "trueEdits": 79,
+          "falseEdits": 0,
+          "missedEdits": 138,
+          "precision": 1,
+          "recall": 0.3640552995391705
+        },
+        {
+          "mode": "balanced",
+          "language": "en",
+          "documents": 100,
+          "exactDocuments": 71,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 65,
+          "falseEdits": 0,
+          "missedEdits": 44,
+          "precision": 1,
+          "recall": 0.5963302752293578
+        },
+        {
+          "mode": "balanced",
+          "language": "de",
+          "documents": 100,
+          "exactDocuments": 54,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 14,
+          "falseEdits": 0,
+          "missedEdits": 94,
+          "precision": 1,
+          "recall": 0.12962962962962962
+        }
+      ],
+      "rc5final": [
+        {
+          "mode": "conservative",
+          "language": "all",
+          "documents": 100,
+          "exactDocuments": 76,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 35,
+          "falseEdits": 0,
+          "missedEdits": 30,
+          "precision": 1,
+          "recall": 0.5384615384615384
+        },
+        {
+          "mode": "conservative",
+          "language": "en",
+          "documents": 50,
+          "exactDocuments": 41,
+          "safeDocuments": 25,
+          "preservedSafeDocuments": 25,
+          "trueEdits": 21,
+          "falseEdits": 0,
+          "missedEdits": 11,
+          "precision": 1,
+          "recall": 0.65625
+        },
+        {
+          "mode": "conservative",
+          "language": "de",
+          "documents": 50,
+          "exactDocuments": 35,
+          "safeDocuments": 25,
+          "preservedSafeDocuments": 25,
+          "trueEdits": 14,
+          "falseEdits": 0,
+          "missedEdits": 19,
+          "precision": 1,
+          "recall": 0.42424242424242425
+        },
+        {
+          "mode": "balanced",
+          "language": "all",
+          "documents": 100,
+          "exactDocuments": 76,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 35,
+          "falseEdits": 0,
+          "missedEdits": 30,
+          "precision": 1,
+          "recall": 0.5384615384615384
+        },
+        {
+          "mode": "balanced",
+          "language": "en",
+          "documents": 50,
+          "exactDocuments": 41,
+          "safeDocuments": 25,
+          "preservedSafeDocuments": 25,
+          "trueEdits": 21,
+          "falseEdits": 0,
+          "missedEdits": 11,
+          "precision": 1,
+          "recall": 0.65625
+        },
+        {
+          "mode": "balanced",
+          "language": "de",
+          "documents": 50,
+          "exactDocuments": 35,
+          "safeDocuments": 25,
+          "preservedSafeDocuments": 25,
+          "trueEdits": 14,
+          "falseEdits": 0,
+          "missedEdits": 19,
+          "precision": 1,
+          "recall": 0.42424242424242425
+        }
+      ],
+      "contextdev": [
+        {
+          "mode": "conservative",
+          "language": "all",
+          "documents": 400,
+          "exactDocuments": 209,
+          "safeDocuments": 200,
+          "preservedSafeDocuments": 200,
+          "trueEdits": 9,
+          "falseEdits": 0,
+          "missedEdits": 191,
+          "precision": 1,
+          "recall": 0.045
+        },
+        {
+          "mode": "conservative",
+          "language": "en",
+          "documents": 400,
+          "exactDocuments": 209,
+          "safeDocuments": 200,
+          "preservedSafeDocuments": 200,
+          "trueEdits": 9,
+          "falseEdits": 0,
+          "missedEdits": 191,
+          "precision": 1,
+          "recall": 0.045
+        },
+        {
+          "mode": "conservative",
+          "language": "de",
+          "documents": 0,
+          "exactDocuments": 0,
+          "safeDocuments": 0,
+          "preservedSafeDocuments": 0,
+          "trueEdits": 0,
+          "falseEdits": 0,
+          "missedEdits": 0,
+          "precision": null,
+          "recall": null
+        },
+        {
+          "mode": "balanced",
+          "language": "all",
+          "documents": 400,
+          "exactDocuments": 209,
+          "safeDocuments": 200,
+          "preservedSafeDocuments": 200,
+          "trueEdits": 9,
+          "falseEdits": 0,
+          "missedEdits": 191,
+          "precision": 1,
+          "recall": 0.045
+        },
+        {
+          "mode": "balanced",
+          "language": "en",
+          "documents": 400,
+          "exactDocuments": 209,
+          "safeDocuments": 200,
+          "preservedSafeDocuments": 200,
+          "trueEdits": 9,
+          "falseEdits": 0,
+          "missedEdits": 191,
+          "precision": 1,
+          "recall": 0.045
+        },
+        {
+          "mode": "balanced",
+          "language": "de",
+          "documents": 0,
+          "exactDocuments": 0,
+          "safeDocuments": 0,
+          "preservedSafeDocuments": 0,
+          "trueEdits": 0,
+          "falseEdits": 0,
+          "missedEdits": 0,
+          "precision": null,
+          "recall": null
+        }
+      ],
+      "rc6fresh": [
+        {
+          "mode": "conservative",
+          "language": "all",
+          "documents": 200,
+          "exactDocuments": 104,
+          "safeDocuments": 100,
+          "preservedSafeDocuments": 100,
+          "trueEdits": 9,
+          "falseEdits": 0,
+          "missedEdits": 107,
+          "precision": 1,
+          "recall": 0.07758620689655173
+        },
+        {
+          "mode": "conservative",
+          "language": "en",
+          "documents": 100,
+          "exactDocuments": 51,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 5,
+          "falseEdits": 0,
+          "missedEdits": 55,
+          "precision": 1,
+          "recall": 0.08333333333333333
+        },
+        {
+          "mode": "conservative",
+          "language": "de",
+          "documents": 100,
+          "exactDocuments": 53,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 4,
+          "falseEdits": 0,
+          "missedEdits": 52,
+          "precision": 1,
+          "recall": 0.07142857142857142
+        },
+        {
+          "mode": "balanced",
+          "language": "all",
+          "documents": 200,
+          "exactDocuments": 104,
+          "safeDocuments": 100,
+          "preservedSafeDocuments": 100,
+          "trueEdits": 9,
+          "falseEdits": 0,
+          "missedEdits": 107,
+          "precision": 1,
+          "recall": 0.07758620689655173
+        },
+        {
+          "mode": "balanced",
+          "language": "en",
+          "documents": 100,
+          "exactDocuments": 51,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 5,
+          "falseEdits": 0,
+          "missedEdits": 55,
+          "precision": 1,
+          "recall": 0.08333333333333333
+        },
+        {
+          "mode": "balanced",
+          "language": "de",
+          "documents": 100,
+          "exactDocuments": 53,
+          "safeDocuments": 50,
+          "preservedSafeDocuments": 50,
+          "trueEdits": 4,
+          "falseEdits": 0,
+          "missedEdits": 52,
+          "precision": 1,
+          "recall": 0.07142857142857142
+        }
+      ],
+      "total": {
+        "documents": 6200,
+        "exactDocuments": 4426,
+        "safeDocuments": 2620,
+        "preservedSafeDocuments": 2620,
+        "trueEdits": 4588,
+        "falseEdits": 0,
+        "missedEdits": 2300
+      }
+    }
   },
-  "benchmark": "benchmarks/rc6-node-cpu.json"
+  "modelUnchanged": {
+    "onnxSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59",
+    "metadataSha256": "bf1edb08d9d1ec4bc687b20d90326d30f4b7e3d857df26779adf503ff6ed820b",
+    "policySha256": "808e18d8eea3afb329597b0eefc2966a4308936e93ce97eb0cde0c1db8db5d63"
+  },
+  "historicalRC6Evidence": "tests/language-results/rc6-evaluation.json",
+  "benchmarks": {
+    "mixed": {
+      "mixedLanguage": true,
+      "scope": "Whole Node reference, ONNX CPU/WASM single thread plus shared static spelling. Process RSS includes Node, not browser or Outlook. Cold session construction excludes first static-lexicon initialization, which is included in first correction.",
+      "hardware": {
+        "cpu": "Intel(R) Core(TM) i5-1038NG7 CPU @ 2.00GHz",
+        "logicalCPUs": 8,
+        "ramGiB": 31.144447326660156,
+        "platform": "linux"
+      },
+      "runtime": "v26.7.0",
+      "model": {
+        "modelSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59",
+        "modelBytes": 47246299,
+        "metadataSha256": "bf1edb08d9d1ec4bc687b20d90326d30f4b7e3d857df26779adf503ff6ed820b"
+      },
+      "policySha256": "808e18d8eea3afb329597b0eefc2966a4308936e93ce97eb0cde0c1db8db5d63",
+      "fixturesSha256": "9572cd0dee9fb63981fc0d68d0e21d2c1a582822b18096ff205a943215f36bd6",
+      "sessionCreationMs": 779.788672,
+      "peakRssMiB": 573.50390625,
+      "rows": [
+        {
+          "id": "en-ordinary-clean",
+          "words": 150,
+          "language": "en",
+          "kind": "clean",
+          "samples": [
+            {
+              "wallMs": 299.28789200000006,
+              "cpuMs": 520.163,
+              "edits": 0,
+              "rssMiB": 492.125
+            },
+            {
+              "wallMs": 50.47498799999994,
+              "cpuMs": 56.666,
+              "edits": 0,
+              "rssMiB": 492.125
+            },
+            {
+              "wallMs": 51.96265399999993,
+              "cpuMs": 57.099,
+              "edits": 0,
+              "rssMiB": 492.125
+            },
+            {
+              "wallMs": 42.982283999999936,
+              "cpuMs": 74.649,
+              "edits": 0,
+              "rssMiB": 492.25
+            }
+          ]
+        },
+        {
+          "id": "en-ordinary-typo-heavy",
+          "words": 150,
+          "language": "en",
+          "kind": "typo-heavy",
+          "samples": [
+            {
+              "wallMs": 111.96228700000006,
+              "cpuMs": 258.163,
+              "edits": 9,
+              "rssMiB": 547.25390625
+            },
+            {
+              "wallMs": 50.23649300000011,
+              "cpuMs": 111.767,
+              "edits": 9,
+              "rssMiB": 547.37890625
+            },
+            {
+              "wallMs": 50.307366999999886,
+              "cpuMs": 128.944,
+              "edits": 9,
+              "rssMiB": 547.87890625
+            },
+            {
+              "wallMs": 47.91604900000016,
+              "cpuMs": 97.276,
+              "edits": 9,
+              "rssMiB": 554.12890625
+            }
+          ]
+        },
+        {
+          "id": "en-1000-clean",
+          "words": 1000,
+          "language": "en",
+          "kind": "clean",
+          "samples": [
+            {
+              "wallMs": 421.75533700000005,
+              "cpuMs": 915.965,
+              "edits": 0,
+              "rssMiB": 569.37890625
+            },
+            {
+              "wallMs": 329.46427399999993,
+              "cpuMs": 492.137,
+              "edits": 0,
+              "rssMiB": 571.5546875
+            },
+            {
+              "wallMs": 313.61682199999996,
+              "cpuMs": 357.145,
+              "edits": 0,
+              "rssMiB": 571.5546875
+            },
+            {
+              "wallMs": 306.2519669999997,
+              "cpuMs": 326.938,
+              "edits": 0,
+              "rssMiB": 571.6796875
+            }
+          ]
+        },
+        {
+          "id": "en-1000-typo-heavy",
+          "words": 1000,
+          "language": "en",
+          "kind": "typo-heavy",
+          "samples": [
+            {
+              "wallMs": 482.5721050000002,
+              "cpuMs": 484.298,
+              "edits": 53,
+              "rssMiB": 571.6796875
+            },
+            {
+              "wallMs": 336.60912400000007,
+              "cpuMs": 343.899,
+              "edits": 53,
+              "rssMiB": 571.6796875
+            },
+            {
+              "wallMs": 332.63802600000054,
+              "cpuMs": 345.818,
+              "edits": 53,
+              "rssMiB": 571.6796875
+            },
+            {
+              "wallMs": 351.1062759999995,
+              "cpuMs": 362.745,
+              "edits": 53,
+              "rssMiB": 571.6796875
+            }
+          ]
+        },
+        {
+          "id": "de-ordinary-clean",
+          "words": 150,
+          "language": "de",
+          "kind": "clean",
+          "samples": [
+            {
+              "wallMs": 42.86481499999991,
+              "cpuMs": 53.442,
+              "edits": 0,
+              "rssMiB": 571.6796875
+            },
+            {
+              "wallMs": 29.87699800000064,
+              "cpuMs": 33.519,
+              "edits": 0,
+              "rssMiB": 571.6796875
+            },
+            {
+              "wallMs": 23.954294000000118,
+              "cpuMs": 30.134,
+              "edits": 0,
+              "rssMiB": 571.6796875
+            },
+            {
+              "wallMs": 25.891963000000032,
+              "cpuMs": 25.718,
+              "edits": 0,
+              "rssMiB": 571.6796875
+            }
+          ]
+        },
+        {
+          "id": "de-ordinary-typo-heavy",
+          "words": 150,
+          "language": "de",
+          "kind": "typo-heavy",
+          "samples": [
+            {
+              "wallMs": 19.11189100000047,
+              "cpuMs": 22.54,
+              "edits": 6,
+              "rssMiB": 571.6796875
+            },
+            {
+              "wallMs": 4.104252000000088,
+              "cpuMs": 4.082,
+              "edits": 6,
+              "rssMiB": 571.6796875
+            },
+            {
+              "wallMs": 3.7006340000007185,
+              "cpuMs": 8.263,
+              "edits": 6,
+              "rssMiB": 571.6796875
+            },
+            {
+              "wallMs": 3.9640779999999722,
+              "cpuMs": 9.753,
+              "edits": 6,
+              "rssMiB": 571.8046875
+            }
+          ]
+        },
+        {
+          "id": "de-1000-clean",
+          "words": 1000,
+          "language": "de",
+          "kind": "clean",
+          "samples": [
+            {
+              "wallMs": 89.04220400000031,
+              "cpuMs": 98.11,
+              "edits": 0,
+              "rssMiB": 571.8046875
+            },
+            {
+              "wallMs": 82.7586769999998,
+              "cpuMs": 89.133,
+              "edits": 0,
+              "rssMiB": 571.8046875
+            },
+            {
+              "wallMs": 84.8922990000001,
+              "cpuMs": 86.324,
+              "edits": 0,
+              "rssMiB": 571.8046875
+            },
+            {
+              "wallMs": 82.27814699999999,
+              "cpuMs": 85.539,
+              "edits": 0,
+              "rssMiB": 571.8046875
+            }
+          ]
+        },
+        {
+          "id": "de-1000-typo-heavy",
+          "words": 1000,
+          "language": "de",
+          "kind": "typo-heavy",
+          "samples": [
+            {
+              "wallMs": 83.53419099999974,
+              "cpuMs": 89.547,
+              "edits": 47,
+              "rssMiB": 571.8046875
+            },
+            {
+              "wallMs": 69.67608699999982,
+              "cpuMs": 85.989,
+              "edits": 47,
+              "rssMiB": 571.8046875
+            },
+            {
+              "wallMs": 67.7052479999993,
+              "cpuMs": 75.658,
+              "edits": 47,
+              "rssMiB": 571.8046875
+            },
+            {
+              "wallMs": 70.66498300000057,
+              "cpuMs": 75.54,
+              "edits": 47,
+              "rssMiB": 571.8046875
+            }
+          ]
+        }
+      ]
+    },
+    "single": {
+      "mixedLanguage": false,
+      "scope": "Whole Node reference, ONNX CPU/WASM single thread plus shared static spelling. Process RSS includes Node, not browser or Outlook. Cold session construction excludes first static-lexicon initialization, which is included in first correction.",
+      "hardware": {
+        "cpu": "Intel(R) Core(TM) i5-1038NG7 CPU @ 2.00GHz",
+        "logicalCPUs": 8,
+        "ramGiB": 31.144447326660156,
+        "platform": "linux"
+      },
+      "runtime": "v26.7.0",
+      "model": {
+        "modelSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59",
+        "modelBytes": 47246299,
+        "metadataSha256": "bf1edb08d9d1ec4bc687b20d90326d30f4b7e3d857df26779adf503ff6ed820b"
+      },
+      "policySha256": "808e18d8eea3afb329597b0eefc2966a4308936e93ce97eb0cde0c1db8db5d63",
+      "fixturesSha256": "9572cd0dee9fb63981fc0d68d0e21d2c1a582822b18096ff205a943215f36bd6",
+      "sessionCreationMs": 764.2220260000001,
+      "peakRssMiB": 601.703125,
+      "rows": [
+        {
+          "id": "en-ordinary-clean",
+          "words": 150,
+          "language": "en",
+          "kind": "clean",
+          "samples": [
+            {
+              "wallMs": 262.7830960000001,
+              "cpuMs": 451.515,
+              "edits": 0,
+              "rssMiB": 536.421875
+            },
+            {
+              "wallMs": 44.46977000000015,
+              "cpuMs": 49.838,
+              "edits": 0,
+              "rssMiB": 536.546875
+            },
+            {
+              "wallMs": 41.12464299999988,
+              "cpuMs": 45.364,
+              "edits": 0,
+              "rssMiB": 536.546875
+            },
+            {
+              "wallMs": 46.177370999999994,
+              "cpuMs": 85.465,
+              "edits": 0,
+              "rssMiB": 536.546875
+            }
+          ]
+        },
+        {
+          "id": "en-ordinary-typo-heavy",
+          "words": 150,
+          "language": "en",
+          "kind": "typo-heavy",
+          "samples": [
+            {
+              "wallMs": 105.47989099999995,
+              "cpuMs": 241.191,
+              "edits": 9,
+              "rssMiB": 575.51171875
+            },
+            {
+              "wallMs": 53.05512899999985,
+              "cpuMs": 118.32,
+              "edits": 9,
+              "rssMiB": 575.51171875
+            },
+            {
+              "wallMs": 53.315967999999884,
+              "cpuMs": 133.122,
+              "edits": 9,
+              "rssMiB": 577.65625
+            },
+            {
+              "wallMs": 51.09260999999992,
+              "cpuMs": 104.518,
+              "edits": 9,
+              "rssMiB": 583.90625
+            }
+          ]
+        },
+        {
+          "id": "en-1000-clean",
+          "words": 1000,
+          "language": "en",
+          "kind": "clean",
+          "samples": [
+            {
+              "wallMs": 337.852758,
+              "cpuMs": 741.408,
+              "edits": 0,
+              "rssMiB": 595.953125
+            },
+            {
+              "wallMs": 318.3086940000003,
+              "cpuMs": 540.446,
+              "edits": 0,
+              "rssMiB": 599.64453125
+            },
+            {
+              "wallMs": 303.855188,
+              "cpuMs": 344.414,
+              "edits": 0,
+              "rssMiB": 599.64453125
+            },
+            {
+              "wallMs": 303.17931999999973,
+              "cpuMs": 324.305,
+              "edits": 0,
+              "rssMiB": 599.64453125
+            }
+          ]
+        },
+        {
+          "id": "en-1000-typo-heavy",
+          "words": 1000,
+          "language": "en",
+          "kind": "typo-heavy",
+          "samples": [
+            {
+              "wallMs": 350.0824239999997,
+              "cpuMs": 378.037,
+              "edits": 53,
+              "rssMiB": 599.64453125
+            },
+            {
+              "wallMs": 333.4050830000001,
+              "cpuMs": 340.772,
+              "edits": 53,
+              "rssMiB": 599.89453125
+            },
+            {
+              "wallMs": 337.11045599999943,
+              "cpuMs": 354.352,
+              "edits": 53,
+              "rssMiB": 599.89453125
+            },
+            {
+              "wallMs": 333.80747599999995,
+              "cpuMs": 337.814,
+              "edits": 53,
+              "rssMiB": 599.89453125
+            }
+          ]
+        },
+        {
+          "id": "de-ordinary-clean",
+          "words": 150,
+          "language": "de",
+          "kind": "clean",
+          "samples": [
+            {
+              "wallMs": 30.721561000000293,
+              "cpuMs": 30.871,
+              "edits": 0,
+              "rssMiB": 600.01953125
+            },
+            {
+              "wallMs": 24.833394999999655,
+              "cpuMs": 27.203,
+              "edits": 0,
+              "rssMiB": 600.01953125
+            },
+            {
+              "wallMs": 25.249079000000165,
+              "cpuMs": 30.725,
+              "edits": 0,
+              "rssMiB": 600.01953125
+            },
+            {
+              "wallMs": 23.579233000000386,
+              "cpuMs": 23.488,
+              "edits": 0,
+              "rssMiB": 600.01953125
+            }
+          ]
+        },
+        {
+          "id": "de-ordinary-typo-heavy",
+          "words": 150,
+          "language": "de",
+          "kind": "typo-heavy",
+          "samples": [
+            {
+              "wallMs": 68.54891700000007,
+              "cpuMs": 110.393,
+              "edits": 6,
+              "rssMiB": 600.01953125
+            },
+            {
+              "wallMs": 5.225008999999773,
+              "cpuMs": 8.448,
+              "edits": 6,
+              "rssMiB": 600.01953125
+            },
+            {
+              "wallMs": 5.579998999999589,
+              "cpuMs": 12.05,
+              "edits": 6,
+              "rssMiB": 600.01953125
+            },
+            {
+              "wallMs": 4.2845369999995455,
+              "cpuMs": 9.295,
+              "edits": 6,
+              "rssMiB": 600.01953125
+            }
+          ]
+        },
+        {
+          "id": "de-1000-clean",
+          "words": 1000,
+          "language": "de",
+          "kind": "clean",
+          "samples": [
+            {
+              "wallMs": 88.03813700000046,
+              "cpuMs": 97.449,
+              "edits": 0,
+              "rssMiB": 600.01953125
+            },
+            {
+              "wallMs": 81.47160600000007,
+              "cpuMs": 88.521,
+              "edits": 0,
+              "rssMiB": 600.14453125
+            },
+            {
+              "wallMs": 83.87161600000036,
+              "cpuMs": 84.321,
+              "edits": 0,
+              "rssMiB": 600.26953125
+            },
+            {
+              "wallMs": 81.62670200000048,
+              "cpuMs": 83.203,
+              "edits": 0,
+              "rssMiB": 600.26953125
+            }
+          ]
+        },
+        {
+          "id": "de-1000-typo-heavy",
+          "words": 1000,
+          "language": "de",
+          "kind": "typo-heavy",
+          "samples": [
+            {
+              "wallMs": 75.74006800000006,
+              "cpuMs": 81.906,
+              "edits": 50,
+              "rssMiB": 600.26953125
+            },
+            {
+              "wallMs": 70.63896300000033,
+              "cpuMs": 88.028,
+              "edits": 50,
+              "rssMiB": 600.26953125
+            },
+            {
+              "wallMs": 68.20956699999988,
+              "cpuMs": 78.009,
+              "edits": 50,
+              "rssMiB": 600.39453125
+            },
+            {
+              "wallMs": 79.29970500000036,
+              "cpuMs": 118.477,
+              "edits": 50,
+              "rssMiB": 553.90625
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "limits": [
+    "All6200syntheticdocuments have been consumed.",
+    "The original200case RC6 audit is now known data; it remains9wanted0unwanted107misses in either scope.",
+    "The prior3200real-learner semantic audit describes RC6, not new selected-language-only validation.",
+    "No universal zero-error or near-complete correction guarantee.",
+    "Actual Office COM installation, formatting and Undo remain unverified."
+  ]
 }

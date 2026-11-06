@@ -4,9 +4,10 @@
  * SPDX-License-Identifier: GPL-3.0-only
  */
 
-import {hasAlternative,prepareAmbiguity,uniqueRepair} from './ambiguity-lookup.js';
+import {ambiguityFor,prepareAmbiguity} from './ambiguity-lookup.js';
 import {candidates, typingRepair, protectedWord, eligibleInflection} from './candidate-lookup.js';
 import {en as enTypos, de as deTypos} from './typos.js';
+import {en as enLanguageTypos,de as deLanguageTypos} from './typos-language-data.js';
 import enLexicon from './lexicons/en.js';
 import * as deAssets from './lexicons/de.js';
 import contextMetadata from './context-encoder-data.js';
@@ -185,11 +186,11 @@ function nounContext(before) {
  for(let i=words.length-1;i>=0;i--)if(nounIntroducers.has(words[i].toLowerCase())&&words.slice(i+1).every(w=>/^\p{Ll}[\p{Ll}\p{M}-]*(?:e|en|er|es|em)$/u.test(w)))return true;
  return false;
 }
-const typoInventories={en:enTypos,de:deTypos},typoMaps=new Map();
-function prior(language, word) {
- const shard=word.slice(0,2),key=language+":"+shard;
- const source=typoInventories[language][shard];
- if(!source)return null;
+const typoInventories={en:enTypos,de:deTypos},languageTypoInventories={en:enLanguageTypos,de:deLanguageTypos},typoMaps=new Map();
+function prior(language,word,mixedLanguage=true) {
+ const shard=word.slice(0,2),key=language+':'+(mixedLanguage?'mixed':'single')+':'+shard;
+ const source=(mixedLanguage?typoInventories:languageTypoInventories)[language][shard];
+ if(!source)return mixedLanguage?null:prior(language,word,true);
  if(!typoMaps.has(key)){
   let count=1;for(let p=source.indexOf('\n');p!==-1;p=source.indexOf('\n',p+1))count++;
   const starts=new Uint32Array(count+1);let start=0,previous='';
@@ -212,7 +213,7 @@ function prior(language, word) {
   }
   if(original<word)low=mid+1;else high=mid-1;
  }
- return null;
+ return mixedLanguage?null:prior(language,word,true);
 }
 function englishPlural(word, spelling) {
  if(!word.endsWith('s'))return false;
@@ -229,16 +230,17 @@ export function prepare() { lexical('en'); lexical('de'); lexical('deCased'); pr
  */
 export function createCorrector({en,de}) {
  const dictionaries={en:dictionary(en),de:dictionary(de)};
- return {correct(text,{language='en',mode='conservative',contextScores=null,contextual=true}={}){
+ return {correct(text,{language='en',mode='conservative',mixedLanguage=true,contextScores=null,contextual=true}={}){
   if(typeof text!=='string')throw new TypeError('text must be a string');
   if(!['en','de'].includes(language))throw new RangeError('language must be en or de');
   if(!['conservative','balanced'].includes(mode))throw new RangeError('Unknown mode');
+  if(typeof mixedLanguage!=='boolean')throw new TypeError('mixedLanguage must be a boolean.');
   if(text.length>LIMIT)throw new RangeError('Text exceeds 20,000 UTF-16 code units. Select a smaller passage.');
   const dict=dictionaries[language],spelling=lexical(language),foreign=lexical(language==='de'?'en':'de');
-  const protectedSpans=protectedRanges(text),edits=[];
+  const protectedSpans=protectedRanges(text),edits=[],ambiguity=ambiguityFor(language,mixedLanguage);
   let count=0,skipped=0;
   const candidateCache=new Map(),inflectionCache=new Map(),ambiguityCache=new Map(),candidateBudget={remaining:16000},lexicalBudget={remaining:50000};
-  const ambiguous=(word,target)=>{const key=word+'\t'+target;if(!ambiguityCache.has(key)){const radius=language==='en'&&englishPlural(target,spelling)?2:1;const result=hasAlternative(word,target,lexicalBudget,radius);if(result!==null)ambiguityCache.set(key,result);return result;}return ambiguityCache.get(key);};
+  const ambiguous=(word,target)=>{const key=word+'\t'+target;if(!ambiguityCache.has(key)){const radius=language==='en'&&englishPlural(target,spelling)?2:1;const result=ambiguity.hasAlternative(word,target,lexicalBudget,radius);if(result!==null)ambiguityCache.set(key,result);return result;}return ambiguityCache.get(key);};
   for(const match of text.matchAll(/\p{L}[\p{L}\p{M}]*/gu)){
    if(++count>MAX_WORDS)throw new RangeError('Text exceeds 3,000 word tokens.');
    const original=match[0],start=match.index,end=start+original.length,word=original.toLowerCase();
@@ -247,7 +249,7 @@ export function createCorrector({en,de}) {
       (original!==word&&original!==original.toUpperCase()&&original.slice(1)!==original.slice(1).toLowerCase())||
       (original===original.toUpperCase()&&original.length<=5)){skipped++;continue;}
    if((language==='de'&&word.includes('ß')&&(spelling.correct(word.replace(/ß/g,'ss'))||spelling.correct(capitalized(word.replace(/ß/g,'ss')))))||spelling.correct(word)||spelling.correct(capitalized(word))||
-      foreign.correct(word)||foreign.correct(capitalized(word))||
+      (mixedLanguage&&(foreign.correct(word)||foreign.correct(capitalized(word))))||
       (language==='en'&&(englishPlural(word,spelling)||(/lings?$/.test(word)&&spelling.correct(word.replace(/lings?$/,'')))))||
       (language==='de'&&Array.from({length:Math.max(0,word.length-7)},(_,i)=>i+4).some(at=>spelling.correct(capitalized(word.slice(0,at)))&&spelling.correct(capitalized(word.slice(at)))))||
       (language==='de'&&/in(?:nen)?$/.test(word)&&(()=>{const stem=word.replace(/in(?:nen)?$/,'');return[stem,stem+'e',stem.replace(/[äöü]/g,c=>({ä:'a',ö:'o',ü:'u'})[c])].some(w=>w.length>=3&&lexical('deCased').correct(capitalized(w)));})()))continue;
@@ -255,7 +257,7 @@ export function createCorrector({en,de}) {
    if(protectedWord('software',word)||(titleToken&&protectedWord('people',word))){skipped++;continue;}
    let attestedEntry;
    if(dict.words.has(word)){
-    attestedEntry=language==='de'?prior(language,word):null;
+    attestedEntry=language==='de'?prior(language,word,mixedLanguage):null;
     let changes=0;
     const restored=attestedEntry?.replacement;
     const lostUmlaut=restored?.length===word.length&&[...word].every((letter,i)=>{if(letter===restored[i])return true;changes++;return ({a:'ä',o:'ö',u:'ü'})[letter]===restored[i];})&&changes===1;
@@ -275,13 +277,13 @@ export function createCorrector({en,de}) {
    if(language==='de'&&original==='Kanst'&&sentenceStart&&/^\s+du\b/u.test(after))replacement='Kannst';
    if(language==='de'&&original==='Eamil'&&/\b(?:eine|die|diese|ihre|meine|deine|seine|unsere)\s+$/iu.test(before))replacement='E-Mail';
    if(!replacement){
-    let entry=attestedEntry||prior(language,word);
+    let entry=attestedEntry||prior(language,word,mixedLanguage);
     if(!entry&&word.length>=6){
      if(!candidateCache.has(word))candidateCache.set(word,candidates(language,word,candidateBudget));
      const options=candidateCache.get(word)?.filter(option=>typingRepair(word,option));
      if(options?.length===1&&typingRepair(word,options[0])&&ambiguous(word,options[0])===false)entry={replacement:options[0],kind:'unique'};
      // Any common candidate would defeat uniqueness of a different derived form.
-     if(!entry&&options?.length===0){let repair;if(inflectionCache.has(word))repair=inflectionCache.get(word);else{repair=uniqueRepair(word,lexicalBudget);if(repair!==null)inflectionCache.set(word,repair);}if(typeof repair==='string'&&typingRepair(word,repair)&&eligibleInflection(language,repair))entry={replacement:repair,kind:'inflection'};}
+     if(!entry&&options?.length===0){let repair;if(inflectionCache.has(word))repair=inflectionCache.get(word);else{repair=ambiguity.uniqueRepair(word,lexicalBudget);if(repair!==null)inflectionCache.set(word,repair);}if(typeof repair==='string'&&typingRepair(word,repair)&&eligibleInflection(language,repair))entry={replacement:repair,kind:'inflection'};}
     }
     if(!entry||(!dict.words.has(entry.replacement)&&entry.kind!=='inflection')){skipped++;continue;}
     const candidate=entry.replacement;

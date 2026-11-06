@@ -39,26 +39,36 @@ for(const set of sets){
  if(set.name==='dev'||set.name==='holdout')families[set.name]=new Set(rows.flatMap(r=>r.pairFamilies||[]));
 }
 for(const family of families.dev)assert.ok(!families.holdout.has(family),'Target family overlap: '+family);
-const combined=Object.fromEntries(['conservative','balanced'].map(mode=>[mode,{trueEdits:0,exactDocuments:0}]));
-for(const set of sets){
- execFileSync(process.execPath,['tests/scale-evaluate.mjs','--file',set.file,'--label','check-'+set.name],{stdio:'pipe'});
- const report=JSON.parse(readFileSync(`test-results/scale/check-${set.name}.json`));
- assert.equal(report.backend,'contextual',set.name+' must execute the actual neural backend');
- assert.equal(report.corpusSha256,frozen.corpusSha256[set.file],set.name+' scored gold changed');
- assert.deepEqual(report.coreSha256,frozen.coreSha256,set.name+' scored functional source changed');
- for(const mode of ['conservative','balanced']){
-  const row=report.summary.find(r=>r.language==='all'&&r.mode===mode);
-  assert.ok(row,set.name+' missing '+mode+' summary');
-  assert.equal(row.documents,set.documents,set.name+' evaluated document count');
-  assert.ok(row.precision>=.99,set.name+' edit precision target');
-  assert.ok(row.trueEdits>=set.minEdits,set.name+' useful correction coverage');
-  assert.equal(row.falseEdits,0,set.name+' unwanted-edit regression');
-  assert.equal(row.preservedSafeDocuments,row.safeDocuments,set.name+' clean-document preservation');
-  if(set.name==='dev'||set.name==='holdout')for(const metric of ['trueEdits','exactDocuments'])combined[mode][metric]+=row[metric];
+const scopeReports={};
+for(const mixedLanguage of [true,false]){
+ const scope=mixedLanguage?'mixed':'single';
+ const combined=Object.fromEntries(['conservative','balanced'].map(mode=>[mode,{trueEdits:0,exactDocuments:0}]));
+ scopeReports[scope]={};
+ for(const set of sets){
+  const label='check-'+scope+'-'+set.name;
+  execFileSync(process.execPath,['tests/scale-evaluate.mjs','--file',set.file,'--label',label,...(mixedLanguage?[]:['--single-language'])],{stdio:'pipe'});
+  const report=JSON.parse(readFileSync(`test-results/scale/${label}.json`));
+  assert.equal(report.backend,'contextual',set.name+' must execute the actual neural backend');
+  assert.equal(report.mixedLanguage,mixedLanguage,'Wrong vocabulary scope');
+  assert.equal(report.corpusSha256,frozen.corpusSha256[set.file],set.name+' scored gold changed');
+  assert.deepEqual(report.coreSha256,frozen.coreSha256,set.name+' scored functional source changed');
+  scopeReports[scope][set.name]=report.summary;
+  for(const mode of ['conservative','balanced']){
+   const row=report.summary.find(r=>r.language==='all'&&r.mode===mode);
+   assert.ok(row,set.name+' missing '+mode+' summary');
+   assert.equal(row.documents,set.documents,set.name+' evaluated document count');
+   assert.ok(row.precision>=.99,set.name+' edit precision target');
+   assert.ok(row.trueEdits>=set.minEdits,set.name+' useful correction coverage');
+   assert.equal(row.falseEdits,0,scope+' '+set.name+' unwanted-edit regression');
+   assert.equal(row.preservedSafeDocuments,row.safeDocuments,set.name+' clean-document preservation');
+   if(set.name==='dev'||set.name==='holdout')for(const metric of ['trueEdits','exactDocuments'])combined[mode][metric]+=row[metric];
+  }
+ }
+ for(const [mode,total]of Object.entries(combined)){
+  assert.ok(total.trueEdits>=3811,scope+' '+mode+' known 5000-document wanted edits below fixed RC4 baseline');
+  assert.ok(total.exactDocuments>=3428,scope+' '+mode+' known 5000-document exact corrections below fixed RC4 baseline');
  }
 }
-for(const [mode,total]of Object.entries(combined)){
- assert.ok(total.trueEdits>=3811,mode+' known 5,000-document wanted edits below fixed RC4 baseline');
- assert.ok(total.exactDocuments>=3428,mode+' known 5,000-document exact corrections below fixed RC4 baseline');
-}
-console.log('PASS actual ONNX CPU/WASM inference, complete frozen core/gold inventories, unchanged gold, target-family split and all 6,200 documents in both modes; zero unwanted edits, clean documents preserved, useful corrections and known 5,000-document RC4 coverage floors. The original 5,600 are known regressions; 400 English cases are development calibration. The RC6 200-case audit is fresh only at its first evaluation after the RC6 freeze.');
+import{writeFileSync}from'node:fs';
+writeFileSync('test-results/language-scopes.json',JSON.stringify(scopeReports,null,2)+'\n');
+console.log('PASS actual ONNX CPU/WASM inference, frozen core/gold identities and all6200known documents in BOTH vocabulary scopes and BOTH saved modes; zero unwanted edits and clean controls preserved. No new fresh generalization claim.');

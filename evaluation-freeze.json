@@ -1,13 +1,14 @@
 {
-  "description": "RC6 trained encoder v2 and calibrated13-action policy frozen after human calibration, corrected identity controls, 400 known synthetic development cases and 5600 known regressions. Before implementer inspection or evaluation of 3200 human test pairs and sealed200 synthetic audit. Retuning after either evaluation consumes that set; preserve first results and obtain a new independent audit for fresh claims.",
-  "frozenAt": "2026-11-06T10:12:41.678028+00:00",
+  "description": "RC7 explicit text-language vocabulary scope candidate. All eight inherited synthetic sets are now known regression/calibration data. The 47MB ONNX model, its metadata and calibrated13-action neural policy remain unchanged from RC6. No fresh generalization claim is made.",
+  "frozenAt": "2026-11-06T14:51:49.509405+00:00",
   "coreSha256": {
     "dictionaries/de.txt": "a19ed81a325936cc2f4d0e68d190eae99cd717c8c894e5070cccca447bdef3c4",
     "dictionaries/en.txt": "d2d35a71b7d59ca91f9bdd49cc5406ac85084174d9069b2e9854e4aea357aa5c",
     "models/context-encoder-metadata.json": "bf1edb08d9d1ec4bc687b20d90326d30f4b7e3d857df26779adf503ff6ed820b",
     "models/context-encoder.onnx": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59",
     "src/ambiguity-data.js": "95692bbef3b1ae8a58f162cf4334aaf8212fe254ffa25273ff1ddd06476b5c7a",
-    "src/ambiguity-lookup.js": "620c3dbe077074ded3f76587c52d0f10e433a6c6d76f86c6fd6ac00d6839235a",
+    "src/ambiguity-language-data.js": "6e45a90c3fa985db897d5b457744cdfb60409b703e34f82bf9000a8c654f4ff4",
+    "src/ambiguity-lookup.js": "e05b9170060d605a4c8e2a38aca73070bf71d6ad5a4bd0f8c5d1c774049c00c4",
     "src/candidate-lookup.js": "3efdbc0b371909e22dbb41b4ba8216eace9c4920198efe5a0a9fe13bd0eac254",
     "src/candidates.js": "442d650ac932c6aa0856f4381ac4c0c99c95dfc06144e7151ac14a04b15bd98a",
     "src/context-encode.js": "0df8aab5edf98fb0e4c2bedf5816946d7dfeb0e75110cba0e5a1affab4cd008e",
@@ -15,12 +16,13 @@
     "src/context-model.js": "bfaa3cfe2baa6b9edf6fdb494237e8e3a1e2e3ad7d1d7d29d7be026e8dfa5d8b",
     "src/context-policy.js": "808e18d8eea3afb329597b0eefc2966a4308936e93ce97eb0cde0c1db8db5d63",
     "src/context-score.js": "3cd60736e5ae25a33ad38ab706c745d0bc3a84adf4984b903c3eef4ca5443539",
-    "src/index.js": "4b5f14db1b9b4f442405a594539dacc8f163d6801e435c97372544e92ad797e6",
+    "src/index.js": "ecd6c93c0611ed9f2712797bb1f25013f17b9527fe9bb55d9481a898bf1921d8",
     "src/inflection-data.js": "bfe4fecd6f21afbb41f86b8ad757e1a43912a447bf56a39eaa49d788f97e631a",
     "src/lexicons/de.js": "a3d0b332936e8ffce0d81f9e8592472213250677bc2056d06a571bd0b1605dd1",
     "src/lexicons/en.js": "fd9f4bc914dc9a45a9ab13f8aa198f6f042a48cf4d3ce3d0f80c159f16a7f331",
     "src/lexicons/nspell.js": "42406e6669a8cd211ab2c9fa9273ae29f7d9fccc4b4e9581545711f4d5adee09",
     "src/protect-vocabulary.js": "52387aa6bb9fe963443f83d1cff9fb17c3da7a3198e8dc35c3ea6386523a31cf",
+    "src/typos-language-data.js": "370eadd8457136586c8e5d42337feff1eca838563cd845c35d48cecb70a3eebc",
     "src/typos.js": "1d21b2718c3f4a448083825850a540fec22d5e60c77f5951f52b1608ea7677d8"
   },
   "corpusSha256": {
@@ -34,36 +36,33 @@
     "tests/scale-corpus/rc6-fresh/cases.json": "e7b3a32a81d018621e516b607472a738466e0bf69bdb74303932ebb85eb44cb6"
   },
   "evaluationRoles": {
-    "knownRegression": [
-      "tests/scale-corpus/dev.json",
-      "tests/scale-corpus/holdout.json",
-      "tests/scale-corpus/blind/cases.json",
-      "tests/scale-corpus/rc5-blind/cases.json",
-      "tests/scale-corpus/rc5-blind2/cases.json",
-      "tests/scale-corpus/rc5-final-blind/cases.json"
-    ],
-    "knownDevelopmentCalibration": [
-      "tests/context-calibration/cases.json"
-    ],
-    "freshAtFirstEvaluation": [
-      "tests/scale-corpus/rc6-fresh/cases.json"
-    ],
-    "realHeldout": {
-      "file": "test-v2.jsonl",
-      "rows": 3200,
-      "sha256": "5ef047077f545dbf5fea1c401767e2133f47f6f6b17f1b0880a4b684fa90692a",
-      "redistributed": false
-    }
+    "tests/scale-corpus/dev.json": "Known consumed regression/calibration data; immutable gold",
+    "tests/scale-corpus/holdout.json": "Known consumed regression/calibration data; immutable gold",
+    "tests/scale-corpus/blind/cases.json": "Known consumed regression/calibration data; immutable gold",
+    "tests/scale-corpus/rc5-blind/cases.json": "Known consumed regression/calibration data; immutable gold",
+    "tests/scale-corpus/rc5-blind2/cases.json": "Known consumed regression/calibration data; immutable gold",
+    "tests/scale-corpus/rc5-final-blind/cases.json": "Known consumed regression/calibration data; immutable gold",
+    "tests/context-calibration/cases.json": "Known consumed regression/calibration data; immutable gold",
+    "tests/scale-corpus/rc6-fresh/cases.json": "Known consumed regression/calibration data; immutable gold"
   },
   "runtimeSha256": {
-    "extension/context-runtime.js": "56920bc92b9237d28ab6714639e94e927910a4d0bf58d9cfbc68ea21a5df6945",
-    "extension/runner.js": "3c2fda6eb5db5224e6624eec2b257e27eb0fe6e17feaaacd4846527cddc3387d",
-    "extension/target.js": "cb0a77940092a35337773cd7cc5a57bed545246585ff20f0b05ee8aed7f02eae",
     "extension/background.js": "1ac8fa19bce2e7bee317e71c4c640a5a28c8d462fe07c6c2c7400bb7229d48a0",
-    "scripts/context-reference.mjs": "0e43caa7a8410469f87f3ec283bb5cd5b6cd702751b8dcb436755f2c4f3c42d7",
-    "scripts/context-native-reference.mjs": "1be0ba601209602bc41d5ec90eb1a083617677ed09e5311378afa7df3756feda",
-    "scripts/context-native-inference.py": "15790e79cef7be80e57acaa592fb1733bc219e2d362cc7b3ea0a012238fbfed3"
+    "extension/context-runtime.js": "56920bc92b9237d28ab6714639e94e927910a4d0bf58d9cfbc68ea21a5df6945",
+    "extension/options.html": "f79a905b4dc7c7f653115d5a38d26d4cce72bfc25b4845c87b6d72ebf247a74d",
+    "extension/options.js": "caff6bb60fe05667450e24e15d985e445347a76772b455a912fa78c0adcb8a62",
+    "extension/popup.css": "ed1543966d66f5f1b051dd7ac3341aa92b452e7c40999a9843bc085ca7073a2d",
+    "extension/popup.html": "e93a80155f70cf6bec254ce72c058f628097c4c546c90fadf24276b07a424dfd",
+    "extension/popup.js": "c5093b832240801ad789eebbc4ab82e39ef680be148de1ce111f91c4cda1693a",
+    "extension/runner.js": "6bc1253cd3e0c9b91aa91f125a791675dd0afe0b3012e63e17e0bd5087b8cd40",
+    "extension/settings.js": "23747cc473790f338a9b85e7d0b4b3ae7b9cbe6916a8521bd4e2161acf50ab46",
+    "extension/target.js": "cb0a77940092a35337773cd7cc5a57bed545246585ff20f0b05ee8aed7f02eae",
+    "scripts/context-reference.mjs": "0e43caa7a8410469f87f3ec283bb5cd5b6cd702751b8dcb436755f2c4f3c42d7"
   },
   "wasmSha256": "4b884c203b0fa48d057be3332c65513ff85aa3c5bddd6946acc0fab7ecda001d",
-  "policyCalibrationReportSha256": "95c84ace85adf4bc45e21ab6cad1fb1dc7de7b6d23b07a26d6e0000eb2fd4022"
+  "policyCalibrationReportSha256": "95c84ace85adf4bc45e21ab6cad1fb1dc7de7b6d23b07a26d6e0000eb2fd4022",
+  "previousRelease": {
+    "tag": "v1.0.0-rc.6",
+    "commit": "90d99e42934dc70571e717760a63b775b713935e",
+    "freeze": "tests/language-results/rc6-evaluation-freeze.json"
+  }
 }

@@ -39,7 +39,7 @@ export function createRunner(api, fetchResource = globalThis.fetch, predictConte
         if (!Number.isInteger(operationId)) throw new Error('Could not capture the focused field.');
       }
       const dict = action === 'correct' ? await loadDictionaries() : null;
-      const options = {action, language: settings.language, mode: settings.mode};
+      const options = {action, language: settings.language, mode: settings.mode, mixedLanguage: settings.mixedLanguage};
       if (operationId !== undefined) options.operationId = operationId;
       if(action==='correct'&&predictContext){
         await requireActive();

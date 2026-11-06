@@ -7,6 +7,7 @@ import assert from 'node:assert/strict';
 const arg=(name,fallback)=>{const i=process.argv.indexOf(name);return i<0?fallback:process.argv[i+1];};
 const file=resolve(arg('--file','tests/scale-corpus/dev.json')),label=arg('--label','candidate');
 assert.match(label,/^[a-z0-9-]+$/i);
+const mixedLanguage=!process.argv.includes('--single-language');
 const hash=b=>createHash('sha256').update(b).digest('hex'),bytes=readFileSync(file),data=JSON.parse(bytes);
 // Accept both immutable audit schemas without rewriting either gold file.
 const cases=(Array.isArray(data)?data:data.cases).map(row=>({...row,format:['multi-paragraph','multiparagraph'].includes(row.format)?'paragraphs':row.format,edits:row.edits.map(edit=>edit.offset===undefined?{offset:edit.start,length:edit.end-edit.start,original:row.input.slice(edit.start,edit.end),replacement:edit.replacement}:edit)}));
@@ -38,7 +39,7 @@ try{
 for(const row of cases){
  const predictionStart=performance.now(),contextScores=reference?await reference.predict(row.input,row.language,{policyOnly:true}):null,predictionMs=performance.now()-predictionStart;
  for(const mode of ['conservative','balanced']){
- const start=performance.now(),actual=corrector.correct(row.input,{language:row.language,mode,contextScores}),durationMs=performance.now()-start+predictionMs;
+ const start=performance.now(),actual=corrector.correct(row.input,{language:row.language,mode,mixedLanguage,contextScores}),durationMs=performance.now()-start+predictionMs;
  const wanted=new Set(row.edits.map(key)),trueEdits=actual.edits.filter(e=>wanted.has(key(e))).length;
  let lastEnd=0;for(const e of actual.edits){assert.ok(e.offset>=lastEnd&&e.length>=0&&e.offset+e.length<=row.input.length);assert.equal(row.input.slice(e.offset,e.offset+e.length),e.original);lastEnd=e.offset+e.length;}
  let rebuilt=row.input;for(const e of [...actual.edits].reverse())rebuilt=rebuilt.slice(0,e.offset)+e.replacement+rebuilt.slice(e.offset+e.length);assert.equal(rebuilt,actual.text);
@@ -48,6 +49,6 @@ for(const row of cases){
 }finally{if(reference)await reference.close();}
 const summarize=rows=>{const sum=k=>rows.reduce((n,r)=>n+r[k],0),tp=sum('trueEdits'),fp=sum('falseEdits'),fn=sum('missedEdits'),safe=rows.filter(r=>r.kind==='safe'),times=rows.map(r=>r.durationMs).sort((a,b)=>a-b);return {documents:rows.length,exactDocuments:rows.filter(r=>r.exact).length,safeDocuments:safe.length,preservedSafeDocuments:safe.filter(r=>r.exact).length,trueEdits:tp,falseEdits:fp,missedEdits:fn,precision:tp+fp?tp/(tp+fp):null,recall:tp+fn?tp/(tp+fn):null,p50Ms:times[Math.floor(times.length*.5)],p95Ms:times[Math.floor(times.length*.95)],maxMs:times.at(-1)};};
 const summary=[];for(const mode of ['conservative','balanced'])for(const language of ['all','en','de'])summary.push({mode,language,...summarize(results.filter(r=>r.mode===mode&&(language==='all'||r.language===language)))});
-const report={label,backend,file:relative(process.cwd(),file),corpusSha256:hash(bytes),coreSha256,node:process.version,creationMs,summary,results};
+const report={label,backend,mixedLanguage,file:relative(process.cwd(),file),corpusSha256:hash(bytes),coreSha256,node:process.version,creationMs,summary,results};
 mkdirSync('test-results/scale',{recursive:true});const output=`test-results/scale/${label}.json`;writeFileSync(output,JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({output,corpusSha256:report.corpusSha256,creationMs,summary},null,2));
