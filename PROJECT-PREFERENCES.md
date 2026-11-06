@@ -18,7 +18,7 @@
 
 ## Observed implementation
 
-The shared engine began with SymSpell symmetric-delete lookup. The current compiler generates static typo priors from attributed public data and unique common typing repairs; runtime uses compact lookup tables, bilingual validity checks and literal/name protections. It is not a trained neural model. No test gold enters candidate compilation. Both saved modes currently share the same precision-first policy.
+The fixed browser RC5 and native RC4 engines use compiled spelling priors, bilingual validity and literal/name protection. Browser RC6 and native RC5 retain that static stage and add a 47.25 MB pretrained BERT Mini encoder fine-tuned for sparse contextual edits. The calibrated policy enables 13 actions after model/metadata identity and original-text protection checks. Training and calibration roles are separate from the first frozen evaluations. The observed gain is limited partial correction; broad grammar coverage and population precision are not established. Both saved modes share the same policy. No runtime compiler reads test gold.
 
 ## Open decisions
 

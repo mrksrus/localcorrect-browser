@@ -1,58 +1,59 @@
-# RC5 quality and limits
+# RC6 quality and limits
 
-Browser RC4 and native Outlook RC3 remain fixed comparison releases. RC5 improves coverage on the known main corpus while prioritizing abstention over an unwanted replacement. Fresh-audit coverage and regressions are reported separately below. It is still a static spelling engine, not a neural language model or a universal grammar corrector.
+RC6 adds a trained, local contextual edit model to the RC5 spelling engine. It is a small improvement in supported partial corrections, with substantial misses. It does not meet the goal of correcting nearly every sentence. The independent synthetic audit shows no coverage gain over RC5.
 
-## Final frozen results
+## Frozen synthetic results
 
-| Set | Wanted | Unwanted | Missed | Exact whole documents | Clean controls |
+| Set and role | Wanted edits | Unwanted edits | Missed edits | Exact documents | Clean controls preserved |
 |---|---:|---:|---:|---:|---:|
-| Known development | 2,469 | 0 | 1,121 | 2183/3000 | 1200/1200 |
-| Known former holdout | 1,725 | 0 | 663 | 1455/2000 | 800/800 |
-| Known former blind audit | 57 | 0 | 33 | 78/100 | 70/70 |
-| Consumed first RC5 audit | 92 | 0 | 130 | 120/200 | 100/100 |
-| Consumed second RC5 audit | 75 | 0 | 142 | 123/200 | 100/100 |
-| Final independent audit, fresh at first evaluation | 35 | 0 | 30 | 76/100 | 50/50 |
+| 5,600 known regression documents | 4,453 | 0 | 2,119 | 4,035/5,600 | 2,320/2,320 |
+| 400 English development-calibration documents | 9 | 0 | 191 | 209/400 | 200/200 |
+| 200 independent documents, fresh at first evaluation | 9 | 0 | 107 | 104/200 | 100/100 |
 
-Both saved modes have the same policy and results. Every edit actually made in these sets matches its intended gold edit. This is **100% observed edit precision**, not correction of 100% of errors. Misses remain misses. A wrong replacement counts as both an unwanted edit and a missed gold edit. Exactness compares the entire output document with gold, using original-input UTF-16 spans.
+Both saved modes use the same policy. A wrong replacement counts as an unwanted edit and a missed intended edit. Exactness compares the entire result against the reference. Gold spans may include insertions, deletions and phrase changes that this model cannot perform; those remain misses. The evaluator accepts the original audit schemas without rewriting their gold files.
 
-On the known main 5,000 documents, RC4 made 3,811 wanted edits, zero unwanted edits and missed 2,167; it completed 3,428/5,000 documents. RC5 makes 4,194 wanted edits, zero unwanted edits and misses 1,784, completing 3,638/5,000. That is 383 more wanted edits and 210 more complete documents. Error coverage is 70.16%, versus 63.75%.
+The 400 development cases were used to choose thresholds. They are not unseen validation. All earlier 5,600 documents were already known. The new 200-document audit was authored independently, with the model, training data, existing gold and model outputs withheld. Model, metadata, policy and functional source were frozen before evaluation. Its sealed file digest is retained in `evaluation-freeze.json`.
 
-The 5,000 total include 2,000 clean controls. Among only the 3,000 typo-bearing documents, exactness is 1638/3,000, or 54.60%, versus 1428/3,000 for RC4. These denominators must not be confused.
+On the fresh set, RC5 and RC6 both make 9 wanted edits, no unwanted edits and 107 misses. Both preserve all 100 clean documents and completely correct only 4 of the 100 error-bearing documents. The other 100 exact documents are clean controls. This result provides preservation evidence and exposes weak coverage; it does not demonstrate general coverage superiority.
 
-Stronger ambiguity protection also loses some formerly correct edits. On the old 100-case audit RC4 made 66 wanted edits and completed 81 documents; RC5 makes 57 wanted edits and completes 78. This tradeoff follows the explicit preference for no change over a wrong change. All misses and full per-case outputs are available, including regressions.
+Zero observed unwanted edits and 100% observed edit precision on these finite synthetic sets are not a population guarantee. They do not mean that 100% or 99% of errors are fixed. The primary preference remains abstention over an unwanted change.
 
-On the final untouched 100 cases, the candidate made 35 wanted edits, zero unwanted edits and missed 30, completing 76/100. Fixed RC4 made 38 wanted edits, zero unwanted edits and missed 27, completing 78/100. This fresh set does not demonstrate a coverage gain. The larger gains on consulted data are regression/development evidence, not an estimate of general improvement.
+## Real learner test
 
-## What was fresh
+The separate 3,200-pair learner test was not used for gradient training, action selection or threshold calibration. RC6 adds 21 edits across 14 documents. A strict single-token alignment counts 9 exact token matches and 12 mismatches because reference corrections also change nearby punctuation, multiple words or word order.
 
-The original 5,000 templated documents and earlier 100-document audit were consulted while developing RC5. They are known regression tests. The 5,000 share sentence templates and a restricted vocabulary; their target families are separated between the original splits, but the cases are not 5,000 independent real-world messages. Existing codespell/Litkey pairs and other public spelling knowledge can overlap gold. See the [authoring notes](tests/scale-corpus/AUTHORING-NOTES.md) and [source notices](tests/scale-corpus/SOURCES.md).
+Two separately assigned reviewers inspected all 21 additions against the full human references. Both judged all 21 to be supported partial corrections, with no reference contradiction identified. They are mostly capitalization and three German dative-plural repairs. This supplemental semantic audit does not replace the preserved first-pass numbers or establish a natural population precision rate.
 
-A separately authored first 200-document RC5 audit exposed two wrong edits in the first frozen candidate, including an English replacement inside a foreign phrase and an ambiguous plural whose intended word needed two repairs. That candidate was rejected. Its frozen source and 94-wanted/2-unwanted/128-missed results remain in [history](benchmarks/history/rc5-rejected-first-audit.json). This first audit became regression data; its gold was not changed.
+Whole-document exactness remains 617/3,200 for both versions. Learner references contain many corrections the small model cannot express. They can also retain errors or regional wording. The static engine's existing reference mismatches must not automatically be described as wrong edits; raw single-token counts are retained as `strictReferenceMismatchedEdits` in the aggregate report. Raw learner text is not redistributed.
 
-The second independently authored 200-document audit found one remaining unwanted edit, a Welsh word changed into the proper name Cannes. That candidate was rejected too, and the second audit became regression data. Its 75-wanted/1-unwanted/142-missed results and source freeze remain in history. A general English proper-name-only target veto fixed the class without adding a phrase blacklist. Exact functional cores for both rejected snapshots accompany the release as a separate source archive.
+Reports and the frozen policy are in [tests/context-results](tests/context-results). Source licenses, source hashes, document-level splits and duplicate checks are in the context source manifests and [MODEL.md](MODEL.md). The synthetic development and independent audit data are published in full. No private chat or email text is included.
 
-A different author then created 100 new documents without access to the engine, compiler, prior gold, failures or results. Its completed hash was supplied before implementing-agent inspection and engine evaluation. The final functional policy and all six gold hashes were frozen first in [evaluation-freeze.json](evaluation-freeze.json). Only this final 100-case audit was fresh at its first final-policy evaluation. After publication it becomes regression data for future work. These synthetic contexts do not establish a population error rate or eliminate missing vocabulary and ambiguous intent.
+## Model and safeguards
 
-## Improvement loop and rejected trials
+The FP32 ONNX model is 47,246,299 bytes, separate from the existing static language data. It fine-tunes the MIT-licensed hmBERT Mini base with actual gradient optimization. It was not manually written as millions of weights and was not trained from scratch. Training uses 21,328 pairs, including 2,265 explicitly labeled synthetic inverse-noise examples derived from weakly clean Wikipedia training references.
 
-The accepted changes add verified inflected forms from frequency-selected source dictionary bases and a bounded one-edit candidate index, complete competing-word checks over the supplied English/German and protective inventories, sourced technical/name vocabulary, conservative productive-form preservation, and per-call reuse of completed ambiguity checks. A small minimized lexical automaton replaces costly repeated edit probes. Its decoded data occupy 1,974,212 bytes. The combined static language assets occupy 44,584,587 bytes on disk; this is not a neural weight count.
+The head has 1,200 learned replacement actions, but the calibrated release policy enables only 13. A trigger has at most eight candidates plus KEEP. Training support, repeated calibration support, a score-margin buffer above observed negatives and original-text protections gate every addition. These thresholds are empirical. Softmax scores are not certified confidence levels.
 
-Faster-looking coverage trials were rejected when they caused wrong edits. Removing frequency preservation caused 206 wrong edits on the known main corpus. Keyboard filtering of competing interpretations excluded valid alternatives and failed independent source-derived challenges. Broadly trusting attested codespell/Litkey labels caused six wrong choices in 151 ambiguity challenges. A conservative two-sided English bigram trial and a source-defined German REP trial produced no additional main-corpus corrections and are excluded from runtime. The latter generated 1,631 unique source-defined proposals only after a complete two-edit ambiguity veto.
+Static edits take priority. Names after greetings, quotations, reply/signature tails, URLs, code, variables and joined identifiers are protected. The policy must match both model and action/tokenizer metadata identities. Missing or failed inference aborts the operation before page edits. A missing or mismatched policy abstains from neural additions. No rule or neural weight is read from evaluation gold at runtime.
 
-Sol independent reviews checked source, representation and preservation. Astra was used after several local approaches stalled, for bounded research on ambiguity, morphology and context. No substantial hardware increase was adopted. The inflection compiler keeps the original Hunspell flags/affix rules, validates expanded forms against the full language inventory, and excludes every existing frequency target. Comparing a base-frequency floor of 1,000 with the initial source floor of 150 gained four more wanted edits and two whole documents without observed unwanted edits on the known 5,300 cases, for about 660 KB additional static data. The final floor 150 uses the existing base vocabulary; it does not fabricate frequency counts or copy gold answers.
+Independent review found and fixed metadata mislabeling, selection-context protection and a long-document proposal-limit interaction. Dedicated regressions exercise these cases. The Windows helper sets the version-specific telemetry opt-outs before process launch and initialization. Physical Outlook acceptance remains separate.
 
-No test gold, user messages or private correspondence is read by the inference compilers. The [326 independently authored preservation inputs](tests/preservation-regression.json) and [151 known source-derived ambiguity challenges](tests/ambiguity-regression.json) are public regression data.
+## CPU and memory
 
-The final policy rejects unverified English proper-name-only targets outside the existing calendar exception, preserves unsupported-script/diacritic neighbors as possible foreign wording and uses a complete two-edit veto for recognized regular English plural candidates. These are general abstention rules, not phrase blacklists. Other repairs retain the bounded one-edit ambiguity check. Productive German compounds and vocabulary remain incomplete. Eight historical English function-word exceptions remain heuristic. Shared search budgets can deliberately leave text unchanged.
+Measured on an Intel Core i5-1038NG7, four cores/eight threads, 31.1 GiB DDR4 RAM, Linux, Node 26.7.0:
 
-## CPU, memory and startup
+- Whole Node CPU/WASM reference, 1,000-word English emails: about 284–321 ms after initialization.
+- The equivalent German fixtures: about 65–86 ms. Their enabled neural triggers are rarer, so more independent chunks can be skipped.
+- Peak whole-process RSS: about 579 MiB. Model-session construction: about 641 ms, with first spelling-table initialization additionally included in the first correction.
 
-[Exact CPU/RAM measurements](benchmarks/rc5-cpu-performance.md) and [machine-readable provenance](benchmarks/rc5-cpu-performance.json) use this laptop's 2020-era Intel i5-1038NG7, 4 cores/8 threads. The native probe uses the production wrapper with Jint 4.17/.NET 10 on Linux, not Windows Office. The final measurement uses two 1,000-word typo-heavy scenarios, one per language, with one first action and three warm repeats per scenario. Earlier broader and base-warm runs are historical evidence, excluded from the final timing table. Three samples are not a population percentile.
+These are measured synthetic fixtures, not browser-wide RAM or Windows/Outlook timing. The packaged browser uses one CPU/WASM inference thread. It skips only independent chunks that cannot produce an enabled edit; all competitors in used chunks remain unchanged. Full and pruned paths have explicit equivalence regressions. See [the raw benchmark](benchmarks/rc6-node-cpu.json).
 
-The native engine stays within the approximate one-second warm long-email goal in these tests and remains below the 1 GB upper allowance. Native initialization is separate and takes 11.6–12.0 seconds in a background warmup; an immediate action can wait. On the two final 1,000-word stress fixtures, native first actions took 1.01–1.21 seconds and warm medians were 378–391 ms. Whole-process native RSS peaked at about 455 MiB; this is an isolated engine process, not measured extra Outlook RAM. Node results are a browser-engine proxy, not measured extra Firefox RAM. Editor/COM/DOM application and actual device integration are separate from core inference. Read the linked report for exact cold/warm latency, CPU time, whole-process RSS, hashes and remaining startup cost.
+The earlier full-model, unpruned reference measured roughly 0.8–1.1 seconds for the same 1,000-word fixtures. The selected runtime stays below the approximate 1 GB ceiling without a larger model. Native helper and hosted Windows measurements are recorded separately in the native candidate's build evidence; they must not be inferred from Node results.
 
-## Runtime acceptance
+## Reproduction and release evidence
 
-The final validation record and downloadable comparison report include both models' outputs on all 5,600 cases, with misses, wrong spans and controls. Core tests verify exact spans, abstention, asset integrity and independent finite-state search oracles. Browser tests cover ordinary rich text, textarea, Undo, extension resources and shipping Firefox shortcuts with external network blocked. Corpus format validation permits ordinary three-block greeting/body/signoff emails; it does not change gold or correction scoring.
+`npm ci && npm run check` builds the packages and exercises core, DOM, shortcut, actual Firefox/Chrome, ONNX arithmetic, full-corpus inference and archive checks. Trusted local Firefox/geckodriver binaries are needed for the Firefox harness. `tests/context-encoder-runtime.mjs` verifies 25 tokenizer fixtures, 40 tensor maps and 40 actual single-thread WASM probes against frozen training arithmetic. This is numerical parity, not correction quality.
 
-Windows CI separately checks shared-engine parity and installer filesystem behavior. It does not establish actual Outlook 2019 x86/x64 add-in loading, formatting, shortcuts, Undo or uninstall. Those remain unverified. Firefox ZIPs are unsigned temporary-development packages; Mozilla signing and complex production editors remain separate acceptance work.
+Calibration uses the faster local Python CPU ONNX adapter, checked against the same fixed WASM/Torch probes. Final quality checks use the shipping CPU/WASM path. Build-time Python sees bounded numeric tensors, never sends text to a service, and is not required by users installing the extension or native EXE.
+
+Published candidates promote the tested ZIP/Windows CI EXE by digest. Native Windows x86/x64 proxy/helper checks, installer tests and actual Outlook device acceptance remain distinct evidence. Published RC4/RC5 browser and RC3/RC4 native comparison releases remain unchanged. Historical RC5 measurements are available in its [fixed release source](https://github.com/mrksrus/localcorrect-browser/blob/v1.0.0-rc.5/QUALITY.md).

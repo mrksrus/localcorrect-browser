@@ -1,0 +1,115 @@
+{
+  "policySha256": "16b52096804d86574512af27d10627d1f01aa5b3d3bfad78ba333f9e0b814c27",
+  "modelSha256": "bf1edb08d9d1ec4bc687b20d90326d30f4b7e3d857df26779adf503ff6ed820b",
+  "onnxSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59",
+  "scoresSha256": "e88259bed440683c87b3b30fda7a9e27666ed7a71a29df07a2e200868cb4fc56",
+  "inputSha256": "5ef047077f545dbf5fea1c401767e2133f47f6f6b17f1b0880a4b684fa90692a",
+  "backend": {
+    "backend": "onnxruntime-python-cpu",
+    "ortVersion": "1.31.1",
+    "threads": 2,
+    "modelSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59"
+  },
+  "summary": [
+    {
+      "mode": "baseline",
+      "language": "all",
+      "documents": 3200,
+      "exactDocuments": 617,
+      "wantedEdits": 87,
+      "missedSupportedEdits": 2855,
+      "cleanDocuments": 606,
+      "preservedCleanDocuments": 605,
+      "strictReferenceMismatchedEdits": 92
+    },
+    {
+      "mode": "baseline",
+      "language": "de",
+      "documents": 2989,
+      "exactDocuments": 573,
+      "wantedEdits": 83,
+      "missedSupportedEdits": 2665,
+      "cleanDocuments": 563,
+      "preservedCleanDocuments": 562,
+      "strictReferenceMismatchedEdits": 89
+    },
+    {
+      "mode": "baseline",
+      "language": "en",
+      "documents": 211,
+      "exactDocuments": 44,
+      "wantedEdits": 4,
+      "missedSupportedEdits": 190,
+      "cleanDocuments": 43,
+      "preservedCleanDocuments": 43,
+      "strictReferenceMismatchedEdits": 3
+    },
+    {
+      "mode": "candidate",
+      "language": "all",
+      "documents": 3200,
+      "exactDocuments": 617,
+      "wantedEdits": 96,
+      "missedSupportedEdits": 2846,
+      "cleanDocuments": 606,
+      "preservedCleanDocuments": 605,
+      "strictReferenceMismatchedEdits": 104
+    },
+    {
+      "mode": "candidate",
+      "language": "de",
+      "documents": 2989,
+      "exactDocuments": 573,
+      "wantedEdits": 85,
+      "missedSupportedEdits": 2663,
+      "cleanDocuments": 563,
+      "preservedCleanDocuments": 562,
+      "strictReferenceMismatchedEdits": 98
+    },
+    {
+      "mode": "candidate",
+      "language": "en",
+      "documents": 211,
+      "exactDocuments": 44,
+      "wantedEdits": 11,
+      "missedSupportedEdits": 183,
+      "cleanDocuments": 43,
+      "preservedCleanDocuments": 43,
+      "strictReferenceMismatchedEdits": 6
+    },
+    {
+      "mode": "neural-additions",
+      "language": "all",
+      "documents": 3200,
+      "exactDocuments": 606,
+      "wantedEdits": 9,
+      "missedSupportedEdits": 2933,
+      "cleanDocuments": 606,
+      "preservedCleanDocuments": 606,
+      "strictReferenceMismatchedEdits": 12
+    },
+    {
+      "mode": "neural-additions",
+      "language": "de",
+      "documents": 2989,
+      "exactDocuments": 563,
+      "wantedEdits": 2,
+      "missedSupportedEdits": 2746,
+      "cleanDocuments": 563,
+      "preservedCleanDocuments": 563,
+      "strictReferenceMismatchedEdits": 9
+    },
+    {
+      "mode": "neural-additions",
+      "language": "en",
+      "documents": 211,
+      "exactDocuments": 43,
+      "wantedEdits": 7,
+      "missedSupportedEdits": 187,
+      "cleanDocuments": 43,
+      "preservedCleanDocuments": 43,
+      "strictReferenceMismatchedEdits": 3
+    }
+  ],
+  "limits": "Single-token reference alignment understates supported partial repairs when neighboring punctuation, multiple words or order also change. Original first-pass counts retained under strictReferenceMismatchedEdits. Semantic audit is separate; real learner text is not redistributed."
+}

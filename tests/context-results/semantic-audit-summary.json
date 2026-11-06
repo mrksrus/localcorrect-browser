@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "scope": "Two separately assigned semantic audits of the 21 newly accepted edits in the first frozen 3200-pair real learner test. Raw text and per-learner IDs are not redistributed.",
+  "neuralAdditions": 21,
+  "supportedPartialRepairs": 21,
+  "contradictionsIdentified": 0,
+  "uncertainNeuralEdits": 0,
+  "strictTokenMatches": 9,
+  "strictAlignmentMismatches": 12,
+  "exactWholeDocumentsBaseline": 617,
+  "exactWholeDocumentsCandidate": 617,
+  "documents": 3200,
+  "reviewerAgreement": true,
+  "staticIdentityControls": {
+    "clearLingeringTypos": 6,
+    "uncertainRegisterNormalization": 1
+  },
+  "staticUnchangedHumanReference": {
+    "clearLingeringTypos": 1
+  },
+  "limits": "Supplemental semantic judgments against one annotation reference. No gold rewrites. Does not prove complete correction or population precision. One prior static normalization remains ambiguous by register.",
+  "privateAuditReceiptsSha256": [
+    "42e1c359655c30c98a2d383bb345d16a645f2edc2a0359651208ba863ac835b4",
+    "ac96ba31c916f3870982f8f4e2eda83676f05f54022e1e50ae2608297ef62c5f"
+  ]
+}

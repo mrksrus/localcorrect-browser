@@ -1,0 +1,82 @@
+{
+  "policySha256": "16b52096804d86574512af27d10627d1f01aa5b3d3bfad78ba333f9e0b814c27",
+  "modelSha256": "bf1edb08d9d1ec4bc687b20d90326d30f4b7e3d857df26779adf503ff6ed820b",
+  "onnxSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59",
+  "scoresSha256": "828d5c89dfc501d46257639e8c560500f41d3035e10944f044393d05220120e1",
+  "inputSha256": "125842f6756d675bb0390c640072741a6d8c12e89298b4690aa327d366f0c4cc",
+  "backend": {
+    "backend": "onnxruntime-python-cpu",
+    "ortVersion": "1.31.1",
+    "threads": 2,
+    "modelSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59"
+  },
+  "summary": [
+    {
+      "mode": "baseline",
+      "language": "all",
+      "documents": 400,
+      "exactDocuments": 200,
+      "wantedEdits": 0,
+      "unwantedEdits": 0,
+      "missedSupportedEdits": 200,
+      "cleanDocuments": 200,
+      "preservedCleanDocuments": 200
+    },
+    {
+      "mode": "baseline",
+      "language": "en",
+      "documents": 400,
+      "exactDocuments": 200,
+      "wantedEdits": 0,
+      "unwantedEdits": 0,
+      "missedSupportedEdits": 200,
+      "cleanDocuments": 200,
+      "preservedCleanDocuments": 200
+    },
+    {
+      "mode": "candidate",
+      "language": "all",
+      "documents": 400,
+      "exactDocuments": 209,
+      "wantedEdits": 9,
+      "unwantedEdits": 0,
+      "missedSupportedEdits": 191,
+      "cleanDocuments": 200,
+      "preservedCleanDocuments": 200
+    },
+    {
+      "mode": "candidate",
+      "language": "en",
+      "documents": 400,
+      "exactDocuments": 209,
+      "wantedEdits": 9,
+      "unwantedEdits": 0,
+      "missedSupportedEdits": 191,
+      "cleanDocuments": 200,
+      "preservedCleanDocuments": 200
+    },
+    {
+      "mode": "neural-additions",
+      "language": "all",
+      "documents": 400,
+      "exactDocuments": 209,
+      "wantedEdits": 9,
+      "unwantedEdits": 0,
+      "missedSupportedEdits": 191,
+      "cleanDocuments": 200,
+      "preservedCleanDocuments": 200
+    },
+    {
+      "mode": "neural-additions",
+      "language": "en",
+      "documents": 400,
+      "exactDocuments": 209,
+      "wantedEdits": 9,
+      "unwantedEdits": 0,
+      "missedSupportedEdits": 191,
+      "cleanDocuments": 200,
+      "preservedCleanDocuments": 200
+    }
+  ],
+  "limits": "Real-corpus wanted/missed edit counts include single-token replacement gold only. Whole-document exactness uses the entire unchanged reference. A different valid correction can count as unwanted against a single reference."
+}

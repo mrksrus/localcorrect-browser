@@ -1,0 +1,277 @@
+{
+  "scope": "Whole Node reference, ONNX CPU/WASM single thread plus shared static spelling. Process RSS includes Node, not browser or Outlook. Cold session construction excludes first static-lexicon initialization, which is included in first correction.",
+  "hardware": {
+    "cpu": "Intel(R) Core(TM) i5-1038NG7 CPU @ 2.00GHz",
+    "logicalCPUs": 8,
+    "ramGiB": 31.144447326660156,
+    "platform": "linux"
+  },
+  "runtime": "v26.7.0",
+  "model": {
+    "modelSha256": "899628b5f9ab75a075f158ffeadc9e30aea36e5f03e9c24facb11e87241e9e59",
+    "modelBytes": 47246299,
+    "metadataSha256": "bf1edb08d9d1ec4bc687b20d90326d30f4b7e3d857df26779adf503ff6ed820b"
+  },
+  "policySha256": "808e18d8eea3afb329597b0eefc2966a4308936e93ce97eb0cde0c1db8db5d63",
+  "fixturesSha256": "9572cd0dee9fb63981fc0d68d0e21d2c1a582822b18096ff205a943215f36bd6",
+  "sessionCreationMs": 640.794371,
+  "peakRssMiB": 579.08984375,
+  "rows": [
+    {
+      "id": "en-ordinary-clean",
+      "words": 150,
+      "language": "en",
+      "kind": "clean",
+      "samples": [
+        {
+          "wallMs": 235.856452,
+          "cpuMs": 470.998,
+          "edits": 0,
+          "rssMiB": 490.23828125
+        },
+        {
+          "wallMs": 42.28298399999994,
+          "cpuMs": 48.1,
+          "edits": 0,
+          "rssMiB": 490.23828125
+        },
+        {
+          "wallMs": 40.06112699999994,
+          "cpuMs": 43.478,
+          "edits": 0,
+          "rssMiB": 490.23828125
+        },
+        {
+          "wallMs": 37.98047799999995,
+          "cpuMs": 65.077,
+          "edits": 0,
+          "rssMiB": 490.48828125
+        }
+      ]
+    },
+    {
+      "id": "en-ordinary-typo-heavy",
+      "words": 150,
+      "language": "en",
+      "kind": "typo-heavy",
+      "samples": [
+        {
+          "wallMs": 95.51412600000003,
+          "cpuMs": 225.111,
+          "edits": 9,
+          "rssMiB": 550.87109375
+        },
+        {
+          "wallMs": 46.20848499999988,
+          "cpuMs": 102.993,
+          "edits": 9,
+          "rssMiB": 550.87109375
+        },
+        {
+          "wallMs": 44.57157099999995,
+          "cpuMs": 106.401,
+          "edits": 9,
+          "rssMiB": 553.15625
+        },
+        {
+          "wallMs": 43.73214600000006,
+          "cpuMs": 93.335,
+          "edits": 9,
+          "rssMiB": 556.78125
+        }
+      ]
+    },
+    {
+      "id": "en-1000-clean",
+      "words": 1000,
+      "language": "en",
+      "kind": "clean",
+      "samples": [
+        {
+          "wallMs": 287.29247899999996,
+          "cpuMs": 632.276,
+          "edits": 0,
+          "rssMiB": 573.58984375
+        },
+        {
+          "wallMs": 304.81863299999986,
+          "cpuMs": 510.799,
+          "edits": 0,
+          "rssMiB": 577.125
+        },
+        {
+          "wallMs": 290.9206690000001,
+          "cpuMs": 327.326,
+          "edits": 0,
+          "rssMiB": 577.125
+        },
+        {
+          "wallMs": 284.0488770000002,
+          "cpuMs": 304.052,
+          "edits": 0,
+          "rssMiB": 577.125
+        }
+      ]
+    },
+    {
+      "id": "en-1000-typo-heavy",
+      "words": 1000,
+      "language": "en",
+      "kind": "typo-heavy",
+      "samples": [
+        {
+          "wallMs": 320.76266699999996,
+          "cpuMs": 358.206,
+          "edits": 53,
+          "rssMiB": 577.25
+        },
+        {
+          "wallMs": 304.389369,
+          "cpuMs": 309.996,
+          "edits": 53,
+          "rssMiB": 577.375
+        },
+        {
+          "wallMs": 296.81278599999996,
+          "cpuMs": 309.261,
+          "edits": 53,
+          "rssMiB": 577.375
+        },
+        {
+          "wallMs": 298.3270190000003,
+          "cpuMs": 305.928,
+          "edits": 53,
+          "rssMiB": 577.375
+        }
+      ]
+    },
+    {
+      "id": "de-ordinary-clean",
+      "words": 150,
+      "language": "de",
+      "kind": "clean",
+      "samples": [
+        {
+          "wallMs": 28.469646999999895,
+          "cpuMs": 35.821,
+          "edits": 0,
+          "rssMiB": 577.375
+        },
+        {
+          "wallMs": 22.261466999999357,
+          "cpuMs": 24.218,
+          "edits": 0,
+          "rssMiB": 577.5
+        },
+        {
+          "wallMs": 22.13230999999996,
+          "cpuMs": 27.015,
+          "edits": 0,
+          "rssMiB": 577.5
+        },
+        {
+          "wallMs": 21.919003999999404,
+          "cpuMs": 21.844,
+          "edits": 0,
+          "rssMiB": 577.5
+        }
+      ]
+    },
+    {
+      "id": "de-ordinary-typo-heavy",
+      "words": 150,
+      "language": "de",
+      "kind": "typo-heavy",
+      "samples": [
+        {
+          "wallMs": 16.729473999999755,
+          "cpuMs": 19.993,
+          "edits": 6,
+          "rssMiB": 577.5
+        },
+        {
+          "wallMs": 3.6670750000002954,
+          "cpuMs": 3.623,
+          "edits": 6,
+          "rssMiB": 577.5
+        },
+        {
+          "wallMs": 3.532100000000355,
+          "cpuMs": 7.854,
+          "edits": 6,
+          "rssMiB": 577.5
+        },
+        {
+          "wallMs": 3.4592219999994995,
+          "cpuMs": 7.686,
+          "edits": 6,
+          "rssMiB": 577.5
+        }
+      ]
+    },
+    {
+      "id": "de-1000-clean",
+      "words": 1000,
+      "language": "de",
+      "kind": "clean",
+      "samples": [
+        {
+          "wallMs": 77.32617399999981,
+          "cpuMs": 83.907,
+          "edits": 0,
+          "rssMiB": 577.5
+        },
+        {
+          "wallMs": 74.14305700000023,
+          "cpuMs": 81.021,
+          "edits": 0,
+          "rssMiB": 577.625
+        },
+        {
+          "wallMs": 76.98907899999995,
+          "cpuMs": 77.313,
+          "edits": 0,
+          "rssMiB": 577.625
+        },
+        {
+          "wallMs": 85.9668330000004,
+          "cpuMs": 88.455,
+          "edits": 0,
+          "rssMiB": 577.625
+        }
+      ]
+    },
+    {
+      "id": "de-1000-typo-heavy",
+      "words": 1000,
+      "language": "de",
+      "kind": "typo-heavy",
+      "samples": [
+        {
+          "wallMs": 74.96192000000065,
+          "cpuMs": 81.406,
+          "edits": 47,
+          "rssMiB": 577.625
+        },
+        {
+          "wallMs": 65.259591,
+          "cpuMs": 81.929,
+          "edits": 47,
+          "rssMiB": 577.625
+        },
+        {
+          "wallMs": 70.66845399999966,
+          "cpuMs": 82.217,
+          "edits": 47,
+          "rssMiB": 577.75
+        },
+        {
+          "wallMs": 66.02824199999941,
+          "cpuMs": 69.593,
+          "edits": 47,
+          "rssMiB": 577.75
+        }
+      ]
+    }
+  ]
+}

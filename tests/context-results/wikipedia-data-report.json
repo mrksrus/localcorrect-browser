@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "dataset_revision": "e97c87e8caa49c12999cdf498252406a2115eae2",
+  "pyarrow_version": "26.0.1",
+  "main_source_rows": 29978,
+  "metadata_source_rows": 29978,
+  "english_source_rows": 15201,
+  "mechanically_selected_rows": 51,
+  "retained_wikipedia_rows": 51,
+  "retained_articles": 47,
+  "filter_reasons": {
+    "nonminimal_lexical_change": 537,
+    "unsupported_hunk": 11827,
+    "numeric_change": 1065,
+    "case_name_punctuation_or_non_ascii": 899,
+    "rare_target": 196,
+    "attested_real_word_style_or_semantic_change": 433,
+    "empty_text": 5,
+    "no_supported_word_change": 160,
+    "short_unknown_fragment": 13,
+    "linked_entity_edit": 8,
+    "number_word_or_negation": 6,
+    "quoted_word_edit": 1
+  },
+  "collision_reasons": {},
+  "inverse_noise": {
+    "quality": "weakly_clean_publisher_correction_not_verified",
+    "synthetic": true,
+    "split": "train",
+    "mechanically_eligible_references": 792,
+    "candidate_mutations": 2558,
+    "retained_rows": 2265,
+    "retained_references": 712,
+    "retained_articles": 342,
+    "direction_counts": {
+      "a->an": 137,
+      "an->a": 510,
+      "are->is": 332,
+      "do->does": 0,
+      "does->do": 0,
+      "form->from": 100,
+      "from->form": 7,
+      "has->have": 50,
+      "have->has": 143,
+      "is->are": 135,
+      "than->then": 9,
+      "their->there": 8,
+      "then->than": 9,
+      "there->their": 78,
+      "to->too": 0,
+      "too->to": 540,
+      "was->were": 28,
+      "were->was": 119,
+      "were->where": 36,
+      "where->were": 24
+    },
+    "max_selected_per_reference": 6,
+    "audit_reasons": {
+      "reference_number": 2369,
+      "reference_fragment_or_sentence_length": 109,
+      "reference_quote_code_or_url": 6711,
+      "reference_markup_code_or_parenthesis": 2139,
+      "empty_reference": 4,
+      "reference_fragment_or_complex_punctuation": 142,
+      "reference_negation": 68,
+      "duplicate_pair": 83,
+      "reference_cap": 210
+    }
+  },
+  "wikipedia_splits": {
+    "train": {
+      "rows": 39,
+      "articles": 37
+    },
+    "calibration": {
+      "rows": 1,
+      "articles": 1
+    },
+    "test": {
+      "rows": 11,
+      "articles": 9
+    }
+  },
+  "combined_rows": {
+    "train": 21328,
+    "calibration": 2191,
+    "test": 3200
+  },
+  "checks": {
+    "source_join_one_to_one": true,
+    "original_split_bytes_preserved": true,
+    "no_overlap_with_any_original_normalized_text": true,
+    "wikipedia_articles_split_disjoint": true,
+    "wikipedia_input_and_expected_text_split_disjoint": true,
+    "synthetic_train_only": true,
+    "synthetic_exact_single_mutation_restoration": true,
+    "synthetic_caps_respected": true,
+    "synthetic_reference_screened": true,
+    "quality_gold_or_model_used": false
+  },
+  "limitations": [
+    "Mechanically selected Wikipedia revisions are not certified grammar corrections.",
+    "Strict real pairs preserve whole publisher paragraphs; no filter widening or extraction occurs.",
+    "Train-only inverse noise targets are weakly clean publisher corrections, not verified error-free text. Mutations may occasionally remain valid; this is noisy training supervision, never evaluation gold.",
+    "Original learner text and derived article paragraphs remain private work data."
+  ],
+  "script_sha256": "4351acd0492a4662414b1e958d715df37dd09cb5989ecb3a71d3f685c74ade91",
+  "outputs": {
+    "calibration-v2.jsonl": {
+      "bytes": 796218,
+      "sha256": "201356b0091a86a1f70ba8fd92d04e094118c56c2651591ec62aa897889f97d5"
+    },
+    "collision-audit.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "filter-audit.jsonl": {
+      "bytes": 1315253,
+      "sha256": "0f92d7a2c67089a723b50125d22436e371762c1e7a7513412eeb6bf7da651f87"
+    },
+    "test-v2.jsonl": {
+      "bytes": 1107963,
+      "sha256": "5ef047077f545dbf5fea1c401767e2133f47f6f6b17f1b0880a4b684fa90692a"
+    },
+    "train-v2.jsonl": {
+      "bytes": 8903924,
+      "sha256": "d2e0710c44caddb91671366b4b913b8ed06d692d3b1b997e708ca5c8734bcbb8"
+    },
+    "wiki-all.jsonl": {
+      "bytes": 49067,
+      "sha256": "ab253d38280584af6d5cb1ef7e40d350c5ab543da766905b51f0138bbb5f3b9c"
+    },
+    "wiki-calibration.jsonl": {
+      "bytes": 1624,
+      "sha256": "b7e1c1d55e540cb6da38504f2de4a0c5a29e1d3e4a459fbd27a3407037a8a005"
+    },
+    "wiki-inverse-audit.jsonl": {
+      "bytes": 1001873,
+      "sha256": "24c341ee8076fca02a31a5fac92d0e63399359a3fbe1e613df39a57913ae71dc"
+    },
+    "wiki-inverse-provenance.jsonl": {
+      "bytes": 2624599,
+      "sha256": "c97e046b2d494e3e6eb0519e34fc19ec1e5d173aac5a1a802ea0e917e6d45b58"
+    },
+    "wiki-inverse-train.jsonl": {
+      "bytes": 2120500,
+      "sha256": "0105a55116f679e87ba89bee13618b77f18a739f85c0d8b5c5bd4bbb8c02176a"
+    },
+    "wiki-provenance.jsonl": {
+      "bytes": 49479,
+      "sha256": "7a18b53454c13ad81b08677dc7debece8d41496fd8e80d9b36eb1b1c81c6789b"
+    },
+    "wiki-test.jsonl": {
+      "bytes": 11316,
+      "sha256": "4331d6e7fc654c828da112358a238924395e351b425437e96d50408d89c38cb7"
+    },
+    "wiki-train.jsonl": {
+      "bytes": 36127,
+      "sha256": "8761e1fd045466dc83410b403ca2029affae80e922036edfd71c1b94338c0d74"
+    }
+  }
+}

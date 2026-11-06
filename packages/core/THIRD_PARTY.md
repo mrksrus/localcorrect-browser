@@ -2,7 +2,73 @@
 
 LocalCorrect program code is GPL-3.0-only (see LICENSE). The word-frequency
 **data** are separately licensed CC BY-SA 4.0; the program license does not
-relicense those data. Both complete license texts are included in packages.
+relicense those data. New RC6 fine-tuned weight additions are offered under
+CC BY-SA 4.0, with the pretrained base's MIT notice and the corpus attributions
+retained. This is the project's selected release license for its additions, not
+a claim that every use of training data creates a derivative work. Runtime and
+source-data components retain their own terms.
+
+## Trained contextual model
+
+RC6 fine-tunes [hmBERT Mini, historic multilingual cased](https://huggingface.co/dbmdz/bert-mini-historic-multilingual-cased)
+from Open Source at the Bayerische Staatsbibliothek, copyright 2020, under MIT.
+The pinned upstream revision is
+`4a0964c747fd6c06a20e8c0ca32bc27a23a6ad34`; the original safetensors SHA-256 is
+`e291f5d44db7f17d3b75755feb02febbf4f3f2b137e9ac49ebb1fb00497dbda2`.
+The four-layer pretrained encoder is adapted for sparse KEEP/single-word edit
+decisions. It is not trained from scratch. Its historical newspaper/OCR source
+domain differs from modern email. [MODEL.md](MODEL.md) describes the adaptation,
+limitations, split roles and pending evaluation. The model directory retains the
+upstream notice and the separate license for the new weight additions.
+
+The public correction sources are:
+
+- [ErAConD](https://github.com/yuanxun-yx/eracond), MIT, copyright 2022 YUAN Xun,
+  revision `8401d3601f58170b55f0b1ca3773329c56b116f9`. Xun Yuan, Derek Pham,
+  Sam Davidson and Zhou Yu, [ErAConD: Error Annotated Conversational Dialog Dataset
+  for Grammatical Error Correction](https://aclanthology.org/2022.naacl-main.5/),
+  NAACL 2022. Original/corrected utterances are aligned by conversation; the
+  alternative corr2 annotation is excluded.
+- [Falko](https://www.linguistik.hu-berlin.de/de/institut/professuren/korpuslinguistik/forschung/falko/zugang),
+  corpus creators at Humboldt-Universitaet zu Berlin, CC BY 3.0, and
+  [MERLIN](https://hdl.handle.net/20.500.12124/6), MERLIN project and creators,
+  CC BY-SA 4.0. The selected tokenized texts and text-ID alignment come from
+  [Adriane Boyd's WNUT 2018 release](https://github.com/adrianeboyd/boyd-wnut2018),
+  repository revision `e7d3f9c8e5b7348c93cf9817efc35ae3af7783bc`. Credit Adriane
+  Boyd for conversion/alignment and [Using Wikipedia Edits in Low Resource
+  Grammatical Error Correction](https://aclanthology.org/W18-6111/), WNUT 2018.
+  Component licenses are preserved separately; the Wikipedia data in that
+  downloaded archive is not used by the learner-corpus preparation recipe.
+- [WikiEdits-MultiGEC](https://huggingface.co/datasets/lang-uk/WikiEdits-MultiGEC),
+  revision `e97c87e8caa49c12999cdf498252406a2115eae2`. Roman Kovalchuk, Mariana
+  Romanyshyn and Petro Ivaniuk, [Introducing OmniGEC: A Silver Multilingual Dataset
+  for Grammatical Error Correction](https://aclanthology.org/2025.unlp-1.17/),
+  UNLP 2025. Its publisher dataset card declares MIT; the underlying English
+  Wikipedia text retains CC BY-SA 4.0 and attribution to Wikipedia contributors.
+  The private provenance records retain article, revision-diff and history URLs.
+  The MIT card does not remove the underlying article terms or additional notices.
+  Strict real revision pairs are mechanically filtered; train-only inverse-noise
+  examples modify one word in weakly clean publisher corrections. Neither source
+  is represented as individually verified grammar gold.
+
+The [learner-corpus manifest](context-data-sources.json) and
+[Wikipedia manifest](context-wikipedia-sources.json) record source URLs, revisions,
+download hashes, selection rules and license evidence. The original Falko and
+MERLIN source sites were inaccessible during the recorded verification; their
+component terms are attributed to the pinned Boyd release. Raw and derived
+learner/Wikipedia text remains outside the repository pending a separate privacy
+and redistribution review. Recipes, hashes and notices are published; private
+user documents and chats are not training data or public fixtures.
+
+## Local neural inference runtime
+
+[ONNX Runtime Web](https://github.com/microsoft/onnxruntime), Microsoft Corporation,
+version 1.31.1, is MIT licensed and bundled for CPU/WASM inference. It is a runtime
+component, not only a build dependency. The package lock pins its npm artifact;
+the build pins the WASM bytes. The full Microsoft MIT notice and upstream
+third-party notices are retained in `licenses/onnxruntime-LICENSE` and
+`licenses/onnxruntime-ThirdPartyNotices.txt`. No model or runtime code is fetched
+from a remote service during correction.
 
 ## Dictionaries: FrequencyWords / Hermit Dave
 
@@ -97,9 +163,10 @@ notices under `tests/scale-corpus/SOURCES.md`.
 
 esbuild 0.25.12 (MIT), https://github.com/evanw/esbuild.
 Playwright 1.56.1 (Apache-2.0), https://github.com/microsoft/playwright.
-Locked dependency sources/versions are in package-lock.json. Build tool code is
-not included as a runtime dependency. Generated bundles contain LocalCorrect
-source and derived validity inventories; validator source is retained under vendor.
+Locked dependency sources/versions are in package-lock.json. These build tools
+are not runtime dependencies. Generated bundles contain LocalCorrect source,
+derived validity inventories and the separately credited ONNX Runtime Web adapter;
+validator source is retained under vendor.
 No remotely loaded code
 is used by the extension.
 

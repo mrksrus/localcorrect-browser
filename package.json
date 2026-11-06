@@ -1,6 +1,6 @@
 {
   "name": "localcorrect-browser",
-  "version": "1.0.0-rc.5",
+  "version": "1.0.0-rc.6",
   "private": true,
   "type": "module",
   "workspaces": [
@@ -11,12 +11,13 @@
     "test": "node scripts/build.mjs && node --test tests/core.test.mjs tests/review.test.mjs tests/core-quality.test.mjs tests/shortcut.test.mjs tests/email-safety.test.mjs tests/precision.test.mjs tests/coverage.test.mjs tests/ambiguity.test.mjs tests/inflection.test.mjs && node tests/dom.mjs && node tests/extension.mjs",
     "test:core": "node --test tests/core.test.mjs tests/review.test.mjs tests/core-quality.test.mjs tests/email-safety.test.mjs tests/precision.test.mjs tests/coverage.test.mjs tests/ambiguity.test.mjs tests/inflection.test.mjs",
     "test:dom": "node tests/dom.mjs",
-    "check": "npm test && node tests/email-dom.mjs && node tests/scale-check.mjs && node scripts/verify.mjs",
+    "check": "npm test && npm run test:context && node tests/email-dom.mjs && node tests/scale-check.mjs && node scripts/verify.mjs",
     "evaluate": "node tests/hillclimb.mjs",
     "evaluate:emails": "node tests/email-evaluate.mjs",
     "report:emails": "node scripts/email-report.mjs",
     "evaluate:scale": "node tests/scale-evaluate.mjs",
-    "report:scale": "node scripts/scale-report.mjs"
+    "report:scale": "node scripts/scale-report.mjs",
+    "test:context": "python3 tests/context-calibration-policy.py && node --test tests/context-encode.test.mjs tests/context-safety.test.mjs && node tests/context-encoder-runtime.mjs && node tests/context-browser.mjs"
   },
   "devDependencies": {
     "dictionary-de": "3.0.0",
@@ -27,5 +28,8 @@
     "nspell": "2.1.5",
     "playwright": "1.56.1"
   },
-  "license": "GPL-3.0-only"
+  "license": "GPL-3.0-only",
+  "dependencies": {
+    "onnxruntime-web": "1.31.1"
+  }
 }
