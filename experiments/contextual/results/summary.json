@@ -1,0 +1,45 @@
+{
+  "base-calibration": {
+    "documents": 500,
+    "baselineExact": 368,
+    "candidateExact": 375,
+    "safeDocuments": 206,
+    "baselinePreservedSafe": 206,
+    "candidatePreservedSafe": 206,
+    "addedEdits": 13,
+    "addedWanted": 13,
+    "addedUnwanted": 0
+  },
+  "trained-calibration": {
+    "documents": 500,
+    "baselineExact": 368,
+    "candidateExact": 374,
+    "safeDocuments": 206,
+    "baselinePreservedSafe": 206,
+    "candidatePreservedSafe": 206,
+    "addedEdits": 10,
+    "addedWanted": 10,
+    "addedUnwanted": 0
+  },
+  "base-fresh": {
+    "documents": 120,
+    "baselineExact": 61,
+    "candidateExact": 61,
+    "safeDocuments": 60,
+    "baselinePreservedSafe": 60,
+    "candidatePreservedSafe": 60,
+    "addedEdits": 0
+  },
+  "trained-fresh": {
+    "documents": 120,
+    "baselineExact": 61,
+    "candidateExact": 61,
+    "safeDocuments": 60,
+    "baselinePreservedSafe": 60,
+    "candidatePreservedSafe": 60,
+    "addedEdits": 0
+  },
+  "status": "Research prototype, no fresh quality gain; not adopted into Firefox or Outlook",
+  "selectedModelSha256": "03c1f9d071e72b5ae87717cabdc644fe4a0e710caaaca83c85cbcc6d069aa5f4",
+  "auditSha256": "ea3a7d7fe48f13034f598ee25e173e305f64816c33c6622885ca1032f0eabcc3"
+}

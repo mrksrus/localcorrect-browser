@@ -1,0 +1,23 @@
+{
+  "frozenAtUtc": "2026-11-06T06:27:39.905902+00:00",
+  "baselineCommit": "57ed9d3c4e1b087c4f27fdd9eeb8fc41db17c32d",
+  "sealedAuditSha256": "ea3a7d7fe48f13034f598ee25e173e305f64816c33c6622885ca1032f0eabcc3",
+  "auditContentsRead": false,
+  "purpose": "Freeze base+adapted contextual pipelines and thresholds before first fresh audit evaluation",
+  "hashes": {
+    "work/localcorrect/browser/experiments/contextual/prepare.py": "d0209dcd98971d4723e5aff6deeab9366d352462e4b9ea1ad36d0a7d9fc65c0f",
+    "work/localcorrect/browser/experiments/contextual/model.py": "22c68b15d5e703b0897dcfd082fa3490bd059a69397c16b83c114e06ef5ba530",
+    "work/localcorrect/browser/experiments/contextual/tests_model.py": "e3e9ed71ff6f87c9e2d6806176822a586e95918c2b84efaa83fc0a6f4f9ee105",
+    "work/localcorrect/browser/experiments/contextual/score.py": "f3ba7d549f66ae96b9e7b6a86293be0103b530125be01ea2016365661a0bf460",
+    "work/localcorrect/browser/experiments/contextual/calibrate.py": "bdff9900075cdd4fa326de617c97d82f191420b28117702b4e43506485d84e4d",
+    "work/localcorrect/browser/experiments/contextual/evaluate.py": "1307007e212a2ab31e4e98475f352a7765ca104d9d963a901504e5f1cb96c21d",
+    "work/localcorrect/browser/experiments/contextual/proposals.mjs": "24db2041ea7c5d9de1bf5b9e667c1a2a0480cc1dc3fd9c00dcd11773dca6b970",
+    "work/context-lab/base-head.json": "925f7bf9ae5e77a8e3bac0905930e1887ebab0159ad44b32cf2cd23fecd4526f",
+    "work/context-lab/trained-head.json": "e611c6de5880dda1700c9bbc865d6b7ebb3c84444638edfb95630ba4db77dbe0",
+    "work/context-lab/base-mini-onnx/selected-mlm.fp32.onnx": "5aa8e41cc92f0527f3a81a671a06647dc331ff12448aa78e11bb942bc2dd0439",
+    "work/context-lab/trained-mini/onnx/selected-mlm.fp32.onnx": "03c1f9d071e72b5ae87717cabdc644fe4a0e710caaaca83c85cbcc6d069aa5f4",
+    "work/context-lab/train-proposals.json": "880055e596e8b624201522b7b6689b95e7fe42d1b94b8afe5826605c651c6813",
+    "work/context-lab/calibration-proposals.json": "27cfda66ad81d0886d709360d5338230ade4eda34f54fd899fbf095daac225a1",
+    "work/context-lab/masked-train.jsonl": "95f056ea27adcf04d02d923ce7c5ec8fe691ad51fe67fd2e1f0855f99c230824"
+  }
+}

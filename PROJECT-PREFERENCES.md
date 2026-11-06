@@ -14,6 +14,8 @@
 - LC-07, 2026-11-05. Keep browser RC4 and native Outlook RC3 fixed as comparison releases. Subsequent candidates should maximize exact whole-document corrections and minimize missed edits while retaining zero observed unwanted edits as the primary acceptance goal. Old published tests become regression data when consulted; use fresh independent validation before new generalization claims.
 - LC-08, 2026-11-05. Up to about 1 GB RAM is an upper resource allowance, not a target. Prefer correction-policy, representation and algorithm improvements first; retain comfortable use on roughly five-year-old CPUs and the existing approximately one-second long-email target. Small resource changes are acceptable, but substantial hardware escalation requires first exhausting model improvements and the authorized research escalation.
 
+- LC-09, 2026-11-06. The user now allows conventional training and fine-tuning to improve sentence context and structure. This supersedes the earlier no-training experiment constraint. Offline inference, preference for abstention over unwanted edits, immutable fixed releases and the approximate 1 GB runtime ceiling still apply. Trained experiments must earn adoption through separate validation and measured CPU/RAM.
+
 ## Observed implementation
 
 The shared engine began with SymSpell symmetric-delete lookup. The current compiler generates static typo priors from attributed public data and unique common typing repairs; runtime uses compact lookup tables, bilingual validity checks and literal/name protections. It is not a trained neural model. No test gold enters candidate compilation. Both saved modes currently share the same precision-first policy.
