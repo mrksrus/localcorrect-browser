@@ -1,0 +1,29 @@
+name: Promote exact RC7 browser assets
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/rc7-asset-transfer.yml'
+      - '.github/transfer/browser-transfer.py'
+      - '.github/transfer/rc7-manifest.json'
+      - '.github/transfer/payload/**'
+permissions: {}
+concurrency:
+  group: browser-rc7-asset-transfer
+  cancel-in-progress: false
+jobs:
+  transfer:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'ops/rc7-asset-transfer'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Verify and restore exact tested ZIP bytes, upload draft assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: python3 .github/transfer/browser-transfer.py
