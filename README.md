@@ -3,6 +3,9 @@
 Fixes English and German typos in the text field you are typing in, in Firefox (and Chrome).
 Everything runs on your computer: no account, no server, no text leaves the browser.
 
+**Status: version 2.0.0, a from-scratch rewrite (November 2026).** Tested in headless Firefox
+on a local test page. Not yet tested on real sites, in Chrome or from the toolbar popup.
+
 **Alt+Shift+C** corrects the selected text, or the whole focused field when nothing is selected.
 **Alt+Shift+Z** undoes it (Ctrl+Z works too). The toolbar button does the same and lets you
 choose the text language: *Detect automatically* (default), *English* or *Deutsch*.
@@ -24,14 +27,16 @@ corrections fit equally well it takes the more common word, which is sometimes w
 
 ## Install (testing)
 
-Unzip `localcorrect-firefox-2.0.0.zip`, open `about:debugging` → *This Firefox* →
+Build the packages with `npm run package` (or take them from a GitHub release when one exists),
+unzip `dist/localcorrect-firefox-2.0.0.zip`, open `about:debugging` → *This Firefox* →
 *Load Temporary Add-on* → pick `manifest.json`. A temporary add-on is gone after a restart;
 a permanent install needs Mozilla signing. Chrome: unzip the Chrome package and use
-*Load unpacked* in `chrome://extensions` with Developer mode on.
+*Load unpacked* in `chrome://extensions` with Developer mode on (built, not tested yet).
 
-Works in text fields, text areas and normal rich-text editors (Gmail, Outlook on the web and
-similar), including same-origin frames. Not in password fields, browser pages (`about:`,
-add-on stores) or editors that draw their own text (Google Docs).
+Works in text fields, text areas and rich-text (contenteditable) editors, including
+same-origin frames. Webmail editors such as Gmail or Outlook on the web use contenteditable and
+should work, but have not been tested yet. Not in password fields, browser pages (`about:`,
+add-on stores), cross-origin frames or editors that draw their own text (Google Docs).
 
 ## How it works
 
@@ -51,4 +56,10 @@ only words that the Hunspell dictionaries accept, with how often they occur in f
 - `scripts/build-lexicon.py`: rebuilds the word lists (maintainers only, see the file)
 
 Credits and licences: [THIRD_PARTY.md](THIRD_PARTY.md). Program licence: GPL-3.0.
-Versions 1.0.0-rc.1 to rc.7 (with the BERT model) are kept as git tags and branches only.
+
+## History and Outlook
+
+Versions 1.0.0-rc.1 to rc.7 (precision gates and a BERT model) almost never corrected
+anything and were replaced by this rewrite. They remain as git tags, releases and branches.
+The [Outlook add-in](https://github.com/mrksrus/localcorrect-outlook) still builds against the
+old `packages/core` at a pinned commit of this repository and has not been moved to version 2.
