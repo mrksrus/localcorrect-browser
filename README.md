@@ -3,7 +3,7 @@
 Fixes English and German typos in the text field you are typing in, in Firefox (and Chrome).
 Everything runs on your computer: no account, no server, no text leaves the browser.
 
-**Status: version 2.0.0, a from-scratch rewrite (November 2026).** Tested in headless Firefox
+**Status: release candidate 2.0.0-rc.1, a from-scratch rewrite (November 2026).** Tested in headless Firefox
 on a local test page. Not yet tested on real sites, in Chrome or from the toolbar popup.
 
 **Alt+Shift+C** corrects the selected text, or the whole focused field when nothing is selected.
@@ -27,8 +27,9 @@ corrections fit equally well it takes the more common word, which is sometimes w
 
 ## Install (testing)
 
-Build the packages with `npm run package` (or take them from a GitHub release when one exists),
-unzip `dist/localcorrect-firefox-2.0.0.zip`, open `about:debugging` → *This Firefox* →
+Download `localcorrect-firefox-2.0.0-rc.1.zip` from the
+[2.0.0-rc.1 release](https://github.com/mrksrus/localcorrect-browser/releases/tag/v2.0.0-rc.1)
+(or build it with `npm run package`), unzip it, open `about:debugging` → *This Firefox* →
 *Load Temporary Add-on* → pick `manifest.json`. A temporary add-on is gone after a restart;
 a permanent install needs Mozilla signing. Chrome: unzip the Chrome package and use
 *Load unpacked* in `chrome://extensions` with Developer mode on (built, not tested yet).

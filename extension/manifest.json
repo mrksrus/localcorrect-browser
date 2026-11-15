@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "LocalCorrect",
-  "version": "2.0.0",
+  "version": "1.99.1",
   "description": "Offline English and German typo correction for the text field you are typing in.",
   "permissions": ["activeTab", "scripting", "storage"],
   "background": {"scripts": ["background.js"], "type": "module"},

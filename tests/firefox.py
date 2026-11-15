@@ -7,7 +7,7 @@ from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-version = json.loads((ROOT / 'extension/manifest.json').read_text())['version']
+version = json.loads((ROOT / 'package.json').read_text())['version']
 archive = ROOT / f'dist/localcorrect-firefox-{version}.zip'
 firefox = os.environ.get('FIREFOX_BINARY') or shutil.which('firefox')
 driver = os.environ.get('GECKODRIVER_BINARY') or shutil.which('geckodriver')
